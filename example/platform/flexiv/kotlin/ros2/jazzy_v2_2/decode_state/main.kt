@@ -1,7 +1,7 @@
 import org.uwvm.flexiv.ros2jazzyv22.BoundedRecords
 /** @brief Execute genuine Kotlin application logic over the full selected JVM type. */
 fun main() {
-    val bytes = System.`in`.readNBytes(5161)
+    val bytes = uwvm.ros.Wasi.readStdin(5161)
     val value = BoundedRecords.Ros2Flexiv_msgsMsgRobotStates.CODEC.decode(bytes)
     val encoded = BoundedRecords.Ros2Flexiv_msgsMsgRobotStates.CODEC.encode(value)
     val output = StringBuilder()

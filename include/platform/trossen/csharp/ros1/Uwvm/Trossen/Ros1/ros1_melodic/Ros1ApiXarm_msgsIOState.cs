@@ -1,101 +1,18 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Trossen.Ros1.ros1_melodic
 {
-    /**
-     * @brief Complete typed ROS 1 xarm_msgs/IOState message interface.
-     * @details Concrete component records preserve the complete original schema.
-     * An Owner/ActionSet is explicitly acquired and closed by the caller. Each
-     * operation requires its independently granted role and qualified native
-     * identity. This facade neither invents identities nor registers endpoints.
-     */
+    /// <summary>Complete typed roles with explicit independent grants and caller-owned endpoints.</summary>
     public static class Ros1ApiXarm_msgsIOState
     {
-
-        /**
-         * @brief Publish one complete typed topic value exactly once.
-         * @param owner Borrowed live capability with this exact operation's independent grant.
-         * @param value Borrowed stable complete record.
-         * @return Owned primary-status report; no publish is replayed.
-         * @details All inputs are borrowed for this synchronous call. Returned
-         * values/bytes are owned. Serialize retained owners; no hidden acquisition,
-         * retry, resize, callback or permission expansion occurs. Local invalid
-         * values/wire yield22 while original transport errno/length facts remain.
-         */
-        public static Owner.Reply Publish(Owner owner, Ros1Xarm_msgsIOState value)
-        {
-            if(owner == null)
-            {
-                return Owner.Reply.Failure(22);
-            }
-            try
-            {
-                return Owner.Reply.Failure(owner.Publish(Ros1Xarm_msgsIOState.Encode(value)));
-            }
-            catch(ArgumentException invalid)
-            {
-                return Owner.Reply.Failure(22);
-            }
-        }
-
-        /**
-         * @brief Activate the caller's retained subscription owner.
-         * @param owner Borrowed live capability with this exact operation's independent grant.
-         * @return Actual activation errno; owner remains caller-owned.
-         * @details All inputs are borrowed for this synchronous call. Returned
-         * values/bytes are owned. Serialize retained owners; no hidden acquisition,
-         * retry, resize, callback or permission expansion occurs. Local invalid
-         * values/wire yield22 while original transport errno/length facts remain.
-         */
-        public static uint Subscribe(Owner owner)
-        {
-            return owner == null ? 22 : owner.Activate(false);
-        }
-
-        /**
-         * @brief Read one complete typed topic sample without a hidden polling loop.
-         * @param owner Borrowed live capability with this exact operation's independent grant.
-         * @return Owned typed sample on success, or original error/length observations.
-         * @details All inputs are borrowed for this synchronous call. Returned
-         * values/bytes are owned. Serialize retained owners; no hidden acquisition,
-         * retry, resize, callback or permission expansion occurs. Local invalid
-         * values/wire yield22 while original transport errno/length facts remain.
-         */
-        public static Owner.Value<Ros1Xarm_msgsIOState> Read(Owner owner)
-        {
-            if(owner == null)
-            {
-                return new Owner.Value<Ros1Xarm_msgsIOState>(Owner.Reply.Failure(22));
-            }
-            Owner.Reply reply = owner.Poll(Ros1Xarm_msgsIOState.MAX_WIRE_BYTES);
-            Owner.Value<Ros1Xarm_msgsIOState> result = new Owner.Value<Ros1Xarm_msgsIOState>(reply);
-            if(reply.Status == 0)
-            {
-                try
-                {
-                    Ros1Xarm_msgsIOState next = Ros1Xarm_msgsIOState.Decode(reply.Bytes);
-                    result.Data = next;
-                }
-                catch(ArgumentException invalid)
-                {
-                    reply.Status = 22;
-                }
-            }
-            return result;
-        }
-
-        /**
-         * @brief Own a complete payload suffix after a checked correlation prefix.
-         * @param bytes Borrowed complete response bytes.
-         * @param prefix Validated prefix byte count.
-         * @return Newly owned exact typed-body bytes; invalid extents throw.
-         */
-        private static byte[] Slice(byte[] bytes, int prefix)
-        {
-            byte[] body = new byte[bytes.Length - prefix];
-            Array.Copy(bytes, prefix, body, 0, body.Length);
-            return body;
-        }
+        public static readonly ICodec<Ros1Xarm_msgsIOState> Codec =
+            new RecordCodec<Ros1Xarm_msgsIOState>(Ros1Xarm_msgsIOState.Encode, Ros1Xarm_msgsIOState.Decode);
+        /// <summary>Create a publisher with an explicitly granted alias.</summary>
+        public static Publisher<Ros1Xarm_msgsIOState> CreatePublisher(Node node, string alias) => node.CreatePublisher(Codec, alias);
+        /// <summary>Create a bounded subscription; the caller owns and closes its handle.</summary>
+        public static Subscription<Ros1Xarm_msgsIOState> CreateSubscription(Node node, string alias, Action<Ros1Xarm_msgsIOState> callback) =>
+            node.CreateSubscription(Codec, alias, Ros1Xarm_msgsIOState.MAX_WIRE_BYTES, callback);
     }
 }

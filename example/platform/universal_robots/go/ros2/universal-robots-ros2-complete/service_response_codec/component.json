@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4896",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "807947762d558107875e847dc774d0bbbb113e276e1dc68d720f0521624afcac"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "9cd4216ecd88f6b45d58b82dcf191db4552212314a4671e297b74ea070127f86"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/go/universal-robots-ros2-complete.json",
+      "sha256": "ab4a7a7e778231d53fc340dd862c2c7c8621ac3a9ccac119bbdfc9ea479ceaad"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-complete.ir.json",
+      "sha256": "2f15027c9e89635ac60d730630402b5f7da90172e1284c43d678e7a4cb1c3123"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "34019c63555d8180b5615fcbd554f1a054485cff10f7d0dd7e658ec9e67a7c13"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_dashboard_msgs/srv/AddToLog_Response",
+        "bytes": 5,
+        "wire_hex": "0000000000"
+      }
+    }
+  ]
+}

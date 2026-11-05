@@ -1,0 +1,13 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "abb/lua/ros1/records",
+      "file": "include/platform/abb/lua/ros1/records.lua",
+      "sha256": "0527229298b8e6a3204bbb38c3712aa7ddd47f0a18a92a41504f025082fee038"
+    }
+  ],
+  "default_authority": []
+}

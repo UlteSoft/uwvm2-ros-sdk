@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-402",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "16472964cc55f93269dfc90fd1c7540100d56d17686c9ef6f0da7173101b27ee"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "bbc4921be75ba61a331a2856b3c2a5cd479d9a8839422d20a8b64ea07ffa47c9"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "d7792c57305e055e615a9873f2733974eca025e66ebb8ee9cb8a6bfaa515d832"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/catalog.json",
+      "sha256": "6c043dccd0d008dc7cbae8bf683d0356f3a701a9ff65c8f7112e4885d49108e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/uwvm_spot_bridge/srv/Lease.srv",
+      "sha256": "abb99eebed1d136025a0cec9703cd4400d082a9ea932bb6278f2cd4e306b4cdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "22\n"
+    }
+  ]
+}

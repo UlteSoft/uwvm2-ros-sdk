@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "py",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/py/ros1/flexiv_ros1_noetic_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/flexiv/bundles/py/ros1_noetic.json"
+}

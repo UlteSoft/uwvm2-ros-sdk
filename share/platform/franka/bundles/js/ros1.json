@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "std",
+      "file": "src/language/js/modules/stdio.mjs",
+      "sha256": "eb32c30a9baa4489fcf6e65edad746abab32a9a1b2a613f6bd0a7a6a42ab5c1d"
+    },
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "franka/js/ros1/franka-ros1-complete/bounded_interfaces.mjs",
+      "file": "include/platform/franka/js/ros1/franka-ros1-complete/bounded_interfaces.mjs",
+      "sha256": "d5b8f2b009b289075344d2ff4f2e97c25b89d835b0cf7cabbaa912f8aed9d4a2"
+    },
+    {
+      "name": "franka/js/ros1/franka-ros1-complete/bounded_records.mjs",
+      "file": "include/platform/franka/js/ros1/franka-ros1-complete/bounded_records.mjs",
+      "sha256": "6941baf30deca5e5bed1061f1d59651fbce3c10e1a1669569ec20ee84c62c2a8"
+    }
+  ],
+  "default_authority": []
+}

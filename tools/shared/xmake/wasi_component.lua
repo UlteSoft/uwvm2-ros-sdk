@@ -32,6 +32,7 @@ rule("uwvm.wasi-component.v1")
     end)
     on_test(function(target, opt)
         import("core.base.json")
+        import("core.project.config")
         import("lib.detect.find_program")
         local cfg = target:data("uwvm.wasi-component.v1")
         local python = import("python_runtime", {rootdir = path.join(cfg.sdk_root, "tools/xmake"), anonymous = true}).resolve()
@@ -46,8 +47,29 @@ rule("uwvm.wasi-component.v1")
         local stdout, stderr = path.join(output, "suite.stdout"), path.join(output, "suite.stderr")
         local argv = {path.join(cfg.sdk_root, "tools/shared/python/wasi_component.py"),
             "--sdk-root", path.absolute(cfg.sdk_root), "--manifest", path.join(target:scriptdir(), cfg.manifest),
-            "--wasm", path.absolute(target:targetfile()), "--output", output}
-        local code = os.execv(python, argv, {try = true, curdir = target:scriptdir(), timeout = 300000,
+            "--wasm", path.absolute(target:targetfile()), "--output", output,
+            "--architecture", target:arch(),
+            "--exception-profile", target:values("ros.sdk.exception_profile") or config.get("ros-exceptions") or "noeh"}
+        local manifest = json.loadfile(path.join(target:scriptdir(), cfg.manifest))
+        if manifest.preload_modules then
+            assert(#manifest.preload_modules > 0, "Declare a nonempty explicit preload module set")
+            table.insert(argv, "--module-graph")
+            table.insert(argv, artifacts.metadatafile(target))
+        end
+        local timeout = 300000
+        local selected = os.getenv("UWVM_ROS_RUNTIME_TEST_DEPLOYMENT")
+        if selected then
+            local deployment = json.loadfile(selected)
+            if deployment.format == "uwvm-sdk-local-finite-wasi-test-v1"
+                or deployment.format == "uwvm-sdk-local-finite-ros-test-v1" then
+                local seconds = deployment.limits and deployment.limits.timeout_seconds
+                assert(type(seconds) == "number" and seconds >= 1 and seconds <= 3600 and seconds == math.floor(seconds),
+                    "Select a finite local test wall deadline")
+                local manifest = json.loadfile(path.join(target:scriptdir(), cfg.manifest))
+                timeout = (seconds * #manifest.cases + 60) * 1000
+            end
+        end
+        local code = os.execv(python, argv, {try = true, curdir = target:scriptdir(), timeout = timeout,
             stdout = stdout, stderr = stderr})
         json.savefile(path.join(output, "command.json"), {format = "uwvm-sdk-guest-test-command-v1",
             argv = argv, executable = python, cwd = target:scriptdir(), pwd = os.getenv("PWD"),

@@ -67,7 +67,7 @@
   "distribution_source": "Exact upstream README recommends Ubuntu22.04/ROS2Humble; SDK source adapter remains incomplete/unqualified for this complete task.",
   "prior_candidates_note": "001/002 used available legacy SDK Jazzy declaration; neither was qualified and both remain historical.003 selects the manufacturer-recommended original distribution explicitly.",
   "source_bindings": "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json",
-  "source_bindings_sha256": "f37058185ae792309dd644ee692b5be25643e29311c5b1177ee0335764d2f8d3",
+  "source_bindings_sha256": "464ac5c8b9ef5cbc08c9ac2017f2b9fc274e60dbd8058ab184c1d8cb8dc37c5d",
   "selection_header": "include/platform/unitree/cpp/ros2/go2_stand/selection.hpp",
   "selection_header_sha256": "b707d98a0e293c3921305f3bce88e57e006b9bfbc5297d77caf3b0ec0b42fdf6",
   "original_task_body_unchanged": false,

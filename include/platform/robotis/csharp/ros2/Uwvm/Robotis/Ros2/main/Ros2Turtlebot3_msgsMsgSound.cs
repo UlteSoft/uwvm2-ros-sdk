@@ -1,5 +1,5 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Robotis.Ros2.main
 {
@@ -54,7 +54,7 @@ namespace Uwvm.Robotis.Ros2.main
          */
         public static byte[] Encode(Ros2Turtlebot3_msgsMsgSound value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -71,7 +71,7 @@ namespace Uwvm.Robotis.Ros2.main
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Turtlebot3_msgsMsgSound value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -83,7 +83,7 @@ namespace Uwvm.Robotis.Ros2.main
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Turtlebot3_msgsMsgSound value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Turtlebot3_msgsMsgSound value)
         {
             if(value == null)
             {
@@ -103,7 +103,7 @@ namespace Uwvm.Robotis.Ros2.main
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Turtlebot3_msgsMsgSound ReadFields(Wire.Reader wire)
+        internal static Ros2Turtlebot3_msgsMsgSound ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Turtlebot3_msgsMsgSound value = new Ros2Turtlebot3_msgsMsgSound();

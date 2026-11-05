@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "abb/lua/records",
+      "file": "include/platform/abb/lua/ros2/records.lua",
+      "sha256": "d57d772c099f5e9a2b96abea01721071eda6ad5afadb710c395c1bff942d6bba"
+    },
+    {
+      "name": "abb/lua/observation",
+      "file": "include/platform/abb/lua/observation.lua",
+      "sha256": "c4c230ab417ce37f1b041f3ba2d9dba3ae74622d261c2ca1cf5e7450ce17f522"
+    }
+  ],
+  "default_authority": []
+}

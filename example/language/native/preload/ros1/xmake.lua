@@ -39,6 +39,7 @@ if installation_error then
 	return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 set_arch(get_config("arch") or "wasm32")
@@ -100,4 +101,5 @@ add_files("main.zig")
 add_deps("io", "algorithm", "ros_comm")
 add_ldflags("-Wl,--allow-undefined", { force = true })
 set_ros_run_config(path.join(os.scriptdir(), "deployment.json"))
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

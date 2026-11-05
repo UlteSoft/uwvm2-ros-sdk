@@ -1,0 +1,150 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "yaskawa-native-authority-5246",
+  "ros_namespace": "ros2",
+  "test_scope": "Real source-language command with exact namespace-only denial, unchanged unwritten size sentinel and no cleanup/poll effects; missing alias exits before acquisition. No native positive qualification inferred.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/.gitignore",
+      "sha256": "a8b0c3df4bdc42985e5ec2ac61ad10e263c3b02c9d63c8683dc0d65ef1b096b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/dub.json",
+      "sha256": "a557ae11b49d725331432e2af4af6d5efe70ffc5730b6dbc17b30f5e5b3e939c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/native_command.d",
+      "sha256": "e9e03df1146dcaa1ee54c4b3bca771f49b6d712e07f185c5753d8f8dd6234ffd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/package.d",
+      "sha256": "20ef2bc37f354d54ae6df0e34902ef41b69bdc5ddd80fc83733db3ab2572e2fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/raw.d",
+      "sha256": "a8d59877978bc6abca1109ebe2e52ce9f2d603997c64f5cccd386ed364841992"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/typed.d",
+      "sha256": "953f6ae1a896f1a1801ce026633f471876310921aeee980a6c9c996dfd774c73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/wire.d",
+      "sha256": "7809b9ddeab64afaf06d50a758319ea8692c4153baf8b32526a94d6166b2219c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/wire.d",
+      "sha256": "9883d18de0f236d6fad8c68b75bd4a633a1d1e30452170b71672281265e0e6e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/d/ros2/observation.d",
+      "sha256": "74ac3f688bf40c4b984c2b60d9e147057c6006ee30e4b53a524a4debb5fa9575"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/d/ros2/records.d",
+      "sha256": "1d762928d8f492e81ee39ebf94ac776d6fa501b8323ed7b55341393b31c5ad4f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/d.json",
+      "sha256": "a5ef3b4b36ab965f3cef2959cc1a3e382016bb379a349bed543bf27dac12d76a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/observation.d",
+      "sha256": "24122e2fc2057c6419b423bca5813cc145528166ad741c83b46ac8337f9513a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/wire.d",
+      "sha256": "5c9fd175947be05f6f16edf61a2456492c5c06e4a42fc7e30bf615398290319a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/yaskawa/provider.lua",
+      "sha256": "af10d01cfddf57d742d5a98ba7e70da14463e2cb69be510d94e8f823b09152cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.d",
+      "sha256": "9ff296721a0f9123fe43627e5bf0e37662a6f6236323120191d2468a601b698c"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b8a99f9cc4b366494eba9cbe1aec55a91005793c2c090071b2146633d4f01505"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

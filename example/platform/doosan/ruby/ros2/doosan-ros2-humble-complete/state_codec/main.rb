@@ -3,6 +3,6 @@
 # @details Runs real Ruby objects and codecs; fixture defaults are not observations.
 require "doosan/ruby/ros2/doosan-ros2-humble-complete/records"
 codec = Uwvm::DoosanDoosanRos2HumbleComplete::Ros2Dsr_msgs2MsgRobotState
-bytes = codec.new.encode
-raise "complete canonical record changed" unless codec.decode(bytes).encode == bytes
+bytes = codec.encode(codec.new)
+raise "complete canonical record changed" unless codec.encode(codec.decode(bytes)) == bytes
 puts "{\"type\":\"dsr_msgs2/msg/RobotState\",\"bytes\":#{bytes.bytesize},\"wire_hex\":\"#{bytes.unpack1('H*')}\"}"

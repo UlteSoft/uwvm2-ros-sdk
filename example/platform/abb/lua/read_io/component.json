@@ -1,0 +1,111 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-authority-101",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with complete ABB bindings: deny resource acquisition, reject missing arguments and reject empty IO signals before acquisition. Positive native transport remains a separate deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b9f74f1c29b568d530359e0e52c44f206606e74e2eea5b4ddc7a532bd6688919"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "00839779fee60f9532a1c767051ba81a4fcf898d2c580d398c8a3b6f281332db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/lua/observation.lua",
+      "sha256": "c4c230ab417ce37f1b041f3ba2d9dba3ae74622d261c2ca1cf5e7450ce17f522"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/lua/ros2/records.lua",
+      "sha256": "d57d772c099f5e9a2b96abea01721071eda6ad5afadb710c395c1bff942d6bba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/lua.json",
+      "sha256": "443c0207c0a09ea9707d5f7c2ac45c277ed656bbd589d2427f074aa3f0703eff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/language/lua/ros2/bundle.json",
+      "sha256": "eaf9b37ebb42a52ac6727f3d0aeccdeb11e2ac1a6fae19e61cb19d3d3d540cee"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied",
+        "read-only-input"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-arguments",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "empty-signal-before-acquisition",
+      "arguments": [
+        "sdk-test-denied",
+        ""
+      ],
+      "expected_exit": 22,
+      "expected_json": {
+        "primary": 22,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    }
+  ]
+}

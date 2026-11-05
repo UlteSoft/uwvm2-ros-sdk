@@ -1,0 +1,150 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4665",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with base WASI and ROS namespace but no resource authority. Assert denied acquisition and complete empty result facts; reject missing alias before acquisition. Native positive transport requires a separate explicit integration deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3412d905208773de7ce9511fb1f5cc39d35c75c379514f806456b9d9453aef46"
+    },
+    {
+      "scope": "example",
+      "path": "main.d",
+      "sha256": "be8c985ca8c70b0303032faf9c24d0331dac523174d2a70d860153f4b3fbb48f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/.gitignore",
+      "sha256": "a8b0c3df4bdc42985e5ec2ac61ad10e263c3b02c9d63c8683dc0d65ef1b096b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/dub.json",
+      "sha256": "a557ae11b49d725331432e2af4af6d5efe70ffc5730b6dbc17b30f5e5b3e939c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/native_command.d",
+      "sha256": "e9e03df1146dcaa1ee54c4b3bca771f49b6d712e07f185c5753d8f8dd6234ffd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/package.d",
+      "sha256": "20ef2bc37f354d54ae6df0e34902ef41b69bdc5ddd80fc83733db3ab2572e2fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/raw.d",
+      "sha256": "a8d59877978bc6abca1109ebe2e52ce9f2d603997c64f5cccd386ed364841992"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/typed.d",
+      "sha256": "953f6ae1a896f1a1801ce026633f471876310921aeee980a6c9c996dfd774c73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/wire.d",
+      "sha256": "7809b9ddeab64afaf06d50a758319ea8692c4153baf8b32526a94d6166b2219c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/wire.d",
+      "sha256": "9883d18de0f236d6fad8c68b75bd4a633a1d1e30452170b71672281265e0e6e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/observation.d",
+      "sha256": "16b7dfb3d72992603fa7caea551c868b712eeb1a5c332cc21e25f70b66873cd6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/ros1/observation.d",
+      "sha256": "1f6aa5f2d3d6235462f048075c244c68af5ffe803f960c1ac09147f8c8f49887"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/ros1/records.d",
+      "sha256": "264f5b8ec84fd76654a8c8f8e3d73f67d8400f0bc9c3c05bbb4de5ba3b5e21b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/ros2/observation.d",
+      "sha256": "688bfe2b9687189329d5612a38edcf49df2b90965cd9cd625bdf03a2cdff74ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/ros2/records.d",
+      "sha256": "e6619ec54fa1a017cc93e4b92797f7beca9d6efae3df9d7b857d28b1c5480f07"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/d/wire.d",
+      "sha256": "ec1a3ff19dda2293f5e2e1388dcd9259093185c851da66052ba77aa00f326eb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/native_languages.lua",
+      "sha256": "433f0fb750e5496d2463eb430fd069c9b417693d83b7baeced706c598011a5d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -5,6 +5,13 @@
  * Empty Service/Action components use a C layout dummy that is never a wire field. */
 #ifndef UWVM_ROS_BOUNDED_RECORDS_H
 #define UWVM_ROS_BOUNDED_RECORDS_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <stdint.h>
 #include <stddef.h>
 #include <float.h>
@@ -127,6 +134,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Duration_valid(roswa
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Duration_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Duration const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -138,6 +146,7 @@ static inline void roswasmc_bounded_2_builtin_interfaces_msg_Duration_write_fiel
                                                                                    unsigned char* p,
                                                                                    size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->sec, 4);
     *offset += 4;
     uwvm_bounded_put(p + *offset, (uint64_t)value->nanosec, 4);
@@ -150,6 +159,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Duration_read_fields
                                                                                  size_t* offset,
                                                                                  roswasmc_bounded_2_builtin_interfaces_msg_Duration* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     {
@@ -191,7 +201,7 @@ static inline uint32_t roswasmc_bounded_2_builtin_interfaces_msg_Duration_encode
 static inline uint32_t
     roswasmc_bounded_2_builtin_interfaces_msg_Duration_decode(void const* input, size_t length, roswasmc_bounded_2_builtin_interfaces_msg_Duration* value)
 {
-    roswasmc_bounded_2_builtin_interfaces_msg_Duration next = {0};
+    roswasmc_bounded_2_builtin_interfaces_msg_Duration next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -227,6 +237,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Time_valid(roswasmc_
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -237,6 +248,7 @@ static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(ro
 static inline void
     roswasmc_bounded_2_builtin_interfaces_msg_Time_write_fields(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value, unsigned char* p, size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->sec, 4);
     *offset += 4;
     uwvm_bounded_put(p + *offset, (uint64_t)value->nanosec, 4);
@@ -249,6 +261,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Time_read_fields(uns
                                                                              size_t* offset,
                                                                              roswasmc_bounded_2_builtin_interfaces_msg_Time* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     {
@@ -290,7 +303,7 @@ static inline uint32_t roswasmc_bounded_2_builtin_interfaces_msg_Time_encode(ros
 static inline uint32_t
     roswasmc_bounded_2_builtin_interfaces_msg_Time_decode(void const* input, size_t length, roswasmc_bounded_2_builtin_interfaces_msg_Time* value)
 {
-    roswasmc_bounded_2_builtin_interfaces_msg_Time next = {0};
+    roswasmc_bounded_2_builtin_interfaces_msg_Time next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -335,6 +348,7 @@ static inline int roswasmc_bounded_2_std_msgs_msg_Header_valid(roswasmc_bounded_
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_std_msgs_msg_Header_wire_size(roswasmc_bounded_2_std_msgs_msg_Header const* value)
 {
+    (void)value;
     size_t n = 0;
     n += roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(&value->stamp);
     n += 4 + value->frame_id.size;
@@ -344,6 +358,7 @@ static inline size_t roswasmc_bounded_2_std_msgs_msg_Header_wire_size(roswasmc_b
 /** @brief Internal writer enters only after full validation, capacity and overlap checks. */
 static inline void roswasmc_bounded_2_std_msgs_msg_Header_write_fields(roswasmc_bounded_2_std_msgs_msg_Header const* value, unsigned char* p, size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     roswasmc_bounded_2_builtin_interfaces_msg_Time_write_fields(&value->stamp, p, offset);
     uwvm_bounded_put(p + *offset, value->frame_id.size, 4);
     *offset += 4;
@@ -355,6 +370,7 @@ static inline void roswasmc_bounded_2_std_msgs_msg_Header_write_fields(roswasmc_
 static inline int
     roswasmc_bounded_2_std_msgs_msg_Header_read_fields(unsigned char const* p, size_t n, size_t* offset, roswasmc_bounded_2_std_msgs_msg_Header* value)
 {
+    (void)p; (void)n; (void)offset;
     if(!roswasmc_bounded_2_builtin_interfaces_msg_Time_read_fields(p, n, offset, &value->stamp))
         return 0;
     if(*offset > n || n - *offset < 4)
@@ -389,7 +405,7 @@ static inline uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_std_msgs_msg_Header_decode(void const* input, size_t length, roswasmc_bounded_2_std_msgs_msg_Header* value)
 {
-    roswasmc_bounded_2_std_msgs_msg_Header next = {0};
+    roswasmc_bounded_2_std_msgs_msg_Header next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -436,6 +452,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState_wire_size(roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += roswasmc_bounded_2_std_msgs_msg_Header_wire_size(&value->header);
     {
@@ -454,6 +471,7 @@ static inline void roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchS
     unsigned char* p,
     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     roswasmc_bounded_2_std_msgs_msg_Header_write_fields(&value->header, p, offset);
     {
         size_t i;
@@ -472,6 +490,7 @@ static inline int
                                                                                   size_t* offset,
                                                                                   roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState* value)
 {
+    (void)p; (void)n; (void)offset;
     if(!roswasmc_bounded_2_std_msgs_msg_Header_read_fields(p, n, offset, &value->header))
         return 0;
     {
@@ -517,7 +536,7 @@ static inline uint32_t
                                                                              size_t length,
                                                                              roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState* value)
 {
-    roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState next = {0};
+    roswasmc_bounded_2_interbotix_footswitch_msgs_msg_FootswitchState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 15u || length > 143u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -575,7 +594,7 @@ typedef struct roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Reques
 static inline uint32_t
     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request_default(roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request* value)
 {
-    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request next = {0};
+    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!value)
         return UWVM_BOUNDED_INVALID;
     next.light_state = UINT32_C(0);
@@ -596,6 +615,7 @@ static inline int
 static inline size_t roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request_wire_size(
     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     return n;
@@ -607,6 +627,7 @@ static inline void roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Re
     unsigned char* p,
     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->light_state, 4);
     *offset += 4;
 }
@@ -618,6 +639,7 @@ static inline int
                                                                                    size_t* offset,
                                                                                    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     {
@@ -655,7 +677,7 @@ static inline uint32_t
                                                                               size_t length,
                                                                               roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request* value)
 {
-    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request next = {0};
+    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 4u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -703,6 +725,7 @@ static inline int
 static inline size_t roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response_wire_size(
     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 4 + value->message.size;
@@ -715,6 +738,7 @@ static inline void roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Re
     unsigned char* p,
     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->success, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, value->message.size, 4);
@@ -730,6 +754,7 @@ static inline int
                                                                                     size_t* offset,
                                                                                     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -775,7 +800,7 @@ static inline uint32_t
                                                                                size_t length,
                                                                                roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response* value)
 {
-    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response next = {0};
+    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 133u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -820,6 +845,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request_wire_size(roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->data.size;
     return n;
@@ -831,6 +857,7 @@ static inline void
                                                                                 unsigned char* p,
                                                                                 size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->data.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->data.data, value->data.size);
@@ -844,6 +871,7 @@ static inline int
                                                                                size_t* offset,
                                                                                roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->data.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -882,7 +910,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request* value)
 {
-    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request next = {0};
+    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 132u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -930,6 +958,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response_wire_size(roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 4 + value->message.size;
@@ -942,6 +971,7 @@ static inline void
                                                                                  unsigned char* p,
                                                                                  size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->success, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, value->message.size, 4);
@@ -957,6 +987,7 @@ static inline int
                                                                                 size_t* offset,
                                                                                 roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -1002,7 +1033,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response* value)
 {
-    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response next = {0};
+    roswasmc_bounded_2_interbotix_slate_msgs_srv_SetString_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 133u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1104,6 +1135,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_valid(roswasm
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -1125,6 +1157,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_write_fields
                                                                                  unsigned char* p,
                                                                                  size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->ee_x_cmd, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, (uint64_t)value->ee_y_cmd, 1);
@@ -1157,6 +1190,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_read_fields(u
                                                                                size_t* offset,
                                                                                roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -1268,7 +1302,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_encode(r
 static inline uint32_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy_decode(void const* input, size_t length, roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_ArmJoy next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 12u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1396,6 +1430,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_valid(roswasm
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -1422,6 +1457,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_write_fields
                                                                                  unsigned char* p,
                                                                                  size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->world_x_cmd, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, (uint64_t)value->world_y_cmd, 1);
@@ -1464,6 +1500,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_read_fields(u
                                                                                size_t* offset,
                                                                                roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -1610,7 +1647,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_encode(r
 static inline uint32_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy_decode(void const* input, size_t length, roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_HexJoy next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 17u || length > 17u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1675,6 +1712,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand_va
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->name.size;
     n += 4;
@@ -1696,6 +1734,7 @@ static inline void
                                                                              unsigned char* p,
                                                                              size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->name.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->name.data, value->name.size);
@@ -1722,6 +1761,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand_re
                                                                                           size_t* offset,
                                                                                           roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->name.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -1778,7 +1818,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupComma
                                                                                           size_t length,
                                                                                           roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointGroupCommand next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 392u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1828,6 +1868,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand_v
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->name.size;
     n += 4;
@@ -1840,6 +1881,7 @@ static inline void
                                                                               unsigned char* p,
                                                                               size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->name.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->name.data, value->name.size);
@@ -1858,6 +1900,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand_r
                                                                                            size_t* offset,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->name.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -1902,7 +1945,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleComm
                                                                                            size_t length,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointSingleCommand next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1975,6 +2018,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_valid(ros
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     if(value->names.size > 64u)
@@ -2004,6 +2048,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_write_fi
                                                                                      unsigned char* p,
                                                                                      size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->names.size, 4);
     *offset += 4;
     {
@@ -2034,6 +2079,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_read_fiel
                                                                                    size_t* offset,
                                                                                    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->names.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -2100,7 +2146,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_enco
 static inline uint32_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps_decode(void const* input, size_t length, roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTemps next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8712u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2227,6 +2273,7 @@ static inline int roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint_va
 static inline size_t
     roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint_wire_size(roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     if(value->positions.size > 16u)
@@ -2278,6 +2325,7 @@ static inline void
                                                                              unsigned char* p,
                                                                              size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->positions.size, 4);
     *offset += 4;
     {
@@ -2343,6 +2391,7 @@ static inline int roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint_re
                                                                                           size_t* offset,
                                                                                           roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->positions.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -2450,7 +2499,7 @@ static inline uint32_t roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoi
                                                                                           size_t length,
                                                                                           roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint* value)
 {
-    roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint next = {0};
+    roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectoryPoint next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 536u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2529,6 +2578,7 @@ static inline int roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory_valid(r
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory_wire_size(roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory const* value)
 {
+    (void)value;
     size_t n = 0;
     n += roswasmc_bounded_2_std_msgs_msg_Header_wire_size(&value->header);
     n += 4;
@@ -2559,6 +2609,7 @@ static inline void roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory_write_
                                                                                        unsigned char* p,
                                                                                        size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     roswasmc_bounded_2_std_msgs_msg_Header_write_fields(&value->header, p, offset);
     uwvm_bounded_put(p + *offset, value->joint_names.size, 4);
     *offset += 4;
@@ -2589,6 +2640,7 @@ static inline int roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory_read_fi
                                                                                      size_t* offset,
                                                                                      roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory* value)
 {
+    (void)p; (void)n; (void)offset;
     if(!roswasmc_bounded_2_std_msgs_msg_Header_read_fields(p, n, offset, &value->header))
         return 0;
     if(*offset > n || n - *offset < 4)
@@ -2653,7 +2705,7 @@ static inline uint32_t roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory* value)
 {
-    roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory next = {0};
+    roswasmc_bounded_2_trajectory_msgs_msg_JointTrajectory next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 20u || length > 4404u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2712,6 +2764,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -2725,6 +2778,7 @@ static inline void
                                                                                   unsigned char* p,
                                                                                   size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -2743,6 +2797,7 @@ static inline int
                                                                                  size_t* offset,
                                                                                  roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -2791,7 +2846,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_JointTrajectoryCommand next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 28u || length > 4668u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2921,6 +2976,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_valid(ros
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -2946,6 +3002,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_write_fi
                                                                                      unsigned char* p,
                                                                                      size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     {
         uint64_t bits;
         uwvm_bounded_copy(&bits, &value->base_x_cmd, 8);
@@ -2994,6 +3051,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_read_fiel
                                                                                    size_t* offset,
                                                                                    roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 8)
         return 0;
     {
@@ -3133,7 +3191,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_enco
 static inline uint32_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy_decode(void const* input, size_t length, roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_LocobotJoy next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 30u || length > 30u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3189,6 +3247,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_valid(rosw
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -3202,6 +3261,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_write_fie
                                                                                     unsigned char* p,
                                                                                     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->pan_cmd, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, (uint64_t)value->tilt_cmd, 1);
@@ -3218,6 +3278,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_read_field
                                                                                   size_t* offset,
                                                                                   roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -3273,7 +3334,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_encod
 static inline uint32_t
     roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy_decode(void const* input, size_t length, roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_msg_TurretJoy next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 4u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3340,6 +3401,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request_v
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -3359,6 +3421,7 @@ static inline void
                                                                               unsigned char* p,
                                                                               size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -3389,6 +3452,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request_r
                                                                                            size_t* offset,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -3483,7 +3547,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Requ
                                                                                            size_t length,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 36u || length > 292u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3517,6 +3581,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     return n;
 }
@@ -3527,6 +3592,7 @@ static inline void
                                                                                unsigned char* p,
                                                                                size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -3536,6 +3602,7 @@ static inline int
                                                                               size_t* offset,
                                                                               roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     return roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response_valid(value);
 }
 
@@ -3566,7 +3633,7 @@ static inline uint32_t
                                                                          size_t length,
                                                                          roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3647,6 +3714,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -3663,6 +3731,7 @@ static inline void
                                                                                   unsigned char* p,
                                                                                   size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -3692,6 +3761,7 @@ static inline int
                                                                                  size_t* offset,
                                                                                  roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -3768,7 +3838,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 536u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3803,6 +3873,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     return n;
 }
@@ -3813,6 +3884,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Resp
     unsigned char* p,
     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -3822,6 +3894,7 @@ static inline int
                                                                                   size_t* offset,
                                                                                   roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     return roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response_valid(value);
 }
 
@@ -3852,7 +3925,7 @@ static inline uint32_t
                                                                              size_t length,
                                                                              roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3912,6 +3985,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_valid
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -3925,6 +3999,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_writ
                                                                                          unsigned char* p,
                                                                                          size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -3945,6 +4020,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_read_
                                                                                        size_t* offset,
                                                                                        roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -4003,7 +4079,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 10u || length > 266u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4035,6 +4111,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response_vali
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     return n;
 }
@@ -4045,6 +4122,7 @@ static inline void
                                                                            unsigned char* p,
                                                                            size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -4053,6 +4131,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response_read
                                                                                         size_t* offset,
                                                                                         roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     return roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response_valid(value);
 }
 
@@ -4081,7 +4160,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response
                                                                                         size_t length,
                                                                                         roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4149,6 +4228,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -4163,6 +4243,7 @@ static inline void
                                                                                   unsigned char* p,
                                                                                   size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -4186,6 +4267,7 @@ static inline int
                                                                                  size_t* offset,
                                                                                  roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -4247,7 +4329,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 400u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4297,6 +4379,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     if(value->values.size > 16u)
@@ -4317,6 +4400,7 @@ static inline void roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Resp
     unsigned char* p,
     size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->values.size, 4);
     *offset += 4;
     {
@@ -4336,6 +4420,7 @@ static inline int
                                                                                   size_t* offset,
                                                                                   roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->values.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -4385,7 +4470,7 @@ static inline uint32_t
                                                                              size_t length,
                                                                              roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 68u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4438,6 +4523,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request_va
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -4450,6 +4536,7 @@ static inline void
                                                                              unsigned char* p,
                                                                              size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -4466,6 +4553,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request_re
                                                                                           size_t* offset,
                                                                                           roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -4511,7 +4599,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Reque
                                                                                           size_t length,
                                                                                           roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 264u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4744,6 +4832,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response_v
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->mode.size;
     n += 4 + value->profile_type.size;
@@ -4837,6 +4926,7 @@ static inline void
                                                                               unsigned char* p,
                                                                               size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->mode.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->mode.data, value->mode.size);
@@ -4955,6 +5045,7 @@ static inline int roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response_r
                                                                                            size_t* offset,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->mode.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -5161,7 +5252,7 @@ static inline uint32_t roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Respo
                                                                                            size_t length,
                                                                                            roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 42u || length > 18474u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5220,6 +5311,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4 + value->cmd_type.size;
     n += 4 + value->name.size;
@@ -5233,6 +5325,7 @@ static inline void
                                                                                 unsigned char* p,
                                                                                 size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, value->cmd_type.size, 4);
     *offset += 4;
     uwvm_bounded_copy(p + *offset, value->cmd_type.data, value->cmd_type.size);
@@ -5252,6 +5345,7 @@ static inline int
                                                                                size_t* offset,
                                                                                roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 4)
         return 0;
     value->cmd_type.size = (uint32_t)uwvm_bounded_get(p + *offset, 4);
@@ -5305,7 +5399,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 9u || length > 265u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5340,6 +5434,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response_wire_size(roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     return n;
 }
@@ -5350,6 +5445,7 @@ static inline void
                                                                                  unsigned char* p,
                                                                                  size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
 }
 
 /** @brief Internal reader fills only the public decoder temporary and checks every cursor move. */
@@ -5359,6 +5455,7 @@ static inline int
                                                                                 size_t* offset,
                                                                                 roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response* value)
 {
+    (void)p; (void)n; (void)offset;
     return roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response_valid(value);
 }
 
@@ -5389,7 +5486,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response* value)
 {
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "moonbit",
+  "profile": "ros2_humble_v2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/moonbit/ros2/flexiv-ros2-humble-v2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "main_package": "flexiv/command",
+      "packages": [
+        {
+          "name": "uwvm/ros/wasi_arguments",
+          "alias": "wasi_args",
+          "sources": [
+            "include/platform/ros/moonbit/wasi_arguments/arguments.mbt"
+          ],
+          "dependencies": [
+            "utf8"
+          ]
+        },
+        {
+          "name": "uwvm/ros/wire",
+          "alias": "wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ],
+          "dependencies": [
+            "utf8"
+          ]
+        },
+        {
+          "name": "flexiv/ros2_humble_v2",
+          "alias": "records",
+          "sources": [
+            "include/platform/flexiv/moonbit/ros2/flexiv-ros2-humble-v2-complete/bounded_records.mbt"
+          ],
+          "dependencies": [
+            "wire",
+            "float",
+            "utf8"
+          ]
+        }
+      ],
+      "entry_dependencies": [
+        "records",
+        "float",
+        "wasi_args",
+        "hex"
+      ]
+    }
+  }
+}

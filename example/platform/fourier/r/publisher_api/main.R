@@ -1,10 +1,12 @@
 # @file main.R
 # @brief Exercise typed publisher/refusal/fresh echo in the genuine GNU R port.
-# @details The R engine/base runtime is still a required unbuilt dependency.
+# @details All assertions execute in the installed genuine GNU R Wasm engine.
 # GroupValues is an authored bridge fixture, not a vendor-official API.
 .uwvm_exit <- 1L
 echo <- NULL
 echo_retired <- FALSE
+publisher <- NULL
+publisher_retired <- FALSE
 passed <- 0L
 current <- "bootstrap"
 check <- function(ok) if (!isTRUE(ok)) stop("required publisher API assertion failed")
@@ -44,16 +46,28 @@ tryCatch({
     report(current, facts$primary == 0 && facts$publish_invoked && facts$publish_accepted &&
         facts$cleanup_present && facts$cleanup == 0 && !facts$response_present && facts$wire_hex == expected_hex)
     current <- "fresh-complete-typed-echo-inside-guest"
+    # Retain the owner for this separate transient-local delivery sample.
+    roundtrip_nonce <- paste0(nonce, "-roundtrip")
+    roundtrip <- codec$new(list(group = roundtrip_nonce, values = list(1.25, -2.5)))
+    opened <- UwvmRNative$invoke("capability_open", raw(8L), charToRaw("publish"), 0)
+    check(opened[[1L]] == 0 && is.raw(opened[[4L]]) && length(opened[[4L]]) == 8L)
+    publisher <- opened[[4L]]
+    check(UwvmRNative$invoke("topic_publish", publisher, codec$encode(roundtrip))[[1L]] == 0)
     for (attempt in seq_len(250L)) {
         frame <- UwvmRNative$invoke("event_poll", echo, raw(), codec$maximum_wire_bytes)
-        if (frame[[1L]] != 11 || attempt == 250L) break
+        if (frame[[1L]] == 0) {
+            check(identical(frame[[3L]], as.raw(roswasm_wire()$from_decimal(as.character(length(frame[[2L]]))))) && is.null(frame[[4L]]))
+            if (identical(frame[[2L]], codec$encode(roundtrip))) break
+            check(identical(frame[[2L]], codec$encode(message)))
+        } else check(frame[[1L]] == 11)
         check(UwvmRNative$pause_ms(20) == 0)
     }
-    check(frame[[1L]] == 0 && identical(frame[[3L]],
-        as.raw(UwvmRos$from_decimal(as.character(length(frame[[2L]]))))) && is.null(frame[[4L]]))
+    check(frame[[1L]] == 0)
     received <- codec$decode(frame[[2L]])
-    report(current, identical(frame[[2L]], codec$encode(message)) && identical(received$group, nonce) &&
+    report(current, identical(frame[[2L]], codec$encode(roundtrip)) && identical(received$group, roundtrip_nonce) &&
         identical(received$values, list(1.25, -2.5)))
+    publisher_retired <- TRUE
+    check(UwvmRNative$invoke("capability_close", publisher)[[1L]] == 0)
     echo_retired <- TRUE
     check(UwvmRNative$invoke("capability_close", echo)[[1L]] == 0 && passed == 6L)
     cat(paste0('{"format":"uwvm-sdk-publisher-api-summary-v1","language":"r","nonce":"', nonce,
@@ -67,6 +81,8 @@ tryCatch({
     flush(stdout())
     .uwvm_exit <<- 1L
 }, finally = {
+    if (!is.null(publisher) && !publisher_retired && UwvmRNative$invoke("capability_close", publisher)[[1L]] != 0)
+        .uwvm_exit <- 1L
     if (!is.null(echo) && !echo_retired && UwvmRNative$invoke("capability_close", echo)[[1L]] != 0)
         .uwvm_exit <- 1L
 })

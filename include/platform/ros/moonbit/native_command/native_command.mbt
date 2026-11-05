@@ -262,14 +262,16 @@ pub fn report(result : Outcome) -> Int32 {
   let clean = if result.cleanup_present { 1 } else { 0 }
   let called = if result.rpc_present { 1 } else { 0 }
   let present = if result.response_present { 1 } else { 0 }
-  let text = "{\"primary\":\{result.primary},"
-    + "\"cleanup\":\{result.cleanup},"
-    + "\"cleanup_present\":\{clean},"
-    + "\"rpc_status\":\{result.rpc},"
-    + "\"rpc_present\":\{called},"
-    + "\"response_present\":\{present},"
-    + "\"length\":\"\{result.length}\","
-    + "\"wire_hex\":\"\{wire}\"}\n"
+  let length_present = if result.length != 0xffffffffffffffffUL { 1 } else { 0 }
+  let text = "{\"primary\":\{result.primary}," +
+    "\"cleanup\":\{result.cleanup}," +
+    "\"cleanup_present\":\{clean}," +
+    "\"rpc_status\":\{result.rpc}," +
+    "\"rpc_present\":\{called}," +
+    "\"response_present\":\{present}," +
+    "\"length_present\":\{length_present}," +
+    "\"length\":\"\{result.length}\"," +
+    "\"wire_hex\":\"\{wire}\"}\n"
   let bytes = @utf8.encode(text[:])
   let mut code = if result.primary != 0U { result.primary } else { result.cleanup }
   let mut at = 0

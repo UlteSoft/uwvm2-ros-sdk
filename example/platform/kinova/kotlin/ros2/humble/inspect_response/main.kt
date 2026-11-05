@@ -1,7 +1,7 @@
 import org.uwvm.kinova.ros2humble.BoundedRecords
 /** @brief Execute genuine Kotlin application logic over the full selected JVM type. */
 fun main() {
-    val bytes = System.`in`.readNBytes(265)
+    val bytes = uwvm.ros.Wasi.readStdin(265)
     val value = BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_Result.CODEC.decode(bytes)
     val encoded = BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_Result.CODEC.encode(value)
     val output = StringBuilder()

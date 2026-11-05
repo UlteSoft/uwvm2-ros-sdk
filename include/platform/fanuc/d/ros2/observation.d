@@ -9,7 +9,7 @@
 /// @brief Observe complete original Fanuc ROS 2 messages in genuine D.
 /// @details All values own their bytes; successful acquisitions close exactly once.
 module fanuc.d.ros2.observation;
-public import ros.d.observation;
+public import native.d.observation;
 public import fanuc.d.ros2.records;
 
 /// @brief Observe every original fanuc_msgs/msg/ConnectionStatus field through one retained owner.

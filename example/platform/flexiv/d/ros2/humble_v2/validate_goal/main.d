@@ -2,8 +2,8 @@
 module main;
 import flexiv.ros2humblev2.records;
 import roswasm.wire : Arena;
-import core.stdc.stdio : fread, fwrite, ferror, stdin, stdout;
-extern(C) int main() @nogc nothrow {
+import native.d.wasi_stdio : fread, fwrite, ferror, stdin, stdout;
+extern(C) uint nl_entry() @nogc nothrow {
     static ubyte[9] input;
     static ubyte[9] output;
     align(16) static ubyte[1048576] region;

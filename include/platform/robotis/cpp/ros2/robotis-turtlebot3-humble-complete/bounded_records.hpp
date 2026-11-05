@@ -528,7 +528,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgQuaternion default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&value);
             return value;
         }
@@ -634,7 +634,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPose default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPose value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPose value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Pose_default(&value);
             return value;
         }
@@ -742,7 +742,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance_default(&value);
             return value;
         }
@@ -941,7 +941,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgTransform default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgTransform value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgTransform value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Transform_default(&value);
             return value;
         }
@@ -1140,7 +1140,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgTransformStamped default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgTransformStamped value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgTransformStamped value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_TransformStamped_default(&value);
             return value;
         }
@@ -1522,7 +1522,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Nav_msgsMsgOdometry default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Nav_msgsMsgOdometry value = {0};
+            uwvm_custom::Ros2Nav_msgsMsgOdometry value = {};
             (void)roswasmc_bounded_2_nav_msgs_msg_Odometry_default(&value);
             return value;
         }
@@ -1720,7 +1720,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Sensor_msgsMsgImu default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Sensor_msgsMsgImu value = {0};
+            uwvm_custom::Ros2Sensor_msgsMsgImu value = {};
             (void)roswasmc_bounded_2_sensor_msgs_msg_Imu_default(&value);
             return value;
         }

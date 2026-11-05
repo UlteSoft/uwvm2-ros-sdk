@@ -40,14 +40,38 @@ def main():
     parser.add_argument("--node", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--evidence", type=Path, required=True)
-    parser.add_argument("--backend", choices=("ros1", "ros2"), default="ros2")
+    parser.add_argument("--backend", choices=("wasi", "ros1", "ros2"), default="ros2")
+    parser.add_argument("--source-tree", type=Path, help="Reuse an existing exact locked source tree without unpacking the archive")
+    parser.add_argument("--target", choices=("wasm32-wasip1","wasm64-wasip1"), default="wasm32-wasip1")
     args = parser.parse_args()
+    if args.target=="wasm64-wasip1" and args.backend!="wasi":
+        raise ValueError("The pointer64 maintenance profile currently supports pure WASI only")
     if sys.platform != "linux":
         raise RuntimeError("Use the isolated Linux maintenance container")
     sdk = args.sdk_profile.resolve(strict=True)
     qualified = args.qualified_sdk.resolve(strict=True)
     llvm = args.llvm_bin.resolve(strict=True)
     cache, source, locked = prepare(args, "ruby")
+    supplemental_sources=[]
+    if args.target=="wasm64-wasip1":
+        catalog=json.loads((sdk/"share/language/ruby/memory64-source.json").read_text())
+        if catalog["format"]!="uwvm-ruby-memory64-source-v1" or catalog["version"]!="3.4.7":
+            raise ValueError("Exact maintained CRuby pointer64 source catalog required")
+        allowed={"wasm/setjmp.h","wasm/fiber.h","wasm/machine_core.S","wasm/setjmp_core.S"}
+        if len(catalog["files"])!=len(allowed) or {x["destination"] for x in catalog["files"]}!=allowed:
+            raise ValueError("Exact pointer64 source overlay required")
+        for item in catalog["files"]:
+            original=(sdk/item["source"]).resolve(strict=True)
+            if not any(original.is_relative_to(sdk/path) for path in
+                    ["src/language/ruby/memory64-source","src/language/common/asyncify/asyncify/wasm64"]):
+                raise ValueError("Pointer64 source escapes its declared source directory")
+            destination=source/item["destination"]
+            if digest(destination)!=item["base_sha256"]:
+                raise ValueError("The common source to be overlaid differs from its locked identity")
+            if original.stat().st_size!=item["bytes"] or digest(original)!=item["sha256"]:
+                raise ValueError("Pointer64 support source identity changed")
+            shutil.copy2(original,destination)
+            supplemental_sources.append(dict(path=item["destination"],base_sha256=item["base_sha256"],sha256=item["sha256"]))
     # The maintained scanner preserves declarations in both inline and multiline C layouts.
     shutil.copy2(
         sdk / "src/language/ruby/transdb.h.tmpl",
@@ -55,18 +79,20 @@ def main():
     )
     manifest = json.loads((qualified / "share/wasm/toolchains.json").read_text())
     profile = next(
-        item for item in manifest["targets"] if item["triple"] == "wasm32-wasip1" and item["profile"] == "noeh"
+        item for item in manifest["targets"] if item["triple"] == args.target and item["profile"] == "noeh"
     )
     # Exact target files/catalog are admitted by verify_profile(); actual cold
     # compilation/linking below supplies its own scoped construction evidence.
     # The public catalog intentionally carries no universal tested boolean.
-    if (profile["llvm_major"] != 23 or profile["triple"] != "wasm32-wasip1"
-            or profile["profile"] != "noeh" or profile["memory64"] or profile["threads"]):
-        raise RuntimeError("The exact LLVM 23 noeh wasm32-wasip1 closure is required")
+    if (profile["llvm_major"] != 23 or profile["triple"] != args.target
+            or profile["profile"] != "noeh" or profile["memory64"] != (args.target=="wasm64-wasip1")
+            or profile["table64"] != (args.target=="wasm64-wasip1") or profile["threads"]):
+        raise RuntimeError("The exact LLVM 23 noeh closure for the requested address width is required")
     common = [
-        "--target=wasm32-wasip1",
+        "--target=" + args.target,
         "-no-canonical-prefixes",
         "-fintegrated-cc1",
+        *(["-DUWVM_LANGUAGE_PURE_WASI=1"] if args.backend == "wasi" else []),
         "-DROSWASM_BACKEND=" + ("1" if args.backend == "ros1" else "2"),
         "-I" + str(qualified / "include"),
         "--sysroot=" + str(qualified / profile["sysroot"]),
@@ -88,10 +114,11 @@ def main():
         status="FAIL",
         language="ruby",
         compiler="LLVM 23",
-        target="wasm32-wasip1",
+        target=args.target,
         backend=args.backend,
         exceptions="official CRuby Asyncify; no C setjmp from the sysroot",
         commands=[],
+        supplemental_sources=supplemental_sources,
         target_manifest_sha256=digest(qualified / "share/wasm/toolchains.json"),
     )
     receipt = args.evidence / "build-receipt.json"
@@ -139,7 +166,7 @@ def main():
     )
     configuration = [
         source / "configure",
-        "--host=wasm32-unknown-wasi",
+        "--host=" + args.target.removesuffix("-wasip1") + "-unknown-wasi",
         "--build=x86_64-pc-linux-gnu",
         "--with-baseruby="
         + shlex.join(
@@ -185,7 +212,7 @@ def main():
             *common,
             "-O1",
             "-g0",
-            "-I" + str(build / ".ext/include/wasm32-wasi"),
+            "-I" + str(build / (".ext/include/" + args.target.removesuffix("-wasip1") + "-wasi")),
             "-I" + str(source / "include"),
             "-I" + str(source),
             "-I" + str(build),

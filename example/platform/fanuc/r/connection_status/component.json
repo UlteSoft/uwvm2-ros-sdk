@@ -1,0 +1,74 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "r-explicit-authority-2079",
+  "ros_namespace": "ros2",
+  "exception_profile": "eh",
+  "test_scope": "Original R program executing inside Wasm: deny ungranted resource and reject missing arguments; does not qualify positive robot/simulator behavior",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/fanuc/r/connection_status/xmake.lua",
+      "sha256": "c68c003d0fddcc97a587540059d818e1cb2a036ab002f89826d96678e7a0477a"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/fanuc/r/connection_status/main.R",
+      "sha256": "d7ee59ba28f53e91f799029eb71d0e2db677e6ccf8d766f7f97d98b3e7f73ca6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/r/provider.lua",
+      "sha256": "b54727ac5f2538aca4e14d86bb0dbbbba8de0d71502fd83c8918e81df8fd968d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/r/observation.R",
+      "sha256": "de39edf4d5870d3ec7708a495e06b80ec38420f513e48c4171b48ced1298752f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "required": null,
+        "rpc_status_present": false,
+        "rpc_status": null,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-arguments",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

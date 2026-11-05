@@ -19,6 +19,7 @@ if not root or not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
 end
 
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- @brief Require an explicit build before running an already reviewed artifact.
 set_policy("run.autobuild", false)
@@ -41,5 +42,6 @@ target("main")
 
     -- @brief Resolve public Unitree imports through the installed SDK provider.
     add_files("main.ts")
-    set_targetdir("build")
+    set_targetdir("build/artifacts")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

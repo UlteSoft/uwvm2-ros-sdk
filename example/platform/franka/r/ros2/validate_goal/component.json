@@ -1,0 +1,71 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-3019",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "352c5663b26103d1431160efb86c1b726fb2d48a65e1fa5e6c2ed05847a8f9fa"
+    },
+    {
+      "scope": "example",
+      "path": "main.R",
+      "sha256": "ea2f7013d0da86d005ebc161c2162aff7b6bbc56c41f2faa56b2dc3103016835"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/provider.json",
+      "sha256": "824b28692b6cd188bdb011af40e40bd24f423064a5cc6c03e34791121be18d6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/records.json",
+      "sha256": "5efc508c23eb10bcba36aa135fa83d0dc32fb09b67cbb33aa2bfcac2dba27d4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/r/stdio.c",
+      "sha256": "ab067739f44ad08af084e626a753a75580717e425324789eb401ba6624011a40"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/r/ros2.json",
+      "sha256": "8d570bba6609f3b49b24d262a3ebdcb94a062c065f96b82cbc46ce07756e30b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/franka/provider.lua",
+      "sha256": "b04d6d59d07e76fe5d7abde6f02239d9e77b5b588bd31870e875eab42b1173fb"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30303030303030303030303030303030376231346165343765313761373433663762313461653437653137613734336630303030303030303030303030303030303030303030303030303030303030300a",
+      "stdin_hex": "00000000000000007b14ae47e17a743f7b14ae47e17a743f00000000000000000000000000000000"
+    }
+  ]
+}

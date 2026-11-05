@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "fsharp",
+  "profile": "controller_core_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/fsharp/ros2/flexiv-controller-core-foxy-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "csharp": [
+      "include/platform/flexiv/csharp/ros2/flexiv-controller-core-foxy-complete/BoundedRecords.cs"
+    ],
+    "fsharp": [
+      "include/platform/flexiv/fsharp/ros2/flexiv-controller-core-foxy-complete/Records.fs"
+    ],
+    "vbnet": [
+      "include/platform/flexiv/vbnet/ros2/flexiv-controller-core-foxy-complete/Records.vb"
+    ]
+  }
+}

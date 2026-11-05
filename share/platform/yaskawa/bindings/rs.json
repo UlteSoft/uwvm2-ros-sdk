@@ -16,5 +16,33 @@
     "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/yaskawa/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "rs",
+    "rust": {
+      "cfg": [
+        "feature=\"alloc\"",
+        "feature=\"ros2\""
+      ],
+      "crates": [
+        {
+          "name": "roswasm",
+          "source": "include/platform/ros/rs/src/lib.rs",
+          "dependencies": []
+        },
+        {
+          "name": "yaskawa_records",
+          "source": "include/platform/yaskawa/rs/ros2/yaskawa-ros2-complete/bounded_records.rs",
+          "dependencies": [
+            "roswasm"
+          ]
+        }
+      ],
+      "imports": [
+        "roswasm",
+        "yaskawa_records"
+      ]
+    }
+  }
 }

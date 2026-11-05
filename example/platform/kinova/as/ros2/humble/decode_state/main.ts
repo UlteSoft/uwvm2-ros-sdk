@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros2Sensor_msgsMsgJointState, Ros2Sensor_msgsMsgJointStateCodec} from "kinova/as/ros2/mobile-fjt-humble-complete/bounded_records";
 import {write, exit} from "ros/as/command";

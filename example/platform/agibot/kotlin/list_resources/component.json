@@ -1,0 +1,521 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "agibot-authority-223",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3b1bfa8fdfc1437a9c98d0761f66233135d3eb461437f060577a6fd9c496c14b"
+    },
+    {
+      "scope": "example",
+      "path": "Main.kt",
+      "sha256": "76ba6914e795392d2f3c5dd8bc1aaa1dab028fc020d73e5862f2d2277535018d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/Client.java",
+      "sha256": "ace6ad58755e368fb23af17b45d2c484a116e67ffdccd48584ca708882278d93"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v0-8-1-main-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "6e47ae9fc370094705556e4ae40f82b82fd4855667221c37a316f3561e8df814"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v0-8-2-main-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "6e8e8bc77dd65b8897511fc80c014742140d22f091e8e9ba0d98ae4b574d5cd9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v0-9-0-main-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "5bf5b203b7df9c882e73a3057dffa784d52e55ac078032d290dcb1788e54990e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v1-0-0-main-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "dd9cda43f3a75085c2d78ee49b3c07803672bd830c4b673cfcd5659db0f2e564"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "bbd0bf0948751ad11ec549719cedb6eecd19ce297588b93f1ddd5ad96ddf5396"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v1-1-0-main-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "cd9ff9698b59318b6e9183990c3d53644fb9bc6cbad49ff1fa979bf2537b4240"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/java/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/org/uwvm/roswasm/generated/BoundedRecords.java",
+      "sha256": "d9486f294841c6ef14bb3ae0bcb83955494b9fee3658c1ebe6e648131194e848"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/Client.kt",
+      "sha256": "f3fd385bca8e6e6c1ebec14a47826dcdc6180b3a10b5e92432a887f585e6ed62"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v0-8-1-main-complete/Records.kt",
+      "sha256": "58a52d8d66fcffa74b5137774ba373b9f7ebd5e223a6a99e89833a09855e6e04"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v0-8-2-main-complete/Records.kt",
+      "sha256": "ce17d23ebba749f87cd94b248538e376706b014b6cc6490f5e62e57e356d2d3e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v0-9-0-main-complete/Records.kt",
+      "sha256": "ebe7b49b7f7cc8547a1cbc3d3a9341f1e7dc6f2569ced66056c4301de1c5bff8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v1-0-0-main-complete/Records.kt",
+      "sha256": "62344938805bfe531487abc8d2ce3097078ccfa4797ed0ff42ff347be7ca7587"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/Records.kt",
+      "sha256": "34e1e70e930988707d188c9ebf16cb91d81908ce2d8945f294151343130fe3eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v1-1-0-main-complete/Records.kt",
+      "sha256": "4dcdf4bd7dcf9b80a13dbd6e596e944231103dd84f39f9f80679ae440d164d15"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/kotlin/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/Records.kt",
+      "sha256": "e71589295cd2bd8bd276c6ebd44969060f5913de8e3462f19375d9183e69f43e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/as/wasi.ts",
+      "sha256": "307b12e3ca99ec0361fb84671ffe093690e135883b9a6eaaba3789341cd33362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/client.h",
+      "sha256": "2bc506b36b480328170cc8bb4672b81b9a58c51387c5452cf85a72b1485c529a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/command_io.h",
+      "sha256": "f4e82373a34e897becee683b97f832ff23b09a35137bb7a92bfc63e2220d76fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/dotnet/Transport.cs",
+      "sha256": "f328604cb92c12c57a5b248ece31d2e15757e780b19626a8e2548c4d187c7148"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/go/aimdk_v1_1_0/records.go",
+      "sha256": "2fbdeb5c3d1da4fd437289e1eb1008af449b2ee12a0820a3e5a82ff410f9249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Core.java",
+      "sha256": "3ae4fcd5ee86002fa448065426d70e8dd147bf461f077a316aee71530867153e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Records.java",
+      "sha256": "2359a8ad7b6e227c96d6d545bf721449fbdd4b2d31ad11694c9a312ccbf843b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/observation_json.h",
+      "sha256": "8cc5a02f29ab0bbe4e1ce5d4a97f592aeb318215d503404618829992b811aef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/output.h",
+      "sha256": "5bcccffe16c559898888b0ae6aabebc6afb941904ca93090e806b76146240f87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.js",
+      "sha256": "8fcfa583dc92d43fb3ae38c93c469aaa72ad59464d60fdbe6bfda2d1674da9dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.json",
+      "sha256": "f29309e03422d038a4cf7206aafeebf978654e7a1f4a440bd04a91342b907d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.lua",
+      "sha256": "b283aa633a73772fb8fe5c513b354e0ce66a84297c4fbb6bb0e5d9055d9f402f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.php",
+      "sha256": "953da8dbea4e96cb022f98b4b2e2ef076fc48514cb40ff0e5f4f6ff332a58fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.py",
+      "sha256": "164ee7e75af9761cd7cef8423309dd9b9daf608d8fe7403eda9b9789a000d3e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.rb",
+      "sha256": "0ae98b296275097a2e2a02b87c1d12deb503d55328732524231e438f60d46701"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agibot/provider.lua",
+      "sha256": "40610d8482fb4368a16b5664c1cf542e6f5f373764db009e7e85fc8d5f69b24e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agibot/provider.json",
+      "sha256": "c42e2f8f25cc45823af00cf44685f337d4723fff5c5273207649128cf42d8ade"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/jvm/provider.lua",
+      "sha256": "1094a7c08feda3ccc7db1d58fa4f766d76f4d59646823e3a029404a05869ca79"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "stderr_contains": "failed: 13; close: 0"
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "Expected exactly one granted Agibot alias"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "rs",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/rs/ros2/franka-ros2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "rs",
+    "rust": {
+      "cfg": [
+        "feature=\"alloc\"",
+        "feature=\"ros2\""
+      ],
+      "crates": [
+        {
+          "name": "roswasm",
+          "source": "include/platform/ros/rs/src/lib.rs",
+          "dependencies": []
+        },
+        {
+          "name": "franka_records",
+          "source": "include/platform/franka/rs/ros2/franka-ros2-complete/lib.rs",
+          "dependencies": [
+            "roswasm"
+          ]
+        }
+      ],
+      "imports": [
+        "roswasm",
+        "franka_records"
+      ]
+    }
+  }
+}

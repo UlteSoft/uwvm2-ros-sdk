@@ -19,6 +19,7 @@ enum uint maximumOutput = 4_194_304;
 /// A successfully spent cell remains spent after retirement; there is no finalizer.
 /// @see Owner; open; Session
 struct State {
+    @nogc nothrow:
      private ulong handle;
      private bool busy, spent;
 }
@@ -27,6 +28,7 @@ struct State {
 /// data only; it authenticates no Host observation, owner or operation authority.
 /// @see Owner.request; Owner.poll; Result
 struct Result {
+    @nogc nothrow:
     /// @brief Original unsigned status; 0 means success for a checked call.
     /// @details Nonzero preserves the original local/Host refusal. Invalid
     /// successful output length becomes 22; unknown future codes remain representable.
@@ -52,6 +54,7 @@ struct Result {
 /// construction/default zero fields do not establish idle state or reserve work.
 /// @see Owner.ready; Owner.watch; Owner.submit
 struct Readiness {
+    @nogc nothrow:
     /// @brief Actual readiness-call status; ignore the four words on nonzero.
     /// @details Busy/stale/refusal is distinct from a successful snapshot of zero events.
     /// @see Owner.ready; Readiness.events
@@ -78,6 +81,7 @@ struct Readiness {
 /// completion. An ordinary local struct value grants no native authority.
 /// @see Owner.submit; Owner.poll; Owner.watch
 struct Submission {
+    @nogc nothrow:
     /// @brief Original unsigned status; inspect id only after code 0.
     /// @details A zero ID on successful raw output becomes 22; other refusals stay original.
     /// @see Owner.submit; Submission.id
@@ -155,6 +159,7 @@ private Result finish(uint code, const(ubyte)[] slot, ubyte[] output) {
 /// independently granted by the current Host. SDK selection grants none.
 /// @see open; Owner.close; Owner.revoke; Session
 struct Owner {
+    @nogc nothrow:
     private State* state;
     private uint acquire(out ulong h) {
         if (state is null) return 9;
@@ -385,6 +390,7 @@ uint open(ref State state, const(ubyte)[] aliasBytes, out Owner owner) {
 /// @param[in] capacity Compile-time positive permanent owner ceiling, at most 1024.
 /// @see Session.open; Session.close; State; roswasm.typed.Node
 struct Session(size_t capacity) if(capacity>0 && capacity<=1024) {
+    @nogc nothrow:
     private State[capacity] cells;
     private size_t used;
     private bool closed;

@@ -57,5 +57,355 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "publish_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    },
+    "subscribe_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    },
+    "call_trigger": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    },
+    "publish_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    },
+    "subscribe_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    },
+    "call_trigger_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros1\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "rs",
+        "rust": {
+          "cfg": [
+            "feature=\"alloc\"",
+            "feature=\"ros2\""
+          ],
+          "crates": [
+            {
+              "name": "roswasm",
+              "source": "include/platform/ros/rs/src/lib.rs",
+              "dependencies": []
+            },
+            {
+              "name": "ros_native_command",
+              "source": "include/platform/ros/rs/native_command/lib.rs",
+              "dependencies": [
+                "roswasm"
+              ]
+            }
+          ],
+          "imports": [
+            "roswasm",
+            "ros_native_command"
+          ]
+        }
+      }
+    }
+  }
 }

@@ -8,7 +8,7 @@
 const std = @import("std");
 const agibot = @import("agibot");
 
-pub fn main() !void {
+fn command() !void {
     const allocator = std.heap.page_allocator;
     const arguments = try std.process.argsAlloc(allocator);
     defer std.process.argsFree(allocator, arguments);
@@ -27,3 +27,6 @@ pub fn main() !void {
     try std.io.getStdOut().writer().writeAll("\n");
     if (result.vendor_code != 0) std.process.exit(1);
 }
+
+/// @brief Enter the genuine Zig command through shared WASI libc startup.
+export fn nl_entry() u32 { command() catch { return 5; }; return 0; }

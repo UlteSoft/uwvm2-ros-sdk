@@ -1,0 +1,110 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "haskell-original-observer-2048",
+  "ros_namespace": "ros2",
+  "test_scope": "Genuine Haskell source and complete original message codec; explicit WASI and ROS namespace without resource authority. Assert refusal preserves unwritten length and no ownership or polling effects, and missing alias exits before acquisition.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/haskell/FANUC/Ros2/Observation.hs",
+      "sha256": "dfb249422e79c9bf2c7a5f6c0def472e8ed220461bdd00229610e358c8da54ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/haskell/FANUC/Ros2/Records.hs",
+      "sha256": "4ddb2e71e65790d3b516a4e4ae721f17ef64d2f4c5e7117858e8fab84a6b5833"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fanuc/bindings/haskell.json",
+      "sha256": "5a07d14c6f5a868af6f8b529024910d1ae6583d62d5632b326c154bfdc578616"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Observation.hs",
+      "sha256": "8d8973f7f660fa2e1b739f1ff8a55fc585cbfd5d535f56953fba9c8b1d9923f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Wire.hs",
+      "sha256": "cf3745389aed91fc88552a0ff352f3709512ebb22d924d468df1399a1fe9afbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fanuc/provider.lua",
+      "sha256": "6849324394fe79225d7652539437d65731d93614f624b27a49db2c8a38156493"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.hs",
+      "sha256": "5a0a49ebe858a316867a6fb6141f8098477ea04f58ab563b3bcaf08181b24444"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b5ecb10a7f52d326442d561ca0cc1c8864ba2466a4a56057d0ff924ab7ffe7d4"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "doosan/php/ros2/doosan-ros2-humble-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\DoosanDoosanRos2HumbleComplete\Ros2Dsr_msgs2ActionJogH2r_Feedback();
 $bytes = $value->encode();
 $decoded = \Uwvm\DoosanDoosanRos2HumbleComplete\Ros2Dsr_msgs2ActionJogH2r_Feedback::decode($bytes);

@@ -946,7 +946,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
-        "sha256": "6ee8d6fe50cdcb372fc5cbdadd38c0481b8fb322580729a5e987f24615d202fc"
+        "sha256": "ef6139b8f92dbb8fe372f532e675851f6e02a1beda5a768a4e372a222db2427d"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -966,7 +966,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
-        "sha256": "6ee8d6fe50cdcb372fc5cbdadd38c0481b8fb322580729a5e987f24615d202fc"
+        "sha256": "ef6139b8f92dbb8fe372f532e675851f6e02a1beda5a768a4e372a222db2427d"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",

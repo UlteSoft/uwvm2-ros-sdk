@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "odin",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/odin/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "odin",
+    "odin": {
+      "packages": [
+        {
+          "collection": "flexiv",
+          "directory": "odin/ros1/flexiv-ros1-noetic-complete",
+          "sources": [
+            "include/platform/flexiv/odin/ros1/flexiv-ros1-noetic-complete/records.odin",
+            "include/platform/ros/odin/roswasm/wire.odin",
+            "include/platform/ros/odin/roswasm/client.odin",
+            "include/platform/ros/odin/roswasm/raw.odin",
+            "include/platform/ros/odin/roswasm/node.odin"
+          ]
+        }
+      ]
+    },
+    "stack_bytes": 4194304,
+    "c_sources": [
+      "src/language/native/startup.c"
+    ]
+  }
+}

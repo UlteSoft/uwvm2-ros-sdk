@@ -1,7 +1,8 @@
 # @file algorithm.rb
 # @brief Preserve genuine Ruby state, GC, fibers and exceptions across Core calls.
-# @details Only exact i32 values cross the native boundary. This module receives
-# default WASI standard streams and no additional WASI or native ROS grants.
+# @details Only exact i32 values cross the Wasm module boundary. The host must
+# explicitly enable base WASI and each process/diagnostic operation used by the
+# language runtime. This example receives no native ROS resource grant.
 module Uwvm
     module Library
         @calls = 0

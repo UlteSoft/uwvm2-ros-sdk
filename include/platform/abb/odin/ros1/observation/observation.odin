@@ -9,7 +9,7 @@
 // @brief Observe complete original Abb ROS 1 messages in genuine Odin.
 // @details All values own their bytes; successful acquisitions close exactly once.
 package abb
-import core "ros:odin/observation"
+import core "native:odin/observation"
 import records "abb:odin/ros1"
 
 // @brief Observe every original abb_robot_msgs/SystemState field through one retained owner.

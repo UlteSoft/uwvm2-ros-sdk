@@ -319,7 +319,13 @@ def main() -> None:
                         [
                             str(args.runtime),
                             *target["runtime_flags"],
-                            "--wasip1-global-noinherit-system-environment",
+                            # Reviewed command-I/O authority for these authored hello/ABI probes.
+                            "--wasm-set-main-module-name", "main",
+                            "--wasip1-single-create", "main", "--wasip1-single-enable", "main",
+                            "--wasip1-single-noinherit-system-environment", "main",
+                            "--wasip1-single-grant", "main", "stdout.write",
+                            "--wasip1-single-grant", "main", "stdio.metadata",
+                            "--wasip1-single-grant", "main", "proc-exit",
                             "--run",
                             str(binary),
                         ],

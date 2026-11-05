@@ -49,9 +49,10 @@ FRANKA_ROS_IMPORT("ready") uint32_t franka_module_ros_ready(void);
  * @param main_probe Main's packed original denial/cleanup result.
  * @param io_probe Io's packed original denial/cleanup result.
  * @param algorithm_probe Algorithm's packed original denial/cleanup result.
+ * @return Zero after flushing this module's output; 5 for write or flush failure.
  */
 FRANKA_IO_IMPORT("report")
-void franka_module_report(uint32_t length,
+uint32_t franka_module_report(uint32_t length,
                           uint32_t digest,
                           uint32_t value,
                           uint32_t primary,

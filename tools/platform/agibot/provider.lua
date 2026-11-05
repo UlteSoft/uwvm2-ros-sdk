@@ -42,6 +42,12 @@ function configure(target, root, context)
 	local triple = assert(context.triple, "The common dispatcher must resolve the exact target")
 	target:set("values", "ros.sdk.triple", triple)
 	local language = target:values("ros.sdk.language")
+	context.binding = table.clone((selected.bindings or {})[language] or {})
+	context.native_action = context.binding.native_action
+	if context.binding.bundle_manifest then
+		target:set("values", "ros.sdk.bundle_manifest", context.binding.bundle_manifest)
+	end
+
 	if selected.bindings and selected.bindings[language] then
 		target:set("values", "ros.sdk.binding", selected.bindings[language])
 	end
@@ -66,13 +72,17 @@ function build(target, root, context)
 	local language = target:values("ros.sdk.language")
 	local triple = target:values("ros.sdk.triple")
 	if language == "c" or language == "cpp" or language == "c_ffi_bridge" then
-		local sources = { path.join(root, "src/platform/agibot/shared/observation.c") }
-		if language == "c" or language == "cpp" then
-			sources[#sources + 1] = path.join(root, "src/platform/agibot/shared/observation_json.c")
-		elseif language == "c_ffi_bridge" then
+		local sources = {
+            path.join(root, "src/platform/agibot/shared/observation.c"),
+            path.join(root, "src/platform/agibot/shared/observation_json.c")
+        }
+		if language == "c_ffi_bridge" then
 			sources[#sources + 1] = path.join(root, "src/platform/agibot/c_ffi_bridge/client.c")
 		end
-		return import("cfamily", { rootdir = path.join(root, "tools/xmake"), anonymous = true }).build(
+		local compiler = import("cfamily", { rootdir = path.join(root, "tools/xmake"), anonymous = true })
+		-- Compile the shared C adapter as C before linking the genuine C++ command.
+		local build = language == "cpp" and compiler.build_mixed or compiler.build
+		return build(
 			target,
 			root,
 			triple,

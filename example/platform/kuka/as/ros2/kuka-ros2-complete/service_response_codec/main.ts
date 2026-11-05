@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete lifecycle_msgs/srv/ChangeState_Response value with genuine AssemblyScript.

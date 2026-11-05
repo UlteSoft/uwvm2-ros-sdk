@@ -170870,8 +170870,8 @@
         },
         {
           "path": "simulation.json",
-          "bytes": 7952,
-          "sha256": "faaf315bc3d63acb54060baa9d1660623f154410f5cab3209ec4e6e15541a34d"
+          "bytes": 13287,
+          "sha256": "0fdc63dcc3714d559312d6dac24987642f071ba41bdd750fc9d7e79317d086a9"
         },
         {
           "path": "vendor-prefix/share/ament_index/resource_index/packages/kortex_description",
@@ -170920,8 +170920,8 @@
         },
         {
           "path": "xmake.lua",
-          "bytes": 1537,
-          "sha256": "c89bb4c258870c6b332c1ff5c80e0640e9d417c64558219e16392f184ee0b3e7"
+          "bytes": 2213,
+          "sha256": "b0cbd756587a200a459fbe3f8a6d971a7add7b02274e6902d46b82b1a47d651f"
         }
       ],
       "required_simulation_ids": [],
@@ -216299,13 +216299,13 @@
         },
         {
           "path": "simulation.json",
-          "bytes": 10044,
-          "sha256": "a1b3016f09cb302864a9fa4d740ba738969a68a73ba54a86d06e22f959549a1f"
+          "bytes": 10733,
+          "sha256": "ef6139b8f92dbb8fe372f532e675851f6e02a1beda5a768a4e372a222db2427d"
         },
         {
           "path": "xmake.lua",
-          "bytes": 984,
-          "sha256": "19c557afeb45b75ba6a1ee9f74030bb8e725cb16a30867febdb2715401bf6ad6"
+          "bytes": 997,
+          "sha256": "f73212f17429deade22c7508bb2119b3a236c7ef9527e5b94bb66de8c02808dd"
         }
       ],
       "required_simulation_ids": [
@@ -294490,7 +294490,7 @@
     {
       "path": "share/platform/examples/required-simulations-v1.json",
       "bytes": 82347,
-      "sha256": "b6ea699150687ef66cf80ca5a48daf81e33aa0aff15f28a6983f3db51b54a153"
+      "sha256": "f576bec5a9560d0e7973eb1eec4b0e4f1300e274a2d0aacd77fe4fa62837d572"
     },
     {
       "path": "share/platform/fanuc/bindings/as.json",
@@ -298929,8 +298929,8 @@
     },
     {
       "path": "tools/platform/hello_robot/xmake/required_guest_tests.lua",
-      "bytes": 1540,
-      "sha256": "9c7d2dab709ef9ada6aacc064e1266fdad72e48511fe784b4098499d443fe9c8"
+      "bytes": 1697,
+      "sha256": "7ccd99fe35baf0719726bc28374d35517aebc074c6398ef86fdc825732b19949"
     },
     {
       "path": "tools/platform/kinova/provider.lua",
@@ -299079,8 +299079,8 @@
     },
     {
       "path": "tools/platform/pal/xmake/required_guest_tests.lua",
-      "bytes": 1532,
-      "sha256": "baa71a7567c1f0eb97af7aa33e2f2d5f396158bb4716a15654b7cfb69e8cd97c"
+      "bytes": 1689,
+      "sha256": "f206e936ac564f9df42092d2e836889fa78352ccb0147bac6e6352b72789a8a2"
     },
     {
       "path": "tools/platform/realman/provider.lua",
@@ -299094,8 +299094,8 @@
     },
     {
       "path": "tools/platform/robotis/xmake/required_guest_tests.lua",
-      "bytes": 1536,
-      "sha256": "13c5129be862e798e330b3a2b26fbfd9fca88a56f67810064126da95340e93bb"
+      "bytes": 1693,
+      "sha256": "87068abbeb529f077262aebf0242d45c5cc9b244bf734d72ade135376d76817c"
     },
     {
       "path": "tools/platform/ros/cmake/CppCodecs.cmake",
@@ -299174,8 +299174,8 @@
     },
     {
       "path": "tools/platform/trossen/xmake/required_guest_tests.lua",
-      "bytes": 1536,
-      "sha256": "1504997168992384f9805acde4e307ad95f85799a67651a829f4a7378e169ac4"
+      "bytes": 1693,
+      "sha256": "38758a5425a48531c4a28f96dcc9c6afa156497fa9b74c9ff8761ff24c0a3212"
     },
     {
       "path": "tools/platform/ubtech/provider.lua",
@@ -299600,7 +299600,7 @@
   ],
   "required_simulations": {
     "path": "share/platform/examples/required-simulations-v1.json",
-    "sha256": "b6ea699150687ef66cf80ca5a48daf81e33aa0aff15f28a6983f3db51b54a153",
+    "sha256": "f576bec5a9560d0e7973eb1eec4b0e4f1300e274a2d0aacd77fe4fa62837d572",
     "inventory_discovery_complete": false
   },
   "scope": "Every public example xmake.lua accounted as a project or exact include-only aggregator; source presence is not qualification."

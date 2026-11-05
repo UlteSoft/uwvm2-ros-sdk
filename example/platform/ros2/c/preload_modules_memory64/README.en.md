@@ -28,7 +28,7 @@ Only primitive values and an IO generation token cross module boundaries. `begin
 
 The build binds the reactor's actual `[] → []` initializer to a Core start section. The runtime runs it once in preload order; `_initialize` by name alone is insufficient, and applications must not call it again. Constructor lifetime is local to each module.
 
-Default WASI retains basic standard-stream descriptor rights. No clock, random, filesystem, network or ROS grant is added for `algorithm`. Only `io` receives the explicit extra clock grant; only `ros_comm` receives ROS authority. `xmake run` does not add policy. Start a controlled local native peer before the following manual launch and verify the complete `value=42` observations there. Keep the loaded aliases exactly `io`, `algorithm`, `ros_comm`, and main name `main`.
+Base WASI grants no standard-stream operations; required operations must be explicitly authorized. No clock, random, filesystem, network or ROS grant is added for `algorithm`. Only `io` receives explicit output and monotonic clock/timer grants; only `ros_comm` receives ROS authority. `xmake run` does not add policy. Start a controlled local native peer before the following manual launch and verify the complete `value=42` observations there. Keep the loaded aliases exactly `io`, `algorithm`, `ros_comm`, and main name `main`.
 
 ```sh
 export UWVM_ROS_SDK_ROOT=/absolute/path/to/sdk
@@ -38,9 +38,9 @@ xmake -j1
 
 | Module identity | Deployment artifact | Manual additional authority |
 |---|---|---|
-| `main` | `build/main/main.wasm` | None |
-| `io` | `build/io/io.wasm` | WASI `monotonic-clock` for explicit discovery waits |
-| `algorithm` | `build/algorithm/algorithm.wasm` | None; default WASI |
+| `main` | `build/main/main.wasm` | WASIp1 base, `args`, `proc-exit` |
+| `io` | `build/io/io.wasm` | WASIp1 base, `stdout.write`, `stdio.metadata`, `monotonic-clock`, `monotonic-timer` |
+| `algorithm` | `build/algorithm/algorithm.wasm` | Explicit WASIp1 base; no operation grants |
 | `ros_comm` | `build/ros_comm/ros_comm.wasm` | This module's ROS Single `sample` publication |
 
 ```sh
@@ -61,7 +61,6 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --wasm-feature-enable-memory64 \
   --wasm-feature-enable-table64 \
   --wasm-set-main-module-name main \
-  --wasip1-global-noinherit-system-environment \
   --wasm-feature-enable-memory64 \
   --wasm-feature-enable-table64 \
   --wasm-preload-library "build/io/io.wasm" io \
@@ -82,7 +81,12 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --wasip1-single-create main \
   --wasip1-single-enable main \
   --wasip1-single-noinherit-system-environment main \
+  --wasip1-single-grant main args \
+  --wasip1-single-grant main proc-exit \
+  --wasip1-single-grant io stdout.write \
+  --wasip1-single-grant io stdio.metadata \
   --wasip1-single-grant io monotonic-clock \
+  --wasip1-single-grant io monotonic-timer \
   --ros2-single-create ros_comm \
   --ros2-single-enable ros_comm \
   --ros2-single-call-boundary ros_comm module-exports \
@@ -112,7 +116,7 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --ros2-single-set ros_comm sample audit-max-bytes 1048576 \
   --ros2-single-set ros_comm sample max-message-bytes 256 \
   --ros2-single-set ros_comm sample max-queue-bytes 2048 \
-  --ros2-single-set ros_comm sample overflow-policy drop-oldest \
+  --ros2-single-set ros_comm sample overflow-policy reject \
   --ros2-single-set ros_comm sample max-publishers 1 \
   --ros2-single-set ros_comm sample qos.reliability reliable \
   --ros2-single-set ros_comm sample qos.durability volatile \

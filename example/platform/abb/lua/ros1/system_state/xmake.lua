@@ -41,12 +41,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk = root
 set_policy("run.autobuild", false)
 
 target("abb-lua-system_state")
     set_language("lua")
+    set_wasm_exceptions("eh")
     set_ros_platform("abb")
     set_ros1_version("noetic")
     set_plat("wasm-wasip1")
@@ -56,4 +58,5 @@ target("abb-lua-system_state")
     -- @brief Select the immutable complete interface catalog, not robot firmware.
     set_abb_version("complete")
     add_files("main.lua")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

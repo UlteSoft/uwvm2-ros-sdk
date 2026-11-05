@@ -1,0 +1,121 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observation-authority-581",
+  "ros_namespace": "ros2",
+  "test_scope": "Original complete typed guest: exact empty facts on resource denial, argument rejection before acquisition. Positive native transport and simulator admission remain separate.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e452b392d366458633b41136b85cbb9106c5e5a1c75878e4d47148fe382446d6"
+    },
+    {
+      "scope": "example",
+      "path": "main.py",
+      "sha256": "6c620b759d7bbfbf919fa99b257ab2435f9aba2d02950268059ff619a835f6d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/py/package.py",
+      "sha256": "da5a2c555e0b20616832b669e65fbd9fdc8f6e4a5b585cfda22aea9064f75490"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/py/ros2/observation.py",
+      "sha256": "549a58d168c4727e0bc422a2928604f235ade738b9cbcbac8c0bec1512869ac3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/py/ros2/records.py",
+      "sha256": "1243f621ca024a012438d724402e546a002209dc30779e0bd9a3997e5afa7eac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/py/ros/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/py/ros/py/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/py/ros/py/transport.py",
+      "sha256": "f4dac7ca14ceb9462ada69936ad0e2798d26593ec2b17be0a110b26bc0c42a6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/py/ros/py/wire.py",
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/deep_robotics/language/py/ros2/bundle.json",
+      "sha256": "bb0b8a6f758090cc57d72bc1ad3c1d59f137f2221c90aac99fc4c15cab93db1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/python/modules/observation.py",
+      "sha256": "239bb6f3404deffc18aad68b8e3155f0fa6dd5f701b1e9d900be2eab170dddfc"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/deep_robotics/selection.lua",
+      "sha256": "10ee4895796190ab436fbeb52fd07c08954817b6512e97355bb7935e6ed08d00"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "rpc_status": 0,
+        "rpc_present": 0,
+        "response_present": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": "0",
+        "length": "18446744073709551615",
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

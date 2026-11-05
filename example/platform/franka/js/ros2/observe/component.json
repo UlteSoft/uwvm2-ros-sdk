@@ -1,0 +1,146 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-vendor-bridge-2967",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest. Codec commands consume independent complete canonical bytes, truncations and trailing bytes; observation commands explicitly test denied resource and invalid alias without claiming positive native transport.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/application.h",
+      "sha256": "919b14d4bec8e33e5b0f5d3fa4e0e0187e7d52c7ccdae38aa96229001fe4a8fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/module_algorithm.h",
+      "sha256": "1dbde76315cf82ae1f5eda4e20ce392f5c32e3a79d071d16f29236e3b6dffbd6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/module_pipeline.h",
+      "sha256": "e97615a7f907cd56a92a9a02d7ba7ed6c8dc58f2e97710b05e5a2375d14a7004"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/module_probe.h",
+      "sha256": "00ba1bdadcda99334ac95c95c2ebc8a2fe5225825678197f0132701c73b200f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/ros1/franka-ros1-complete/bounded_interfaces.h",
+      "sha256": "de1dbc3b7391f627cac99c4895f2e37e4abe33b8b7c7c35e96105476c418246e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/ros1/franka-ros1-complete/bounded_records.h",
+      "sha256": "39a983094efe2f8b0887763a190dc15da6da10f28ffadcc8c22bcf123494738b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/ros2/franka-ros2-complete/bounded_interfaces.h",
+      "sha256": "a1aca7394f9fea7baa641598a8ac56b7a147351527a77015ed92b277951679e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/ros2/franka-ros2-complete/bounded_records.h",
+      "sha256": "60242b836fddc30919f1329725013dd18b883debcf79000ac23494e0548658a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/selected_records.h",
+      "sha256": "e3fd4a2a4ab4ee37390d83ef640d9d0bd84a53d5fdae098d39253a974f457f9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/c/state.h",
+      "sha256": "dbd7fcbfeefc26b5f80ebf47dfdb56a9d2f6302b6caea28312fc4021025858ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/js/ros1/franka-ros1-complete/bounded_interfaces.mjs",
+      "sha256": "d5b8f2b009b289075344d2ff4f2e97c25b89d835b0cf7cabbaa912f8aed9d4a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/js/ros1/franka-ros1-complete/bounded_records.mjs",
+      "sha256": "6941baf30deca5e5bed1061f1d59651fbce3c10e1a1669569ec20ee84c62c2a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/js/ros2/franka-ros2-complete/bounded_interfaces.mjs",
+      "sha256": "9b9cb48db5d3e06749f3337283efa56022ad700219db0e5b7bfac46a712d7081"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/js/ros2/franka-ros2-complete/bounded_records.mjs",
+      "sha256": "3fe66d2d7ac8ed14401c825fa8a95301b7027436bdbdb764a39ad318d5e87b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/provider.json",
+      "sha256": "824b28692b6cd188bdb011af40e40bd24f423064a5cc6c03e34791121be18d6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/franka/provider.lua",
+      "sha256": "b04d6d59d07e76fe5d7abde6f02239d9e77b5b588bd31870e875eab42b1173fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "0f856977a04b1b040db035f25dfb8b6eccc6a3476e3490d5541a882ae51f7bdb"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "2b042a7d5d4e17e8936ba11b874074f8792b3248cfe74d4fe5ab3615663bb153"
+    },
+    {
+      "scope": "example",
+      "path": "main.mjs",
+      "sha256": "5b705eb7a2830e37d0937b87c9fd1314d82b2f5df97abba57c24fdfee35da0ac"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_stdout": "",
+      "stderr_contains": "primary=13 cleanup=0"
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "primary=22 cleanup=0"
+    }
+  ]
+}

@@ -13,13 +13,22 @@
   },
   "permissions": {
     "io": [
-      "WASI monotonic-clock (manual)"
+      "WASIp1 base (manual)",
+      "WASIp1 stdout.write (manual)",
+      "WASIp1 stdio.metadata (manual)",
+      "WASIp1 monotonic-clock (manual)",
+      "WASIp1 monotonic-timer (manual)"
     ],
     "algorithm": [
-      "default WASI; no extra grants"
+      "WASIp1 base (manual); zero operation grants"
     ],
     "ros_comm": [
       "ROS2 Single sample topic.publish (manual)"
+    ],
+    "main": [
+      "WASIp1 base (manual)",
+      "WASIp1 args (manual)",
+      "WASIp1 proc-exit (manual)"
     ]
   },
   "shared_memory": false,

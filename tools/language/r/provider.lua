@@ -9,8 +9,8 @@ function describe()
     return {
         api_version = 1,
         languages = {"r"},
-        targets = {"wasm32-wasip1"},
-        exception_profiles = {"noeh"},
+        targets = {"wasm32-wasip1", "wasm64-wasip1"},
+        exception_profiles = {"eh"},
         features = {},
         artifact_kinds = {}
     }
@@ -21,6 +21,10 @@ end
 -- @param root Installed SDK root. @param context Validated version-one request.
 function configure(target, root, context)
     assert(target:values("ros.sdk.language") == "r", "GNU R source is required")
+    if context.binding and context.binding.modules_by_backend then
+        context.binding.modules = assert(context.binding.modules_by_backend[context.backend],
+            "The exact R backend requires its explicit ordered source graph")
+    end
     return import("provider", {rootdir = path.join(root, "tools/language/ruby"), anonymous = true})
         .configure(target, root, context)
 end
@@ -32,6 +36,10 @@ end
 -- route installs no parser and does not claim source preparation as execution.
 function build(target, root, context)
     assert(target:values("ros.sdk.language") == "r", "GNU R source is required")
+    if context.binding and context.binding.modules_by_backend then
+        context.binding.modules = assert(context.binding.modules_by_backend[context.backend],
+            "The exact R backend requires its explicit ordered source graph")
+    end
     return import("provider", {rootdir = path.join(root, "tools/language/ruby"), anonymous = true})
         .build(target, root, context)
 end

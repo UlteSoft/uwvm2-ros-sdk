@@ -2,8 +2,9 @@
 // @brief Exercise complete original lifecycle_msgs/srv/ChangeState_Response values with genuine Odin compilation.
 package main
 import "core:fmt"
+import "base:runtime"
 import records "sdk:kuka/odin/ros2/kuka-ros2-complete"
-main :: proc() {
+run :: proc() {
     value := records.init_Ros2Lifecycle_msgsSrvChangeState_Response()
     buffer: [1]u8
     wire, status := records.encode_Ros2Lifecycle_msgsSrvChangeState_Response(&value, buffer[:])
@@ -14,5 +15,13 @@ main :: proc() {
     again, code2 := records.encode_Ros2Lifecycle_msgsSrvChangeState_Response(&decoded, again_buffer[:])
     assert(code2 == 0 && len(again) == len(wire))
     for byte, i in wire { assert(byte == again[i]) }
-    fmt.printf("{\"type\":\"lifecycle_msgs/srv/ChangeState_Response\",\"bytes\":%d}\n", len(wire))
+    fmt.printf("%s%d%s\n", "{\"type\":\"lifecycle_msgs/srv/ChangeState_Response\",\"bytes\":", len(wire), "}")
+}
+
+// Enter the real Odin command after WASI C startup.
+@(export, link_name="nl_entry")
+nl_entry :: proc "c"() -> u32 {
+    context = runtime.default_context()
+    run()
+    return 0
 }

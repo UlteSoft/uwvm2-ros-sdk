@@ -42,12 +42,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
 
 target("realman-ros1_main-kotlin-observe_arm__current__status")
     set_language("kotlin")
+    set_values("ros.sdk.main_class", "MainKt")
     set_ros_platform("realman")
     set_ros1_version("noetic")
     set_arch(get_config("arch") or "wasm32")
@@ -60,4 +62,5 @@ target("realman-ros1_main-kotlin-observe_arm__current__status")
         transport = "native-ros",
     })
     add_files("Main.kt")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

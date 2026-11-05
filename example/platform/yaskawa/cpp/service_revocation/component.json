@@ -1,0 +1,785 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-native-lifecycle-5241",
+  "test_scope": "Original guest with only its ROS namespace enabled. Verify denial and cleanup; positive native lifecycle qualification is separate.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/custom-types/generated-r3/fixed_records.hpp",
+      "sha256": "6bd3dcce938fe829969f327e50a4859b2cf5ccbcf38e4fa5ea7baa4df99f814f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/native_command.hpp",
+      "sha256": "36f598d46562bcbce4c11e20e9b66462611aca205fe64226fc6c1492b6a2f431"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/codec.hpp",
+      "sha256": "6528ed2e499ee5e9852baef91501dcb8cedcfd4da7cf4dd583780aa0b9266654"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/cpp_profile.hpp",
+      "sha256": "d5d89a43d17acbf2794bfbb8a8558eebaf62e325053fa6f356362e8d0992161b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/.clang-format",
+      "sha256": "38d4848a4bb37209482f6573f96a2d7232af798fac97a7240fe49a9a2d7cd737"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/common/codec.hpp",
+      "sha256": "22f9cd5db4bae7939b787320b4dc081c135b3f1a057a6f2fabded796896fe030"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/cpp11.hpp",
+      "sha256": "020488e80393b74fa9bb92089577a532bf37deb9ad6f533d7dd6e09bc922fa5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/industrial_portable.hpp",
+      "sha256": "53b1bd3d2e797d481c696e21c091f3be8f941778e8633622795ae38540f1b840"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/portable.hpp",
+      "sha256": "3302ab8bf052406102c4ba3938b56a28c6de73a3ad240641e9895244c496e0c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/portable_service_client.hpp",
+      "sha256": "16650ca1f18876e8d8069abcc24db1d0e3b087e5d51256916384100683149046"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/portable_values.hpp",
+      "sha256": "91065406683595b23dffe0213be2c236aef0f9240403538e58a6818f5007d400"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/portable_wire.hpp",
+      "sha256": "474416f6808560442bc252be9beb8fb94f8323e8e58ef324b630056f891f78ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/raw_owner.hpp",
+      "sha256": "55e1c1f89a62e5c79ffddde4299979cd65398bdadd953e59a9d41e7d4528883c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/detail/unitree_crc_portable.hpp",
+      "sha256": "058c69be13fbbd620c1d47253192c8dddb070c141abbb23f712b34ae03b38849"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/fast_io_bridge.hpp",
+      "sha256": "57da6af80130b80c488a726e93fbb7f0d085b8b561081d1fcc1d6811189edc16"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/library_profile.hpp",
+      "sha256": "7fbcc6a353e05c370ed6ac25596244e1622e6cff1010e33fba6857e4e2b87a8b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/roswasm.hpp",
+      "sha256": "7586f007f085ba085726208035aa1f052a09c3f07bf59ec50f4eeb9e02f28f89"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/roswasmcpp.hpp",
+      "sha256": "f73a037f6b7c6b6fc36f45a698208ea64763bbfd3d58f3d66eb1a84821ea2b6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/scheduler.hpp",
+      "sha256": "31d4350b4ec2487a2047b0b5cb2480603357e5085f96b2c3272132152e502b07"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/service_client.hpp",
+      "sha256": "816e4244816d3e27e8c19ce4db7513a669c3a622b171e665bff5bf69357b97ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/vendor.hpp",
+      "sha256": "0bf2fb077e2661ab306d370b64639538adce7ba2386f82c4307b711cca9481a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/cpp/roswasm/views.hpp",
+      "sha256": "ee50d4ac9f7fe2479a5d1ab7aa2fad68585235ce325ed8be4c0ed3108deaabfe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/adapter/robots/industrial/include/action_owner.hpp",
+      "sha256": "e93256b955c1b3feb3d43d4ead7856c3bc990c9669297c746975cefc860a1292"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/adapter/robots/industrial/include/trajectory_lifecycle.hpp",
+      "sha256": "510462f32766aaae85c3cee2ca385bc5c58f6b537f5393b164ab1bff2b5d1bca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/binding_ros2.hpp",
+      "sha256": "32c65df97fe12fa7f6f07f610a1988c2eed18708908d22bce76fabfc3e46c907"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/query_once.hpp",
+      "sha256": "85471762590853fe3573b8514cb2a7b7342e179d1d90b880961658f1d15ca9cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/ros2/yaskawa-ros2-complete/bounded_interfaces.hpp",
+      "sha256": "3276425eaca1cbe34029d0fbd2ad7294c3eb4277d5d39e80db9cc800ac695153"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/ros2/yaskawa-ros2-complete/bounded_records.hpp",
+      "sha256": "f8c46d9610e74527d83db023c5e33c41d770dcbb2129140f5c14851db7c79d6d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/cpp/trajectory_preflight.hpp",
+      "sha256": "8514156bb7e25cf602c5d5dda7cf7c2ab89a8a8b623d3179d9e4bf366dcf992a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/as.json",
+      "sha256": "7f7c190f2ce0e05ee9264edc52b2bcf20ea0b7a28a025210829e26a850f559ab"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/c.json",
+      "sha256": "d987b8ff3a1c1721681eb501ab587d836353885fc0c1be47a64b78aada014c9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/c_ffi_bridge.json",
+      "sha256": "f624b6b3cc7dfa2a80822615225e3101802ea6bb730a299e643f2e9f7736e043"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/cpp.json",
+      "sha256": "8ede812a06a91880b471d641054d3cb1332dc0bd3a8c67b75ec51832d9121b89"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/csharp.json",
+      "sha256": "e96b38248bdebff2736d948b924265f25ce2c993a2273cc89db597cfd0142ba4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/d.json",
+      "sha256": "a5ef3b4b36ab965f3cef2959cc1a3e382016bb379a349bed543bf27dac12d76a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/fsharp.json",
+      "sha256": "923b3783ba53278f1b1e49ef075ac58158fb176edac2204e1669096dd1080b1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/go.json",
+      "sha256": "46899be3d1c5a64510f3b132943064b4a1695f919eb9270c4fa6e0e50591deed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/haskell.json",
+      "sha256": "6ddc4fccdcaabc499a4fb4e73f95139b81f018cdd6f2e2e36d7a4e3922a6d06d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/java.json",
+      "sha256": "8d80862fbfc146e50ecc391a47876c578ffad3bdc0fb21237cae82d0d2392f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/js.json",
+      "sha256": "ff2df0cea0e3d1cd5af032c4540ea15eb27efd412ee4318caca44274d91417a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/kotlin.json",
+      "sha256": "cc88e3cdc9d84bcaab09b8f1cf6e44c6658b7b07426dc207d325c3f576ced0bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/lua.json",
+      "sha256": "8b18ec839a2e2649ce00b93e4cb9b32fa8474df8e2cd1390631a18052a166563"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/moonbit.json",
+      "sha256": "7ae614c9875fdf383d5ec8f4a1b85cb11e4bea538486c421dfd392b8cc7a1b90"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/nim.json",
+      "sha256": "314e194fc7ee6ad7e156f1703ab6c1376c182e1b07233e06bd55d26050dd47c3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/objectc.json",
+      "sha256": "cd262c48c73813bb0803c8830aa5214b55efda464e8cf52b3b459a9c8fbe59bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/odin.json",
+      "sha256": "453b2d36db6b6ae82c2d94afdd407e9269073fbb5e6a1c058ebcf62a619f06cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/php.json",
+      "sha256": "8deb7dc3b7c3c748425a48e2129574e5b81230752c414342b5768d1f16917476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/py.json",
+      "sha256": "e052ba30492800c2571b0a12537037108db0ca26634546e9ca24379597caf3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/r.json",
+      "sha256": "2eacf386bb2af3a11c3d3859a31d9b832122a04bb15bfb574fd9663479ec6ac6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/rs.json",
+      "sha256": "feba9d2bd16f01b1d86074fdba949cde91430b6678d05e874e3d5928fb84b479"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/ruby.json",
+      "sha256": "4fa9b6c98af39255a5f49f0e5eb513beb99eed2240e40496debf13c2930eaa8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/swift.json",
+      "sha256": "c2d7a3e2db7b437ed9fd5949af4a0079d787fe502b0fba3123ec24c5e7abaa4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/tinygo.json",
+      "sha256": "c6c7c74c22bad230d444b5c7060e16c512914016251f3009843a8c0960b1097c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/vbnet.json",
+      "sha256": "5d74009e93bc9fd7886163fd01737ba34b52cf41ee56ae39a5641632724fd245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/zig.json",
+      "sha256": "a5fae3f40d4bbb64982503cc75fa0a008dc63054849242efced9f9770737a597"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bundles/js/observations.json",
+      "sha256": "5c9b7d9e8187ab694f407451a918fdcf4849ac57377f2aefb617d1cad3e471f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bundles/lua/observations.json",
+      "sha256": "63f702fd9ebcae3bb0657b6c5bd183433e330db1750ec180ca28ddc9ddd37b1b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bundles/py/observations.json",
+      "sha256": "e12f616eadaaa95e8528ca3d6b33c52e503b2c939f698cc696bbe600fd400045"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/builtin_interfaces/msg/Duration.msg",
+      "sha256": "57da13a4201e7d258a2931323145b953e47e46967494e62ba66c2faca4fbade2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json",
+      "sha256": "04f6c8f4e32532fca5b389205b0b4ef39338959ad2e02f6bb68ca73599289a45"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/control_msgs/action/FollowJointTrajectory.action",
+      "sha256": "31a124428ee490da22c15cc70a9ac2c89d07bbbba7d3bf370ca7596b229cb9f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/control_msgs/msg/JointComponentTolerance.msg",
+      "sha256": "6b09271d0f74e0a3a701f3ddb997b0ad4a588bdd9ab7d7899ddc70063ba924dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/control_msgs/msg/JointTolerance.msg",
+      "sha256": "8208718f17c1b1feb9418c3ed7ca73d029566cbf298ecda819c9e0b78cb379d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/geometry_msgs/msg/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/geometry_msgs/msg/TransformStamped.msg",
+      "sha256": "f6e137c205e9187ac1dafdfbace7435de58bb3779a55e9c6b52c2cb513785c42"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/DebugLevel.msg",
+      "sha256": "b578049ef18456b8b5a9474fdd1285ceb5a20667c48cc2f433eb4aaba53a343a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/DeviceInfo.msg",
+      "sha256": "1d2b39c295e3a3909e74a076823cf935fa3c92c6fa153aefbbcac272b26bbb51"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/RobotMode.msg",
+      "sha256": "3bf60f0bcad9b250fe68c5fbd65f0a9671788c0c9c33f4f5c2e028a3213d0bee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/RobotStatus.msg",
+      "sha256": "0389afd8460bf5fca47744e1bfc41bf2d62c889870025a257dd46ab76e1b1945"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/ServiceReturnCode.msg",
+      "sha256": "8f6de01d824b4c9c64103680cebf91b134ae4c17f006ba55e547fe68fc9a52a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/msg/TriState.msg",
+      "sha256": "2f663b2c98d7e01b68d41beed26dd39a1adf8fa71ca9888702cee4e643efeee9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/CmdJointTrajectory.srv",
+      "sha256": "c22ae18b625b680429b05d4f2fe96475f7ba7fc9b97edef68814647ee90e5648"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/GetRobotInfo.srv",
+      "sha256": "f294153cd4b92d8d5540678077257e3aefa61be8cc6bca50fa7517841856b8b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/SetDrivePower.srv",
+      "sha256": "adc36620c8d85b1bf40b55297742c036707bb41393a2aa6a30f77dd8df8799ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/SetRemoteLoggerLevel.srv",
+      "sha256": "316136a5cd5d17a81c4f3c1ddc6a09895cf21e7e85aef1c8f2e5ea3ea151a238"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/StartMotion.srv",
+      "sha256": "06934498171e4d97b6df2dd9d7f0d39e5fbb9cea156573ea98d5acc01b73b1ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/industrial_msgs/srv/StopMotion.srv",
+      "sha256": "2eed9a17e1d7ed421fd3ecd2583499c14cb295302a459f0b2406fd3f8aa12daf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/actionlib_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/common_interfaces/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/diagnostic_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/geometry_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/nav_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/sensor_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/shape_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/std_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/std_srvs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/stereo_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/trajectory_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/common_ros2/visualization_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/control_ros2/LICENSE",
+      "sha256": "1731298f899c65fa14cbdfe340b2c9c5fe17e9e219749e7fe2434e9374f66956"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/industrial_ros2/industrial_msgs/package.xml",
+      "sha256": "196ce19a5a0920a6c10a9363a049d011dacb34a99d771cf02f9b17d4254b846f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/motoros2_interfaces_release/LICENSES/Apache-2.0.txt",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/motoros2_interfaces_release/LICENSES/CC-BY-SA-4.0.txt",
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/motoros2_interfaces_release/LICENSES/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/rcl_interfaces_ros2/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/licenses/tf_ros2/LICENSE",
+      "sha256": "1b1e5ebcad699924203feced7205a4bbdf4f153d34065a19a8a4e107cf1e154b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/AlarmCauseRemedy.msg",
+      "sha256": "290a311471aff3baa0bd79e3e08330f8596334612b5fa9cdab75146f24d94869"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/AlarmInfo.msg",
+      "sha256": "0e751eec501290d29fba03880493868be919da4939eb58a3bed5508e8a3d37b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/ErrorInfo.msg",
+      "sha256": "71046bedd075abe0de6e66da031ece5dce96ccf888a4c87406b991ca7c7ce326"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/InformJobCrudResultCodes.msg",
+      "sha256": "a38d285634bde4d320cd0f32515bbce26a161746732af80b93f90369211c0549"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/InitTrajEnum.msg",
+      "sha256": "fef1e085ebca153094100a9e8a0066f18643f657b8493de25c1fb139059219fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/IoResultCodes.msg",
+      "sha256": "17c2bd4276006972b4467092477d3cb8a9867c9f17c35ac1ee94df364c4766f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/MotionReadyEnum.msg",
+      "sha256": "b7fc0a1961869614a588477f2b649f7b2b416d34b194bb6267adb3d7d596a3dc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/QueueResultEnum.msg",
+      "sha256": "c14bf7fb06d602f96d442510587e9c7fbe4229f21324bf801e97c87649adb512"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/msg/SelectionResultCodes.msg",
+      "sha256": "7c94b744ec47c89da4f37ddfa2113d816edfc4ad99d359ff30d9cd5e832b4fe4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/GetActiveAlarmInfo.srv",
+      "sha256": "8d25296b20f84420a58214c33e6bedcba15bb8ad685a3146e3b85f93288fedd7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/ListInformJobs.srv",
+      "sha256": "f15c987cf227d396b8c8d4cc52d7689648395b9f590b6af8b768a9c321880f4f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/QueueTrajPoint.srv",
+      "sha256": "a512280116529112aedfeb35549fdc0c547c34b217aa57eac6254d59513bcf02"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/ReadGroupIO.srv",
+      "sha256": "cdf7cb3980ca2f186963b7251aa707ae69c921d7f7f2a59ca32da4abe1a476d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/ReadMRegister.srv",
+      "sha256": "cdff2fbbc252dac1ab90754f9dd4afb5ed852f54a0eef2b8db77a149b397b226"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/ReadSingleIO.srv",
+      "sha256": "1aa2349d0a045b6ac941ea25ba1361f432e077f9233cb699d0c0beb2c2a1920f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/ResetError.srv",
+      "sha256": "eb19edd21e082cf866bb4a8b2a07679d0301e3c3fcf116230e77e87acf8df768"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/SelectMotionTool.srv",
+      "sha256": "89b2f66e3dea72582cb03180d0b5a0c6a98f8e1a432928810310215545a396e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/StartPointQueueMode.srv",
+      "sha256": "2c29a9cef3ecb09a9e22c72c5c19a912f3be4460fe2f6c49a7a2a0f4d7ed879c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/StartTrajMode.srv",
+      "sha256": "bc4a560b33854a1927af0df0680a03c476616b1cefa9c7e7277f4ea3ec694c4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/WriteGroupIO.srv",
+      "sha256": "fb664112f34580ec57df3892da0089956d7d9d123174dd00ff7c01f480ab0445"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/WriteMRegister.srv",
+      "sha256": "2211208e517e78901dae3bc0ccee62f9528b2be1d2d77e6df3aeff6a3649a1a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/motoros2_interfaces/srv/WriteSingleIO.srv",
+      "sha256": "3e8c1d04236c7e4a8ded058621ab662c9b83f9ca6128469f91de520402205073"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/source-lock.json",
+      "sha256": "52eb39dfc0338533e67725cbb350e5dad5a6596a7ade1f3ce2b41dcb6d043571"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/source-map.json",
+      "sha256": "bd84b26d91e038278bb999564816c81592b4e36f242cf9b05c311850fd74788f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/std_srvs/srv/Trigger.srv",
+      "sha256": "81e80d26771d0c0af8783938720c763cacc429e68d9d6b9c1f912474db0d8dca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/tf2_msgs/msg/TFMessage.msg",
+      "sha256": "f3fca610a59b31ee4c7b740522ecdd0fd8c76002170088111409e4df513f1dfc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/trajectory_msgs/msg/JointTrajectory.msg",
+      "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "sha256": "070af6b4c9f4238d9de36621105d78c999dbad2045d0cb2a633f86a17f73f6b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/catalogs/ros2/trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "sha256": "7e3a4b150ff7ce8d7d897a480d8d324a244a0afb4a07fdf6241074071170ac7a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/driver-audit.json",
+      "sha256": "ad2df33637ad5fa0c798e0bb1e9cc415f7ce5c930601ece07b1f26883f8d90b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/embedded-ir.json",
+      "sha256": "7354ce66b590ad4a05e0ca7a57a3451f8c1c057d246c697bd25ca33bf5c45e42"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/provider.json",
+      "sha256": "e389dde0de1a66eb48704c8c604106c208a8c9654f4e5c7e9560ee1fff5c04eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/records-ir.json",
+      "sha256": "5cf7576f894d233a8b4458db79940780783ab2f64e251e449cc7a4be1dcf399b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/review-status.json",
+      "sha256": "1ce3cbb520ed9e0f58260d8b2d0639c611900b62425d0a5ee5be4d1d33d19e56"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/upstream/motoros2.json",
+      "sha256": "3af59e4fd2647ead3924cbf1ef7ccbed06a161dea91c21c4a699a551dd370bd4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/upstream-reference-lock.json",
+      "sha256": "811285a3e46c53d114f08deff6de79bd9dfc087bc4c0cf7047b704a9f6668cad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/yaskawa/provider.lua",
+      "sha256": "af10d01cfddf57d742d5a98ba7e70da14463e2cb69be510d94e8f823b09152cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "d10c0e409281d688ec1eb9be296a9b4cc1bed11229e9dbb69923985a6e78440d"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "faf6fd8c88cab5ca456ad1bca733ffa335bd90ab541f0080e67b83e83688821f"
+    },
+    {
+      "scope": "example",
+      "path": "native.json",
+      "sha256": "31022257b5b95da1350ff794e30ba5fa3377b3a3b8a7971ba8113a874018b62a"
+    }
+  ],
+  "cases": [
+    {
+      "id": "ungranted-preserves-entire-response",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 1,
+      "expected_json": {
+        "first_open": 13,
+        "second_open": 13,
+        "positive_rpc": 13,
+        "revoke": 9,
+        "second_owner_present_before_call": false,
+        "live_owner_denied": 13,
+        "reopen_denied": 13,
+        "response_preserved": true,
+        "cleanup": 9,
+        "owners_retired": true,
+        "full_response": false,
+        "passed": false,
+        "wire_hex": "",
+        "sentinel_before_hex": "34120000040000006b65657000b3ffffff",
+        "sentinel_after_hex": "34120000040000006b65657000b3ffffff"
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

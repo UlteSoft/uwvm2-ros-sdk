@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "js",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/js/ros2/franka-ros2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/franka/bundles/js/ros2.json"
+}

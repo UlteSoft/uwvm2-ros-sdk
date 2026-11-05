@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-457",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3c47307902b56f1591b7e124b0681ac30425fe9e0ec3840cfd4fc9d0a1febb53"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "5df631f561385db90bc604f1fb2f3a075e8d7c15d43eccea63ef990d943179db"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "73f135f199b6379df58f6c74e997de170c80aeede8b59dcec7a4368c1ff85650"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros1/catalog.json",
+      "sha256": "6d34bb6b6321412fbedfb2eb3e8f9075bfb0590ccf111b1af7208a1fd68f15ec"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros1/clearpath_platform_msgs/msg/StopStatus.msg",
+      "sha256": "9034f51c5225806e6145215216cb0bf0a96bf86b06d8a6a5960261b8abda5657"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros1/std_msgs/msg/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "18\n"
+    }
+  ]
+}

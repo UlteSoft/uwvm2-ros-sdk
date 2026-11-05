@@ -8,7 +8,7 @@ of those properties.
 `main` imports scalar functions from `io`, `algorithm`, and
 `ros_comm`. `io` writes through its own WASI standard streams. `algorithm`
 computes from actual native bytes' digest and links `algorithm_core.a`
-transitively. Default WASI still permits basic standard-stream operations;
+transitively. Base WASI requires explicit grants for standard-stream operations;
 algorithm has no additional resource or ROS grants. `ros_comm` alone gets the
 explicit subscription and monotonic timer. Each module retains its own memory.
 No pointer, text view, or ROS handle crosses a library boundary.
@@ -107,8 +107,8 @@ bash -c 'kill -STOP "$$"; exec "$@"' module-worker "$module_runtime" -Rint \
   --wasm-preload-library build/algorithm.wasm algorithm \
   --wasm-preload-library build/ros_comm.wasm ros_comm \
   --wasm-set-main-module-name main \
-  --wasip1-single-create main --wasip1-single-create io \
-  --wasip1-single-create algorithm --wasip1-single-create ros_comm \
+  --wasip1-single-create main --wasip1-single-enable main --wasip1-single-create io --wasip1-single-enable io \
+  --wasip1-single-create algorithm --wasip1-single-enable algorithm --wasip1-single-create ros_comm --wasip1-single-enable ros_comm \
   --wasip1-single-noinherit-system-environment main \
   --wasip1-single-noinherit-system-environment io \
   --wasip1-single-noinherit-system-environment algorithm \

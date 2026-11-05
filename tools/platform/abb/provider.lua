@@ -21,6 +21,14 @@ local function request(target, root, context)
     for _, source in ipairs(context.sources) do
         assert(contract.contains(binding.extensions, path.extension(source)), "Source extension conflicts with language")
     end
+    -- Backend-specific bundles preserve the original complete records and do
+    -- not grant access to any ROS resource.
+    if binding.bundle_manifests then
+        binding.bundle_manifest = binding.bundle_manifests[context.backend]
+    end
+    if binding.native_actions then
+        binding.native_action = assert(binding.native_actions[context.backend], "Select a complete backend-specific native source graph")
+    end
     context.binding = binding
     context.module_roots = binding.module_roots
     context.native_sources = binding.native_sources[context.backend] or {}

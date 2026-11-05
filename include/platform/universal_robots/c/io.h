@@ -23,7 +23,7 @@
 # error "Select exactly one UR source variant"
 #endif
 #if defined(UWVM_UR_ROS1)
-# include <ros/c/roswasm/ros1.h>
+# include <ros1/c/roswasm/ros1.h>
 # define UWVM_UR_BACKEND roswasmc_ros1_backend
 # define UWVM_UR_VERSION 1
 typedef roswasmc_bounded_1_ur_msgs_IOStates uwvm_ur_io_state;
@@ -32,7 +32,7 @@ typedef roswasmc_bounded_1_ur_msgs_SetSpeedSliderFractionRequest uwvm_ur_speed_r
 # define UWVM_UR_IO_ENCODE roswasmc_bounded_1_ur_msgs_IOStates_encode
 # define UWVM_UR_SPEED_MEMBER speed_slider_fraction
 #elif defined(UWVM_UR_ROS2)
-# include <ros/c/roswasm/ros2.h>
+# include <ros2/c/roswasm/ros2.h>
 # define UWVM_UR_BACKEND roswasmc_ros2_backend
 # define UWVM_UR_VERSION 2
 typedef roswasmc_bounded_2_ur_msgs_msg_IOStates uwvm_ur_io_state;
@@ -41,7 +41,7 @@ typedef roswasmc_bounded_2_ur_msgs_srv_SetSpeedSliderFraction_Request uwvm_ur_sp
 # define UWVM_UR_IO_ENCODE roswasmc_bounded_2_ur_msgs_msg_IOStates_encode
 # define UWVM_UR_SPEED_MEMBER speed_slider_fraction
 #elif defined(UWVM_UR_POLYSCOPEX)
-# include <ros/c/roswasm/ros2.h>
+# include <ros2/c/roswasm/ros2.h>
 # define UWVM_UR_BACKEND roswasmc_ros2_backend
 # define UWVM_UR_VERSION 2
 typedef roswasmc_bounded_2_urinterfaces_msg_DigitalIOStateStamped uwvm_ur_io_state;

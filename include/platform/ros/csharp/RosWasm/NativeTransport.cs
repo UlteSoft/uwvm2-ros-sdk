@@ -576,7 +576,8 @@ public sealed partial class NativeTransport : ITransport
                         throw new InvalidOperationException("invalid successful output length");
                     byte[] exact = new byte[(int)value];
                     Buffer.BlockCopy(output, 0, exact, 0, exact.Length);
-                    result = new Result(0, exact);
+                    // Preserve the checked ABI length independently of the owned data.
+                    result = new Result(0, exact, required: value);
                 }
                 else
                     result = new Result(0, kind == OutputKind.Ready ? output : Array.Empty<byte>());

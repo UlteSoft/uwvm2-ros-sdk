@@ -1,0 +1,110 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observer-287",
+  "ros_namespace": "ros1",
+  "test_scope": "Actual original observation: namespace without alias authority returns denial, with no acquired owner, no request or decoded response. Missing alias is rejected before acquisition. Positive ROS transport is a separate integration test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "7ee320eaa7f282ffe3bea5c2d1b7c2b9cc1d46e3961f314b632caa265c56bfab"
+    },
+    {
+      "scope": "example",
+      "path": "main.d",
+      "sha256": "9efba62610e4a63ffffcf1258287ed658677711f6483fc60e4866f16f882c37c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/d/ros1/observation.d",
+      "sha256": "fd01536fa746d3d12264a8e7eb797eea407332c99eb2599edd303fb997641f6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/d/ros1/records.d",
+      "sha256": "f5ef3fc2a0bf7e360df9b0a2e28a2ffe9aaae33c9d7c2f8bb63d0c55e594ee59"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/d/ros2/observation.d",
+      "sha256": "39e4e60a41a26177393591c6e3f315e6b50feb85a099104cf38fdc1221245a74"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/d/ros2/records.d",
+      "sha256": "bcc8ce1a415f742fcef63e637582a2ec8d0873021e3af9fc79eb4ed43f67363e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/provider.json",
+      "sha256": "e6abcd6a94d1ed8ef59826b2a950a8c178fff54696821299bdfa10c018bb48ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/observation.d",
+      "sha256": "24122e2fc2057c6419b423bca5813cc145528166ad741c83b46ac8337f9513a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/wire.d",
+      "sha256": "5c9fd175947be05f6f16edf61a2456492c5c06e4a42fc7e30bf615398290319a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agilex/provider.lua",
+      "sha256": "d5749c863e1a535a62248d7cffa3562dd0ae4b088ab9cc283d8099c89f8458d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

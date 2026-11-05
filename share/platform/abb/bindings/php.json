@@ -18,5 +18,31 @@
     "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/abb/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "modules": [
+    {
+      "name": "roswasm/word",
+      "path": "include/platform/ros/php/RosWasm/Word.php"
+    },
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/php/RosWasm/Wire.php"
+    },
+    {
+      "name": "roswasm/transport",
+      "path": "include/platform/ros/php/RosWasm/Transport.php"
+    },
+    {
+      "name": "uwvm/observation",
+      "path": "src/language/php/Observation.php"
+    },
+    {
+      "name": "abb/php/ros1/records.php",
+      "path": "include/platform/abb/php/ros1/records.php"
+    },
+    {
+      "name": "abb/php/ros2/records.php",
+      "path": "include/platform/abb/php/ros2/records.php"
+    }
+  ]
 }

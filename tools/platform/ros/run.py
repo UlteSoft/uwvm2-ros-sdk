@@ -16,6 +16,8 @@ from pathlib import Path
 import signal
 import subprocess
 import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared/python"))
+from pipe_capture import PipeLoggedProcess
 import tempfile
 import time
 
@@ -91,7 +93,7 @@ def run(
 ):
     """@brief Execute one compiled command and retain exact process evidence.
 
-    @param config_path Manually authored v2 deployment JSON.
+    @param config_path Manually authored v3 deployment JSON.
     @param scenario Provider-owned scenario selected by the Xmake target.
     @param wasm Main compiled Core Wasm application.
     @param report_directory Private log directory outside deployable artifacts.
@@ -99,7 +101,7 @@ def run(
     @param expected_backend Application's ROS import family.
     @param expected_distribution Application's selected native ROS distribution.
     @return Unchanged worker exit status; process startup errors raise.
-    @details No operation is retried. Each enabled module receives a separate
+    @details No operation is retried. Each module with native grants receives a separate
     gateway policy with its actual worker PID, socket and complete grant set.
     Physical controllers and ROS peers are never started by this launcher.
     """
@@ -122,8 +124,8 @@ def run(
     )
     # A pure Wasm deployment does not consume a native ROS installation.
     # Resolve native executables and its sourced distribution only when at
-    # least one explicitly configured module actually enables that backend.
-    native_ros = any(module["ros_enabled"] for module in plan["modules"].values())
+    # least one explicitly configured module grants a native operation.
+    native_ros = any(module["grants"] for module in plan["modules"].values())
     if native_ros and os.environ.get("ROS_DISTRO", distribution) != distribution:
         raise ValueError("The sourced native ROS distribution differs from deployment")
     base = config_path.resolve().parent
@@ -131,7 +133,7 @@ def run(
     gateway = None
     if native_ros:
         if not isinstance(config.get("gateway"), str) or not config["gateway"]:
-            raise ValueError("A ROS-enabled module requires a gateway executable")
+            raise ValueError("A native ROS operation grant requires a gateway executable")
         gateway = executable(base, config["gateway"])
     prefix = []
     if "runtime_loader" in config or "runtime_library_path" in config:
@@ -166,7 +168,7 @@ def run(
         sockets = {
             label: str(Path(temporary) / f"{index}.sock")
             for index, (label, module) in enumerate(plan["modules"].items())
-            if module["ros_enabled"]
+            if module["grants"]
         }
         argv = deployment.command(plan, [*prefix, runtime], sockets, os.getuid())
         result["argv"] = argv
@@ -174,7 +176,7 @@ def run(
             with ExitStack() as files:
                 stdout = files.enter_context((evidence / "worker.stdout").open("wb"))
                 stderr = files.enter_context((evidence / "worker.stderr").open("wb"))
-                worker = subprocess.Popen(
+                worker = PipeLoggedProcess(
                     [
                         sys.executable,
                         "-B",
@@ -196,7 +198,7 @@ def run(
                 )
                 result["worker_pid"] = worker.pid
                 for index, (label, module) in enumerate(plan["modules"].items()):
-                    if not module["ros_enabled"]:
+                    if not module["grants"]:
                         continue
                     folder = evidence / f"gateway-{index}"
                     folder.mkdir()

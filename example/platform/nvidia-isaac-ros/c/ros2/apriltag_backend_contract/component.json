@@ -1,0 +1,352 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-command-contract-3358",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/cpu_sensor_contract.h",
+      "sha256": "3fc6505ace9dcb99d2a5cabbd37bce626e1994963aaab0cb719d01c77a1a443e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_interfaces.h",
+      "sha256": "936f9d73dac106ba4e98c1feaddf20bb9c94fed16a14b7fd5cfdca1c98cbed9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_records.h",
+      "sha256": "61038bd330e7dd3857f40a161a4baef3100e1ad6d318a084a1f7adb66ae96272"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "cases.v1.json",
+      "sha256": "fc915e9abc7d59e99f345a663c950b7e27885881d086743343eb0304d1a56b9a"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "00f42a755e42a25321f3a920ea5705589ff9c94d91fcea8ffc73cf030deda7f1"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4d6073925af4565c9de6a557980201000bb80dee1cf4036f015062a2f1ae436e"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "68ba2aac5cae0db64a0cfc317edb8a8af4be1efc03438da44be9e91e7ad7ca75"
+    }
+  ],
+  "cases": [
+    {
+      "id": "image-0",
+      "arguments": [
+        "cuda",
+        "rgb8",
+        "3",
+        "3",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=cuda encoding=rgb8 step=3 bytes=3 status=0\n"
+    },
+    {
+      "id": "image-1",
+      "arguments": [
+        "cuda",
+        "bgr8",
+        "4",
+        "4",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=cuda encoding=bgr8 step=4 bytes=4 status=0\n"
+    },
+    {
+      "id": "image-2",
+      "arguments": [
+        "cuda",
+        "mono8",
+        "1",
+        "1",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=cuda encoding=mono8 step=1 bytes=1 status=95\n"
+    },
+    {
+      "id": "image-3",
+      "arguments": [
+        "vpi",
+        "mono8",
+        "1",
+        "1",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi encoding=mono8 step=1 bytes=1 status=0\n"
+    },
+    {
+      "id": "image-4",
+      "arguments": [
+        "vpi",
+        "mono16",
+        "2",
+        "2",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi encoding=mono16 step=2 bytes=2 status=95\n"
+    },
+    {
+      "id": "image-5",
+      "arguments": [
+        "vpi",
+        "rgb8",
+        "2",
+        "2",
+        "22"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi encoding=rgb8 step=2 bytes=2 status=22\n"
+    },
+    {
+      "id": "image-6",
+      "arguments": [
+        "vpi",
+        "rgb8",
+        "3",
+        "2",
+        "22"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi encoding=rgb8 step=3 bytes=2 status=22\n"
+    },
+    {
+      "id": "image-7",
+      "arguments": [
+        "unknown",
+        "rgb8",
+        "3",
+        "3",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=unknown encoding=rgb8 step=3 bytes=3 status=95\n"
+    },
+    {
+      "id": "family-0",
+      "arguments": [
+        "family",
+        "cuda",
+        "tag36h11",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=cuda family=tag36h11 status=0\n"
+    },
+    {
+      "id": "family-1",
+      "arguments": [
+        "family",
+        "cuda",
+        "tag16h5",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=cuda family=tag16h5 status=95\n"
+    },
+    {
+      "id": "family-2",
+      "arguments": [
+        "family",
+        "vpi",
+        "tag16h5",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi family=tag16h5 status=0\n"
+    },
+    {
+      "id": "family-3",
+      "arguments": [
+        "family",
+        "vpi",
+        "tag25h9",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi family=tag25h9 status=0\n"
+    },
+    {
+      "id": "family-4",
+      "arguments": [
+        "family",
+        "vpi",
+        "circle21h7",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi family=circle21h7 status=0\n"
+    },
+    {
+      "id": "family-5",
+      "arguments": [
+        "family",
+        "vpi",
+        "standard52h13",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi family=standard52h13 status=0\n"
+    },
+    {
+      "id": "family-6",
+      "arguments": [
+        "family",
+        "vpi",
+        "unknown",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=vpi family=unknown status=95\n"
+    },
+    {
+      "id": "family-7",
+      "arguments": [
+        "family",
+        "none",
+        "tag36h11",
+        "95"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "profile=none family=tag36h11 status=95\n"
+    },
+    {
+      "id": "pair-0",
+      "arguments": [
+        "pair",
+        "0",
+        "8",
+        "8",
+        "1",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=0 coefficients=8 quota=8 rectify=1 nonfinite=0 status=0\n"
+    },
+    {
+      "id": "pair-1",
+      "arguments": [
+        "pair",
+        "1",
+        "8",
+        "8",
+        "1",
+        "0",
+        "22"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=1 coefficients=8 quota=8 rectify=1 nonfinite=0 status=22\n"
+    },
+    {
+      "id": "pair-2",
+      "arguments": [
+        "pair",
+        "0",
+        "8",
+        "7",
+        "1",
+        "0",
+        "90"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=0 coefficients=8 quota=7 rectify=1 nonfinite=0 status=90\n"
+    },
+    {
+      "id": "pair-3",
+      "arguments": [
+        "pair",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=0 coefficients=0 quota=0 rectify=0 nonfinite=0 status=0\n"
+    },
+    {
+      "id": "pair-4",
+      "arguments": [
+        "pair",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "22"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=0 coefficients=0 quota=0 rectify=2 nonfinite=0 status=22\n"
+    },
+    {
+      "id": "pair-5",
+      "arguments": [
+        "pair",
+        "0",
+        "8",
+        "8",
+        "1",
+        "1",
+        "22"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "pair_delta=0 coefficients=8 quota=8 rectify=1 nonfinite=1 status=22\n"
+    },
+    {
+      "id": "missing-contract",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

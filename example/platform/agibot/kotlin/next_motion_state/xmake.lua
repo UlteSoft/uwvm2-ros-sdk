@@ -54,6 +54,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -62,6 +63,7 @@ target("example")
     set_kind("binary")
     set_default(true)
     set_language("kotlin")
+    set_values("ros.sdk.main_class", "agibot.examples.Main")
     -- uwvm2 architecture/platform pair maps to the compiler triple wasm32-wasip1.
     set_arch(get_config("arch") or "wasm32")
     set_plat(get_config("plat") or "wasm-wasip1")
@@ -72,4 +74,5 @@ target("example")
     set_agibot_variant("main")
     set_ros_scenario("next_motion_state")
     add_files("Main.kt")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

@@ -17,5 +17,31 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "zig",
+    "c_sources": [
+      "src/language/native/startup.c"
+    ],
+    "zig": {
+      "wasi": true,
+      "imports": [
+        "doosan"
+      ],
+      "modules": [
+        {
+          "name": "roswire",
+          "source": "include/platform/ros/zig/wire.zig"
+        },
+        {
+          "name": "doosan",
+          "source": "include/platform/doosan/zig/ros1/doosan-ros1-melodic-devel-complete/records.zig",
+          "imports": [
+            "roswire"
+          ]
+        }
+      ]
+    }
+  }
 }

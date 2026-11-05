@@ -6,7 +6,7 @@
 ## native ROS objects; importing them grants no transport alias.
 ## @brief Observe complete original Yaskawa ROS 2 messages in genuine Nim.
 ## @details All values own their bytes; successful acquisitions close exactly once.
-import ros/nim/observation as core
+import native/nim/observation as core
 import yaskawa/nim/ros2/records
 export core
 

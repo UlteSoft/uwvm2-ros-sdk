@@ -2,7 +2,7 @@
 // @brief Observe one complete original ROS 1 runtime_state native message.
 // @details One explicit alias is required; the real Odin observer closes before stdout.
 package main
-import core "ros:odin/observation"
+import core "native:odin/observation"
 import abb "abb:odin/ros1/observation"
 // @brief Enter the genuine compiled Odin command with its original numeric status.
 // @details Read exactly one strict UTF-8 alias from the original WASI argument vector.

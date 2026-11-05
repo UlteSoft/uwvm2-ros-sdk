@@ -38,6 +38,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 
@@ -51,5 +52,6 @@ set_arch(get_config("arch") or "wasm32")
 set_plat("wasm-wasip1")
 set_ros_scenario("observe_native_state")
 add_files("main.c")
-set_targetdir("build")
+set_targetdir("build/artifacts")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

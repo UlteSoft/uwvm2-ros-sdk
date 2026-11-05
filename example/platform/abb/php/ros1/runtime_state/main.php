@@ -12,8 +12,9 @@ declare(strict_types=1);
 /** @file main.php
  * @brief Read every original abb_rapid_sm_addin_msgs/RuntimeState field using genuine PHP.
  * @details Shared transport/codecs execute in the VM packed inside this command. */
-use Uwvm\RosWasm\Observation;
-use Uwvm\Abb\Ros2\Ros1Abb_rapid_sm_addin_msgsRuntimeState;
-if (count($argv) !== 2) { exit(22); }
-$report = Observation::receive($argv[1], Ros1Abb_rapid_sm_addin_msgsRuntimeState::class, 250, static fn(): int => \Uwvm\Native\pause_ms(20));
-exit(Observation::output($report));
+use Uwvm\Language\PhpObservation;
+$arguments = \Uwvm\Native\argv();
+use Uwvm\Abb\Ros1\Ros1Abb_rapid_sm_addin_msgsRuntimeState;
+if (count($arguments) !== 2) { exit(22); }
+$report = PhpObservation::receive($arguments[1], Ros1Abb_rapid_sm_addin_msgsRuntimeState::class, "", true);
+exit(PhpObservation::output($report));

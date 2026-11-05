@@ -44,5 +44,15 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "modules": [
+    {
+      "name": "ros/ruby/roswasm/transport",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb"
+    },
+    {
+      "name": "ros/ruby/roswasm/native_command",
+      "path": "include/platform/ros/ruby/roswasm/native_command.rb"
+    }
+  ]
 }

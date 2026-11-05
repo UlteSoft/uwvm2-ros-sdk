@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 target("robotis-obstacle_scenario")
@@ -55,4 +56,5 @@ target("robotis-obstacle_scenario")
     set_values("ros.sdk.standard", "c17")
     add_includedirs(path.join(root, "include"), path.join(root, "include/platform"))
     add_files("main.c")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

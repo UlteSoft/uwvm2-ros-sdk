@@ -42,12 +42,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
 
 target("dobot-ros1_v4-java-query_robot_mode")
     set_language("java")
+    set_values("ros.sdk.main_class", "Main")
     set_ros_platform("dobot")
     set_ros1_version("noetic")
     set_arch(get_config("arch") or "wasm32")
@@ -60,4 +62,5 @@ target("dobot-ros1_v4-java-query_robot_mode")
         transport = "native-ros",
     })
     add_files("Main.java")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

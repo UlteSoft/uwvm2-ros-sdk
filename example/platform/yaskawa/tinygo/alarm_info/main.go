@@ -14,7 +14,7 @@ import (
 	"os"
 	"time"
 	ros "uwvm2.local/roswasm"
-	records "uwvm2.local/yaskawa-records-tinygo"
+	records "uwvm2.local/yaskawa-records"
 )
 
 // @brief Preserve an original typed SDK error without narrowing its u32 code.

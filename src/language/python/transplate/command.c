@@ -14,7 +14,7 @@ PyMODINIT_FUNC PyInit__roswasm_native(void);
 /** Run one isolated, single-threaded command and preserve ordinary failures. */
 int main(int argc, char **argv)
 {
-    if (sizeof(transplate_source) < 2 || sizeof(transplate_source) > 4194305)
+    if (sizeof(transplate_source) < 2 || sizeof(transplate_source) > 16777217)
     {
         return 22;
     }

@@ -16,5 +16,56 @@
     "ros2": "share/platform/fanuc/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/fanuc/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "zig",
+    "c_sources": [
+      {
+        "source": "src/language/native/abi.c",
+        "object": "abi.o",
+        "defines": [
+          "UWVM_NATIVE_ROS2"
+        ]
+      }
+    ],
+    "zig": {
+      "wasi": true,
+      "imports": [
+        "fanuc"
+      ],
+      "modules": [
+        {
+          "name": "native_wire",
+          "source": "src/language/native/zig/wire.zig"
+        },
+        {
+          "name": "roswire",
+          "source": "include/platform/ros/zig/wire.zig"
+        },
+        {
+          "name": "ros_observation",
+          "source": "src/language/native/zig/observation.zig",
+          "imports": [
+            "native_wire"
+          ]
+        },
+        {
+          "name": "fanuc_records",
+          "source": "include/platform/fanuc/zig/ros2/records.zig",
+          "imports": [
+            "roswire"
+          ]
+        },
+        {
+          "name": "fanuc",
+          "source": "include/platform/fanuc/zig/ros2/observation.zig",
+          "imports": [
+            "ros_observation",
+            "fanuc_records"
+          ]
+        }
+      ]
+    }
+  }
 }

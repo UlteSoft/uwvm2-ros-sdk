@@ -19,7 +19,7 @@ if not root or not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
-includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
+includes(path.join(root, "tools/platform/ros/xmake/python_transplate_tests.lua"))
 set_policy("run.autobuild", false)
 set_policy("test.return_zero_on_failure", false)
 target("rospy-wasm-pubsub")
@@ -34,5 +34,5 @@ target("rospy-wasm-pubsub")
     set_wasm_exceptions("noeh")
     set_values("ros.sdk.python.transplate", "rospy-noetic-pubsub-v1")
     add_files("main.py")
-    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "guest-cases.json"})
+    uwvm_python_transplate_native({api_version = 1, sdk_root = root, backend = "ros1"})
 target_end()

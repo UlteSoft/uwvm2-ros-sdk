@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("kuka.py.ros2.kuka-ros2-complete.bounded_records")
+records = import_module("kuka.py.ros2.kuka_ros2_complete.bounded_records")
 value = records.Ros2Kuka_driver_interfacesMsgKssStatus()
 wire = value.encode()
 decoded = records.Ros2Kuka_driver_interfacesMsgKssStatus.decode(wire)

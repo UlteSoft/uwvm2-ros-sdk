@@ -10,6 +10,7 @@
  * UWVM2 bounded typed ROS1 Service metadata probe. APL-2.0. *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "bounded_service.h"
 #include <uwvm2/imported/ros/common/service_availability_history.h>
 #include <algorithm>
@@ -193,27 +194,13 @@ namespace uwvm2::ros_gateway::ros1_service_availability
                 errno = EMSGSIZE;
                 return false;
             }
-            auto now{std::chrono::steady_clock::now()};
+            auto now{::uwvm2::utils::host_clock::now()};
             if(now >= until)
             {
                 errno = ETIMEDOUT;
                 return false;
             }
-            auto left{std::chrono::duration_cast<std::chrono::milliseconds>(until - now).count()};
-            pollfd ready{fd, POLLIN, 0};
-            auto rc{::poll(&ready, 1, static_cast<int>(std::max<std::int64_t>(1, std::min<std::int64_t>(left, INT_MAX))))};
-            if(rc < 0 && errno == EINTR)
-            {
-                continue;
-            }
-            if(rc <= 0)
-            {
-                if(!rc)
-                {
-                    errno = ETIMEDOUT;
-                }
-                return false;
-            }
+            if(!ipc::wait_ready(fd,POLLIN,until,-1))return false;
             auto count{::recv(fd, chunk.data(), chunk.size(), MSG_DONTWAIT)};
             if(count < 0 && (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK))
             {
@@ -375,12 +362,12 @@ namespace uwvm2::ros_gateway::ros1_service_availability
         {
             return ros1_service::failure(until);
         }
-        if(std::chrono::steady_clock::now() >= until)
+        if(::uwvm2::utils::host_clock::now() >= until)
         {
             return 110;
         }
         auto parsed{lookup_result(response, found, uri)};
-        return std::chrono::steady_clock::now() >= until ? 110u : parsed;
+        return ::uwvm2::utils::host_clock::now() >= until ? 110u : parsed;
     }
 
     template <class Service>
@@ -446,7 +433,7 @@ namespace uwvm2::ros_gateway::ros1_service_availability
         }
         // Return/RAII close BEFORE ever writing a service request length/body.
         // Real roscpp invokes processRequest only after that missing body arrives.
-        return std::chrono::steady_clock::now() >= until ? result{110, 0} : result{0, 1};
+        return ::uwvm2::utils::host_clock::now() >= until ? result{110, 0} : result{0, 1};
     }
 
     template <class Service, class Qualifier>
@@ -476,13 +463,13 @@ namespace uwvm2::ros_gateway::ros1_service_availability
         {
             return {0, wire::typed_query | wire::finite_wait | wire::typed_md5_header};
         }
-        if(!timeout_ms || request.value > limit(availability, "max-wait-ns"))
+        if(request.value > limit(availability, "max-wait-ns"))
         {
             return {22, 0};
         }
-        auto started{std::chrono::steady_clock::now()},
-            until{started + std::chrono::milliseconds(std::min<std::uint64_t>(timeout_ms, limit(availability, "timeout-ms")))};
-        auto logical{started + std::chrono::nanoseconds(request.value)};
+        auto started{::uwvm2::utils::host_clock::now()},
+            until{request_deadline(availability,timeout_ms,started)};
+        auto logical_value=logical_deadline(started,request.value);if(!logical_value)return {22,0};auto logical=*logical_value;
         for(;;)
         {
             auto observed{one<Service>(source, until)};
@@ -490,7 +477,7 @@ namespace uwvm2::ros_gateway::ros1_service_availability
             {
                 return observed;
             }
-            auto now{std::chrono::steady_clock::now()};
+            auto now{::uwvm2::utils::host_clock::now()};
             if(now >= until)
             {
                 return {110, 0};
@@ -499,7 +486,8 @@ namespace uwvm2::ros_gateway::ros1_service_availability
             {
                 return {0, 0};
             }
-            std::this_thread::sleep_until(std::min(logical, std::min(until, now + std::chrono::milliseconds(200))));
+            auto* waiter=ros::synchronous_wait_context::waiter();if(!waiter)return {95,0};
+            if(waiter->until(std::min(logical,std::min(until,now+std::chrono::milliseconds(200))))!=ros::quota_wait_result::ready)return {125,0};
         }
     }
 }  // namespace uwvm2::ros_gateway::ros1_service_availability

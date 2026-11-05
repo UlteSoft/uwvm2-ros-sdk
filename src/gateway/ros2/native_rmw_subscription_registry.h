@@ -5,6 +5,7 @@
  * for every entry, including commit/cancel. Binding values are not authority.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "native_rmw_subscription.h"
 #include <uwvm2/imported/ros/common/rmw_endpoint_history.h>
@@ -78,7 +79,7 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
         static void bump(std::uint64_t& n) noexcept {if(n!=UINT64_MAX){++n;}}
         static void note(object& row,std::uint32_t code) noexcept
         {record_primary_error(row.audit,code);}
-        static bool expired(ipc::deadline until) noexcept{return std::chrono::steady_clock::now()>=until;}
+        static bool expired(ipc::deadline until) noexcept{return ::uwvm2::utils::host_clock::now()>=until;}
         static ipc::call_result encode_endpoint(wire::packet const& packet)
         {
             std::array<std::uint8_t,wire::packet_bytes> raw{};
@@ -158,7 +159,7 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
             {
                 if(!node_||!create_){return {95,{}};}
                 auto maximum=limit(cap,"max-subscribers");
-                if(!maximum||maximum>history::maximum_entries||limit(cap,"max-message-bytes")>stream::maximum_body_bytes){return {90,{}};}
+                if(!maximum||maximum>history::maximum_entries){return {90,{}};}
                 // Reserve reply storage before any native side effect. A later
                 // response failure still tombstones and retires the object.
                 ipc::call_result reply;

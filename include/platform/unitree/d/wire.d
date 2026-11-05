@@ -7,6 +7,9 @@
  */
 module unitree.d.wire;
 
+// Copy only validated extents, preserving overlapping byte slices.
+extern(C) void* memmove(void*, const(void)*, size_t) @nogc nothrow;
+
 /// @brief Own finite text storage without any borrowed pointer.
 /// @param capacity Inclusive original schema byte bound.
 /// @param raw True only for the catalogued raw-byte string domain.
@@ -176,9 +179,9 @@ struct Cursor
                 return;
             }
             if (writing)
-                bytes[at..at + value.size] = input;
+                memmove(bytes.ptr + at, input.ptr, value.size);
             else
-                value.data[0 ..value.size] = input;
+                memmove(value.data.ptr, input.ptr, value.size);
             at += value.size;
         }
         else static if (__traits(hasMember, T, "wireSequence"))
@@ -235,7 +238,7 @@ uint decode(T)(const(ubyte)[] bytes, out T value) @nogc nothrow
     if (bytes.length < T.minimumWireBytes || bytes.length > T.maximumWireBytes)
         return 22;
     ubyte[T.maximumWireBytes] storage;
-    storage[0 ..bytes.length] = bytes;
+    if (bytes.length) memmove(storage.ptr, bytes.ptr, bytes.length);
     Cursor cursor;
     cursor.bytes = storage[0 ..bytes.length];
     T candidate;

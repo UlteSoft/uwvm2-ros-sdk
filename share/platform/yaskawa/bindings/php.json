@@ -16,5 +16,27 @@
     "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/yaskawa/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "modules": [
+    {
+      "name": "roswasm/word",
+      "path": "include/platform/ros/php/RosWasm/Word.php"
+    },
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/php/RosWasm/Wire.php"
+    },
+    {
+      "name": "roswasm/transport",
+      "path": "include/platform/ros/php/RosWasm/Transport.php"
+    },
+    {
+      "name": "uwvm/observation",
+      "path": "src/language/php/Observation.php"
+    },
+    {
+      "name": "yaskawa/php/ros2/records.php",
+      "path": "include/platform/yaskawa/php/ros2/records.php"
+    }
+  ]
 }

@@ -1,0 +1,73 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3974",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "08e6be71178e71946233134af19e8654776e69725fabb81f14e74292cb763a90"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "1a597686668c23f207b4eabc589315e74a0c9ae3704c34f28ca740fb96ae9255"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/go.json",
+      "sha256": "f20b7acb1e2c77ba3d6c225cf938965f34f0fd9cabd40d829ce86a0eb62d3a58"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "de899295367cddddba23473bba0f42a3f2300efabff0b9a52e9a9c75f98c9ee5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "publications": 0,
+        "length": 0,
+        "length_present": false,
+        "required": 0,
+        "required_present": false,
+        "response_present": false,
+        "value": "",
+        "success": false,
+        "message": "",
+        "request_wire_hex": "",
+        "response_wire_hex": ""
+      }
+    }
+  ],
+  "ros_namespace": "ros1"
+}

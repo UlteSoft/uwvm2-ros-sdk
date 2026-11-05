@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete ur_dashboard_msgs/srv/AddToLog_Response value with genuine AssemblyScript.

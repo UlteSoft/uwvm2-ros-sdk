@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-1492",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "a8340ce93bcc44a001b18b820e47a5c8493a14680b60ad4083f4bcb43760d294"
+    },
+    {
+      "scope": "example",
+      "path": "main.py",
+      "sha256": "b56c23a9c1a75c8315a3179fef7f24e2227f78c4b5145a0236fc57e98cf55811"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/py/doosan-ros2-jazzy-complete.json",
+      "sha256": "d3e695f750b215ce9f075d7eddd3908b8363977a382a7beb6548dfbc13992d45"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros2-jazzy-complete.ir.json",
+      "sha256": "df03f7d4c4e7ad7b3240d6ee795c9d93351303a2f08659a0a1a8e8e6df1b0e39"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs2/action/JogH2r_Feedback",
+        "bytes": 48,
+        "wire_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

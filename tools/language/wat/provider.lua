@@ -98,6 +98,16 @@ function build(target, root, request)
         os.vrunv(loader, arguments)
         local facts = metadata.validate_memory(filename, request.address_bits, not relocatable, request)
         if relocatable then
+            -- WABT does not supply LLVM data-symbol/index relocations for these
+            -- segments. Linking them can silently drop their bytes or leave an
+            -- invalid memory.init index. Reject before publishing an artifact.
+            for _, section in ipairs(facts.sections) do
+                if section.id == 11 then
+                    local reader = metadata.metadata_reader(section.data)
+                    assert(reader:uleb() == 0,
+                        "Relocatable WAT data segments lack linker relocations; use explicit memory stores or a standalone complete module")
+                end
+            end
             assert(facts.start_index == nil, "Relocatable WAT inputs declare initialization through an explicit callable function")
             linker.validate_exports(filename)
             for _, entry in ipairs(facts.exports) do

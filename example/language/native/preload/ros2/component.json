@@ -1,0 +1,153 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "explicit-ros-preloads-10",
+  "preload_modules": [
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "ros_namespace": "ros2",
+  "ros_modules": [
+    "main",
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "test_scope": "Real independent-memory preloads; explicit per-module base WASI/ROS interfaces, no ROS resource grants. The original guest verifies denied handles remain unchanged.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/language/native/abi.h",
+      "sha256": "0c4d0a85a3c6fd930e101745bb7260d73e1dc0d54ffca0f36bcdf5a2dc1c2f41"
+    },
+    {
+      "scope": "example",
+      "path": "ros_comm.m",
+      "sha256": "a86de4c237b706a156141cb9a98f67201d973f19481ba06359f922182840086a"
+    },
+    {
+      "scope": "example",
+      "path": "gateway.conf.template",
+      "sha256": "274525de02fb17e788ee0560f2271fb309fa032fc82c7d23fb47aa2e29cd9629"
+    },
+    {
+      "scope": "example",
+      "path": "io.d",
+      "sha256": "f1b6aff1246263d45b06fa891f8d7ffe50ea4fd4a2a0067a46ae72f9c4cda8a4"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.example.json",
+      "sha256": "382bcbe5650880cee992efb4d45c326f025ca62151cf59c145bed2a819af05ef"
+    },
+    {
+      "scope": "example",
+      "path": "deployment64.example.json",
+      "sha256": "4ddc615484e21bd16fc01043e66a7b9b359e1987a25da723aa12585888ff57ac"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "afa58598a7c0fa825030325720617c4141719d5d73c56a40a4ffcea34d239841"
+    },
+    {
+      "scope": "example",
+      "path": "bias.d",
+      "sha256": "24ed42d9ef42e43119b58deedb4aafd3187eb5ae047fdf805edd358370bd03ca"
+    },
+    {
+      "scope": "example",
+      "path": "README.en_US.md",
+      "sha256": "aed24c809bb26eaf09b1c1b59071d1023389db36da198ad5ecfe5f298b36b5b7"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "de94aa55c38110632cd830ce31a5760d3b98721f4f2980f506481e46af3dbd26"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.zig",
+      "sha256": "9696b3f37ea36e38a3c6502e8f5b115b678d443966d24ba1034de4ac97205e52"
+    },
+    {
+      "scope": "example",
+      "path": "denied-command.txt",
+      "sha256": "9400e4d1865c26c5ba719c0c4baf0c786639a5b7a357f42c69da29c507f1852b"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "1dff2ad9b602e760e5a2f8947243b5be251444db2a035cc94a8e00302aa92876"
+    },
+    {
+      "scope": "example",
+      "path": "native-command.txt",
+      "sha256": "8fb18b33f2fbbd7773784ca9ef2167916c510f70fc61e1414984abdd1fb0610d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "denied-in-every-module-0",
+      "arguments": [
+        "0",
+        "denied"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "11\n"
+    },
+    {
+      "id": "denied-in-every-module-9",
+      "arguments": [
+        "9",
+        "denied"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "38\n"
+    },
+    {
+      "id": "denied-in-every-module-99999999",
+      "arguments": [
+        "99999999",
+        "denied"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "300000008\n"
+    }
+  ]
+}

@@ -40,6 +40,7 @@ if installation_error then
 	return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run existing artifacts; compilation remains an explicit action.
 set_policy("run.autobuild", false)
@@ -79,4 +80,5 @@ set_targetdir("build/main")
 add_deps("record_codec")
 set_ros_scenario("codec_cpp_shared")
 add_defines("CODEC_SHARED_IMPORT")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

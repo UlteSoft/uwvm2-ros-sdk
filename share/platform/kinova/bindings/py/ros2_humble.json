@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "py",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/py/ros2/mobile_fjt_humble_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/kinova/bundles/py/ros2_humble.json"
+}

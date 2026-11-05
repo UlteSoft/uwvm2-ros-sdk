@@ -67,6 +67,15 @@ pub fn Observation(comptime Record: type) type {
     };
 }
 
+/// Preserve independent malformed-value, capacity and allocation failures.
+fn codecStatus(failure: wire.Error) u32 {
+    return switch (failure) {
+        error.Invalid => 22,
+        error.TooLarge => 90,
+        error.OutOfMemory => 12,
+    };
+}
+
 /// @brief Retain one exact-type owner and receive one complete original record.
 /// @param Record Exact complete original generated schema.
 /// @param alias_bytes Borrowed strict UTF-8 alias, stable until return, 1..255 bytes.
@@ -117,11 +126,11 @@ pub fn receive(comptime Record: type, alias_bytes: []const u8, attempts: u32) Ob
                     out.bytes = encoded;
                     out.size = @intCast(size);
                     out.response_present = true;
-                } else |_| {
-                    out.primary = 22;
+                } else |failure| {
+                    out.primary = codecStatus(failure);
                 }
-            } else |_| {
-                out.primary = 22;
+            } else |failure| {
+                out.primary = codecStatus(failure);
             }
         }
     }
@@ -205,8 +214,8 @@ pub fn request(comptime Record: type, alias_bytes: []const u8, operation: u32, i
                 out.bytes = encoded;
                 out.size = @intCast(size);
                 out.response_present = true;
-            } else |_| {
-                out.primary = 22;
+            } else |failure| {
+                out.primary = codecStatus(failure);
             }
         } else |_| {
             out.primary = 22;

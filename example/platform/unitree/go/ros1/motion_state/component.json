@@ -1,0 +1,191 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4668",
+  "ros_namespace": "ros1",
+  "test_scope": "Execute the original Unitree observation guest with base WASI and ROS namespace, but no resource authority. Denial preserves complete empty response/owner facts; missing alias fails before acquisition. Positive native transport is a separate test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "ba78a6125cab117551c0d4a371c2fc6f62f52cabf0fd27fb00b304f570946e0b"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "060febb5b3d9adfdbacaeff42497d4a08b8f487f5b14a981422658c2196caf4f"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "b3d15f5d153eee8ab515c857277d3447f7e47c3e5287193bd3525424e4d39ec8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/builtin_codec.go",
+      "sha256": "23a95fb330de121052f30e0b79c3e4cdb56e2180157ca1bf3ecc8b6fe9a7e986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/client.go",
+      "sha256": "78855ebc74fe7fe705c8cb7262dc638185cc2f6863dd57d8926cdb9b74283a03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/codec.go",
+      "sha256": "a81b000812fc30197db7fe18f18bac73041e4abb530788475a9a32e45dc0294a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/go.mod",
+      "sha256": "dad02148dfc7550b14721ff91915f6cf3bbd8d5c060b6248dfb1c211664e85df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/native_command/command.go",
+      "sha256": "375e9f9562d5177a8ea39c4cdd31dea61539e98cf8f222f7d0b70a670e292b9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation.go",
+      "sha256": "21170e363e678d935a32b3c731bc124ee8e8fc3870a540aed76250ed91d15a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros1.go",
+      "sha256": "4b7b2bb8b6261f055eb18a8aa86ffd7d66047d8d0c8e235457c5332133b4244e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros2.go",
+      "sha256": "2dbd550c6dc47de4fcefbaef50633c423fdd0aa7f4d946b3c708983c83ba58f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros1.go",
+      "sha256": "4e0bf1b61c90163bf03403524daaf672345d3b77ed9dbf3314efbf7075c90fa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros2.go",
+      "sha256": "06d86038b4ae4373419db737839606676393163fd622be3acc4ff002f02e7000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/selection_error.go",
+      "sha256": "7815c65a49918d2db230a2b5940670ae829157bcc2cb5eb14521c85f4fd6c927"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/session.go",
+      "sha256": "3411bbc25486200f4d7f4512356b22447dc9209098d06e1fc1eb5dff730bd884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/typed.go",
+      "sha256": "cd2cec63b5721e900ce37c7645943ea2119d550c3d916f30b72370c766965e4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/value_helpers.go",
+      "sha256": "05ea589f722e821d4003ece92a31b8a548b6d567294b43854b99293b5c7d7ee8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/values.go",
+      "sha256": "4b076f0ac087a2ea643390c7a3ad061daf1f42f79a17d01cf85a0c58116ebd38"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/go.mod",
+      "sha256": "741ee2a143c44e3bd2b4feca147cf40965d158c994eb19f06b46325bc9e50c8e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/observation.go",
+      "sha256": "889765554b7d56c15a420ffa766b6c4918b31c17cd5a90813c0878e9cc20af26"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/observation_ros1.go",
+      "sha256": "7ccc15be5f2b891ce01aa8006a7b94221076771840726846dcba45c6ba726f82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/observation_ros2.go",
+      "sha256": "3b5841d1f78c12dce7da1e97c92151b657a6048e37b9aa8eb969d3019c612ad6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/ros1/go.mod",
+      "sha256": "2a0167c635c62b93a2469d74c0249fdedba064d4ab3cc228d66e27c1ac4e83db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/ros1/records.go",
+      "sha256": "6c41ca0545b916f2a13da255fbfbb9157433f9bd953507287bd74d79d4380e84"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/ros2/go.mod",
+      "sha256": "62347cc45b49af58615a06e2aebef6ef9f4a2d887894f39cb510aa95b7126a58"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/go/ros2/records.go",
+      "sha256": "9867e4547bf95aaa7cfadf9bddb09ed513f55effcb3e3e5196b8ab9beaaab408"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "rpc_present": false,
+        "rpc_status": 0,
+        "polls": 0,
+        "required_present": false,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

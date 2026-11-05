@@ -6,9 +6,9 @@ let primary = 0, cleanup = 0, value = null;
 let capability = null;
 try
 {
-    if(scriptArgs.length !== 2)
+    if(__uwvm.argv.length !== 2)
         throw new RangeError("supply one granted topic alias");
-    [capability, primary] = Capability.open(scriptArgs[1]);
+    [capability, primary] = Capability.open(__uwvm.argv[1]);
     if(!primary)
         primary = capability.invoke("topic_subscribe", new Uint8Array(), 0)[0];
     if(!primary)
@@ -18,6 +18,11 @@ try
         if(!primary)
             value = Ros2Sensor_msgsMsgJointStateCodec.decode(reply[1]);
     }
+}
+catch(error)
+{
+    if(!(error instanceof RangeError)) throw error;
+    primary = 22;
 }
 finally
 {

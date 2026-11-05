@@ -7,6 +7,7 @@
  * infrastructure, independently from all guest source languages.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include <gateway/common/server.h>
 #include <gateway/common/service_client_pool.h>
 #include <sys/socket.h>
@@ -255,7 +256,7 @@ namespace uwvm2::ros_gateway::ros1_resources
 
         std::uint32_t execute_bounded(char const* method, XmlRpc::XmlRpcValue const& params, XmlRpc::XmlRpcValue& value, std::uint32_t timeout)
         {
-            auto deadline{std::chrono::steady_clock::now() + std::chrono::milliseconds(timeout)};
+            auto deadline{::uwvm2::utils::host_clock::now() + std::chrono::milliseconds(timeout)};
             failed_ = false;
             parsed_ = false;
             reusable_ = false;
@@ -264,7 +265,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 close();
                 return 107;
             }
-            while(std::chrono::steady_clock::now() < deadline)
+            while(::uwvm2::utils::host_clock::now() < deadline)
             {
                 _disp.work(0.001);
                 if(executeCheckDone(value))
@@ -306,7 +307,7 @@ namespace uwvm2::ros_gateway::ros1_resources
         auto active{retained ? retained->acquire<xmlrpc_connection>(cap, endpoint, create) : create()};
         if(!active) { return {13, {}}; }
         std::unique_lock<std::timed_mutex> lock{active->mutex, std::defer_lock};
-        if(!lock.try_lock_until(deadline) || std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+        if(!lock.try_lock_until(deadline) || ::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
         struct transaction
         {
             service_client_pool* retained;
@@ -324,7 +325,7 @@ namespace uwvm2::ros_gateway::ros1_resources
             }
         } held{retained, cap.alias, active};
         auto result{std::forward<Request>(request)(active->client)};
-        if(!result.error && std::chrono::steady_clock::now() >= deadline) { result = {110, {}}; }
+        if(!result.error && ::uwvm2::utils::host_clock::now() >= deadline) { result = {110, {}}; }
         held.completed = result.error == 0u;
         return result;
     }
@@ -540,7 +541,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 {
                     return {2, {}};
                 }
-                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count()};
+                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - ::uwvm2::utils::host_clock::now()).count()};
                 if(left <= 0)
                 {
                     return {110, {}};
@@ -556,7 +557,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 }
                 // The common deadline also bounds transitions between calls.
                 // It cannot interrupt a blocking native XMLRPC operation.
-                if(std::chrono::steady_clock::now() >= deadline)
+                if(::uwvm2::utils::host_clock::now() >= deadline)
                 {
                     return {110, {}};
                 }
@@ -653,7 +654,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                 current_args[0] = ::ros::this_node::getName();
                 current_args[1] = cap.resource;
                 auto& inspect{transport};
-                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count()};
+                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - ::uwvm2::utils::host_clock::now()).count()};
                 if(left <= 0)
                 {
                     return {110, {}};
@@ -714,7 +715,7 @@ namespace uwvm2::ros_gateway::ros1_resources
         // XML escape growth is bounded by 6x the explicit result limit plus a
         // public 64 KiB envelope ceiling; each recv is bounded before append.
         auto& client{transport};
-        auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count()};
+        auto left{std::chrono::duration_cast<std::chrono::milliseconds>(deadline - ::uwvm2::utils::host_clock::now()).count()};
         if(left <= 0)
         {
             return {110, {}};
@@ -861,7 +862,7 @@ namespace uwvm2::ros_gateway::ros1_resources
                                  std::uint32_t timeout, service_client_pool* retained = nullptr)
     {
         if(!known(cap)) { return {95, {}}; }
-        auto const deadline{ipc::after(std::min(timeout, static_cast<std::uint32_t>(limit(cap, "timeout-ms"))))};
+        auto const deadline{request_deadline(cap,timeout)};
         auto const maximum{limit(cap, cap.operation.rfind("graph.", 0) == 0 ? "max-graph-result-bytes" : "max-parameter-bytes")};
         return with_xmlrpc(cap, ::ros::master::getHost(), static_cast<int>(::ros::master::getPort()),
                            static_cast<std::size_t>(maximum * 6 + 65536), deadline, retained,

@@ -1,9 +1,9 @@
 {
   "format": "unitree-go2-stand-deployment-requirements-v1",
   "template": "example/platform/unitree/cpp/ros2/humble/upstream_go2_stand/deployment.template.json",
-  "template_sha256": "a6ca3115337a9a7499c334c9eeaffd978e62418ee896c2dec486e9af5ab3d702",
+  "template_sha256": "cda770bd730660cb87a7f21ccee78f184709529fa58355bb0224c4a3e18af457",
   "source_bindings": "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json",
-  "source_bindings_sha256": "f37058185ae792309dd644ee692b5be25643e29311c5b1177ee0335764d2f8d3",
+  "source_bindings_sha256": "464ac5c8b9ef5cbc08c9ac2017f2b9fc274e60dbd8058ab184c1d8cb8dc37c5d",
   "required_before_launch": [
     "Actual Linux runtime and Humble gateway binaries plus source/hash/mapped-file provenance",
     "Compiled trusted LowCmd/LowState native/codec registry shared by actual runtime and gateway; complete native Humble typesupport graph must match fixedsource-identities",

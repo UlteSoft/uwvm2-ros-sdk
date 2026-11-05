@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "haskell",
+  "profile": "controller_core_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/haskell/ros2/flexiv-controller-core-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "Flexiv.Controllercorehumble.Records",
+          "source": "include/platform/flexiv/haskell/ros2/flexiv-controller-core-humble-complete/Records.hs"
+        }
+      ]
+    }
+  }
+}

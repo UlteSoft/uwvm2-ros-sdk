@@ -16,5 +16,6 @@
     "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/yaskawa/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "bundle_manifest": "share/platform/yaskawa/bundles/js/observations.json"
 }

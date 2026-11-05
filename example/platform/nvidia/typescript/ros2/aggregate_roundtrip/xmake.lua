@@ -13,6 +13,7 @@ if not root or not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 set_policy("run.autobuild", false)
 target("aggregate_roundtrip")
     set_kind("binary")
@@ -28,4 +29,5 @@ target("aggregate_roundtrip")
     set_arch(get_config("arch") or "wasm32")
     set_plat("wasm-wasip1")
     add_files("main.mts")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

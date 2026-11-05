@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4953",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "bdf9d432cc47cb2f14edb998825445fc9ae7b1e28dd091ba7538ae3213977a16"
+    },
+    {
+      "scope": "example",
+      "path": "Main.kt",
+      "sha256": "8ad62bc51aa9adb3126844b0ecffd23b8f11f486aaae4b6fc06990b9ceded412"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/kotlin/universal-robots-polyscopex-complete.json",
+      "sha256": "b59e49c2ad3b204964138f008f8d968a15089581ed1e902f7f1acd6560049c4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-polyscopex-complete.ir.json",
+      "sha256": "771063b49dcab70ca9a96497c8d6b1a0a7156d2a029653fd4a5614becae144b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "urinterfaces/srv/SetAnalogOutput_Response",
+        "bytes": 1
+      }
+    }
+  ]
+}

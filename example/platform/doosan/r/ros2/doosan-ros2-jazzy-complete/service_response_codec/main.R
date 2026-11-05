@@ -1,8 +1,7 @@
 #' @file main.R
 #' @brief Exercise the complete original dsr_msgs2/srv/GetRobotState_Response with the genuine shared R engine.
-#' @details All values are local fixtures; full-width words retain exact bytes.
-source("ros/r/roswasm/wire.R", local = TRUE)
-source("doosan/r/ros2/doosan-ros2-jazzy-complete/records.R", local = TRUE)
+#' @details The ordered SDK source graph embeds wire and record factories in this
+#' Wasm command. All values are local fixtures; full-width words retain exact bytes.
 classes <- records(roswasm_wire())
 codec <- classes[["Ros2Dsr_msgs2SrvGetRobotState_Response"]]
 bytes <- codec$encode(codec$new())

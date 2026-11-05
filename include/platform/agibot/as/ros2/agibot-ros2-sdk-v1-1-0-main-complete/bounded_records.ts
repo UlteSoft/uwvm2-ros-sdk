@@ -5,7 +5,7 @@
 // definitions. Encoding is local; compiler, guest and native ROS acceptance require separate receipts. See the
 // profile API manual under document/platform/agibot/en_US/catalog/.
 /** Complete industrial canonical records. No I/O or authority. */
-import {Codec, Reader, validUnicode, validUtf8} from '../../assemblyscript/codecs';
+import {Codec, Reader, validUnicode, validUtf8} from 'ros/as/codecs';
 
 export class VendorEncoded
 {

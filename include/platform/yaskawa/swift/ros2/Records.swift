@@ -23,7 +23,7 @@ public struct Ros2Builtin_interfacesMsgDuration {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_sec = Int32(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(UInt32(bitPattern: field_sec)), 4)))
@@ -35,7 +35,7 @@ public struct Ros2Builtin_interfacesMsgDuration {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -49,7 +49,7 @@ public struct Ros2Builtin_interfacesMsgDuration {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -78,7 +78,7 @@ public struct Ros2Builtin_interfacesMsgTime {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_sec = Int32(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(UInt32(bitPattern: field_sec)), 4)))
@@ -90,7 +90,7 @@ public struct Ros2Builtin_interfacesMsgTime {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -104,7 +104,7 @@ public struct Ros2Builtin_interfacesMsgTime {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -133,7 +133,7 @@ public struct Ros2Std_msgsMsgHeader {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_stamp.fields(&cursor)
     field_frame_id = cursor.text(field_frame_id, 64)
   }
@@ -142,7 +142,7 @@ public struct Ros2Std_msgsMsgHeader {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 76),
       limit: 76, writing: true)
     fields(&cursor)
@@ -156,7 +156,7 @@ public struct Ros2Std_msgsMsgHeader {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 76 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -201,7 +201,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectoryPoint {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     let count0 = Int(cursor.number(UInt64(field_positions.count), 4))
     if count0 > 12 || cursor.failed {
       cursor.failed = true
@@ -257,7 +257,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectoryPoint {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 408),
       limit: 408, writing: true)
     fields(&cursor)
@@ -271,7 +271,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectoryPoint {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 408 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -305,7 +305,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectory {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count1 > 12 || cursor.failed {
@@ -333,7 +333,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectory {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4164),
       limit: 4164, writing: true)
     fields(&cursor)
@@ -347,7 +347,7 @@ public struct Ros2Trajectory_msgsMsgJointTrajectory {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 4164 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -381,7 +381,7 @@ public struct Ros2Geometry_msgsMsgVector3 {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_x = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_x.bitPattern), 8)))
     if !field_x.isFinite { cursor.failed = true }
@@ -397,7 +397,7 @@ public struct Ros2Geometry_msgsMsgVector3 {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 24),
       limit: 24, writing: true)
     fields(&cursor)
@@ -411,7 +411,7 @@ public struct Ros2Geometry_msgsMsgVector3 {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 24 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -450,7 +450,7 @@ public struct Ros2Geometry_msgsMsgQuaternion {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_x = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_x.bitPattern), 8)))
     if !field_x.isFinite { cursor.failed = true }
@@ -469,7 +469,7 @@ public struct Ros2Geometry_msgsMsgQuaternion {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 32),
       limit: 32, writing: true)
     fields(&cursor)
@@ -483,7 +483,7 @@ public struct Ros2Geometry_msgsMsgQuaternion {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 32 || bytes.count > 32 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -512,7 +512,7 @@ public struct Ros2Geometry_msgsMsgTransform {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_translation.fields(&cursor)
     field_rotation.fields(&cursor)
   }
@@ -521,7 +521,7 @@ public struct Ros2Geometry_msgsMsgTransform {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 56),
       limit: 56, writing: true)
     fields(&cursor)
@@ -535,7 +535,7 @@ public struct Ros2Geometry_msgsMsgTransform {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 56 || bytes.count > 56 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -564,7 +564,7 @@ public struct Ros2Geometry_msgsMsgTwist {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_linear.fields(&cursor)
     field_angular.fields(&cursor)
   }
@@ -573,7 +573,7 @@ public struct Ros2Geometry_msgsMsgTwist {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 48),
       limit: 48, writing: true)
     fields(&cursor)
@@ -587,7 +587,7 @@ public struct Ros2Geometry_msgsMsgTwist {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 48 || bytes.count > 48 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -627,7 +627,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     let count0 = Int(cursor.number(UInt64(field_transforms.count), 4))
     if count0 > 2 || cursor.failed {
       cursor.failed = true
@@ -668,7 +668,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 324),
       limit: 324, writing: true)
     fields(&cursor)
@@ -682,7 +682,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 324 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -716,7 +716,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectory {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count1 > 2 || cursor.failed {
@@ -745,7 +745,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectory {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1516),
       limit: 1516, writing: true)
     fields(&cursor)
@@ -759,7 +759,7 @@ public struct Ros2Trajectory_msgsMsgMultiDOFJointTrajectory {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 1516 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -798,7 +798,7 @@ public struct Ros2Control_msgsMsgJointTolerance {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_name = cursor.text(field_name, 64)
     field_position = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_position.bitPattern), 8)))
@@ -816,7 +816,7 @@ public struct Ros2Control_msgsMsgJointTolerance {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 92),
       limit: 92, writing: true)
     fields(&cursor)
@@ -830,7 +830,7 @@ public struct Ros2Control_msgsMsgJointTolerance {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 28 || bytes.count > 92 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -889,7 +889,7 @@ public struct Ros2Control_msgsMsgJointComponentTolerance {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_joint_name = cursor.text(field_joint_name, 512)
     field_component = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_component), 2))
     field_position = Double(
@@ -908,7 +908,7 @@ public struct Ros2Control_msgsMsgJointComponentTolerance {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 542),
       limit: 542, writing: true)
     fields(&cursor)
@@ -922,7 +922,7 @@ public struct Ros2Control_msgsMsgJointComponentTolerance {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 30 || bytes.count > 542 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -981,7 +981,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Goal {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_trajectory.fields(&cursor)
     field_multi_dof_trajectory.fields(&cursor)
     let count2 = Int(cursor.number(UInt64(field_path_tolerance.count), 4))
@@ -1037,7 +1037,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Goal {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 20920),
       limit: 20920, writing: true)
     fields(&cursor)
@@ -1051,7 +1051,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Goal {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 64 || bytes.count > 20920 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1101,7 +1101,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Result {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_error_code = Int32(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(UInt32(bitPattern: field_error_code)), 4)))
@@ -1112,7 +1112,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Result {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4104),
       limit: 4104, writing: true)
     fields(&cursor)
@@ -1126,7 +1126,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Result {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 4104 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1197,7 +1197,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Feedback {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count1 > 12 || cursor.failed {
@@ -1229,7 +1229,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Feedback {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4128),
       limit: 4128, writing: true)
     fields(&cursor)
@@ -1243,7 +1243,7 @@ public struct Ros2Control_msgsActionFollowJointTrajectory_Feedback {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 152 || bytes.count > 4128 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1277,7 +1277,7 @@ public struct Ros2Geometry_msgsMsgTransformStamped {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     field_child_frame_id = cursor.text(field_child_frame_id, 512)
     field_transform.fields(&cursor)
@@ -1287,7 +1287,7 @@ public struct Ros2Geometry_msgsMsgTransformStamped {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 648),
       limit: 648, writing: true)
     fields(&cursor)
@@ -1301,7 +1301,7 @@ public struct Ros2Geometry_msgsMsgTransformStamped {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 72 || bytes.count > 648 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1343,7 +1343,7 @@ public struct Ros2Industrial_msgsMsgDebugLevel {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_val = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_val), 1))
   }
   /// @brief Encode every complete industrial_msgs/msg/DebugLevel field.
@@ -1351,7 +1351,7 @@ public struct Ros2Industrial_msgsMsgDebugLevel {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1365,7 +1365,7 @@ public struct Ros2Industrial_msgsMsgDebugLevel {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1409,7 +1409,7 @@ public struct Ros2Industrial_msgsMsgDeviceInfo {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_model = cursor.text(field_model, 512)
     field_serial_number = cursor.text(field_serial_number, 512)
     field_hw_version = cursor.text(field_hw_version, 512)
@@ -1421,7 +1421,7 @@ public struct Ros2Industrial_msgsMsgDeviceInfo {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2580),
       limit: 2580, writing: true)
     fields(&cursor)
@@ -1435,7 +1435,7 @@ public struct Ros2Industrial_msgsMsgDeviceInfo {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 2580 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1468,7 +1468,7 @@ public struct Ros2Industrial_msgsMsgRobotMode {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_val = Int8(
       bitPattern: UInt8(truncatingIfNeeded: cursor.number(UInt64(UInt8(bitPattern: field_val)), 1)))
   }
@@ -1477,7 +1477,7 @@ public struct Ros2Industrial_msgsMsgRobotMode {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1491,7 +1491,7 @@ public struct Ros2Industrial_msgsMsgRobotMode {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1548,7 +1548,7 @@ public struct Ros2Industrial_msgsMsgTriState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_val = Int8(
       bitPattern: UInt8(truncatingIfNeeded: cursor.number(UInt64(UInt8(bitPattern: field_val)), 1)))
   }
@@ -1557,7 +1557,7 @@ public struct Ros2Industrial_msgsMsgTriState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1571,7 +1571,7 @@ public struct Ros2Industrial_msgsMsgTriState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1631,7 +1631,7 @@ public struct Ros2Industrial_msgsMsgRobotStatus {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     field_mode.fields(&cursor)
     field_e_stopped.fields(&cursor)
@@ -1657,7 +1657,7 @@ public struct Ros2Industrial_msgsMsgRobotStatus {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 150),
       limit: 150, writing: true)
     fields(&cursor)
@@ -1671,7 +1671,7 @@ public struct Ros2Industrial_msgsMsgRobotStatus {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 22 || bytes.count > 150 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1701,7 +1701,7 @@ public struct Ros2Industrial_msgsMsgServiceReturnCode {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_val = Int8(
       bitPattern: UInt8(truncatingIfNeeded: cursor.number(UInt64(UInt8(bitPattern: field_val)), 1)))
   }
@@ -1710,7 +1710,7 @@ public struct Ros2Industrial_msgsMsgServiceReturnCode {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1724,7 +1724,7 @@ public struct Ros2Industrial_msgsMsgServiceReturnCode {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1749,7 +1749,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_trajectory.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/CmdJointTrajectory_Request field.
@@ -1757,7 +1757,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4164),
       limit: 4164, writing: true)
     fields(&cursor)
@@ -1771,7 +1771,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 4164 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1796,7 +1796,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_code.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/CmdJointTrajectory_Response field.
@@ -1804,7 +1804,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1818,7 +1818,7 @@ public struct Ros2Industrial_msgsSrvCmdJointTrajectory_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1837,14 +1837,14 @@ public struct Ros2Industrial_msgsSrvGetRobotInfo_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete industrial_msgs/srv/GetRobotInfo_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -1858,7 +1858,7 @@ public struct Ros2Industrial_msgsSrvGetRobotInfo_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1893,7 +1893,7 @@ public struct Ros2Industrial_msgsSrvGetRobotInfo_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_controller.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_robots.count), 4))
     if count1 > 16 || cursor.failed {
@@ -1913,7 +1913,7 @@ public struct Ros2Industrial_msgsSrvGetRobotInfo_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 32768),
       limit: 32768, writing: true)
     fields(&cursor)
@@ -1927,7 +1927,7 @@ public struct Ros2Industrial_msgsSrvGetRobotInfo_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 25 || bytes.count > 32768 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1951,7 +1951,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_drive_power = cursor.boolean(field_drive_power)
   }
   /// @brief Encode every complete industrial_msgs/srv/SetDrivePower_Request field.
@@ -1959,7 +1959,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -1973,7 +1973,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1998,7 +1998,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_code.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/SetDrivePower_Response field.
@@ -2006,7 +2006,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -2020,7 +2020,7 @@ public struct Ros2Industrial_msgsSrvSetDrivePower_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2044,7 +2044,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_level.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/SetRemoteLoggerLevel_Request field.
@@ -2052,7 +2052,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -2066,7 +2066,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2091,7 +2091,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_code.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/SetRemoteLoggerLevel_Response field.
@@ -2099,7 +2099,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -2113,7 +2113,7 @@ public struct Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2132,14 +2132,14 @@ public struct Ros2Industrial_msgsSrvStartMotion_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete industrial_msgs/srv/StartMotion_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2153,7 +2153,7 @@ public struct Ros2Industrial_msgsSrvStartMotion_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2178,7 +2178,7 @@ public struct Ros2Industrial_msgsSrvStartMotion_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_code.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/StartMotion_Response field.
@@ -2186,7 +2186,7 @@ public struct Ros2Industrial_msgsSrvStartMotion_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -2200,7 +2200,7 @@ public struct Ros2Industrial_msgsSrvStartMotion_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2219,14 +2219,14 @@ public struct Ros2Industrial_msgsSrvStopMotion_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete industrial_msgs/srv/StopMotion_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2240,7 +2240,7 @@ public struct Ros2Industrial_msgsSrvStopMotion_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2265,7 +2265,7 @@ public struct Ros2Industrial_msgsSrvStopMotion_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_code.fields(&cursor)
   }
   /// @brief Encode every complete industrial_msgs/srv/StopMotion_Response field.
@@ -2273,7 +2273,7 @@ public struct Ros2Industrial_msgsSrvStopMotion_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -2287,7 +2287,7 @@ public struct Ros2Industrial_msgsSrvStopMotion_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2316,7 +2316,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmCauseRemedy {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_cause = cursor.text(field_cause, 512)
     field_remedy = cursor.text(field_remedy, 512)
   }
@@ -2325,7 +2325,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmCauseRemedy {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1032),
       limit: 1032, writing: true)
     fields(&cursor)
@@ -2339,7 +2339,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmCauseRemedy {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 1032 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2393,7 +2393,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmInfo {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_number = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_number), 4))
     field_message = cursor.text(field_message, 512)
     field_sub_code = Int32(
@@ -2419,7 +2419,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmInfo {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 25248),
       limit: 25248, writing: true)
     fields(&cursor)
@@ -2433,7 +2433,7 @@ public struct Ros2Motoros2_interfacesMsgAlarmInfo {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 32 || bytes.count > 25248 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2472,7 +2472,7 @@ public struct Ros2Motoros2_interfacesMsgErrorInfo {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_number = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_number), 4))
     field_message = cursor.text(field_message, 512)
     field_sub_code = Int32(
@@ -2485,7 +2485,7 @@ public struct Ros2Motoros2_interfacesMsgErrorInfo {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 532),
       limit: 532, writing: true)
     fields(&cursor)
@@ -2499,7 +2499,7 @@ public struct Ros2Motoros2_interfacesMsgErrorInfo {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 532 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2571,14 +2571,14 @@ public struct Ros2Motoros2_interfacesMsgInformJobCrudResultCodes {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/msg/InformJobCrudResultCodes field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2592,7 +2592,7 @@ public struct Ros2Motoros2_interfacesMsgInformJobCrudResultCodes {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2750,7 +2750,7 @@ public struct Ros2Motoros2_interfacesMsgInitTrajEnum {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_value), 2))
   }
   /// @brief Encode every complete motoros2_interfaces/msg/InitTrajEnum field.
@@ -2758,7 +2758,7 @@ public struct Ros2Motoros2_interfacesMsgInitTrajEnum {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2),
       limit: 2, writing: true)
     fields(&cursor)
@@ -2772,7 +2772,7 @@ public struct Ros2Motoros2_interfacesMsgInitTrajEnum {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 2 || bytes.count > 2 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2836,14 +2836,14 @@ public struct Ros2Motoros2_interfacesMsgIoResultCodes {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/msg/IoResultCodes field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2857,7 +2857,7 @@ public struct Ros2Motoros2_interfacesMsgIoResultCodes {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3019,7 +3019,7 @@ public struct Ros2Motoros2_interfacesMsgMotionReadyEnum {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_value), 2))
   }
   /// @brief Encode every complete motoros2_interfaces/msg/MotionReadyEnum field.
@@ -3027,7 +3027,7 @@ public struct Ros2Motoros2_interfacesMsgMotionReadyEnum {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2),
       limit: 2, writing: true)
     fields(&cursor)
@@ -3041,7 +3041,7 @@ public struct Ros2Motoros2_interfacesMsgMotionReadyEnum {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 2 || bytes.count > 2 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3107,7 +3107,7 @@ public struct Ros2Motoros2_interfacesMsgQueueResultEnum {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_value), 2))
   }
   /// @brief Encode every complete motoros2_interfaces/msg/QueueResultEnum field.
@@ -3115,7 +3115,7 @@ public struct Ros2Motoros2_interfacesMsgQueueResultEnum {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2),
       limit: 2, writing: true)
     fields(&cursor)
@@ -3129,7 +3129,7 @@ public struct Ros2Motoros2_interfacesMsgQueueResultEnum {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 2 || bytes.count > 2 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3183,7 +3183,7 @@ public struct Ros2Motoros2_interfacesMsgSelectionResultCodes {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_value), 4))
   }
   /// @brief Encode every complete motoros2_interfaces/msg/SelectionResultCodes field.
@@ -3191,7 +3191,7 @@ public struct Ros2Motoros2_interfacesMsgSelectionResultCodes {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4),
       limit: 4, writing: true)
     fields(&cursor)
@@ -3205,7 +3205,7 @@ public struct Ros2Motoros2_interfacesMsgSelectionResultCodes {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 4 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3224,14 +3224,14 @@ public struct Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/srv/GetActiveAlarmInfo_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -3245,7 +3245,7 @@ public struct Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3284,7 +3284,7 @@ public struct Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_result_message = cursor.text(field_result_message, 512)
     let count2 = Int(cursor.number(UInt64(field_alarms.count), 4))
@@ -3315,7 +3315,7 @@ public struct Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 32768),
       limit: 32768, writing: true)
     fields(&cursor)
@@ -3329,7 +3329,7 @@ public struct Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 32768 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3348,14 +3348,14 @@ public struct Ros2Motoros2_interfacesSrvListInformJobs_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/srv/ListInformJobs_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -3369,7 +3369,7 @@ public struct Ros2Motoros2_interfacesSrvListInformJobs_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3403,7 +3403,7 @@ public struct Ros2Motoros2_interfacesSrvListInformJobs_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     let count2 = Int(cursor.number(UInt64(field_names.count), 4))
@@ -3421,7 +3421,7 @@ public struct Ros2Motoros2_interfacesSrvListInformJobs_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8780),
       limit: 8780, writing: true)
     fields(&cursor)
@@ -3435,7 +3435,7 @@ public struct Ros2Motoros2_interfacesSrvListInformJobs_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 8780 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3465,7 +3465,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     let count0 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count0 > 12 || cursor.failed {
       cursor.failed = true
@@ -3482,7 +3482,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1228),
       limit: 1228, writing: true)
     fields(&cursor)
@@ -3496,7 +3496,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 28 || bytes.count > 1228 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3526,7 +3526,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code.fields(&cursor)
     field_message = cursor.text(field_message, 512)
   }
@@ -3535,7 +3535,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3549,7 +3549,7 @@ public struct Ros2Motoros2_interfacesSrvQueueTrajPoint_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3573,7 +3573,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
   }
   /// @brief Encode every complete motoros2_interfaces/srv/ReadGroupIO_Request field.
@@ -3581,7 +3581,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4),
       limit: 4, writing: true)
     fields(&cursor)
@@ -3595,7 +3595,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 4 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3634,7 +3634,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -3645,7 +3645,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 522),
       limit: 522, writing: true)
     fields(&cursor)
@@ -3659,7 +3659,7 @@ public struct Ros2Motoros2_interfacesSrvReadGroupIO_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 522 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3683,7 +3683,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
   }
   /// @brief Encode every complete motoros2_interfaces/srv/ReadMRegister_Request field.
@@ -3691,7 +3691,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4),
       limit: 4, writing: true)
     fields(&cursor)
@@ -3705,7 +3705,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 4 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3744,7 +3744,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -3755,7 +3755,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 523),
       limit: 523, writing: true)
     fields(&cursor)
@@ -3769,7 +3769,7 @@ public struct Ros2Motoros2_interfacesSrvReadMRegister_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 11 || bytes.count > 523 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3793,7 +3793,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
   }
   /// @brief Encode every complete motoros2_interfaces/srv/ReadSingleIO_Request field.
@@ -3801,7 +3801,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4),
       limit: 4, writing: true)
     fields(&cursor)
@@ -3815,7 +3815,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 4 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3854,7 +3854,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -3867,7 +3867,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 525),
       limit: 525, writing: true)
     fields(&cursor)
@@ -3881,7 +3881,7 @@ public struct Ros2Motoros2_interfacesSrvReadSingleIO_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 13 || bytes.count > 525 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3900,14 +3900,14 @@ public struct Ros2Motoros2_interfacesSrvResetError_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/srv/ResetError_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -3921,7 +3921,7 @@ public struct Ros2Motoros2_interfacesSrvResetError_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3951,7 +3951,7 @@ public struct Ros2Motoros2_interfacesSrvResetError_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code.fields(&cursor)
     field_message = cursor.text(field_message, 512)
   }
@@ -3960,7 +3960,7 @@ public struct Ros2Motoros2_interfacesSrvResetError_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3974,7 +3974,7 @@ public struct Ros2Motoros2_interfacesSrvResetError_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4003,7 +4003,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_group_number = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_group_number), 4))
     field_tool_number = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_tool_number), 4))
   }
@@ -4012,7 +4012,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -4026,7 +4026,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4061,7 +4061,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code.fields(&cursor)
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -4071,7 +4071,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 521),
       limit: 521, writing: true)
     fields(&cursor)
@@ -4085,7 +4085,7 @@ public struct Ros2Motoros2_interfacesSrvSelectMotionTool_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 9 || bytes.count > 521 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4104,14 +4104,14 @@ public struct Ros2Motoros2_interfacesSrvStartPointQueueMode_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/srv/StartPointQueueMode_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -4125,7 +4125,7 @@ public struct Ros2Motoros2_interfacesSrvStartPointQueueMode_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4155,7 +4155,7 @@ public struct Ros2Motoros2_interfacesSrvStartPointQueueMode_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code.fields(&cursor)
     field_message = cursor.text(field_message, 512)
   }
@@ -4164,7 +4164,7 @@ public struct Ros2Motoros2_interfacesSrvStartPointQueueMode_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -4178,7 +4178,7 @@ public struct Ros2Motoros2_interfacesSrvStartPointQueueMode_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4197,14 +4197,14 @@ public struct Ros2Motoros2_interfacesSrvStartTrajMode_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete motoros2_interfaces/srv/StartTrajMode_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -4218,7 +4218,7 @@ public struct Ros2Motoros2_interfacesSrvStartTrajMode_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4248,7 +4248,7 @@ public struct Ros2Motoros2_interfacesSrvStartTrajMode_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code.fields(&cursor)
     field_message = cursor.text(field_message, 512)
   }
@@ -4257,7 +4257,7 @@ public struct Ros2Motoros2_interfacesSrvStartTrajMode_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -4271,7 +4271,7 @@ public struct Ros2Motoros2_interfacesSrvStartTrajMode_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4300,7 +4300,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
     field_value = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_value), 1))
   }
@@ -4309,7 +4309,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 5),
       limit: 5, writing: true)
     fields(&cursor)
@@ -4323,7 +4323,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 5 || bytes.count > 5 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4357,7 +4357,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -4367,7 +4367,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 521),
       limit: 521, writing: true)
     fields(&cursor)
@@ -4381,7 +4381,7 @@ public struct Ros2Motoros2_interfacesSrvWriteGroupIO_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 9 || bytes.count > 521 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4410,7 +4410,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
     field_value = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_value), 2))
   }
@@ -4419,7 +4419,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 6),
       limit: 6, writing: true)
     fields(&cursor)
@@ -4433,7 +4433,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 6 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4467,7 +4467,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -4477,7 +4477,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 521),
       limit: 521, writing: true)
     fields(&cursor)
@@ -4491,7 +4491,7 @@ public struct Ros2Motoros2_interfacesSrvWriteMRegister_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 9 || bytes.count > 521 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4520,7 +4520,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_address = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_address), 4))
     field_value = Int32(
       bitPattern: UInt32(
@@ -4531,7 +4531,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Request {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -4545,7 +4545,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4579,7 +4579,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 4))
     field_message = cursor.text(field_message, 512)
     field_success = cursor.boolean(field_success)
@@ -4589,7 +4589,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 521),
       limit: 521, writing: true)
     fields(&cursor)
@@ -4603,7 +4603,7 @@ public struct Ros2Motoros2_interfacesSrvWriteSingleIO_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 9 || bytes.count > 521 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4647,7 +4647,7 @@ public struct Ros2Sensor_msgsMsgJointState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_name.count), 4))
     if count1 > 12 || cursor.failed {
@@ -4700,7 +4700,7 @@ public struct Ros2Sensor_msgsMsgJointState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1196),
       limit: 1196, writing: true)
     fields(&cursor)
@@ -4714,7 +4714,7 @@ public struct Ros2Sensor_msgsMsgJointState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 28 || bytes.count > 1196 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4733,14 +4733,14 @@ public struct Ros2Std_srvsSrvTrigger_Request {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete std_srvs/srv/Trigger_Request field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -4754,7 +4754,7 @@ public struct Ros2Std_srvsSrvTrigger_Request {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4783,7 +4783,7 @@ public struct Ros2Std_srvsSrvTrigger_Response {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_success = cursor.boolean(field_success)
     field_message = cursor.text(field_message, 512)
   }
@@ -4792,7 +4792,7 @@ public struct Ros2Std_srvsSrvTrigger_Response {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 517),
       limit: 517, writing: true)
     fields(&cursor)
@@ -4806,7 +4806,7 @@ public struct Ros2Std_srvsSrvTrigger_Response {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 5 || bytes.count > 517 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4830,7 +4830,7 @@ public struct Ros2Tf2_msgsMsgTFMessage {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout YASKAWACursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     let count0 = Int(cursor.number(UInt64(field_transforms.count), 4))
     if count0 > 16 || cursor.failed {
       cursor.failed = true
@@ -4848,7 +4848,7 @@ public struct Ros2Tf2_msgsMsgTFMessage {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = YASKAWACursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 10372),
       limit: 10372, writing: true)
     fields(&cursor)
@@ -4862,7 +4862,7 @@ public struct Ros2Tf2_msgsMsgTFMessage {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 10372 { return (nil, 22) }
-    var cursor = YASKAWACursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }

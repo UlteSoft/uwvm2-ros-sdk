@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "vbnet",
+  "profile": "ros2_humble_v2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/vbnet/ros2/flexiv-ros2-humble-v2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "csharp": [
+      "include/platform/flexiv/csharp/ros2/flexiv-ros2-humble-v2-complete/BoundedRecords.cs"
+    ],
+    "fsharp": [
+      "include/platform/flexiv/fsharp/ros2/flexiv-ros2-humble-v2-complete/Records.fs"
+    ],
+    "vbnet": [
+      "include/platform/flexiv/vbnet/ros2/flexiv-ros2-humble-v2-complete/Records.vb"
+    ]
+  }
+}

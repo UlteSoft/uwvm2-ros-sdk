@@ -16,7 +16,7 @@ if not root then
     end
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
-includes(path.join(root, "tools/platform/robotis/xmake/required_guest_tests.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -31,6 +31,6 @@ target("robotis_ffi_decode_value")
     set_ros_scenario("decode_value")
     add_includedirs(path.join(root, "include/platform"))
     add_files("Main.c", path.join(root, "src/platform/robotis/c_ffi_bridge/ros2/jazzy/abi.c"))
-    uwvm_robotis_required_guest_tests({scenario = "decode_value",
-        cases = {"guest-codec-normal", "guest-codec-boundary", "guest-codec-malformed", "guest-codec-abi-refusal"}})
+    add_includedirs(path.join(root, "tools/shared/c"))
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

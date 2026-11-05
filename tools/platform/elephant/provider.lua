@@ -122,6 +122,10 @@ function configure(target, root, context)
 			target:set("values", "ros.sdk.main_class", graph.main_class)
 		end
 	end
+	if graph and language == "kotlin" then
+		target:set("values", "ros.sdk.jvm_java_sources", graph.java_sources or {})
+		target:set("values", "ros.sdk.jvm_kotlin_sources", graph.sources or {})
+	end
 	if graph and graph.bundle_manifest and target:values("ros.sdk.bundle_manifest") == nil then
 		target:set("values", "ros.sdk.bundle_manifest", graph.bundle_manifest)
 	end
@@ -141,10 +145,13 @@ function request(target, root, context)
 		import("provider", { rootdir = path.join(root, "tools/platform/ros"), anonymous = true })
 	local selected_request = common.request(target, root, table.clone(context))
 	selected_request.binding = table.clone(selected_request.binding)
+	selected_request.native_action = (selected.native_actions or {})[context.language]
 	selected_request.module_roots = table.clone(selected_request.module_roots or {})
 	selected_request.native_sources = table.clone(selected_request.native_sources or {})
 	selected_request.binding.source_graph =
 		table.clone((selected.source_graph_v1 or {})[context.language] or {})
+	selected_request.binding.bundle_manifest = selected_request.binding.source_graph.bundle_manifest
+	selected_request.binding.modules = selected_request.binding.source_graph.modules
 	selected_request.binding.native_definitions = {
 		catalog = selected.catalog,
 		source_lock_sha256 = selected.source_lock_sha256,

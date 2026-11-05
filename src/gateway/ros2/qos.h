@@ -18,8 +18,12 @@ namespace uwvm2::ros_gateway::ros2_qos
     inline ros2_compat::qos_type configured(ros::capability_spec const& cap)
     {
         rmw_qos_profile_t profile{};
-        profile.history=RMW_QOS_POLICY_HISTORY_KEEP_LAST;
-        profile.depth=limit(cap,"qos.depth");
+        bool keep_all{field(cap,"qos.history")=="keep-all"};
+        profile.history=keep_all?RMW_QOS_POLICY_HISTORY_KEEP_ALL:RMW_QOS_POLICY_HISTORY_KEEP_LAST;
+        auto depth{limit(cap,"qos.depth")};
+        if(!keep_all&&(!depth||depth==ros::unlimited_quota||depth>std::numeric_limits<std::size_t>::max()))
+        { throw std::runtime_error("keep-last depth exceeds native representation"); }
+        profile.depth=keep_all?0:static_cast<std::size_t>(depth);
         profile.reliability=field(cap,"qos.reliability")=="reliable"?RMW_QOS_POLICY_RELIABILITY_RELIABLE:RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT;
         profile.durability=field(cap,"qos.durability")=="volatile"?RMW_QOS_POLICY_DURABILITY_VOLATILE:RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL;
 #if UWVM_ROS2_HAVE_COMPLETE_RMW_QOS

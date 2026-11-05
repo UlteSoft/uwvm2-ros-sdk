@@ -16,5 +16,23 @@
     "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/yaskawa/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb"
+    },
+    {
+      "name": "roswasm/transport",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb"
+    },
+    {
+      "name": "uwvm/observation",
+      "path": "src/language/ruby/observation.rb"
+    },
+    {
+      "name": "yaskawa/ruby/ros2/records",
+      "path": "include/platform/yaskawa/ruby/ros2/records.rb"
+    }
+  ]
 }

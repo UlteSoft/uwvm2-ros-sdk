@@ -1,0 +1,51 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3967",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "8dc10c0990cdfce6f07417505aaef52016f889785a58874b980ffc05a1d34593"
+    },
+    {
+      "scope": "example",
+      "path": "Main.cs",
+      "sha256": "1b83267c6383b7339699a5566c66ee20695999817031a26aa7e119ca59b7f3c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/csharp.json",
+      "sha256": "8a55f9a0f8c90d9dd0e483e7e1db4976c3a34890edea7714dedfebf371dd1051"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": "primary=13 rpc=0 rpc_present=False\ncleanup=0 cleanup_present=False\ncleanup_exception=none\nresponse_present=False success=False\nwire=\n\n"
+    }
+  ],
+  "exception_profile": "eh"
+}

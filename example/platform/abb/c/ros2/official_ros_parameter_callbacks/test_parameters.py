@@ -18,6 +18,12 @@ need, digest, read_log = base.need, base.digest, base.read_log
 CASES = ('positive','denied','stale','timeout')
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def actor(child, expected, known):
     row = base.process(child.pid)
     supervisor = base.process(os.getpid())
@@ -141,7 +147,8 @@ def run_case(config, wasm, root, case):
         out = (root/(name+'.stdout')).open('xb')
         err = (root/(name+'.stderr')).open('xb')
         handles.extend((out,err))
-        child = subprocess.Popen(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL,
+        launch = PipeLoggedProcess if name == "vm" else subprocess.Popen
+        child = launch(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL,
                  stdout=out,stderr=err,start_new_session=True,
                  env=dict(os.environ,**config['ROS_environment'],PYTHONDONTWRITEBYTECODE='1'))
         children.append(child)
@@ -165,6 +172,7 @@ def run_case(config, wasm, root, case):
         values = {'@SDK02_GATEWAY_SOCKET@':socket,'@SDK02_PEER_NODE@':peer_node,
                   '@SDK02_ABSENT_NODE@':absent_node,'@SDK02_UID@':os.getuid()}
         arguments = [expand(value,values) for value in selected['runtime_arguments']]
+        arguments = wasi_test_arguments(arguments, selected.get('wasi_policy'))
         runtime = spawn('vm',[config['runtime'],*arguments,'--run',str(wasm),case,str(seed)],stdin=True)
         start_deadline = time.monotonic()+35
         while True:

@@ -1,30 +1,32 @@
 {
-  "format": "uwvm-ros-command-run-v1",
-  "target": "wasm32-wasip1",
-  "backend": "ros2",
-  "distribution": "jazzy",
-  "runtime": "uwvm2-ros",
-  "runtime_arguments": [
-    "-Raot",
-    "-Rct",
-    "4",
-    "-Rllvm-policy",
-    "fast-compile",
-    "--wasm-set-main-module-name",
-    "main",
-    "--wasip1-global-noinherit-system-environment",
-    "-Rllvm-cache-path",
-    "path",
-    ".uwvm-ros/guest-cache",
-    "--ros2-global-disable",
-    "--ros2-global-audit-deny-max-rate-hz",
-    "4",
-    "--ros2-global-audit-deny-burst",
-    "4",
-    "--ros2-global-audit-deny-max-records",
-    "4",
-    "--ros2-global-audit-deny-max-bytes",
-    "4096"
-  ],
-  "application_arguments": []
+  "format": "uwvm-sdk-local-finite-ros-test-v1",
+  "ros_namespace": "ros2",
+  "runtime": {
+    "executable": "/absolute/path/to/uwvm2-ros",
+    "sha256": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "source_identity": "REPLACE_WITH_SOURCE_IDENTITY",
+    "llvm_jit_policy": "debug"
+  },
+  "limits": {
+    "memory_bytes": 68719476736,
+    "swap_bytes": 0,
+    "timeout_seconds": 1800,
+    "output_bytes": 2097152
+  },
+  "wasi_policy": {
+    "format": "uwvm-sdk-wasip1-policy-v2",
+    "modules": {
+      "main": {
+        "enabled": true,
+        "grants": [
+          "proc-exit",
+          "args",
+          "environ",
+          "stdout.write",
+          "stderr.write",
+          "stdio.metadata"
+        ]
+      }
+    }
+  }
 }

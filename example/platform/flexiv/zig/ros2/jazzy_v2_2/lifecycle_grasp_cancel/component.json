@@ -1,0 +1,2916 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-native-lifecycle-2851",
+  "test_scope": "Original guest with only its ROS namespace enabled. Verify denial and cleanup; positive native lifecycle qualification is separate.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros1/flexiv-ros1-noetic-complete/records.zig",
+      "sha256": "093e124f1fa4dff040818286e47964c1e5fabd363ae1eaf37f3f7f0280f47ab2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-controller-core-foxy-complete/records.zig",
+      "sha256": "2121bea9f3522b163371e4bd0f3335f8ad1cfea5bd7206741b523dcb15a0c1da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-controller-core-humble-complete/records.zig",
+      "sha256": "2121bea9f3522b163371e4bd0f3335f8ad1cfea5bd7206741b523dcb15a0c1da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-foxy-complete/records.zig",
+      "sha256": "7788d4ed66360937c584ec2c63720f2b7486225852404122e23b5b6654e5f838"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-humble-v2-2-complete/records.zig",
+      "sha256": "4db308bb81134cd34c117bf48bce3ebc82ebeaa670809cafa86d5b5a2531d987"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-humble-v2-complete/records.zig",
+      "sha256": "bbe5a085f6d8121df313dbfaf41ab2e39fea17ece59cd78d98ec97ed0e8ca763"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/native_grasp.zig",
+      "sha256": "201959663e774e9c8f185d4fcc4478942c4b9e4e77719e07f56abaa6f7ae1d59"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/native_grasp_client.zig",
+      "sha256": "a70a513821909072c3e0731d908e1bdb2b85e0c9042d9012e2f73bb48408d317"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/records.zig",
+      "sha256": "4db308bb81134cd34c117bf48bce3ebc82ebeaa670809cafa86d5b5a2531d987"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-complete/records.zig",
+      "sha256": "bbe5a085f6d8121df313dbfaf41ab2e39fea17ece59cd78d98ec97ed0e8ca763"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/client.zig",
+      "sha256": "2c3d41b2819c07ad553be56693e155d65aab93f9e566f663b6ee5eed09e7f36d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/native_command.zig",
+      "sha256": "3d1b90cd85d2e44dc463956d39d94a8552dcb4941f16dfbb8508e2372f0cbd82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/node.zig",
+      "sha256": "3a364683e4a1dad965502432ab802d9fd01de07b0880ae15b60a24927a9ca4a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros1.zig",
+      "sha256": "64a31ccc7acc19d5bd25a269e941e97260ed6909a8721c01047d635382157f50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros2.zig",
+      "sha256": "094635a63b41bab99a2a14eec6e4488129380912bf109a49b15eaba6626b5eb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/controller_core_foxy.json",
+      "sha256": "4775f4bf17fa171f8e1be83de272953bd6925e16e1fa35e2300ee7439f20c806"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/controller_core_humble.json",
+      "sha256": "d9de494622fa7305757e6bf855ed245c73a25c32879671c1f45940be9d15b950"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros1_noetic.json",
+      "sha256": "e042f8dac78bee162c0654f949edb5ad0fd171c03384bc71e71e466cf4506d41"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_foxy.json",
+      "sha256": "006f18dd976ff6eb351f1f5180c4778f4adcf01ef622df648aa00dcc7ce9ebf0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_humble_v1.json",
+      "sha256": "50d5b8cbadb312cd5e08bb2a91608c297fa3708b0170fea80878d33e42f1e3b5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_humble_v2.json",
+      "sha256": "c36ba687bbfde33c489e6cf1ddb4287fc0dd01c365b8bab23c1df3c58655be4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_humble_v2_2.json",
+      "sha256": "8577eb503db536f392e5278422a9cc562518356ec10a51cb0cad6f7fb43acf54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_jazzy_v1.json",
+      "sha256": "344002d049f39e8949d9ecc22995b75cd4c91c972f50037bc66ea7c98e726084"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_jazzy_v2.json",
+      "sha256": "adb1bbeab25b0197422451b141c12ab6f9656eba61d9f851f76db5633811aaae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_jazzy_v2_2.json",
+      "sha256": "364df1d17cbc0408b93509aaf022132263973eedab20f80d59467bdc9279563e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/as/ros2_lyrical_v1.json",
+      "sha256": "363af0b5b6209ddb85b3a9d4c83fcc1a40cdcad00b42aae02e42e5ee3a123862"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/controller_core_foxy.json",
+      "sha256": "e9d35baad4c36a301413ca9835a00f6c86a19dd7d17990808ea7c59bd26caa13"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/controller_core_humble.json",
+      "sha256": "0ee3439abf7dc4c422aec36e32da371a9fcb19a0132d6bd50a5d40fbb2d198b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros1_noetic.json",
+      "sha256": "3cb01eb69f8c882de9b6fff1fe6c268920cf948edac871f80f767a0d11e465bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros2_foxy.json",
+      "sha256": "e4aed2741cce50c97d51401b5a7e48ace83ce0451cba3f4e945bec2bee4fde33"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros2_humble_v2.json",
+      "sha256": "c37ddbf6bfdc1cb21812c6da833dd2d5cdd872b14304098112bafbac37a00fb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros2_humble_v2_2.json",
+      "sha256": "f7f1c452b88ed85038e8a6ca80867a7216286079b95e3aa4800da898b2b6b40c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros2_jazzy_v2.json",
+      "sha256": "580f84625b5573f3b9a2e0138317f6635eb99544b2ceb5b471fbb44b0914f4a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/csharp/ros2_jazzy_v2_2.json",
+      "sha256": "cfb5467e5fa90e0c2f303477923ee0bf9bcb83c75480fffd5799e6a297ed0633"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/controller_core_foxy.json",
+      "sha256": "992eca0f8a35d7eb109b1170c43345ce8dc0836cf787220925726e4abbcfa845"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/controller_core_humble.json",
+      "sha256": "156fa191115721f7b5914b84f4faeab4fcf5f6efbac3a6382b536051ddb77835"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros1_noetic.json",
+      "sha256": "0eed8434b70c4b14890f0ae61be0b37d726c34453b424c167c88e30596b32421"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros2_foxy.json",
+      "sha256": "4fa7ed745f6390866eb16ee313d83b112439f9888d45e96010d95e3db53cc745"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros2_humble_v2.json",
+      "sha256": "439fe7d75a318966e1cfabb3e439e44275f450579b42d309ea11b93d240150f2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros2_humble_v2_2.json",
+      "sha256": "2d513ca6075aad63618f5c2914e8135836d320cdb89d22947e3c1b3bd70b504e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros2_jazzy_v2.json",
+      "sha256": "6d7b195c50dab772a21ed1d10d4e15fffe39b23479ade2ddd807dd2231d00622"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/d/ros2_jazzy_v2_2.json",
+      "sha256": "85620fa1b716cd9aeb00e8f36248a45b753d45701f9069ec627d9fbb5d7cd458"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/controller_core_foxy.json",
+      "sha256": "7078b86b64831ed8f969516e1a8ce6ff24c67dab0acd0195004625cc7652310c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/controller_core_humble.json",
+      "sha256": "15e5a1b356c496837ca7558cafe6bd628a10656a50162c665d661de8643bf4b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros1_noetic.json",
+      "sha256": "c547e8b2c55b011f06661e34ec55f6c56c6b03ec5ebb60b9727261b3119b7463"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros2_foxy.json",
+      "sha256": "9fa7e208778545b97b031c82454dccc372972554aab085ba6ea4e4a21694b109"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros2_humble_v2.json",
+      "sha256": "3877383a4e11cabb68c4f5dde413437d82fcdc57a2e3644c6d58027913a58a90"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros2_humble_v2_2.json",
+      "sha256": "dd07f4617abefee5a5b5eaaa34343840e73b15c74e16efd3b089cd50df3e0249"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros2_jazzy_v2.json",
+      "sha256": "0b98750b9ab2f986679cf333158571e8a15082ca13bad18b198ab629e0f1b107"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/fsharp/ros2_jazzy_v2_2.json",
+      "sha256": "709cc29bffabbb91280a2572bee4afecc6973d5f72e47703c26d72776241857b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/controller_core_foxy.json",
+      "sha256": "3ef9d0dd6f8aa7d532b06789ca036385ecc637577dfefe458056a3b58dbe7532"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/controller_core_humble.json",
+      "sha256": "e50a802cac4313870dcc645d5ea9c2be01d98a76a9f4b1319c5f4a5bcb332625"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros1_noetic.json",
+      "sha256": "e0fb81b351b8765d04430e8ff4bcb96ee0a4dad50c15faab6009df7ae9f5fbd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_foxy.json",
+      "sha256": "e07974d308ab2bd7c6c17e98e9443187383e3460a296121b9ba3f542b2fd50bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_humble_v1.json",
+      "sha256": "d5655bf0089e13f9fe46cd9c8d5769927a6eef52055feb227313781a15a869eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_humble_v2.json",
+      "sha256": "da406caf55af57db615f69c1c6f5cfe317c447aef566bc42a46544dc6620108b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_humble_v2_2.json",
+      "sha256": "13482d08a5f03ffc96287a4cedc4d8a69e26f33626691b2166185c240eaf1be0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_jazzy_v1.json",
+      "sha256": "94493a630bb6c1e81de001e435a17f82494eec0b63721cd2a4a1c376595924e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_jazzy_v2.json",
+      "sha256": "959b7bab2433dbf461cb9ccf45ff6af205f415cab08142c49533bbcc0c8c5794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_jazzy_v2_2.json",
+      "sha256": "37e1bdd7e7bb11339e8c05bedb59964f9ed85bf2fd1b721e567c7772ec729b53"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/go/ros2_lyrical_v1.json",
+      "sha256": "06eb0a276afe9fdf9faebf07fab925ba0988a84958a572904e28cc9df4e670d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/controller_core_foxy.json",
+      "sha256": "8c8c2a541caaaf14a93c6eb6286712937affc15d29b23eadeedb55d06f1198f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/controller_core_humble.json",
+      "sha256": "c8cac9e0d67c5685ba371d9c8937dbec9e3eb7f7e410c03eaa7e7cf1bb8be186"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros1_noetic.json",
+      "sha256": "6a030a17461511cecea81e38a650acc693a342aca76c49ded776348f98102263"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros2_foxy.json",
+      "sha256": "3a55992dc68952bab6e93f3749c741f69d449f819573cf29891fcab954877830"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros2_humble_v2.json",
+      "sha256": "2a99cb1cd811308bd1a65aa2d56dff9e23bb382ba561ae3720f86e6f891adae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros2_humble_v2_2.json",
+      "sha256": "58adb95283b3a98966cd6b7167806976b311a4186fb20a780548dd56c85dc2f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros2_jazzy_v2.json",
+      "sha256": "691317c1c2beec18a2c0356bbf8b25cb35d830a0b83b32aad99f9c249967740f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/haskell/ros2_jazzy_v2_2.json",
+      "sha256": "e4b0fb83a6d809844baaa6edb4e3e82e4b6c94a2f168e4a5d36c73ea827bed3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/controller_core_foxy.json",
+      "sha256": "abda8e797a359a1e315235ba8a607f790ded02bcef6fac3fba6a29f650818ac4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/controller_core_humble.json",
+      "sha256": "34d91c355a5d59360bd49fe39ae8ec374fb224478fa5c300d05283a159ca29b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros1_noetic.json",
+      "sha256": "fd8cc98a1a6b57ec0bd903403c66effb2c105f6294df20f1ee7d79fde0d4ec2a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_foxy.json",
+      "sha256": "33e2b5458e9ff6ee0a8dc6d53a54709c733f85db56902d3cda2e71e328be692d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_humble_v2.json",
+      "sha256": "ac032072472cd2188c6410810b0f10371879f2631a10b583a0d0966b4fd44b32"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_humble_v2_2.json",
+      "sha256": "17584cc91e2510f644fd66218c0ac424d72a115a5d16813148f473705ecfbcde"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_jazzy_v2.json",
+      "sha256": "eaf0f48e18ad9816b110640bf80677543b7bd5f3bad8b1ff960fcdff12832b6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_jazzy_v2_2.json",
+      "sha256": "4d837d6f428fe460e1d77e7a2b8a650b4629164f532d8450abb72a57c6b6ebfb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/controller_core_foxy.json",
+      "sha256": "0705c904d822482e02646cc1f93a0318cd526df5f4feb1c15c4ea05dbc8820d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/controller_core_humble.json",
+      "sha256": "acaec00cf9342a067bb37f459e8440f52e45eefe097ab20395c9b2d19d01eb1c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros1_noetic.json",
+      "sha256": "263fb46d164187e9fb30cd627abb9edd1a48fbfc562e299644f91fce99fe295b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_foxy.json",
+      "sha256": "43d557ddcafd3c7ba04184d00ddfdcc4293b99d2d3e6d1a77874bdf613409149"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_humble_v1.json",
+      "sha256": "7893e1b1cf66c240cf3e109f55f04e433ab621fdf32fb36db08009e8ea29fbda"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_humble_v2.json",
+      "sha256": "e46e78a679fb4249aa987522d94076417a6c532e7491f02cba8191de61edbb44"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_humble_v2_2.json",
+      "sha256": "7d68e1c3ef7d9e613cc3b6de8fc36ce1c5f4b6b2795067a1c5221aacf978c5cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_jazzy_v1.json",
+      "sha256": "6b863602bc71abea76b71d404f77344f5adc50711b1fc8c9ade193f74fec375e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_jazzy_v2.json",
+      "sha256": "fd1a5c7ea7b22b4ba15ab9bed0753778e2ec7918c6b6d73591cdfd4b003dde9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_jazzy_v2_2.json",
+      "sha256": "3e79e5666d8250bb1048336f6a761a6c908d9e4331edcdd12eee0d7ea61a44cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/js/ros2_lyrical_v1.json",
+      "sha256": "8df69dce04404907f5fbf35eabb7cfd871b859ba03894334166d8dfc2999ee21"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/controller_core_foxy.json",
+      "sha256": "cdca69806bcfce9cce0fe93a7bfea5e3cf94425d1df3b5365cda301787bcf1b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/controller_core_humble.json",
+      "sha256": "db8da1bcf64abe3f14a679bfd0e9db7dbc3c89b04d98c0a768e128ca89dd3bda"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros1_noetic.json",
+      "sha256": "21b723beb234e9422b179fa07f6ea7f7ba1483290316c7a18f1352b535ffe1c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros2_foxy.json",
+      "sha256": "94ef097f52febcc145c59ff8c8b9e211da47e48731e393d3c58028a5f8bfc21f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros2_humble_v2.json",
+      "sha256": "5bfe6aa8f772490fb2c36fd68e666c46abf6ebb058a2ae140b27f747837aa0eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros2_humble_v2_2.json",
+      "sha256": "8c38309c097bea9701a7c2659011df1aa345f3ad32734ea94550ac2f626a94ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros2_jazzy_v2.json",
+      "sha256": "d9ece8844959a8da6192c3e3f72868e28affa6e7722f9956b6d888a249c0edbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/kotlin/ros2_jazzy_v2_2.json",
+      "sha256": "11fb8af660e639d141b1c6d18054b739aece0d9f4f5e9370f090442fced56f92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/controller_core_foxy-bundle.json",
+      "sha256": "da7b4b9b9c64608d6fca94926798b1abbd62762d85c14839d29d46aefafe6256"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/controller_core_foxy.json",
+      "sha256": "816e634974f44754aed16c549b989becb06672545b3e2ee6904efbb6dd2d51f2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/controller_core_humble-bundle.json",
+      "sha256": "40803483e6478a08ecd0b8d2d3e6426ab922067247a6ce1b29cb715aac866cb4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/controller_core_humble.json",
+      "sha256": "5b8f3f9889e2a0ae340052c8a821cc3df7d37d601ba1471198492dab3ad51b83"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros1_noetic-bundle.json",
+      "sha256": "95b0de30d31fc74bf213489390455b87a93c2d500f017fbc371a3fcf47176f0b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros1_noetic.json",
+      "sha256": "cc868180533ed4cd20c3f42f68efe8fab212bca7d443301a36346d1265d277f5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_foxy-bundle.json",
+      "sha256": "8696c2869a25fd5a871907a381b48f767f8bda188b9d51ef37bc08f453ceb353"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_foxy.json",
+      "sha256": "3a907ac1118d030920d4959021cbe4bc700264a0fef4b265bc07bc89df5bf856"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_humble_v2-bundle.json",
+      "sha256": "fa412a2b82286ac0b152fdd95068399bbffa1f782d0b48b3d0780ce305f648ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_humble_v2.json",
+      "sha256": "b594fba871728ec34d86f50c146e1f48dc27ea58a75bfb9b7defd14ee8d97650"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_humble_v2_2-bundle.json",
+      "sha256": "7b049364a6d5f9ffb7ca8b6adce466602bb33f956712aef787a998b694d070a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_humble_v2_2.json",
+      "sha256": "627cf4b5e57ebe6f7f559aace503f9a47f47fdd17756d0ec05290dc7169bf3e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_jazzy_v2-bundle.json",
+      "sha256": "862410065484a16bbedc4d6115579eec96967928aca551a6b334cc593cf968bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_jazzy_v2.json",
+      "sha256": "3c81f3587c8ad92a2e9621c508360c20f43ee9827d8ce9dd97e50e55a44041d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_jazzy_v2_2-bundle.json",
+      "sha256": "95c3d13d48125015fc58e66abaff95b0abd867d0642d260b6e94b4299454e3fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_jazzy_v2_2.json",
+      "sha256": "6216c5b968f46a11de5349b430c385d30d49492525b59b3a086abfefe5305acd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/controller_core_foxy.json",
+      "sha256": "c39de1bfa455ad6512b5ad364635478e799486a3f86fe0c0a76b1a9d60792e03"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/controller_core_humble.json",
+      "sha256": "8c55b4b8c5aaf14b6e26ac8d362fff5788514858222eec3831432c9bea24ec92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros1_noetic.json",
+      "sha256": "f9ecea51739ea8b3e2fd9e49fa26e3ebf4d468ed4f866ccc031dd84b397611f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_foxy.json",
+      "sha256": "98b340653e890007f454e841c67b6cc4c55d48b8417d372313aeda58e7d6f935"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_humble_v2.json",
+      "sha256": "1a6c9b5950c92b01f7ac8ccd29c71a817e739707ce124922ff483c70ac240ae0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_humble_v2_2.json",
+      "sha256": "dd9adefbdab6e7e5baf62b64defc121dae261ae607d00bccfc8404f60a16d9ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_jazzy_v2.json",
+      "sha256": "592ca47b5877ca7dfa96cdb58dda4311feeeead683796805329a9e8c1372d135"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_jazzy_v2_2.json",
+      "sha256": "6626805d05c8d7e97c85bf6ebb55e3e6bcace49ea14b73cd1271aedaf61b2ede"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/controller_core_foxy.json",
+      "sha256": "ac0548d9e46f2b7091419ee4f5a4c72d7fc305369f7758c05be0124cfeece2df"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/controller_core_humble.json",
+      "sha256": "90cb39472de0f8ad57fb608ff34e21198c742f8a132142ca09e7e31e61b85efd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros1_noetic.json",
+      "sha256": "81874312ad0c78cc283733d60f0f669c2e154102429b1f7e98d7493bcec613ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros2_foxy.json",
+      "sha256": "b3c5017a3ddad12fdc456ff0408fb56448cba1b6ce2a15bc1e139045a5d387a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros2_humble_v2.json",
+      "sha256": "ac7cefa4f69cbe0f229e46fe5421878ae89dbdb3ff3dfdd2e5190c39313aa403"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros2_humble_v2_2.json",
+      "sha256": "45f971ce98b8b48cd0285c9c81365b819568f02dffc358c9739215abd68045b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros2_jazzy_v2.json",
+      "sha256": "bb1dabe05cfcd3155c9ffae60596d10962c47d100d37d27d91458d0c9f4a0f36"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/ros2_jazzy_v2_2.json",
+      "sha256": "34ee83943078ec61f15f1a4e7809c9e8a784dc55b1726eeb2b65830da9cc9e80"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/controller_core_foxy.json",
+      "sha256": "3027fdf72a8ac411c71b4186212a18ef329b8fc0969143ec208ba294f84e1681"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/controller_core_humble.json",
+      "sha256": "0ae94ed3b3a65b21c6dd3ac90e2bfbdf8f9ae3f21ac559fa5da4b00fcb000dd7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros1_noetic.json",
+      "sha256": "a1f27b71e4360c95af5683d465456ba4f68914368bf5f80dccbac49d2d5a0284"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros2_foxy.json",
+      "sha256": "6028fa9764f8b92603cb9ec8806d56dd5539b404c1ecbc82b354c4e6627a8591"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros2_humble_v2.json",
+      "sha256": "dc40c0808de69638b8818fd0acc8ea27a9149c57f5aee2e7af136bdd1d29babd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros2_humble_v2_2.json",
+      "sha256": "43c8d383429182448d619c48c987ce1c7f3eed34ab6e4152a2f12f1f33d5eab7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros2_jazzy_v2.json",
+      "sha256": "5034b9bd2047c377de3a3deadea458a99e76907499dbbc115bdd5e9649da3110"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/odin/ros2_jazzy_v2_2.json",
+      "sha256": "3c7aa7949bad362f7fdaf565bac2762d09379b4c0021e5ea5903a6b5bbda76eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/controller_core_foxy.json",
+      "sha256": "3136076a2edd80c87b26c1c0471a782c2987a1e23310b3d5a6f84322a3cedcc7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/controller_core_humble.json",
+      "sha256": "406831c6daf04fd1185928ee3c09e444df1241516e13c5cd71a59d17039ba5ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros1_noetic.json",
+      "sha256": "bbb25f7c4b05a6f8523f466ad56d98e5402efc5c3ae6d754a1b45bdb4ba000d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_foxy.json",
+      "sha256": "cbce399c1934da7e35dac376ea7e7442491a1442b1bac2b197981967731a6b4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_humble_v2.json",
+      "sha256": "193f8707811a8a495c058ece44c57a94bdaaac296388a4f3302cd23a364c0e71"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_humble_v2_2.json",
+      "sha256": "a0745008d69c608477939e62ea6a5d99bcd869b14d4e965cd440f7f9d9c8c893"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_jazzy_v2.json",
+      "sha256": "83b28e75d21508bb658232cf14ba8579fe475145835e2850dc8adf82ea750dd6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_jazzy_v2_2.json",
+      "sha256": "078e2f3df647653d07d8679ad925c6688227bbba2dbf9fe798534c1425ca5f9a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/controller_core_foxy.json",
+      "sha256": "6c5ba76087bc60713a5c8ac8ffc22e07de79aa18e795668473f0ef458defba29"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/controller_core_humble.json",
+      "sha256": "b2d445934ffcebbadea814f1d9e897e2635559c916946b67a9a23126995c235c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros1_noetic.json",
+      "sha256": "66af20fa65fc8b6d88ac8db56b6fa5f86968ae53ba3819155e9f364c7a86ce3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_foxy.json",
+      "sha256": "07f6870e40dce98caa3b3765559a20e826fbb36326aed92337e82816247bb4ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_humble_v1.json",
+      "sha256": "11017c37104aedb079d5109b8ac91a32c557e3bf9aa7b5481cdc70cfebdd8e0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_humble_v2.json",
+      "sha256": "4d629ac0ec5285aabe3b2c612fc8c8375e7044a691b8e6ad410213ea15a43887"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_humble_v2_2.json",
+      "sha256": "ff2ba7650b7469d32714f8fb15e1ee522b318d01881831b1bb951d62eedbab89"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_jazzy_v1.json",
+      "sha256": "eb9f227c76ebb8c404231c8fb0be8e6be21234ef354c486600e241ff799e5f67"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_jazzy_v2.json",
+      "sha256": "6bfd144d8b7eb70cd980ca9f07def77369610dad8b71dff3f49d37f72d1fb3d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_jazzy_v2_2.json",
+      "sha256": "35c84d4a0708c7ba3222e65f8a638567f83ad93a4a27f072264b1446b8e67c46"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/py/ros2_lyrical_v1.json",
+      "sha256": "50326c890623dc978683cf84dfd9e691daa3b043ac72935b09ee679996ef0dac"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/controller_core_foxy.json",
+      "sha256": "6b3a958fde7cd1d9cb46e27791573ef428534e2853e04bcba110631e3aa81ac6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/controller_core_humble.json",
+      "sha256": "2b245f5cfb79c699769f28cd7a6e548816d4167d06d1f3346f84df0bb0246ea9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros1_noetic.json",
+      "sha256": "681345b5318703485ada038f007d97ba19183e2ca943aaea280fa8c46f294f52"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_foxy.json",
+      "sha256": "4d6cdb3979b82ade4453c4a4a3d4fd1cb89dffe8b2deb26a92fa73b25252c734"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_humble_v1.json",
+      "sha256": "55333c15e5c88471c1bf6964c93144e022b8f0f0b0ec3e080457a1197490ec80"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_humble_v2.json",
+      "sha256": "b163c19bb2f0dd1514cc7742222b1276563bc51f796ce371e9e18b680723b40a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_humble_v2_2.json",
+      "sha256": "b8fc674dc86c31e0c930754ff993bb54cb4ee7f6a7ee4a0a358b578347bbc497"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_jazzy_v1.json",
+      "sha256": "737e3930b8cd86d0e696734c9cdb7db5e6d97067b360f42612f38c90b9b03d66"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_jazzy_v2.json",
+      "sha256": "8a5fc32b8fe67a0e6785505c8859b69ff2b5a41b490098a29c6d232e588a2d32"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_jazzy_v2_2.json",
+      "sha256": "0aa0d4893667e2b350ad11384f207564446190de9c17f9a81ed80d2569a4004b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/rs/ros2_lyrical_v1.json",
+      "sha256": "25257780485ffbfe95c74562bb985f83259b1ac1e0e11c1d9192f6ae606a6385"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/controller_core_foxy.json",
+      "sha256": "d39129b2711e0ee8112ca922fdd6dba49ab95f0b35cd699ebd0e3e799702300c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/controller_core_humble.json",
+      "sha256": "396bcecb75b3e1d182c9383d5c487bc0edb4b2d3a24b95e87f0b0bae1bef559c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros1_noetic.json",
+      "sha256": "f0ae55ba04745ae4d932776c6ade0b4be587d4961c0026ac4e37b30b8a4191e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros2_foxy.json",
+      "sha256": "c11786f66d7c67380c791909748a233eefc5336bf0d00351cce0e7f5e6e3fe61"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros2_humble_v2.json",
+      "sha256": "b71443b0674c6cdd6f528d2abe6d00db7c8db605a8931a26a83a67380fa1be06"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros2_humble_v2_2.json",
+      "sha256": "6a9fed054ad10ccf75f5f9dc22520cfc17cd41e233e02e5c995b8e868e2507d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros2_jazzy_v2.json",
+      "sha256": "33ac73a5d89fa6b9e969b3566b61472a4d3c01ecd1d493195ef71b264276ae4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros2_jazzy_v2_2.json",
+      "sha256": "388aeb79733eef74099d56134186fa9663d488d743e4461473259e3de8bd094b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/controller_core_foxy.json",
+      "sha256": "6e3dadb79a1e5d89bbfa77c8e003f263ac914dac33ddda4b7dad66c089d326ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/controller_core_humble.json",
+      "sha256": "cdc5244e72afac07ed03dcb254304fa31596dd91c0c9889ad5b1d97373de7a5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros1_noetic.json",
+      "sha256": "2fe669789cdfd0b9227f4d0d6c965d8959a2c154d1f275caa3ba48de4c09cac7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros2_foxy.json",
+      "sha256": "689519d9b2e51695ed468e2fb59b6f73d98ddf6d3bba742513a8efcc8c7d121c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros2_humble_v2.json",
+      "sha256": "aa5303ac9e91788dfff76755cca99549b460c5f22fe9e5e88e4f5ff40d174a18"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros2_humble_v2_2.json",
+      "sha256": "413aa7f9736b9281bb7390001546202cfb8cbe3194d7c80830dda73b05f33da3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros2_jazzy_v2.json",
+      "sha256": "07be4723a823ebed58ff3e6898413da31ef8df4a81f5984d66cd435728d75482"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/swift/ros2_jazzy_v2_2.json",
+      "sha256": "74433a6212d9342222ca8d68c3bcee2921bc7e12c5a726a8e2d56c57311799bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/controller_core_foxy.json",
+      "sha256": "e6336f329f172343df6e62124618584ea502283a5274eb74fa0efe282c80b7f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/controller_core_humble.json",
+      "sha256": "2f373b462322d77b0f62fa57cdbbc4dcf8e2da4af77b9014074eab40e842ca02"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros1_noetic.json",
+      "sha256": "58d062c6c7c7a2083322645dff1cfca0df6d2a41e5ba439e749147c2d3c563a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_foxy.json",
+      "sha256": "290e94bae0f99f532f5d540d55e4139593cd37b7a6c536f91c245b19275dc732"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_humble_v1.json",
+      "sha256": "52ab238a246e92b1abfb4b29760085d355d927f48f2fbc1efeeb450f2e207f11"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_humble_v2.json",
+      "sha256": "75829b99ff2f4993d5a0e5d832ff4d2b1da2212ea03148b8b19ff956036017c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_humble_v2_2.json",
+      "sha256": "f1bcb616651c6b6d0adcb3e4046be511fa225ade8c62b6867bbefb63612041f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_jazzy_v1.json",
+      "sha256": "e24034f0100ae9af1cc82aff9a779fea34f4390c185f6845606d06e9f99ca81b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_jazzy_v2.json",
+      "sha256": "3ea59090b7f94b5e8a2ba453a76ad14a8ae8cd4e895f6e6942f12c1cabe78dc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_jazzy_v2_2.json",
+      "sha256": "3af243401176f9e932914f848a881290f075b7212a6cbda013616a6060360c91"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_lyrical_v1.json",
+      "sha256": "a4656ca3b743731951d72934ecfd70e6ff27354a2137034c1198df401e6b63a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/controller_core_foxy.json",
+      "sha256": "a067f84137325d1e1ffa532850019c8198340ce3012b72e2c5b57ec4997a75b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/controller_core_humble.json",
+      "sha256": "c9589b12d210aa7ca64126e635699eded00be523aed5232c5b0d313c1fdba1b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros1_noetic.json",
+      "sha256": "b60eaafa831b1455252b223974fdafa2d1e20030736ddde351220fb534db09c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros2_foxy.json",
+      "sha256": "637cdfd3bb77d707b7aa695e3dbdb6ece26918757610360fa78376fecfc171b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros2_humble_v2.json",
+      "sha256": "fd6f11d9c299fb19d77f8ace00271dade85de3f1be1798f578b9c49ce8f5c888"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros2_humble_v2_2.json",
+      "sha256": "0107751777be83c4ac1532ab64bb317ab0a7198215fa2ff312aa4168437dfbb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros2_jazzy_v2.json",
+      "sha256": "34acd16f7dd86dcc8a3b7aa1a7739b20bafca870b3cfc4422268aa1b1958b801"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/vbnet/ros2_jazzy_v2_2.json",
+      "sha256": "017b2e37a120a8b7c86257d6c43b72e646f8282b644d7b2d359c19d9d41ee186"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/controller_core_foxy.json",
+      "sha256": "0bc0c7b071754a938e3a3898f711c13ad8e5726f61024e651310c5d1018562d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/controller_core_humble.json",
+      "sha256": "26aaa07d9ba31a21a0d2d7718fcf31d3f5a2e1b42c058f2d8a1cabda818d03e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros1_noetic.json",
+      "sha256": "5ab7c7fd98bd6eb7bcdb9b0ae0ee1640ad682c0edf5f63aa89b03d5f170032d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_foxy.json",
+      "sha256": "b878e9816c4957fc152b38900b420d623ca730d6d4f98be0b1d9a37a12fb9eb2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_humble_v2.json",
+      "sha256": "69ffdd63ee4037dfe1e3908a621712009c97ed7f40f08efdfd2e3145b647d7b5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_humble_v2_2.json",
+      "sha256": "36216be3c8aab88e141500c022ba7435b051a6157558422e5ddfb401dff46b81"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_jazzy_v2.json",
+      "sha256": "be0d58cb949ff20a9f02c9067e53515d0a08bbdb398c79840b1562d57b18a112"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_jazzy_v2_2.json",
+      "sha256": "6244d7dc50f6790e5c1dc2f6850ad70f51dbce45dcea165159e1dd223e52a1a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/controller_core_foxy.json",
+      "sha256": "d5c03f8e38767e155f26517083e39b776b402adad44429e5b5b40387325e87d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/controller_core_humble.json",
+      "sha256": "d40266c76ffa28a8b7cadd679fd7266689365142b8d3ccba34e2a249162261b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros1_noetic.json",
+      "sha256": "f49289a41fde65500de1bca26540ba82759b436666bdd2a7ea4fac014319ac8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_foxy.json",
+      "sha256": "194bb7c14bdb7e3eba79bbd84bcbb6aedb56f431c0701e2c46a9cc03a5f05aff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_humble_v1.json",
+      "sha256": "147cf0db8b75d4eaef60aa5404f5355d8a309be001a347e6b3f498fe3de64c8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_humble_v2.json",
+      "sha256": "a23670afab9ee7eee872735a46be72db97ed6c603464e406475671b3afb1395d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_humble_v2_2.json",
+      "sha256": "c5fd86c3cf2fbc9890bdeae42012e8329967c900a50f7c0dab5632d387d5c275"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_jazzy_v1.json",
+      "sha256": "cca403c7af98b739f95c9e96a5efe90f5cdfdc48a4a4b081df6ae09401416bef"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_jazzy_v2.json",
+      "sha256": "c8456d7204eaf702a41b31788ac0520d4b64034efed117fdd7742608beb6b657"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_jazzy_v2_2.json",
+      "sha256": "a4d136ec2f027b8ae1e7d851774dbf7ef19b5da3b66100a26ba70dc52ba60b4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/js/ros2_lyrical_v1.json",
+      "sha256": "655a6acd3df220236128bcff6d2c0d5019f5dc00870b35cb6b865f6ac00ceaec"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/controller_core_foxy.json",
+      "sha256": "dcdf163858dbbe1c7f15c86311f2dfb1415cdf4ab01eebbe4d58f7a251517931"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/controller_core_humble.json",
+      "sha256": "817ade10f1df79a5ec64189f7c36e3b40f2100a031c08c01a1b7599130803c00"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros1_noetic.json",
+      "sha256": "9832aef3ec58ba927d206cc77c80de2b3281f8d88447ed605903508bf52bda68"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_foxy.json",
+      "sha256": "8cbfae92da5f3aabaff2d5744274da80a9fdd9f2c9e32c8aa1bf1e7ac75a0dd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_humble_v1.json",
+      "sha256": "75185a519d66cfe715593d65dceca32206addeac80e87ef331f7af1206350f72"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_humble_v2.json",
+      "sha256": "4337fe6a2787dcdca5939c1e7bca830f048cb97f7ec6142f20d256618b012684"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_humble_v2_2.json",
+      "sha256": "e3d5cd4069132e7cb62f7904a771236fe5cce96c83c6143e2e253969abeecefe"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_jazzy_v1.json",
+      "sha256": "3da3cb6a2ea7910580cc7c0f02e6595a52f5097723b75d161980f833248c12aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_jazzy_v2.json",
+      "sha256": "36beb79413f7935f3e6d79f879fb12fc979f66ff20fd50e4f40bd2b677513439"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_jazzy_v2_2.json",
+      "sha256": "801e6af7ffafc6a4e5d12deaa3bfc6bd840a888e21405a862b97e4b6ec77fc46"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bundles/py/ros2_lyrical_v1.json",
+      "sha256": "1bf193fa780f8bc6da40ba8ca4d584e72fe6b431d42b4031f3eb9469d19c35a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/binding-source.json",
+      "sha256": "01ae14a5030678768147cd495f753f87d6bf7a1c80f9bf898e60c994eaa2463a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/builtin_interfaces/msg/Duration.msg",
+      "sha256": "de2c18a883b94668c69c5cca9dc39c264d2fe56f3a950af8c35641804f4d558d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/builtin_interfaces/msg/Time.msg",
+      "sha256": "c7272024281c14e58a7223fde144efe4d729da0af75c2dd8264f91f52649033c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/catalog.json",
+      "sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/records.json",
+      "sha256": "aa92df8c9b3b392e89c0f103974c4650619c8019dd4922d0652d2408a117abce"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/std_msgs/msg/Float64MultiArray.msg",
+      "sha256": "344f5d8e6215a6e994659fb272de97c47a02b435db94a6d0f983b1fb467e0775"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/std_msgs/msg/MultiArrayDimension.msg",
+      "sha256": "94927d0ee40f1a1d9bf7bdddbca803e8b6e6d315d70c7295a9b0d2d6c380abed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/std_msgs/msg/MultiArrayLayout.msg",
+      "sha256": "8f059b66610c5fe0532e3f12ff1022a10671caebf773f00816fd4c9303626914"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/trajectory_msgs/msg/JointTrajectory.msg",
+      "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_foxy/trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/binding-source.json",
+      "sha256": "8f5d5e038361835145b5ea6b99f36f29665f4be402ef8c8ce8801d99b82f494d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/builtin_interfaces/msg/Duration.msg",
+      "sha256": "a8f4349a6332f8576f9dfe24cf77a751abb115cfd1310dab9b774e3602516f39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/catalog.json",
+      "sha256": "5a8eaa88c317bb6bdbcbef9504469db1aea22a4a4a19a34ffb72c5a426646310"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/records.json",
+      "sha256": "aa92df8c9b3b392e89c0f103974c4650619c8019dd4922d0652d2408a117abce"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/std_msgs/msg/Float64MultiArray.msg",
+      "sha256": "344f5d8e6215a6e994659fb272de97c47a02b435db94a6d0f983b1fb467e0775"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/std_msgs/msg/MultiArrayDimension.msg",
+      "sha256": "94927d0ee40f1a1d9bf7bdddbca803e8b6e6d315d70c7295a9b0d2d6c380abed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/std_msgs/msg/MultiArrayLayout.msg",
+      "sha256": "8f059b66610c5fe0532e3f12ff1022a10671caebf773f00816fd4c9303626914"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/trajectory_msgs/msg/JointTrajectory.msg",
+      "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/controller_core_humble/trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/binding-source.json",
+      "sha256": "d5d4031253a9bcb1fe7e3eead576cc37a78f9d7561e16d44e29da6dabb73daba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/catalog.json",
+      "sha256": "783758847488c49afff9e78525f71fea4b89b576cdf8b63f8f573a3d58664e25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "89d55d9135207d6b07739cabdf753d1cfe1dfe7d9d6cce6898b695407aa5dd10"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/flexiv_msgs/msg/Mode.msg",
+      "sha256": "d288724d36c0f6f19cff66779b7e8af4c2ceab03e2e5e407add8c1c39fd46716"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "a7a89902b9ba98717617a551ab795c421d48929ad5e588da02e070ad9c7a7011"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Pose.msg",
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Vector3.msg",
+      "sha256": "fa1d5b56a10a940afcfd312936dde90864a398aa2a35598f36943c570d391296"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/geometry_msgs/msg/Wrench.msg",
+      "sha256": "2a6eef4f4afa2da2e076fe3bfd16732e74074bb5d48a70eef5214e2b8caa8fe2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/records.json",
+      "sha256": "ef367e4be26bb0b0678f80d56b9b569f22e2ded49ad39fe3edce8ea3a668fac1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros1_noetic/source-lock.json",
+      "sha256": "5bb2ed63acae77683adbdcfbd7ff10d311e19be74f218522bfb7e293b12107bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/binding-source.json",
+      "sha256": "f492e26286f1cb7a40929df91dd9dde17a9619152ba6410448e3cf5eeb32d205"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/catalog.json",
+      "sha256": "0bb7c7508a31f8cb8e15bfd808e0ab3c62cd0bd257d7ef5b4f95bd15e92e6942"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "89d55d9135207d6b07739cabdf753d1cfe1dfe7d9d6cce6898b695407aa5dd10"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/flexiv_msgs/msg/Mode.msg",
+      "sha256": "549fac75da9f7797e779ea8e8a055efa7a71b739dfdb999b44fa1bac912e5697"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "e7f122e3058f1db32521ed50cb460c479910dd57c13282dbc6cc9fa64e2255e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/records.json",
+      "sha256": "3f8c7dd49e018423907b8427c9d28ea29587f42dd34fe1330f37e64ceb22e49c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/source-lock.json",
+      "sha256": "2017c13c9712776de500080f14a54684e9350a64a3a2c52dccaff60276fe6181"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/binding-source.json",
+      "sha256": "8ad7970949fea82a3ec9dff7ee88d4bbda12aada885602337e9e739727b4f3cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/catalog.json",
+      "sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/action/ErrorRecovery.action",
+      "sha256": "dc028136a2af814d4ac79da26b6fb69abb8838c6b16d7a9800ea2187d52974e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/CartesianMotionForce.msg",
+      "sha256": "fc8db2dcf45bbe32790e15c023fdc856dba01aad94b6a2b68b8e6a25a3fbdaf4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/JointImpedance.msg",
+      "sha256": "c7ef77c08cb85f57dc1adfd5256ff792632a5c36c5cd338a8a4421462942cd67"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/JointInertiaScale.msg",
+      "sha256": "1e1918f58c5ad198a36e1e796185d0353e0e96c0214a7db50be4e0fd6b4ba57c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/MaxContactTorque.msg",
+      "sha256": "daeb075dd4e3c44c3cc8dc56cd29648fd56aec2eb2f0d70d9c1e2ccdc6a491d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/Mode.msg",
+      "sha256": "32541d8e8122ff30e21360c65ba9f4a9d7f24d8c526272fa6f76d69f05079a91"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/OperationalStatus.msg",
+      "sha256": "419c332be71ea5199c63907b81945cfe724f05f56eb7ef88690473e019fd9936"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/RecoveryPolicy.msg",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/RobotEvent.msg",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "1eb53f80f2c3fdfb050df717dea3ff33b4301ae0a5f309355bfe46139f48df3a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/GetOperationalStatus.srv",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetCartesianImpedance.srv",
+      "sha256": "7fd8b550587dfc0144d17d318a8d4354de93b3d9bae01b220d4946b6e4b67bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+      "sha256": "eb4d1d503b492d872d90c44642355775ccd2ec28fc5c9b0fe4a83d80cf0ee5d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetForceControlAxis.srv",
+      "sha256": "04d6cf9d8feca568faa8edfee0692159ce160731744d7a3f86f97ed9acd47a85"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetForceControlFrame.srv",
+      "sha256": "4bcdfde59d8ea2ab8c7dd61a58b20c5fa8aa8b8dbf4692a75a0747247542a7c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetJointImpedance.srv",
+      "sha256": "6e3d7659b18e2ed0ca81e25fe765ed030c4e477ac7466ea2a95011365cfc6dee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "sha256": "df53c223afeae42585d8e859041d0d25874d806ea947683899fba5d1eab7f88b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "sha256": "814b9a80a9da8d4bc0fe3a6a90d26a65da63c82e36f7b3e5d9680c4aaed3920a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetMaxContactWrench.srv",
+      "sha256": "731404d0b6f633969ba26e4954399df71a7714ee8323829588d0de1cedb098c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+      "sha256": "0d18e8873ce87a22d3f48fdb2ab292fc0e454cd3b92e8999b0a59d76295e2815"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetNullSpacePosture.srv",
+      "sha256": "623926fc25ddea3bb81e97173d2590abf6d73e551ca98601b796412de5c785d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/flexiv_msgs/srv/SetPassiveForceControl.srv",
+      "sha256": "fca5b46f9ad4a3182d272e6bbc05e1766838b0e902abef12b9195a91104275b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/AccelStamped.msg",
+      "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/records.json",
+      "sha256": "593050d0c074fd095763f90adc8beb8099fcc093eafa5b3e154ecd9e901d9bc9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/source-lock.json",
+      "sha256": "86d8b4873e47e604208e992b546e61bc451a6dca0e5718d878db9a73d06a18f5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v1/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/binding-source.json",
+      "sha256": "b819180c74527a6272e969aa1872547545ed37f0f68bff0693b7297778b894e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/catalog.json",
+      "sha256": "b903c05ee06afd4478b3241db41d78853642f5b4904ef15a1a5bb1bb525f8570"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/msg/Mode.msg",
+      "sha256": "519d8a3ff6321cd0ee5ca346697bc4cb14dd106983e5605ae6b3b4d2447209b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "594a95c740af75bea6ad93b90772b04947251123ef502165db1b666cd1de9cd8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/records.json",
+      "sha256": "8fcf52f0a0d689add00f410174f815ea151325191c4c0173aa2dd58d14fe725c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/source-lock.json",
+      "sha256": "716f1a47adfe59c911c141b2f61479a8be7808f0cb16d9ad379725d66859b63b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/binding-source.json",
+      "sha256": "fe5f01956fab1eec357a1c3148bac74f5ee60f337c6de6f63a40c6ad23897ff1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/catalog.json",
+      "sha256": "a56290042dd72464642a65960a9e03cba2e97a0af103d786e6853fe83ff9f5b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/action/ErrorRecovery.action",
+      "sha256": "0f815cb9d9a61ecab79bd5462f8a402f93565c4ea47b17e1ee3dc1c6c26ef933"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/JointImpedance.msg",
+      "sha256": "7031e90c2f705c4031bbf55d32e166353ff31bc719a2d16c5363d601e184c90a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/JointInertiaScale.msg",
+      "sha256": "a86cb82f83ef3742ff35444f06af226826e873bf443f8eabf4da29d73a0d845d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/MaxContactTorque.msg",
+      "sha256": "129c29086e1a39807f18dc974e6ee430c6a0860a58998d42ccbdc959cefcfb62"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/Mode.msg",
+      "sha256": "0ebae792cce1ff7c54cb23ca9b95135bd30a83d79ae3ec67385968cebf770a66"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/OperationalStatus.msg",
+      "sha256": "fc318a5a0683b2b6e78c5cf5f939a8f2430f3f790c5e9f89ede5cfbc6b818edc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/RecoveryPolicy.msg",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/RobotEvent.msg",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "594a95c740af75bea6ad93b90772b04947251123ef502165db1b666cd1de9cd8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/srv/GetOperationalStatus.srv",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/srv/SetJointImpedance.srv",
+      "sha256": "178ba8e6d9c86c19cb776b253dc79cfc651810973618a4919a69a1326ec02c8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "sha256": "1f5080d88387b8ff08a2a4ab624aac5a949a7e7bf5a45cedc7235bb9ff8ac1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "sha256": "5253488e28ba2e20ce0e1a842a7385c8c4ae869b8a7e38a8df09d9f28fe5b31f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/records.json",
+      "sha256": "05c4cf7f74bedf26e6888288a3355fe141849daf240ce5ea25415a80306db11e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/source-lock.json",
+      "sha256": "25eeff61c681056239013d2ec740336d1b42c8e4d9c7ce19ebfe429af8146041"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_humble_v2_2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/binding-source.json",
+      "sha256": "f269409f58c06144d6b6e3ccf968e6dc37f21ad5628fc3664756eb08b87cb5a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/catalog.json",
+      "sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/action/ErrorRecovery.action",
+      "sha256": "dc028136a2af814d4ac79da26b6fb69abb8838c6b16d7a9800ea2187d52974e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/CartesianMotionForce.msg",
+      "sha256": "fc8db2dcf45bbe32790e15c023fdc856dba01aad94b6a2b68b8e6a25a3fbdaf4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/JointImpedance.msg",
+      "sha256": "c7ef77c08cb85f57dc1adfd5256ff792632a5c36c5cd338a8a4421462942cd67"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/JointInertiaScale.msg",
+      "sha256": "1e1918f58c5ad198a36e1e796185d0353e0e96c0214a7db50be4e0fd6b4ba57c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/MaxContactTorque.msg",
+      "sha256": "daeb075dd4e3c44c3cc8dc56cd29648fd56aec2eb2f0d70d9c1e2ccdc6a491d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/Mode.msg",
+      "sha256": "32541d8e8122ff30e21360c65ba9f4a9d7f24d8c526272fa6f76d69f05079a91"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/OperationalStatus.msg",
+      "sha256": "419c332be71ea5199c63907b81945cfe724f05f56eb7ef88690473e019fd9936"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/RecoveryPolicy.msg",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/RobotEvent.msg",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "1eb53f80f2c3fdfb050df717dea3ff33b4301ae0a5f309355bfe46139f48df3a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/GetOperationalStatus.srv",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetCartesianImpedance.srv",
+      "sha256": "7fd8b550587dfc0144d17d318a8d4354de93b3d9bae01b220d4946b6e4b67bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+      "sha256": "eb4d1d503b492d872d90c44642355775ccd2ec28fc5c9b0fe4a83d80cf0ee5d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetForceControlAxis.srv",
+      "sha256": "04d6cf9d8feca568faa8edfee0692159ce160731744d7a3f86f97ed9acd47a85"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetForceControlFrame.srv",
+      "sha256": "4bcdfde59d8ea2ab8c7dd61a58b20c5fa8aa8b8dbf4692a75a0747247542a7c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetJointImpedance.srv",
+      "sha256": "6e3d7659b18e2ed0ca81e25fe765ed030c4e477ac7466ea2a95011365cfc6dee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "sha256": "df53c223afeae42585d8e859041d0d25874d806ea947683899fba5d1eab7f88b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "sha256": "814b9a80a9da8d4bc0fe3a6a90d26a65da63c82e36f7b3e5d9680c4aaed3920a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetMaxContactWrench.srv",
+      "sha256": "731404d0b6f633969ba26e4954399df71a7714ee8323829588d0de1cedb098c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+      "sha256": "0d18e8873ce87a22d3f48fdb2ab292fc0e454cd3b92e8999b0a59d76295e2815"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetNullSpacePosture.srv",
+      "sha256": "623926fc25ddea3bb81e97173d2590abf6d73e551ca98601b796412de5c785d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/flexiv_msgs/srv/SetPassiveForceControl.srv",
+      "sha256": "fca5b46f9ad4a3182d272e6bbc05e1766838b0e902abef12b9195a91104275b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/AccelStamped.msg",
+      "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/records.json",
+      "sha256": "593050d0c074fd095763f90adc8beb8099fcc093eafa5b3e154ecd9e901d9bc9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/source-lock.json",
+      "sha256": "1fab4bc0a0605f3b78e2c5b9a8e54da447b1b39b0e5f080c57b198e3738b26bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v1/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/binding-source.json",
+      "sha256": "28548212108339795d4304349c1ca3020c91655294cc6a1711b4351c73c01e02"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/catalog.json",
+      "sha256": "b903c05ee06afd4478b3241db41d78853642f5b4904ef15a1a5bb1bb525f8570"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/msg/Mode.msg",
+      "sha256": "519d8a3ff6321cd0ee5ca346697bc4cb14dd106983e5605ae6b3b4d2447209b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "594a95c740af75bea6ad93b90772b04947251123ef502165db1b666cd1de9cd8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/records.json",
+      "sha256": "8fcf52f0a0d689add00f410174f815ea151325191c4c0173aa2dd58d14fe725c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/source-lock.json",
+      "sha256": "7cc78b1a87623fdec9f3064fc064cd09497897bad44440cc12f926697b696f4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/binding-source.json",
+      "sha256": "a29386299e4bd6c94c9a56a5cdad44aa4d3efc53db3e54e80194dd4c6ea78bfb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/catalog.json",
+      "sha256": "a56290042dd72464642a65960a9e03cba2e97a0af103d786e6853fe83ff9f5b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/action/ErrorRecovery.action",
+      "sha256": "0f815cb9d9a61ecab79bd5462f8a402f93565c4ea47b17e1ee3dc1c6c26ef933"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/JointImpedance.msg",
+      "sha256": "7031e90c2f705c4031bbf55d32e166353ff31bc719a2d16c5363d601e184c90a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/JointInertiaScale.msg",
+      "sha256": "a86cb82f83ef3742ff35444f06af226826e873bf443f8eabf4da29d73a0d845d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/MaxContactTorque.msg",
+      "sha256": "129c29086e1a39807f18dc974e6ee430c6a0860a58998d42ccbdc959cefcfb62"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/Mode.msg",
+      "sha256": "0ebae792cce1ff7c54cb23ca9b95135bd30a83d79ae3ec67385968cebf770a66"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/OperationalStatus.msg",
+      "sha256": "fc318a5a0683b2b6e78c5cf5f939a8f2430f3f790c5e9f89ede5cfbc6b818edc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/RecoveryPolicy.msg",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/RobotEvent.msg",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "594a95c740af75bea6ad93b90772b04947251123ef502165db1b666cd1de9cd8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/srv/GetOperationalStatus.srv",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/srv/SetJointImpedance.srv",
+      "sha256": "178ba8e6d9c86c19cb776b253dc79cfc651810973618a4919a69a1326ec02c8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "sha256": "1f5080d88387b8ff08a2a4ab624aac5a949a7e7bf5a45cedc7235bb9ff8ac1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "sha256": "5253488e28ba2e20ce0e1a842a7385c8c4ae869b8a7e38a8df09d9f28fe5b31f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/records.json",
+      "sha256": "05c4cf7f74bedf26e6888288a3355fe141849daf240ce5ea25415a80306db11e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/source-lock.json",
+      "sha256": "1f59cb0fc76fbdda7495d8dcede615a51be31319e212d3148bd19761030adc97"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_jazzy_v2_2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/binding-source.json",
+      "sha256": "042e7dec3e6bdc7bb6cafac9dc67c1a25fc61fcbf4807522de001d51471f6af7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/catalog.json",
+      "sha256": "a30b3ef676effa6d91be7844827b3b0e1775b75b290c6c8b875d3b93618ffc78"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/action/ErrorRecovery.action",
+      "sha256": "dc028136a2af814d4ac79da26b6fb69abb8838c6b16d7a9800ea2187d52974e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/action/Grasp.action",
+      "sha256": "62998ff990dca899d73c5e1cd8b6b92931c382caf8b000d882053fd9357ae35c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/action/Move.action",
+      "sha256": "9c86fd9c1655b685b96a61491a494d19363f61273d1dc440044c5a363cb4ffe8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/CartesianMotionForce.msg",
+      "sha256": "fc8db2dcf45bbe32790e15c023fdc856dba01aad94b6a2b68b8e6a25a3fbdaf4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/Digital.msg",
+      "sha256": "d0497cd504a632e323f13952188672a59396e70ed0e4fb5ddb35db51a70d1b5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/GPIOStates.msg",
+      "sha256": "9cb15d89009cf3b499fd1feb340abd3b0fceb398ca44b9c6aebbd114fd8e7629"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/JointImpedance.msg",
+      "sha256": "c7ef77c08cb85f57dc1adfd5256ff792632a5c36c5cd338a8a4421462942cd67"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/JointInertiaScale.msg",
+      "sha256": "1e1918f58c5ad198a36e1e796185d0353e0e96c0214a7db50be4e0fd6b4ba57c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/JointPosVel.msg",
+      "sha256": "4f15b5c9139868b8bae15c149e3ab1b19bb97ad5474c9fb3affb6cd24bcdef9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/MaxContactTorque.msg",
+      "sha256": "daeb075dd4e3c44c3cc8dc56cd29648fd56aec2eb2f0d70d9c1e2ccdc6a491d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/Mode.msg",
+      "sha256": "32541d8e8122ff30e21360c65ba9f4a9d7f24d8c526272fa6f76d69f05079a91"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/OperationalStatus.msg",
+      "sha256": "419c332be71ea5199c63907b81945cfe724f05f56eb7ef88690473e019fd9936"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/RecoveryPolicy.msg",
+      "sha256": "329fb02a248def2bd62b0f4c7cefa7f03fe79a5ff1d44ac93436413c25e38601"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/RobotEvent.msg",
+      "sha256": "da04febf57ecf1da890c4b2698638684d14d35412baf144c57588f27e219bb39"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/msg/RobotStates.msg",
+      "sha256": "1eb53f80f2c3fdfb050df717dea3ff33b4301ae0a5f309355bfe46139f48df3a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/GetOperationalStatus.srv",
+      "sha256": "f11651848b7cc8fa448ac022c78b61541612f63a6f87e8318b2fe1c455480245"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetCartesianImpedance.srv",
+      "sha256": "7fd8b550587dfc0144d17d318a8d4354de93b3d9bae01b220d4946b6e4b67bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetCartesianMotionLimits.srv",
+      "sha256": "eb4d1d503b492d872d90c44642355775ccd2ec28fc5c9b0fe4a83d80cf0ee5d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetForceControlAxis.srv",
+      "sha256": "04d6cf9d8feca568faa8edfee0692159ce160731744d7a3f86f97ed9acd47a85"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetForceControlFrame.srv",
+      "sha256": "4bcdfde59d8ea2ab8c7dd61a58b20c5fa8aa8b8dbf4692a75a0747247542a7c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetJointImpedance.srv",
+      "sha256": "6e3d7659b18e2ed0ca81e25fe765ed030c4e477ac7466ea2a95011365cfc6dee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetJointInertiaScale.srv",
+      "sha256": "df53c223afeae42585d8e859041d0d25874d806ea947683899fba5d1eab7f88b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetMaxContactTorque.srv",
+      "sha256": "814b9a80a9da8d4bc0fe3a6a90d26a65da63c82e36f7b3e5d9680c4aaed3920a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetMaxContactWrench.srv",
+      "sha256": "731404d0b6f633969ba26e4954399df71a7714ee8323829588d0de1cedb098c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetNullSpaceObjectives.srv",
+      "sha256": "0d18e8873ce87a22d3f48fdb2ab292fc0e454cd3b92e8999b0a59d76295e2815"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetNullSpacePosture.srv",
+      "sha256": "623926fc25ddea3bb81e97173d2590abf6d73e551ca98601b796412de5c785d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/flexiv_msgs/srv/SetPassiveForceControl.srv",
+      "sha256": "fca5b46f9ad4a3182d272e6bbc05e1766838b0e902abef12b9195a91104275b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/AccelStamped.msg",
+      "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/records.json",
+      "sha256": "593050d0c074fd095763f90adc8beb8099fcc093eafa5b3e154ecd9e901d9bc9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/source-lock.json",
+      "sha256": "b62174fdd8d93bc848db0c3dd3756ab82bd3a6b1cc5328194104f213f6ed0e96"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_lyrical_v1/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/ci/v0.1.0/README.md",
+      "sha256": "44804f9374a22921316634d60980bd3afe8336c795c30d9085d5e22fbfd574e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/ci/v0.1.0/examples.json",
+      "sha256": "e364dc4c71c669f341adae0eb2243e6f5abeb8f5dffbd688546f7221f57af763"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_foxy/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_foxy/files/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_humble/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_humble/files/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/actionlib_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/common_interfaces/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/diagnostic_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/geometry_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/nav_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/sensor_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/shape_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/std_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/std_srvs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/stereo_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/trajectory_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_jazzy/files/visualization_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/common_interfaces/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/diagnostic_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/geometry_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/nav_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/sensor_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/shape_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/std_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/std_srvs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/stereo_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/trajectory_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/common_lyrical/files/visualization_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/rcl_foxy/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/rcl_humble/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/rcl_jazzy/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/rcl_lyrical/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros1_noetic/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_foxy/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_humble_v1/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_humble_v2/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_humble_v2_2/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_jazzy_v1/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_jazzy_v2/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_jazzy_v2_2/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/licenses/upstream/ros2_lyrical_v1/files/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/review-status.json",
+      "sha256": "abef81d5699689b7dd4a3e1c23198fffe73ec7af44f47ad4283286d87cccef3b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/actions.lua",
+      "sha256": "6e68901c2f9908a47961e80f5e2a647673e01570d968a94979a56d72fb59c17c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "3434f50d8cfdbb35dae6c86c683aed87efa06e2d6705e450d371a75378c71a7a"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "26fde1300ff04d15f8e75e210c797827f2eaf533030326952f14c66e236ca747"
+    },
+    {
+      "scope": "example",
+      "path": "support.zig",
+      "sha256": "e7ecda3b6c9049f12bab3bd53b451319177e0a3789d690420cec1d88b566f1b8"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "7eb59aa4f74281ade5599ae7528ba587ed75618b3535833bc19e0c48f7fd22c5"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "bc50b039ca9bc03822e164c556cb2e34e281676b1a070494f9407e90b36c76a4"
+    }
+  ],
+  "cases": [
+    {
+      "id": "deny-before-side-effect-cleanup",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": "primary=13 cleanup=0\n"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ public final class Main
 {
     public static void main(String[] args) throws Exception
     {
-        byte[] bytes = System.in.readNBytes(8581);
+        byte[] bytes = uwvm.ros.Wasi.readStdin(8581);
         BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_Goal value =
             BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_Goal.CODEC.decode(bytes);
         byte[] encoded = BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_Goal.CODEC.encode(value);

@@ -60,5 +60,319 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "publish_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    },
+    "subscribe_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    },
+    "call_trigger": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    },
+    "publish_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    },
+    "subscribe_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    },
+    "call_trigger_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "odin",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "odin": {
+          "collections": [
+            {
+              "name": "ros",
+              "directory": "include/platform/ros"
+            },
+            {
+              "name": "native",
+              "directory": "{cache}"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

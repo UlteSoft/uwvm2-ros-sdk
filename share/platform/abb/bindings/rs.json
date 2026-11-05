@@ -18,5 +18,63 @@
     "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/abb/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_actions": {
+    "ros2": {
+      "format": "uwvm-native-action-v1",
+      "language": "rs",
+      "rust": {
+        "cfg": [
+          "feature=\"alloc\"",
+          "feature=\"ros2\""
+        ],
+        "crates": [
+          {
+            "name": "roswasm",
+            "source": "include/platform/ros/rs/src/lib.rs",
+            "dependencies": []
+          },
+          {
+            "name": "abb_observation",
+            "source": "include/platform/abb/rs/observation.rs",
+            "dependencies": [
+              "roswasm"
+            ]
+          }
+        ],
+        "imports": [
+          "roswasm",
+          "abb_observation"
+        ]
+      }
+    },
+    "ros1": {
+      "format": "uwvm-native-action-v1",
+      "language": "rs",
+      "rust": {
+        "cfg": [
+          "feature=\"alloc\"",
+          "feature=\"ros1\""
+        ],
+        "crates": [
+          {
+            "name": "roswasm",
+            "source": "include/platform/ros/rs/src/lib.rs",
+            "dependencies": []
+          },
+          {
+            "name": "abb_records",
+            "source": "include/platform/abb/rs/ros1/abb-ros1-complete/bounded_records.rs",
+            "dependencies": [
+              "roswasm"
+            ]
+          }
+        ],
+        "imports": [
+          "roswasm",
+          "abb_records"
+        ]
+      }
+    }
+  }
 }

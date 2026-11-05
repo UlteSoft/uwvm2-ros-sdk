@@ -15,6 +15,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_BOUNDED_INTERFACES_H
 #define UWVM_BOUNDED_INTERFACES_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <boston_dynamics/c/ros2/spot-bridge-complete/bounded_records.h>
 #include <ros/c/roswasm/action_bundle.h>
 
@@ -36,7 +43,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_ca
     unsigned char input[24], output[26];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request_encode(request, input, 24, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -59,7 +66,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_po
 {
     unsigned char output[32];
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -103,7 +110,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_c
     unsigned char input[32], output[16429];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request_encode(request, input, 32, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -126,7 +133,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_p
 {
     unsigned char output[40];
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -171,7 +178,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_call
     unsigned char input[24], output[22];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request_encode(request, input, 24, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -194,7 +201,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_poll
 {
     unsigned char output[32];
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -238,7 +245,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_State_call
     unsigned char input[24], output[21433];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request_encode(request, input, 24, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -261,7 +268,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_State_poll
 {
     unsigned char output[32];
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -305,7 +312,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_c
     unsigned char input[56], output[26];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request_encode(request, input, 56, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -328,7 +335,7 @@ static inline roswasmc_result roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_p
 {
     unsigned char output[64];
     roswasmc_result r;
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

@@ -1,0 +1,102 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "genuine-dynamic-observer-158",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/ruby/ros1/records.rb",
+      "sha256": "71c9d66bc196a1f2d2ba8a7b18dcc70e37f5f5ccb5a2572f71436aa5c25fa092"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/ruby/ros2/records.rb",
+      "sha256": "5e8269eab1b6b95a1b3d382c524222bda3d1551e4e3f6bd7a558a5d925d38d72"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb",
+      "sha256": "0e8a20b0d17a2cca28dd10ba516288dfa91ea8066ad5499a33a192e0ee52e83f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb",
+      "sha256": "b4c7a9e661f63b63055df4a8722bbe16b3e6b687f14c109401c2e43b60fdd3fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/ruby.json",
+      "sha256": "2b31fe0875244b9d90bc3128d829d942b8d00c40dc11e4618101cfa4278cf697"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/ruby/observation.rb",
+      "sha256": "42cc1dc7a689ef9b16b4be0de8a9941eb270a4b6c2c1b12b02793f290346cb3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.rb",
+      "sha256": "053c5c84942c85786388db961d3c57b841b6c8d47c366bcd0134a3f18dbec5cf"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "bcaa2bde6abdc1e9324e3f5ac3168c7dda3331ada7ef2c9ec9e25c778c65154d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "required": null,
+        "rpc_status_present": false,
+        "rpc_status": null,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

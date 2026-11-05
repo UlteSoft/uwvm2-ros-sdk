@@ -88,8 +88,8 @@
     },
     {
       "path": "src/language/php/command.c",
-      "bytes": 7950,
-      "sha256": "3b67f87597676cdd619cd657765a9b42ab15014bf3f1c45c083010a661f2e921"
+      "bytes": 10033,
+      "sha256": "57178a7d8e506baa2857d830fbd9cab8d486848975b67d923c6f5ed10547427a"
     },
     {
       "path": "src/language/php/port.json",
@@ -298,8 +298,8 @@
     },
     {
       "path": "src/language/ruby/command.c",
-      "bytes": 6657,
-      "sha256": "62d05da8f567033ffe8eb446f778856d5d2193126af61c7ec78f71db28efa64e"
+      "bytes": 6931,
+      "sha256": "5a78abf772ba169404a35f2036b927ca0b992e75154c2298e4ac8b9186e07399"
     },
     {
       "path": "src/language/ruby/port.json",

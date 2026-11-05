@@ -42,8 +42,8 @@ class _Pacing:
         if not self.open_attempted:
             self.open_attempted = True
             self.owner = self.context.session.open("robotis-obstacle-cancel")
-            self.owner.invoke("subscribe").checked()
-        result = self.owner.invoke("poll", capacity=1)
+            self.owner.invoke("topic_subscribe").checked()
+        result = self.owner.invoke("event_poll", capacity=1)
         if result.error == 11:
             if result.data:
                 raise ValueError("idle cancel response contains unexpected bytes")

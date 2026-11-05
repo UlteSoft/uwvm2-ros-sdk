@@ -221,16 +221,24 @@ local function rust_object(context, core)
 	return objects
 end
 
--- @brief Compile actual Objective-C translation units with the shared LLVM 23.
--- @details Runtime-free Objective-C constructs are admitted. Objective-C object
--- allocation, message dispatch and ARC need a separately accepted Wasm runtime.
+-- @brief Compile Objective-C with the pinned Wasm message-dispatch frontend.
+-- @details Each linked Core module owns its independent libobjc instance.
 local function objective_objects(context, core)
 	local objects = core.infrastructure(context)
-	for index, source in ipairs(context.sources) do
+	local objective = import("objectc", {rootdir = path.join(context.root, "tools/language/native"), anonymous = true})
+	local compiler = objective.compiler(context.root)
+	local flags = objective.flags(context.root, context.triple, context.profile)
+	context.objective_libraries = objective.libraries(context.root, context.triple, context.profile)
+	local sources = table.clone(context.sources)
+	for _, relative in ipairs(context.action.objectc_sources or {}) do
+		assert(relative:endswith(".m"), "Objective-C implementation sources must use .m")
+		table.insert(sources, core.installed(context.root, relative))
+	end
+	for index, source in ipairs(sources) do
 		local object = path.join(context.cache, "objective-" .. index .. ".o")
 		os.vrunv(
-			context.programs.cc,
-			table.join(context.cflags, {
+			compiler,
+			table.join(context.cflags, flags, {
 				"-x",
 				"objective-c",
 				"-std=c11",
@@ -403,6 +411,7 @@ function build(target, root, action)
 	for _, relative in ipairs(action.libraries or {}) do
 		table.insert(arguments, core.installed(root, relative))
 	end
+	table.join2(arguments, context.objective_libraries or {})
 	table.join2(arguments, values(target, target:kind() == "shared" and "shflags" or "ldflags"))
 	table.join2(arguments, { "-o", context.output })
 	os.vrunv(context.programs.cc, arguments)

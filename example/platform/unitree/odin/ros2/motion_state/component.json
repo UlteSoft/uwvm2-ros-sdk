@@ -1,0 +1,120 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observer-4725",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original observation: namespace without alias authority returns denial, with no acquired owner, no request or decoded response. Missing alias is rejected before acquisition. Positive ROS transport is a separate integration test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "1ce0b034af1a1c02cc6f6c82ed825dcb5d174b9c99870cbfd9db46565ff079df"
+    },
+    {
+      "scope": "example",
+      "path": "main.odin",
+      "sha256": "49a4b3b516923557b171feb4c2a6f0cdd06b6ddb83f417046c26d4422e8b4aa4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/observation.odin",
+      "sha256": "5b5f4d81b3054775b4377269f247ff0a74b420a6bff7dbb02b1704183f76b9d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/ros1/observation/observation.odin",
+      "sha256": "22f5a1e9b67cf90a3dbca5353ccc68df4bd89d79697a95042c442652c49584fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/ros1/records.odin",
+      "sha256": "86792c88dc2ed2c225bd42946d284be4724fde906a487e8aab385372269d388d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/ros2/observation/observation.odin",
+      "sha256": "06c32b8b4505a73685708a5a9a1958d75a2eb35c3182d14f49602c7e6e32de00"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/ros2/records.odin",
+      "sha256": "4688bb4f3132751ee2392d70339529a85818b896c79e07dec7700ef427de502b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/odin/wire/wire.odin",
+      "sha256": "e7fde30bdcb0109b05068362085761ff354f698de483a59f745917070088884a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/unitree/provider.json",
+      "sha256": "8318af866f65811fd7d824b4f8c2b3daefd30a25695fc7587829b800a04e1b8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/observation/observation.odin",
+      "sha256": "ab9769ad04e9523e9c6fd5366c029e9ce52b7131440ba70aa25551ac4c7c8dac"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/wire/wire.odin",
+      "sha256": "e7fde30bdcb0109b05068362085761ff354f698de483a59f745917070088884a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

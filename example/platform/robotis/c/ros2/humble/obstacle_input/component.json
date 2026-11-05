@@ -1,0 +1,177 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-command-contract-3713",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/application.h",
+      "sha256": "8f8a1427695676a84994f2ce2bf2182fe00c1595d457ad352d421aa758944a57"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros1/robotis-turtlebot3-noetic-complete/bounded_interfaces.h",
+      "sha256": "243555d47983c35ee926c09bfea933b9c5160572e974b0c82acb91a6b9bd09a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros1/robotis-turtlebot3-noetic-complete/bounded_records.h",
+      "sha256": "86a016955bd934986048d863f42924054869da0c63b88163493ca916c0e98585"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-humble-complete/bounded_interfaces.h",
+      "sha256": "a1256221fec280d81268d1b58c99d7561fb84b0dfb2f04300e6f20c7da061129"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-humble-complete/bounded_records.h",
+      "sha256": "19511e7c2e3ac85f021af5e034d318acf41fc71c3834ecf6595bcd8e8bcaff4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-jazzy-complete/bounded_interfaces.h",
+      "sha256": "31e2d561674f67d86159023fb828edc3a73c61da76962b49370e3d0a5f33630a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-jazzy-complete/bounded_records.h",
+      "sha256": "58f365c3108950b2f8dea11c02f976360a7b448b2148f389d51b862281ddcc8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-main-complete/bounded_interfaces.h",
+      "sha256": "5847673d477a37a1a87fdf0279a137128761b70521ea3990e4f37625b646bb4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/ros2/robotis-turtlebot3-main-complete/bounded_records.h",
+      "sha256": "5e3df30ad3a28589d40183045b5ca269079a2dcb38a79978c6d4238083645618"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/robotis/c/state.h",
+      "sha256": "e8b1bc1b1e99f19b73372400343b60457d830c96e7f31f5b9afbd782ef9bd3c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.velocity.template.json",
+      "sha256": "c6dc9a5f6066d2413a4961576d3112bb3f16c6cf6bee9390053e5f4872fd4488"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "76ff50a43fc7473f5402d5d9ae5074f4dcd446c457bb90c7bba7a45de46008c8"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "535e77b68cea943c1c93cd02a621f284b3dcd69faf190f7a800d515c549a514b"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.cancel.template.json",
+      "sha256": "3c8d7244c86ea45cdc1199862571b4c73daee408ab4443c591d3b49421ecbc8c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "velocity-denied",
+      "arguments": [
+        "velocity",
+        "1",
+        "-2",
+        ".5",
+        "0",
+        "0",
+        "3"
+      ],
+      "expected_exit": 13,
+      "expected_stdout": "robotis_input mode=velocity open=13 publish_attempted=0 publish=0 close=0\n"
+    },
+    {
+      "id": "cancel-denied",
+      "arguments": [
+        "cancel"
+      ],
+      "expected_exit": 13,
+      "expected_stdout": "robotis_input mode=cancel open=13 publish_attempted=0 publish=0 close=0\n"
+    },
+    {
+      "id": "missing",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "unknown",
+      "arguments": [
+        "stop"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "nonfinite",
+      "arguments": [
+        "velocity",
+        "nan",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing",
+      "arguments": [
+        "velocity",
+        "1x",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "short-vector",
+      "arguments": [
+        "velocity",
+        "1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ],
+  "ros_namespace": "ros2"
+}

@@ -7,37 +7,72 @@
  * required; no grant, replay or controller admission is implicit.
  */
 using System;
-using Uwvm.Ros;
+using System.Threading;
+using Uwvm.RosWasm;
 using Uwvm.Fanuc.Ros2;
 
 namespace Fanuc.Examples
 {
-    /** @brief Observe the entire fanuc_msgs/msg/ConnectionStatus value with genuine CLR full AOT. */
+    /// <summary>Run the actual CLR application inside Wasm using the public typed ROS binding.</summary>
     public static class MainProgram
     {
-        /** @brief Decode after one checked exchange and preserve independent close status.
-         * @param args Exactly one already-granted subscription alias.
-         * @return First original primary or cleanup status, clamped to 125. */
+        /// <summary>Preserve independent operation and cleanup statuses without automatic reacquisition.</summary>
         public static int Main(string[] args)
         {
             if(args.Length != 1)
                 return 22;
-            var facts = Client.WaitSample(args[0], 1, 250);
+            uint primary = 0, cleanup = 0;
             byte[] wire = Array.Empty<byte>();
-            if(facts.Primary == 0)
+            var session = new Session(new NativeTransport(), 1);
+            try
             {
-                try
+                session.CheckAbi();
+                var subscription = Ros2ApiFanuc_msgsMsgConnectionStatus.CreateSubscription(new Node(session), args[0],
+                    value => wire = Ros2Fanuc_msgsMsgConnectionStatus.Encode(value));
+                for(int attempt = 0; attempt < 250; ++attempt)
                 {
-                    wire = Ros2Fanuc_msgsMsgConnectionStatus.Decode(facts.Bytes).Encode();
-                }
-                catch(ArgumentException)
-                {
-                    facts.Primary = 22;
+                    primary = subscription.PollOnce().Error;
+                    if(primary != 11 || attempt == 249)
+                        break;
+                    Thread.Sleep(20);
                 }
             }
-            Console.WriteLine("{\"primary\":" + facts.Primary + ",\"cleanup\":" + facts.Cleanup + ",\"wire_hex\":\"" +
+            catch(RosException error)
+            {
+                primary = error.Result.Error;
+            }
+            catch(Exception error) when(error is ArgumentException || error is FormatException)
+            {
+                primary = 22;
+            }
+            finally
+            {
+                // Setup rollback and normal close have independent evidence.
+                // CloseChecked retires retained owners once; no close retry occurs.
+                foreach(var item in session.LastSetupCleanup)
+                    if(cleanup == 0)
+                        cleanup = item.Exception is RosException failure ? failure.Result.Error :
+                            item.Exception != null ? 5u : item.Result?.Error ?? 0u;
+                try
+                {
+                    var report = session.CloseChecked();
+                    for(int index = 0; index < report.Count; ++index)
+                    {
+                        var item = report.Items[index];
+                        if(cleanup == 0)
+                            cleanup = item.Exception is RosException failure ? failure.Result.Error :
+                                item.Exception != null ? 5u : item.Result?.Error ?? 0u;
+                    }
+                }
+                catch(Exception error)
+                {
+                    if(cleanup == 0)
+                        cleanup = error is RosException failure ? failure.Result.Error : 5u;
+                }
+            }
+            Console.WriteLine("{\"primary\":" + primary + ",\"cleanup\":" + cleanup + ",\"wire_hex\":\"" +
                               Convert.ToHexString(wire).ToLowerInvariant() + "\"}");
-            return (int)Math.Min(facts.Primary != 0 ? facts.Primary : facts.Cleanup, 125u);
+            return (int)Math.Min(primary != 0 ? primary : cleanup, 125u);
         }
     }
 }

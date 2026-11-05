@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5138",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "ed7cd8b54f7d4ea8244f74ed27bdf5a3f1d2190ee722721c88c2f2a6450e626d"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "38b38352fd75ad8b3f0e778eb8e02c6ac7ca00836305798e87adffe6d1e08f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/tinygo/universal-robots-ros2-trajectory-complete.json",
+      "sha256": "8a85490c8820f92907269f810c0e6f73ccd3ab27e57ffb7ee02df906a8e2d356"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-trajectory-complete.ir.json",
+      "sha256": "b07460b64ac1367c17e4f2ad56016cbb592fd2c058ce94aeaa689b8fbf76a498"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "ed9f8f6b8744f1eddee0e973710dcdd17457ae28ab8f29a67e92a28f62168ebd"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/action/FollowJointTrajectoryUntil_Feedback",
+        "bytes": 88,
+        "wire_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

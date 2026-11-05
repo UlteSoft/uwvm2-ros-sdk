@@ -1,0 +1,125 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "haskell-original-observer-304",
+  "ros_namespace": "ros2",
+  "test_scope": "Genuine Haskell source and complete original message codec; explicit WASI and ROS namespace without resource authority. Assert refusal preserves unwritten length and no ownership or polling effects, and missing alias exits before acquisition.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/haskell/Agilex/Ros1/Observation.hs",
+      "sha256": "120a6bd76d19f723a852e5c98a7bb88a70bb78db1fb41ef04e8fb4ad2ad6f4c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/haskell/Agilex/Ros1/Records.hs",
+      "sha256": "f6ad9fee3a52a2026e801470c4b59320287bf1a0d36fb9066e6dc1ef1ca1b23d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/haskell/Agilex/Ros2/Observation.hs",
+      "sha256": "fa94f02f10d7575e6f4deede8131e52466b11ea3b33d1addffc593475a5b2fb7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agilex/haskell/Agilex/Ros2/Records.hs",
+      "sha256": "115ec38d4b6893cf4caeef1fe1979122fe71fff899f307df1dd95bf33ad04880"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Observation.hs",
+      "sha256": "8d8973f7f660fa2e1b739f1ff8a55fc585cbfd5d535f56953fba9c8b1d9923f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Wire.hs",
+      "sha256": "cf3745389aed91fc88552a0ff352f3709512ebb22d924d468df1399a1fe9afbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agilex/actions.lua",
+      "sha256": "aa584ef9f88faee7690ebb5e35ee01f17cfebdd7d0f2c98302861e5bbee1aba4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agilex/provider.lua",
+      "sha256": "d5749c863e1a535a62248d7cffa3562dd0ae4b088ab9cc283d8099c89f8458d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.hs",
+      "sha256": "309c83469cb3b5132ac5c4fe9955bba06db9f2951c2fe39841772f6574244d98"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "120bd580fd9dcee1a06b54286e9045c2e666eeb24bea346d522d60866834cc9a"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "110e4025bd2197c6dae6afaf9aa36c7c7d55cbe01dcf81f9be2ae1b92263edc2"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

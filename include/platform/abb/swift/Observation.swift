@@ -99,6 +99,8 @@ public struct ABBObservation {
   public var cleanupPresent: Bool = false
   /// @brief True only after an admitted service call or explicit event poll.
   public var rpcPresent: Bool = false
+  /// Actual poll attempts, including idle responses.
+  public var polls: UInt32 = 0
   /// @brief Original full-width length slot; the maximum value preserves an unwritten slot.
   public var length: UInt64 = UInt64.max
   /// @brief True only after the whole original response passed canonical validation.
@@ -380,6 +382,7 @@ public func abbObserve(
         result.rpc = result.wire.withUnsafeMutableBufferPointer {
           nl_poll(handle, $0.baseAddress!, UInt32($0.count), &length)
         }
+        result.polls += 1
         result.rpcPresent = true
         result.primary = result.rpc
         if result.rpc != 11 || index + 1 == attempts {
@@ -394,7 +397,7 @@ public func abbObserve(
   } else {
     result.rpc = request.withUnsafeBufferPointer { input in
       result.wire.withUnsafeMutableBufferPointer {
-        nl_call(handle, input.baseAddress!, requestSize, $0.baseAddress!, UInt32($0.count), &length)
+        nl_request(1, handle, input.baseAddress!, requestSize, $0.baseAddress!, UInt32($0.count), &length)
       }
     }
     result.rpcPresent = true
@@ -437,6 +440,6 @@ public func abbReport(_ value: ABBObservation) -> UInt32 {
     nl_report(
       value.primary, value.cleanup, value.cleanupPresent ? 1 : 0, value.rpc,
       value.rpcPresent ? 1 : 0,
-      value.length, value.responsePresent ? 1 : 0, $0.baseAddress!, UInt32(value.wireSize))
+      value.length, value.responsePresent ? 1 : 0, value.polls, $0.baseAddress!, UInt32(value.wireSize))
   }
 }

@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5134",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "f033eafda2542627341f8859960126883fca8082e32b89a980ce8777b07acec0"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "aff1395ae1d91a8453b706c2e9440ff707b6afd4e6a936c49524f41e677d2581"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/tinygo/universal-robots-polyscopex-complete.json",
+      "sha256": "9cd77788bdf62acaab859a7030b5c725f4c9dd89f0cb39972292659f7b15b9ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-polyscopex-complete.ir.json",
+      "sha256": "771063b49dcab70ca9a96497c8d6b1a0a7156d2a029653fd4a5614becae144b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "42cea7708c4334e0b5ffcc9fc26f5f9fd75bb2726b9d290f3ea8a6d2426a7d81"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "urinterfaces/msg/RobotMode",
+        "bytes": 13,
+        "wire_hex": "00000000000000000000000000"
+      }
+    }
+  ]
+}

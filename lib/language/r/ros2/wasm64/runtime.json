@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-real-interpreter-v1",
+  "language": "r",
+  "version": "4.5.1",
+  "target": "wasm64-wasip1",
+  "ros_backend": "ros2",
+  "sha256": "2ec355e82b138e8a5c59d78f6917cc9aef6a5462fbf8a795972c3a07f4e429e4",
+  "bytes": 10645284,
+  "exception_profile": "eh",
+  "control_transfer": "native-wasm-eh-sjlj",
+  "abi_profile": "complete-ros-v1",
+  "ros_import_count": 43,
+  "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "construction_receipt_sha256": "06036d3d475a7a6b6aa5b5b172b7f80cedbb8153baf875b0380e25256f448006",
+  "qualification": "EXECUTION_MATRIX_IN_PROGRESS",
+  "qualification_scope": "Real source-built runtime; only explicitly recorded guest cases are qualified",
+  "memory64_wasi_extension": true
+}

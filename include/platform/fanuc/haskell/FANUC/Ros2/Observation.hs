@@ -8,7 +8,7 @@
 -- @details All values own their bytes; successful acquisitions close exactly once.
 module FANUC.Ros2.Observation where
 import Data.Word
-import Ros.Observation
+import Native.Observation
 import qualified FANUC.Ros2.Records as R
 
 -- | @brief Observe every original fanuc_msgs/msg/ConnectionStatus field through one retained owner.

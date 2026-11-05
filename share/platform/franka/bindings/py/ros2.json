@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "py",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/py/ros2/franka_ros2_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/franka/bundles/py/ros2.json"
+}

@@ -4129,8 +4129,7 @@ write_Ros2Sensor_msgsMsgJointState :: proc(v: ^Ros2Sensor_msgsMsgJointState, w: 
  if len(v.field_name) != 0 && len(v.field_position) != 0 && len(v.field_name) != len(v.field_position) { w.code=22; return false }
  if len(v.field_name) != 0 && len(v.field_velocity) != 0 && len(v.field_name) != len(v.field_velocity) { w.code=22; return false }
  if len(v.field_name) != 0 && len(v.field_effort) != 0 && len(v.field_name) != len(v.field_effort) { w.code=22; return false }
- if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { w.code=22; return
-         false }
+ if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { w.code=22; return false }
  if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { w.code=22; return false
          }
  if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { w.code=22; return false
@@ -4225,12 +4224,9 @@ read_Ros2Sensor_msgsMsgJointState :: proc(r: ^Reader, allocator: runtime.Allocat
  if len(v.field_name) != 0 && len(v.field_position) != 0 && len(v.field_name) != len(v.field_position) { r.code=22; return v,false }
  if len(v.field_name) != 0 && len(v.field_velocity) != 0 && len(v.field_name) != len(v.field_velocity) { r.code=22; return v,false }
  if len(v.field_name) != 0 && len(v.field_effort) != 0 && len(v.field_name) != len(v.field_effort) { r.code=22; return v,false }
- if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { r.code=22; return
-         v,false }
- if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { r.code=22; return
-         v,false }
- if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { r.code=22; return
-         v,false }
+ if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { r.code=22; return v,false }
+ if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { r.code=22; return v,false }
+ if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { r.code=22; return v,false }
  return v,true
 }
 // @brief Encode one complete sensor_msgs/msg/JointState value.
@@ -7239,8 +7235,7 @@ read_Ros2Franka_msgsSrvSetCartesianStiffness_Response :: proc(r: ^Reader, alloca
 // no ownership is transferred to Native.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Franka_msgsSrvSetCartesianStiffness_Response; share/platform/ros/odin/API-CONTRACT.md
-encode_Ros2Franka_msgsSrvSetCartesianStiffness_Response :: proc(v: ^Ros2Franka_msgsSrvSetCartesianStiffness_Response, output: []u8)
-        -> ([]u8,u32) {
+encode_Ros2Franka_msgsSrvSetCartesianStiffness_Response :: proc(v: ^Ros2Franka_msgsSrvSetCartesianStiffness_Response, output: []u8) -> ([]u8,u32) {
  measure:=Writer{measuring=true,limit=261}
  if !write_Ros2Franka_msgsSrvSetCartesianStiffness_Response(v,&measure) { return nil,measure.code }
  if len(output)<measure.position { return nil,90 }
@@ -7776,8 +7771,7 @@ init_Ros2Franka_msgsSrvSetFullCollisionBehavior_Request :: proc() -> Ros2Franka_
 // synchronous encoding; do not share mutable cursors during a call.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Franka_msgsSrvSetFullCollisionBehavior_Request; share/platform/ros/odin/API-CONTRACT.md
-write_Ros2Franka_msgsSrvSetFullCollisionBehavior_Request :: proc(v: ^Ros2Franka_msgsSrvSetFullCollisionBehavior_Request, w: ^Writer)
-        -> bool {
+write_Ros2Franka_msgsSrvSetFullCollisionBehavior_Request :: proc(v: ^Ros2Franka_msgsSrvSetFullCollisionBehavior_Request, w: ^Writer) -> bool {
  for e in v.field_lower_torque_thresholds_acceleration {
  if !put_float64(w,e) { return false }
  }
@@ -9752,8 +9746,7 @@ read_Ros2Franka_spine_msgsActionMoveAbsolute_Feedback :: proc(r: ^Reader, alloca
 // no ownership is transferred to Native.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Franka_spine_msgsActionMoveAbsolute_Feedback; share/platform/ros/odin/API-CONTRACT.md
-encode_Ros2Franka_spine_msgsActionMoveAbsolute_Feedback :: proc(v: ^Ros2Franka_spine_msgsActionMoveAbsolute_Feedback, output: []u8)
-        -> ([]u8,u32) {
+encode_Ros2Franka_spine_msgsActionMoveAbsolute_Feedback :: proc(v: ^Ros2Franka_spine_msgsActionMoveAbsolute_Feedback, output: []u8) -> ([]u8,u32) {
  measure:=Writer{measuring=true,limit=8}
  if !write_Ros2Franka_spine_msgsActionMoveAbsolute_Feedback(v,&measure) { return nil,measure.code }
  if len(output)<measure.position { return nil,90 }

@@ -9,6 +9,9 @@
 #include "module_source.h"
 #include <limits.h>
 #include <stdint.h>
+#if defined(UWVM_COMMAND_EMBEDDING)
+# include "wasi_command.h"
+#endif
 #if defined(UWVM_CONSUMER_HOOKS)
 # include "foreign.h"
 #endif
@@ -16,6 +19,10 @@
 static JSRuntime* runtime;
 static JSContext* context;
 static int entered;
+#if defined(UWVM_COMMAND_EMBEDDING)
+static int command_argc;
+static char** command_argv;
+#endif
 
 #if defined(UWVM_LIBRARY_NATIVE_ROS2)
 /** @brief Install the maintained raw bridge in this owned context; grant nothing. */
@@ -62,6 +69,13 @@ static uint32_t initialize(void)
         uwvm_module_close();
         return 12;
     }
+#if defined(UWVM_COMMAND_EMBEDDING)
+    if(install_command_io(context, command_argc, command_argv) != 0)
+    {
+        uwvm_module_close();
+        return 12;
+    }
+#endif
 #if defined(UWVM_LIBRARY_NATIVE_ROS2)
     if(uwvm_install_native_ros(context) != 0)
     {
@@ -78,7 +92,6 @@ static uint32_t initialize(void)
 #endif
     JSValue result = JS_Eval(context, (char const*)module_source, sizeof(module_source) - 1, "/__uwvm_source__/module.mjs", JS_EVAL_TYPE_MODULE);
     int failed = JS_IsException(result);
-    JS_FreeValue(context, result);
     JSContext* pending_context;
     int pending = 0;
     if(!failed)
@@ -87,7 +100,13 @@ static uint32_t initialize(void)
         {
         }
         failed = pending < 0;
+        if(!failed && JS_PromiseState(context, result) == JS_PROMISE_REJECTED)
+        {
+            JS_Throw(context, JS_PromiseResult(context, result));
+            failed = 1;
+        }
     }
+    JS_FreeValue(context, result);
     if(failed)
     {
         JSValue exception = JS_GetException(context);
@@ -155,12 +174,19 @@ uint64_t uwvm_module_apply(int32_t a, int32_t b)
  * @details No source-defined function is required for a command. Module libraries
  * instead retain their state until their explicit scalar close export is called.
  */
-uint32_t uwvm_module_execute(void)
+uint32_t uwvm_module_execute(int argc, char** argv)
 {
     if(entered)
     {
         return 16;
     }
+#if defined(UWVM_COMMAND_EMBEDDING)
+    command_argc = argc;
+    command_argv = argv;
+#else
+    (void)argc;
+    (void)argv;
+#endif
     uint32_t error = initialize();
     return error != 0 ? error : uwvm_module_close();
 }

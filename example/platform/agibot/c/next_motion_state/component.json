@@ -1,0 +1,316 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "agibot-authority-194",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "cf361ec5e909fec9743fe5acc965a5f98ddb6a60cc8fa16089f3a1c367db6286"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "badc6968c1816d953acbdb6dc6c160aedaa46fabd44683c561c3ae99bc73330b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/client.h",
+      "sha256": "5d338f3e7e5b7ff7c61ac7e2cd4edb2f068f80ee21ee30b632657335f75ff078"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/json.h",
+      "sha256": "8452989152a33c50d5e74fef3f2a8ebc6fcc4537755f39383822f32dafd382b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-8-1-main-complete/bounded_interfaces.h",
+      "sha256": "b46018fc4473a48b08238eaebae4b848e952b0e820f1d275d01fefe5d7fd4379"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-8-1-main-complete/bounded_records.h",
+      "sha256": "29f8330f4bd5c3e0587af9434686b183158eae27b040c12c422182166323ed72"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-8-2-main-complete/bounded_interfaces.h",
+      "sha256": "8684be9e4ceb80b6cb5853b43080a70e718adec37a9950d2c697c080678ea8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-8-2-main-complete/bounded_records.h",
+      "sha256": "f6635491d72bef57f0edb26c7fdb9367be19a5633b35c770e967a5ae2aea546b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-9-0-main-complete/bounded_interfaces.h",
+      "sha256": "52d168525640799b6792a47d184256b2da3bfb2e614ae63e617da2aff7b6aed8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v0-9-0-main-complete/bounded_records.h",
+      "sha256": "b6f955829512154f845a1f1f2807ddca0787304290a428bd7f0d90f204f689e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-0-0-main-complete/bounded_interfaces.h",
+      "sha256": "74fd1d851a5ad867b554c93f026d507d70af4a7d25102b583aa9925c14eea1c7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-0-0-main-complete/bounded_records.h",
+      "sha256": "95ae9ccdd3f3aee3bda50023c4ea9a40f3c59822e6f129e95832351bebeb6f0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/bounded_interfaces.h",
+      "sha256": "b828f310db49c1556499d438cafd72ee26df3e18366738982b4d963792629bca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/bounded_records.h",
+      "sha256": "213e774512f0a9c94c430c9097e8ca62e147965ad6a937a5882775caa7d476eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-1-0-main-complete/bounded_interfaces.h",
+      "sha256": "8660c6a43c6b826970a76ec943317956d736977a401e8fca4b2667a2eb88278e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-1-0-main-complete/bounded_records.h",
+      "sha256": "a12c90f25378787fa1bf92c07dbcda085475fc19f4619489ed559d1763caae24"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/bounded_interfaces.h",
+      "sha256": "1121f8c4833dd16368c911ec97f1a13ba84cb192da13defb4d01080bd25242f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/c/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/bounded_records.h",
+      "sha256": "4d36755a6dab7f1e645b99130bf11538aba54051b2aed51bc721fa23f1db63db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/as/wasi.ts",
+      "sha256": "307b12e3ca99ec0361fb84671ffe093690e135883b9a6eaaba3789341cd33362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/client.h",
+      "sha256": "2bc506b36b480328170cc8bb4672b81b9a58c51387c5452cf85a72b1485c529a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/command_io.h",
+      "sha256": "f4e82373a34e897becee683b97f832ff23b09a35137bb7a92bfc63e2220d76fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/dotnet/Transport.cs",
+      "sha256": "f328604cb92c12c57a5b248ece31d2e15757e780b19626a8e2548c4d187c7148"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/go/aimdk_v1_1_0/records.go",
+      "sha256": "2fbdeb5c3d1da4fd437289e1eb1008af449b2ee12a0820a3e5a82ff410f9249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Core.java",
+      "sha256": "3ae4fcd5ee86002fa448065426d70e8dd147bf461f077a316aee71530867153e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Records.java",
+      "sha256": "2359a8ad7b6e227c96d6d545bf721449fbdd4b2d31ad11694c9a312ccbf843b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/observation_json.h",
+      "sha256": "8cc5a02f29ab0bbe4e1ce5d4a97f592aeb318215d503404618829992b811aef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/output.h",
+      "sha256": "5bcccffe16c559898888b0ae6aabebc6afb941904ca93090e806b76146240f87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.js",
+      "sha256": "8fcfa583dc92d43fb3ae38c93c469aaa72ad59464d60fdbe6bfda2d1674da9dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.json",
+      "sha256": "f29309e03422d038a4cf7206aafeebf978654e7a1f4a440bd04a91342b907d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.lua",
+      "sha256": "b283aa633a73772fb8fe5c513b354e0ce66a84297c4fbb6bb0e5d9055d9f402f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.php",
+      "sha256": "953da8dbea4e96cb022f98b4b2e2ef076fc48514cb40ff0e5f4f6ff332a58fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.py",
+      "sha256": "164ee7e75af9761cd7cef8423309dd9b9daf608d8fe7403eda9b9789a000d3e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.rb",
+      "sha256": "0ae98b296275097a2e2a02b87c1d12deb503d55328732524231e438f60d46701"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/command.h",
+      "sha256": "1a54497e519c726d090ecca4ee9132bd1ac8216bcc32ea666262926edf1f678f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/custom-types/generated-r3/fixed_records.h",
+      "sha256": "e69844b9d60364c3565871bf48acad708878a24cf9c32d937da5b1b82a06a38d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/native_command.h",
+      "sha256": "b5917f95c2b04f5cb2505ccb542c406be1eb99c1f20a1511a0ebe4d5e144512a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/action_bundle.h",
+      "sha256": "cf47e1ab8b834cba62c4789782471c4f34b4195b65fd0c5d9651a33d0ef80a54"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/codec.h",
+      "sha256": "b96510d62c400169f1c214d5ff9f3113a09ffff6057ef7fccd61e25410bf73a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/c_portability.h",
+      "sha256": "adb03faee9f7ec38c75e5723d7eefa0a6a9b7e8931f7bbe4953efc417a0dbff6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/events.h",
+      "sha256": "ede12ed7cee9c8c47996e8edc63c93c2554de042c9f7a798310e2a3d93b220b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/executor.h",
+      "sha256": "71509b8f4ef50dd6de26f5bd503c0df7af48274a974bf4d13e8ed8e21b232107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/library_profile.h",
+      "sha256": "462a40c4e66aba83d7919aa2aa5dfb1c41b9d7480a838a615b2dc711a0542ef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/node.h",
+      "sha256": "0f82b360008076934ac8b72398aa017d98c076821166fbeaeaa467817e33e9e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/resources.h",
+      "sha256": "2eccace2f77d6fda80d3e1d8474fcb9edcab1242cc6c4302ffb2e81aff008a8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_publisher_v1.h",
+      "sha256": "48b6622c343498fab49d09e83eec126019cb6da643295289ee832467b18365e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_service_v1.h",
+      "sha256": "fe8bad1be614755ffac42c4455535b7009ca8232359fba95038cef9c13126369"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_subscription_v1.h",
+      "sha256": "646ce79d5e879ea82327c67aa2c594a3f1b6466019d8dde69b8d8dd7f46e54e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasm.h",
+      "sha256": "68127aa26335cd0a52d9885243a4028ef839e01f8ed15e94d173695cad41e814"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasmc.h",
+      "sha256": "ba68039a0052d27e5abb3d6fa6503661085ea86229f60f2974b239099dc410aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client.h",
+      "sha256": "0b4355701e8a82252c54b8aa59f7dda74595c5068c2572b90cfbef51c149544c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client_v1.h",
+      "sha256": "5fcbeeaa80fad26ba62f403680f0095ce00a8bf65a78f1f4dc818d189298dfd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/session.h",
+      "sha256": "4fea9017e46677eda3202a6eaaf146c6fa879eb07a0e24243e58bb4510db8a2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agibot/provider.lua",
+      "sha256": "40610d8482fb4368a16b5664c1cf542e6f5f373764db009e7e85fc8d5f69b24e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_stdout": "",
+      "stderr_contains": "failed: 13; close: 0"
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "Expected exactly one granted Agibot alias"
+    }
+  ]
+}

@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_BOUNDED_INTERFACES_H
 #define UWVM_BOUNDED_INTERFACES_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <platform/robotis/c/ros2/robotis-turtlebot3-jazzy-complete/bounded_records.h>
 #include <platform/ros/c/roswasm/action_bundle.h>
 
@@ -27,7 +34,7 @@ static inline roswasmc_result roswasmc_bounded_2_std_srvs_srv_SetBool_call(roswa
     unsigned char input[1], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_std_srvs_srv_SetBool_Response next = {0};
+    roswasmc_bounded_2_std_srvs_srv_SetBool_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_std_srvs_srv_SetBool_Request_encode(request, input, 1, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -49,7 +56,7 @@ static inline roswasmc_result
 {
     unsigned char output[9];
     roswasmc_result r;
-    roswasmc_bounded_2_std_srvs_srv_SetBool_Request next = {0};
+    roswasmc_bounded_2_std_srvs_srv_SetBool_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -93,7 +100,7 @@ static inline roswasmc_result roswasmc_bounded_2_std_srvs_srv_Trigger_call(roswa
     unsigned char input[1], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_std_srvs_srv_Trigger_Response next = {0};
+    roswasmc_bounded_2_std_srvs_srv_Trigger_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_std_srvs_srv_Trigger_Request_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -115,7 +122,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_2_std_srvs_srv_Trigger_Request next = {0};
+    roswasmc_bounded_2_std_srvs_srv_Trigger_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -188,7 +195,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_f
                                                                                         roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Feedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Feedback next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -218,7 +225,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_r
                                                                                       roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Result* result)
 {
     unsigned char input[8], output[269];
-    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Result next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -258,7 +265,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_p
                                                                                     roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Goal* goal)
 {
     unsigned char output[32];
-    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Goal next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_action_Patrol_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -325,7 +332,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_call(ro
     unsigned char input[2], output[521];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Response next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request_encode(request, input, 2, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -348,7 +355,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_poll(ro
 {
     unsigned char output[10];
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Dqn_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -392,7 +399,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_call(r
     unsigned char input[1], output[9];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Response next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -415,7 +422,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_poll(r
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Goal_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -459,7 +466,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_call(
     unsigned char input[1], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Response next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request_encode(request, input, 1, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -482,7 +489,7 @@ static inline roswasmc_result roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_poll(
 {
     unsigned char output[9];
     roswasmc_result r;
-    roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request next = {0};
+    roswasmc_bounded_2_turtlebot3_msgs_srv_Sound_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

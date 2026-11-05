@@ -78,7 +78,7 @@ public struct Ros1Abb_egm_msgsEGMChannelState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_name = cursor.text(field_name, 64)
     field_active = cursor.boolean(field_active)
     field_egm_convergence_met = cursor.boolean(field_egm_convergence_met)
@@ -97,7 +97,7 @@ public struct Ros1Abb_egm_msgsEGMChannelState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 81),
       limit: 81, writing: true)
     fields(&cursor)
@@ -111,7 +111,7 @@ public struct Ros1Abb_egm_msgsEGMChannelState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 17 || bytes.count > 81 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -140,7 +140,7 @@ public struct Ros1Time {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_sec = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_sec), 4))
     field_nsec = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_nsec), 4))
     if field_nsec >= 1_000_000_000 { cursor.failed = true }
@@ -150,7 +150,7 @@ public struct Ros1Time {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -164,7 +164,7 @@ public struct Ros1Time {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -198,7 +198,7 @@ public struct Ros1Std_msgsHeader {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_seq = UInt32(truncatingIfNeeded: cursor.number(UInt64(field_seq), 4))
     field_stamp.fields(&cursor)
     field_frame_id = cursor.text(field_frame_id, 64)
@@ -208,7 +208,7 @@ public struct Ros1Std_msgsHeader {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 80),
       limit: 80, writing: true)
     fields(&cursor)
@@ -222,7 +222,7 @@ public struct Ros1Std_msgsHeader {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 80 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -251,7 +251,7 @@ public struct Ros1Abb_egm_msgsEGMState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_egm_channels.count), 4))
     if count1 > 16 || cursor.failed {
@@ -270,7 +270,7 @@ public struct Ros1Abb_egm_msgsEGMState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1380),
       limit: 1380, writing: true)
     fields(&cursor)
@@ -284,7 +284,7 @@ public struct Ros1Abb_egm_msgsEGMState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 1380 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -323,7 +323,7 @@ public struct Ros1Abb_rapid_msgsConfData {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_cf1 = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_cf1.bitPattern), 4)))
     if !field_cf1.isFinite { cursor.failed = true }
@@ -342,7 +342,7 @@ public struct Ros1Abb_rapid_msgsConfData {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 16),
       limit: 16, writing: true)
     fields(&cursor)
@@ -356,7 +356,7 @@ public struct Ros1Abb_rapid_msgsConfData {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 16 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -405,7 +405,7 @@ public struct Ros1Abb_rapid_msgsExtJoint {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_eax_a = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_eax_a.bitPattern), 4)))
     if !field_eax_a.isFinite { cursor.failed = true }
@@ -430,7 +430,7 @@ public struct Ros1Abb_rapid_msgsExtJoint {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 24),
       limit: 24, writing: true)
     fields(&cursor)
@@ -444,7 +444,7 @@ public struct Ros1Abb_rapid_msgsExtJoint {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 24 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -493,7 +493,7 @@ public struct Ros1Abb_rapid_msgsRobJoint {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_rax_1 = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_rax_1.bitPattern), 4)))
     if !field_rax_1.isFinite { cursor.failed = true }
@@ -518,7 +518,7 @@ public struct Ros1Abb_rapid_msgsRobJoint {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 24),
       limit: 24, writing: true)
     fields(&cursor)
@@ -532,7 +532,7 @@ public struct Ros1Abb_rapid_msgsRobJoint {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 24 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -561,7 +561,7 @@ public struct Ros1Abb_rapid_msgsJointTarget {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_robax.fields(&cursor)
     field_extax.fields(&cursor)
   }
@@ -570,7 +570,7 @@ public struct Ros1Abb_rapid_msgsJointTarget {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 48),
       limit: 48, writing: true)
     fields(&cursor)
@@ -584,7 +584,7 @@ public struct Ros1Abb_rapid_msgsJointTarget {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 48 || bytes.count > 48 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -618,7 +618,7 @@ public struct Ros1Abb_rapid_msgsPos {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_x = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_x.bitPattern), 4)))
     if !field_x.isFinite { cursor.failed = true }
@@ -634,7 +634,7 @@ public struct Ros1Abb_rapid_msgsPos {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 12),
       limit: 12, writing: true)
     fields(&cursor)
@@ -648,7 +648,7 @@ public struct Ros1Abb_rapid_msgsPos {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 12 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -687,7 +687,7 @@ public struct Ros1Abb_rapid_msgsOrient {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_q1 = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_q1.bitPattern), 4)))
     if !field_q1.isFinite { cursor.failed = true }
@@ -706,7 +706,7 @@ public struct Ros1Abb_rapid_msgsOrient {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 16),
       limit: 16, writing: true)
     fields(&cursor)
@@ -720,7 +720,7 @@ public struct Ros1Abb_rapid_msgsOrient {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 16 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -769,7 +769,7 @@ public struct Ros1Abb_rapid_msgsLoadData {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_mass = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_mass.bitPattern), 4)))
     if !field_mass.isFinite { cursor.failed = true }
@@ -790,7 +790,7 @@ public struct Ros1Abb_rapid_msgsLoadData {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 44),
       limit: 44, writing: true)
     fields(&cursor)
@@ -804,7 +804,7 @@ public struct Ros1Abb_rapid_msgsLoadData {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 44 || bytes.count > 44 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -833,7 +833,7 @@ public struct Ros1Abb_rapid_msgsPose {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_trans.fields(&cursor)
     field_rot.fields(&cursor)
   }
@@ -842,7 +842,7 @@ public struct Ros1Abb_rapid_msgsPose {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 28),
       limit: 28, writing: true)
     fields(&cursor)
@@ -856,7 +856,7 @@ public struct Ros1Abb_rapid_msgsPose {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 28 || bytes.count > 28 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -895,7 +895,7 @@ public struct Ros1Abb_rapid_msgsRobTarget {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_trans.fields(&cursor)
     field_rot.fields(&cursor)
     field_robconf.fields(&cursor)
@@ -906,7 +906,7 @@ public struct Ros1Abb_rapid_msgsRobTarget {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 68),
       limit: 68, writing: true)
     fields(&cursor)
@@ -920,7 +920,7 @@ public struct Ros1Abb_rapid_msgsRobTarget {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 68 || bytes.count > 68 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -954,7 +954,7 @@ public struct Ros1Abb_rapid_msgsToolData {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_robhold = cursor.boolean(field_robhold)
     field_tframe.fields(&cursor)
     field_tload.fields(&cursor)
@@ -964,7 +964,7 @@ public struct Ros1Abb_rapid_msgsToolData {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 73),
       limit: 73, writing: true)
     fields(&cursor)
@@ -978,7 +978,7 @@ public struct Ros1Abb_rapid_msgsToolData {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 73 || bytes.count > 73 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1022,7 +1022,7 @@ public struct Ros1Abb_rapid_msgsWObjData {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_robhold = cursor.boolean(field_robhold)
     field_ufprog = cursor.boolean(field_ufprog)
     field_ufmec = cursor.text(field_ufmec, 512)
@@ -1034,7 +1034,7 @@ public struct Ros1Abb_rapid_msgsWObjData {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 574),
       limit: 574, writing: true)
     fields(&cursor)
@@ -1048,7 +1048,7 @@ public struct Ros1Abb_rapid_msgsWObjData {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 62 || bytes.count > 574 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1107,7 +1107,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMActivateSettings {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_tool.fields(&cursor)
     field_wobj.fields(&cursor)
     field_correction_frame.fields(&cursor)
@@ -1130,7 +1130,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMActivateSettings {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 716),
       limit: 716, writing: true)
     fields(&cursor)
@@ -1144,7 +1144,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMActivateSettings {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 204 || bytes.count > 716 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1183,7 +1183,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMRunSettings {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_cond_time = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_cond_time.bitPattern), 4)))
     if !field_cond_time.isFinite { cursor.failed = true }
@@ -1202,7 +1202,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMRunSettings {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 40),
       limit: 40, writing: true)
     fields(&cursor)
@@ -1216,7 +1216,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMRunSettings {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 40 || bytes.count > 40 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1245,7 +1245,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_use_filtering = cursor.boolean(field_use_filtering)
     field_comm_timeout = Float(
       bitPattern: UInt32(
@@ -1257,7 +1257,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 5),
       limit: 5, writing: true)
     fields(&cursor)
@@ -1271,7 +1271,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 5 || bytes.count > 5 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1295,7 +1295,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMStopSettings {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_ramp_out_time = Float(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(field_ramp_out_time.bitPattern), 4)))
@@ -1306,7 +1306,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMStopSettings {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4),
       limit: 4, writing: true)
     fields(&cursor)
@@ -1320,7 +1320,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMStopSettings {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 4 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1373,7 +1373,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSettings {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_allow_egm_motions = cursor.boolean(field_allow_egm_motions)
     field_use_presync = cursor.boolean(field_use_presync)
     field_setup_uc.fields(&cursor)
@@ -1386,7 +1386,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSettings {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 767),
       limit: 767, writing: true)
     fields(&cursor)
@@ -1400,7 +1400,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsEGMSettings {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 255 || bytes.count > 767 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1424,7 +1424,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_task = cursor.text(field_task, 64)
   }
   /// @brief Encode every complete abb_rapid_sm_addin_msgs/GetEGMSettingsRequest field.
@@ -1432,7 +1432,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 68),
       limit: 68, writing: true)
     fields(&cursor)
@@ -1446,7 +1446,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 68 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1481,7 +1481,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_settings.fields(&cursor)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -1491,7 +1491,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1285),
       limit: 1285, writing: true)
     fields(&cursor)
@@ -1505,7 +1505,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 261 || bytes.count > 1285 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1576,7 +1576,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsStateMachineState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_rapid_task = cursor.text(field_rapid_task, 512)
     field_sm_state = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_sm_state), 1))
     field_egm_action = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_egm_action), 1))
@@ -1586,7 +1586,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsStateMachineState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -1600,7 +1600,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsStateMachineState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1629,7 +1629,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsRuntimeState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_state_machines.count), 4))
     if count1 > 16 || cursor.failed {
@@ -1649,7 +1649,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsRuntimeState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8372),
       limit: 8372, writing: true)
     fields(&cursor)
@@ -1663,7 +1663,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsRuntimeState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 8372 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1693,7 +1693,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_task = cursor.text(field_task, 64)
     field_settings.fields(&cursor)
   }
@@ -1702,7 +1702,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 835),
       limit: 835, writing: true)
     fields(&cursor)
@@ -1716,7 +1716,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 259 || bytes.count > 835 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1745,7 +1745,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -1754,7 +1754,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -1768,7 +1768,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1797,7 +1797,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_task = cursor.text(field_task, 64)
     field_routine = cursor.text(field_routine, 512)
   }
@@ -1806,7 +1806,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 584),
       limit: 584, writing: true)
     fields(&cursor)
@@ -1820,7 +1820,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 584 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1849,7 +1849,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -1858,7 +1858,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -1872,7 +1872,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -1953,7 +1953,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_task = cursor.text(field_task, 64)
     field_command = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_command), 1))
     field_target_position = Float(
@@ -1966,7 +1966,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 73),
       limit: 73, writing: true)
     fields(&cursor)
@@ -1980,7 +1980,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 9 || bytes.count > 73 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2009,7 +2009,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -2018,7 +2018,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -2032,7 +2032,7 @@ public struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2056,7 +2056,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_filename = cursor.text(field_filename, 512)
   }
   /// @brief Encode every complete abb_robot_msgs/GetFileContentsRequest field.
@@ -2064,7 +2064,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 516),
       limit: 516, writing: true)
     fields(&cursor)
@@ -2078,7 +2078,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 516 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2112,7 +2112,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_contents = cursor.text(field_contents, 4096)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2122,7 +2122,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4618),
       limit: 4618, writing: true)
     fields(&cursor)
@@ -2136,7 +2136,7 @@ public struct Ros1Abb_robot_msgsGetFileContentsResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 4618 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2160,7 +2160,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_signal = cursor.text(field_signal, 512)
   }
   /// @brief Encode every complete abb_robot_msgs/GetIOSignalRequest field.
@@ -2168,7 +2168,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 516),
       limit: 516, writing: true)
     fields(&cursor)
@@ -2182,7 +2182,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 4 || bytes.count > 516 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2216,7 +2216,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = cursor.text(field_value, 512)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2226,7 +2226,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1034),
       limit: 1034, writing: true)
     fields(&cursor)
@@ -2240,7 +2240,7 @@ public struct Ros1Abb_robot_msgsGetIOSignalResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 1034 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2274,7 +2274,7 @@ public struct Ros1Abb_robot_msgsRAPIDSymbolPath {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_task = cursor.text(field_task, 64)
     field_module = cursor.text(field_module, 64)
     field_symbol = cursor.text(field_symbol, 64)
@@ -2284,7 +2284,7 @@ public struct Ros1Abb_robot_msgsRAPIDSymbolPath {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2298,7 +2298,7 @@ public struct Ros1Abb_robot_msgsRAPIDSymbolPath {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2322,7 +2322,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
   }
   /// @brief Encode every complete abb_robot_msgs/GetRAPIDBoolRequest field.
@@ -2330,7 +2330,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2344,7 +2344,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2378,7 +2378,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = cursor.boolean(field_value)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2388,7 +2388,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 519),
       limit: 519, writing: true)
     fields(&cursor)
@@ -2402,7 +2402,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDBoolResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 7 || bytes.count > 519 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2426,7 +2426,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
   }
   /// @brief Encode every complete abb_robot_msgs/GetRAPIDDnumRequest field.
@@ -2434,7 +2434,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2448,7 +2448,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2482,7 +2482,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_value.bitPattern), 8)))
     if !field_value.isFinite { cursor.failed = true }
@@ -2494,7 +2494,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 526),
       limit: 526, writing: true)
     fields(&cursor)
@@ -2508,7 +2508,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDDnumResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 14 || bytes.count > 526 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2532,7 +2532,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
   }
   /// @brief Encode every complete abb_robot_msgs/GetRAPIDNumRequest field.
@@ -2540,7 +2540,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2554,7 +2554,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2588,7 +2588,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_value.bitPattern), 4)))
     if !field_value.isFinite { cursor.failed = true }
@@ -2600,7 +2600,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 522),
       limit: 522, writing: true)
     fields(&cursor)
@@ -2614,7 +2614,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDNumResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 522 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2638,7 +2638,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
   }
   /// @brief Encode every complete abb_robot_msgs/GetRAPIDStringRequest field.
@@ -2646,7 +2646,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2660,7 +2660,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2694,7 +2694,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = cursor.text(field_value, 512)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2704,7 +2704,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1034),
       limit: 1034, writing: true)
     fields(&cursor)
@@ -2718,7 +2718,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDStringResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 1034 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2742,7 +2742,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
   }
   /// @brief Encode every complete abb_robot_msgs/GetRAPIDSymbolRequest field.
@@ -2750,7 +2750,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 204),
       limit: 204, writing: true)
     fields(&cursor)
@@ -2764,7 +2764,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 12 || bytes.count > 204 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2798,7 +2798,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_value = cursor.text(field_value, 512)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2808,7 +2808,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1034),
       limit: 1034, writing: true)
     fields(&cursor)
@@ -2822,7 +2822,7 @@ public struct Ros1Abb_robot_msgsGetRAPIDSymbolResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 1034 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2841,14 +2841,14 @@ public struct Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete abb_robot_msgs/GetRobotControllerDescriptionRequest field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2862,7 +2862,7 @@ public struct Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2896,7 +2896,7 @@ public struct Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_description = cursor.text(field_description, 4096)
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -2906,7 +2906,7 @@ public struct Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4618),
       limit: 4618, writing: true)
     fields(&cursor)
@@ -2920,7 +2920,7 @@ public struct Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 10 || bytes.count > 4618 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2939,14 +2939,14 @@ public struct Ros1Abb_robot_msgsGetSpeedRatioRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete abb_robot_msgs/GetSpeedRatioRequest field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -2960,7 +2960,7 @@ public struct Ros1Abb_robot_msgsGetSpeedRatioRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -2994,7 +2994,7 @@ public struct Ros1Abb_robot_msgsGetSpeedRatioResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_speed_ratio = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_speed_ratio), 1))
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
@@ -3004,7 +3004,7 @@ public struct Ros1Abb_robot_msgsGetSpeedRatioResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 519),
       limit: 519, writing: true)
     fields(&cursor)
@@ -3018,7 +3018,7 @@ public struct Ros1Abb_robot_msgsGetSpeedRatioResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 7 || bytes.count > 519 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3047,7 +3047,7 @@ public struct Ros1Abb_robot_msgsMechanicalUnitState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_name = cursor.text(field_name, 64)
     field_activated = cursor.boolean(field_activated)
   }
@@ -3056,7 +3056,7 @@ public struct Ros1Abb_robot_msgsMechanicalUnitState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 69),
       limit: 69, writing: true)
     fields(&cursor)
@@ -3070,7 +3070,7 @@ public struct Ros1Abb_robot_msgsMechanicalUnitState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 5 || bytes.count > 69 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3124,7 +3124,7 @@ public struct Ros1Abb_robot_msgsRAPIDTaskState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_name = cursor.text(field_name, 64)
     field_activated = cursor.boolean(field_activated)
     field_execution_state = UInt8(
@@ -3136,7 +3136,7 @@ public struct Ros1Abb_robot_msgsRAPIDTaskState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 71),
       limit: 71, writing: true)
     fields(&cursor)
@@ -3150,7 +3150,7 @@ public struct Ros1Abb_robot_msgsRAPIDTaskState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 7 || bytes.count > 71 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3269,14 +3269,14 @@ public struct Ros1Abb_robot_msgsServiceResponses {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete abb_robot_msgs/ServiceResponses field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -3290,7 +3290,7 @@ public struct Ros1Abb_robot_msgsServiceResponses {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3319,7 +3319,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_filename = cursor.text(field_filename, 512)
     field_contents = cursor.text(field_contents, 4096)
   }
@@ -3328,7 +3328,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4616),
       limit: 4616, writing: true)
     fields(&cursor)
@@ -3342,7 +3342,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 4616 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3371,7 +3371,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3380,7 +3380,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3394,7 +3394,7 @@ public struct Ros1Abb_robot_msgsSetFileContentsResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3423,7 +3423,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_signal = cursor.text(field_signal, 512)
     field_value = cursor.text(field_value, 512)
   }
@@ -3432,7 +3432,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1032),
       limit: 1032, writing: true)
     fields(&cursor)
@@ -3446,7 +3446,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 1032 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3475,7 +3475,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3484,7 +3484,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3498,7 +3498,7 @@ public struct Ros1Abb_robot_msgsSetIOSignalResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3527,7 +3527,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
     field_value = cursor.boolean(field_value)
   }
@@ -3536,7 +3536,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 205),
       limit: 205, writing: true)
     fields(&cursor)
@@ -3550,7 +3550,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 13 || bytes.count > 205 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3579,7 +3579,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3588,7 +3588,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3602,7 +3602,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDBoolResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3631,7 +3631,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
     field_value = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_value.bitPattern), 8)))
@@ -3642,7 +3642,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 212),
       limit: 212, writing: true)
     fields(&cursor)
@@ -3656,7 +3656,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 20 || bytes.count > 212 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3685,7 +3685,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3694,7 +3694,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3708,7 +3708,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDDnumResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3737,7 +3737,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
     field_value = Float(
       bitPattern: UInt32(truncatingIfNeeded: cursor.number(UInt64(field_value.bitPattern), 4)))
@@ -3748,7 +3748,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 208),
       limit: 208, writing: true)
     fields(&cursor)
@@ -3762,7 +3762,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 208 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3791,7 +3791,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3800,7 +3800,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3814,7 +3814,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDNumResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3843,7 +3843,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
     field_value = cursor.text(field_value, 512)
   }
@@ -3852,7 +3852,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 720),
       limit: 720, writing: true)
     fields(&cursor)
@@ -3866,7 +3866,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 720 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3895,7 +3895,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -3904,7 +3904,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -3918,7 +3918,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDStringResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3947,7 +3947,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_path.fields(&cursor)
     field_value = cursor.text(field_value, 512)
   }
@@ -3956,7 +3956,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 720),
       limit: 720, writing: true)
     fields(&cursor)
@@ -3970,7 +3970,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 16 || bytes.count > 720 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -3999,7 +3999,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -4008,7 +4008,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -4022,7 +4022,7 @@ public struct Ros1Abb_robot_msgsSetRAPIDSymbolResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4046,7 +4046,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_speed_ratio = UInt8(truncatingIfNeeded: cursor.number(UInt64(field_speed_ratio), 1))
   }
   /// @brief Encode every complete abb_robot_msgs/SetSpeedRatioRequest field.
@@ -4054,7 +4054,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioRequest {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1),
       limit: 1, writing: true)
     fields(&cursor)
@@ -4068,7 +4068,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 1 || bytes.count > 1 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4097,7 +4097,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -4106,7 +4106,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -4120,7 +4120,7 @@ public struct Ros1Abb_robot_msgsSetSpeedRatioResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4169,7 +4169,7 @@ public struct Ros1Abb_robot_msgsSystemState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     field_motors_on = cursor.boolean(field_motors_on)
     field_auto_mode = cursor.boolean(field_auto_mode)
@@ -4203,7 +4203,7 @@ public struct Ros1Abb_robot_msgsSystemState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2331),
       limit: 2331, writing: true)
     fields(&cursor)
@@ -4217,7 +4217,7 @@ public struct Ros1Abb_robot_msgsSystemState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 27 || bytes.count > 2331 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4236,14 +4236,14 @@ public struct Ros1Abb_robot_msgsTriggerWithResultCodeRequest {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
   }
   /// @brief Encode every complete abb_robot_msgs/TriggerWithResultCodeRequest field.
   /// @details Caller owns the record; the returned array is independent. Invalid fields, counts
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 0),
       limit: 0, writing: true)
     fields(&cursor)
@@ -4257,7 +4257,7 @@ public struct Ros1Abb_robot_msgsTriggerWithResultCodeRequest {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 0 || bytes.count > 0 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4286,7 +4286,7 @@ public struct Ros1Abb_robot_msgsTriggerWithResultCodeResponse {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_result_code = UInt16(truncatingIfNeeded: cursor.number(UInt64(field_result_code), 2))
     field_message = cursor.text(field_message, 512)
   }
@@ -4295,7 +4295,7 @@ public struct Ros1Abb_robot_msgsTriggerWithResultCodeResponse {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 518),
       limit: 518, writing: true)
     fields(&cursor)
@@ -4309,7 +4309,7 @@ public struct Ros1Abb_robot_msgsTriggerWithResultCodeResponse {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 6 || bytes.count > 518 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4338,7 +4338,7 @@ public struct Ros1Duration {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_sec = Int32(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(UInt32(bitPattern: field_sec)), 4)))
@@ -4352,7 +4352,7 @@ public struct Ros1Duration {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 8),
       limit: 8, writing: true)
     fields(&cursor)
@@ -4366,7 +4366,7 @@ public struct Ros1Duration {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 8 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4410,7 +4410,7 @@ public struct Ros1Trajectory_msgsJointTrajectoryPoint {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     let count0 = Int(cursor.number(UInt64(field_positions.count), 4))
     if count0 > 12 || cursor.failed {
       cursor.failed = true
@@ -4466,7 +4466,7 @@ public struct Ros1Trajectory_msgsJointTrajectoryPoint {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 408),
       limit: 408, writing: true)
     fields(&cursor)
@@ -4480,7 +4480,7 @@ public struct Ros1Trajectory_msgsJointTrajectoryPoint {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 408 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4514,7 +4514,7 @@ public struct Ros1Trajectory_msgsJointTrajectory {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count1 > 12 || cursor.failed {
@@ -4542,7 +4542,7 @@ public struct Ros1Trajectory_msgsJointTrajectory {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4168),
       limit: 4168, writing: true)
     fields(&cursor)
@@ -4556,7 +4556,7 @@ public struct Ros1Trajectory_msgsJointTrajectory {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 24 || bytes.count > 4168 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4595,7 +4595,7 @@ public struct Ros1Control_msgsJointTolerance {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_name = cursor.text(field_name, 64)
     field_position = Double(
       bitPattern: UInt64(truncatingIfNeeded: cursor.number(UInt64(field_position.bitPattern), 8)))
@@ -4613,7 +4613,7 @@ public struct Ros1Control_msgsJointTolerance {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 92),
       limit: 92, writing: true)
     fields(&cursor)
@@ -4627,7 +4627,7 @@ public struct Ros1Control_msgsJointTolerance {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 28 || bytes.count > 92 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4667,7 +4667,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryGoal {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_trajectory.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_path_tolerance.count), 4))
     if count1 > 12 || cursor.failed {
@@ -4698,7 +4698,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryGoal {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 6392),
       limit: 6392, writing: true)
     fields(&cursor)
@@ -4712,7 +4712,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryGoal {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 40 || bytes.count > 6392 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4759,7 +4759,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryResult {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_error_code = Int32(
       bitPattern: UInt32(
         truncatingIfNeeded: cursor.number(UInt64(UInt32(bitPattern: field_error_code)), 4)))
@@ -4770,7 +4770,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryResult {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 4104),
       limit: 4104, writing: true)
     fields(&cursor)
@@ -4784,7 +4784,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryResult {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 8 || bytes.count > 4104 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4831,7 +4831,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryFeedback {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_joint_names.count), 4))
     if count1 > 12 || cursor.failed {
@@ -4851,7 +4851,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryFeedback {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 2124),
       limit: 2124, writing: true)
     fields(&cursor)
@@ -4865,7 +4865,7 @@ public struct Ros1Control_msgsFollowJointTrajectoryFeedback {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 92 || bytes.count > 2124 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }
@@ -4909,7 +4909,7 @@ public struct Ros1Sensor_msgsJointState {
   /// @details Only an exclusive local canonical cursor is advanced. Failed values remain
   /// unusable.
   /// @param cursor Exclusive bounded reader or writer.
-  mutating func fields(_ cursor: inout ABBCursor) {
+  mutating func fields(_ cursor: inout NativeCursor) {
     field_header.fields(&cursor)
     let count1 = Int(cursor.number(UInt64(field_name.count), 4))
     if count1 > 12 || cursor.failed {
@@ -4962,7 +4962,7 @@ public struct Ros1Sensor_msgsJointState {
   /// or output extent return 22.
   /// @return Complete owned bytes/status; bytes are empty on failure.
   public mutating func encode() -> (bytes: [UInt8], status: UInt32) {
-    var cursor = ABBCursor(
+    var cursor = NativeCursor(
       bytes: [UInt8](repeating: 0, count: 1200),
       limit: 1200, writing: true)
     fields(&cursor)
@@ -4976,7 +4976,7 @@ public struct Ros1Sensor_msgsJointState {
   /// @return Independent complete value/status; value is nil on failure.
   public static func decode(_ bytes: [UInt8]) -> (value: Self?, status: UInt32) {
     if bytes.count < 32 || bytes.count > 1200 { return (nil, 22) }
-    var cursor = ABBCursor(bytes: bytes, limit: bytes.count)
+    var cursor = NativeCursor(bytes: bytes, limit: bytes.count)
     var value = Self()
     value.fields(&cursor)
     if cursor.failed || cursor.at != cursor.limit { return (nil, 22) }

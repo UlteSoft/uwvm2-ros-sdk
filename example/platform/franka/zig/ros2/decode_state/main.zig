@@ -1,7 +1,7 @@
 //! @brief Validate every original field with the genuine Zig codec.
 const std = @import("std");
 const records = @import("franka_records");
-pub fn main() !void {
+fn command() !void {
     var input: [10170]u8 = undefined;
     var length: usize = 0;
     while (length < input.len) {
@@ -15,4 +15,17 @@ pub fn main() !void {
     var output: [10170]u8 = undefined;
     const encoded = try value.encode(output[0..]);
     try std.io.getStdOut().writer().writeAll(encoded);
+}
+
+/// @brief Return a checked codec or I/O error through the shared WASI startup.
+export fn nl_entry() u32 {
+    command() catch |failure| {
+        return switch (failure) {
+            error.Invalid => 22,
+            error.TooLarge => 90,
+            error.OutOfMemory => 12,
+            else => 5,
+        };
+    };
+    return 0;
 }

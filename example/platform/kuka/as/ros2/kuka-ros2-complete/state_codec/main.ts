@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete kuka_driver_interfaces/msg/KssStatus value with genuine AssemblyScript.

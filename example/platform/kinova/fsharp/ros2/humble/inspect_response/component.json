@@ -1,0 +1,56 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-3109",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3ddb8678779652f4f6b7bd3fe46e60863fd7c1b319830dfeced4cc6bc2be453f"
+    },
+    {
+      "scope": "example",
+      "path": "main.fs",
+      "sha256": "2fbda6f8c47839a63e7b3019d2041aab965315b528f27fc19891ea8401423368"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kinova/provider.json",
+      "sha256": "fb92fba6d9937cc601b2cea6d35291d161b7c78c7e36e8bb31f2dc7ef5397e01"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kinova/catalogs/ros2_humble/records.json",
+      "sha256": "c60969c4b84d7296ce4508462b2a80572a72367fb9ae6b492457320fd2862c1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "303030303030303030303030303030300a",
+      "stdin_hex": "0000000000000000"
+    }
+  ]
+}

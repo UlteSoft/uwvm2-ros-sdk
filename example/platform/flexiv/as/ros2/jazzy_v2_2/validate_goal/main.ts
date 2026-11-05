@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros2Flexiv_msgsActionGrasp_Goal, Ros2Flexiv_msgsActionGrasp_GoalCodec} from "flexiv/as/ros2/flexiv-ros2-jazzy-v2-2-complete/bounded_records";
 import {write, exit} from "ros/as/command";

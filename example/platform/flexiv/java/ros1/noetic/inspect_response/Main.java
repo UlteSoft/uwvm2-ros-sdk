@@ -5,7 +5,7 @@ public final class Main
 {
     public static void main(String[] args) throws Exception
     {
-        byte[] bytes = System.in.readNBytes(2);
+        byte[] bytes = uwvm.ros.Wasi.readStdin(2);
         BoundedRecords.Ros1Flexiv_msgsMode value = BoundedRecords.Ros1Flexiv_msgsMode.CODEC.decode(bytes);
         byte[] encoded = BoundedRecords.Ros1Flexiv_msgsMode.CODEC.encode(value);
         StringBuilder output = new StringBuilder();

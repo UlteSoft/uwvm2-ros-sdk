@@ -1,0 +1,84 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "agibot-objectc-dispatch-237",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual Objective-C dispatch and namespace-only capability refusal; not positive native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "f38981e8a6b1cad340ad1d9c9b6593625698184377845ceb242ae9e55bec38ef"
+    },
+    {
+      "scope": "example",
+      "path": "main.m",
+      "sha256": "f8e3d1c17ac93d24e8d3b05dc1886c5afe13ac6187356d59f6b036f8ceff387b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/objectc.lua",
+      "sha256": "8668ec7b6be117825b0dbb9382181f622228b3483ee6e906963c9187213821a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "789cca696eb094c051aa6c8161f45fbd3dba34569281789f9a837810eb7e1ca2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "42345a5ef409e9d1bc64a2858145c4fcf8790ff84e73ad8f69ed95ff8decac0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/toolchains/host/linux-x86_64/native-objectc.json",
+      "sha256": "d93961ab93edcc02e223133902b987512002af5956524d09571a0a33bac777a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/objectc/runtime.json",
+      "sha256": "cfe9d3bf20d0a81d8985f5bfc9b01eda095331a0c0beb08ac29ae87d1358c56d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/objectc/base_object.m",
+      "sha256": "752103cfb3866b6ab2a28ebc1da09a0855fd33dd4702824f3b1cabd9e175f097"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-only-no-resource",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "has_required": false,
+        "required": "0",
+        "rpc_status_present": false,
+        "rpc_status": "0",
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

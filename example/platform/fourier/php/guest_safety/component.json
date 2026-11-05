@@ -1,0 +1,90 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "fourier-php-guest-safety",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/fourier/php/ros2/aurora_bridge_v1/records.php",
+      "sha256": "fe060cac039ae00b698767b5e64fc97a01a7a6502049894e064906bf17d4470b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "sha256": "09b46a3f454cb73bce620f7a12b87a45c3295986a43baab4299e38f872d2c349"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "sha256": "a98012e8de8a46996b45267f41e77043de1ad9d69cfc5d7462875a37580f9b2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "sha256": "4c8a9e723fbc057a8a2da63f3b1c2609608954600af407169dde5f2e0df30bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fourier/provider.json",
+      "sha256": "fcc4ffe044b577dfc5a9a908aca7afb867bab2b586e66ff1d248af16e69f9aa3"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/php/Observation.php",
+      "sha256": "c699a449c9154ab6f8aa56780eecaf44f1cf23f6cbcec00726a49b112885e9ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fourier/provider.lua",
+      "sha256": "26f2fe5fbb5154d148353d96865c3208f774f938c408356ac777a807b661accd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.php",
+      "sha256": "20821257e34889ba8dc46dc9a26968848ce25452772e39a61eb3e2c7cd91a821"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "18b352fe3b5a0d2a867ef06dd1dc272152b0a97a98728e0ad9a20a775c4dfb4e"
+    },
+    {
+      "scope": "example",
+      "path": "cases.json",
+      "sha256": "d2fc7b53da89714b0c09ad98500c62511ae078c91563254b3bc631a32d6d056b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "five-actual-guest-assertions",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"php\",\"case\":\"genuine-runtime-version\",\"passed\":true,\"observed_code\":80413}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"php\",\"case\":\"raw-ros-abi-v1\",\"passed\":true,\"observed_code\":0}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"php\",\"case\":\"guest-rejects-empty-alias\",\"passed\":true,\"observed_code\":22}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"php\",\"case\":\"guest-rejects-invalid-utf8\",\"passed\":true,\"observed_code\":22}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"php\",\"case\":\"raw-ungranted-alias-denied\",\"passed\":true,\"observed_code\":13}\n{\"format\":\"uwvm-sdk-guest-safety-summary-v1\",\"language\":\"php\",\"selected\":5,\"executed\":5,\"passed\":5,\"failed\":0,\"blocked\":0,\"skipped\":0}\n"
+    }
+  ]
+}

@@ -25,6 +25,12 @@ NORMAL = {"shared_math": True, "math_counts": 4294967299,
 SGR = re.compile(r"\x1b\[[0-9;]*m")
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def require(condition, message):
     if not condition:
         raise RuntimeError(message)
@@ -53,6 +59,9 @@ def identity(pid, expected_birth, executable_sha256):
     actual = digest(root / "exe")
     require(actual == executable_sha256, "Executed VM bytes differ from the selected runtime")
     membership = (root / "cgroup").read_text().strip()
+    group = Path("/sys/fs/cgroup") / membership.split("::", 1)[1].lstrip("/")
+    resources = {key: (group / key).read_text().strip() for key in
+                 ("memory.max", "memory.swap.max", "memory.events")}
     maps = (root / "maps").read_text()
     libraries = []
     for name in sorted({line.split(maxsplit=5)[5] for line in maps.splitlines()
@@ -62,7 +71,7 @@ def identity(pid, expected_birth, executable_sha256):
         libraries.append({"path": name, "bytes": path.stat().st_size, "sha256": digest(path)})
     require(birth(pid) == expected_birth, "VM retired while observing its identity")
     return {"pid": pid, "birth": expected_birth, "exe": os.readlink(root / "exe"),
-            "exe_sha256": actual, "cgroup": membership, "maps": maps, "mapped_files": libraries,
+            "exe_sha256": actual, "cgroup": membership, "kernel_resources": resources, "maps": maps, "mapped_files": libraries,
             "security": {key: status[key].strip() for key in
                          ("Uid", "Gid", "Seccomp", "NoNewPrivs", "CapInh", "CapPrm", "CapEff", "CapBnd", "CapAmb")}}
 
@@ -100,6 +109,10 @@ def main():
               "passed_count": 0, "failed": 0, "blocked": 0, "not_run": len(CASES), "cases": [],
               "scope": "Managed AOT/Core preload/WASI component only; no ROS or official simulation acceptance",
               "started_ns": time.monotonic_ns()}
+    shared = Path(__file__).resolve().parents[3] / "shared/python"
+    sources = [Path(__file__).resolve(), Path(__file__).resolve().parents[1] / "xmake/java_shared_math_tests.lua",
+               shared / "wasi_policy.py", shared / "pipe_capture.py"]
+    report["source_inputs"] = [{"path": str(p), "sha256": digest(p)} for p in sources]
     try:
         selection = os.environ.get("UWVM_ROS_JAVA_GUEST_TEST_CONFIG")
         require(selection, "BLOCKED_REQUIRED_RUNTIME: set UWVM_ROS_JAVA_GUEST_TEST_CONFIG to an installed VM identity JSON")
@@ -108,11 +121,12 @@ def main():
         config = json.loads(config_path.read_text())
         require(config["format"] == "uwvm-java-component-runtime-v1", "Unsupported runtime selection format")
         runtime = Path(config["runtime"])
-        require(runtime.is_absolute() and runtime.name == "uwvm2-ros" and runtime.is_file(), "Select the actual uwvm2-ros executable")
+        require(runtime.is_absolute() and runtime.is_file(), "Select the actual uwvm2-ros executable")
         require(re.fullmatch("[0-9a-f]{64}", config["sha256"]) is not None, "Pin the complete VM executable SHA256")
         require(digest(runtime) == config["sha256"], "Runtime SHA256 differs")
         require(re.fullmatch("sha256:[0-9a-f]{64}", config["source_identity"]) is not None, "Pin the paired VM source identity")
-        require(config["arguments"] == ["--runtime-aot"], "This component selects the checked AOT runtime only")
+        require(config["arguments"] in (["--runtime-aot"], ["-Raot", "--log-verbose", "--runtime-compile-threads", "1", "--runtime-llvm-jit-policy", "debug"]),
+                "Select the ordinary or explicitly traced AOT runtime")
         env = config.get("environment", {})
         require(isinstance(env, dict) and set(env) <= {"LD_LIBRARY_PATH"}
                 and all(isinstance(v, str) for v in env.values()), "Only an explicit native library path may be selected")
@@ -135,15 +149,18 @@ def main():
                       config={"path": str(config_path), "sha256": digest(config_path)},
                       modules=modules, module_metadata=metadata,
                       boot_id=Path("/proc/sys/kernel/random/boot_id").read_text().strip())
+        require("main" in (config.get("wasi_policy") or {}).get("modules", {}),
+                "Select the explicit main WASI namespace/operation policy for traced command tests")
         for case in CASES:
             row = {"case": case, "passed": False, "started_ns": time.monotonic_ns()}
             report["cases"].append(row)
             directory = args.output / case
             directory.mkdir()
             argv = [str(runtime), *config["arguments"],
+                    "--wasm-set-main-module-name", "main",
                     "--wasm-preload-library", str(args.library.resolve()), "math",
-                    "--wasm-preload-library", str(args.library.resolve()), "math_peer",
-                    "--wasip1-global-trace", "file", str((directory / "wasi.trace").resolve()),
+                    "--wasm-preload-library", str(args.library.resolve()), "math_peer"]
+            argv = [argv[0], *wasi_test_arguments(argv[1:], config.get("wasi_policy")),
                     "--run", str(args.main.resolve())]
             expected_exit = 0
             if case == "guest-contract-denied":
@@ -158,7 +175,7 @@ def main():
                 environment = dict(os.environ)
                 environment.update(env)
                 with (directory / "stdout").open("xb") as out, (directory / "stderr").open("xb") as err:
-                    child = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=out, stderr=err,
+                    child = PipeLoggedProcess(argv, stdin=subprocess.DEVNULL, stdout=out, stderr=err,
                                              env=environment, start_new_session=True,
                                              preexec_fn=lambda: resource.setrlimit(resource.RLIMIT_FSIZE, (4 * 1024**2, 4 * 1024**2)))
                     report["executed"] += 1
@@ -170,14 +187,26 @@ def main():
                 row["exit"] = child.returncode
                 out = (directory / "stdout").read_bytes()
                 err = (directory / "stderr").read_bytes()
+                diagnostic = SGR.sub("", err.decode("utf-8", errors="replace"))
+                row["native_unwind_checked"] = "[unwind-check] status=ok" in diagnostic
+                row["interpreter_fallback"] = "fallback=enabled" in diagnostic or "uwvm-int-translation=enabled" in diagnostic
+                if "--log-verbose" in config["arguments"]:
+                    require(row["native_unwind_checked"]
+                            and "compiler=llvm_jit_only" in diagnostic and not row["interpreter_fallback"],
+                            "Actual native compiler/unwind observation differs")
                 require(child.returncode == expected_exit, "Actual VM exit differs")
                 require(b"SDK09_UNAUTHORIZED_STDOUT" not in out, "A denied stdout write had an effect")
-                trace = (directory / "wasi.trace").read_bytes()
                 if case == "guest-contract-denied":
                     row["guest"] = guest_json(err, "sdk09_shared_math_denied")
-                    require(row["guest"] == {"sdk09_shared_math_denied": True, "errno": 76, "restore_errno": 76}, "Guest denied result differs")
-                    require(b"fd_fdstat_set_rights(1, 0, 0)" in trace and b"fd_fdstat_set_rights(1, 64, 0)" in trace
-                            and b"fd_write(1," in trace, "Actual WASI rights/write calls were not observed")
+                    require(row["guest"] == {"sdk09_shared_math_denied": True, "reduce_errno": 0, "errno": 76, "restore_errno": 76}, "Guest denied result differs")
+                    imports = {(item["module"], item["name"]) for item in metadata["main"]["metadata"]["imports"]}
+                    require({("wasi_snapshot_preview1", "fd_fdstat_set_rights"),
+                             ("wasi_snapshot_preview1", "fd_write")} <= imports,
+                            "The actual built main module must use the original WASI rights/write imports")
+                    row["rights_checks"] = {"reduce_errno": row["guest"]["reduce_errno"],
+                                            "write_errno": row["guest"]["errno"],
+                                            "restore_errno": row["guest"]["restore_errno"],
+                                            "unauthorized_output_bytes": 0}
                     require(b'"shared_math":true' not in out, "Denied case produced the normal guest output")
                 elif case == "guest-contract-invalid-input":
                     row["guest"] = guest_json(err, "sdk09_shared_math_invalid")
@@ -199,6 +228,11 @@ def main():
                     child.wait(timeout=10)
                 if child is not None:
                     row["exit"] = child.returncode
+                if child is not None and "birth" in row:
+                    try:
+                        row["same_birth_retired"] = birth(child.pid) != row["birth"]
+                    except FileNotFoundError:
+                        row["same_birth_retired"] = True
                 row["finished_ns"] = time.monotonic_ns()
                 row["raw"] = [{"path": str(p.relative_to(args.output)), "bytes": p.stat().st_size, "sha256": digest(p)}
                               for p in sorted(directory.iterdir()) if p.is_file()]

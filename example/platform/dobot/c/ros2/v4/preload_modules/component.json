@@ -1,0 +1,3349 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "four-module-isolation-613",
+  "test_scope": "Actual original multi-module guest: module-local host denial, constructors, checked cleanup and complete outputs. Native positive resource behavior requires separate integration tests.",
+  "ros_namespace": "ros2",
+  "preload_modules": [
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "ros_modules": [
+    "main",
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/module_demo.h",
+      "sha256": "6d97b5d69eb7471baf8f9e18036918192e2073d86487ec6af01d6483f684db14"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v3-complete/bounded_interfaces.h",
+      "sha256": "269ce835190f2a181b78522a99714dfca4ff43914607635983dc60ce892e7ffa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v3-complete/bounded_records.h",
+      "sha256": "b584a0acf4a67a16460f79d4836b85a4932b8c03c8d9bff1f6826157ffead032"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v3-complete/operations.h",
+      "sha256": "5c97547dc532ea256bdca56613685cf1586fe4dc4df9f17c7f5e18ad77a59dfe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v4-complete/bounded_interfaces.h",
+      "sha256": "b063b9d1bfa348cfa97f52dc758778a47b58aa2acd175e979c12fc2bb2ff0044"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v4-complete/bounded_records.h",
+      "sha256": "d04c14a458afe3f0ae8ee24e95fa3ce5ae0c0502482facdd8974dd78b8cb9c6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-demo-v4-complete/operations.h",
+      "sha256": "6f581182cdc956ca0cfe5063fa213e03a3928e992961f2601b9ca13e1a970569"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v3-complete/bounded_interfaces.h",
+      "sha256": "4a6a89cb9888e5a0af3503fc6a4316060e0590e8061bd82f5b96828602238864"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v3-complete/bounded_records.h",
+      "sha256": "05a36dff9928582d6c3ad8cee1dd4b31d9ab80e083418cd8f4192ef120aab619"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v3-complete/operations.h",
+      "sha256": "7a7373c81bb8f9743ef46ecf88f81adb4d74c9feb63fe30b769e2a7a957ad892"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v4-complete/bounded_interfaces.h",
+      "sha256": "f4a250689e67faf080c1d2832a79b1b61246979a7bc12b723c29d185dd4cc23e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v4-complete/bounded_records.h",
+      "sha256": "991f0c43111e624b047d7774ac78bb7287a5c7510d8712cb07b2d0bbf114824e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros1/dobot-ros1-v4-complete/operations.h",
+      "sha256": "85624d6159db217baed2051f277c699ebdcfb8ab7f31c835aa2dd480c0c32c26"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros2/dobot-ros2-v4-complete/bounded_interfaces.h",
+      "sha256": "20df7eec613126995fec6761687c9dfaa23bde85830e116cb3b77a394dcfaf68"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros2/dobot-ros2-v4-complete/bounded_records.h",
+      "sha256": "68aa9b467a171eec1ec86a8dabc5c3b9ce1f614720234b74ffb4108f46a1f1dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/ros2/dobot-ros2-v4-complete/operations.h",
+      "sha256": "8bab086d15867e0088b7b29b0ad0173c4565c9273352a70964c39e10082aa94c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/c/state.h",
+      "sha256": "579d742cf18a229b958240038ea2d4a05803e03889a3c76dd796185dde86ef89"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v3-complete/bounded_interfaces.hpp",
+      "sha256": "9f80f6505f007761f51ab8b8af0eeccb487fe540bdc94550d04eec63da3632d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v3-complete/bounded_records.hpp",
+      "sha256": "a9ca343a71025888aa62af61e207e813d7927357cc80b363286a9d0bb39f8400"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v4-complete/bounded_interfaces.hpp",
+      "sha256": "3d96df4eda22dd16fca36791780f00f31f722495ce62d62a4cdf345fcbaa68d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-demo-v4-complete/bounded_records.hpp",
+      "sha256": "dc55ef8f2db163b295a59f21c6a3e5e7886b0583e07c69b02ecdc312d48215cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-v3-complete/bounded_interfaces.hpp",
+      "sha256": "7bd270810a2206db3a9246dd8388a90859691a6f21da568481947ff72e2abe15"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-v3-complete/bounded_records.hpp",
+      "sha256": "f73df0eda87271e81f6f0a121515884293745b291cd0e0a31bab5cd20ca51c9e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-v4-complete/bounded_interfaces.hpp",
+      "sha256": "05f2df1483c4f934e24f6b148e56e0fb01f2741b2ec8f159caf55229ecc7f28e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros1/dobot-ros1-v4-complete/bounded_records.hpp",
+      "sha256": "edc519004ab01d9cf0c0e5658dd30cfc99aa7af2daf2caaab6d09f0d51c574de"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros2/dobot-ros2-v4-complete/bounded_interfaces.hpp",
+      "sha256": "fea780356ae1e30a5fc3e872f8874a792441438a41b92d1e1dc2d73eea82f9b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/ros2/dobot-ros2-v4-complete/bounded_records.hpp",
+      "sha256": "02883fc4edbb772071b5daedf46e640a2902e4417895f88b986ead8992c41cf1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/dobot/cpp/state.hpp",
+      "sha256": "1ed7fdddad820cd1c09f8ef0340e8fca0086c1c8fe8b43fcf05b6744c4c655fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/command.h",
+      "sha256": "1a54497e519c726d090ecca4ee9132bd1ac8216bcc32ea666262926edf1f678f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/custom-types/generated-r3/fixed_records.h",
+      "sha256": "e69844b9d60364c3565871bf48acad708878a24cf9c32d937da5b1b82a06a38d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/native_command.h",
+      "sha256": "b5917f95c2b04f5cb2505ccb542c406be1eb99c1f20a1511a0ebe4d5e144512a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/action_bundle.h",
+      "sha256": "cf47e1ab8b834cba62c4789782471c4f34b4195b65fd0c5d9651a33d0ef80a54"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/codec.h",
+      "sha256": "b96510d62c400169f1c214d5ff9f3113a09ffff6057ef7fccd61e25410bf73a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/c_portability.h",
+      "sha256": "adb03faee9f7ec38c75e5723d7eefa0a6a9b7e8931f7bbe4953efc417a0dbff6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/events.h",
+      "sha256": "ede12ed7cee9c8c47996e8edc63c93c2554de042c9f7a798310e2a3d93b220b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/executor.h",
+      "sha256": "71509b8f4ef50dd6de26f5bd503c0df7af48274a974bf4d13e8ed8e21b232107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/library_profile.h",
+      "sha256": "462a40c4e66aba83d7919aa2aa5dfb1c41b9d7480a838a615b2dc711a0542ef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/node.h",
+      "sha256": "0f82b360008076934ac8b72398aa017d98c076821166fbeaeaa467817e33e9e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/resources.h",
+      "sha256": "2eccace2f77d6fda80d3e1d8474fcb9edcab1242cc6c4302ffb2e81aff008a8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_publisher_v1.h",
+      "sha256": "48b6622c343498fab49d09e83eec126019cb6da643295289ee832467b18365e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_service_v1.h",
+      "sha256": "fe8bad1be614755ffac42c4455535b7009ca8232359fba95038cef9c13126369"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_subscription_v1.h",
+      "sha256": "646ce79d5e879ea82327c67aa2c594a3f1b6466019d8dde69b8d8dd7f46e54e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasm.h",
+      "sha256": "68127aa26335cd0a52d9885243a4028ef839e01f8ed15e94d173695cad41e814"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasmc.h",
+      "sha256": "ba68039a0052d27e5abb3d6fa6503661085ea86229f60f2974b239099dc410aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client.h",
+      "sha256": "0b4355701e8a82252c54b8aa59f7dda74595c5068c2572b90cfbef51c149544c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client_v1.h",
+      "sha256": "5fcbeeaa80fad26ba62f403680f0095ce00a8bf65a78f1f4dc818d189298dfd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/session.h",
+      "sha256": "4fea9017e46677eda3202a6eaaf146c6fa879eb07a0e24243e58bb4510db8a2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/abi.h",
+      "sha256": "0f95d12558872bffe193ecf4c18121ca03abdf51dbfc82049f710b82e10cce80"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/example_interfaces/srv/add_two_ints.h",
+      "sha256": "9d5ecec2c63d32037e77bafee626d4d70152a08c4ac1fa20c54ca88999c99532"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/allocator.h",
+      "sha256": "7b35a62299fe64739c0697bcb190ca40afb5fc0b7d83063b6ea482ad479c48be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/client.h",
+      "sha256": "e29fba0ed83531efd8d7cc66d429b3f828760f02523032812e59075d5dd76664"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/context.h",
+      "sha256": "f1eb949f0db20eb7723dc3f2bc9121e15692c479ffb929131862f3454e2008d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/error_handling.h",
+      "sha256": "d97e4b3d330355c23e9c7d04ee3fba60d9b230bc02ed1f6b72d5f1b0af4a1b4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/node.h",
+      "sha256": "c77c070ef4f3215590a71aef2ace77e4a9169585aaec2694c661f3c5abf0901a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/publisher.h",
+      "sha256": "baf28e6e55c044650d2080d8d95c328eaebdd93d627517e0b751499992757685"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/rcl.h",
+      "sha256": "62fdd37ce59db4196da4d024b73298b17df19d9d5bde643109f97291aebdeb76"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/service.h",
+      "sha256": "30cc6cc0733558f0d0674acb4538ce07aeac542b8c0ef14622594f8f0612809d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/subscription.h",
+      "sha256": "f79dd65adc7429535916b4cd9cb350d3aed564ff3cfd8f777a531485785756a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/time.h",
+      "sha256": "a2cb0b94de64759b322a55c2515a5fdc7b964b95ee922d9d2f7ead6048af446f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/timer.h",
+      "sha256": "055b144455d561328ba49dae208f37fb067ccde40e5c95ec81d6f31eed5de541"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/types.h",
+      "sha256": "273fac2f014a2e4ac3117043812c945ecba5cc195991522202d74f6de1e2bc97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/client.h",
+      "sha256": "e29fba0ed83531efd8d7cc66d429b3f828760f02523032812e59075d5dd76664"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/executor.h",
+      "sha256": "a4ba4f2ddc536998111fb5826dfc08414efa83bf70f8ee287be69842ce9442e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/rclc.h",
+      "sha256": "614dce95d602dacc435aa86d7629780d918873fa2036636ca1944b0d38ed19c6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/service.h",
+      "sha256": "30cc6cc0733558f0d0674acb4538ce07aeac542b8c0ef14622594f8f0612809d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/sleep.h",
+      "sha256": "5c4c251f94c2f6693acf36ea3da060c83f874c1902aff1609aa4cb78c0e5fb69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/types.h",
+      "sha256": "2a43c622188ecb9e130bedbbe9f6df3d3c5454d9b600445483d8452d0ccada91"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcutils/allocator.h",
+      "sha256": "61cf85b17c10282eedb4d1d5749d4828b81caacc8ceb96398fafec9ea77d0413"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcutils/error_handling.h",
+      "sha256": "5f3e46d30ec0f8f5441a979ce55c81115ac702105207046845598ab8438e0dd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rmw/qos_profiles.h",
+      "sha256": "088fb847b07dac44aada63dbc703fb07605e97e38c347e0fc1810a17df175d29"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rmw/types.h",
+      "sha256": "06924a39d3d45af24beac781529e64e7cee747791b83f3b4bb4eb63b52948118"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/message_type_support_struct.h",
+      "sha256": "283c4010b992f98c09b61a31d24c74f48a2a2764eb09ba40c4b150381ea8b83a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/service_type_support_struct.h",
+      "sha256": "480260ea0dc14a8e7d3c7788994932dfca31ac363a1668a6a8a30af35daebbee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/string.h",
+      "sha256": "bfe3ec1141fd95a3b90b0e225eb7864c0c551cb1cd86dcb8d17ab49d82befc8b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/string_functions.h",
+      "sha256": "830107996cdaa598dc951f428e78b56d9ef5b0c47d5940ce0c396e335a8ca5e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/roswasm_rclc/compat.h",
+      "sha256": "ac7b78ff11e001b4f2671a5c8594820b5c375015477b36a35f796b4afa84ce05"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/roswasm_rclc/services.h",
+      "sha256": "46a6b375b6af6fb4de7516fad83b518822425358b175424f5a6153be36b119fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_msgs/msg/string.h",
+      "sha256": "f781906ca4523947ba910b40115fa2d3baebc8f6d1c91629ce2f530c14453afc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_srvs/srv/set_bool.h",
+      "sha256": "e8217b463fefae53db9e4660d9d9b7102a8872c176e5b8496d6c244b9f766cff"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_srvs/srv/trigger.h",
+      "sha256": "686fb7b4adb9260393df224f5228f9b8ea440e547f298fbb72015d96e0adf0b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/abi/ros2.h",
+      "sha256": "e5a0136444306a780dc651119b1bc594a887b7bca38cc9ba94777df946d3d24f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/ros2.h",
+      "sha256": "a0079a2eb1e840c039ac46fc171afe9b1ea604d86a40fc987a6ed6db4f471bf4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/service_client_ros2.h",
+      "sha256": "85a744f57f50cd8e25df73823598467da64919bf3fd52eca1af455edd88d1a12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm.h",
+      "sha256": "dfe7e743ccc8a3559701b6e2bf1e74bbf7d6d393e8ec6b13cd3c441356da5e40"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/bridge.h",
+      "sha256": "9a89bfa25ade2c0358a3307d256d69a2ae950e0d94e9c943546270bd10e6f809"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/c_codecs.h",
+      "sha256": "856e816e767ca26acdbab0753b1da0464ece7d78517913d51b07daeb98910b41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/codec.h",
+      "sha256": "68bc21072f0053ac04dac191e93a751902819a601c78a33f40d3f79c1cbf40e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/codec_composer.h",
+      "sha256": "d0cf3068bc894694cacec7e1778a033657af3324072339b5212419c9a9cb4de9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/contracts.h",
+      "sha256": "2528f106117777f0bb8015b1833f903389c232433ed00e2a5c8b5c84074be486"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/default_control.h",
+      "sha256": "56c29b71a81f809a2a3341cae2d17615bcacf664d4544251e858a7c4bc0dda7f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/dispatch.h",
+      "sha256": "e622ea4e85272ee78c742c519c9b91fe1de596b0ae4eef1e2324e488df51544b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/internal.h",
+      "sha256": "5036fb1aefae140befab385f4a5ebc0185863fcb28088cdc127ba05fb00af7f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/publisher_transport.h",
+      "sha256": "2421759d3b86e45d9be6d8b2ca1ad659cb36a70c5d4c21fb877db4b345e339e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/service_transport.h",
+      "sha256": "e9d2ebb6ba763eb719d8c3b90cc12c4e3113e5fd8212410a1d4aefbbbf73a854"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/subscription_transport.h",
+      "sha256": "876cee078c5289b8d71d73f1225c2bb292ee016be142243accc4dcc470cb9d14"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/threaded.h",
+      "sha256": "0439c3f8786b8c986d1086e0f44670fd8028fcb6c34712e02e83d35e8ab76592"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/wasi_wait.h",
+      "sha256": "1fff52d192b2442fcdb231d119c90c2623789c72b0fef0e0526f8a75f0da2a88"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw_c/provider.h",
+      "sha256": "237a5c06b6798ed28e5332649e7028f7bb362faf4e0b8f1b22a04ce7426dd1db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw_platform.h",
+      "sha256": "d15846abdf9349ef99573985c27254d17133ba1305ba44185659559ffc466eb7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/js/ros1_demo_v3.json",
+      "sha256": "d89b7b55c88322cb536c13fd6d58c2b87fd64111fff6b0198d949487ccf55578"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/js/ros1_demo_v4.json",
+      "sha256": "212237c57af1d04b9c5a536f9d332e308a02cb9ac304c0e7c3a8256dbce1ed25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/js/ros1_v3.json",
+      "sha256": "d1b6039d46a124a64e3884c398a8e35fb638f031e4b8e9611e915e15bc01b3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/js/ros1_v4.json",
+      "sha256": "7358e6ecefbe19d2ac7ef68dfa1f97b3cb02c2bd1db4cbf60a061cd6f52aad9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/js/ros2_v4.json",
+      "sha256": "955977e9138d300abe42704dc67c159ed4b2a22a82a793cad9af5f06c993dd55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/lua/ros1_demo_v3.json",
+      "sha256": "5eee5ec552df5053976628a17df0a68511aa1ef0e6d689046cf01ed835ac56f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/lua/ros1_demo_v4.json",
+      "sha256": "ccdb3892ec91e771c7b87a4a766fcc72f0479f4a366c6718fafa3beaf2ca4788"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/lua/ros1_v3.json",
+      "sha256": "b980a4fb243e0e1e263d5164a51db07b9c29fb32933d6d8387d90c2848bf1464"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/lua/ros1_v4.json",
+      "sha256": "7a414381c7ab00e5e6f54cd710f195ca7134314bdd4bf01e9c5f910b3b452bb0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/lua/ros2_v4.json",
+      "sha256": "6a99fafec9f4c60c138ce99e7827c24de75c3baf6ffdcf3efd54a7d195ceb8fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/py/ros1_demo_v3.json",
+      "sha256": "4c0588e7d3ef5bb2591d11c1910de9c3427515d749d2abc8652d9eb628b9f029"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/py/ros1_demo_v4.json",
+      "sha256": "2e8c22c29d5271afd046b50aee03be5149d7a3f7f75c14fbd601b368309b123e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/py/ros1_v3.json",
+      "sha256": "9b94176175c03cd7d86b8b1855cddbb8f6ec7de283bc202596106e5ccdd5ff60"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/py/ros1_v4.json",
+      "sha256": "5a9f05b7108d5c0a43414b97a473d26e4e37b9340135f7a04ebba0d31ed5b0fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/bundles/py/ros2_v4.json",
+      "sha256": "47836a99f0dea3ccd1613ad4378a08ce222f9155cbe2c2bd6530a00320605d9e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/catalog.json",
+      "sha256": "66e6eb01340169b40d94e1252a8a0abc7e4189a67b4310e13e6d5bb82cff4c0b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/ir.json",
+      "sha256": "5a9ec8884089dcfed63e9269a98f23bd394cc2c2351228fe86251d596ff83530"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/AI.srv",
+      "sha256": "23734ae1c009666c384ea356a962b69bca9a381f7161a3e477bd2988f1895c92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/AO.srv",
+      "sha256": "36a6936f8a382f097a2061e4cd8f397961a0d4556c82f92dba708c9fbfa51ef7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/AOExecute.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/AccJ.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/AccL.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Arc.srv",
+      "sha256": "8e4fb9617099abef30c7a392e3cfb380a54d7db806d166701fc775d973f06ceb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Arch.srv",
+      "sha256": "55be9ba6a9e32dc95a3f95cf5a400466b564ffa3923256bad58c9ea69f22a079"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/BrakeControl.srv",
+      "sha256": "8c8eadfce46088c226ba013e4a51dd14bef0f44794cf75dffeb87a6d92297b38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/CP.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Circle.srv",
+      "sha256": "db3c0b8ad4de6f1bb82436337cb80dabfa4921b8dabadd83a445a948e4e1f0d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ClearError.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ContinueScript.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Continues.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DI.srv",
+      "sha256": "3e1e5d28fadc9f556bc74c7f1f15dda102923aa36db6114bdbe0b1e989d8d794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DIGroup.srv",
+      "sha256": "c736f5c14dea196233772b614b2a109c8cc429f772dd5abdbb55e6b4e53b3109"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DO.srv",
+      "sha256": "c9ac3200ba34f53339ad46812f8267e3ae3eba2080b5b9c96cb0bde7183d007b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DOExecute.srv",
+      "sha256": "c9ac3200ba34f53339ad46812f8267e3ae3eba2080b5b9c96cb0bde7183d007b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DOGroup.srv",
+      "sha256": "c736f5c14dea196233772b614b2a109c8cc429f772dd5abdbb55e6b4e53b3109"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DigitalOutputs.srv",
+      "sha256": "f9f7c34050c6675e686dfd130e9f8b218306c3a5845397888f8d29af3b4acf1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/DisableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/EmergencyStop.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/EnableRobot.srv",
+      "sha256": "55a2281098acd10ddaa0a8837d7c578c4b68cf115953a067c2adfc4b2c48ec0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetAngle.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetCoils.srv",
+      "sha256": "ad7aa3be2f0da3dce967806dee2fd9fc055809e838b88b6bcfbe23953eb47f7d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetErrorID.srv",
+      "sha256": "a692a730e49f07378731fa9de59eb836dc9591d4341dfe19f3060d28509c04d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetHoldRegs.srv",
+      "sha256": "c8bec67f20ddd6c2e9605cccec5974819d0ca786809586a095479ac0a19a8400"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetInBits.srv",
+      "sha256": "ad7aa3be2f0da3dce967806dee2fd9fc055809e838b88b6bcfbe23953eb47f7d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetInRegs.srv",
+      "sha256": "2073366d77867a2ec81da3ff9d287b1eff46f20cdad9704a636c273f03bfc9b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetPathStartPose.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetPose.srv",
+      "sha256": "78ae3f338152221052f27e24e9f494849a95f26579af3fbe2a90b38e6c0cac4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetSixForceData.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetTerminal485.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/GetTraceStartPose.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/HandleTrajPoints.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/InverseSolution.srv",
+      "sha256": "5bf353c944b073dde0eeae2e8a6268a949ff0aa7b8ffd5f4c48772bab6277139"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/JointMovJ.srv",
+      "sha256": "662baf013a386be8037c20ccd9f82978af83501fd690371d6f86a311e7829f8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Jump.srv",
+      "sha256": "e1599de6eb2e5646b5234dbaa561fe847cece270f38016b81abcc3db10a9b012"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/LimZ.srv",
+      "sha256": "b3a52216a221cba52d968028f58de4643ac14cc25544160f5b57e4b2d6855202"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/LoadSwitch.srv",
+      "sha256": "d20069bc494de21f5b5f6f5ecf8fa970f4097bf041f91640369d6d06c521aee2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ModbusClose.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ModbusCreate.srv",
+      "sha256": "c4e5caed63a9d8d7d4d6f5f7ab791d408864052452c9f6ea79135df53dce8a5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MovJ.srv",
+      "sha256": "342f8d512470abdaa009069259399d9b8e49abe9d1397362256f1b61565ef19f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MovJExt.srv",
+      "sha256": "50860efd3bdce7383f7b1593673e5c40617819ba4b5b3a21243f1fc512dbdd0f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MovJIO.srv",
+      "sha256": "7e709e46a245ac4d8482298c4e8b241113def84db03cd0658d6cfbbef329aefc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MovL.srv",
+      "sha256": "342f8d512470abdaa009069259399d9b8e49abe9d1397362256f1b61565ef19f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MovLIO.srv",
+      "sha256": "de2fd821b5e06adbd3d0440769c9d9fba24c90fd1334c10f00122e8c6a401e6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/MoveJog.srv",
+      "sha256": "0d5bb9bcf16db0367fba741164b636e8e91f68036087c7fe86612c51356d51fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/PauseScript.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/PayLoad.srv",
+      "sha256": "349e644811d9db7d159744da8e540122a1275b8e5c987bc5340d5d46c48da20d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/PositiveSolution.srv",
+      "sha256": "617b48d19b27733010591cc9ee0ef2b225958dd7d8bc7b977149951d5e5209c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/PowerOn.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelJointMovJ.srv",
+      "sha256": "7bdf10cfe3c6e2cc873e8eaad5fe425a527606f0ed35590bc7bc97157d3c6d24"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovJ.srv",
+      "sha256": "e1599de6eb2e5646b5234dbaa561fe847cece270f38016b81abcc3db10a9b012"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovJTool.srv",
+      "sha256": "0af93208833fdcdc41ee5ecc82392e823ff737a7fca4a2f52411f60b97168520"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovJUser.srv",
+      "sha256": "78706f731a6dd711a4477af8f6181d7b3d22ad470e726148bc1d4f5675480e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovL.srv",
+      "sha256": "f3cd043ee3c1152d5dd6ec7f752ef6ce0d43b37facf0ca282206119f2201b0ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovLTool.srv",
+      "sha256": "0af93208833fdcdc41ee5ecc82392e823ff737a7fca4a2f52411f60b97168520"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RelMovLUser.srv",
+      "sha256": "78706f731a6dd711a4477af8f6181d7b3d22ad470e726148bc1d4f5675480e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ResetRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RobotMode.srv",
+      "sha256": "8d6a42cc6e96eb32b31de7300a801f7481d8a1c2de6135a619ea5bc13e87a087"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/RunScript.srv",
+      "sha256": "9568046e84da3b786f409d44f5c8c4879d84969efb6cf558135ef018247cb09a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ServoJ.srv",
+      "sha256": "7e0e79580d2340c915cbccf554392aa89883b46976f5cef9d19347dd7fec4134"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ServoP.srv",
+      "sha256": "f4acdf63f86fe02d5d52dd06c0bd3de77a4930a85b5bf787f6c3176c71919f92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetArmOrientation.srv",
+      "sha256": "b946bfbee3e8a333afb2480687784adf31c276a81f7e90efa49ab8eebbb9b4aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetCoils.srv",
+      "sha256": "4e6c715011d1009f20c38510defc9ac78b2f79ba1f09ff388ba2efb71355821f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetCollideDrag.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetCollisionLevel.srv",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetHoldRegs.srv",
+      "sha256": "7c32d11245dd6a7b8f42f7a9bda856d4f87ed70c724bdb29dff9a32c106a136b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetObstacleAvoid.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetPayload.srv",
+      "sha256": "7e8ad2066ff4c4c034c75809db04f5a1c9c5b4b5db164c26607625c57565d531"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetSafeSkin.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetTerminal485.srv",
+      "sha256": "c02ac175f5dd0f5fa104f35a77329b5492b87e1bd2c02dd1ee4c63cb6a600606"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SetTerminalKeys.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SpeedFactor.srv",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SpeedJ.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SpeedL.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StartDrag.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StartFCTrace.srv",
+      "sha256": "24538bab41083d0c95178eb642ec242513e31ca77a00fd48c2f88d172f9f18f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StartPath.srv",
+      "sha256": "50c9102dadebd60cbfc468bbceb77afb868a59ab2bd7c5536161626d710727ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StartTrace.srv",
+      "sha256": "24538bab41083d0c95178eb642ec242513e31ca77a00fd48c2f88d172f9f18f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StopDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StopScript.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/StopmoveJog.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Sync.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/SyncAll.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/TCPSpeed.srv",
+      "sha256": "3691bf34734726d6eea121cb42bb1b3845a7578375d08ad06967705a13e02b41"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/TCPSpeedEnd.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Tool.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ToolAI.srv",
+      "sha256": "23734ae1c009666c384ea356a962b69bca9a381f7161a3e477bd2988f1895c92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ToolDI.srv",
+      "sha256": "3e1e5d28fadc9f556bc74c7f1f15dda102923aa36db6114bdbe0b1e989d8d794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ToolDO.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/ToolDOExecute.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/User.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/Wait.srv",
+      "sha256": "550c3da02dd3d0d50214b5636c5ae3ea2ecd423dc7128dea39c6d4afd4797cba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/rosdemo_v3/srv/pause.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v3/source-lock.json",
+      "sha256": "f69063924a41c9c392d7290215f51ea169603e2b22947b4d06ccee1a67da7602"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/catalog.json",
+      "sha256": "9c2cd52c5e29bdb6329c29d8a34f9d81f3af4e9f58b4fa30eb3c01e553622aa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/ir.json",
+      "sha256": "91ccdc7fc98ad3f61c3c7b9119f27e12fa24874a3c28de1d644ba2784cc4580d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/AI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/AO.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/AOInstant.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/AccJ.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/AccL.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Arc.srv",
+      "sha256": "f03c64b77d90311c32233a68ce57e44415857fcadb5b7e94756de9f70a596df4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/BrakeControl.srv",
+      "sha256": "8c8eadfce46088c226ba013e4a51dd14bef0f44794cf75dffeb87a6d92297b38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/CP.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/CalcTool.srv",
+      "sha256": "49568bfbacff884a1db9da9370ed080195dbf893698e76cfaf315f4b7b87ae3b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/CalcUser.srv",
+      "sha256": "8eb8a4452fbd1f3e58413d02ca57606f17e04a7cd41a3b76e3162a0959d05fa4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Circle.srv",
+      "sha256": "86c25af52883b4b446d8bace4c387accf9b5f3ec7127a556aff9e00499811ef4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ClearError.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Continue.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DIGroup.srv",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DO.srv",
+      "sha256": "2311b2905316e6e591a22865eca8ef1a931205da6b191cd8a94ce215af827824"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DOGroup.srv",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DisableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/DragSensivity.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/EmergencyStop.srv",
+      "sha256": "9ac2aa5fe5a9da66f3ca2c2a18284f17a2aa75639e815f983fae3cfd81e240cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/EnableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/EnableSafeSkin.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetAO.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetAngle.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetCoils.srv",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetCurrentCommandId.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetDO.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetDOGroup.srv",
+      "sha256": "0541364eb2cc7c3a83019cf5c3a3898073c73287d6bd97863c627db5f6f7d9bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetErrorID.srv",
+      "sha256": "ea39c930bae2109969e1d1538552f23957c0908e7d0d3168e0019a609058e44e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetHoldRegs.srv",
+      "sha256": "74795918e074dd3dc687dab1c348fe4def2648bbb9a9fcbea823e2c2f7262927"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetInBits.srv",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetInRegs.srv",
+      "sha256": "810b04a57869525ed11dbef76898ccb3394f1228fa2382b726df8c5f4f521758"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetInputBool.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetInputFloat.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetInputInt.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetOutputBool.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetOutputFloat.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetOutputInt.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetPose.srv",
+      "sha256": "5879396e119e28699e7ff67eeffff8e347578dc23c81c72780b691cefb65e049"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/GetStartPose.srv",
+      "sha256": "df6c9afc3f4376652be6705a398e82a322fd803db3cb06735379768b7879553d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/InverseKin.srv",
+      "sha256": "dc980a99144e05fbe3d4eb7bd05f8b24075a5b0d6e4d41c6fdd817e51ed43a13"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/InverseSolution.srv",
+      "sha256": "0dc6b38298c3f3f6ddceb003174b3bd4cbcf09d6bdbf94d886386a48fbb9a84b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ModbusClose.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ModbusCreate.srv",
+      "sha256": "63235a5e002fc159134f4d3798c8a0fc4a2bace438e3468f1a220002e7ac785a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ModbusRTUCreate.srv",
+      "sha256": "1c668ebf1a100c868c6e7ba1b259d1d8db2814a204bdc0a26fa60150f0b0415a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/MovJ.srv",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/MovJIO.srv",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/MovL.srv",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/MovLIO.srv",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/MoveJog.srv",
+      "sha256": "0d5bb9bcf16db0367fba741164b636e8e91f68036087c7fe86612c51356d51fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Pause.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/PositiveKin.srv",
+      "sha256": "6a0b126c1ddaf26eb31348953e876e59a1f772a31d1b5796bdf03d3e54b8f341"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/PowerOn.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RelJointMovJ.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RelMovJTool.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RelMovJUser.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RelMovLTool.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RelMovLUser.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RobotMode.srv",
+      "sha256": "8d6a42cc6e96eb32b31de7300a801f7481d8a1c2de6135a619ea5bc13e87a087"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/RunScript.srv",
+      "sha256": "9568046e84da3b786f409d44f5c8c4879d84969efb6cf558135ef018247cb09a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ServoJ.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ServoP.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetBackDistance.srv",
+      "sha256": "02e1a1a796cbd95aaf8878d9bed6a5780cafcb560b63cbd9a9905d0eae1fdbc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetCoils.srv",
+      "sha256": "aec4724fd06cc04c726523b333a427ba54f509ee2097e1cdb1dbb62de616e9f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetCollisionLevel.srv",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetHoldRegs.srv",
+      "sha256": "d2866e090f00726bc4626c6f2572f249dbfcf400813d3e28403e4e8a3b2b01b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetOutputBool.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetOutputFloat.srv",
+      "sha256": "8de6326a303983a47b8006f57a7790d387234510c9de76a20dc5f54e4d39fc46"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetOutputInt.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetPayload.srv",
+      "sha256": "8c364eee3d61bc00a1b3179d0c81d8655c24a5aea6ba01e74bdb155f8b70627e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetPostCollisionMode.srv",
+      "sha256": "7838512d90223c4e10955dee1a1b22d52f1a254ac3a9c157597beda72d0196e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetSafeSkin.srv",
+      "sha256": "f1359d4a02b230df980d8ff29a461b45b1c0fd3dc528b0b393a6f63a1340464f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetSafeWallEnable.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetTool.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetTool485.srv",
+      "sha256": "4b1e92876d5385125e35bab4d05aa389e3615089a0d015025a1aa3442145f321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetToolMode.srv",
+      "sha256": "85a497adc59ff51e46ce24081457516ad0071f0fe9feb38981803604ce6ddfeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetToolPower.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SetUser.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/SpeedFactor.srv",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/StartDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/StartPath.srv",
+      "sha256": "aae17a7c419f847292a423317407b8500c9e627b57c5c222583e4938a39e83c3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Stop.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/StopDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/StopMoveJog.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/TcpDashboard.srv",
+      "sha256": "f71eb9a763d355d7e99b6a19dd5b4dda3be9e9a4e438b7e2be67ff6e961f643c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/Tool.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ToolAI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ToolDI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ToolDO.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/ToolDOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/User.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/VelJ.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/rosdemo_v4/srv/VelL.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_demo_v4/source-lock.json",
+      "sha256": "4700de3246031646c9d468d60c1d7844a32139263bed0fae1875b0a44f37dea1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/catalog.json",
+      "sha256": "eb667e69f475b0c19f42b3652bb74514965203055ea0914f335c5b178d8be6a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/msg/RobotStatus.msg",
+      "sha256": "8c1e59d51e0b18be1911a4da8b63e3e74f8ab3d874b943eb50805f8d3d126513"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/msg/ToolVectorActual.msg",
+      "sha256": "efea2cfebe14ce3bf673ca0b233d4c510f79513e6caabcbe6d17f4d84c1ed917"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/AI.srv",
+      "sha256": "23734ae1c009666c384ea356a962b69bca9a381f7161a3e477bd2988f1895c92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/AO.srv",
+      "sha256": "36a6936f8a382f097a2061e4cd8f397961a0d4556c82f92dba708c9fbfa51ef7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/AOExecute.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/AccJ.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/AccL.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Arc.srv",
+      "sha256": "8e4fb9617099abef30c7a392e3cfb380a54d7db806d166701fc775d973f06ceb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Arch.srv",
+      "sha256": "55be9ba6a9e32dc95a3f95cf5a400466b564ffa3923256bad58c9ea69f22a079"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/BrakeControl.srv",
+      "sha256": "8c8eadfce46088c226ba013e4a51dd14bef0f44794cf75dffeb87a6d92297b38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/CP.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Circle.srv",
+      "sha256": "db3c0b8ad4de6f1bb82436337cb80dabfa4921b8dabadd83a445a948e4e1f0d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ClearError.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ContinueScript.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Continues.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DI.srv",
+      "sha256": "3e1e5d28fadc9f556bc74c7f1f15dda102923aa36db6114bdbe0b1e989d8d794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DIGroup.srv",
+      "sha256": "c736f5c14dea196233772b614b2a109c8cc429f772dd5abdbb55e6b4e53b3109"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DO.srv",
+      "sha256": "c9ac3200ba34f53339ad46812f8267e3ae3eba2080b5b9c96cb0bde7183d007b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DOExecute.srv",
+      "sha256": "c9ac3200ba34f53339ad46812f8267e3ae3eba2080b5b9c96cb0bde7183d007b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DOGroup.srv",
+      "sha256": "c736f5c14dea196233772b614b2a109c8cc429f772dd5abdbb55e6b4e53b3109"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DigitalOutputs.srv",
+      "sha256": "f9f7c34050c6675e686dfd130e9f8b218306c3a5845397888f8d29af3b4acf1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/DisableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/EmergencyStop.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/EnableRobot.srv",
+      "sha256": "55a2281098acd10ddaa0a8837d7c578c4b68cf115953a067c2adfc4b2c48ec0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetAngle.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetCoils.srv",
+      "sha256": "ad7aa3be2f0da3dce967806dee2fd9fc055809e838b88b6bcfbe23953eb47f7d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetErrorID.srv",
+      "sha256": "a692a730e49f07378731fa9de59eb836dc9591d4341dfe19f3060d28509c04d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetHoldRegs.srv",
+      "sha256": "e39314250ec599f847e77a4c71db442462d1ead2ab76fe986b7086b6a94165e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetInBits.srv",
+      "sha256": "ad7aa3be2f0da3dce967806dee2fd9fc055809e838b88b6bcfbe23953eb47f7d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetInRegs.srv",
+      "sha256": "2073366d77867a2ec81da3ff9d287b1eff46f20cdad9704a636c273f03bfc9b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetPathStartPose.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetPose.srv",
+      "sha256": "78ae3f338152221052f27e24e9f494849a95f26579af3fbe2a90b38e6c0cac4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetSixForceData.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetTerminal485.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/GetTraceStartPose.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/HandleTrajPoints.srv",
+      "sha256": "2d7b7b1269e290c5e2dba003e2304f5fdaaa161984d0b4f08015a8ed56c5544d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/InverseSolution.srv",
+      "sha256": "5bf353c944b073dde0eeae2e8a6268a949ff0aa7b8ffd5f4c48772bab6277139"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/JointMovJ.srv",
+      "sha256": "662baf013a386be8037c20ccd9f82978af83501fd690371d6f86a311e7829f8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Jump.srv",
+      "sha256": "e1599de6eb2e5646b5234dbaa561fe847cece270f38016b81abcc3db10a9b012"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/LimZ.srv",
+      "sha256": "b3a52216a221cba52d968028f58de4643ac14cc25544160f5b57e4b2d6855202"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/LoadSwitch.srv",
+      "sha256": "d20069bc494de21f5b5f6f5ecf8fa970f4097bf041f91640369d6d06c521aee2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ModbusClose.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ModbusCreate.srv",
+      "sha256": "c4e5caed63a9d8d7d4d6f5f7ab791d408864052452c9f6ea79135df53dce8a5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MovJ.srv",
+      "sha256": "342f8d512470abdaa009069259399d9b8e49abe9d1397362256f1b61565ef19f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MovJExt.srv",
+      "sha256": "50860efd3bdce7383f7b1593673e5c40617819ba4b5b3a21243f1fc512dbdd0f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MovJIO.srv",
+      "sha256": "7e709e46a245ac4d8482298c4e8b241113def84db03cd0658d6cfbbef329aefc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MovL.srv",
+      "sha256": "342f8d512470abdaa009069259399d9b8e49abe9d1397362256f1b61565ef19f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MovLIO.srv",
+      "sha256": "de2fd821b5e06adbd3d0440769c9d9fba24c90fd1334c10f00122e8c6a401e6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/MoveJog.srv",
+      "sha256": "0d5bb9bcf16db0367fba741164b636e8e91f68036087c7fe86612c51356d51fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/PauseScript.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/PayLoad.srv",
+      "sha256": "349e644811d9db7d159744da8e540122a1275b8e5c987bc5340d5d46c48da20d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/PositiveSolution.srv",
+      "sha256": "617b48d19b27733010591cc9ee0ef2b225958dd7d8bc7b977149951d5e5209c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/PowerOn.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelJointMovJ.srv",
+      "sha256": "7bdf10cfe3c6e2cc873e8eaad5fe425a527606f0ed35590bc7bc97157d3c6d24"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovJ.srv",
+      "sha256": "e1599de6eb2e5646b5234dbaa561fe847cece270f38016b81abcc3db10a9b012"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovJTool.srv",
+      "sha256": "0af93208833fdcdc41ee5ecc82392e823ff737a7fca4a2f52411f60b97168520"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovJUser.srv",
+      "sha256": "78706f731a6dd711a4477af8f6181d7b3d22ad470e726148bc1d4f5675480e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovL.srv",
+      "sha256": "f3cd043ee3c1152d5dd6ec7f752ef6ce0d43b37facf0ca282206119f2201b0ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovLTool.srv",
+      "sha256": "0af93208833fdcdc41ee5ecc82392e823ff737a7fca4a2f52411f60b97168520"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RelMovLUser.srv",
+      "sha256": "78706f731a6dd711a4477af8f6181d7b3d22ad470e726148bc1d4f5675480e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ResetRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RobotMode.srv",
+      "sha256": "8d6a42cc6e96eb32b31de7300a801f7481d8a1c2de6135a619ea5bc13e87a087"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/RunScript.srv",
+      "sha256": "9568046e84da3b786f409d44f5c8c4879d84969efb6cf558135ef018247cb09a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ServoJ.srv",
+      "sha256": "7e0e79580d2340c915cbccf554392aa89883b46976f5cef9d19347dd7fec4134"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ServoJParam.srv",
+      "sha256": "cfdf5f662a9472ab39741a538c46037064fb32dca642a1ae9e3cecb13e09ab7c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ServoP.srv",
+      "sha256": "f4acdf63f86fe02d5d52dd06c0bd3de77a4930a85b5bf787f6c3176c71919f92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetArmOrientation.srv",
+      "sha256": "b946bfbee3e8a333afb2480687784adf31c276a81f7e90efa49ab8eebbb9b4aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetCoils.srv",
+      "sha256": "4e6c715011d1009f20c38510defc9ac78b2f79ba1f09ff388ba2efb71355821f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetCollideDrag.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetCollisionLevel.srv",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetHoldRegs.srv",
+      "sha256": "7c32d11245dd6a7b8f42f7a9bda856d4f87ed70c724bdb29dff9a32c106a136b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetObstacleAvoid.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetPayload.srv",
+      "sha256": "7e8ad2066ff4c4c034c75809db04f5a1c9c5b4b5db164c26607625c57565d531"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetSafeSkin.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetTerminal485.srv",
+      "sha256": "c02ac175f5dd0f5fa104f35a77329b5492b87e1bd2c02dd1ee4c63cb6a600606"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SetTerminalKeys.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SpeedFactor.srv",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SpeedJ.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SpeedL.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StartDrag.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StartFCTrace.srv",
+      "sha256": "24538bab41083d0c95178eb642ec242513e31ca77a00fd48c2f88d172f9f18f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StartPath.srv",
+      "sha256": "50c9102dadebd60cbfc468bbceb77afb868a59ab2bd7c5536161626d710727ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StartTrace.srv",
+      "sha256": "24538bab41083d0c95178eb642ec242513e31ca77a00fd48c2f88d172f9f18f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StopDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StopScript.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/StopmoveJog.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Sync.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/SyncAll.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/TCPSpeed.srv",
+      "sha256": "3691bf34734726d6eea121cb42bb1b3845a7578375d08ad06967705a13e02b41"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/TCPSpeedEnd.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/TcpDashboard.srv",
+      "sha256": "77172ba9c2de551bdb94520ae2bf6878872b12fab37485a58aa3b025bfadc7b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/TcpRealData.srv",
+      "sha256": "a24050331a80927feed2f92bac9289a62e64619964c65836eb2308bbeb25a9a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Tool.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ToolAI.srv",
+      "sha256": "23734ae1c009666c384ea356a962b69bca9a381f7161a3e477bd2988f1895c92"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ToolDI.srv",
+      "sha256": "3e1e5d28fadc9f556bc74c7f1f15dda102923aa36db6114bdbe0b1e989d8d794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ToolDO.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/ToolDOExecute.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/User.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/Wait.srv",
+      "sha256": "550c3da02dd3d0d50214b5636c5ae3ea2ecd423dc7128dea39c6d4afd4797cba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/dobot_bringup/srv/pause.srv",
+      "sha256": "b942ef8139aafb2081d6fc291682cf4737cdb5b59d5f1e9fc071f33f8bc213d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/ir.json",
+      "sha256": "389b0a1c3ddb26cf8467ea17807e005f565c00d0716c0809fdd2c74e87c0d833"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v3/source-lock.json",
+      "sha256": "bbf84a39f3ffdae94085d75882744e7aa07412e2e964067520014e02941284d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/catalog.json",
+      "sha256": "2516cdeada8b4a8b7cb661090eb2c2a90cd2e986422203641380f55061606d6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/msg/RobotStatus.msg",
+      "sha256": "8c1e59d51e0b18be1911a4da8b63e3e74f8ab3d874b943eb50805f8d3d126513"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/msg/ToolVectorActual.msg",
+      "sha256": "efea2cfebe14ce3bf673ca0b233d4c510f79513e6caabcbe6d17f4d84c1ed917"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/AI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/AO.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/AOInstant.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/AccJ.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/AccL.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Arc.srv",
+      "sha256": "f03c64b77d90311c32233a68ce57e44415857fcadb5b7e94756de9f70a596df4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/BrakeControl.srv",
+      "sha256": "8c8eadfce46088c226ba013e4a51dd14bef0f44794cf75dffeb87a6d92297b38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/CP.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/CalcTool.srv",
+      "sha256": "49568bfbacff884a1db9da9370ed080195dbf893698e76cfaf315f4b7b87ae3b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/CalcUser.srv",
+      "sha256": "8eb8a4452fbd1f3e58413d02ca57606f17e04a7cd41a3b76e3162a0959d05fa4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Circle.srv",
+      "sha256": "86c25af52883b4b446d8bace4c387accf9b5f3ec7127a556aff9e00499811ef4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ClearError.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Continue.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DIGroup.srv",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DO.srv",
+      "sha256": "2311b2905316e6e591a22865eca8ef1a931205da6b191cd8a94ce215af827824"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DOGroup.srv",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DisableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/DragSensivity.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/EmergencyStop.srv",
+      "sha256": "9ac2aa5fe5a9da66f3ca2c2a18284f17a2aa75639e815f983fae3cfd81e240cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/EnableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/EnableSafeSkin.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetAO.srv",
+      "sha256": "455cc2a5192a242296d47161cb98aab1dd0dcf7d7eb19e5bf0571bc450776945"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetAngle.srv",
+      "sha256": "4a6588b846abc3244a1f4034bdcad046691d1cab44c37bd5f455b846fc2b86e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetCoils.srv",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetCurrentCommandId.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetDO.srv",
+      "sha256": "455cc2a5192a242296d47161cb98aab1dd0dcf7d7eb19e5bf0571bc450776945"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetDOGroup.srv",
+      "sha256": "f2d43f474d03bd9c531eec204450b2cbfb88f3763f6a1dfc786de7d391a620a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetErrorID.srv",
+      "sha256": "ea39c930bae2109969e1d1538552f23957c0908e7d0d3168e0019a609058e44e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetHoldRegs.srv",
+      "sha256": "74795918e074dd3dc687dab1c348fe4def2648bbb9a9fcbea823e2c2f7262927"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetInBits.srv",
+      "sha256": "417c48901d05e4016aa13ff6883aa32f528197a8b3cc2867c481f61e553059b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetInRegs.srv",
+      "sha256": "810b04a57869525ed11dbef76898ccb3394f1228fa2382b726df8c5f4f521758"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetInputBool.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetInputFloat.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetInputInt.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetOutputBool.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetOutputFloat.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetOutputInt.srv",
+      "sha256": "2721756bfede5f9f7817611e4c6b98628e73b4f458b787f87eb2db69456dc9a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetPose.srv",
+      "sha256": "4a6588b846abc3244a1f4034bdcad046691d1cab44c37bd5f455b846fc2b86e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/GetStartPose.srv",
+      "sha256": "df6c9afc3f4376652be6705a398e82a322fd803db3cb06735379768b7879553d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/InverseKin.srv",
+      "sha256": "dc980a99144e05fbe3d4eb7bd05f8b24075a5b0d6e4d41c6fdd817e51ed43a13"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/InverseSolution.srv",
+      "sha256": "0dc6b38298c3f3f6ddceb003174b3bd4cbcf09d6bdbf94d886386a48fbb9a84b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ModbusClose.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ModbusCreate.srv",
+      "sha256": "63235a5e002fc159134f4d3798c8a0fc4a2bace438e3468f1a220002e7ac785a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ModbusRTUCreate.srv",
+      "sha256": "1c668ebf1a100c868c6e7ba1b259d1d8db2814a204bdc0a26fa60150f0b0415a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/MovJ.srv",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/MovJIO.srv",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/MovL.srv",
+      "sha256": "9ac604cbf05d81e791a91ac67a5d23ecba7ad7227a0b71c8c306d0cdbf58e8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/MovLIO.srv",
+      "sha256": "e3a240a72a1638fbbbdf8c283f4d031e3ee304f691471c4a5ac06cc67861b810"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/MoveJog.srv",
+      "sha256": "0d5bb9bcf16db0367fba741164b636e8e91f68036087c7fe86612c51356d51fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Pause.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/PositiveKin.srv",
+      "sha256": "6a0b126c1ddaf26eb31348953e876e59a1f772a31d1b5796bdf03d3e54b8f341"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/PowerOn.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RelJointMovJ.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RelMovJTool.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RelMovJUser.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RelMovLTool.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RelMovLUser.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RobotMode.srv",
+      "sha256": "8d6a42cc6e96eb32b31de7300a801f7481d8a1c2de6135a619ea5bc13e87a087"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/RunScript.srv",
+      "sha256": "9568046e84da3b786f409d44f5c8c4879d84969efb6cf558135ef018247cb09a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ServoJ.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ServoP.srv",
+      "sha256": "f63768db2c278183fd70bd1026f9caa8b0ab642ca5283218c576461689205db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetBackDistance.srv",
+      "sha256": "02e1a1a796cbd95aaf8878d9bed6a5780cafcb560b63cbd9a9905d0eae1fdbc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetCoils.srv",
+      "sha256": "aec4724fd06cc04c726523b333a427ba54f509ee2097e1cdb1dbb62de616e9f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetCollisionLevel.srv",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetHoldRegs.srv",
+      "sha256": "d2866e090f00726bc4626c6f2572f249dbfcf400813d3e28403e4e8a3b2b01b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetOutputBool.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetOutputFloat.srv",
+      "sha256": "8de6326a303983a47b8006f57a7790d387234510c9de76a20dc5f54e4d39fc46"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetOutputInt.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetPayload.srv",
+      "sha256": "8c364eee3d61bc00a1b3179d0c81d8655c24a5aea6ba01e74bdb155f8b70627e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetPostCollisionMode.srv",
+      "sha256": "7838512d90223c4e10955dee1a1b22d52f1a254ac3a9c157597beda72d0196e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetSafeSkin.srv",
+      "sha256": "f1359d4a02b230df980d8ff29a461b45b1c0fd3dc528b0b393a6f63a1340464f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetSafeWallEnable.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetTool.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetTool485.srv",
+      "sha256": "4b1e92876d5385125e35bab4d05aa389e3615089a0d015025a1aa3442145f321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetToolMode.srv",
+      "sha256": "85a497adc59ff51e46ce24081457516ad0071f0fe9feb38981803604ce6ddfeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetToolPower.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SetUser.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/SpeedFactor.srv",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/StartDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/StartPath.srv",
+      "sha256": "aae17a7c419f847292a423317407b8500c9e627b57c5c222583e4938a39e83c3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Stop.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/StopDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/StopMoveJog.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/TcpDashboard.srv",
+      "sha256": "f71eb9a763d355d7e99b6a19dd5b4dda3be9e9a4e438b7e2be67ff6e961f643c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/Tool.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ToolAI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ToolDI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ToolDO.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/ToolDOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/User.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/VelJ.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/dobot_v4_bringup/srv/VelL.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/ir.json",
+      "sha256": "5b740aba93ca1b237dafff1174129bc8073406d7bc796c2052df5c3ccd7ce458"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros1_v4/source-lock.json",
+      "sha256": "05945840a3412353b583bcf7650efcd3de9cc731acd6ceae5ef9ed65c63deceb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/catalog.json",
+      "sha256": "32971ff714f6e455890911f2c1d21f33204af9613a19d2e34ea17ac870c62940"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/msg/RobotStatus.msg",
+      "sha256": "1ec166dc668196f7f34f2cb41726c021019be19328d434c90a5ba85015998bba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/msg/ToolVectorActual.msg",
+      "sha256": "efea2cfebe14ce3bf673ca0b233d4c510f79513e6caabcbe6d17f4d84c1ed917"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/AI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/AO.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/AOInstant.srv",
+      "sha256": "1d269a1914ea70b062cb407d4bf49645af186ea0281276d2c3dfc2e4d624c9a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/AccJ.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/AccL.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Arc.srv",
+      "sha256": "03db06ac5eca73d53a802e9740d365afd7a09a8d514b863a88340558536a4c11"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/BrakeControl.srv",
+      "sha256": "f9ee0a99612ae5d81e6164e17d370b0e45bb004de8b30ba9d20376fb28b3efae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CP.srv",
+      "sha256": "4f20a31fe4d954c9599d30d331fd5db7f395eb0603a53d0f12018b115c84b710"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CalcTool.srv",
+      "sha256": "49568bfbacff884a1db9da9370ed080195dbf893698e76cfaf315f4b7b87ae3b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CalcUser.srv",
+      "sha256": "8eb8a4452fbd1f3e58413d02ca57606f17e04a7cd41a3b76e3162a0959d05fa4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CheckOddMovC.srv",
+      "sha256": "d00f79cedd6ee561907382bec179f1f2ef77b7fadc223ab52dfa53ccf77c3e8a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CheckOddMovJ.srv",
+      "sha256": "a27429261da37a581988af56854df3ae783e3b68d58a7c588be85223cd09b79c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/CheckOddMovL.srv",
+      "sha256": "a27429261da37a581988af56854df3ae783e3b68d58a7c588be85223cd09b79c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Circle.srv",
+      "sha256": "07ba48f81a08dfc803f69ab1fbcd2586db45c1b387a05fc7611ef3fc776d3000"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ClearError.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Continue.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DI.srv",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DIGroup.srv",
+      "sha256": "3390338fdbc59a09797c1f34428f861370c1aefb059b0b36a4bd2791013907f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DIGroupDEC.srv",
+      "sha256": "22cc92192d4a6c1344441d1d05f90015ef9e1f3c335376f96661ec8a522a3d70"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DO.srv",
+      "sha256": "2311b2905316e6e591a22865eca8ef1a931205da6b191cd8a94ce215af827824"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DOGroup.srv",
+      "sha256": "02f35d3f23f6ab7e7cce305eedfec4203fdf4de639341abe3030dee7e382f3e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DOGroupDEC.srv",
+      "sha256": "f6e0053a133210601561ca811bb77998332b73cab0c7e7734e075372fb1c1e5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DisableRobot.srv",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/DragSensivity.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/EmergencyStop.srv",
+      "sha256": "9ac2aa5fe5a9da66f3ca2c2a18284f17a2aa75639e815f983fae3cfd81e240cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/EnableFTSensor.srv",
+      "sha256": "0ade3965474be54ecb1665f9ea40bfc11b70b9b5b031d78952bc1cbbb3cd07af"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/EnableRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/EnableSafeSkin.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/EndRTOffset.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCCollisionSwitch.srv",
+      "sha256": "6db7179042376efb7ad2ea84cf8afef5a98777e25c511b6d40b02bde0ca963c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCForceMode.srv",
+      "sha256": "e24efe3853b3f753ed70c6e623700fe8e05241d33ac5dcc86283a838f7c150cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCOff.srv",
+      "sha256": "8eb413de12f6a73ee57bb4c94addbac5d7efcd28e83b917fc9a3d873a85510da"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetDamping.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetDeviation.srv",
+      "sha256": "90bd4f252277050b1471e106488315824cba08564d7e35a650cc4482287ea7a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetForce.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetForceLimit.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetForceSpeedLimit.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetMass.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/FCSetStiffness.srv",
+      "sha256": "8e15fa13336e747235da6ae4f4594ca742661c6f53c48b504d6cafb1d0fcd0a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ForceDriveMode.srv",
+      "sha256": "04468f8aaa8e36a1574779a57f9535b8e988ca4584b3b903408743193833d1a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ForceDriveSpeed.srv",
+      "sha256": "ee0a125a493a6e26160f855b66d0e0737111127ab975dc31dbd22788219154f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetAO.srv",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetAngle.srv",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetCoils.srv",
+      "sha256": "baa1df95e3643f1c131cc1a059c3c5720580c89419c2b643dfdd0d712296c3a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetCurrentCommandId.srv",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetDO.srv",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetDOGroup.srv",
+      "sha256": "52a0ff938c159908b193dd32f03b0b646bbe23bbe146f389efc448db89265a61"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetDOGroupDEC.srv",
+      "sha256": "22cc92192d4a6c1344441d1d05f90015ef9e1f3c335376f96661ec8a522a3d70"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetError.srv",
+      "sha256": "108e8e343ee340723c04c727dc93668ac2ed2a58541ac655e0e053ef091d8ae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetErrorID.srv",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetForce.srv",
+      "sha256": "032009fe48a5e024731b09f573f783ead35f5192e864fa4c7aaf8b8192fa195b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetHoldRegs.srv",
+      "sha256": "e21956edbebca4651fffbea7c9f39641aafb928b98ac83577df475be19e6b211"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetInBits.srv",
+      "sha256": "baa1df95e3643f1c131cc1a059c3c5720580c89419c2b643dfdd0d712296c3a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetInRegs.srv",
+      "sha256": "787665c48e74fe7e608a04f674c6855dc45d2cbec3f433965c42e508d99d645c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetInputBool.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetInputFloat.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetInputInt.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetOutputBool.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetOutputFloat.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetOutputInt.srv",
+      "sha256": "229076f0b0d01e1c6fd1578281518cab70b31bdd94880e078fecfdbcad869e55"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetPose.srv",
+      "sha256": "2b52b27c9b39b2045d157bf5755d998f951025140d55b9d11139139b7a28e0b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetStartPose.srv",
+      "sha256": "00c39120d7b2129e61a3290b0e085a7a104acde437c6bda7d008471a677c7db8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/GetToolDO.srv",
+      "sha256": "6f86a242b6942a2a1a3b50a59c3547a95c2c2bfa01afe5edbb91001527ec71e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/InverseKin.srv",
+      "sha256": "e14c9579039dda6aa48e0724964b06b2fd284ffafc6bee9e764c0efc7ca90431"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/InverseSolution.srv",
+      "sha256": "0dc6b38298c3f3f6ddceb003174b3bd4cbcf09d6bdbf94d886386a48fbb9a84b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ModbusClose.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ModbusCreate.srv",
+      "sha256": "c0bb9923d4520ec3091b12b85cd248761f76da3f09cde62d48fec86308bbb888"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ModbusRTUCreate.srv",
+      "sha256": "8602c12aad679685964f0e8fb1b328c724273e55463d3d2f2039c63af57d4769"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/MovJ.srv",
+      "sha256": "fb0e41c70f4b7905dac34744e14cd52d6d4f15652a3888b232157edc1a3d5129"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/MovJIO.srv",
+      "sha256": "3b5e6563cad1730b8855346d83e982975b98c491e526d8608fb1c9ed0c8d8ae2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/MovL.srv",
+      "sha256": "fb0e41c70f4b7905dac34744e14cd52d6d4f15652a3888b232157edc1a3d5129"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/MovLIO.srv",
+      "sha256": "3b5e6563cad1730b8855346d83e982975b98c491e526d8608fb1c9ed0c8d8ae2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/MoveJog.srv",
+      "sha256": "46631777536969e5ded2fbaa602ac131d1351d8b9c09e4b55bf5a375e25ac375"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Pause.srv",
+      "sha256": "229584408cca7150f8d1cb7dd0931726dc74de35952aa764ff8d0619cae15970"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/PositiveKin.srv",
+      "sha256": "1ee5356509a49ea0d48e29a6a44d976093a9498241e3d251a5104994938c219a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/PowerOn.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RelJointMovJ.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RelMovJTool.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RelMovJUser.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RelMovLTool.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RelMovLUser.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RequestControl.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ResetRobot.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RobotMode.srv",
+      "sha256": "7cece5d3b3556d7f7d4cd8867a628bbbf118fb48c1a16069291debc53d6598a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RunScript.srv",
+      "sha256": "1186eaab87306ae9001ade14c191c404a548fa27b4cae6e2988dc04f2bb9b1ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/RunTo.srv",
+      "sha256": "4a7995cbe523efe6523c8f29476708c601b2ebd1cdb9fb66877e7b62389545b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ServoJ.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ServoP.srv",
+      "sha256": "9b6992a4aff8eaeb96d12093394eff4b3593a3e75befb48a0afaed85e47e3c54"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetBackDistance.srv",
+      "sha256": "02e1a1a796cbd95aaf8878d9bed6a5780cafcb560b63cbd9a9905d0eae1fdbc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetCoils.srv",
+      "sha256": "48c2ee76cb48acd8b9029b2d3a55dd8a68db6a83b2f395e25864c823cc833afa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetCollisionLevel.srv",
+      "sha256": "27ae0e0a9a1ce83429647f8c1d9b6b2992c2ab54c308c5e286d8e431b049ad79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetFCCollision.srv",
+      "sha256": "06fa86cc301157249f92247c694a7e67d05e36111a7af7cc31e3863596075adb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetHoldRegs.srv",
+      "sha256": "79ae54bd84440a5dada2d0f50002e6c3b9836644a32f6f0a896bb79bca9ac8b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetOutputBool.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetOutputFloat.srv",
+      "sha256": "8de6326a303983a47b8006f57a7790d387234510c9de76a20dc5f54e4d39fc46"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetOutputInt.srv",
+      "sha256": "c638227bd06238ca69145ee7fe1cc8d34c47fd4388dd24426017cbb7ea279bbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetPayload.srv",
+      "sha256": "8c364eee3d61bc00a1b3179d0c81d8655c24a5aea6ba01e74bdb155f8b70627e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetPostCollisionMode.srv",
+      "sha256": "7838512d90223c4e10955dee1a1b22d52f1a254ac3a9c157597beda72d0196e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetSafeSkin.srv",
+      "sha256": "f1359d4a02b230df980d8ff29a461b45b1c0fd3dc528b0b393a6f63a1340464f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetSafeWallEnable.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetTool.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetTool485.srv",
+      "sha256": "4b1e92876d5385125e35bab4d05aa389e3615089a0d015025a1aa3442145f321"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetToolMode.srv",
+      "sha256": "85a497adc59ff51e46ce24081457516ad0071f0fe9feb38981803604ce6ddfeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetToolPower.srv",
+      "sha256": "5f4398ca062184c860aaaaf4e1268df78aa48a573284ebb3d165ae52e5b6d0c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetUser.srv",
+      "sha256": "574de0f4c8f8b1f5ce30f3b7d044a0c427c1d055f2a6be66828fd37b6f045247"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SetWorkZoneEnable.srv",
+      "sha256": "9307a52400ee3a21f20b1fdcfc56090cc5bd2680d4ab8e6c210696bd915edef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SixForceHome.srv",
+      "sha256": "8eb413de12f6a73ee57bb4c94addbac5d7efcd28e83b917fc9a3d873a85510da"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/SpeedFactor.srv",
+      "sha256": "f5655cbfc3f5b30b3004702f2cacde1f14c8763e243133b7a4fdea1209253476"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/StartDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/StartPath.srv",
+      "sha256": "1f84ad5519a1b23940769e96d659b9b4a864f90fe97caab52e4e5297b49a2a68"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/StartRTOffset.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Stop.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/StopDrag.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/StopMoveJog.srv",
+      "sha256": "a1511693d9b57b47a7663a0e03c4bef87629d6af4869e6c067657118b8297371"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/TcpDashboard.srv",
+      "sha256": "f71eb9a763d355d7e99b6a19dd5b4dda3be9e9a4e438b7e2be67ff6e961f643c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/Tool.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ToolAI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ToolDI.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ToolDO.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/ToolDOInstant.srv",
+      "sha256": "ded05438747cc08aa14fd5c148b663a4976724c50bea15a0a29b32aa2ec85e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/User.srv",
+      "sha256": "ead0d0923bde22f1929e5026fa5369a359917bae269f0bf0ce18be1f515bf23a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/VelJ.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/dobot_msgs_v4/srv/VelL.srv",
+      "sha256": "5ae4a385253fa8827925f90f476cf00dacf2573428b11d304ddf212ae2e4b22a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/ir.json",
+      "sha256": "f2a323b21e0562acbb74260f040d2dade536d8a3dc2793594bedd1dd0b68c35d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/catalogs/ros2_v4/source-lock.json",
+      "sha256": "c5304fd4b7377df0f81cf5f6912e27c4edb3bbf7768878e3098b48021dc59011"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/licenses/upstream/ros1/files/LICENSE",
+      "sha256": "c9d6a1346f605762868bd877f1403126c684e4a5f4091d8d43d21b31ade3136f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/licenses/upstream/ros2/files/LICENSE",
+      "sha256": "a55351a1634b6cd46d2ca5555459a245761e11ac9956e3771faf343187cf2132"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/provider.json",
+      "sha256": "8cb22b68eedb0495806d51c2cccdac5862a751a76b378dbe65b87c6fec6579fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/dobot/review-status.json",
+      "sha256": "78bef0200556f6d96afda87079d1cc19c5b39deec0a5ace7cda8fc5a4332d364"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/dobot/provider.lua",
+      "sha256": "8e50fa8f9375e9fec3630cda8a646003649eecabc3c4b7c31a5704aa03fc2d04"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "manual-run.sh",
+      "sha256": "1d440d192851956a6af7fabf3c419c4a3e3f20dba55ec47f5f21c6bd70fb806f"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "d564cc1ffee900606688c38a497ed3f3d814ba6c07a637c22f39f56dd151f11a"
+    },
+    {
+      "scope": "example",
+      "path": "io.c",
+      "sha256": "defaad09cad387ed431cf8026d415145be819d6ebeafd628938e9d387e48ec3c"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "9a8453736809bfb9452428c3d2fcef4cc0a43bb4cc9901e7d6ccb62b171f2d4b"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.c",
+      "sha256": "86d672d0175e8066864a2e8b02daa98f2213750b5b355d2651bc4556a908caad"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm_core.c",
+      "sha256": "a43fa9075576fd3ed103710dba29fb1907b3b499da31b265aa5f73298d278d65"
+    },
+    {
+      "scope": "example",
+      "path": "wrong_signature.c",
+      "sha256": "118dd9962497d881a3d46b9f1cf421cab38fe5e2d81880828f285ddfe02f3db0"
+    },
+    {
+      "scope": "example",
+      "path": "ros_comm.c",
+      "sha256": "95902f0119472656663b8c61d9e5ae9a857648f1d698bb302f8ed8f958c17277"
+    },
+    {
+      "scope": "example",
+      "path": "README.en_US.md",
+      "sha256": "982d26bc3e494783542621a0f812f2f29c6cdfd39dece4ba37a973858b024a56"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "859b4ac68d5da8be7c3250cd52930f9accd46b7ec8bed3877726d0cb0f9b10c5"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "56d1dc8c3fe7ae2ded22cbdfd6565406a37ca9c8b2ece3ba9d25649ed0217aa9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "four-module-ungranted-observation",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "response_present": false,
+        "score": 0,
+        "algorithm_denied": 13,
+        "wire_hex": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "js",
+  "profile": "ros2_humble_v2_2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/js/ros2/flexiv-ros2-humble-v2-2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/flexiv/bundles/js/ros2_humble_v2_2.json"
+}

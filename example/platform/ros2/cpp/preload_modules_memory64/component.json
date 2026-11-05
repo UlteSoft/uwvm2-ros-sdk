@@ -1,0 +1,132 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "explicit-ros-preloads-4051",
+  "preload_modules": [
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "ros_namespace": "ros2",
+  "ros_modules": [
+    "main",
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "test_scope": "Real independent-memory preloads; explicit per-module base WASI/ROS interfaces, no ROS resource grants. The original guest verifies denied handles remain unchanged.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/language/native/abi.h",
+      "sha256": "0c4d0a85a3c6fd930e101745bb7260d73e1dc0d54ffca0f36bcdf5a2dc1c2f41"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "e4ab90044978a5f041fea72a19d5286fb97b318e4df92517ca7bbe0f5777434f"
+    },
+    {
+      "scope": "example",
+      "path": "io.c",
+      "sha256": "79fc602781ac16ab1fb2c5c49f515acf51d904b0ee029fa0309ca5b7dd5a84ff"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "15acc39554386138ccd06f2bbe2692cefac6844ff4f036eb612d40933fed020d"
+    },
+    {
+      "scope": "example",
+      "path": "gateway.conf.in",
+      "sha256": "71dcc777e41a58382e0d423e5303b26b29aff59d8d10a867cad138450e012a75"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.c",
+      "sha256": "be5bf68444c8597074b39b120077366fe6498c4b3b7fe5dc1f15226f047ed339"
+    },
+    {
+      "scope": "example",
+      "path": "ros_comm.c",
+      "sha256": "435ef331bfeba13c49f0b29e2d415773ec656780570058bd55a8d51f8d3a7924"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "3f219c56e251b9687cc43ee94e26066864d9ac50a9b2784353bee5f7b042b460"
+    },
+    {
+      "scope": "example",
+      "path": "modules.json",
+      "sha256": "6dd7f62656fab01c5f83c544f6a9923add24159a75703de6511b396ba2be46c6"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "7954dbc30c9dcc7ed0cc8dde67e635adc01233016915595b78ddf7e484d0eca8"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "c20a6bf174fc9a779279a72e66935f5b5ac8cfe93216c7bd7a3a26dbe3a7ad31"
+    },
+    {
+      "scope": "example",
+      "path": "include/preload_api.h",
+      "sha256": "fe6726a2bcdb295eea75c5292c172f8c5620d3ba44b67e316129dad4419cf5fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/native_ros_std_test.py",
+      "sha256": "2623161ac1bc1b4b7f7bdbc81373357eddea294eef439d0bc6943e2720cee54f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/native_ros_std_component.lua",
+      "sha256": "b2b4bb5076c48150dbc426d9cd57d2e40d9f41a4dd9026eaa75e4d2677426f40"
+    }
+  ],
+  "cases": [
+    {
+      "id": "preloaded-owner-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": ""
+    }
+  ]
+}

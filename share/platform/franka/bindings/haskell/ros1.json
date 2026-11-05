@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "haskell",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/haskell/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "Franka.Ros1.Records",
+          "source": "include/platform/franka/haskell/ros1/franka-ros1-complete/Records.hs"
+        }
+      ]
+    }
+  }
+}

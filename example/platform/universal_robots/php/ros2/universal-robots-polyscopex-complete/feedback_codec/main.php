@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "universal_robots/php/ros2/universal-robots-polyscopex-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\UniversalRobotsUniversalRobotsPolyscopexComplete\Ros2UrinterfacesActionSetMode_Feedback();
 $bytes = $value->encode();
 $decoded = \Uwvm\UniversalRobotsUniversalRobotsPolyscopexComplete\Ros2UrinterfacesActionSetMode_Feedback::decode($bytes);

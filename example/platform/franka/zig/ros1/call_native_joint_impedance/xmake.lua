@@ -44,6 +44,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Keep native deployment independent of compiler installation and cache state.
 set_policy("run.autobuild", false)
@@ -60,5 +61,6 @@ set_plat("wasm-wasip1")
 -- Select the corresponding entry in the manually supplied deployment JSON.
 set_ros_scenario("call_native_joint_impedance")
 add_files("main.zig")
-set_targetdir("build")
+set_targetdir("build/artifacts")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

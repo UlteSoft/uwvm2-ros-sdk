@@ -1,0 +1,148 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3813",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "51ca49439b630707504f35d082c89e05eb1e330d9ddb551a18e1e0bac4215400"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "6a9e0fb3e6227960f8b4f23bb45f296d651c0063e5a7ec449d9440a1a6c7fff7"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/go.json",
+      "sha256": "f20b7acb1e2c77ba3d6c225cf938965f34f0fd9cabd40d829ce86a0eb62d3a58"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "de899295367cddddba23473bba0f42a3f2300efabff0b9a52e9a9c75f98c9ee5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/selection_error.go",
+      "sha256": "7815c65a49918d2db230a2b5940670ae829157bcc2cb5eb14521c85f4fd6c927"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros2.go",
+      "sha256": "2dbd550c6dc47de4fcefbaef50633c423fdd0aa7f4d946b3c708983c83ba58f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros1.go",
+      "sha256": "4b7b2bb8b6261f055eb18a8aa86ffd7d66047d8d0c8e235457c5332133b4244e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/value_helpers.go",
+      "sha256": "05ea589f722e821d4003ece92a31b8a548b6d567294b43854b99293b5c7d7ee8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros1.go",
+      "sha256": "4e0bf1b61c90163bf03403524daaf672345d3b77ed9dbf3314efbf7075c90fa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/typed.go",
+      "sha256": "cd2cec63b5721e900ce37c7645943ea2119d550c3d916f30b72370c766965e4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/client.go",
+      "sha256": "78855ebc74fe7fe705c8cb7262dc638185cc2f6863dd57d8926cdb9b74283a03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/values.go",
+      "sha256": "4b076f0ac087a2ea643390c7a3ad061daf1f42f79a17d01cf85a0c58116ebd38"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/builtin_codec.go",
+      "sha256": "23a95fb330de121052f30e0b79c3e4cdb56e2180157ca1bf3ecc8b6fe9a7e986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/codec.go",
+      "sha256": "a81b000812fc30197db7fe18f18bac73041e4abb530788475a9a32e45dc0294a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation.go",
+      "sha256": "21170e363e678d935a32b3c731bc124ee8e8fc3870a540aed76250ed91d15a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/go.mod",
+      "sha256": "dad02148dfc7550b14721ff91915f6cf3bbd8d5c060b6248dfb1c211664e85df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros2.go",
+      "sha256": "06d86038b4ae4373419db737839606676393163fd622be3acc4ff002f02e7000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/session.go",
+      "sha256": "3411bbc25486200f4d7f4512356b22447dc9209098d06e1fc1eb5dff730bd884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/native_command/command.go",
+      "sha256": "375e9f9562d5177a8ea39c4cdd31dea61539e98cf8f222f7d0b70a670e292b9d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "publications": 0,
+        "length": 0,
+        "length_present": false,
+        "required": 0,
+        "required_present": false,
+        "response_present": false,
+        "value": "",
+        "success": false,
+        "message": "",
+        "request_wire_hex": "",
+        "response_wire_hex": ""
+      }
+    }
+  ],
+  "ros_namespace": "ros1"
+}

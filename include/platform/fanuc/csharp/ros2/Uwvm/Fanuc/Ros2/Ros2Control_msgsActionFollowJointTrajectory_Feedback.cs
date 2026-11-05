@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -66,7 +66,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Control_msgsActionFollowJointTrajectory_Feedback value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -79,11 +79,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Control_msgsActionFollowJointTrajectory_Feedback Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Control_msgsActionFollowJointTrajectory_Feedback value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -95,39 +95,28 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Control_msgsActionFollowJointTrajectory_Feedback value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Control_msgsActionFollowJointTrajectory_Feedback value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             Ros2Std_msgsMsgHeader.WriteFields(wire, value.field_header);
-            if(value.field_joint_names == null || value.field_joint_names.Length > 12)
-            {
-                throw new ArgumentException("Invalid joint_names extent");
-            }
+            if (value.field_joint_names == null || value.field_joint_names.Length > 12) { throw new ArgumentException("Invalid joint_names extent"); }
             wire.U32((uint)value.field_joint_names.Length);
-            for(int index = 0; index < value.field_joint_names.Length; ++index)
-            {
+            for (int index = 0; index < value.field_joint_names.Length; ++index) {
                 wire.String(value.field_joint_names[index], 64);
             }
             Ros2Trajectory_msgsMsgJointTrajectoryPoint.WriteFields(wire, value.field_desired);
             Ros2Trajectory_msgsMsgJointTrajectoryPoint.WriteFields(wire, value.field_actual);
             Ros2Trajectory_msgsMsgJointTrajectoryPoint.WriteFields(wire, value.field_error);
-            if(value.field_multi_dof_joint_names == null || value.field_multi_dof_joint_names.Length > 2)
-            {
-                throw new ArgumentException("Invalid multi_dof_joint_names extent");
-            }
+            if (value.field_multi_dof_joint_names == null || value.field_multi_dof_joint_names.Length > 2) { throw new ArgumentException("Invalid multi_dof_joint_names extent"); }
             wire.U32((uint)value.field_multi_dof_joint_names.Length);
-            for(int index = 0; index < value.field_multi_dof_joint_names.Length; ++index)
-            {
+            for (int index = 0; index < value.field_multi_dof_joint_names.Length; ++index) {
                 wire.String(value.field_multi_dof_joint_names[index], 512);
             }
             Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.WriteFields(wire, value.field_multi_dof_desired);
             Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.WriteFields(wire, value.field_multi_dof_actual);
             Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.WriteFields(wire, value.field_multi_dof_error);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -139,28 +128,26 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Control_msgsActionFollowJointTrajectory_Feedback ReadFields(Wire.Reader wire)
+        internal static Ros2Control_msgsActionFollowJointTrajectory_Feedback ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Control_msgsActionFollowJointTrajectory_Feedback value = new Ros2Control_msgsActionFollowJointTrajectory_Feedback();
             value.field_header = Ros2Std_msgsMsgHeader.ReadFields(wire);
             value.field_joint_names = new string[wire.Count(12)];
-            for(int index = 0; index < value.field_joint_names.Length; ++index)
-            {
+            for (int index = 0; index < value.field_joint_names.Length; ++index) {
                 value.field_joint_names[index] = wire.String(64);
             }
             value.field_desired = Ros2Trajectory_msgsMsgJointTrajectoryPoint.ReadFields(wire);
             value.field_actual = Ros2Trajectory_msgsMsgJointTrajectoryPoint.ReadFields(wire);
             value.field_error = Ros2Trajectory_msgsMsgJointTrajectoryPoint.ReadFields(wire);
             value.field_multi_dof_joint_names = new string[wire.Count(2)];
-            for(int index = 0; index < value.field_multi_dof_joint_names.Length; ++index)
-            {
+            for (int index = 0; index < value.field_multi_dof_joint_names.Length; ++index) {
                 value.field_multi_dof_joint_names[index] = wire.String(512);
             }
             value.field_multi_dof_desired = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.ReadFields(wire);
             value.field_multi_dof_actual = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.ReadFields(wire);
             value.field_multi_dof_error = Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.ReadFields(wire);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

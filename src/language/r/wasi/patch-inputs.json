@@ -1,0 +1,50 @@
+{
+  "version": "4.5.1",
+  "files": [
+    {
+      "path": "configure",
+      "upstream_sha256": "9459fb87fcb812f9379c6db9083444bb9ddf5dd5f2d74528eb292c0fb614086d",
+      "patched_sha256": "fbbc7b4ee6a9897103440f482b034bafc42a56f72934e956e0cbf3265144463d"
+    },
+    {
+      "path": "src/main/connections.c",
+      "upstream_sha256": "1c5a31966b2bb798b835dad9963e707a704f55365be4c3dc811f775a1dd1a418",
+      "patched_sha256": "7d690bd5d958ad012feba045466baac523b84021218d3089c83748aa8c5b9562"
+    },
+    {
+      "path": "src/main/platform.c",
+      "upstream_sha256": "f4d15b69ba870c40ce30e904a596095b30ae9faa2f1f8f824a8c61d8269ba3d4",
+      "patched_sha256": "e29d87ab84b9fffcb21c94e99e8d8521294e30f75d04f2f87f54f4633319434e"
+    },
+    {
+      "path": "src/main/sysutils.c",
+      "upstream_sha256": "63e19802dcc95144958f7379d877060609823e18b36ed4ba4c56a5ca93da228b",
+      "patched_sha256": "372b5ace3feb6466b042ff2ca7174bfc05349355c85bd915964d442fea5c6aab"
+    },
+    {
+      "path": "src/extra/tzone/localtime.c",
+      "upstream_sha256": "cd113f0aa14abbdc35e5763c4ddf5b4e8665d8c51390d70aa6821689dab019c5",
+      "patched_sha256": "7bee2a03ac304c9d7f4e611666fd830b7fafd3ad71f45dd168aa51bbb47805e9"
+    },
+    {
+      "path": "src/unix/sys-unix.c",
+      "upstream_sha256": "14c7d081a166eb0cdb74ba5cf0305a5e1f431f1036cdc8973c6b87301655f42f",
+      "patched_sha256": "94c59182d6bfc28cf6b9b53a030bfbc7b47a9fe322552afd6af4d4b3eb7403ac"
+    },
+    {
+      "path": "src/main/Makefile.in",
+      "upstream_sha256": "359e500a5e6d769871082f8863a553c3c16a856c4d731467c4824cf11e491e11",
+      "patched_sha256": "d8ec6b4cbf27ec327a5eb7f37fcaf14b7436e4efd9aa2ad31af7d87ccfc915df"
+    },
+    {
+      "path": "src/extra/blas/Makefile.in",
+      "upstream_sha256": "e9a7dfc489923683a52ddd187f4d04c1a9570c88c191bdf96252ee575f953dd7",
+      "patched_sha256": "eb870571a0c89f43fb09d47162e900b1956f3f554e063c9a0661bbdbca9b1829"
+    },
+    {
+      "path": "src/include/Rmath.h0.in",
+      "upstream_sha256": "40732d9fcc2e069b9824eb0a66a8fb8f02f25cd14c7308930345a43baccbf5ed",
+      "patched_sha256": "1a1c2e8ec89d4c3219932a11ce338b8232b63a01f9b4c339d9a141a140e10e94"
+    }
+  ]
+}

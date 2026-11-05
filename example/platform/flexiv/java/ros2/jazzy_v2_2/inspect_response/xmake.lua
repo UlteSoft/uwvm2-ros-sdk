@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -47,6 +48,7 @@ set_policy("run.autobuild", false)
 local sdk = root
 target("flexiv-java-ros2_jazzy_v2_2-inspect_response")
     set_language("java")
+    set_values("ros.sdk.main_class", "Main")
     set_ros_platform("flexiv")
     set_ros2_version("jazzy")
     set_values("ros.vendor.profile", "ros2_jazzy_v2_2")
@@ -55,4 +57,5 @@ target("flexiv-java-ros2_jazzy_v2_2-inspect_response")
     set_plat(get_config("plat") or "wasm-wasip1")
     add_files("Main.java")
 
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

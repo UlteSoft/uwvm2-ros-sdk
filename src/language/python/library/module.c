@@ -9,12 +9,18 @@
 #include "library_manager.h"
 #include <limits.h>
 #include <stdint.h>
+#include <stdio.h>
 #if defined(UWVM_CONSUMER_HOOKS)
 # include "foreign.h"
 #endif
 
 static PyThreadState* state;
 static int entered;
+#if defined(UWVM_COMMAND_EMBEDDING)
+static int command_argc;
+static char** command_argv;
+static uint32_t command_exit;
+#endif
 
 /** @brief Retire this owned state once while leaving other libraries alive. */
 uint32_t uwvm_module_close(void)
@@ -45,6 +51,27 @@ static uint32_t initialize(void)
         return error;
     }
     PyThreadState* previous = uwvm_python_library_enter(state);
+#if defined(UWVM_COMMAND_EMBEDDING)
+    PyObject* arguments = PyList_New(command_argc);
+    if(arguments != NULL)
+    {
+        for(int index = 0; index < command_argc; ++index)
+        {
+            PyObject* value = PyUnicode_DecodeFSDefault(command_argv[index]);
+            if(value == NULL) { Py_CLEAR(arguments); break; }
+            PyList_SET_ITEM(arguments, index, value);
+        }
+    }
+    if(arguments == NULL || PySys_SetObject("argv", arguments) != 0)
+    {
+        Py_XDECREF(arguments);
+        PyErr_Clear();
+        uwvm_python_library_leave(previous);
+        uwvm_module_close();
+        return 12;
+    }
+    Py_DECREF(arguments);
+#endif
 #if defined(UWVM_CONSUMER_HOOKS)
     error = uwvm_install_foreign();
     if(error)
@@ -63,7 +90,33 @@ static uint32_t initialize(void)
     PyObject* result = globals == NULL ? NULL : PyRun_StringFlags((char const*)module_source, Py_file_input, globals, globals, NULL);
     if(result == NULL)
     {
+#if defined(UWVM_COMMAND_EMBEDDING)
+        if(PyErr_ExceptionMatches(PyExc_SystemExit))
+        {
+            PyObject* exception = PyErr_GetRaisedException();
+            PyObject* code = PyObject_GetAttrString(exception, "code");
+            command_exit = 1;
+            if(code == Py_None) { command_exit = 0; }
+            else if(code != NULL && PyLong_Check(code))
+            {
+                long value = PyLong_AsLong(code);
+                if(!PyErr_Occurred()) { command_exit = (uint32_t)value; }
+            }
+            else if(code != NULL)
+            {
+                PyObject_Print(code, stderr, Py_PRINT_RAW);
+                fputc('\n', stderr);
+            }
+            Py_XDECREF(code);
+            Py_DECREF(exception);
+            PyErr_Clear();
+            uwvm_python_library_leave(previous);
+            return 0;
+        }
+        PyErr_Print();
+#else
         PyErr_Clear();
+#endif
         uwvm_python_library_leave(previous);
         uwvm_module_close();
         return 22;
@@ -130,12 +183,26 @@ uint64_t uwvm_module_apply(int32_t a, int32_t b)
  * @details No source-defined function is required for a command. Module libraries
  * instead retain their state until their explicit scalar close export is called.
  */
-uint32_t uwvm_module_execute(void)
+uint32_t uwvm_module_execute(int argc, char** argv)
 {
     if(entered)
     {
         return 16;
     }
+#if defined(UWVM_COMMAND_EMBEDDING)
+    command_exit = 0;
+    command_argc = argc;
+    command_argv = argv;
+#else
+    (void)argc;
+    (void)argv;
+#endif
     uint32_t error = initialize();
-    return error != 0 ? error : uwvm_module_close();
+    if(error != 0) { return error; }
+    uint32_t closed = uwvm_module_close();
+#if defined(UWVM_COMMAND_EMBEDDING)
+    return command_exit != 0 ? command_exit : closed;
+#else
+    return closed;
+#endif
 }

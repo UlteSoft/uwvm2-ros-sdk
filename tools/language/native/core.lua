@@ -145,11 +145,14 @@ end
 -- @param objects Actual compiled source-language and infrastructure objects.
 -- @return None; the final command replaces context.output only after linking.
 function link(context, objects)
+	local stack_bytes = context.action.stack_bytes or 1048576
+	assert(type(stack_bytes) == "number" and stack_bytes == math.floor(stack_bytes)
+		and stack_bytes >= 65536 and stack_bytes < 67108864, "Invalid command stack size")
 	local arguments = table.join(context.cflags, {
 		"-fuse-ld=" .. context.programs.ld,
 		"-rtlib=compiler-rt",
 		"-Wl,--stack-first",
-		"-Wl,-z,stack-size=1048576",
+		string.format("-Wl,-z,stack-size=%d", stack_bytes),
 		"-Wl,--max-memory=67108864",
 		"-Wl,--threads=1",
 	}, objects)

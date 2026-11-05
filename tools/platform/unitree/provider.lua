@@ -207,7 +207,7 @@ function provider.configure(target, root, context)
 	)
 	local producer = source_producer(sdk(target), language)
 	if producer then
-		producer.configure(target, sdk(target), selected)
+		producer.configure(target, sdk(target), (language == "java" or language == "kotlin") and context or selected)
 	end
 end
 
@@ -254,7 +254,7 @@ function provider.build(target, _root, context)
 	end
 	local producer = source_producer(root, language)
 	if producer then
-		producer.build(target, root, selected)
+		producer.build(target, root, (language == "java" or language == "kotlin") and context or selected)
 	elseif language == "as" then
 		import("provider", { rootdir = path.join(root, "tools/language/as"), anonymous = true }).build(
 			target,

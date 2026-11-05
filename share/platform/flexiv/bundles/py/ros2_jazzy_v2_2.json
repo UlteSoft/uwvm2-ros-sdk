@@ -1,0 +1,173 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros",
+      "file": "include/platform/ros/py/ros/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5",
+      "package": true
+    },
+    {
+      "name": "ros.py",
+      "file": "include/platform/ros/py/ros/py/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5",
+      "package": true
+    },
+    {
+      "name": "ros.py.wire",
+      "file": "include/platform/ros/py/ros/py/wire.py",
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
+    },
+    {
+      "name": "ros.py.transport",
+      "file": "include/platform/ros/py/ros/py/transport.py",
+      "sha256": "f4dac7ca14ceb9462ada69936ad0e2798d26593ec2b17be0a110b26bc0c42a6f"
+    },
+    {
+      "name": "uwvm",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py.observation",
+      "file": "src/language/python/modules/observation.py",
+      "sha256": "239bb6f3404deffc18aad68b8e3155f0fa6dd5f701b1e9d900be2eab170dddfc"
+    },
+    {
+      "name": "roswasm",
+      "file": "include/platform/ros/py/roswasm/__init__.py",
+      "sha256": "c0700f2f09e0d547cc26382705821d609f6ae8f5db601ec211353b43801afe58",
+      "package": true
+    },
+    {
+      "name": "roswasm._registry",
+      "file": "include/platform/ros/py/roswasm/_registry.py",
+      "sha256": "64ba2cd4019f5b8368266c643dc49afb3052050f48859db80f299b364be90a5d"
+    },
+    {
+      "name": "roswasm.client",
+      "file": "include/platform/ros/py/roswasm/client.py",
+      "sha256": "646ec713d96b6a280ffd579923eb93230a9d29a4ee33edd861ef2d1ce5cf224f"
+    },
+    {
+      "name": "roswasm.codecs",
+      "file": "include/platform/ros/py/roswasm/codecs.py",
+      "sha256": "20d2268eb9556018f35d3bce3550663e9565439cbd4548b749cfbb796dbc82c4"
+    },
+    {
+      "name": "roswasm.events",
+      "file": "include/platform/ros/py/roswasm/events.py",
+      "sha256": "4b898ec3aa85f07dd66690bbb5335adfab84de4d1134e3af4014d0b3a27fec76"
+    },
+    {
+      "name": "roswasm.raw",
+      "file": "include/platform/ros/py/roswasm/raw.py",
+      "sha256": "4240576f9dd92e1139a27006f65e5503d460cdd2dab63eb27feb865dda709778"
+    },
+    {
+      "name": "roswasm.transforms",
+      "file": "include/platform/ros/py/roswasm/transforms.py",
+      "sha256": "06d1fa6a0aa1927fc878f06a12a22a81746adc14c3219a9899da5fe7a0a2d9e1"
+    },
+    {
+      "name": "roswasm.owned_service",
+      "file": "include/platform/ros/py/roswasm/owned_service/__init__.py",
+      "sha256": "8295bab4ce5fa3045b774883948e1abf945a785c96256caf398d2dc9eb3be82c",
+      "package": true
+    },
+    {
+      "name": "roswasm.owned_service.applications",
+      "file": "include/platform/ros/py/roswasm/owned_service/applications.py",
+      "sha256": "052948a7dd4d515c9947a13cee89784ba841739b5e7da808327ee131a2e7e0a8"
+    },
+    {
+      "name": "roswasm.owned_service.bridge",
+      "file": "include/platform/ros/py/roswasm/owned_service/bridge.py",
+      "sha256": "8ccf1e224723f3c5866b607a656b4b395ec2cc1e0bac250f66d633da8c2776a1"
+    },
+    {
+      "name": "roswasm.owned_service.control",
+      "file": "include/platform/ros/py/roswasm/owned_service/control.py",
+      "sha256": "5a716f8ab80ab075aeec1f8ce3562b865f5bf429a043c0b1e5e53add5adb61ca"
+    },
+    {
+      "name": "roswasm.owned_service.drive",
+      "file": "include/platform/ros/py/roswasm/owned_service/drive.py",
+      "sha256": "6a2dede6529e7068efa78d77ebae9c3414979f144b2b27e72fa06a13200c623e"
+    },
+    {
+      "name": "roswasm.owned_service.owned",
+      "file": "include/platform/ros/py/roswasm/owned_service/owned.py",
+      "sha256": "3b176fbff4e24646ffa365164238d75b82c4c8380a9964926588ebd90d740d55"
+    },
+    {
+      "name": "roswasm.owned_service.wire",
+      "file": "include/platform/ros/py/roswasm/owned_service/wire.py",
+      "sha256": "37514b22dadc703c2001c8ea96bb56c1982180b929faffaf07b90d66a4c3649f"
+    },
+    {
+      "name": "doosan",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "doosan.py",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "doosan.py.ros1",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "doosan.py.ros1.doosan_ros1_aws_robot_complete",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "flexiv",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "flexiv.py",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "flexiv.py.ros2",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "flexiv.py.ros2.flexiv_ros2_jazzy_v2_2_complete",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "flexiv.py.ros2.flexiv_ros2_jazzy_v2_2_complete.records",
+      "file": "include/platform/flexiv/py/ros2/flexiv_ros2_jazzy_v2_2_complete/records.py",
+      "sha256": "32ab53665c73c871662145464d25f5d0fb17e7e1109d36ee7eced64dec8f0889"
+    }
+  ],
+  "default_authority": [],
+  "module_loading": "lazy"
+}

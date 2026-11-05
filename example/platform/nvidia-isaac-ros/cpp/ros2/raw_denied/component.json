@@ -1,0 +1,115 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-archive-or-denial-3374",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/cpp/support/basic_io.hpp",
+      "sha256": "7a276af05188c9e9528179e627e6ba85f2bde71e7473f1c48e0598727f21ef8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/cpu_sensor_contract.h",
+      "sha256": "3fc6505ace9dcb99d2a5cabbd37bce626e1994963aaab0cb719d01c77a1a443e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_interfaces.h",
+      "sha256": "936f9d73dac106ba4e98c1feaddf20bb9c94fed16a14b7fd5cfdca1c98cbed9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_records.h",
+      "sha256": "61038bd330e7dd3857f40a161a4baef3100e1ad6d318a084a1f7adb66ae96272"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/full_values.hpp",
+      "sha256": "a78ade52b204ba19d2376d515b5acac425cb6ba6e155de661cf4cb3b99619db7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/native/cpu_snapshot.hpp",
+      "sha256": "651e803256132945c0eb706b812949e8bd9bd57e2f8d01c9f86738d635a2710a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/interfaces.hpp",
+      "sha256": "6380ced43f47b01306c900cd4e5af6b88cd1496121c75411d63b69c29b600ee2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/records.hpp",
+      "sha256": "b37b04a0bccdf7c065a6e4170cfd27201cb3253bc77e13dd95ca74307c81558b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/isaac-ros-complete/bounded_interfaces.hpp",
+      "sha256": "363f215f44093a5f7b0e157109b4a489865c33cebc195c03f22eb4628ff5a392"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/isaac-ros-complete/bounded_records.hpp",
+      "sha256": "93bc4ebf2875c678aba8063156c921dfc74eedd61fac66246c388a0be3927bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "f3989553e5d93b53b2f503a884982cb62d433c18e5e020a20f9bbab61d1e0493"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "dd9e4b8a7542203721a9157e3f36172df0b91bda47e567128480170417fa8699"
+    }
+  ],
+  "cases": [
+    {
+      "id": "no-resource-grants-preserve-unopened-owner",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ]
+}

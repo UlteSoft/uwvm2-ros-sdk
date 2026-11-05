@@ -8531,13 +8531,13 @@ Ros1Clearpath_navigation_msgsNetworkEdge_Maximum_Wire_Bytes :: 824
 Ros1Clearpath_navigation_msgsNetworkEdge_Codec_Identity :: "UWVMROS1_2d67f3d8176b117f6f00334633385aee6b1fd23a24a2c8b214e40793fc1c2943"
 /// @brief Original clearpath_navigation_msgs/NetworkEdge.MIN_COST_FACTOR constant.
 /// @details The immutable source constant consumes no canonical instance field.
-Ros1Clearpath_navigation_msgsNetworkEdge_MIN_COST_FACTOR :: transmute(f32)u32(0x0)
+Ros1Clearpath_navigation_msgsNetworkEdge_MIN_COST_FACTOR :: f32(0.0)
 /// @brief Original clearpath_navigation_msgs/NetworkEdge.MAX_COST_FACTOR constant.
 /// @details The immutable source constant consumes no canonical instance field.
-Ros1Clearpath_navigation_msgsNetworkEdge_MAX_COST_FACTOR :: transmute(f32)u32(0x42c80000)
+Ros1Clearpath_navigation_msgsNetworkEdge_MAX_COST_FACTOR :: f32(100.0)
 /// @brief Original clearpath_navigation_msgs/NetworkEdge.DEFAULT_COST_FACTOR constant.
 /// @details The immutable source constant consumes no canonical instance field.
-Ros1Clearpath_navigation_msgsNetworkEdge_DEFAULT_COST_FACTOR :: transmute(f32)u32(0x3f800000)
+Ros1Clearpath_navigation_msgsNetworkEdge_DEFAULT_COST_FACTOR :: f32(1.0)
 /// @brief Traverse every original field of complete clearpath_navigation_msgs/NetworkEdge.
 /// @details Fields own fixed arrays; no decoded field borrows the canonical input. Only the
 /// exclusive local cursor is advanced.

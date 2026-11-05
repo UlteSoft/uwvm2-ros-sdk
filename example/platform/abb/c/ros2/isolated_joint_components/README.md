@@ -17,7 +17,6 @@ configuration containing these fields:
     "-Raot", "-Rct", "0", "--log-verbose", "--runtime-compiler-log", "err",
     "-Rllvm-cache-path", "path", "/absolute/writable/cache",
     "--wasm-set-main-module-name", "main",
-    "--wasip1-global-noinherit-system-environment"
   ],
   "application_arguments": []
 }

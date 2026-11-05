@@ -131,7 +131,7 @@ function run(target, root, context)
 		)
 		return
 	end
-	assert(deployment.format == "uwvm-native-ros-run-v2", "Unknown native ROS deployment format")
+	assert(deployment.format == "uwvm-native-ros-run-v3", "Unknown native ROS deployment format")
 	assert(
 		deployment.backend == context.backend and deployment.distribution == context.distribution,
 		"Native deployment backend/distribution does not match this application"

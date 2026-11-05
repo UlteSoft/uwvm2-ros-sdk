@@ -36,7 +36,7 @@ int main(void)
     algorithm_probe = franka_module_algorithm_probe();
     if(main_probe != UINT64_C(13) || io_probe != UINT64_C(13) || algorithm_probe != UINT64_C(13))
     {
-        franka_module_report(0, 0, 0, 13, 0, main_probe, io_probe, algorithm_probe);
+        (void)franka_module_report(0, 0, 0, 13, 0, main_probe, io_probe, algorithm_probe);
         return 1;
     }
     primary = franka_module_ros_open();
@@ -56,6 +56,6 @@ int main(void)
         value = franka_module_step(digest);
     }
     cleanup = franka_module_ros_close();
-    franka_module_report(length, digest, value, primary, cleanup, main_probe, io_probe, algorithm_probe);
-    return primary ? (int)primary : (int)cleanup;
+    uint32_t output = franka_module_report(length, digest, value, primary, cleanup, main_probe, io_probe, algorithm_probe);
+    return primary ? (int)primary : cleanup ? (int)cleanup : (int)output;
 }

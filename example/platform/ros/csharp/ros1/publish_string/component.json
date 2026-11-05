@@ -1,0 +1,152 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3795",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b74f488a9839e6960573356118d00fb5910d950cb7825c66bcd486da1f974065"
+    },
+    {
+      "scope": "example",
+      "path": "Main.cs",
+      "sha256": "4a1484a76a90db837823b4b88a315a117f662cbf5528665637546e01b159dc6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/csharp.json",
+      "sha256": "8a55f9a0f8c90d9dd0e483e7e1db4976c3a34890edea7714dedfebf371dd1051"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/Directory.Build.props",
+      "sha256": "37c625dbe29b307174f940018acaed4859e1a5ece8448e4d07a3a6f6089042a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/NativeBridge.targets",
+      "sha256": "d6a42543c202d342be736e6019576b54517afb066a27aa2f4504d05af9c4b5f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/Uwvm.RosWasm.csproj",
+      "sha256": "0583196073fbf913be695f29f3cabf28004bc5f14e5c7df04fb023663742b6ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/PreparedSession.cs",
+      "sha256": "bd467bdd6eda59b6161ed31f83ffef8aaf8a20adb02b7a9846cdead6285b9388"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/NativeOwned.targets",
+      "sha256": "4a1fcb18294c86935b09d89171887b03cee6a4f7a54ae88f6bbc3747248e30fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/OwnedWire.cs",
+      "sha256": "ef97eda4b7cb438f10a6a3648224ac57a088c4537f23316dc1b0066730ad4d12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/NativeOwned.cs",
+      "sha256": "f3bd82e83736372005e2f7970dc117d16129c007d02b9293ae4f1c5bb077e3fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/roswasm_csharp_owned_bridge.h",
+      "sha256": "e50748f0f425eb3cf9588573f78c290f00dc3f3168d52a6999e7d2dcda9b300b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/Uwvm.RosWasm.Owned.csproj",
+      "sha256": "b01b4813f322d5b550907014c4f7e1ceadf725589008217baca890e2ab8176b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/ControlWire.cs",
+      "sha256": "a1421cd05e3c610fe9e4ca3808766e4a0774fb23989329b7f2b68953ba0f7d5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/OwnedGroup.cs",
+      "sha256": "9ed643b5adf27945a558939ea2a7dd433fd60866f0c16fcdb0ccecf827164b82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Node.cs",
+      "sha256": "49bc87afe4da6ea6f6939e20de82b73bd5bd5b40ab81c2083bbeaa841ba4854d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Result.cs",
+      "sha256": "77260272e078314b13c3c761cab4e7835355a0a18353ff57dac54a20ed615411"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/NativeTransport.cs",
+      "sha256": "f374d564f8a6ff796b85be7beea2d3959ac7ee786bd3031e2a26096932337fb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/SelectedRaw.cs",
+      "sha256": "82691094c15f57e83f579eeea159c476fd332e44337a69a0b1a1e2b6cbca8884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Codecs.cs",
+      "sha256": "a19315c16aca7f52eee4b35ecb20fde49edbcb8d91664a1deb5af040f428a4ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Events.cs",
+      "sha256": "679e80e7fc660ccc42012f476051df3632bc45d3bb0ad723b5269365953b5c1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Retirement.cs",
+      "sha256": "a3f7c8cc7842e6bf9454b05c69849517247db90417b75343e34ec739e8b2e3fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Session.cs",
+      "sha256": "99f1706075564bb99c14904fc8674f40101dc62b34efccf39d2cac08d88bbdb2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Actions.cs",
+      "sha256": "f50a03365cc355b0fa23e5c2a14cfc8c570118837e065002d858b45f0d931dfd"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": "primary=13 rpc=0 rpc_present=False\ncleanup=0 cleanup_present=False\ncleanup_exception=none\nresponse_present=False success=False\nwire=\n\n"
+    }
+  ],
+  "exception_profile": "eh",
+  "ros_namespace": "ros1"
+}

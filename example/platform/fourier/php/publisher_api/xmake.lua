@@ -42,6 +42,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/platform/fourier/xmake/publisher_tests.lua"))
 
 set_policy("run.autobuild", false)
 set_plat(get_config("plat") or "wasm-wasip1")
@@ -56,39 +57,5 @@ target("fourier-php-publisher-api")
     set_values("ros.sdk.profile", "ros2_aurora_bridge_v1")
     set_ros_scenario("status")
     add_files("main.php", {rule = "ros.wasm.source"})
-    add_tests("publisher-api")
-    on_test(function(target, opt)
-        import("core.project.config")
-        local deployment = target:values("ros.sdk.run_config") or config.get("ros-run-config")
-                           or os.getenv("UWVM_ROS_RUN_CONFIG")
-        if not deployment or not os.isfile(deployment) then
-            opt.errors = "BLOCKED_GUEST_RUNTIME_CONFIGURATION_REQUIRED: select an explicit installed uwvm2-ros deployment for the6 required publisher/echo assertions and explicit publish/echo grants"
-            return false
-        end
-        local previous = os.curdir()
-        os.cd(path.absolute(target:scriptdir()))
-        local failed, failure = false, nil
-        try {
-            function()
-                import("dispatch", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).run(target)
-            end,
-            catch {
-                function(errors)
-                    failed = true
-                    failure = tostring(errors or "Guest runtime failed")
-                end
-            },
-            finally {
-                function()
-                    os.cd(previous)
-                end
-            }
-        }
-        if failed then
-            print(failure)
-            opt.errors = failure
-            return false
-        end
-        return true
-    end)
+    uwvm_fourier_publisher_native({api_version = 1, sdk_root = root, language = "php"})
 target_end()

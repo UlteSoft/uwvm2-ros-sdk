@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-927",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "878450c69116bf7f8bf00a575bd583364ecca9df441348faedee829b40f331ff"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "29aabf574c1afb3b3e54279b9eea3809a77a83184f01c4858da730a86087b1b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/cpp/doosan-ros1-kinetic-devel-descrepted-complete.json",
+      "sha256": "08e0cb23fee4e0fcabf77747e9e208b04197c8c252db9c9f96e4714a215d5e77"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros1-kinetic-devel-descrepted-complete.ir.json",
+      "sha256": "2f86fbdfee6f986397bdc2e0ea1efc9fba8d454628639835db5cbc47c056c071"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs/LogAlarm",
+        "bytes": 24
+      }
+    }
+  ]
+}

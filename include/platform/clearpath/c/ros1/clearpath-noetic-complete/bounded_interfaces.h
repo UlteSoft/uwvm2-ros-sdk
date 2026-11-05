@@ -15,6 +15,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_BOUNDED_INTERFACES_H
 #define UWVM_BOUNDED_INTERFACES_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <clearpath/c/ros1/clearpath-noetic-complete/bounded_records.h>
 #include <ros/c/roswasm/action_bundle.h>
 
@@ -66,7 +73,7 @@ static inline roswasmc_result
                                                                  roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIFeedback next = {0};
+    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -96,7 +103,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_camera_msgs_InspectPO
                                                                                          roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIResult next = {0};
+    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -136,7 +143,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_camera_msgs_InspectPO
                                                                                        roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIGoal* goal)
 {
     unsigned char output[272];
-    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIGoal next = {0};
+    roswasmc_bounded_1_clearpath_camera_msgs_InspectPOIGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -232,7 +239,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalDock_f
                                                                                         roswasmc_bounded_1_clearpath_dock_msgs_LocalDockFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockFeedback next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -262,7 +269,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalDock_r
                                                                                       roswasmc_bounded_1_clearpath_dock_msgs_LocalDockResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockResult next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -302,7 +309,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalDock_p
                                                                                     roswasmc_bounded_1_clearpath_dock_msgs_LocalDockGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockGoal next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalDockGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -398,7 +405,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalUndock
                                                                                           roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockFeedback next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -428,7 +435,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalUndock
                                                                                         roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockResult next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -468,7 +475,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_LocalUndock
                                                                                       roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockGoal* goal)
 {
     unsigned char output[12];
-    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockGoal next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_LocalUndockGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -564,7 +571,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_NetworkDock
                                                                                           roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockFeedback* feedback)
 {
     unsigned char input[8], output[3814];
-    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockFeedback next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -594,7 +601,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_NetworkDock
                                                                                         roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockResult next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -634,7 +641,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_NetworkDock
                                                                                       roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockGoal* goal)
 {
     unsigned char output[528];
-    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockGoal next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_NetworkDockGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -730,7 +737,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_RadiusDock_
                                                                                          roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockFeedback next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -760,7 +767,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_RadiusDock_
                                                                                        roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockResult next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -800,7 +807,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_RadiusDock_
                                                                                      roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockGoal* goal)
 {
     unsigned char output[268];
-    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockGoal next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_RadiusDockGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -898,7 +905,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Sur
     roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationFeedback* feedback)
 {
     unsigned char input[8], output[12];
-    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationFeedback next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -929,7 +936,7 @@ static inline roswasmc_result
                                                                             roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationResult next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -970,7 +977,7 @@ static inline roswasmc_result
                                                                           roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationGoal* goal)
 {
     unsigned char output[12];
-    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationGoal next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_SurveyBaseStationGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1068,7 +1075,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidFeedback* feedback)
 {
     unsigned char input[8], output[528];
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidFeedback next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1099,7 +1106,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidResult next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1140,7 +1147,7 @@ static inline roswasmc_result
                                                                                roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidGoal* goal)
 {
     unsigned char output[276];
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidGoal next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_RunScheduleByUuidGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1238,7 +1245,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Execu
     roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1269,7 +1276,7 @@ static inline roswasmc_result
                                                                              roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1310,7 +1317,7 @@ static inline roswasmc_result
                                                                            roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidGoal* goal)
 {
     unsigned char output[529];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteMissionByUuidGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1408,7 +1415,7 @@ static inline roswasmc_result
                                                                              roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToFeedback* feedback)
 {
     unsigned char input[8], output[3814];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1439,7 +1446,7 @@ static inline roswasmc_result
                                                                            roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToResult* result)
 {
     unsigned char input[8], output[271];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1480,7 +1487,7 @@ static inline roswasmc_result
                                                                          roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToGoal* goal)
 {
     unsigned char output[3618];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkGoToGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1578,7 +1585,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Execu
     roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidFeedback* feedback)
 {
     unsigned char input[8], output[10520];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1609,7 +1616,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Execu
     roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidResult* result)
 {
     unsigned char input[8], output[6977];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1650,7 +1657,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Execu
     roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidGoal* goal)
 {
     unsigned char output[528];
-    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_ExecuteNetworkMissionByUuidGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1748,7 +1755,7 @@ static inline roswasmc_result
                                                                           roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1779,7 +1786,7 @@ static inline roswasmc_result
                                                                         roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathResult* result)
 {
     unsigned char input[8], output[837];
-    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1820,7 +1827,7 @@ static inline roswasmc_result
                                                                       roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathGoal* goal)
 {
     unsigned char output[882];
-    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_GetWaypointPathGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1917,7 +1924,7 @@ static inline roswasmc_result
                                                                   roswasmc_bounded_1_clearpath_navigation_msgs_MissionFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_navigation_msgs_MissionFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_MissionFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1947,7 +1954,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Missi
                                                                                           roswasmc_bounded_1_clearpath_navigation_msgs_MissionResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_navigation_msgs_MissionResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_MissionResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1987,7 +1994,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Missi
                                                                                         roswasmc_bounded_1_clearpath_navigation_msgs_MissionGoal* goal)
 {
     unsigned char output[16695];
-    roswasmc_bounded_1_clearpath_navigation_msgs_MissionGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_MissionGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2085,7 +2092,7 @@ static inline roswasmc_result
                                                                          roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIFeedback* feedback)
 {
     unsigned char input[8], output[3814];
-    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2116,7 +2123,7 @@ static inline roswasmc_result
                                                                        roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2157,7 +2164,7 @@ static inline roswasmc_result
                                                                      roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIGoal* goal)
 {
     unsigned char output[528];
-    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_NetworkGoToPOIGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2255,7 +2262,7 @@ static inline roswasmc_result
                                                                      roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathFeedback* feedback)
 {
     unsigned char input[8], output[44];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2286,7 +2293,7 @@ static inline roswasmc_result
                                                                    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathResult* result)
 {
     unsigned char input[8], output[45];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2326,7 +2333,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Recor
                                                                                            roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathGoal* goal)
 {
     unsigned char output[24];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RecordPathGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2424,7 +2431,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_RunNe
     roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerFeedback* feedback)
 {
     unsigned char input[8], output[204];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2455,7 +2462,7 @@ static inline roswasmc_result
                                                                               roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2496,7 +2503,7 @@ static inline roswasmc_result
                                                                             roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerGoal* goal)
 {
     unsigned char output[3618];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkGoToPlannerGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2594,7 +2601,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_RunNe
     roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerFeedback* feedback)
 {
     unsigned char input[8], output[7104];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2625,7 +2632,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_RunNe
     roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2666,7 +2673,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_RunNe
     roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerGoal* goal)
 {
     unsigned char output[528];
-    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_RunNetworkMissionPreviewerGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2764,7 +2771,7 @@ static inline roswasmc_result
                                                                      roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2795,7 +2802,7 @@ static inline roswasmc_result
                                                                    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathResult* result)
 {
     unsigned char input[8], output[565];
-    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2835,7 +2842,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_Smoot
                                                                                            roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathGoal* goal)
 {
     unsigned char output[588];
-    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SmoothPathGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2932,7 +2939,7 @@ static inline roswasmc_result
                                                                  roswasmc_bounded_1_clearpath_navigation_msgs_UITaskFeedback* feedback)
 {
     unsigned char input[8], output[268];
-    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskFeedback next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2962,7 +2969,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_UITas
                                                                                          roswasmc_bounded_1_clearpath_navigation_msgs_UITaskResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskResult next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -3002,7 +3009,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_UITas
                                                                                        roswasmc_bounded_1_clearpath_navigation_msgs_UITaskGoal* goal)
 {
     unsigned char output[812];
-    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskGoal next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_UITaskGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -3070,7 +3077,7 @@ static inline roswasmc_result
     unsigned char input[12], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZoomResponse next = {0};
+    roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZoomResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZoomRequest_encode(request, input, 12, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3093,7 +3100,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZo
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZoomRequest next = {0};
+    roswasmc_bounded_1_clearpath_camera_msgs_q62AreaZoomRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3139,7 +3146,7 @@ static inline roswasmc_result
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_control_msgs_SetControlModeResponse next = {0};
+    roswasmc_bounded_1_clearpath_control_msgs_SetControlModeResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_control_msgs_SetControlModeRequest_encode(request, input, 1, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3163,7 +3170,7 @@ static inline roswasmc_result
 {
     unsigned char output[9];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_control_msgs_SetControlModeRequest next = {0};
+    roswasmc_bounded_1_clearpath_control_msgs_SetControlModeRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3208,7 +3215,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_AddDock_cal
     unsigned char input[1204], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_AddDockResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_AddDockResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_AddDockRequest_encode(request, input, 1204, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3231,7 +3238,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_AddDock_pol
 {
     unsigned char output[1212];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_AddDockRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_AddDockRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3275,7 +3282,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_ExportData_
     unsigned char input[1], output[260];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_ExportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_ExportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_ExportDataRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3298,7 +3305,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_ExportData_
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_ExportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_ExportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3344,7 +3351,7 @@ static inline roswasmc_result
     unsigned char input[260], output[1316];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUuidResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUuidResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUuidRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3367,7 +3374,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUu
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUuidRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_GetDockByUuidRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3412,7 +3419,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_ImportData_
     unsigned char input[260], output[2412];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_ImportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_ImportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_ImportDataRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3435,7 +3442,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_ImportData_
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_ImportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_ImportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3480,7 +3487,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_RemoveDock_
     unsigned char input[392], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_RemoveDockResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_RemoveDockResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_RemoveDockRequest_encode(request, input, 392, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3503,7 +3510,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_dock_msgs_RemoveDock_
 {
     unsigned char output[400];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_RemoveDockRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_RemoveDockRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3549,7 +3556,7 @@ static inline roswasmc_result
     unsigned char input[260], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByIdResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByIdResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByIdRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3573,7 +3580,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByIdRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByIdRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3619,7 +3626,7 @@ static inline roswasmc_result
     unsigned char input[132], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByNameResponse next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByNameRequest_encode(request, input, 132, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3643,7 +3650,7 @@ static inline roswasmc_result
 {
     unsigned char output[140];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByNameRequest next = {0};
+    roswasmc_bounded_1_clearpath_dock_msgs_SetDockLocationByNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3689,7 +3696,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
     unsigned char input[200], output[244];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonRequest_encode(request, input, 200, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3714,7 +3721,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
 {
     unsigned char output[208];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3760,7 +3767,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
     unsigned char input[404], output[492];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonArrayResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonArrayResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonArrayRequest_encode(request, input, 404, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3785,7 +3792,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
 {
     unsigned char output[412];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonArrayRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertCartesianToLatLonArrayRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3831,7 +3838,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
     unsigned char input[244], output[200];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianRequest_encode(request, input, 244, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3856,7 +3863,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
 {
     unsigned char output[252];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3902,7 +3909,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
     unsigned char input[492], output[404];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianArrayResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianArrayResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianArrayRequest_encode(request, input, 492, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3927,7 +3934,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Con
 {
     unsigned char output[500];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianArrayRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ConvertLatLonToCartesianArrayRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3973,7 +3980,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_localization_msgs_Res
     unsigned char input[5], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ResetLocalizationResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ResetLocalizationResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_ResetLocalizationRequest_encode(request, input, 5, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3997,7 +4004,7 @@ static inline roswasmc_result
 {
     unsigned char output[13];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_ResetLocalizationRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_ResetLocalizationRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4043,7 +4050,7 @@ static inline roswasmc_result
     unsigned char input[8], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_SetDatumResponse next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_SetDatumResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_localization_msgs_SetDatumRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4067,7 +4074,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_localization_msgs_SetDatumRequest next = {0};
+    roswasmc_bounded_1_clearpath_localization_msgs_SetDatumRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4112,7 +4119,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_logger_msgs_DeleteLog
     unsigned char input[262], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_DeleteLogResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_DeleteLogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_DeleteLogRequest_encode(request, input, 262, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4135,7 +4142,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_logger_msgs_DeleteLog
 {
     unsigned char output[270];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_DeleteLogRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_DeleteLogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4181,7 +4188,7 @@ static inline roswasmc_result
     unsigned char input[260], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_DownloadLogResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_DownloadLogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_DownloadLogRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4204,7 +4211,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_logger_msgs_DownloadL
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_DownloadLogRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_DownloadLogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4250,7 +4257,7 @@ static inline roswasmc_result
     unsigned char input[1], output[14132];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_GetAllLogsResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_GetAllLogsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_GetAllLogsRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4273,7 +4280,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_logger_msgs_GetAllLog
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_GetAllLogsRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_GetAllLogsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4319,7 +4326,7 @@ static inline roswasmc_result
     unsigned char input[916], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordCustomEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordCustomEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordCustomEventRequest_encode(request, input, 916, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4343,7 +4350,7 @@ static inline roswasmc_result
 {
     unsigned char output[924];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordCustomEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordCustomEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4389,7 +4396,7 @@ static inline roswasmc_result
     unsigned char input[524], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordErrorEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordErrorEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordErrorEventRequest_encode(request, input, 524, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4413,7 +4420,7 @@ static inline roswasmc_result
 {
     unsigned char output[532];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordErrorEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordErrorEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4459,7 +4466,7 @@ static inline roswasmc_result
     unsigned char input[3190], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordEventRequest_encode(request, input, 3190, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4482,7 +4489,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_logger_msgs_RecordEve
 {
     unsigned char output[3198];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4528,7 +4535,7 @@ static inline roswasmc_result
     unsigned char input[1680], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordLocationEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordLocationEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordLocationEventRequest_encode(request, input, 1680, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4552,7 +4559,7 @@ static inline roswasmc_result
 {
     unsigned char output[1688];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordLocationEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordLocationEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4598,7 +4605,7 @@ static inline roswasmc_result
     unsigned char input[652], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordMediaEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordMediaEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordMediaEventRequest_encode(request, input, 652, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4622,7 +4629,7 @@ static inline roswasmc_result
 {
     unsigned char output[660];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordMediaEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordMediaEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4668,7 +4675,7 @@ static inline roswasmc_result
     unsigned char input[5], output[3190];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordPowerEventResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordPowerEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_RecordPowerEventRequest_encode(request, input, 5, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4692,7 +4699,7 @@ static inline roswasmc_result
 {
     unsigned char output[13];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_RecordPowerEventRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_RecordPowerEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4738,7 +4745,7 @@ static inline roswasmc_result
     unsigned char input[132], output[7064];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_StartRecordingResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_StartRecordingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_StartRecordingRequest_encode(request, input, 132, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4762,7 +4769,7 @@ static inline roswasmc_result
 {
     unsigned char output[140];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_StartRecordingRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_StartRecordingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4808,7 +4815,7 @@ static inline roswasmc_result
     unsigned char input[260], output[7064];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_StopRecordingResponse next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_StopRecordingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_logger_msgs_StopRecordingRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4832,7 +4839,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_logger_msgs_StopRecordingRequest next = {0};
+    roswasmc_bounded_1_clearpath_logger_msgs_StopRecordingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4878,7 +4885,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[793], output[1652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkEdgeResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkEdgeResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkEdgeRequest_encode(request, input, 793, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4902,7 +4909,7 @@ static inline roswasmc_result
 {
     unsigned char output[801];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkEdgeRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkEdgeRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4948,7 +4955,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[301], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPathResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPathResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPathRequest_encode(request, input, 301, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4972,7 +4979,7 @@ static inline roswasmc_result
 {
     unsigned char output[309];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPathRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPathRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5018,7 +5025,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1325], output[276];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPointResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPointResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPointRequest_encode(request, input, 1325, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5042,7 +5049,7 @@ static inline roswasmc_result
 {
     unsigned char output[1333];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPointRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddNetworkPointRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5088,7 +5095,7 @@ static inline roswasmc_result
     unsigned char input[524], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveByIdResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveByIdResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveByIdRequest_encode(request, input, 524, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5112,7 +5119,7 @@ static inline roswasmc_result
 {
     unsigned char output[532];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveByIdRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveByIdRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5158,7 +5165,7 @@ static inline roswasmc_result
     unsigned char input[520], output[524];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveTagResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveTagResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveTagRequest_encode(request, input, 520, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5182,7 +5189,7 @@ static inline roswasmc_result
 {
     unsigned char output[528];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveTagRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_AddRemoveTagRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5228,7 +5235,7 @@ static inline roswasmc_result
     unsigned char input[521], output[13336];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneMissionRequest_encode(request, input, 521, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5252,7 +5259,7 @@ static inline roswasmc_result
 {
     unsigned char output[529];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5298,7 +5305,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[520], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMapRequest_encode(request, input, 520, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5322,7 +5329,7 @@ static inline roswasmc_result
 {
     unsigned char output[528];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5368,7 +5375,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[521], output[13606];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMissionRequest_encode(request, input, 521, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5393,7 +5400,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[529];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CloneNetworkMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5439,7 +5446,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[520], output[1209];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ClonePointOfInterestResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ClonePointOfInterestResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ClonePointOfInterestRequest_encode(request, input, 520, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5464,7 +5471,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[528];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ClonePointOfInterestRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ClonePointOfInterestRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5510,7 +5517,7 @@ static inline roswasmc_result
     unsigned char input[1964], output[13336];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateMissionRequest_encode(request, input, 1964, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5534,7 +5541,7 @@ static inline roswasmc_result
 {
     unsigned char output[1972];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5580,7 +5587,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1756], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMapRequest_encode(request, input, 1756, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5604,7 +5611,7 @@ static inline roswasmc_result
 {
     unsigned char output[1764];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5650,7 +5657,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[2234], output[13606];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMissionRequest_encode(request, input, 2234, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5675,7 +5682,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[2242];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateNetworkMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5721,7 +5728,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[949], output[1209];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreatePointOfInterestResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreatePointOfInterestResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreatePointOfInterestRequest_encode(request, input, 949, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5746,7 +5753,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[957];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreatePointOfInterestRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreatePointOfInterestRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5792,7 +5799,7 @@ static inline roswasmc_result
     unsigned char input[2769], output[1457];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateTaskResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateTaskResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateTaskRequest_encode(request, input, 2769, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5816,7 +5823,7 @@ static inline roswasmc_result
 {
     unsigned char output[2777];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateTaskRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateTaskRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5862,7 +5869,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1220], output[3350];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointRequest_encode(request, input, 1220, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5886,7 +5893,7 @@ static inline roswasmc_result
 {
     unsigned char output[1228];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5932,7 +5939,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1209], output[3350];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointFromPoiResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointFromPoiResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointFromPoiRequest_encode(request, input, 1209, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5957,7 +5964,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[1217];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointFromPoiRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_CreateWaypointFromPoiRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6003,7 +6010,7 @@ static inline roswasmc_result
     unsigned char input[260], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteByIdResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteByIdResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteByIdRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6027,7 +6034,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteByIdRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteByIdRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6073,7 +6080,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteEverythingResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteEverythingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteEverythingRequest_encode(request, input, 1, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6097,7 +6104,7 @@ static inline roswasmc_result
 {
     unsigned char output[9];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteEverythingRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteEverythingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6143,7 +6150,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[784], output[524];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteMultipleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteMultipleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteMultipleRequest_encode(request, input, 784, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6167,7 +6174,7 @@ static inline roswasmc_result
 {
     unsigned char output[792];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteMultipleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_DeleteMultipleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6213,7 +6220,7 @@ static inline roswasmc_result
     unsigned char input[1], output[260];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ExportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ExportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ExportDataRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6237,7 +6244,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ExportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ExportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6283,7 +6290,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[26676];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllMissionsResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllMissionsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllMissionsRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6307,7 +6314,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllMissionsRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllMissionsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6353,7 +6360,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[5220];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMapsResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMapsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMapsRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6377,7 +6384,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMapsRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMapsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6423,7 +6430,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[27216];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMissionsResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMissionsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMissionsRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6448,7 +6455,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMissionsRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllNetworkMissionsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6494,7 +6501,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[2422];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllPointsOfInterestResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllPointsOfInterestResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllPointsOfInterestRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6519,7 +6526,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllPointsOfInterestRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllPointsOfInterestRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6565,7 +6572,7 @@ static inline roswasmc_result
     unsigned char input[1], output[2918];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllTasksResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllTasksResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllTasksRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6589,7 +6596,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllTasksRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllTasksRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6635,7 +6642,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1], output[6704];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllWaypointsResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllWaypointsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllWaypointsRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6659,7 +6666,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllWaypointsRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetAllWaypointsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6705,7 +6712,7 @@ static inline roswasmc_result
     unsigned char input[1], output[32768];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetEverythingResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetEverythingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetEverythingRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6729,7 +6736,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetEverythingRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetEverythingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6775,7 +6782,7 @@ static inline roswasmc_result
     unsigned char input[260], output[13336];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetMissionRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6799,7 +6806,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6845,7 +6852,7 @@ static inline roswasmc_result
     unsigned char input[260], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMapRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6869,7 +6876,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6915,7 +6922,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[260], output[13606];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMissionRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -6939,7 +6946,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetNetworkMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -6985,7 +6992,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[260], output[1209];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetPointOfInterestResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetPointOfInterestResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetPointOfInterestRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7009,7 +7016,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetPointOfInterestRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetPointOfInterestRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7055,7 +7062,7 @@ static inline roswasmc_result
     unsigned char input[260], output[1457];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetTaskResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetTaskResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetTaskRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7079,7 +7086,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetTaskRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetTaskRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7125,7 +7132,7 @@ static inline roswasmc_result
     unsigned char input[260], output[3350];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetWaypointResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetWaypointResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_GetWaypointRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7149,7 +7156,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetWaypointRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_GetWaypointRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7195,7 +7202,7 @@ static inline roswasmc_result
     unsigned char input[260], output[32768];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportDataRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7219,7 +7226,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7265,7 +7272,7 @@ static inline roswasmc_result
     unsigned char input[13336], output[13336];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportMissionRequest_encode(request, input, 13336, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7289,7 +7296,7 @@ static inline roswasmc_result
 {
     unsigned char output[13344];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7335,7 +7342,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[2608], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMapRequest_encode(request, input, 2608, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7359,7 +7366,7 @@ static inline roswasmc_result
 {
     unsigned char output[2616];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7405,7 +7412,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[13606], output[13606];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMissionRequest_encode(request, input, 13606, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7430,7 +7437,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[13614];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ImportNetworkMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7476,7 +7483,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[537], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_SplitNetworkEdgeResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_SplitNetworkEdgeResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_SplitNetworkEdgeRequest_encode(request, input, 537, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7500,7 +7507,7 @@ static inline roswasmc_result
 {
     unsigned char output[545];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_SplitNetworkEdgeRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_SplitNetworkEdgeRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7546,7 +7553,7 @@ static inline roswasmc_result
     unsigned char input[2224], output[13336];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateMissionRequest_encode(request, input, 2224, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7570,7 +7577,7 @@ static inline roswasmc_result
 {
     unsigned char output[2232];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7616,7 +7623,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1052], output[824];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgeResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgeResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgeRequest_encode(request, input, 1052, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7640,7 +7647,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[1060];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgeRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgeRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7686,7 +7693,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[820], output[1652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgesResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgesResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgesRequest_encode(request, input, 820, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7710,7 +7717,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[828];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgesRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkEdgesRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7756,7 +7763,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[400], output[2608];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMapRequest_encode(request, input, 400, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7780,7 +7787,7 @@ static inline roswasmc_result
 {
     unsigned char output[408];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7826,7 +7833,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[2494], output[13606];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMissionResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMissionResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMissionRequest_encode(request, input, 2494, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7851,7 +7858,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[2502];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMissionRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkMissionRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7897,7 +7904,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[536], output[276];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointRequest_encode(request, input, 536, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7921,7 +7928,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[544];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -7967,7 +7974,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[824], output[556];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointsResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointsRequest_encode(request, input, 824, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -7991,7 +7998,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[832];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointsRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateNetworkPointsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8037,7 +8044,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[1209], output[1209];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdatePointOfInterestResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdatePointOfInterestResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdatePointOfInterestRequest_encode(request, input, 1209, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8062,7 +8069,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[1217];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdatePointOfInterestRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdatePointOfInterestRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8108,7 +8115,7 @@ static inline roswasmc_result
     unsigned char input[1457], output[1457];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateTaskResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateTaskResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateTaskRequest_encode(request, input, 1457, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8132,7 +8139,7 @@ static inline roswasmc_result
 {
     unsigned char output[1465];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateTaskRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateTaskRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8178,7 +8185,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[956], output[3350];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateWaypointResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateWaypointResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateWaypointRequest_encode(request, input, 956, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8202,7 +8209,7 @@ static inline roswasmc_result
 {
     unsigned char output[964];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateWaypointRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_UpdateWaypointRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8248,7 +8255,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
     unsigned char input[260], output[790];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ValidateNetworkMapResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ValidateNetworkMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_manager_msgs_ValidateNetworkMapRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8272,7 +8279,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_manager_msgs_
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_manager_msgs_ValidateNetworkMapRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_manager_msgs_ValidateNetworkMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8318,7 +8325,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[520], output[944];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CloneScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CloneScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CloneScheduleRequest_encode(request, input, 520, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8342,7 +8349,7 @@ static inline roswasmc_result
 {
     unsigned char output[528];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CloneScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CloneScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8388,7 +8395,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[684], output[944];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CreateScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CreateScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CreateScheduleRequest_encode(request, input, 684, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8412,7 +8419,7 @@ static inline roswasmc_result
 {
     unsigned char output[692];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CreateScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_CreateScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8458,7 +8465,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[261], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_EnableScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_EnableScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_EnableScheduleRequest_encode(request, input, 261, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8482,7 +8489,7 @@ static inline roswasmc_result
 {
     unsigned char output[269];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_EnableScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_EnableScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8528,7 +8535,7 @@ static inline roswasmc_result
     unsigned char input[1], output[260];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ExportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ExportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ExportDataRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8552,7 +8559,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ExportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ExportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8598,7 +8605,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[1], output[1892];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetAllSchedulesResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetAllSchedulesResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetAllSchedulesRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8622,7 +8629,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetAllSchedulesRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetAllSchedulesRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8668,7 +8675,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[1], output[268];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetNextScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetNextScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetNextScheduleRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8692,7 +8699,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetNextScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetNextScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8738,7 +8745,7 @@ static inline roswasmc_result
     unsigned char input[260], output[944];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetScheduleRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8762,7 +8769,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_GetScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8808,7 +8815,7 @@ static inline roswasmc_result
     unsigned char input[260], output[1892];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ImportDataResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ImportDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ImportDataRequest_encode(request, input, 260, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8832,7 +8839,7 @@ static inline roswasmc_result
 {
     unsigned char output[268];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ImportDataRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_ImportDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8878,7 +8885,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_mission_scheduler_msg
     unsigned char input[944], output[944];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_UpdateScheduleResponse next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_UpdateScheduleResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_mission_scheduler_msgs_UpdateScheduleRequest_encode(request, input, 944, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8902,7 +8909,7 @@ static inline roswasmc_result
 {
     unsigned char output[952];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_UpdateScheduleRequest next = {0};
+    roswasmc_bounded_1_clearpath_mission_scheduler_msgs_UpdateScheduleRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -8948,7 +8955,7 @@ static inline roswasmc_result
     unsigned char input[804], output[2];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_AutonomyTaskSrvResponse next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_AutonomyTaskSrvResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_navigation_msgs_AutonomyTaskSrvRequest_encode(request, input, 804, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -8972,7 +8979,7 @@ static inline roswasmc_result
 {
     unsigned char output[812];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_AutonomyTaskSrvRequest next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_AutonomyTaskSrvRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9018,7 +9025,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_navigation_msgs_SetDe
     unsigned char input[3], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetDelayCompensationResponse next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetDelayCompensationResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_navigation_msgs_SetDelayCompensationRequest_encode(request, input, 3, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9042,7 +9049,7 @@ static inline roswasmc_result
 {
     unsigned char output[11];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetDelayCompensationRequest next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetDelayCompensationRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9088,7 +9095,7 @@ static inline roswasmc_result
     unsigned char input[9], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathShifterResponse next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathShifterResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_navigation_msgs_SetPathShifterRequest_encode(request, input, 9, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9112,7 +9119,7 @@ static inline roswasmc_result
 {
     unsigned char output[17];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathShifterRequest next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathShifterRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9158,7 +9165,7 @@ static inline roswasmc_result
     unsigned char input[9], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathSmootherResponse next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathSmootherResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_navigation_msgs_SetPathSmootherRequest_encode(request, input, 9, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9182,7 +9189,7 @@ static inline roswasmc_result
 {
     unsigned char output[17];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathSmootherRequest next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetPathSmootherRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9228,7 +9235,7 @@ static inline roswasmc_result
     unsigned char input[5], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetStopDistanceResponse next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetStopDistanceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_navigation_msgs_SetStopDistanceRequest_encode(request, input, 5, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9252,7 +9259,7 @@ static inline roswasmc_result
 {
     unsigned char output[13];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_navigation_msgs_SetStopDistanceRequest next = {0};
+    roswasmc_bounded_1_clearpath_navigation_msgs_SetStopDistanceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9298,7 +9305,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_AddCommun
     unsigned char input[1961], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddCommunicationWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddCommunicationWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddCommunicationWatchdogRequest_encode(request, input, 1961, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9322,7 +9329,7 @@ static inline roswasmc_result
 {
     unsigned char output[1969];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddCommunicationWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddCommunicationWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9368,7 +9375,7 @@ static inline roswasmc_result
     unsigned char input[1441], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddHeartbeatWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddHeartbeatWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddHeartbeatWatchdogRequest_encode(request, input, 1441, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9392,7 +9399,7 @@ static inline roswasmc_result
 {
     unsigned char output[1449];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddHeartbeatWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddHeartbeatWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9438,7 +9445,7 @@ static inline roswasmc_result
     unsigned char input[1449], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddInclinationWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddInclinationWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddInclinationWatchdogRequest_encode(request, input, 1449, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9462,7 +9469,7 @@ static inline roswasmc_result
 {
     unsigned char output[1457];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddInclinationWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddInclinationWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9508,7 +9515,7 @@ static inline roswasmc_result
     unsigned char input[1438], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeStatusWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeStatusWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddNodeStatusWatchdogRequest_encode(request, input, 1438, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9532,7 +9539,7 @@ static inline roswasmc_result
 {
     unsigned char output[1446];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeStatusWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeStatusWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9578,7 +9585,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_AddNodele
     unsigned char input[1698], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeletStatusWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeletStatusWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddNodeletStatusWatchdogRequest_encode(request, input, 1698, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9602,7 +9609,7 @@ static inline roswasmc_result
 {
     unsigned char output[1706];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeletStatusWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNodeletStatusWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9648,7 +9655,7 @@ static inline roswasmc_result
     unsigned char input[1441], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNumPointsWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNumPointsWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddNumPointsWatchdogRequest_encode(request, input, 1441, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9672,7 +9679,7 @@ static inline roswasmc_result
 {
     unsigned char output[1449];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddNumPointsWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddNumPointsWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9718,7 +9725,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCo
     unsigned char input[1449], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCovarianceWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCovarianceWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCovarianceWatchdogRequest_encode(request, input, 1449, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9742,7 +9749,7 @@ static inline roswasmc_result
 {
     unsigned char output[1457];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCovarianceWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddOdomCovarianceWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9788,7 +9795,7 @@ static inline roswasmc_result
     unsigned char input[1443], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddRtkFixWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddRtkFixWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddRtkFixWatchdogRequest_encode(request, input, 1443, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9812,7 +9819,7 @@ static inline roswasmc_result
 {
     unsigned char output[1451];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddRtkFixWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddRtkFixWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9858,7 +9865,7 @@ static inline roswasmc_result
     unsigned char input[1441], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddTopicDataWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddTopicDataWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_AddTopicDataWatchdogRequest_encode(request, input, 1441, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9882,7 +9889,7 @@ static inline roswasmc_result
 {
     unsigned char output[1449];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_AddTopicDataWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_AddTopicDataWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9928,7 +9935,7 @@ static inline roswasmc_result
     unsigned char input[132], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_RemoveWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_RemoveWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_RemoveWatchdogRequest_encode(request, input, 132, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -9952,7 +9959,7 @@ static inline roswasmc_result
 {
     unsigned char output[140];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_RemoveWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_RemoveWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -9998,7 +10005,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateCom
     unsigned char input[2221], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateCommunicationWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateCommunicationWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateCommunicationWatchdogRequest_encode(request, input, 2221, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10022,7 +10029,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateCom
 {
     unsigned char output[2229];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateCommunicationWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateCommunicationWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10068,7 +10075,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateHea
     unsigned char input[1701], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateHeartbeatWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateHeartbeatWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateHeartbeatWatchdogRequest_encode(request, input, 1701, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10092,7 +10099,7 @@ static inline roswasmc_result
 {
     unsigned char output[1709];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateHeartbeatWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateHeartbeatWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10138,7 +10145,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateInc
     unsigned char input[1709], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateInclinationWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateInclinationWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateInclinationWatchdogRequest_encode(request, input, 1709, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10162,7 +10169,7 @@ static inline roswasmc_result
 {
     unsigned char output[1717];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateInclinationWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateInclinationWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10208,7 +10215,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateNod
     unsigned char input[1698], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeStatusWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeStatusWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeStatusWatchdogRequest_encode(request, input, 1698, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10232,7 +10239,7 @@ static inline roswasmc_result
 {
     unsigned char output[1706];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeStatusWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeStatusWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10278,7 +10285,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateNod
     unsigned char input[1958], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeletStatusWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeletStatusWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeletStatusWatchdogRequest_encode(request, input, 1958, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10302,7 +10309,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateNod
 {
     unsigned char output[1966];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeletStatusWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNodeletStatusWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10348,7 +10355,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateNum
     unsigned char input[1701], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNumPointsWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNumPointsWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateNumPointsWatchdogRequest_encode(request, input, 1701, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10372,7 +10379,7 @@ static inline roswasmc_result
 {
     unsigned char output[1709];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNumPointsWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateNumPointsWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10418,7 +10425,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdo
     unsigned char input[1709], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdomCovarianceWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdomCovarianceWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdomCovarianceWatchdogRequest_encode(request, input, 1709, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10442,7 +10449,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdo
 {
     unsigned char output[1717];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdomCovarianceWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateOdomCovarianceWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10488,7 +10495,7 @@ static inline roswasmc_result
     unsigned char input[1703], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateRtkFixWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateRtkFixWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateRtkFixWatchdogRequest_encode(request, input, 1703, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10512,7 +10519,7 @@ static inline roswasmc_result
 {
     unsigned char output[1711];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateRtkFixWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateRtkFixWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -10558,7 +10565,7 @@ static inline roswasmc_result roswasmc_bounded_1_clearpath_safety_msgs_UpdateTop
     unsigned char input[1701], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateTopicDataWatchdogResponse next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateTopicDataWatchdogResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_clearpath_safety_msgs_UpdateTopicDataWatchdogRequest_encode(request, input, 1701, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -10582,7 +10589,7 @@ static inline roswasmc_result
 {
     unsigned char output[1709];
     roswasmc_result r;
-    roswasmc_bounded_1_clearpath_safety_msgs_UpdateTopicDataWatchdogRequest next = {0};
+    roswasmc_bounded_1_clearpath_safety_msgs_UpdateTopicDataWatchdogRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

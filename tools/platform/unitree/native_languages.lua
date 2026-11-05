@@ -67,7 +67,9 @@ function configure(target, root)
     target:set("kind", "binary")
     target:set("extension", ".wasm")
     target:set("filename", target:name() .. ".wasm")
-    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+    if not target:get("targetdir") then
+        target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build/artifacts"))
+    end
     target:set("toolchains", "ros.wasm.command")
     local native_rules = {
         "dlang",
@@ -274,7 +276,8 @@ function build(target, root)
             "-betterC",
             "-O2",
             "-release",
-            "-boundscheck=off",
+            "-boundscheck=on",
+            "-checkaction=halt",
             "-I=" .. include,
             "-i=unitree.d.observation",
             "-i=unitree.d." .. target:values("ros.sdk.backend") .. ".observation",

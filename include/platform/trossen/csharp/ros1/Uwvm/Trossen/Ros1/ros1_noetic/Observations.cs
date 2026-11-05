@@ -1,5 +1,4 @@
 using System;
-using Uwvm.Ros;
 using Uwvm.Trossen;
 
 namespace Uwvm.Trossen.Ros1.ros1_noetic
@@ -20,7 +19,7 @@ namespace Uwvm.Trossen.Ros1.ros1_noetic
         public static Observation.Result<Ros1Interbotix_xs_msgsJointSingleCommand> ReadJointSingleCommand(string alias, int attempts)
         {
             Observation.Result<Ros1Interbotix_xs_msgsJointSingleCommand> result = new Observation.Result<Ros1Interbotix_xs_msgsJointSingleCommand>(
-                Client.WaitSample(alias, Ros1Interbotix_xs_msgsJointSingleCommand.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros1Interbotix_xs_msgsJointSingleCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -48,7 +47,7 @@ namespace Uwvm.Trossen.Ros1.ros1_noetic
         public static Observation.Result<Ros1Interbotix_xs_msgsJointGroupCommand> ReadJointGroupCommand(string alias, int attempts)
         {
             Observation.Result<Ros1Interbotix_xs_msgsJointGroupCommand> result = new Observation.Result<Ros1Interbotix_xs_msgsJointGroupCommand>(
-                Client.WaitSample(alias, Ros1Interbotix_xs_msgsJointGroupCommand.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros1Interbotix_xs_msgsJointGroupCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -76,7 +75,7 @@ namespace Uwvm.Trossen.Ros1.ros1_noetic
         public static Observation.Result<Ros1Interbotix_xs_msgsJointTrajectoryCommand> ReadJointTrajectoryCommand(string alias, int attempts)
         {
             Observation.Result<Ros1Interbotix_xs_msgsJointTrajectoryCommand> result = new Observation.Result<Ros1Interbotix_xs_msgsJointTrajectoryCommand>(
-                Client.WaitSample(alias, Ros1Interbotix_xs_msgsJointTrajectoryCommand.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros1Interbotix_xs_msgsJointTrajectoryCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try

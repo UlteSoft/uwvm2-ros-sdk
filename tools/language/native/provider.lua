@@ -40,7 +40,7 @@ function describe()
 		languages = languages,
 		targets = { "wasm32-wasip1", "wasm64-wasip1" },
 		exception_profiles = { "noeh" },
-		entry_profiles = { "command" },
+		entry_profiles = { "command", "freestanding" },
 		features = { "memory64", "table64" },
 		artifact_kinds = {
 			binary = capability(languages),
@@ -74,8 +74,9 @@ local function source_action(target, root, request)
 		"Request target width conflicts with the actual source target"
 	)
 	assert(
-		not request.entry or request.entry == "command",
-		"This frontend does not implement freestanding startup"
+		not request.entry or request.entry == "command"
+			or (request.entry == "freestanding" and request.language == "objectc"),
+		"Only the Objective-C frontend accepts an explicitly owned freestanding entry"
 	)
 	local declared = request.native_action or (request.binding and request.binding.native_action)
 	if declared then
@@ -108,9 +109,33 @@ local function source_action(target, root, request)
 		end
 	end
 	local action = table.clone(declared)
+	if request.language == "objectc" then
+		action.objectc_sources = table.clone(action.objectc_sources or {})
+		action.c_sources = table.clone(action.c_sources or {})
+		local seen = {}
+		for _, source in ipairs(target:sourcefiles()) do seen[path.absolute(source)] = true end
+		for _, source in ipairs(action.objectc_sources) do seen[path.absolute(path.join(root, source))] = true end
+		for _, entry in ipairs(action.c_sources) do
+			local source = type(entry) == "table" and entry.source or entry
+			seen[path.absolute(path.join(root, source))] = true
+		end
+		for _, source in ipairs(request.native_sources or {}) do
+			local absolute = path.absolute(path.join(root, source))
+			if not seen[absolute] then
+				if source:endswith(".m") then
+					table.insert(action.objectc_sources, source)
+				else
+					assert(source:endswith(".c"), "Objective-C native source graphs admit explicit C and Objective-C inputs")
+					table.insert(action.c_sources, {source=source})
+				end
+				seen[absolute] = true
+			end
+		end
+	end
 	if target:kind() ~= "binary" then
+		local infrastructure = action.c_sources
 		action.c_sources = {}
-		for _, descriptor in ipairs(declared.c_sources or {}) do
+		for _, descriptor in ipairs(infrastructure or {}) do
 			assert(
 				type(descriptor) == "table",
 				"A library binding must explicitly describe entry-safe infrastructure"
@@ -323,6 +348,21 @@ function build(target, root, action)
 		end
 		for _, define in ipairs(action.defines or {}) do
 			table.insert(extra, "-D" .. define)
+		end
+		local selected, programs = core.llvm(root, triple, profile)
+		local context = {root=root, action=action, selected=selected, programs=programs,
+			cflags=core.cflags(root, selected, action),
+			cache=artifacts.workspace(target, "objectc-infrastructure")}
+		os.mkdir(context.cache)
+		local objects = core.infrastructure(context)
+		if #objects > 0 then
+			table.join2(extra, {"-x", "none"})
+			table.join2(extra, objects)
+			table.join2(extra, {"-x", "objective-c"})
+		end
+		for _, relative in ipairs(action.objectc_sources or {}) do
+			assert(relative:endswith(".m"), "Objective-C implementation sources must use .m")
+			table.insert(extra, core.installed(root, relative))
 		end
 		return import("cfamily", { rootdir = path.join(root, "tools/xmake"), anonymous = true }).build(
 			target,

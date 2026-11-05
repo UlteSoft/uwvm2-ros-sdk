@@ -17,6 +17,11 @@
       "name": "uwvm/js/observation",
       "file": "src/language/js/modules/observation.mjs",
       "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "ros/js/native_command",
+      "file": "include/platform/ros/js/native_command.mjs",
+      "sha256": "4de0417acedda6b901b28169e32e573641eb7598232c06522a5ea99ee0697377"
     }
   ],
   "default_authority": []

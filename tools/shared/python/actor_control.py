@@ -67,14 +67,28 @@ def launch(context, role, argv, environment=None, expected_sha256=None):
     env = dict(os.environ, ROS_LOCALHOST_ONLY="1", ROS2CLI_NO_DAEMON="1", UWVM_ROS_SIMULATION_RUN_ID=context.run_id)
     env.update(environment or {})
     started_ns = time.monotonic_ns()
-    with stdout.open("xb") as out, stderr.open("xb") as err:
-        child = subprocess.Popen(gate_arguments, cwd=context.example, env=env, stdin=subprocess.DEVNULL,
-                                 stdout=out, stderr=err, start_new_session=True)
+    capture = None
+    if role == "vm":
+        from pipe_capture import PipeCapture
+        capture = PipeCapture(stdout, stderr, context.actor_output_limit)
+        try:
+            child = subprocess.Popen(gate_arguments, cwd=context.example, env=env, stdin=subprocess.DEVNULL,
+                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+            capture.attach(child)
+        except BaseException:
+            capture.close()
+            raise
+    else:
+        with stdout.open("xb") as out, stderr.open("xb") as err:
+            child = subprocess.Popen(gate_arguments, cwd=context.example, env=env, stdin=subprocess.DEVNULL,
+                                     stdout=out, stderr=err, start_new_session=True)
     root = Path("/proc") / str(child.pid)
     try:
         birth = process_birth(root)
     except (FileNotFoundError, ProcessLookupError) as error:
         child.wait(timeout=5)
+        if capture is not None:
+            capture.close()
         save(folder / "failure.json", {"status": "BLOCKED", "diagnostic": repr(error), "pid": child.pid,
              "reason": "No verified birth before gate exit", "exit_code": child.returncode})
         raise Blocked("BLOCKED_ACTOR_GATE_EXIT_BEFORE_BIRTH_OBSERVATION") from error
@@ -83,10 +97,15 @@ def launch(context, role, argv, environment=None, expected_sha256=None):
              "started_ns": started_ns, "gate_arguments": gate_arguments,
              "request_path": str(request_path), "request_sha256": digest(request_path),
              "functional_instrumentation_not_performance": True}
+    if capture is not None:
+        actor["_output_capture"] = capture
+        actor["output_provider"] = "bounded-host-pipe"
     context.actors.append(actor)
     try:
         deadline = time.monotonic() + 10
         while not stopped(child.pid, birth):
+            if capture is not None:
+                capture.drain()
             require(child.poll() is None and time.monotonic() < deadline, "ACTOR_GATE_STOP_NOT_OBSERVED")
             context.guard()
             time.sleep(0.002)
@@ -100,6 +119,8 @@ def launch(context, role, argv, environment=None, expected_sha256=None):
         target_info = program.stat()
         deadline = time.monotonic() + 10
         while True:
+            if capture is not None:
+                capture.drain()
             require(child.poll() is None and time.monotonic() < deadline, "ACTUAL_EXEC_IMAGE_UNOBSERVED_FAST_EXIT")
             require(process_birth(root) == birth, "ACTUAL_EXEC_PID_REUSE")
             context.guard()
@@ -112,6 +133,8 @@ def launch(context, role, argv, environment=None, expected_sha256=None):
             time.sleep(0.001)
         deadline = time.monotonic() + 5
         while not stopped(child.pid, birth):
+            if capture is not None:
+                capture.drain()
             require(child.poll() is None and time.monotonic() < deadline, "ACTUAL_EXEC_STOP_NOT_OBSERVED")
             time.sleep(0.001)
         # Open and hash the actual procfs executable descriptor while stopped.

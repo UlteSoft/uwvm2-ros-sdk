@@ -1,0 +1,28 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "php",
+  "profile": "ros2_jazzy_v2_2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/php/ros2/flexiv_ros2_jazzy_v2_2_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "name": "ros/php/RosWasm/Word.php"
+    },
+    {
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "name": "ros/php/RosWasm/Wire.php"
+    },
+    {
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "name": "ros/php/RosWasm/Transport.php"
+    },
+    {
+      "path": "include/platform/flexiv/php/ros2/flexiv_ros2_jazzy_v2_2_complete/Records.php",
+      "name": "flexiv/php/ros2/flexiv_ros2_jazzy_v2_2_complete/Records.php"
+    }
+  ]
+}

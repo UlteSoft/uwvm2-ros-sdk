@@ -131,7 +131,7 @@ if(UWVM_DEFAULT_CONTROL_GATEWAY_EXPORTER)
  add_executable(default_control_gateway_export tools/export_native_ids.cpp)
  target_include_directories(default_control_gateway_export PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/detail" "${CMAKE_CURRENT_BINARY_DIR}"
  "${UWVM_RMW_INCLUDE_DIR}" "${_root}/third-parties/fast_io/include")
- target_link_libraries(default_control_gateway_export PRIVATE uwvm_default_control_gateway ${_native_targets} rosidl_runtime_c::rosidl_runtime_c)
+ target_link_libraries(default_control_gateway_export PRIVATE uwvm_default_control_gateway rclcpp::rclcpp ${_native_targets} rosidl_runtime_c::rosidl_runtime_c)
 endif()
 if(UWVM_DEFAULT_CONTROL_GATEWAY_CONTRACTS)
  if(NOT UWVM_DEFAULT_CONTROL_GATEWAY_NATIVE_API OR NOT EXISTS "${UWVM_DEFAULT_CONTROL_GATEWAY_IDENTITIES_DIR}/default_control_gateway_identity_input.hpp")

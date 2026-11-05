@@ -89,7 +89,13 @@ def prepare(sdk, output, all_types=False):
         """# Build a genuine installed ROS metadata reader; creates no ROS node.
 cmake_minimum_required(VERSION 3.16)
 project(unitree_native_metadata LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(UWVM_ROS_SOURCE_ROOT "" CACHE PATH "Matching VM source providing the common monotonic clock")
+if(NOT EXISTS "${UWVM_ROS_SOURCE_ROOT}/src/uwvm2/utils/thread/monotonic_clock.h")
+  message(FATAL_ERROR "Set UWVM_ROS_SOURCE_ROOT to the matching VM checkout")
+endif()
+include_directories("${UWVM_ROS_SOURCE_ROOT}/src" "${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include")
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 """

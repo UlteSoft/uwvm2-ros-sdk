@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete urinterfaces/srv/SetAnalogOutput_Response value with genuine AssemblyScript.

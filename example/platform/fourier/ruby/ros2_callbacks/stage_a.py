@@ -98,6 +98,8 @@ def main():
     parser.add_argument('--report-directory', type=Path, required=True)
     args = parser.parse_args()
     require(sys.platform == 'linux', 'Execute this scenario only on the selected Linux installation')
+    sys.path.insert(0, str(args.sdk.resolve(strict=True) / 'tools/shared/python'))
+    from pipe_capture import PipeLoggedProcess
     module_path = args.sdk.resolve(strict=True) / 'tools/platform/ros/run.py'
     spec = importlib.util.spec_from_file_location('public_native_ros_launcher', module_path)
     launcher = importlib.util.module_from_spec(spec)
@@ -151,12 +153,13 @@ def main():
     try:
         with tempfile.TemporaryDirectory(prefix='uwvm-sdk07-ros-') as temporary, ExitStack() as files:
             socket = str(Path(temporary) / 'main.sock')
-            argv = deployment.command(plan, [runtime, *options], {'main': socket}, os.getuid())
+            argv = deployment.command(plan, [runtime, *options], {'main': socket}, os.getuid(), test=True)
             result['runtime_argv'] = argv
             def start(label, argv):
                 stdout = files.enter_context((evidence / (label + '.stdout')).open('xb'))
                 stderr = files.enter_context((evidence / (label + '.stderr')).open('xb'))
-                child = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
+                launch = PipeLoggedProcess if label == 'guest' else subprocess.Popen
+                child = launch(argv, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
                                          env=environment, start_new_session=True, preexec_fn=bounded_child)
                 processes.append(child)
                 return child

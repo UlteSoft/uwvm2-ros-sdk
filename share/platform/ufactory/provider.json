@@ -121,7 +121,110 @@
           "response": "xarm_msgs/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros1_kinetic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros1_kinetic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros1_kinetic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros1/kinetic/records",
+              "path": "include/platform/ufactory/php/ros1/kinetic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros1/kinetic/records",
+              "path": "include/platform/ufactory/ruby/ros1/kinetic/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_legacy",
@@ -217,7 +320,110 @@
           "response": "xarm_msgs/GetAnalogIOResponse",
           "request": "xarm_msgs/GetAnalogIORequest"
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros1_legacy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros1_legacy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros1_legacy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros1/legacy/records",
+              "path": "include/platform/ufactory/php/ros1/legacy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros1/legacy/records",
+              "path": "include/platform/ufactory/ruby/ros1/legacy/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_master",
@@ -298,7 +504,110 @@
           "response": "xarm_msgs/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros1_master.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros1_master.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros1_master.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros1/master/records",
+              "path": "include/platform/ufactory/php/ros1/master/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros1/master/records",
+              "path": "include/platform/ufactory/ruby/ros1/master/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_foxy",
@@ -454,7 +763,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_foxy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_foxy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_foxy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/foxy/records",
+              "path": "include/platform/ufactory/php/ros2/foxy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/foxy/records",
+              "path": "include/platform/ufactory/ruby/ros2/foxy/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_galactic",
@@ -610,7 +1022,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_galactic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_galactic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_galactic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/galactic/records",
+              "path": "include/platform/ufactory/php/ros2/galactic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/galactic/records",
+              "path": "include/platform/ufactory/ruby/ros2/galactic/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_humble",
@@ -871,11 +1386,105 @@
           "main_class": "Main"
         },
         "js": {
-          "format": "uwvm-vendor-source-graph-v1",
-          "language": "js",
-          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_humble.json",
-          "module_count": 13,
-          "native_definition_catalog": "share/platform/ufactory/catalogs/ros2_humble/catalog.json"
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_humble.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_humble.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_humble.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/humble/records",
+              "path": "include/platform/ufactory/php/ros2/humble/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/humble/records",
+              "path": "include/platform/ufactory/ruby/ros2/humble/records.rb"
+            }
+          ]
+        }
+      },
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
         }
       }
     },
@@ -1124,7 +1733,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_humble_gz.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_humble_gz.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_humble_gz.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/humble_gz/records",
+              "path": "include/platform/ufactory/php/ros2/humble_gz/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/humble_gz/records",
+              "path": "include/platform/ufactory/ruby/ros2/humble_gz/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_jazzy",
@@ -1397,7 +2109,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_jazzy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_jazzy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_jazzy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/jazzy/records",
+              "path": "include/platform/ufactory/php/ros2/jazzy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/jazzy/records",
+              "path": "include/platform/ufactory/ruby/ros2/jazzy/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_master",
@@ -1553,7 +2368,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_master.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_master.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_master.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/master/records",
+              "path": "include/platform/ufactory/php/ros2/master/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/master/records",
+              "path": "include/platform/ufactory/ruby/ros2/master/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_rolling",
@@ -1642,7 +2560,110 @@
           "response": "xarm_msgs/msg/CIOState",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/ufactory/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/ufactory/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "ufactory",
+                "source": "include/platform/ufactory/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "ufactory"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/ufactory/bundles/js/ros2_rolling.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ufactory/bundles/lua/ros2_rolling.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ufactory/bundles/py/ros2_rolling.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "ufactory/php/ros2/rolling/records",
+              "path": "include/platform/ufactory/php/ros2/rolling/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "ufactory/ruby/ros2/rolling/records",
+              "path": "include/platform/ufactory/ruby/ros2/rolling/records.rb"
+            }
+          ]
+        }
+      }
     }
   ],
   "requested_languages": [

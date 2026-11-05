@@ -1,0 +1,361 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-vendor-bridge-2195",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest. Codec commands consume independent complete canonical bytes, truncations and trailing bytes; observation commands explicitly test denied resource and invalid alias without claiming positive native transport.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros1/flexiv-ros1-noetic-complete/bounded_interfaces.h",
+      "sha256": "17d20eb145f15d358db8da18747a3887f2eee7e62b583d27488eb668e33a1264"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros1/flexiv-ros1-noetic-complete/bounded_records.h",
+      "sha256": "5ab4d040dfcf970a2d872548d8ad8758cffef6bf70d8cc7c9daf7beba6f5a982"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros1/flexiv-ros1-noetic-complete/operations.h",
+      "sha256": "a23f903ae8da87e10b0c07a2d312d8d8ccea28e34f799f0cc280cbb468cd34c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-controller-core-foxy-complete/bounded_interfaces.h",
+      "sha256": "794278fb986378e61fefb0e8ad5a6112129642ffd67e6e0707ad607767b8ae97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-controller-core-foxy-complete/bounded_records.h",
+      "sha256": "bbda54dc0c1cd660484b9a1153e3e30b3f0dac1dbe02ec06a6dfb2e760ddcfa8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-controller-core-humble-complete/bounded_interfaces.h",
+      "sha256": "fd76a40a1d7c5327b9f81aeed13edc5e8c0c3dabdb60cdc2bd2205f1a0011ed1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-controller-core-humble-complete/bounded_records.h",
+      "sha256": "5e6c9894b0f845d5148115329547c3464edf61b66a58f88c4c3853c76767fb45"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-foxy-complete/bounded_interfaces.h",
+      "sha256": "27e46a18f08714f98cb4f5a4eb15310c18d265d7895085556d794d0fbd35807a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-foxy-complete/bounded_records.h",
+      "sha256": "a536b5b42d59dc847df09bb7aa8ccfaf0a68f506f6ffffe78fd4379d7ec18274"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-foxy-complete/operations.h",
+      "sha256": "72688d7d6633b482bb6883b2840cb3de840527722dc9a1cfc8c9d23bf6642a61"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v1-complete/bounded_interfaces.h",
+      "sha256": "6eeae1549ce8b1d9fcdccf788807e33f2d0c1f8ca0989bd49b37a76b09debabc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v1-complete/bounded_records.h",
+      "sha256": "5db0f5e84e9c1e7f73e5017a228616f3f8a26fa840e8f265aaa0dcbf8d263180"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v1-complete/operations.h",
+      "sha256": "ef4d3b195d0707dc69216d66d36251a8a9059f887c90b1d6c7f0842d31c14861"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-2-complete/bounded_interfaces.h",
+      "sha256": "1819fc9fd2af867737cdcd4358c33fd5c9547c2ed910df22de02b9d0996e48e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-2-complete/bounded_records.h",
+      "sha256": "853bb425e39bc8bae45294efb8a3134ab96abeb5350efa0d5fb3674cf3c4d275"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-2-complete/operations.h",
+      "sha256": "08543ed08151e564dd3289dde9f42269041d10d991be4e1a0f354d6d7bd2707f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-complete/bounded_interfaces.h",
+      "sha256": "10e8e4609ba75637972fb5a49874a2f635824be84f0dd3e7231c9630d9e3e33b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-complete/bounded_records.h",
+      "sha256": "4dcab24ae2106d67f0010cc8647e91f9ac83a80299822b38411406f4daac1aeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-humble-v2-complete/operations.h",
+      "sha256": "6baf29a4e96a7efa192e390f9be431a3a791f45b14abc5148434bde3e43b4ab6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v1-complete/bounded_interfaces.h",
+      "sha256": "f5f3214d2b1dd3bc3f797aed6f3a4336c562f1c3af24ab9a5a4e7df75fa43fe4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v1-complete/bounded_records.h",
+      "sha256": "5db0f5e84e9c1e7f73e5017a228616f3f8a26fa840e8f265aaa0dcbf8d263180"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v1-complete/operations.h",
+      "sha256": "1438623391a3d67e86d9f23d50f709b4e80a51ea1b04a2def7dd199d54635a44"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-2-complete/bounded_interfaces.h",
+      "sha256": "1e3b7f60ab749f5bb94e995eacbf779df0957af91b73fff2481f8fd6961486a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-2-complete/bounded_records.h",
+      "sha256": "853bb425e39bc8bae45294efb8a3134ab96abeb5350efa0d5fb3674cf3c4d275"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-2-complete/operations.h",
+      "sha256": "a920b44fd0f92320d198d27fd0ec3d9b6eb0307743b0b95f901f0d8336a44dfa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-complete/bounded_interfaces.h",
+      "sha256": "57521fe0f058cb0ad40213e623d4c6f05f52c0941bf19685fb0c0c263d68648c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-complete/bounded_records.h",
+      "sha256": "4dcab24ae2106d67f0010cc8647e91f9ac83a80299822b38411406f4daac1aeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-jazzy-v2-complete/operations.h",
+      "sha256": "5949e31d620318f64c2e9fb32fae5c89894207566d7384980cc1857ea46bcdca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-lyrical-v1-complete/bounded_interfaces.h",
+      "sha256": "fe70c9763a1b88b02c803cf306bfb6f2488501b54de27bffc1f182dd871453ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-lyrical-v1-complete/bounded_records.h",
+      "sha256": "5db0f5e84e9c1e7f73e5017a228616f3f8a26fa840e8f265aaa0dcbf8d263180"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/ros2/flexiv-ros2-lyrical-v1-complete/operations.h",
+      "sha256": "9ef43d2d23ec760e80131f83dd7c01533b12842c07597fea8f7122d383bbef47"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/selected_records.h",
+      "sha256": "63d89904007521312a350a9088590311cbb7b092e7725be8e744707d801e7265"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c/state.h",
+      "sha256": "7e36e91132b2435e28493b7c9b5248d2a9a0153a3a73ed136770f0cf44e4dd0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/controller_core_foxy/records.h",
+      "sha256": "b5f622a6bfb776b8af43706e4d331c44c91af448dc501958cb671a6456ba16b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/controller_core_humble/records.h",
+      "sha256": "3e8b8841f9393a35a85c4054585d88795f41e6e320ed27919bdac1bd04a8cc97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros1/noetic/records.h",
+      "sha256": "32bdf020f5f9992307583784f4826f52c82e79209946cbd950f8c50ef29214d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/foxy/records.h",
+      "sha256": "28bfdf2669f1be6812ba200a564b73e540895b9faa4a95669993dd859ddd6788"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/humble_v1/records.h",
+      "sha256": "354caa0e8bb1f1d7d95f2f08c863cb0c7222567256be72a9b8fee3694106890e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/humble_v2/records.h",
+      "sha256": "d71f8f9ff84aae9b078c9d724b28b05f20a244aa82ac469804e4d3b72f0f0328"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/records.h",
+      "sha256": "5c93b5da415b2b0bf7801800594d52a09664ff5801080ffab0572c9d1d195d59"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/records.h",
+      "sha256": "eac3805f961cbfad602daa1946a0591cead4e9a144b17e576fffa1516e6de0a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/records.h",
+      "sha256": "5047f746fb3dea495f50f309896b647174c22eca87e45840b91ad1469d0cd5fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/records.h",
+      "sha256": "b784858441a59a7972f0f9b46a9e1350ccced35f5128456634c1ff977eb997f2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/records.h",
+      "sha256": "7d934c0f074c42301b25fb1c897f5272d32e45ce6c992e82687e2cd803d33d01"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/catalogs/ros2_foxy/records.json",
+      "sha256": "3f8c7dd49e018423907b8427c9d28ea29587f42dd34fe1330f37e64ceb22e49c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/controller_core_foxy/records.c",
+      "sha256": "7532a2c9047f7df26c67fe24053995434f3e406f01b0fe93e94833165fded17b"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/controller_core_humble/records.c",
+      "sha256": "7be92bf98def7fe39508649e347c7e58036645b2ea624ed623752a9cd65c8b39"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros1/noetic/records.c",
+      "sha256": "3b9abe6604795528ab310a88961c7a0d0f173d5be11c664d200f8d8703ccffed"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/foxy/records.c",
+      "sha256": "8a135cc76021bc13e7cb9049a6e92f6881903bb52e9484e240fbb125ae7c541e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/humble_v1/records.c",
+      "sha256": "9f1bd0de221b0593d07febd5c31e242ab85ef32b931be5c30ee98cb5cb5abef0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/humble_v2/records.c",
+      "sha256": "0feee65bbdd51e7af6f211b9d5963b33f31a23c63d6ab898c6bc59b2cf48b99c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/humble_v2_2/records.c",
+      "sha256": "162091ba09f99d975a6401000b5743f09364eba2dc2631a4076cd4664c414c3d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/jazzy_v1/records.c",
+      "sha256": "d2e8a2a5eaa31bb0822f7c7ee2d25b1552ddd5b1f351a8a1df3dd9257d99f215"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2/records.c",
+      "sha256": "df1c12f02b1d6c8b850bd9a38bd0aee0248c8b65ca205b28fff24e40756e38ec"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/jazzy_v2_2/records.c",
+      "sha256": "ef0a55ea464b646626fc1b5e304ff7048148ea240afbba1a64eccc25caa72cae"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/flexiv/c_ffi_bridge/ros2/lyrical_v1/records.c",
+      "sha256": "fc4fded01130bea22ed3e45753ce842c381dd4449e2febf4203553142c53711d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "c80cd7a3ce6a9c358ed110e681d602d3197d8b3d47f1e42a2b211fb449f3e1e5"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6fef923f885c755699bca12030f728bef8c91cb03bea0a3016a197e2177cae9c"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "70fbfd0e1b99242a74c5154d90a7cb46f0240addc82143b92f619ed909e79474"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "666c657869765f6d7367732f6d73672f4d6f64652062797465733d310a30300a",
+      "stdin_hex": "00"
+    },
+    {
+      "id": "truncated-value",
+      "arguments": [],
+      "stdin_hex": "",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing-byte",
+      "arguments": [],
+      "stdin_hex": "0000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

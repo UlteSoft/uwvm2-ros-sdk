@@ -1,0 +1,79 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "wasi-ruby-sum-arguments",
+  "scope": "Complete original Wasm command execution with explicit standard-stream input and exact result assertions.",
+  "cases": [
+    {
+      "id": "sum-normal",
+      "arguments": [
+        "19",
+        "23"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "42\n"
+    },
+    {
+      "id": "sum-empty",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "0\n"
+    },
+    {
+      "id": "sum-signed",
+      "arguments": [
+        "-41",
+        "+42",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "1\n"
+    },
+    {
+      "id": "sum-malformed",
+      "arguments": [
+        "12bad"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "sum-overflow",
+      "arguments": [
+        "2147483647",
+        "1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "sum-no-digits",
+      "arguments": [
+        "+"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/ruby/sum_arguments/xmake.lua",
+      "sha256": "12a57cb5c70b35ac34fc68637c153fa55c75c1a6d982dea0d79e45d4ef14d349"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/ruby/sum_arguments/main.rb",
+      "sha256": "40135b9aa2e9a3e592712e075ee8fd5df0e95f76c493fc0a98ac03202702f8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    }
+  ]
+}

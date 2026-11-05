@@ -17,6 +17,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -225,7 +232,7 @@ static inline uint32_t roswasmc_bounded_2_builtin_interfaces_msg_Time_encode(ros
 static inline uint32_t
     roswasmc_bounded_2_builtin_interfaces_msg_Time_decode(void const* input, size_t length, roswasmc_bounded_2_builtin_interfaces_msg_Time* value)
 {
-    roswasmc_bounded_2_builtin_interfaces_msg_Time next = {0};
+    roswasmc_bounded_2_builtin_interfaces_msg_Time next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -382,7 +389,7 @@ static inline uint32_t
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Point_decode(void const* input, size_t length, roswasmc_bounded_2_geometry_msgs_msg_Point* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Point next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Point next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 24u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -436,7 +443,7 @@ typedef struct roswasmc_bounded_2_geometry_msgs_msg_Quaternion
  * This initializer performs no I/O, registration, allocation or capability operation. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(roswasmc_bounded_2_geometry_msgs_msg_Quaternion* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Quaternion next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Quaternion next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!value)
         return UWVM_BOUNDED_INVALID;
     next.x = 0.0;
@@ -582,7 +589,7 @@ static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Quaternion_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_geometry_msgs_msg_Quaternion_decode(void const* input, size_t length, roswasmc_bounded_2_geometry_msgs_msg_Quaternion* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Quaternion next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Quaternion next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 32u || length > 32u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -632,7 +639,7 @@ typedef struct roswasmc_bounded_2_geometry_msgs_msg_Pose
  * This initializer performs no I/O, registration, allocation or capability operation. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Pose_default(roswasmc_bounded_2_geometry_msgs_msg_Pose* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Pose next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Pose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!value)
         return UWVM_BOUNDED_INVALID;
     (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&next.orientation);
@@ -701,7 +708,7 @@ static inline uint32_t
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Pose_decode(void const* input, size_t length, roswasmc_bounded_2_geometry_msgs_msg_Pose* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Pose next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Pose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 56u || length > 56u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -751,7 +758,7 @@ typedef struct roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance
  * This initializer performs no I/O, registration, allocation or capability operation. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance_default(roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!value)
         return UWVM_BOUNDED_INVALID;
     (void)roswasmc_bounded_2_geometry_msgs_msg_Pose_default(&next.pose);
@@ -865,7 +872,7 @@ static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance_d
                                                                                       size_t length,
                                                                                       roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 344u || length > 344u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1027,7 +1034,7 @@ static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Vector3_encode(roswa
 static inline uint32_t
     roswasmc_bounded_2_geometry_msgs_msg_Vector3_decode(void const* input, size_t length, roswasmc_bounded_2_geometry_msgs_msg_Vector3* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Vector3 next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Vector3 next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 24u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1133,7 +1140,7 @@ static inline uint32_t
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_Twist_decode(void const* input, size_t length, roswasmc_bounded_2_geometry_msgs_msg_Twist* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_Twist next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_Twist next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 48u || length > 48u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1284,7 +1291,7 @@ static inline uint32_t roswasmc_bounded_2_geometry_msgs_msg_TwistWithCovariance_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_2_geometry_msgs_msg_TwistWithCovariance* value)
 {
-    roswasmc_bounded_2_geometry_msgs_msg_TwistWithCovariance next = {0};
+    roswasmc_bounded_2_geometry_msgs_msg_TwistWithCovariance next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 336u || length > 336u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1405,7 +1412,7 @@ static inline uint32_t
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_std_msgs_msg_Header_decode(void const* input, size_t length, roswasmc_bounded_2_std_msgs_msg_Header* value)
 {
-    roswasmc_bounded_2_std_msgs_msg_Header next = {0};
+    roswasmc_bounded_2_std_msgs_msg_Header next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1466,7 +1473,7 @@ typedef struct roswasmc_bounded_2_nav_msgs_msg_Odometry
  * This initializer performs no I/O, registration, allocation or capability operation. */
 static inline uint32_t roswasmc_bounded_2_nav_msgs_msg_Odometry_default(roswasmc_bounded_2_nav_msgs_msg_Odometry* value)
 {
-    roswasmc_bounded_2_nav_msgs_msg_Odometry next = {0};
+    roswasmc_bounded_2_nav_msgs_msg_Odometry next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!value)
         return UWVM_BOUNDED_INVALID;
     (void)roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance_default(&next.pose);
@@ -1556,7 +1563,7 @@ static inline uint32_t
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_2_nav_msgs_msg_Odometry_decode(void const* input, size_t length, roswasmc_bounded_2_nav_msgs_msg_Odometry* value)
 {
-    roswasmc_bounded_2_nav_msgs_msg_Odometry next = {0};
+    roswasmc_bounded_2_nav_msgs_msg_Odometry next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 696u || length > 952u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1743,7 +1750,7 @@ static inline uint32_t roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState_enco
 static inline uint32_t
     roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState_decode(void const* input, size_t length, roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState* value)
 {
-    roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState next = {0};
+    roswasmc_bounded_2_scout_msgs_msg_ScoutActuatorState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 19u || length > 19u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1909,7 +1916,7 @@ static inline uint32_t roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd_decode(void const* input, size_t length, roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd* value)
 {
-    roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd next = {0};
+    roswasmc_bounded_2_scout_msgs_msg_ScoutLightCmd next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 5u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2030,7 +2037,7 @@ static inline uint32_t roswasmc_bounded_2_scout_msgs_msg_ScoutLightState_encode(
 static inline uint32_t
     roswasmc_bounded_2_scout_msgs_msg_ScoutLightState_decode(void const* input, size_t length, roswasmc_bounded_2_scout_msgs_msg_ScoutLightState* value)
 {
-    roswasmc_bounded_2_scout_msgs_msg_ScoutLightState next = {0};
+    roswasmc_bounded_2_scout_msgs_msg_ScoutLightState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 2u || length > 2u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2234,7 +2241,7 @@ static inline uint32_t roswasmc_bounded_2_scout_msgs_msg_ScoutRCState_encode(ros
 static inline uint32_t
     roswasmc_bounded_2_scout_msgs_msg_ScoutRCState_decode(void const* input, size_t length, roswasmc_bounded_2_scout_msgs_msg_ScoutRCState* value)
 {
-    roswasmc_bounded_2_scout_msgs_msg_ScoutRCState next = {0};
+    roswasmc_bounded_2_scout_msgs_msg_ScoutRCState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 9u || length > 9u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2513,7 +2520,7 @@ static inline uint32_t roswasmc_bounded_2_scout_msgs_msg_ScoutStatus_encode(rosw
 static inline uint32_t
     roswasmc_bounded_2_scout_msgs_msg_ScoutStatus_decode(void const* input, size_t length, roswasmc_bounded_2_scout_msgs_msg_ScoutStatus* value)
 {
-    roswasmc_bounded_2_scout_msgs_msg_ScoutStatus next = {0};
+    roswasmc_bounded_2_scout_msgs_msg_ScoutStatus next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 121u || length > 249u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

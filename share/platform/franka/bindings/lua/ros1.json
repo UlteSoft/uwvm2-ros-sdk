@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "lua",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/lua/ros1/franka_ros1_complete",
+  "bundle_manifest": "share/platform/franka/bindings/lua/ros1-bundle.json"
+}

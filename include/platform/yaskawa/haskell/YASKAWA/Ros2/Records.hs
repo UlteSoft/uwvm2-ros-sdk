@@ -7,7 +7,7 @@ import Data.Word
 import Data.Bits
 import GHC.Float
 import Control.Monad (replicateM)
-import qualified Ros.Wire as W
+import qualified Native.Wire as W
 
 -- | @brief Complete original builtin_interfaces/msg/Duration value.
 -- | @details Retain every original field in declaration order. Canonical extent 8..8 bytes.

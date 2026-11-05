@@ -1,0 +1,186 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2849",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9ba1e4d385a3c0fb61267dff9d2b18b2cc2a5839ec3e4115d8a05a2cb167404b"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "82eadf47ac5a9b5ccbfff4617f50780934b7721f5e6c00ff05732a6fac012480"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/native_grasp.zig",
+      "sha256": "201959663e774e9c8f185d4fcc4478942c4b9e4e77719e07f56abaa6f7ae1d59"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/native_grasp_client.zig",
+      "sha256": "a70a513821909072c3e0731d908e1bdb2b85e0c9042d9012e2f73bb48408d317"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/zig/ros2/flexiv-ros2-jazzy-v2-2-complete/records.zig",
+      "sha256": "4db308bb81134cd34c117bf48bce3ebc82ebeaa670809cafa86d5b5a2531d987"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/client.zig",
+      "sha256": "2c3d41b2819c07ad553be56693e155d65aab93f9e566f663b6ee5eed09e7f36d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/native_command.zig",
+      "sha256": "3d1b90cd85d2e44dc463956d39d94a8552dcb4941f16dfbb8508e2372f0cbd82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/node.zig",
+      "sha256": "3a364683e4a1dad965502432ab802d9fd01de07b0880ae15b60a24927a9ca4a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros1.zig",
+      "sha256": "64a31ccc7acc19d5bd25a269e941e97260ed6909a8721c01047d635382157f50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros2.zig",
+      "sha256": "094635a63b41bab99a2a14eec6e4488129380912bf109a49b15eaba6626b5eb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/zig/ros2_jazzy_v2_2.json",
+      "sha256": "6244d7dc50f6790e5c1dc2f6850ad70f51dbce45dcea165159e1dd223e52a1a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/SOURCES.json",
+      "sha256": "4d305b8c8c066cdb554e85828bc6f89a2dc31b15b3fa8035af2c234e59d53a5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/additional_record_emitters.py",
+      "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/generate_records.py",
+      "sha256": "8647d2f5b178e30457e4948159060a7beda8ad4a6f9709f079a1fec48fff37bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_records.py",
+      "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_documentation.py",
+      "sha256": "5c5fb155cb868913895f81fc43b47d1fd3c94dea9600845fe0868fa8929c28db"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_emitters.py",
+      "sha256": "a764f7c1958f7d89eda7a38deb688843b9e0dc98e186b82592b56172d22b1719"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/source_layout.py",
+      "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "stdin_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

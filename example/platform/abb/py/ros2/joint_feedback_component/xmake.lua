@@ -132,10 +132,11 @@ target("abb-python-joint-feedback-component")
         local _, _, context = dispatch.provider(target)
         import("run", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).run(target, sdk, context)
     end)
-    add_tests("joint-state-codec")
+    uwvm_register_required_test("joint-state-codec", "required-wasm-guest")
+    add_tests("joint-state-codec", {group = "required-wasm-guest"})
     on_test(function(target, opt)
         import("lib.detect.find_program")
-        local python = assert(find_program("python3"), "BLOCKED_REQUIRED_TEST_LIFECYCLE_TOOL_PYTHON3")
+        local python = import("python_runtime", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).resolve()
         local configuration = os.getenv("UWVM_ROS_RUN_CONFIG")
         assert(configuration and os.isfile(configuration), "BLOCKED_REQUIRED_PUBLIC_UWVM_ROS_RUN_CONFIG")
         local root = path.join(path.absolute(target:scriptdir()), ".uwvm-ros/component-tests")
@@ -143,7 +144,7 @@ target("abb-python-joint-feedback-component")
         local output = path.join(root, path.filename(os.tmpfile({ramdisk = false})))
         local argv = {path.join(target:scriptdir(), "test_guest.py"), "--wasm", path.absolute(target:targetfile()),
                       "--config", path.absolute(configuration), "--output", output}
-        local code = os.execv(python, argv, {try = true, timeout = 330, curdir = target:scriptdir()})
+        local code = os.execv(python, argv, {try = true, timeout = 330000, curdir = target:scriptdir()})
         if code ~= 0 then opt.errors = "Required executing-Wasm component assertions failed/BLOCKED; see " .. output end
         return code == 0
     end)

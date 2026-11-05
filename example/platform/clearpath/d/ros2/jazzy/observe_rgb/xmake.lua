@@ -39,6 +39,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 
@@ -54,4 +55,5 @@ target("clearpath-d-ros2_jazzy-observe_rgb")
     set_arch("wasm32")
     set_plat("wasm-wasip1")
     add_files("main.d")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

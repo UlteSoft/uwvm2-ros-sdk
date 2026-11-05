@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "js",
+  "profile": "controller_core_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/js/ros2/flexiv-controller-core-foxy-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/flexiv/bundles/js/controller_core_foxy.json"
+}

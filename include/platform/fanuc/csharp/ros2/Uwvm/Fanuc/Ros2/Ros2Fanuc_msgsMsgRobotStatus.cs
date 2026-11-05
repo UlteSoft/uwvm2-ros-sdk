@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -68,7 +68,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Fanuc_msgsMsgRobotStatus value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -81,11 +81,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Fanuc_msgsMsgRobotStatus Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Fanuc_msgsMsgRobotStatus value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -97,19 +97,16 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Fanuc_msgsMsgRobotStatus value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Fanuc_msgsMsgRobotStatus value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             wire.Bool(value.field_in_error);
             wire.Bool(value.field_tp_enabled);
             wire.Bool(value.field_e_stopped);
             wire.Bool(value.field_motion_possible);
             wire.U8(value.field_contact_stop_mode);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -121,7 +118,7 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Fanuc_msgsMsgRobotStatus ReadFields(Wire.Reader wire)
+        internal static Ros2Fanuc_msgsMsgRobotStatus ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Fanuc_msgsMsgRobotStatus value = new Ros2Fanuc_msgsMsgRobotStatus();
@@ -130,7 +127,7 @@ namespace Uwvm.Fanuc.Ros2
             value.field_e_stopped = wire.Bool();
             value.field_motion_possible = wire.Bool();
             value.field_contact_stop_mode = wire.U8();
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

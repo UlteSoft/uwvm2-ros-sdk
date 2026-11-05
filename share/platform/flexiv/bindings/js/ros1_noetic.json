@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "js",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/js/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/flexiv/bundles/js/ros1_noetic.json"
+}

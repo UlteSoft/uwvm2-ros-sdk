@@ -44,6 +44,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 set_policy("run.autobuild", false)
 target("ros-noetic-swift-publish_string")
     set_language("swift")
@@ -53,4 +54,5 @@ target("ros-noetic-swift-publish_string")
     set_arch("wasm32")
     set_ros_scenario("publish_string")
     add_files("main.swift")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

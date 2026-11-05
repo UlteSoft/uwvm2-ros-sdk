@@ -184,6 +184,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -205,14 +209,40 @@
           "root": "include/platform/ubtech/go/ros2/ubtech-ros2-main-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
-          "complete_original_records": 8
+          "complete_original_records": 8,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "go",
+            "go": {
+              "modules": [
+                "include/platform/ros/go",
+                "include/platform/ubtech/go/ros2/ubtech-ros2-main-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "tinygo": {
           "module": "ubtech/tinygo/ros2/main",
           "root": "include/platform/ubtech/tinygo/ros2/ubtech-ros2-main-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
-          "complete_original_records": 8
+          "complete_original_records": 8,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "tinygo",
+            "go": {
+              "modules": [
+                "include/platform/ros/tinygo",
+                "include/platform/ubtech/tinygo/ros2/ubtech-ros2-main-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "d": {
           "module": "ubtech.d.ros2.main.records",
@@ -223,6 +253,15 @@
           ],
           "producer": "one shared genuine D/BetterC compiler; consumer integration pending",
           "extra_sources": []
+        },
+        "js": {
+          "bundle_manifest": "share/platform/ubtech/bundles/js/ros2_main.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/ubtech/bundles/lua/ros2_main.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/ubtech/bundles/py/ros2_main.json"
         }
       }
     }

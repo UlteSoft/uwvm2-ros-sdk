@@ -13,6 +13,8 @@ use Uwvm\RosWasm\Capability;
 $uwvm_exit = 1;
 $echo = null;
 $echoRetired = false;
+$publisher = null;
+$publisherRetired = false;
 $passed = 0;
 $current = 'bootstrap';
 $check = static function (bool $valid): void {
@@ -52,16 +54,28 @@ try {
         && $facts['cleanup_present'] && $facts['cleanup'] === 0 && !$facts['response_present']
         && $facts['wire_hex'] === bin2hex($message->encode()));
     $current = 'fresh-complete-typed-echo-inside-guest';
+    // Delivery is separate from one-shot acceptance. Keep this publisher alive
+    // until the independent peer returns this distinct transient-local sample.
+    $roundtripNonce = $nonce . '-roundtrip';
+    $roundtrip = new Message(['group' => $roundtripNonce, 'values' => [1.25, -2.5]]);
+    [$publisher, $error] = Capability::open('publish');
+    $check($error === 0 && $publisher !== null);
+    $check($publisher->invoke('topic_publish', $roundtrip->encode())[0] === 0);
     for ($attempt = 0; $attempt < 250; ++$attempt) {
         $frame = $echo->invoke('event_poll', '', Message::SCHEMA['maximum']);
-        if ($frame[0] !== 11 || $attempt === 249) { break; }
+        if ($frame[0] === 0) {
+            $check($frame[2] !== null && $frame[2]->decimal() === (string) strlen($frame[1]) && $frame[3] === null);
+            if ($frame[1] === $roundtrip->encode()) { break; }
+            $check($frame[1] === $message->encode());
+        } else { $check($frame[0] === 11); }
         $check(\Uwvm\Native\pause_ms(20) === 0);
     }
-    $check($frame[0] === 0 && $frame[2] !== null
-        && $frame[2]->decimal() === (string) strlen($frame[1]) && $frame[3] === null);
+    $check($frame[0] === 0);
     $received = Message::decode($frame[1]);
-    $report($current, $frame[1] === $message->encode() && $received->group === $nonce
+    $report($current, $frame[1] === $roundtrip->encode() && $received->group === $roundtripNonce
         && $received->values === [1.25, -2.5]);
+    $publisherRetired = true;
+    $check($publisher->close() === 0);
     $echoRetired = true;
     $check($echo->close() === 0 && $passed === 6);
     $uwvm_exit = \Uwvm\Native\output(json_encode([
@@ -77,5 +91,6 @@ try {
     ], JSON_THROW_ON_ERROR));
     $uwvm_exit = 1;
 } finally {
+    if ($publisher !== null && !$publisherRetired && $publisher->close() !== 0) { $uwvm_exit = 1; }
     if ($echo !== null && !$echoRetired && $echo->close() !== 0) { $uwvm_exit = 1; }
 }

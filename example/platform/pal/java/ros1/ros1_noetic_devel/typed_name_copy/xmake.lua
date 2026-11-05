@@ -1,5 +1,6 @@
 local sdk = os.getenv("UWVM_ROS_SDK_ROOT")
 includes(path.join(sdk, "tools/xmake/ros.lua"))
+includes(path.join(sdk,"tools/shared/xmake/wasi_component.lua"))
 set_plat("wasm-wasip1")
 set_arch("wasm32")
 local function component(name, source, class, kind, requires_instances)
@@ -14,6 +15,10 @@ local function component(name, source, class, kind, requires_instances)
         set_ros_config({vendor_profile = "ros1_noetic_devel"})
         set_values("ros.sdk.main_class", class)
         add_files(source)
+        if kind == "binary" then
+            add_deps("heap_a","heap_b")
+            uwvm_wasi_component({api_version=1,sdk_root=sdk,manifest=name..".json"})
+        end
         if requires_instances then
             on_run(function()
                 error("REQUIRED_NOT_RUN: consume the qualified shared independent-instance/private-backing/principal/grant contract before executing this application graph")
@@ -21,7 +26,8 @@ local function component(name, source, class, kind, requires_instances)
         end
     target_end()
 end
-component("name-endpoint", "GraphNameEndpoint.java", "uwvm.pal.copy.GraphNameEndpoint", "shared", true)
+component("heap_a", "GraphNameEndpoint.java", "uwvm.pal.copy.GraphNameEndpoint", "shared", true)
+component("heap_b", "GraphNameEndpoint.java", "uwvm.pal.copy.GraphNameEndpoint", "shared", true)
 component("name-copy-consumer", "GraphNameCopyConsumer.java", "uwvm.pal.copy.GraphNameCopyConsumer", "binary", true)
 component("alias-name-consumer", "AliasNameConsumer.java", "uwvm.pal.copy.AliasNameConsumer", "binary", true)
 component("name-snapshot-contract", "SnapshotChecks.java", "uwvm.pal.copy.SnapshotChecks", "binary", false)

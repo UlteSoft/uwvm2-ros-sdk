@@ -59,6 +59,7 @@ function request(target, root, context)
     assert(modules.format == "uwvm-platform-language-modules-v1", "Install the NVIDIA source module map")
     local graph = assert(modules.module_map[selected.language], "Missing original NVIDIA language source graph")
     selected.binding.platform_modules = graph
+    selected.binding.bundle_manifest = graph.bundle_manifest
     selected.module_roots = table.join(selected.module_roots or {}, { graph.source_root })
     if graph.native_action then
         selected.native_action = graph.native_action

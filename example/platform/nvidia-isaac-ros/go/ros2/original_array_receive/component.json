@@ -1,0 +1,184 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-nvidia-array-client-3381",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/go/go.mod",
+      "sha256": "b69c2398e85d91693d8f1587cf1b97c0dc2cd20b27b377febe99f9d9c5836653"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/go/ros2/complete/records.go",
+      "sha256": "bf3f8403a4d31e9142085372c21d296993f7a39048583b541185c232b45d6bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/builtin_codec.go",
+      "sha256": "23a95fb330de121052f30e0b79c3e4cdb56e2180157ca1bf3ecc8b6fe9a7e986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/client.go",
+      "sha256": "78855ebc74fe7fe705c8cb7262dc638185cc2f6863dd57d8926cdb9b74283a03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/codec.go",
+      "sha256": "a81b000812fc30197db7fe18f18bac73041e4abb530788475a9a32e45dc0294a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/go.mod",
+      "sha256": "dad02148dfc7550b14721ff91915f6cf3bbd8d5c060b6248dfb1c211664e85df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/native_command/command.go",
+      "sha256": "375e9f9562d5177a8ea39c4cdd31dea61539e98cf8f222f7d0b70a670e292b9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation.go",
+      "sha256": "21170e363e678d935a32b3c731bc124ee8e8fc3870a540aed76250ed91d15a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros1.go",
+      "sha256": "4b7b2bb8b6261f055eb18a8aa86ffd7d66047d8d0c8e235457c5332133b4244e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros2.go",
+      "sha256": "2dbd550c6dc47de4fcefbaef50633c423fdd0aa7f4d946b3c708983c83ba58f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros1.go",
+      "sha256": "4e0bf1b61c90163bf03403524daaf672345d3b77ed9dbf3314efbf7075c90fa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros2.go",
+      "sha256": "06d86038b4ae4373419db737839606676393163fd622be3acc4ff002f02e7000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/selection_error.go",
+      "sha256": "7815c65a49918d2db230a2b5940670ae829157bcc2cb5eb14521c85f4fd6c927"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/session.go",
+      "sha256": "3411bbc25486200f4d7f4512356b22447dc9209098d06e1fc1eb5dff730bd884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/typed.go",
+      "sha256": "cd2cec63b5721e900ce37c7645943ea2119d550c3d916f30b72370c766965e4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/value_helpers.go",
+      "sha256": "05ea589f722e821d4003ece92a31b8a548b6d567294b43854b99293b5c7d7ee8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/values.go",
+      "sha256": "4b076f0ac087a2ea643390c7a3ad061daf1f42f79a17d01cf85a0c58116ebd38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "376389d19e6e5b657e011b520c2caf528205f9f9dc9ffb0c0aef240ddc0db86e"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "26062a8e5e22294ef8240108d268e1c915db787305c64f98385822617d292ff3"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "63c50b856befdf2445d241f1878aaa75e734b585e2258b7ab6c2cdaf9b4347c9"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "e2404fffc203822e52494083d5bf8a6daeed80ff88f0723ce002eeeb40d70d46"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "f05d88b2cdc9c7709bd16914423335f033e44e7e4153b3751afe7ddc7ee0248f"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "d9091d9a03392a69ed42deaa98597367fb8885635f59bdf9ba6736050c43484b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-only-no-resource",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "retirement": 0,
+        "stale": 0,
+        "reopen": 0,
+        "published": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_json": {
+        "primary": 22,
+        "cleanup": 0,
+        "retirement": 0,
+        "stale": 0,
+        "reopen": 0,
+        "published": 0,
+        "wire_hex": ""
+      }
+    }
+  ]
+}

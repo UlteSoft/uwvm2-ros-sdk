@@ -21,7 +21,9 @@ function configure(target, root)
     assert(#sources == 1 and path.extension(sources[1]) == extension, "Declare exactly one actual-language entry")
     target:set("values", "ros.sdk.triple", "wasm32-wasip1")
     target:set("values", "ros.sdk.producer", "genuine-guest-interpreter")
-    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+    if not target:get("targetdir") then
+        target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build/artifacts"))
+    end
     target:set("objectdir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects"))
     target:set("dependir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/dependencies"))
     target:set("toolchains", "ros.wasm.command")

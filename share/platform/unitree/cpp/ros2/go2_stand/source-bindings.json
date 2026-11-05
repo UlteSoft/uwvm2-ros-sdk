@@ -53,7 +53,13 @@
     }
   ],
   "wasi_grants": [
-    "monotonic-clock"
+    "args",
+    "stdout.write",
+    "stderr.write",
+    "stdio.metadata",
+    "proc-exit",
+    "monotonic-clock",
+    "monotonic-timer"
   ],
   "node_name": "low_level_cmd_node",
   "info_logger_alias": "",
@@ -106,5 +112,6 @@
     "declared_endpoint_alignment_only": true,
     "actual_VM_native_interop_or_task": false,
     "source_authority": "05-VM-001 REQUIRED_NOT_GRANTED"
-  }
+  },
+  "wasi_grant_scope": "Explicit deployment requirements for startup, original diagnostics, exit and actual monotonic pacing; the provider does not infer or add these permissions."
 }

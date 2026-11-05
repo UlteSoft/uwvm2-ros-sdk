@@ -30,3 +30,5 @@ establish component memory isolation. The full official API, all29 routes,
 versions, legacy paths and Stage B obligations remain open.
 
 The new source graph requires a separate current-build/current-VM qualification; old frozen Wasm does not contain this API change.
+
+The native test selects UWVM_ROS_FOURIER_PUBLISHER_TEST_DEPLOYMENT (uwvm-sdk-fourier-publisher-native-v1) with pinned VM, gateway and independent typed peer, explicit WASIp1 and ROS grants, and a finite deadline. The deployment supplies transient-local QoS for both topic grants. One-shot acceptance/close is tested separately from external delivery: a distinct -roundtrip sample keeps its publisher alive until the guest receives the peer response. It sends each sample once, rejects stale echo as success, and requires process retirement. All language assertions execute in genuine Wasm; the native peer only relays and records bytes. No vendor-official API or simulator qualification is implied.

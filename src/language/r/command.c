@@ -1,10 +1,8 @@
 /**
  * @file command.c
  * @brief Enter genuine GNU R and evaluate the original embedded R source.
- * @details This source is an unqualified standalone port candidate. The original
- * R startup still requires an embedded base-package filesystem at the fixed
- * R_HOME below. No external R executable, alternate parser or source mount is
- * used. Until that filesystem and Fortran closure link, no VM is installed.
+ * @details The base package is embedded as read-only data. R evaluates inside
+ * Wasm using native exception handling; no host R process or source mount runs.
  */
 #define R_NO_REMAP
 #include "application.h"
@@ -17,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/** @brief Borrow original source bytes while the Asyncify root remains live. */
+/** @brief Borrow original source bytes while native WebAssembly exception scopes remain live. */
 struct evaluation
 {
     char const* source;
@@ -68,8 +66,6 @@ static void evaluate(void* opaque)
  * @param argv Borrowed original WASI strings.
  * @return Original application status, condition failure 1, invalid source 22,
  * allocation failure 12 or initialization failure 5.
- * @details The current port cannot reach application evaluation until its real
- * base package filesystem is available; this remains an explicit build gap.
  */
 static int r_application(int argc, char** argv)
 {
@@ -101,6 +97,9 @@ static int r_application(int argc, char** argv)
         free(options);
         return 5;
     }
+    if (setenv("R_DEFAULT_PACKAGES", "NULL", 1) || setenv("R_ENABLE_JIT", "0", 1)) {
+        free(source); free(options); return 5;
+    }
     int initialized = Rf_initEmbeddedR((int)count, options);
     if (initialized < 0)
     {
@@ -117,16 +116,8 @@ static int r_application(int argc, char** argv)
     return status;
 }
 
-/** @brief Common retained Asyncify root; no private control-transfer ABI exists. */
-int uwvm_asyncify_start(int (*entry)(int, char**), int argc, char** argv);
-
-/**
- * @brief Enter the shared nonlocal-control driver with original WASI arguments.
- * @param argc Original argument count.
- * @param argv Original argument strings.
- * @return Genuine R application/startup result.
- */
+/** @brief Execute genuine R with original WASI arguments and native Wasm EH. */
 int main(int argc, char** argv)
 {
-    return uwvm_asyncify_start(r_application, argc, argv);
+    return r_application(argc, argv);
 }

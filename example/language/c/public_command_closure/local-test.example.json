@@ -1,0 +1,27 @@
+{
+  "format": "uwvm-sdk-local-finite-wasi-test-v1",
+  "runtime": {
+    "executable": "/absolute/path/to/uwvm2-ros",
+    "sha256": "REPLACE_WITH_ACTUAL_BINARY_SHA256",
+    "source_identity": "REPLACE_WITH_VERIFIED_SOURCE_IDENTITY"
+  },
+  "limits": {
+    "memory_bytes": 68719476736,
+    "swap_bytes": 0,
+    "timeout_seconds": 30,
+    "output_bytes": 2097152
+  },
+  "wasi_policy": {
+    "format": "uwvm-sdk-wasip1-policy-v2",
+    "modules": {
+      "main": {
+        "enabled": true,
+        "grants": [
+          "stdout.write",
+          "stdio.metadata",
+          "proc-exit"
+        ]
+      }
+    }
+  }
+}

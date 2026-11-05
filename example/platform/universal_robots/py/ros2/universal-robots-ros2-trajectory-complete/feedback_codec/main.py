@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("universal_robots.py.ros2.universal-robots-ros2-trajectory-complete.bounded_records")
+records = import_module("universal_robots.py.ros2.universal_robots_ros2_trajectory_complete.bounded_records")
 value = records.Ros2Ur_msgsActionFollowJointTrajectoryUntil_Feedback()
 wire = value.encode()
 decoded = records.Ros2Ur_msgsActionFollowJointTrajectoryUntil_Feedback.decode(wire)

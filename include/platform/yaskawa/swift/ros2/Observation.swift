@@ -14,9 +14,9 @@ public enum YaskawaRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitRobotStatus(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Industrial_msgsMsgRobotStatus>
+    -> NativeObservation<Ros2Industrial_msgsMsgRobotStatus>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 150, attempts, Ros2Industrial_msgsMsgRobotStatus.decode, { $0.encode() })
   }
 
@@ -26,9 +26,9 @@ public enum YaskawaRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitJointState(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Sensor_msgsMsgJointState>
+    -> NativeObservation<Ros2Sensor_msgsMsgJointState>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 1196, attempts, Ros2Sensor_msgsMsgJointState.decode, { $0.encode() })
   }
 
@@ -38,9 +38,9 @@ public enum YaskawaRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitAlarmInfo(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Motoros2_interfacesMsgAlarmInfo>
+    -> NativeObservation<Ros2Motoros2_interfacesMsgAlarmInfo>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 25248, attempts, Ros2Motoros2_interfacesMsgAlarmInfo.decode, { $0.encode() })
   }
 

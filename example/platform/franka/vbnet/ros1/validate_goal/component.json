@@ -1,0 +1,56 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-3046",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "68dcc4132e1f8d4dcb9d6e433e92e0dcb7d0d2461a414de561c58a7aec2a0c80"
+    },
+    {
+      "scope": "example",
+      "path": "main.vb",
+      "sha256": "9e2b13fceb0c2b1ceac87dbab56b31e63b0d38ef3328b45dc57e12e86b8793e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/provider.json",
+      "sha256": "824b28692b6cd188bdb011af40e40bd24f423064a5cc6c03e34791121be18d6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/records.json",
+      "sha256": "8117269ffa7b390d97a7f72a715c8c6f0c664eb0c8c74a40aa5016acc28da1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030300a",
+      "stdin_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

@@ -22,7 +22,7 @@ xmake run main
 
 三个模块均显式配置 `ros_enabled=false`、`grants=[]`、`wasi_grants=[]`。
 公开运行器分别创建并绑定各模块的 WASI/ROS Single，不启动 ROS gateway。
-默认 WASI 仍保留基本标准流权限；空的额外授权列表不表示零描述符权限。
+基础 WASI 不提供标准流操作权限；空授权列表表示该模块没有 WASI 操作权限。
 运行钩子不会添加环境、目录或套接字权限。
 
 本例检查带符号算术、真实溢出 catch/finally、两个实例的隔离状态及各自一次

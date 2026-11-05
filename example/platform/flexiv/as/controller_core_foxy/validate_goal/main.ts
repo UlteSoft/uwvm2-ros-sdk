@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros2Sensor_msgsMsgJointState, Ros2Sensor_msgsMsgJointStateCodec} from "flexiv/as/ros2/flexiv-controller-core-foxy-complete/bounded_records";
 import {write, exit} from "ros/as/command";

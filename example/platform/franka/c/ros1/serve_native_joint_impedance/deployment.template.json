@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
   "backend": "ros1",
@@ -49,7 +49,7 @@
                 "max-services": "1",
                 "max-event-queue-depth": "10",
                 "max-event-queue-bytes": "4096",
-                "overflow-policy": "drop-oldest"
+                "overflow-policy": "reject"
               }
             },
             {
@@ -78,7 +78,8 @@
           ],
           "wasi_grants": [
             "monotonic-clock"
-          ]
+          ],
+          "wasi_enabled": true
         }
       }
     }

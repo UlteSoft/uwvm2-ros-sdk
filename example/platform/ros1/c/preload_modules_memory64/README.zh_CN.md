@@ -25,7 +25,7 @@ main 目标只选择部署后端，部署配置没有授予它 ROS 权限。只�
 
 构建把 reactor 的真实 `[] → []` 初始化函数绑定为 Core start 段，运行时按预加载顺序执行一次。仅存在名为 `_initialize` 的导出不会自动初始化；应用不能再次调用它。各模块分别管理构造和对象生命周期。
 
-默认 WASI 仍保留基本标准流描述符权限；不能把它描述为完全没有描述符权能。`algorithm` 不增加时钟、随机数、文件系统、网络或 ROS 授权。只有 `io` 手动获得额外的单调时钟授权，只有 `ros_comm` 通过 ROS Single 获得发布权。`xmake run` 不扩大权限。先运行受控本地 ROS 观察者，再执行下面完整的手工命令，并在原生观察者中核实完整 `value=42`。预加载别名必须分别为 `io`、`algorithm`、`ros_comm`，主模块名为 `main`。
+基础 WASI 不提供标准流操作权限；所需操作必须逐模块显式授权。`algorithm` 不增加时钟、随机数、文件系统、网络或 ROS 授权。只有 `io` 手动获得额外的单调时钟授权，只有 `ros_comm` 通过 ROS Single 获得发布权。`xmake run` 不扩大权限。先运行受控本地 ROS 观察者，再执行下面完整的手工命令，并在原生观察者中核实完整 `value=42`。预加载别名必须分别为 `io`、`algorithm`、`ros_comm`，主模块名为 `main`。
 
 ```sh
 export UWVM_ROS_SDK_ROOT=/absolute/path/to/sdk
@@ -35,9 +35,9 @@ xmake -j1
 
 | Module identity | Deployment artifact | Manual additional authority |
 |---|---|---|
-| `main` | `build/main/main.wasm` | None |
-| `io` | `build/io/io.wasm` | WASI `monotonic-clock` for explicit discovery waits |
-| `algorithm` | `build/algorithm/algorithm.wasm` | None; default WASI |
+| `main` | `build/main/main.wasm` | WASIp1 base, `args`, `proc-exit` |
+| `io` | `build/io/io.wasm` | WASIp1 base, `stdout.write`, `stdio.metadata`, `monotonic-clock`, `monotonic-timer` |
+| `algorithm` | `build/algorithm/algorithm.wasm` | Explicit WASIp1 base; no operation grants |
 | `ros_comm` | `build/ros_comm/ros_comm.wasm` | This module's ROS Single `sample` publication |
 
 ```sh
@@ -59,7 +59,6 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --wasm-feature-enable-memory64 \
   --wasm-feature-enable-table64 \
   --wasm-set-main-module-name main \
-  --wasip1-global-noinherit-system-environment \
   --wasm-feature-enable-memory64 \
   --wasm-feature-enable-table64 \
   --wasm-preload-library "build/io/io.wasm" io \
@@ -80,7 +79,12 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --wasip1-single-create main \
   --wasip1-single-enable main \
   --wasip1-single-noinherit-system-environment main \
+  --wasip1-single-grant main args \
+  --wasip1-single-grant main proc-exit \
+  --wasip1-single-grant io stdout.write \
+  --wasip1-single-grant io stdio.metadata \
   --wasip1-single-grant io monotonic-clock \
+  --wasip1-single-grant io monotonic-timer \
   --ros1-single-create ros_comm \
   --ros1-single-enable ros_comm \
   --ros1-single-call-boundary ros_comm module-exports \
@@ -108,7 +112,7 @@ sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --ros1-single-set ros_comm sample audit-max-bytes 1048576 \
   --ros1-single-set ros_comm sample max-message-bytes 256 \
   --ros1-single-set ros_comm sample max-queue-bytes 2048 \
-  --ros1-single-set ros_comm sample overflow-policy drop-oldest \
+  --ros1-single-set ros_comm sample overflow-policy reject \
   --ros1-single-set ros_comm sample max-publishers 1 \
   --ros1-single-set ros_comm sample queue-depth 8 \
   --ros1-single-set ros_comm sample transport tcpros \

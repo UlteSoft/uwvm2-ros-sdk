@@ -1,0 +1,1263 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "fanuc-authority-2042",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "1bb574cf262eed1a4a74d73b4648400fd93ef2b1e0ef922d16c470933a2c01ec"
+    },
+    {
+      "scope": "example",
+      "path": "Main.fs",
+      "sha256": "a012352f22243236eb7729d77f09dd1f941670b58713797623d012711f03119b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiBuiltin_interfacesMsgDuration.cs",
+      "sha256": "5348dcbc43cbc39d49efa56e7ea05f1837a05494f37d180e893e23089bacef8a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiBuiltin_interfacesMsgTime.cs",
+      "sha256": "9a0e4fbeb681c8e88dd2c4037c0300df2eac095192e244de5de32f0ce1b8cf00"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiControl_msgsActionFollowJointTrajectory.cs",
+      "sha256": "393f558fd7bbd57fd266b91f5701ee2b9dd0d5785fd9eb5704a818b361828a81"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiControl_msgsMsgJointComponentTolerance.cs",
+      "sha256": "453fb71e32167e6df1f4c34cec263c3cc507606ddaf6a42d29413a0986060078"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiControl_msgsMsgJointTolerance.cs",
+      "sha256": "30e1ac88a959786f7afebbbfe4cf9671dc5bf7239ea9e3171cc569a057f22d0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgAnalogIO.cs",
+      "sha256": "216565ab0a3adbfac18f58efef4be55fe8c1b2ef03a380686488a909f1af33ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgAnalogIOCmd.cs",
+      "sha256": "c98146cb114dcbd5380a83d581e1e878949e10583f53a47961f620240139f0b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgAnalogIOState.cs",
+      "sha256": "7bfd2f50615124d234d95cbe245e52132bdf9650dd768cd1dc2895f8d1b3b3b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgBoolIO.cs",
+      "sha256": "f6d56550ce58f8aece63f671eb92ad09083769580e9297358bf02085caf2b088"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgCollaborativeSpeedScaling.cs",
+      "sha256": "51b9606bd968af2e5fe918d3eb8995618a6b5d18b907fc5aa4690bdd46131fb7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgConnectionStatus.cs",
+      "sha256": "4fa002923071569d83d1cf1855c859b602600fc3bcc9efcee42b10b1d3b7dede"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgForceSensor.cs",
+      "sha256": "e47f73139df544186d33faf542ce6c8a542dbfebff4d0da44afa70056c7ab4b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgFrame.cs",
+      "sha256": "d8f14cac5d5a9c26932574411c4d23a8859537f2f94a45338125456df7af3ffb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgIOCmd.cs",
+      "sha256": "75cd0a4b131df2d1aa8666832941d333d764cfaf6470a4f300caab7f4182f1fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgIOState.cs",
+      "sha256": "52c6dc4e3fdb0b2241b11d3bb9227165d9c96ce5bccb084cdc837bf8621e5f22"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgIOType.cs",
+      "sha256": "62008ecf33490d5bbbc5fe4fbb97d0161bee5894a9b068f9beb8ee2449b320bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgNumReg.cs",
+      "sha256": "05bfe776245ae0c3aa970652f792c810d378280673e9391b0c8a37162143f50a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgNumRegCmd.cs",
+      "sha256": "b5a074d44567ac1126a6b0fd6f0c51d3f43a86431b0d60985581aa9b4bc56ca8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgNumRegState.cs",
+      "sha256": "fbd2f073f820740ec1788b8890ff8ec09089127f95dc0dd0cd37629ec3d44fa8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgRMIStatus.cs",
+      "sha256": "d7f158d9dfe224f6367daca42b2bbfe682a6b6b52eb7a15ff494f3b82ee11bcb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgRobotStatus.cs",
+      "sha256": "16a3cc3acdd6ef76ab6affeeed56f2c837784458db25c6a752a5ac6a3f359c48"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsMsgRobotStatusExt.cs",
+      "sha256": "3b1eccfeca4f98df0e8ee00615a1760447c9b421b88380653c07f061369dbae2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvCfgForceSensor.cs",
+      "sha256": "69be8a7d51ce7063fa30cd6cad2e9b351e843a71507b228a5c269069b71b42f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetAnalogIO.cs",
+      "sha256": "624f32631a56a43b4ebca278f2fe00d2b2cd2aeb6b364cf5bed3f6ce4938947b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetBoolIO.cs",
+      "sha256": "003531204742c7a1c707d05f7d689d8608ca9ba87f7650dc3b5a052da652847e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetCartesianPosition.cs",
+      "sha256": "5dd3b89e2f779b942935d9e942ce7cfa6a74670a0bd62e2f0027922d550fa528"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetGroupIO.cs",
+      "sha256": "4138a1ae00fac6acbef9cb0ce98841173139aa9ef2429bae1ee93f572fe2c1c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetNumReg.cs",
+      "sha256": "e7c9db9d5ce8bffd0e13b30f574242bc855b25f257fcaf53e487395a0c0b3561"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetPayloadComp.cs",
+      "sha256": "2704938ed3fd211ad93347a5b964a1415d4ab68a4de1b6ce526bd4e4487d8aba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetPayloadID.cs",
+      "sha256": "8ffb2d7898bdb8a4c95335d933620a8a7ce879aaee066b17b3a80916d8c109fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetPayloadValue.cs",
+      "sha256": "4fc1dbcc675ce34811d77cb8223a4f8fe6c9717927c4578a6670ca1828ae90f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetPosReg.cs",
+      "sha256": "7c526c7479482bb686a40a15cd47bfce03e85921f55c2f82ca177d4b5d801aa0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetTCPSpeed.cs",
+      "sha256": "9a1da033c655cf1738fb22995bed4f24d40b0439bedacc7a8085a2eec801df47"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetUFrameData.cs",
+      "sha256": "faa9624621f912a4dc025bc72df042eb9a7c880bf705fa0bce4125fe97968545"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetUFrameUTool.cs",
+      "sha256": "77e0f0fb89ce9b711c54563723bfb8e076d1309b46ef1141f03b11161ac1829d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvGetUToolData.cs",
+      "sha256": "6ac54d560c4dd781cfb6bf5f2b697a5b1b2be96848967d601dc5bb5bfbe843ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvReadError.cs",
+      "sha256": "ecd0182102c98acd9c240bfa30f518a188e15ab84f2ab73e728b3bd83bc5203e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvReset.cs",
+      "sha256": "1ad1227a1cbea970f41c775fb59ba14eca432dc1f01646c9ab540ca338b190e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetAnalogIO.cs",
+      "sha256": "2697b0db5d928e5afaad4efe6e37628a6f87053a4373db45052eef59419b77e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetBoolIO.cs",
+      "sha256": "e25245faa49812aab203ef400e5096136994b4cb0b6ed4280bf2e41d8ef2de7a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetGenOverride.cs",
+      "sha256": "8d4603836570f57e8085c772a8faf0207b92df1d81b1006acd6f3feb87e34321"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetGroupIO.cs",
+      "sha256": "c5940ea024d4e2b56939d05d6b65d0290495cf1642b2e6c14ddb5df6e4faa248"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetNumReg.cs",
+      "sha256": "d13e9c31cc7cb2d5224ce0b55a253fe433c58f3e869e12b16ce97d32aa4d6044"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetPayloadComp.cs",
+      "sha256": "d5acbea12d07030e6e7f1eb9adb12a94cdb5bc46e9396fd9f4a5e0888e3be763"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetPayloadID.cs",
+      "sha256": "7ca91a28b0734f782be2855e1cef25d5c81afeb11939c02a745981b702af72e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetPayloadValue.cs",
+      "sha256": "401fff1b6f51fe45e183602630c325aae2e9c6123667b9ed2cd6be85c926c16a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetPosReg.cs",
+      "sha256": "dec44c32f52d9d6ef1b4afb0df2afc5ccce054f35916edb689ed7ff7dc433cd0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetUFrameData.cs",
+      "sha256": "05b9aaf12f9c2af423c20db120940636c8d21bc69645c9fc3828cbe4d81690d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetUFrameUTool.cs",
+      "sha256": "fbb47dc09e28bb0847ba2ff5cd3d6a83f7f9073e30697a0532eb25139397dd4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSetUToolData.cs",
+      "sha256": "f5dfe244636594765fa153775add7d499901074d18b63b4187040a4fc789c426"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiFanuc_msgsSrvSwitchControlState.cs",
+      "sha256": "bb5a30b9bb1d5115c1b884b195edef963ea67e56ce60174b0ec090cda0f7249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiGeometry_msgsMsgQuaternion.cs",
+      "sha256": "182a74bf8ac247b21e8a4f5ad2e15730f5caea4d5017efa94dbdce43b7333f4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiGeometry_msgsMsgTransform.cs",
+      "sha256": "05a4b389835db98b6d91fc8b00448c3393225fe741df598f3f6efb37a8ac5eaf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiGeometry_msgsMsgTwist.cs",
+      "sha256": "70772f6f13d64d0c9269661b329c203d33b4be0e42dd19e564d43a4721fd7e32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiGeometry_msgsMsgVector3.cs",
+      "sha256": "7a04f4cafd50099e3c0906ba96edb41f9a92c9cffaf144443c3f849112bcec5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgCallParam.cs",
+      "sha256": "e7ba634c1e487c1081400cfccccc3de6ad4f60e1fcb0f49239aa6deb2264998e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgCartesian.cs",
+      "sha256": "17945bc1c502092ef1321bc217a425bf1ef808a655510d4d4081c6d0b90b5fb4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgCommand.cs",
+      "sha256": "2bc9da61888141c1088c6894c5ebbad6e3eb261cb7720ccd241a4eeb2810ee2a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgCommandOptions.cs",
+      "sha256": "c5c6e452b196e40f2bb6c261ad1d2448451574b398fa7a12f6e1168ae1bfa02e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgJoint.cs",
+      "sha256": "e4197a186a31f815b438a0d17e5427001e18ac886d85c89e7b57d2745c2c2a0c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgMotionInstructionOptions.cs",
+      "sha256": "f90028edf8368d01a484e71ff5ed2a98a0bc7f897641e9a04804aa79ebe7d0ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgMotionType.cs",
+      "sha256": "0e7bb6a03b0a55e59b2c5e09b8dfafd023d2e6797f0e145646de149de0a1023f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgRepresentation.cs",
+      "sha256": "0e2d5551d8da7dcb6223014f3b03ba6dec097fafec5063263696746d6274f274"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgSpeedType.cs",
+      "sha256": "ae50cf66bee85dd3b1bbd972cf3d663218ca2074fff35d0de1861749032ebaa6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsMsgTermType.cs",
+      "sha256": "2eb865223f980ca1153720b00c6480074b631fa951ba1e79024ccf09f59809ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddCall.cs",
+      "sha256": "cf9900a811dc437633617cbc1dfb783979877ba5dd977dfec7a742ffab170354"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddMotionInstruction.cs",
+      "sha256": "26d723019dfdd14dc754b59abc56497faae511cf83a583837cb20e06cf5242b5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddSetPayload.cs",
+      "sha256": "6fb2cd5ddb49574f3534d974c9dc4812dde0acb55345d858dbc3d973c574d7b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddSetUFrame.cs",
+      "sha256": "488abd236deb08b56a05531cbad689bb2e5a2aa9d4b26115df9b8d37f28bef25"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddSetUTool.cs",
+      "sha256": "4e2039a9a64de0e6801df18477bd06b9a6dbc04d3800e7a9cc0596a63141d713"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddWaitDIN.cs",
+      "sha256": "d52dbaacda986d0a7e13f7fbae35cd83613cdb6322af1562b6a8bbf6e5c0be2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvAddWaitTime.cs",
+      "sha256": "a76c2fa5762991026ed6106b4ee78783f0a9ff8c9ba24d7d19b555d51aa77414"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiRmi_msgsSrvCallCommand.cs",
+      "sha256": "6a3b97dc0d22f4ea9363e1acd77f3e72dc4f81d2a58188e39e1d3a8154fdc542"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiSensor_msgsMsgJointState.cs",
+      "sha256": "ceb065c4b163ac9a4df568202dbbecee0968a5342c28d26c8cbc009291122330"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiStd_msgsMsgHeader.cs",
+      "sha256": "cc081a4bd1e8d04184827d09ad8361016be4dd8667bc5fa1670f40ade8dc323f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiStd_srvsSrvTrigger.cs",
+      "sha256": "a1a7e0c6cb17103e322c7083582a7a82b4bf0eb7771f729eb81a460df8f52b17"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiTrajectory_msgsMsgJointTrajectory.cs",
+      "sha256": "4dd212775df6902affb0f0598dc20333ea0f553b7d784bb473737a44b590a423"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiTrajectory_msgsMsgJointTrajectoryPoint.cs",
+      "sha256": "e8038a457b0c1269a74d2c84a1e8f141a4b9212e798604e594ed97b9f8554c90"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectory.cs",
+      "sha256": "e2aebb0c3085b63b9e09e75333b6cd70a155f22e876dc78af766965ae4a9e7a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectoryPoint.cs",
+      "sha256": "46be7b52f2827d1f47c0928dfdecce98d47db22e35bf09fd89c747c5f3bae276"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Builtin_interfacesMsgDuration.cs",
+      "sha256": "462a60ece6a3347ae8ce96f4fdb8cbb21b77b8347ba5ac1c88dcfe2c271b1285"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Builtin_interfacesMsgTime.cs",
+      "sha256": "65eba0a2838ad93983d244b48d693eb6d7d6ebdc168f44fd546db1cb5a06f434"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Control_msgsActionFollowJointTrajectory_Feedback.cs",
+      "sha256": "33df706c580a36741a106233e5cad63007ad7ae1912357aab2c89380f8c61b75"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Control_msgsActionFollowJointTrajectory_Goal.cs",
+      "sha256": "b1be41551d0057eaab273ed8e9a7c441f96982e53bf123839a2f112d14a66b9f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Control_msgsActionFollowJointTrajectory_Result.cs",
+      "sha256": "dc4022348f748e4a7119986ab5890692543ebebbd61fb997503e18bbb7dbe19e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Control_msgsMsgJointComponentTolerance.cs",
+      "sha256": "4b62d235a8b3c6c225abcd445186f7a136f2666db3a149cf46e8e24c393022d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Control_msgsMsgJointTolerance.cs",
+      "sha256": "72083cde274260f0ea07e3bf3586addc6f154c1af6b3a22517c5dfd022f37958"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgAnalogIO.cs",
+      "sha256": "f7437eff0b74312f28b5623a5298922d127304a30b2d9b7829624777b72222e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgAnalogIOCmd.cs",
+      "sha256": "5a4402356b87c85228d48340b688c1d083aa97fb75222cec1bd63bca91b3cefe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgAnalogIOState.cs",
+      "sha256": "af982e65ff6be98936a9cf2e5c8a340911a80ff363867df238476cc9a7c532a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgBoolIO.cs",
+      "sha256": "346ab4ec40790147d25ee28be729dc28f26574a8a9e4d2d5b00a38075484b533"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgCollaborativeSpeedScaling.cs",
+      "sha256": "2c104b398aad5fba2e716189e5bfa8d75acd0d963b36d17d63281f57149d1117"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgConnectionStatus.cs",
+      "sha256": "7e62a25b3a7ecd1c86e15f57ae46d6ff02633788482b6655130f1b424e1eb3da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgForceSensor.cs",
+      "sha256": "f0f5388fd17a73e7fcfc2802fd2414a8d5e0c8838d04b569ad062ff26ea4ed4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgFrame.cs",
+      "sha256": "31b2e63828fcde3b50f5d35ee931049e3c5c5fbbcf546586ee24572af2334bdb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgIOCmd.cs",
+      "sha256": "9f7f48dbf16606243aec3cbefd508e61e66506b63c4399b9564fea2ef4ca3799"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgIOState.cs",
+      "sha256": "d7af41bed9e66d554b615c4178e87cf19ee80efc53ebee9fa1c51273c84ef216"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgIOType.cs",
+      "sha256": "397fd2cc46ffeba5a4326658988605f7950046210f1f764f9ac3684d9a9bb9c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgNumReg.cs",
+      "sha256": "f82a0efb50ecd6fde96f58308b2f849676e7c36db4fe427c0d7d6f240c62566d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgNumRegCmd.cs",
+      "sha256": "ccf258dda8ca339bc9f053ba1c6869dcfc3830c007f3d8d2351700cc3960f99b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgNumRegState.cs",
+      "sha256": "7b40641e4b5a23c19555cac886ebffa6396d9aa6754e0d5389080e8043831dc7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgRMIStatus.cs",
+      "sha256": "8b01b5f57ecedc861d93f7a1114ed1697414886847ed98e650ce6d45eb176bc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgRobotStatus.cs",
+      "sha256": "35f8bb198e055db05e3fe410f60e0259a9f5c061f2c45f49403885b84afb27b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsMsgRobotStatusExt.cs",
+      "sha256": "48fd5a8880dc1ff8a44594867ec12b645e5527bf93207847c7995dc24934d39f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvCfgForceSensor_Request.cs",
+      "sha256": "d5d1c90ef0565063c4b6f822de8024ab2e1bfade3cedf7031e52c90578bc6d15"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvCfgForceSensor_Response.cs",
+      "sha256": "069b183f13dc5bfeac90aff55ad145899f65bd17bfd5dbe8f7f402b42594397b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetAnalogIO_Request.cs",
+      "sha256": "d3c5c15e0189cf7d048ec2b9b263d612df7f6f66ae82135cc8aee29b93a7620f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetAnalogIO_Response.cs",
+      "sha256": "4d1f6e72e5c2d36556f94835f240815e91832989e33e057d8ac0a9a6e2dedae6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetBoolIO_Request.cs",
+      "sha256": "3ef7c62826eb3a1a5c59e4bbe55550b224c02b1067c6c589d0cf2970fd40344b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetBoolIO_Response.cs",
+      "sha256": "b3315bba9ce67d52576e604b00bda53945d165d5dcde5667bfaaf8ee4e8103e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetCartesianPosition_Request.cs",
+      "sha256": "5b0305fad6b343b6e23054ef2fd5385301a163516bbb4094b89b45455dd65046"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetCartesianPosition_Response.cs",
+      "sha256": "f6e4c1925c9db6d1df2d352959c973e863f34246cb2df2b2a142dff35b0ed17c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetGroupIO_Request.cs",
+      "sha256": "4c0bd7fd3b630d9168652224ff7b2e83170140101dc39d130ddb852e124a948b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetGroupIO_Response.cs",
+      "sha256": "8a123890ee4650e7a45bdd7480e5fd22d0fffa0c760023806220ee4f98328c41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetNumReg_Request.cs",
+      "sha256": "9b8f8ad118dcdc108b356c5dab7df81b8ca9fd9ad52479209587e230cf68dd46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetNumReg_Response.cs",
+      "sha256": "740d591559e8803433db99fc5b4668a3c769bd1f4ea9a0dd4ccb23a4f2cbd854"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadComp_Request.cs",
+      "sha256": "89a69da99c7ff60412b7ad18780193f596149b732f42290fce14f6468f21a25c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadComp_Response.cs",
+      "sha256": "d3b1fa3d83e2cd33876ae1c97771a7ee8d7150c6768528e16b1ddde45e02b561"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadID_Request.cs",
+      "sha256": "03643254f1e83bf3a7ff2a9fa24d7a0d75c9c7fc23f399296df1b4bae8a7b349"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadID_Response.cs",
+      "sha256": "02c40d4fa116fa62478942211b74497eef76e3900bec71410423172df0234ff4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadValue_Request.cs",
+      "sha256": "a607bde57ee628967d1a0eb118a2a0d138c6298b8af55989bae7939cbe107737"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPayloadValue_Response.cs",
+      "sha256": "a019ceed795636c8a5eb0b86215934fc17ef4922499e2621a370745a0cba6ac2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPosReg_Request.cs",
+      "sha256": "454bc459fb2d653d1a52cc9c5c230c9be27dfb0474b56aa230700d5596bede9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetPosReg_Response.cs",
+      "sha256": "9ab4ac8c2f5ccb9c4774b71f8d35dd8d06c45fb39e2f86188e4d707321c68083"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetTCPSpeed_Request.cs",
+      "sha256": "9c9bf9eafe14687decb661704450662cc9219f670ea5ca2e77cb102ec16e26e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetTCPSpeed_Response.cs",
+      "sha256": "192b2fa76d529e4155727305b612d8b037352a6c715fb540ab54a7dea478ee05"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUFrameData_Request.cs",
+      "sha256": "a842af5068ad9cc9d3cb18b71613767323d0319dd5831d8974b03ee1b1a0d450"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUFrameData_Response.cs",
+      "sha256": "ae093b1267413428a0e780335aba309fd80492c8d1e46368d3609cd7df1c681d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUFrameUTool_Request.cs",
+      "sha256": "d3ba7c9dcd84e3142a1c56cdec0afcb52e5865af324f4f2f758664372e272598"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUFrameUTool_Response.cs",
+      "sha256": "17cd9545ee86d952ad8333201e6dae0b586941ef8c0ae8fd6f5418bb9a45191f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUToolData_Request.cs",
+      "sha256": "db54afe4050038b8ac45cd68bc65bd8ca9136b9bec03bdf49d85029763f2bb9f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvGetUToolData_Response.cs",
+      "sha256": "ea213f9cbc08ab4ef1eb3d12e45275ab0a20694372457c82c573bdd1b440280e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvReadError_Request.cs",
+      "sha256": "7f562dad73e2c2ed8cd4d19dcaac70fedf3d216d344d8adbb8a3fce4e87a5847"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvReadError_Response.cs",
+      "sha256": "2a78d1ba13530985b46c20088f891e6ce732ecd51794a33b09e797f764b81d88"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvReset_Request.cs",
+      "sha256": "2b6cb921581c6f590b5be1419ee7443a0d75e901622512f4a32c4fe62a4ece71"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvReset_Response.cs",
+      "sha256": "a2a14b61cab08aa3ae94147e5009aff9bf8e448d36e994b2fd14d622ce49db41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetAnalogIO_Request.cs",
+      "sha256": "b9c46152f08428bb5534920acdb47ef53fec12156a8f58a057f00f36c5027961"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetAnalogIO_Response.cs",
+      "sha256": "6349eb69909c9eb6014deafff6c332c3307b3bd96887977d755661bf2cce912b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetBoolIO_Request.cs",
+      "sha256": "ae0045f46ea989a0fa577804638c79bbdeb41769f43ed51d34f53785f8e687a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetBoolIO_Response.cs",
+      "sha256": "6a10eabf1934f733659cbecd664cd456fbb0197a666aa516d6f866a0ab6ceaec"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetGenOverride_Request.cs",
+      "sha256": "7fe3c5d8a8a8aef6d43d078d61597e4da1f0d681b2b2eb56612c1d6fead0f3e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetGenOverride_Response.cs",
+      "sha256": "32f12dc9aa8b4aca122cc344d377e9a38f75ed2660e8ca041f41527b007ad442"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetGroupIO_Request.cs",
+      "sha256": "7c7ea3592acb5f920cb97cf7c166a5f17702b780339615d842e955d76d218b10"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetGroupIO_Response.cs",
+      "sha256": "7d9b9c00da8e8c52c64b0239c61b6bda284c1ca066975d575fdf2c5efed0b2f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetNumReg_Request.cs",
+      "sha256": "f3a74a74a80298ef8963f5aa64f98243ccb7b41f9c8a6605c3ae11a82a952798"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetNumReg_Response.cs",
+      "sha256": "fccb4dc39f8ffd43e014dc871b451176921e9267a17de2bb0d0fac81f34ee3ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadComp_Request.cs",
+      "sha256": "7c1c075c71eeedd721e3595e6901d74e467894023fdff7fc6bffcc1de29e7099"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadComp_Response.cs",
+      "sha256": "ffc0c38fe7b6324d29484e726d24d69186acaed17c6659b29df334d04def8e69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadID_Request.cs",
+      "sha256": "e01b3a393faf624c360a0f55f690faf80ece507d1871236fef2a34eead89c2b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadID_Response.cs",
+      "sha256": "0e39ff88f046fef84f3e9214be8d11fdbfcf88df60c413ca03487db1288746a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadValue_Request.cs",
+      "sha256": "828a2a769bea1335e6b2cbdcb4810d963ce8c7a32df34569bc958eb550d8d152"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPayloadValue_Response.cs",
+      "sha256": "420e19f34ba410a0738b2cba950aaf2a3f331d5abb805bccf818badc2894fd1f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPosReg_Request.cs",
+      "sha256": "279b72273fb512e2e9f8cee9270878359e071fa7d1418b0883dc8706964e6d15"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetPosReg_Response.cs",
+      "sha256": "eece856b86f1648ffe209ef3eac2f10abf97c25d7083e90a50c9016ca8f6c8f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUFrameData_Request.cs",
+      "sha256": "8551de606663b40ffac6e8992b37114e1424671b8dbe48b5b326cb5fe33c85dc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUFrameData_Response.cs",
+      "sha256": "70eaf955760b00f7f83b1e70e4031f78ee0d7e0b72829e09140e3ccabf14a764"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUFrameUTool_Request.cs",
+      "sha256": "c3d3f2e9715e90133565ebeffa2e9af3e7441cda2e7b4e1a5ca3c8ae056cb2f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUFrameUTool_Response.cs",
+      "sha256": "1fb05de3b4d1bcfb9011b4a9bc19652d68b3821c1762f08403f8128cc9ff7fc2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUToolData_Request.cs",
+      "sha256": "69ddc99135bcc514587763b752b8f8d0edd5ab1527b46c953ea2f92c1bf38906"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSetUToolData_Response.cs",
+      "sha256": "e764eab1d4c6cfbd99f43759922809490067f4dbb64a67d24b40047349512482"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSwitchControlState_Request.cs",
+      "sha256": "646211978e8d2bcfc9eb39416ed68269c1eb7ca51f85e63c2b9adddcafc437c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Fanuc_msgsSrvSwitchControlState_Response.cs",
+      "sha256": "d38dc97cb8643134193e14a7a0e7e1b1b1426faa962b8db890e1bc3a2330905d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Geometry_msgsMsgQuaternion.cs",
+      "sha256": "c43d482074713b758fc230f8b1cd4b7528c29b56b10dcdf41ac2a57ff6913612"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Geometry_msgsMsgTransform.cs",
+      "sha256": "463d8f80a84eef6b7641c6bcd5cca456bda8eb93f57b2529287bdc1b4ea80290"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Geometry_msgsMsgTwist.cs",
+      "sha256": "595e9b2ff36fa48f94c306145b7a690e1d91abdb73c071674a2713ff182b3bc9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Geometry_msgsMsgVector3.cs",
+      "sha256": "f7e356a703e14b999a07bfc6837497877c2e5c2364d63342e459cf8f6f3cf3f5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgCallParam.cs",
+      "sha256": "4715444c0eeb008065024645a7d494fd105cecd3c19de42f94755789a309a052"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgCartesian.cs",
+      "sha256": "aeed598025e436b6ffc937cbe72e21b6f5d4c2b8a9a770a6540970dad647d0bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgCommand.cs",
+      "sha256": "201c7bb2556ea4d5f5029158b2ab42a0d5bdeb904d34041b607d432d9bb4df89"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgCommandOptions.cs",
+      "sha256": "9880beeb421c3a75c9b6792f81d5b928e3ad17d4455d24e38794a99d3a11a05d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgJoint.cs",
+      "sha256": "ece29737433aca5002c04c2e75d2697f7911155e210010ec03a831fe7c5b7f37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgMotionInstructionOptions.cs",
+      "sha256": "5f01b1ffce41e5a9d18c9d970f6db40fafad983a61cb0bd6482b49b4eecf000d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgMotionType.cs",
+      "sha256": "0b8dd83d96de3c03d79d0ca37a71da63f2ec54826e2be1ef090e9cdbe51d424b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgRepresentation.cs",
+      "sha256": "f7df699886a00f7c242cf7098ea2f00d6e0865431eecb536cf7ec53f3616cd8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgSpeedType.cs",
+      "sha256": "5a1f7625c49d303041b25479a7501de5faeaa7607ca433d66c884857529e7e57"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsMsgTermType.cs",
+      "sha256": "8b0527da1b925da0a41a40cc6e917f839a3904678617b56b19851423bc94ed6a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddCall_Request.cs",
+      "sha256": "0a4fd22532b6097dfac3b674c4211cd1c5c3ab3fa898cac39f604b66230eae94"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddCall_Response.cs",
+      "sha256": "2484360853f9bbda0af20d917052ed1f3577453bef72ffaf8cdd1e8b6e6d7944"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddMotionInstruction_Request.cs",
+      "sha256": "a20a6c546f85e45e9d3d5433b8727bca1facddb22547c9beecec02a54a77ac4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddMotionInstruction_Response.cs",
+      "sha256": "c44eb5fc252a10ec8fc8e399c3798fac79e02eac0a1be6f56c91b37e65f5825f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetPayload_Request.cs",
+      "sha256": "1b1da6506a6d8748ffe9a1bc40501620523cca85b51dbf9617defda34de31aca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetPayload_Response.cs",
+      "sha256": "9b0ea39938e2c5a55b9e79a7db75f58f5f54a8da3fe946856677e75f780b1474"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetUFrame_Request.cs",
+      "sha256": "a4939a5a6c9e18ad742697702afa3a5745f9dce3e61d9eb20fbf4b67d1fab240"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetUFrame_Response.cs",
+      "sha256": "cbea9a2b4e94f5d74d88c44aaf17b6c7b38de2b7ffd7144c0c19e80c67cc3e57"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetUTool_Request.cs",
+      "sha256": "bfc782fa7ebf5fae0c500f284cfc75b21d8186bc3004d864e61b31e976915ebd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddSetUTool_Response.cs",
+      "sha256": "9c6c1128a1f723f4f6ab5a161884c15e1490d656d7d8922e973ae29a97c3e455"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddWaitDIN_Request.cs",
+      "sha256": "c3126b1c8d9120cd320d4be3cc2afed89e70e93c9b6cbc0af3991069aed81248"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddWaitDIN_Response.cs",
+      "sha256": "f7a1f2e2f416c7bfd88fc6f437db09f9c0875388fe51f4684792998628e02408"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddWaitTime_Request.cs",
+      "sha256": "9820c1593988ccda78006bbf8581d08d0c2933cac698fa9b2c66438443393345"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvAddWaitTime_Response.cs",
+      "sha256": "8cd1aeafc9f5d6051f564ba3cb9e0ec45d5307635862aafda71e0c0d11a06c9f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvCallCommand_Request.cs",
+      "sha256": "a5024a5b48aba65a77750ae842cf73668f785625c138fb9c598459e5c9d7fd50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Rmi_msgsSrvCallCommand_Response.cs",
+      "sha256": "7b87484c9368ef03f2f4c5701250e7845edaf1e41fab06966f21e28eb103419d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Sensor_msgsMsgJointState.cs",
+      "sha256": "e92342fef13e9e431be0b6a88842a86b9c5d846219aaf92e021b0829a09374ef"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Std_msgsMsgHeader.cs",
+      "sha256": "b7d3522f16bc1a2713aa5fcd72c7f562ec9b1738920b586e51b1e9d29099ccc7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Std_srvsSrvTrigger_Request.cs",
+      "sha256": "e20d35b65ed9fe805ce0181651bcbc35ced804885907591f2b3b1b78213a46de"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Std_srvsSrvTrigger_Response.cs",
+      "sha256": "039fcee3bff334a8bffab61c4f6a3a85422fd9a8dd3520da9a6666afe35fe8f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Trajectory_msgsMsgJointTrajectory.cs",
+      "sha256": "3ecff10abe2db74008aaeb12220f7f8b426f2e5fa6ac6e1802c6a9f122feeb54"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Trajectory_msgsMsgJointTrajectoryPoint.cs",
+      "sha256": "f4ea6eab08c7554916b2d159be3a3215e5fb449f00eb1b75661c5fbb3ff0524b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.cs",
+      "sha256": "f56fe0f3dcf9338286350a79a0ae18a1a26466dbff2cad74834d3afeeecc69c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/csharp/ros2/Uwvm/Fanuc/Ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.cs",
+      "sha256": "2653e456ea6af900ba2ae16d755641ef2ceaa24121180eabbe60b6306b880470"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/Directory.Build.props",
+      "sha256": "37c625dbe29b307174f940018acaed4859e1a5ece8448e4d07a3a6f6089042a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/NativeBridge.targets",
+      "sha256": "d6a42543c202d342be736e6019576b54517afb066a27aa2f4504d05af9c4b5f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Actions.cs",
+      "sha256": "f50a03365cc355b0fa23e5c2a14cfc8c570118837e065002d858b45f0d931dfd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Codecs.cs",
+      "sha256": "a19315c16aca7f52eee4b35ecb20fde49edbcb8d91664a1deb5af040f428a4ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Events.cs",
+      "sha256": "679e80e7fc660ccc42012f476051df3632bc45d3bb0ad723b5269365953b5c1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/NativeTransport.cs",
+      "sha256": "f374d564f8a6ff796b85be7beea2d3959ac7ee786bd3031e2a26096932337fb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Node.cs",
+      "sha256": "49bc87afe4da6ea6f6939e20de82b73bd5bd5b40ab81c2083bbeaa841ba4854d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Result.cs",
+      "sha256": "77260272e078314b13c3c761cab4e7835355a0a18353ff57dac54a20ed615411"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Retirement.cs",
+      "sha256": "a3f7c8cc7842e6bf9454b05c69849517247db90417b75343e34ec739e8b2e3fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/SelectedRaw.cs",
+      "sha256": "82691094c15f57e83f579eeea159c476fd332e44337a69a0b1a1e2b6cbca8884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/RosWasm/Session.cs",
+      "sha256": "99f1706075564bb99c14904fc8674f40101dc62b34efccf39d2cac08d88bbdb2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/Uwvm.RosWasm.csproj",
+      "sha256": "0583196073fbf913be695f29f3cabf28004bc5f14e5c7df04fb023663742b6ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/ControlWire.cs",
+      "sha256": "a1421cd05e3c610fe9e4ca3808766e4a0774fb23989329b7f2b68953ba0f7d5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/NativeOwned.cs",
+      "sha256": "f3bd82e83736372005e2f7970dc117d16129c007d02b9293ae4f1c5bb077e3fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/NativeOwned.targets",
+      "sha256": "4a1fcb18294c86935b09d89171887b03cee6a4f7a54ae88f6bbc3747248e30fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/OwnedGroup.cs",
+      "sha256": "9ed643b5adf27945a558939ea2a7dd433fd60866f0c16fcdb0ccecf827164b82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/OwnedWire.cs",
+      "sha256": "ef97eda4b7cb438f10a6a3648224ac57a088c4537f23316dc1b0066730ad4d12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/PreparedSession.cs",
+      "sha256": "bd467bdd6eda59b6161ed31f83ffef8aaf8a20adb02b7a9846cdead6285b9388"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/Uwvm.RosWasm.Owned.csproj",
+      "sha256": "b01b4813f322d5b550907014c4f7e1ceadf725589008217baca890e2ab8176b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/csharp/owned/roswasm_csharp_owned_bridge.h",
+      "sha256": "e50748f0f425eb3cf9588573f78c290f00dc3f3168d52a6999e7d2dcda9b300b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/Directory.Build.props",
+      "sha256": "37c625dbe29b307174f940018acaed4859e1a5ece8448e4d07a3a6f6089042a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/NativeBridge.targets",
+      "sha256": "d6a42543c202d342be736e6019576b54517afb066a27aa2f4504d05af9c4b5f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Actions.cs",
+      "sha256": "f50a03365cc355b0fa23e5c2a14cfc8c570118837e065002d858b45f0d931dfd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Codecs.cs",
+      "sha256": "a19315c16aca7f52eee4b35ecb20fde49edbcb8d91664a1deb5af040f428a4ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Events.cs",
+      "sha256": "679e80e7fc660ccc42012f476051df3632bc45d3bb0ad723b5269365953b5c1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/NativeTransport.cs",
+      "sha256": "a810d5263c32bbd1523a85481c4cb866ffcfc608d0d9b396e26a05fe93dd283b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Node.cs",
+      "sha256": "49bc87afe4da6ea6f6939e20de82b73bd5bd5b40ab81c2083bbeaa841ba4854d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Result.cs",
+      "sha256": "77260272e078314b13c3c761cab4e7835355a0a18353ff57dac54a20ed615411"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Retirement.cs",
+      "sha256": "a3f7c8cc7842e6bf9454b05c69849517247db90417b75343e34ec739e8b2e3fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/SelectedRaw.cs",
+      "sha256": "82691094c15f57e83f579eeea159c476fd332e44337a69a0b1a1e2b6cbca8884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/RosWasm/Session.cs",
+      "sha256": "99f1706075564bb99c14904fc8674f40101dc62b34efccf39d2cac08d88bbdb2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/Uwvm.RosWasm.csproj",
+      "sha256": "0583196073fbf913be695f29f3cabf28004bc5f14e5c7df04fb023663742b6ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/ControlWire.cs",
+      "sha256": "a1421cd05e3c610fe9e4ca3808766e4a0774fb23989329b7f2b68953ba0f7d5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/NativeOwned.cs",
+      "sha256": "f3bd82e83736372005e2f7970dc117d16129c007d02b9293ae4f1c5bb077e3fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/NativeOwned.targets",
+      "sha256": "4a1fcb18294c86935b09d89171887b03cee6a4f7a54ae88f6bbc3747248e30fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/OwnedGroup.cs",
+      "sha256": "9ed643b5adf27945a558939ea2a7dd433fd60866f0c16fcdb0ccecf827164b82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/OwnedWire.cs",
+      "sha256": "ef97eda4b7cb438f10a6a3648224ac57a088c4537f23316dc1b0066730ad4d12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/PreparedSession.cs",
+      "sha256": "bd467bdd6eda59b6161ed31f83ffef8aaf8a20adb02b7a9846cdead6285b9388"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/fsharp/owned/Uwvm.RosWasm.Owned.csproj",
+      "sha256": "b01b4813f322d5b550907014c4f7e1ceadf725589008217baca890e2ab8176b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fanuc/bindings/fsharp.json",
+      "sha256": "8ac6ded0f31f5d7800b304eaf903714047750f4033bfb4f1078c975482bd3cd3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fanuc/provider.lua",
+      "sha256": "6849324394fe79225d7652539437d65731d93614f624b27a49db2c8a38156493"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

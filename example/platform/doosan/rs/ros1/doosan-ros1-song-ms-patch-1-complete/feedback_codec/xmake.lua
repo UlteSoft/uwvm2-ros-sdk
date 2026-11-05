@@ -41,6 +41,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -57,4 +58,5 @@ target("doosan_ros1_feedback_codec")
     set_values("ros.sdk.vendor_binding", "share/platform/doosan/bindings/rs/doosan-ros1-song-ms-patch-1-complete.json")
     set_ros_scenario("feedback_codec")
     add_files("main.rs")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

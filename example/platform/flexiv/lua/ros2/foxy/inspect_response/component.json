@@ -1,0 +1,108 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2488",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/lua/ros2/flexiv_ros2_foxy_complete/records.lua",
+      "sha256": "a4178da1adcec00c5a1068253c2d7a7a972661f7f62c53c9c592574282447597"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_foxy-bundle.json",
+      "sha256": "8696c2869a25fd5a871907a381b48f767f8bda188b9d51ef37bc08f453ceb353"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/lua/ros2_foxy.json",
+      "sha256": "3a907ac1118d030920d4959021cbe4bc700264a0fef4b265bc07bc89df5bf856"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/pack.lua",
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/provider.lua",
+      "sha256": "f1f3d9538ea6dfb1893a028841ed48b2049550d9ed0deccb1a02d1b8124e9ea9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/lua/provider.lua",
+      "sha256": "0edebde51ef002f5c9aa5bf26d488b7240e1062a23d14636f557329378179ec1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "a463a2237e73d36ce1c8a6a9fd5bcd4557f756f272c3c00a2b75f0f928e32680"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "7636dd9a74101126cf63ba831c83528766f75d4b867f269b012caa1cdbc7cfc1"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b74e2480065af27267ce34191226eeb78918b3f075ce7b525c58b003a8b38e60"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30300a",
+      "stdin_hex": "00"
+    },
+    {
+      "id": "malformed-truncated",
+      "arguments": [],
+      "stdin_hex": "",
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "invalid canonical record:"
+    },
+    {
+      "id": "malformed-trailing",
+      "arguments": [],
+      "stdin_hex": "0000",
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "invalid canonical record:"
+    }
+  ],
+  "ros_namespace": "ros2"
+}

@@ -35,7 +35,8 @@ public final class Io
     {
         try
         {
-            return System.in.read();
+            byte[] input = uwvm.ros.Wasi.readStdin(1);
+            return input.length == 0 ? -1 : input[0] & 0xff;
         }
         catch(IOException failure)
         {
@@ -48,4 +49,14 @@ public final class Io
     {
         return Denied.check();
     }
+    /** Report only a completed Wasm-side contract; no host assertion computes it. */
+    @Export(name = "report_contract") public static int reportContract(int contract)
+    {
+        if(contract < 1 || contract > 3) return 22;
+        String name = contract == 1 ? "denied" : contract == 2 ? "invalid" : "cleanup";
+        System.out.println("{\"preload_contract\":\"" + name + "\",\"denied_modules\":3,\"passed\":true}");
+        System.out.flush();
+        return 0;
+    }
+
 }

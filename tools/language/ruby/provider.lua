@@ -11,7 +11,7 @@ function describe()
 	return {
 		api_version = 1,
 		languages = { "ruby" },
-		targets = { "wasm32-wasip1" },
+		targets = { "wasm32-wasip1", "wasm64-wasip1" },
 		exception_profiles = { "noeh" },
 		features = {},
 		artifact_kinds = {
@@ -106,8 +106,8 @@ end
 -- @param target Xmake target with one genuine source file and an explicit backend.
 -- @param root Installed shared SDK.
 -- @param request Validated public v1 context; no narrowing occurs.
--- @details memory64 remains a separate missing runtime port. A request is refused
--- before creating an output and cannot silently select the memory32 VM.
+-- @details Memory width and backend select separate genuine engines. Ruby/PHP memory64
+-- is admitted only for the explicitly built pure-WASI command profile.
 function configure(target, root, request)
 	import("core.project.config")
 	local language = target:values("ros.sdk.language")
@@ -122,13 +122,16 @@ function configure(target, root, request)
 	)
 	local triple = _triple(target, request)
 	assert(
-		triple == "wasm32-wasip1",
+		triple == "wasm32-wasip1" or language == "r" and triple == "wasm64-wasip1"
+            or (language == "php" or language == "ruby") and triple == "wasm64-wasip1"
+                and request.backend == "wasi" and kind == "binary",
 		"A separate genuine memory64 interpreter port is required for this target"
 	)
 	local profile = target:values("ros.sdk.exception_profile")
 		or config.get("ros-exceptions")
 		or "noeh"
-	assert(profile == "noeh", "This genuine Asyncify engine requires its exact noeh target closure")
+	assert(profile == (language == "r" and "eh" or "noeh"),
+        "Select native Wasm EH for GNU R or the exact noeh closure for the Asyncify engines")
 	local features = target:get("values.ros.sdk.features")
 	if features == nil then
 		features = {}
@@ -140,7 +143,7 @@ function configure(target, root, request)
 		)
 	end
 	local backend = target:values("ros.sdk.backend")
-	assert(backend == "ros1" or backend == "ros2", "Select the original ROS import namespace")
+	assert(backend == "wasi" or backend == "ros1" or backend == "ros2", "Select the exact WASI or ROS import namespace")
 	local sources = target:sourcefiles()
 	local extension = language == "ruby" and ".rb" or language == "php" and ".php" or ".R"
 	assert(
@@ -151,6 +154,12 @@ function configure(target, root, request)
 			),
 		"Declare one actual-language application source"
 	)
+	if backend == "wasi" then
+		target:set("values", "ros.sdk.modules", {})
+	end
+	if request.binding and request.binding.modules then
+		target:set("values", "ros.sdk.modules", request.binding.modules)
+	end
 	assert(
 		type(target:get("values.ros.sdk.modules")) == "table",
 		"The platform must supply its ordered public module graph"
@@ -174,6 +183,9 @@ function build(target, root, request)
 	local backend = target:values("ros.sdk.backend")
 	local shared = target:kind() == "shared"
 	local folder = path.join(root, "lib/language", language, backend, shared and "module" or "")
+    if (language == "r" or language == "php" or language == "ruby") and request.triple == "wasm64-wasip1" then
+        folder = path.join(folder, "wasm64")
+    end
 	local runtime = path.join(
 		folder,
 		shared and "module.wasm"
@@ -182,7 +194,7 @@ function build(target, root, request)
 	assert(
 		os.isfile(runtime),
 		language == "r"
-				and "The genuine GNU R source port still needs Fortran90, embedded base startup and execution qualification; see share/language/r/port-status.json"
+				and "Build and qualify the genuine GNU R runtime for this exact target/backend; see share/language/r/port-status.json"
 			or (
 				shared
 					and "Install the common genuine interpreter reactor template for this exact backend"
@@ -216,12 +228,26 @@ function build(target, root, request)
 		)
 	end
 	assert(
-		metadata.target == "wasm32-wasip1" and metadata.ros_backend == backend,
+		metadata.target == request.triple and metadata.ros_backend == backend,
 		"Engine target/backend mismatch"
 	)
+    if (language == "php" or language == "ruby") and request.triple == "wasm64-wasip1" then
+        assert(metadata.memory64 == true and metadata.table64 == true
+            and metadata.wasip1_abi == "uwvm-memory64-extension-v1"
+            and metadata.maximum_pages == 16384,
+            "Select the distinct checked WASIp1 memory64 extension engine")
+    end
+	if language == "r" then
+        assert(metadata.exception_profile == "eh" and metadata.control_transfer == "native-wasm-eh-sjlj",
+            "GNU R requires the actual native Wasm EH artifact")
+    end
 	local descriptor_path = path.join(root, "share/abi/abi-v1.json")
 	local descriptor =
 		assert(json.loadfile(descriptor_path), "Install the one canonical ROS ABI manifest")
+	if backend == "wasi" then
+		assert(metadata.abi_profile == "wasip1-only-v1" and metadata.ros_import_count == 0,
+			"Pure WASI requires an independently validated engine with zero ROS imports")
+	else
 	assert(
 		metadata.abi_profile == "complete-ros-v1"
 			and metadata.canonical_abi_sha256 == hash.sha256(descriptor_path):lower()
@@ -229,6 +255,7 @@ function build(target, root, request)
 				== descriptor.modules["uwvm_" .. backend .. "_v1"].function_count,
 		"Install a cold-built complete ROS ABI engine; an old eight-import engine is not a complete SDK"
 	)
+	end
 	assert(
 		hash.sha256(runtime):lower() == metadata.sha256:lower(),
 		"The selected genuine VM differs from its manifest"
@@ -314,7 +341,7 @@ function build(target, root, request)
 		language = language,
 		version = version,
 		backend = backend,
-		target = "wasm32-wasip1",
+		target = request.triple,
 		engine_sha256 = metadata.sha256,
 		source_bytes = #source,
 		source_capacity = capacity,

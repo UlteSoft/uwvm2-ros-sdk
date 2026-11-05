@@ -1,0 +1,68 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5159",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b2a34ce5c6d8aa1a0f4c44602716cfb9de9a9a0dc921b5fbec5398042929efa4"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "ce90d7e495fbdd0647f103490d5a8329c90f6da2b0cbc001b93b0fd2c5e9c284"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/zig/universal-robots-ros1-trajectory-complete.json",
+      "sha256": "71e42e574bb9c1415312eb00631d8bcc273854a492c3db92fa81bc50b2c0ba08"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros1-trajectory-complete.ir.json",
+      "sha256": "263d200249a365fb049385437e3c674a0bd8bd31581c6c76abb29a357c438e19"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "control_msgs/FollowJointTrajectoryFeedback",
+        "bytes": 92
+      }
+    }
+  ]
+}

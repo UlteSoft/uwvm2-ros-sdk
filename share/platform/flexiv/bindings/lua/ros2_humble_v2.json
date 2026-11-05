@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "lua",
+  "profile": "ros2_humble_v2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/lua/ros2/flexiv_ros2_humble_v2_complete",
+  "bundle_manifest": "share/platform/flexiv/bindings/lua/ros2_humble_v2-bundle.json"
+}

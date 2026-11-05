@@ -1,0 +1,841 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-native-lifecycle-3050",
+  "test_scope": "Original guest with only its ROS namespace enabled. Verify denial and cleanup; positive native lifecycle qualification is separate.",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/zig/ros1/franka-ros1-complete/native_grasp.zig",
+      "sha256": "3cd191a9701c92ce9da0aeb81530786ef95337e1f999c22d268526125461dda2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/zig/ros1/franka-ros1-complete/native_service.zig",
+      "sha256": "745269d8b754b3882fc552aa2dfd49c181f38df0ba50ed8dbb1cbe5e1576dca9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/zig/ros1/franka-ros1-complete/records.zig",
+      "sha256": "6700bd66308f3e90293636aa029c52beace400ef27856a6869d5fa9dc635bcd7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/zig/ros2/franka-ros2-complete/records.zig",
+      "sha256": "af0baf75055acbc0ec6ef3a0560e8ca1d9640ffbe73a1c8e4185fdb1c54b8d3a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/client.zig",
+      "sha256": "2c3d41b2819c07ad553be56693e155d65aab93f9e566f663b6ee5eed09e7f36d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/native_command.zig",
+      "sha256": "3d1b90cd85d2e44dc463956d39d94a8552dcb4941f16dfbb8508e2372f0cbd82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/node.zig",
+      "sha256": "3a364683e4a1dad965502432ab802d9fd01de07b0880ae15b60a24927a9ca4a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros1.zig",
+      "sha256": "64a31ccc7acc19d5bd25a269e941e97260ed6909a8721c01047d635382157f50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros2.zig",
+      "sha256": "094635a63b41bab99a2a14eec6e4488129380912bf109a49b15eaba6626b5eb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/as/ros1.json",
+      "sha256": "bb3e2b20c07ce462b87a3a832a452690e4d22fca1f14b119817eb546540be009"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/as/ros2.json",
+      "sha256": "eb33f3ac1e53a8d60a52ec4ccf15122d6ea33047ae0dce1684a8164b24695ac6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/csharp/ros1.json",
+      "sha256": "bf1554296ef07445b400b93fbe31473e61d20bb94206e36d9cd308c98083d8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/csharp/ros2.json",
+      "sha256": "d49a9d5fd11e1d287e8753b1dbcdb2a74f2db8c16ef4b2c06ad1df2b0e9520ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/d/ros1.json",
+      "sha256": "dbd90b80971e1f88eb3967924f18d23b7087a833a71761249c28f1322d0e49ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/d/ros2.json",
+      "sha256": "3031d8ddec41b335267aa889f680be73a5f52d48655386dfe52a6bf1a992b1aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/fsharp/ros1.json",
+      "sha256": "6c50dcf0e8683340d044115737385be8be7fb7585d68d3828ba61b040b9ec6bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/fsharp/ros2.json",
+      "sha256": "e53d28f2ddd1da26f5764cca42d62c0b3181c16971a80c62c9f6b04d914229ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/go/ros1.json",
+      "sha256": "1cbfc75930685a056bffe5902b4463c13dd46db21327bf4b2433b3e14adf86d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/go/ros2.json",
+      "sha256": "3ac4f983b7abb7e6ef51db7777e4028731328fd669fe561c044b86ba63465673"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/haskell/ros1.json",
+      "sha256": "d8b399dc6c929498e5539db0bb83e882a8e341d5e4eb0b8cc76f862a82beac1f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/haskell/ros2.json",
+      "sha256": "6244e8b0bf735a98f6353d08f5073d77baf3593112ef995563ee19dda3877f88"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/java/ros1.json",
+      "sha256": "82e9a594f385354410794930d351174a320888732e4c97e85a6b2a2cafd69d11"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/java/ros2.json",
+      "sha256": "7b8e6059a3a826d87133df74f34e63c44a2266d720e91452c7333d73adcb7b58"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/js/ros1.json",
+      "sha256": "d35bde03701163d79a80c014dda4f09405163c5414bd76bdd04195370d20fcbc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/js/ros2.json",
+      "sha256": "6ba5f3c5f1577afb490a7429e8c55b3fd84c1bc7bc7a5d261d3d1563568d485b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/kotlin/ros1.json",
+      "sha256": "14d2bd1d1fe96ccb107e10877097bc4b9db2e2072688a0cc249e73c0d554deeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/kotlin/ros2.json",
+      "sha256": "eddd7fb9eec00d778728a27f4d7a6b1e9110b5b1e097a7e970519233b856de12"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/lua/ros1-bundle.json",
+      "sha256": "3887a5efd27aaf23df4a124e3116ee89982ebdc4f6eb673bd0d903c63c84ec4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/lua/ros1.json",
+      "sha256": "4d4df49371827cb9fe1bb80d418c76dc9c3b6dfec600db12560ef9c0c5fea972"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/lua/ros2-bundle.json",
+      "sha256": "76c9c5e0f7ad2e47cb91d2287c25e91978cb657d8bcdb1fb6b698c438cb601cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/lua/ros2.json",
+      "sha256": "42d60fbe96a5383932fc66d1dd80f2972f2261efc034ddc53112b5b2c307f424"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/moonbit/ros2.json",
+      "sha256": "e197bf158871f4d237b366fa4f53a76740f39202e357b8c02989929c86bf9d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/nim/ros1.json",
+      "sha256": "cbdfa0e7375b96416dbc29386dc64667574f05abb9f34623ef2b10c00479bda5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/nim/ros2.json",
+      "sha256": "e86adbb5d9f9e1e8249944d921189bcdbc4889f169fee4bc8e5faefa77a173a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/odin/ros1.json",
+      "sha256": "87b16827fb0c457d5b6e2be1720137a013542bac027c43d964bbc06193623ea5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/odin/ros2.json",
+      "sha256": "5d7296417bf7f495691de688da72da3ca6c3477e34a2239c0b3fc24be0645465"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/php/ros1.json",
+      "sha256": "89d3232a60494b8a352deaffdeb55a545483969355126bc05192d40b1ab9c692"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/php/ros2.json",
+      "sha256": "f20574bb44ec3c1b3fea1f4fae10be00c65eb26782e6be33e46908978837d0d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/py/ros1.json",
+      "sha256": "810ecde51f11014fc44f4d6cf78b189cbcea12dfa9eefa57499e2cb70fc91a5e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/py/ros2.json",
+      "sha256": "93d9f7dfee360025cf72bd7f3edc8b24a69a4e22834fc80db770872a7e19e5c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/rs/ros1.json",
+      "sha256": "651a907a6d8fbb0450acde46a8560b512af5302ec3524a93edc89e4edd3ca5b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/rs/ros2.json",
+      "sha256": "528a0560278852c0fe8172728242aa6d8dfe85fa9c349e757d83719a59f43702"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/ruby/ros1.json",
+      "sha256": "2fbc52d1853e304f39eb298318e61db527698c082df5d26e2a2667e90e4afa9e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/ruby/ros2.json",
+      "sha256": "96a4c74451925b2db8412d4f6ae5765f2e5916b0ae2b6cc56e93e651c9135ee0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/swift/ros1.json",
+      "sha256": "337727cd2ef342c14bbe90d8ea8ae3294c133dde09867848e0bf06be94a76b1c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/swift/ros2.json",
+      "sha256": "b16691b3ddc09c3bbfeed383986ace6c8cb2f33b38d5c1b3bb7c11bce1934696"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/tinygo/ros1.json",
+      "sha256": "629ff1eb2428391a4d4b0eb1ee3ad13b93817ffa02f991e2b315f29950773c6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/tinygo/ros2.json",
+      "sha256": "e189b8e485d7f7d7d9a7a3b09717cfe0b3c1678ca5955dbe8d7c9df30f009d2a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/vbnet/ros1.json",
+      "sha256": "047770588803be09fc0c1a88138c056e21e438b6812e88c3f0350e628de2a351"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/vbnet/ros2.json",
+      "sha256": "ec372caf17d187a137e8f5e59efa78a897731836737941ce522669897fd3d1c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/zig/ros1.json",
+      "sha256": "a8b3d2ebf9ca25b9a184bff8aa96e22106b7220930890e0f847239a407131950"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/zig/ros2.json",
+      "sha256": "79d02aecffbd18197c5f19bccfcbd10db2adb5c7e6456d21729e2f74c67fc040"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bundles/js/ros1.json",
+      "sha256": "7a467365a35a631c19cf5b2f595454042d8e3ac53c6646d1c0d29f5af9ff378c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bundles/js/ros2.json",
+      "sha256": "686b1a49a1bbbed280bf1e0f5b64bc9a6a5f0b5381ff6105f93a614cbe0a4cdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bundles/py/ros1.json",
+      "sha256": "f46e21c1352d1caa267ee14b7ad3bf0c8ac3d8ef604a2637b42c07ae7acd7a89"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bundles/py/ros2.json",
+      "sha256": "8a7f65ab8d2ad4583cb34f596225a72b11fdc89a4dc81c0b370a769408045d34"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/binding-source.json",
+      "sha256": "747c2d70b9fad3f676504be7cc0af1cf448113a913ba92b85249211211dd6bba"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/catalog.json",
+      "sha256": "5c95e9d2355ca851b905ea8da6b7bc61517fe945d54f24a8259080af54220c3e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_example_controllers/msg/JointTorqueComparison.msg",
+      "sha256": "6508e8bf776ec24eff3073716e9b15ffd0634c45beadac6892ab5404e4cfc56b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_gripper/action/Grasp.action",
+      "sha256": "48f029a4217b5ec4465acca9a2763fdb1a146597b592f23fa3b15562b99364f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_gripper/action/Homing.action",
+      "sha256": "aedd673bb95547e22bac742906d3156edc9fcb06ae25b5efbb0b184462748563"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_gripper/action/Move.action",
+      "sha256": "d16aacc4fd045a97900bc006a77f2de64d69636694cf52d08861ad623321136b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_gripper/action/Stop.action",
+      "sha256": "aedd673bb95547e22bac742906d3156edc9fcb06ae25b5efbb0b184462748563"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_gripper/msg/GraspEpsilon.msg",
+      "sha256": "10f2e3d822ce0f2372c76d9d7796529ca36ba9336e7ff7631c9e72f09c8b7477"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/action/ErrorRecovery.action",
+      "sha256": "d487269d2de0655a9ed127c83b0d1006d724e600385b32f4f4b39893c1e0164b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/msg/Errors.msg",
+      "sha256": "90245ca2b0e1997708b089dc72d61f64eb3d253c5f4c09fe5c11c27851527185"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/msg/FrankaState.msg",
+      "sha256": "d25f45f3bbf07ee1f3b003b040b6d3a371961ce261da8391db34e2292acafa79"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetCartesianImpedance.srv",
+      "sha256": "8a32ba8732790a7ce5982a25bf8dc73269d705b82e9b3fbf86f96c903ccf6e20"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetEEFrame.srv",
+      "sha256": "5c1ee2a03aabec3f6a36a0bcb280e34cc4ef49712b03e665a63b2570ec972da7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetForceTorqueCollisionBehavior.srv",
+      "sha256": "ed4057e185473c468834658e92c0d4851b760ed203949c34ea59bea0d2d435b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetFullCollisionBehavior.srv",
+      "sha256": "e50a6a720844b538483bf8fe9e1c9aef505576d6d16712f7b7f22c735ec26c3e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetJointImpedance.srv",
+      "sha256": "845d5247378a634ac63b961b2384bd7a929b5b8f3177d75b109b6ac2c320da8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetKFrame.srv",
+      "sha256": "fda64d75adcd9f0a5f78dd94c6c5766d20aa0cb1a5595539a35a3191fd5c11a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/franka_msgs/srv/SetLoad.srv",
+      "sha256": "b474ff320b4d55b714b1cc04299e75736961bac7099fec2ab9681640784dd165"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/records.json",
+      "sha256": "8117269ffa7b390d97a7f72a715c8c6f0c664eb0c8c74a40aa5016acc28da1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/source-lock.json",
+      "sha256": "69d8bd6088ea46ffcf3226ff2fa824c92e0f781f8ceaf91255258d6c25b933a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros1/std_msgs/msg/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/binding-source.json",
+      "sha256": "fcfa65ce6e57b78a854eded01f7361be16bcb09f78a8f0cdfc2896e49a805c16"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/catalog.json",
+      "sha256": "27199564a9e5a5b469d314599f7fb15a1fd8c7c40ba6c52cd241c56621b9a69f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/action/ErrorRecovery.action",
+      "sha256": "d487269d2de0655a9ed127c83b0d1006d724e600385b32f4f4b39893c1e0164b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/action/Grasp.action",
+      "sha256": "e129fa8bfc57b36851e4f3466af34d9a5a23935a9566c24bd981818047fdb6d8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/action/Homing.action",
+      "sha256": "34409ed1a35ba24f95bd4ca67e99c4ef7efcf76bbf5f2844fc75360fd794e99b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/action/Move.action",
+      "sha256": "349bd984b63d6510e61492b8b3352070ff4b9ef6d1825f8ae86ad5bc9462b25b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/action/PTPMotion.action",
+      "sha256": "19836199eda892ef1ab73dec2a25a966358b0a69f80b456a1d843b46834bec20"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/CollisionIndicators.msg",
+      "sha256": "39654ff147120c2f3e5a4cdaf6a43a7af6e1b3ff889aff9e5bac83b920a95c78"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/Elbow.msg",
+      "sha256": "3bdb18227176ab8f368f00b47ee06aa843bd2df4cd60e40034bf6b69d42f496e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/Errors.msg",
+      "sha256": "bf9d2b5e09680daaa5b46d5ba9051a9201ae5c892ab8609893364ddf424c01ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/FrankaRobotState.msg",
+      "sha256": "c55a163656bcf7674601ff18d02819b3088c1e9e3edc220855b3099ec0985ae5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/GraspEpsilon.msg",
+      "sha256": "e6c8564c1603c990487a3c3c7f123e459cd4ec7619c98c148675601d55a0ba3b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/msg/TargetStatus.msg",
+      "sha256": "d8941e0276cf834af45919646c6b7cd4d8f18f352b169c72cf6672a5d6d3b062"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetCartesianStiffness.srv",
+      "sha256": "0857969a07f8a7ee4efd27a869c9dda31be017f8dac26e8d336a4bb8116ae0df"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetForceTorqueCollisionBehavior.srv",
+      "sha256": "ed4057e185473c468834658e92c0d4851b760ed203949c34ea59bea0d2d435b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetFullCollisionBehavior.srv",
+      "sha256": "e50a6a720844b538483bf8fe9e1c9aef505576d6d16712f7b7f22c735ec26c3e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetJointStiffness.srv",
+      "sha256": "b99b186a76a4f17857f419c9b69f45a9043144e9f8c491bbd38aa5468dd5f82c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetLoad.srv",
+      "sha256": "bddfba6e7ecadf5a7b4208408a2c835d59a87e02a4188517db5d177a9c1b5982"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetStiffnessFrame.srv",
+      "sha256": "021b10a15a69b744a37ff20861d6953926342ef71e616ad015248bf70f0bbdf3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_msgs/srv/SetTCPFrame.srv",
+      "sha256": "98bb922a8b71ff502dce86109c5935446512520f8ac9b5f86802f45412088ab2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/action/MoveAbsolute.action",
+      "sha256": "20296fd0b977b6dc5078cc807f38395feffc05df09913c32d8cabd00aad3ad6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/msg/SpineParameters.msg",
+      "sha256": "20bbc8342c3cef0dd9b8950d66c48dfea99b1ef5ff1b9d55bbf98ca4ce5068f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/msg/SpinePosition.msg",
+      "sha256": "bf6e4b21f7666ec509de108df7bc3322b8f02edea6d6df09c7cf4df7e3c549e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/msg/SpineState.msg",
+      "sha256": "a49bb6b5cc53d1a6fd3f8d62162cfb117aa8d3a6d9c98770cc715ae63144d8b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/msg/UserLimits.msg",
+      "sha256": "f7ed8c93f107f28ddd6d068a74ca5def023c01ba8b5b9be25a68d33572a6d783"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/FaultReset.srv",
+      "sha256": "c6a15e38e42a502f66ed2160ebaff2cb086d361f338995fe22d0696a3c281342"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/GetParameters.srv",
+      "sha256": "9cbe855d5273d7381cbca71b6b662e55cae70bb54936db3c919a4fe05731d48e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/GetPosition.srv",
+      "sha256": "888ed826a56da9583f87d8a132d00a60380fbd464daf11f6a3f86be16456f1e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/GetSpineState.srv",
+      "sha256": "827ef78a6b4b9c0b6eaf33e2a586092c9e0a363d5fe997f675257005afda8d56"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/Halt.srv",
+      "sha256": "0c8eccacefd95d6d98fb89d959027deace723ea44b3c58f652466b4137080824"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/SwitchOff.srv",
+      "sha256": "cefedba74e07b78e85f418181880a0915a2cc378d640e9eb0f015b7ccb2c0c1f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/franka_spine_msgs/srv/SwitchOn.srv",
+      "sha256": "e9845e0be5302a08a4c0f68524600e55f516066aed3c99bfb024d4264415cf09"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Accel.msg",
+      "sha256": "67f371aabfc8ec1bd58bbb01a1709222e685c549462984c9958cc89fcd9f6abb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/AccelStamped.msg",
+      "sha256": "c46e9fcf5551d2330b63b1efe0626f747bcda24ddcc9e281597a9354b3bd9eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Inertia.msg",
+      "sha256": "33bc8db637874153ba5261bb5e7c23ca12754e15e5a2e58a86533c1f5bd66dd4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/InertiaStamped.msg",
+      "sha256": "456743836340c5d638dba1fcae3211acfe61f0690dcc9fe5b7ae9af8991591f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/PoseStamped.msg",
+      "sha256": "31898ab0eb64a6c44c27ab4959819a32ec3bc3ee847c8fe1b01c897d48e311e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/TwistStamped.msg",
+      "sha256": "ffc9d5925412410b28d601c55cf386a0b3e4d5dba00920fbafb98d7201f582ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Vector3Stamped.msg",
+      "sha256": "bfe690d1b7d907c039c9c1580cf8de557d546c8aeb3280c1bd5e0a60d84356cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/Wrench.msg",
+      "sha256": "d9667abd3d2a67d5624113fa07a647b0d4806bf89d21c8a5cf914905a036bf25"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/geometry_msgs/msg/WrenchStamped.msg",
+      "sha256": "853a8534230b795b6c1afcb8483002f5d1cf14e967ffa0da2cba8da5453b2162"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/records.json",
+      "sha256": "5efc508c23eb10bcba36aa135fa83d0dc32fb09b67cbb33aa2bfcac2dba27d4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/source-lock.json",
+      "sha256": "f3e0d0a02279d206868deda9adb55c977e98798384c074e3b0376e0df81be9c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/catalogs/ros2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/ci/v0.1.0/README.md",
+      "sha256": "07d46bc3d3b07752a82b0692b3585b3e394bc11c58d84dd5cb863067c942446b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/ci/v0.1.0/examples.json",
+      "sha256": "d053bcb33c21928177bc752fe6f63f20f801ec3cee33293b729abea28350c33d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/actionlib_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/common_interfaces/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/diagnostic_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/geometry_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/nav_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/sensor_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/sensor_msgs_py/LICENSE",
+      "sha256": "ad1c88480d4b3ea8b5c771b27e6340d49fbc9d1e0361be9cca96dc6b3d1a9c17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/shape_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/std_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/std_srvs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/stereo_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/trajectory_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/common_jazzy/files/visualization_msgs/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/franka_ros1/files/LICENSE",
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/franka_ros1/files/NOTICE",
+      "sha256": "d8ded0c268405e7847c281faa15042d381fbf7d308ec91d9941fbd943a6e1053"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/franka_ros2/files/LICENSE",
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/franka_ros2/files/NOTICE",
+      "sha256": "edf4d327f25582a1c18c2c733ea6014c31b41974dc3f8567dbf9bbc0332f333a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/franka_ros2/files/realtime_tools/LICENSE",
+      "sha256": "143077f9f6a8de5a99f78c2c2472801fb53cf240277ef661642f079b9acdfff8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/licenses/rcl_jazzy/files/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/provider.json",
+      "sha256": "824b28692b6cd188bdb011af40e40bd24f423064a5cc6c03e34791121be18d6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/review-status.json",
+      "sha256": "7ef1ec0ea08fc09236e029434a74aea7044fa42820c688171bf55f59c6a24756"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/franka/actions.lua",
+      "sha256": "9be4d3f083c1d0e567843f867ddbea7bbd6f3fe54b160b335820f7c041e0cc45"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/franka/provider.lua",
+      "sha256": "b04d6d59d07e76fe5d7abde6f02239d9e77b5b588bd31870e875eab42b1173fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "f0a574349afe96804909df168597d15d9d779e6cfb98812d307e454985ca3155"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e3cf053a49aed4f5ea7511db22f223d39822d8b170f32d99cc069e3f494477d4"
+    },
+    {
+      "scope": "example",
+      "path": "support.zig",
+      "sha256": "e7ecda3b6c9049f12bab3bd53b451319177e0a3789d690420cec1d88b566f1b8"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "e691390a7736c9cb5b1ec33d9fb9bd71e0f36578fc40488aad73e8773a4bdb22"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "b9d523ae942ebc900fb311f6002b25534877e436acafbd91aaf9106ed36eba56"
+    }
+  ],
+  "cases": [
+    {
+      "id": "deny-before-side-effect-cleanup",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": "primary=13 cleanup=0\n"
+    }
+  ]
+}

@@ -27,7 +27,7 @@ uwvm2-ros 或原生 ROS。
 
 ```json
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "backend": "ros2",
   "distribution": "jazzy",

@@ -104,12 +104,12 @@ static bool whole(profile const&s){
  }
  return true;
 }
-static std::uint32_t validate(uwvm_rmw_codec const*c,void const*support)noexcept {
+static std::uint32_t validate_codec(uwvm_rmw_codec const*c,void const*support)noexcept {
  try {if(!c||!c->validation_state)return 22;auto const&s=*static_cast<profile const*>(c->validation_state);
  if(s.self!=&s||!s.ready||!s.graph)return 22;std::size_t slot{};for(;slot<s.count;++slot)if(c==&s.codecs[slot])break;if(slot==s.count)return 22;
  auto const&spec=s.graph->codecs[slot];auto const&n=s.graph->nodes[spec.node];bool service=n.kind==Kind::service;
  void const*generic=service?static_cast<void const*>(s.service[spec.node]):s.message[spec.node];void const*native=service?static_cast<void const*>(s.native_service[spec.node]):s.native_message[spec.node];
- if(c->version!=1||c->kind!=(service?UWVM_RMW_SERVICE_CODEC:UWVM_RMW_MESSAGE_CODEC)||!c->native_type||n.name!=c->native_type||c->generated_support!=generic||(support!=generic&&support!=native)||std::memcmp(c->native_rihs01,s.hashes[n.identity].data(),32)||c->maximum_wire_bytes!=spec.maximum||c->encode!=spec.encode||c->decode!=spec.decode||c->validate!=&validate)return 22;
+ if(c->version!=1||c->kind!=(service?UWVM_RMW_SERVICE_CODEC:UWVM_RMW_MESSAGE_CODEC)||!c->native_type||n.name!=c->native_type||c->generated_support!=generic||(support!=generic&&support!=native)||std::memcmp(c->native_rihs01,s.hashes[n.identity].data(),32)||c->maximum_wire_bytes!=spec.maximum||c->encode!=spec.encode||c->decode!=spec.decode||c->validate!=&validate_codec)return 22;
  if(service){if(spec.request>=s.count||spec.response>=s.count||c->request!=&s.codecs[spec.request]||c->response!=&s.codecs[spec.response]||c->encode||c->decode)return 22;}
  else if(c->request||c->response||!c->encode||!c->decode)return 22;
  return whole(s)?0u:22u;
@@ -142,9 +142,9 @@ std::uint32_t prepare(identity const*ids,std::size_t count,std::shared_ptr<profi
  for(auto const&n:g.nodes)if(n.kind==Kind::message){if(!n.default_contract)return 22;auto error=n.default_contract();if(error)return error;}
  for(std::size_t i{};i<g.codecs.size();++i){auto const&spec=g.codecs[i];auto const&n=g.nodes[spec.node];auto&c=s->codecs[i];bool service=n.kind==Kind::service;
  c.version=1;c.kind=service?UWVM_RMW_SERVICE_CODEC:UWVM_RMW_MESSAGE_CODEC;c.native_type=n.name.data();c.generated_support=service?static_cast<void const*>(s->service[spec.node]):s->message[spec.node];
- std::memcpy(c.native_rihs01,s->hashes[n.identity].data(),32);c.maximum_wire_bytes=spec.maximum;c.validate=&validate;c.encode=spec.encode;c.decode=spec.decode;c.validation_state=s;
+ std::memcpy(c.native_rihs01,s->hashes[n.identity].data(),32);c.maximum_wire_bytes=spec.maximum;c.validate=&validate_codec;c.encode=spec.encode;c.decode=spec.decode;c.validation_state=s;
  if(service){if(spec.request>=g.codecs.size()||spec.response>=g.codecs.size())return 22;c.request=&s->codecs[spec.request];c.response=&s->codecs[spec.response];}}
- s->ready=true;for(std::size_t i{};i<s->count;++i)if(auto e=validate(&s->codecs[i],s->codecs[i].generated_support))return e;
+ s->ready=true;for(std::size_t i{};i<s->count;++i)if(auto e=validate_codec(&s->codecs[i],s->codecs[i].generated_support))return e;
  output=std::move(owned);return 0;
  }catch(std::bad_alloc const&){return 12;}catch(...){return 22;}
 #endif
@@ -173,10 +173,10 @@ std::uint32_t select(profile const&p,ros::capability_spec const&cap,uwvm_rmw_cod
  auto at=cap.limits.find("adapter-codec-identity");
  if(at==cap.limits.end()||at->second!=s->canonical_identity||cap.type_identity!=identity_text(c->native_rihs01)||
  cap.alias.empty()||cap.resource.empty()||cap.resource.front()!='/'||field(cap,"validator")!="none"||!explicit_qos(cap))return 13;
- if(service){if(!c->request||!c->response||limit(cap,"max-request-bytes")<c->request->maximum_wire_bytes||
- limit(cap,"max-response-bytes")<c->response->maximum_wire_bytes||!limit(cap,"max-inflight")||limit(cap,"max-inflight")>256||
- !limit(cap,"timeout-ms")||limit(cap,"timeout-ms")>3600000)return 90;}
- else if(limit(cap,"max-message-bytes")<s->minimum)return 90;
+ // Selection proves the complete codec and authority. Independent quotas
+ // apply to the actual operation, not the maximum Cartesian schema capacity.
+ // Explicit zero is a valid refusal policy; omitted limits remain unlimited.
+ if(service&&(!c->request||!c->response))return 22;
  root=c;return 0;
  }catch(std::bad_alloc const&){return 12;}catch(...){return 22;}
 }
@@ -191,6 +191,9 @@ std::uint32_t canonical_bounds(std::shared_ptr<profile const>const&p,ros::capabi
 }
 std::uint32_t validate_body(std::shared_ptr<profile const>const&p,ros::capability_spec const&cap,bool response,std::uint8_t const*b,std::size_t n)noexcept {
  if(!p)return 95;uwvm_rmw_codec const*r{};auto e=uwvm_default_control_gateway_detail::select(*p,cap,r);if(e)return e;
+ auto key=r->kind==UWVM_RMW_SERVICE_CODEC?(response?"max-response-bytes":"max-request-bytes"):"max-message-bytes";
+ std::uint64_t maximum{};if(!ros::read_quota(cap,key,maximum))return 22;
+ if(n>maximum)return 90;
  return uwvm_default_control_gateway_detail::body(*p,cap.type,response,b,n);
 }
 }

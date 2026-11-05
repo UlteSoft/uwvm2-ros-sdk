@@ -58,3 +58,5 @@ export function _start(): void
         proc_exit(5);
     }
 }
+
+export {abortGuest};

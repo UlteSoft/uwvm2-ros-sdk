@@ -21,7 +21,7 @@ public final class Main
     {
         if(args.length != 1)
         {
-            System.exit(22);
+            uwvm.ros.Wasi.exit(22);
             return;
         }
         Client.Exchange facts = Client.waitSample(args[0], 1, 250);
@@ -30,7 +30,7 @@ public final class Main
         {
             try
             {
-                wire = Ros2Fanuc_msgsMsgConnectionStatus.decode(facts.wire).encode();
+                wire = Ros2Fanuc_msgsMsgConnectionStatus.encode(Ros2Fanuc_msgsMsgConnectionStatus.decode(facts.wire));
             }
             catch(IllegalArgumentException failure)
             {
@@ -44,6 +44,9 @@ public final class Main
             hex.append(Character.forDigit(value & 15, 16));
         }
         System.out.println("{\"primary\":" + facts.primary + ",\"cleanup\":" + facts.cleanup + ",\"wire_hex\":\"" + hex + "\"}");
-        System.exit(Math.min(facts.status(), 125));
+        System.out.flush();
+        int status = facts.status();
+        if(status == 0 && System.out.checkError()) status = 5;
+        uwvm.ros.Wasi.exit(status < 0 || status > 125 ? 125 : status);
     }
 }

@@ -17,5 +17,36 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "swift",
+    "swift": {
+      "module_name": "VendorCodecCommand",
+      "top_level": true,
+      "import_dirs": [
+        "include/platform/ros/swift/Sources/CRosWasm"
+      ],
+      "c_defines": [
+        "ROSWASM_C_FFI_BACKEND=2"
+      ],
+      "modules": [
+        {
+          "name": "RosWasm",
+          "sources": [
+            "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Wire.swift"
+          ]
+        },
+        {
+          "name": "DoosanDoosanRos2HumbleCompleteRecords",
+          "sources": [
+            "include/platform/doosan/swift/ros2/doosan-ros2-humble-complete/Records.swift"
+          ]
+        }
+      ]
+    }
+  }
 }

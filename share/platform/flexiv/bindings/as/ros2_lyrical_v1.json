@@ -1,0 +1,14 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "as",
+  "profile": "ros2_lyrical_v1",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/as/ros2/flexiv-ros2-lyrical-v1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "as"
+  }
+}

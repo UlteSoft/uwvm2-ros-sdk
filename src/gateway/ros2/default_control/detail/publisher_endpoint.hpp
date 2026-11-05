@@ -14,6 +14,7 @@
 #pragma once
 #include "../../compat/node.h"
 #include "topic_proof.hpp"
+#include "native_serialization.hpp"
 #include "native_rmw_metadata.h"
 #include <mutex>
 
@@ -102,6 +103,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::publisher_detail
             {
                 auto error=proof_->validate(bytes,count);if(error)return error;
                 Native value{};error=proof_->root()->decode(bytes,count,&value);if(error)return error;
+                error=detail::native_serialization_check(value);if(error)return error;
                 // Exactly one actual publication on the retained native object.
                 // A transport timeout cannot make this safe to replay.
                 publisher_->publish(value);return 0;

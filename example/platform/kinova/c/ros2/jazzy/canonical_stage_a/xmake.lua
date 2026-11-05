@@ -22,7 +22,13 @@ if not sdk_root then
         current=path.absolute(parent)
     end
 end
-assert(sdk_root,"BLOCKED_COMPLETE_INSTALLED_SDK_REQUIRED")
+if not sdk_root then
+    target("kinova-sdk-required")
+        set_kind("phony")
+        on_load(function() raise("BLOCKED_COMPLETE_INSTALLED_SDK_REQUIRED") end)
+    target_end()
+    return
+end
 includes(path.join(sdk_root,"tools/shared/xmake/simulation_example.lua"))
 local here=os.scriptdir()
 target("kinova-gen3-jazzy-canonical-stage-a")

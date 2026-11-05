@@ -1,0 +1,63 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "module-consumer-4",
+  "preload_modules": [
+    "algorithm"
+  ],
+  "test_scope": "Execute the original guest assertions across the actual built preload module: initialization count, stateful calls, typed error packing and close/reinitialize behavior. Every module gets explicit base WASI; operation grants stay in deployment policy.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.mjs",
+      "sha256": "54f865c91d1f2b0837b469f3c924adbd3358e21de30fd87c919cbbd7e5db8193"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "565eb8a3d0e141e537c5022073a5ae062af9e75f7e1e49e693fa2f927ff1a050"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "052114d379cc445056375fecc905fe02d4664e6ee71d428e1b27ce46ee551dad"
+    },
+    {
+      "scope": "example",
+      "path": "consumer.mjs",
+      "sha256": "e9bbd6285cd1f6e20c20f3c3435d9c9c5aaa7094f6caab32c26af19320f1d0bd"
+    }
+  ],
+  "cases": [
+    {
+      "id": "actual-preloaded-module-contract",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "zig",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/zig/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "zig",
+    "zig": {
+      "wasi": true,
+      "imports": [
+        "franka_records"
+      ],
+      "modules": [
+        {
+          "name": "roswire",
+          "source": "include/platform/ros/zig/wire.zig"
+        },
+        {
+          "name": "franka_records",
+          "source": "include/platform/franka/zig/ros1/franka-ros1-complete/records.zig",
+          "imports": [
+            "roswire"
+          ]
+        }
+      ]
+    },
+    "c_sources": [
+      "src/language/native/startup.c"
+    ]
+  }
+}

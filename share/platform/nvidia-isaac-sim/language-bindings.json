@@ -10,7 +10,8 @@
     "js": {
       "source_root": "include/platform/nvidia-isaac-sim/js/ros2/complete",
       "public_prefix": "nvidia-isaac-sim/js/ros2/complete",
-      "source_only": true
+      "source_only": true,
+      "bundle_manifest": "share/platform/nvidia-isaac-sim/bundles/js/complete.json"
     },
     "go": {
       "source_root": "include/platform/nvidia-isaac-sim/go/ros2/complete",

@@ -17,6 +17,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -393,7 +400,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_MotionRecipe_encod
 static inline uint32_t
     roswasmc_bounded_1_uwvm_fourier_bridge_MotionRecipe_decode(void const* input, size_t length, roswasmc_bounded_1_uwvm_fourier_bridge_MotionRecipe* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_MotionRecipe next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_MotionRecipe next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 18u || length > 1170u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -555,7 +562,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 9372u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -691,7 +698,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -825,7 +832,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1027,7 +1034,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1191,7 +1198,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 272u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1397,7 +1404,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1533,7 +1540,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequ
                                                                                            size_t length,
                                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1739,7 +1746,7 @@ static inline uint32_t
                                                                          size_t length,
                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1793,6 +1800,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest_valid
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -1848,7 +1856,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2006,7 +2014,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 268u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2060,6 +2068,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest_vali
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -2116,7 +2125,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2264,7 +2273,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2404,7 +2413,7 @@ static inline uint32_t
                                                                              size_t length,
                                                                              roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2556,7 +2565,7 @@ static inline uint32_t
                                                                               size_t length,
                                                                               roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2720,7 +2729,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 272u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2926,7 +2935,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3086,7 +3095,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateReque
                                                                                           size_t length,
                                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 272u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3288,7 +3297,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRespo
                                                                                            size_t length,
                                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3342,6 +3351,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest_vali
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -3398,7 +3408,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3728,7 +3738,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GroupState_encode(
 static inline uint32_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GroupState_decode(void const* input, size_t length, roswasmc_bounded_1_uwvm_fourier_bridge_GroupState* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GroupState next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GroupState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 20u || length > 1684u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4049,7 +4059,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_Status_encode(rosw
 static inline uint32_t
     roswasmc_bounded_1_uwvm_fourier_bridge_Status_decode(void const* input, size_t length, roswasmc_bounded_1_uwvm_fourier_bridge_Status* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_Status next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_Status next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 32u || length > 14400u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4193,7 +4203,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 40u || length > 14536u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4248,6 +4258,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest_val
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -4305,7 +4316,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseReques
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4507,7 +4518,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRespon
                                                                                           size_t length,
                                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 652u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4564,6 +4575,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -4623,7 +4635,7 @@ static inline uint32_t
                                                                          size_t length,
                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4787,7 +4799,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 268u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -4844,6 +4856,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -4903,7 +4916,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5055,7 +5068,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5112,6 +5125,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -5171,7 +5185,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5323,7 +5337,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 140u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5380,6 +5394,7 @@ static inline int
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest_wire_size(
     roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     return n;
@@ -5439,7 +5454,7 @@ static inline uint32_t
                                                                                size_t length,
                                                                                roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5606,7 +5621,7 @@ static inline uint32_t
                                                                                 size_t length,
                                                                                 roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 268u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5793,7 +5808,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_GroupValues_encode
 static inline uint32_t
     roswasmc_bounded_1_uwvm_fourier_bridge_GroupValues_decode(void const* input, size_t length, roswasmc_bounded_1_uwvm_fourier_bridge_GroupValues* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_GroupValues next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GroupValues next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 648u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -5849,6 +5864,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest_vali
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 4;
@@ -5915,7 +5931,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 12u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6051,7 +6067,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6323,7 +6339,7 @@ static inline uint32_t
                                                                          size_t length,
                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 20u || length > 15572u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6463,7 +6479,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6679,7 +6695,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdReque
                                                                                           size_t length,
                                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 10384u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6815,7 +6831,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRespo
                                                                                            size_t length,
                                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -6894,6 +6910,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest_val
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -6993,7 +7010,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseReques
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 32u || length > 32u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7129,7 +7146,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRespon
                                                                                           size_t length,
                                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7188,6 +7205,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 4;
@@ -7257,7 +7275,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 12u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7397,7 +7415,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7483,6 +7501,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest_vali
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -7595,7 +7614,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest
                                                                                         size_t length,
                                                                                         roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 40u || length > 40u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7731,7 +7750,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRespons
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7790,6 +7809,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 4;
@@ -7859,7 +7879,7 @@ static inline uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 12u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -7999,7 +8019,7 @@ static inline uint32_t
                                                                             size_t length,
                                                                             roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -8085,6 +8105,7 @@ static inline int roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand_valid(r
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand_wire_size(roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -8196,7 +8217,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_VelocityCommand next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 40u || length > 40u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -8425,7 +8446,7 @@ static inline uint32_t
                                                                                   size_t length,
                                                                                   roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 28u || length > 1084u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -8581,7 +8602,7 @@ static inline uint32_t roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCo
     size_t length,
     roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteResponse* value)
 {
-    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 9u || length > 137u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

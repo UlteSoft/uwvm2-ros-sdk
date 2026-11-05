@@ -9,7 +9,7 @@ if (length(args) != 2L) {
 } else {
     codec <- UwvmFourierRos2AuroraBridgeV1$records$Ros2Uwvm_fourier_bridgeSrvGetStandPose_Response
     request_codec <- UwvmFourierRos2AuroraBridgeV1$records$Ros2Uwvm_fourier_bridgeSrvGetStandPose_Request
-    request <- request_codec$encode(request_codec$new(list(sequence = UwvmRos$from_decimal(args[2L]))))
+    request <- request_codec$encode(request_codec$new(list(sequence = roswasm_wire()$from_decimal(args[2L]))))
     facts <- UwvmRObservation$receive(args[1L], codec, request, FALSE)
     if (facts$response_present) {
         facts$rpc_status_present <- TRUE

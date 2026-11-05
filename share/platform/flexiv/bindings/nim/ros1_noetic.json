@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "nim",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/nim/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "nim",
+    "nim": {
+      "import_dirs": [
+        "include/platform/ros/nim/src"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/nim_toplevel.c",
+        "object": "nim-toplevel.o"
+      }
+    ]
+  }
+}

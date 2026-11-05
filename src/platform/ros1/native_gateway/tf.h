@@ -10,6 +10,7 @@
  * UWVM2 ROS1 frame-filtered TF adapter. APL-2.0.              *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include <gateway/common/tf_state.h>
 #include <ros/ros.h>
 #include "tf_compat.h"
@@ -79,24 +80,25 @@ namespace uwvm2::ros_gateway
             {
                 return found->second;
             }
-            if(std::chrono::steady_clock::now() >= until)
+            if(::uwvm2::utils::host_clock::now() >= until)
             {
                 return {};
             }
             auto next{std::make_shared<state>(c)};
             std::weak_ptr<state> weak{next};
-            if(std::chrono::steady_clock::now() >= until)
+            if(::uwvm2::utils::host_clock::now() >= until)
             {
                 return {};
             }
             next->subscriber = node.subscribe<tf2_msgs::TFMessage>(
                 c.resource,
-                static_cast<std::uint32_t>(limit(c, "queue-depth")),
+                native_queue_depth(c, "queue-depth"),
                 [weak](tf2_msgs::TFMessage::ConstPtr const& batch)
                 {
                     if(auto active = weak.lock())
                     {
-                        std::lock_guard<std::mutex> lock{active->ingress.mutex};
+                        quota_scope scope{active->ingress.waiting,quota_deadline(active->ingress.capability)};
+                        std::unique_lock<std::mutex> lock{active->ingress.mutex};
                         if(batch->transforms.size() > limit(active->ingress.capability, "max-message-bytes") / 78)
                         {
                             return;
@@ -113,7 +115,7 @@ namespace uwvm2::ros_gateway
                                 continue;
                             }
                             auto t{wire(m)};
-                            if(!active->ingress.admit(t) || !active->ingress.retain(t))
+                            if(!active->ingress.admit(t,lock) || !active->ingress.retain(t,lock))
                             {
                                 continue;
                             }
@@ -123,12 +125,13 @@ namespace uwvm2::ros_gateway
                             {
                                 active->buffer.setTransform(message(retained), "uwvm-authorized-tf", active->ingress.capability.resource == "/tf_static");
                             }
+                            active->ingress.quota.notify_waiters();
                         }
                     }
                 },
                 ::ros::VoidConstPtr{},
                 ::ros::TransportHints{}.tcp());
-            if(std::chrono::steady_clock::now() >= until)
+            if(::uwvm2::utils::host_clock::now() >= until)
             {
                 return {};
             }
@@ -141,15 +144,17 @@ namespace uwvm2::ros_gateway
         {
         }
 
+        ~tf_adapter(){for(auto& item:states)item.second->ingress.deactivate();}
         void close(std::string const& alias)
         {
+            auto found=states.find(alias);if(found!=states.end())found->second->ingress.deactivate();
             states.erase(alias);
             publishers.erase(alias);
         }
 
         ipc::call_result call(ros::capability_spec const& c, std::vector<std::uint8_t> const& payload, std::uint32_t timeout)
         {
-            auto until{std::chrono::steady_clock::now() + std::chrono::milliseconds(std::min<std::uint64_t>(timeout, limit(c, "timeout-ms")))};
+            auto until{request_deadline(c,timeout)};
             if(c.resource != "/tf" && c.resource != "/tf_static")
             {
                 return {13, {}};
@@ -165,7 +170,7 @@ namespace uwvm2::ros_gateway
                 {
                     return {error, {}};
                 }
-                if(std::chrono::steady_clock::now() >= until)
+                if(::uwvm2::utils::host_clock::now() >= until)
                 {
                     return {110, {}};
                 }
@@ -173,8 +178,8 @@ namespace uwvm2::ros_gateway
                 if(found == publishers.end())
                 {
                     auto created{
-                        node.advertise<tf2_msgs::TFMessage>(c.resource, static_cast<std::uint32_t>(limit(c, "queue-depth")), field(c, "latch") == "true")};
-                    if(std::chrono::steady_clock::now() >= until)
+                        node.advertise<tf2_msgs::TFMessage>(c.resource, native_queue_depth(c, "queue-depth"), field(c, "latch") == "true")};
+                    if(::uwvm2::utils::host_clock::now() >= until)
                     {
                         return {110, {}};
                     }
@@ -182,12 +187,12 @@ namespace uwvm2::ros_gateway
                 }
                 tf2_msgs::TFMessage batch;
                 batch.transforms.push_back(message(t));
-                if(std::chrono::steady_clock::now() >= until)
+                if(::uwvm2::utils::host_clock::now() >= until)
                 {
                     return {110, {}};
                 }
                 found->second.publish(batch);
-                return std::chrono::steady_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{};
+                return ::uwvm2::utils::host_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{};
             }
             if(c.operation != "tf.lookup" || payload.size() != 8)
             {
@@ -198,7 +203,7 @@ namespace uwvm2::ros_gateway
             {
                 return {22, {}};
             }
-            if(std::chrono::steady_clock::now() >= until)
+            if(::uwvm2::utils::host_clock::now() >= until)
             {
                 return {110, {}};
             }
@@ -208,11 +213,12 @@ namespace uwvm2::ros_gateway
                 return {110, {}};
             }
             ::ros::Time when{static_cast<std::uint32_t>(nanoseconds / 1000000000ULL), static_cast<std::uint32_t>(nanoseconds % 1000000000ULL)};
-            while(std::chrono::steady_clock::now() < until)
+            ros::synchronous_quota_wait native_wait;
+            while(::uwvm2::utils::host_clock::now() < until)
             {
+                std::unique_lock<std::mutex> lock{active->ingress.mutex};
                 {
-                    std::lock_guard<std::mutex> lock{active->ingress.mutex};
-                    if(std::chrono::steady_clock::now() >= until)
+                    if(::uwvm2::utils::host_clock::now() >= until)
                     {
                         return {110, {}};
                     }
@@ -221,7 +227,7 @@ namespace uwvm2::ros_gateway
                         if(active->buffer.canTransform(field(c, "target-frame"), field(c, "source-frame"), when))
                         {
                             auto data{ipc::encode_transform(wire(active->buffer.lookupTransform(field(c, "target-frame"), field(c, "source-frame"), when)))};
-                            if(std::chrono::steady_clock::now() >= until)
+                            if(::uwvm2::utils::host_clock::now() >= until)
                             {
                                 return {110, {}};
                             }
@@ -237,11 +243,8 @@ namespace uwvm2::ros_gateway
                         return {22, {}};
                     }
                 }
-                auto remaining{until - std::chrono::steady_clock::now()};
-                if(remaining > decltype(remaining)::zero())
-                {
-                    std::this_thread::sleep_for(std::min(remaining, std::chrono::duration_cast<decltype(remaining)>(std::chrono::milliseconds(5))));
-                }
+                auto error=active->ingress.quota.wait_locked(native_wait,until,lock,[&]{return active->ingress.active;},ros::native_wait_on_exit(c));
+                if(error)return {error,{}};
             }
             return {110, {}};
         }

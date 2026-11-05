@@ -1,0 +1,1665 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-authority-84",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9d14c36a9071bab2131794526be2ae4a0ebb836f2882e7aff208df42d87c8f24"
+    },
+    {
+      "scope": "example",
+      "path": "Main.java",
+      "sha256": "619a266ab85b1b7317c7e3fdbfcdb49ae8721bac1d2bf6c1dcbb90f876fa7415"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_egm_msgsEGMChannelState.java",
+      "sha256": "bca8e6a0c7135e072625391e2ec91c6c79ca67bb1d2e0a4a8f270adbe9c78434"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_egm_msgsEGMState.java",
+      "sha256": "73a8ef4f25ecb64dcd46a57ddd3a507175eb61fe2d97814d36cd113beac96603"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsConfData.java",
+      "sha256": "01b1300a5afe2033d5b5b6a79bda80578e87fa529845017076da2f303481a885"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsExtJoint.java",
+      "sha256": "6168544e2c2ac3e7db9e6102ade51eb849305ef92735ff18bc1bd0c37099eda7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsJointTarget.java",
+      "sha256": "4fbe65a6ff7439e63ec8e1363ff29db14dd69264936cac7023f98f63f028c5ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsLoadData.java",
+      "sha256": "69ab53a6a9fd0467bfd67d45352de8232062dc11554b6e6f940756c2963b254e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsOrient.java",
+      "sha256": "c978135c02f1a8e4148b0a127dd9dbf72e37e01cecc3a9f5c730a4ee89723dcf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsPos.java",
+      "sha256": "9eb00bf95eb5582b210836500e43986e7d42dc60663595a535e2c18e5ecdebed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsPose.java",
+      "sha256": "43f395cf378693cf87920b1ceda82662274e5362d10d9bc27fcbe83141d4bbb3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsRobJoint.java",
+      "sha256": "9f7cd3a40ea45fa1a88bbbab787cf2d02499de68c29052034890d3f055301b76"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsRobTarget.java",
+      "sha256": "dfa4b573aff2d691ecd0f0f053115259654e091616474d1a3b7a13b95ba3362f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsToolData.java",
+      "sha256": "1ab1a1bb6fb105d3aa0505aa996fee25b7e2637b02ce2e72b47572fd54ab24c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_msgsWObjData.java",
+      "sha256": "ac0cc158a0eae26704ac2ae10159429bf2aa3f60ca4139bc8cac0b495425f05c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsEGMActivateSettings.java",
+      "sha256": "d5309e1c1a6851f5376de57d7530ff617501d0c4f56ed8d8f53c5d0b883216b5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsEGMRunSettings.java",
+      "sha256": "e749c622bbbeeafaa957d3e13d6f4bacfe1a829fff8fd61d2fb764f7b6e3b2a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsEGMSettings.java",
+      "sha256": "12ac9db70c5fdd9eb24f7fe37ee1a8ec69b2683ddc351b76ad4d5afadabeff23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings.java",
+      "sha256": "06f322dfa6920e58e273c8c774cf8be3109ef2687c70fc0be816de2c08dc5c82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsEGMStopSettings.java",
+      "sha256": "bb5828da8f9ef0f573addb071fd3e7e7aa62f1a32bfa5e16a9f6e5468fb1f413"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsRequest.java",
+      "sha256": "ed3f383de6d2775922b877136cf8e52a967eca453fff7fd455deb905d9d84ddb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsGetEGMSettingsResponse.java",
+      "sha256": "ea9a1256153fa30adacd5a459a6f41cd8bdc6993e65196feb8e1cd6d0d01f4f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsRuntimeState.java",
+      "sha256": "2f65b2e21904c6ab704c708b6103e6ea6d7e6279dd0129a65ccb44d1aeac2df6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsRequest.java",
+      "sha256": "10ae54d0cc40a220d5bd1441a16b9c0a54ca645a0e3709209c664132e716d9cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetEGMSettingsResponse.java",
+      "sha256": "5bcce6030b46dc4206529e0eba0175e0169ca3137fcf5f495d6aefbcb02731c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineRequest.java",
+      "sha256": "8736f19f6ba35a4e75e5a4b8da8ae407df72969f036f0c3a9a2d8a8e59becd76"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetRAPIDRoutineResponse.java",
+      "sha256": "bbcc7b5c08f708a2ab7e7bbb08b12209e9139e68565f62d8fe9b8326b307c907"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest.java",
+      "sha256": "d209379f5423a8c12db6c77d69caa122bd051403fa55df36a051364df37c87b8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsSetSGCommandResponse.java",
+      "sha256": "1c78f334c7fa14cda0bf447491506dbfa45dddd6a5a83e4e65730049481bca47"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_rapid_sm_addin_msgsStateMachineState.java",
+      "sha256": "36941cdbc4336dfda28777ffd064366a4ff450a1212e3b4c1f2ebac97c04e990"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetFileContentsRequest.java",
+      "sha256": "10269aea64aef5e9df0b4bd7fabd26686d775f4352ecb2e7f2319d677d010249"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetFileContentsResponse.java",
+      "sha256": "f605bc2f9434cda8a5bdb522d9308f3ebd7785c2f299c96f78f768aaa88e9dbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetIOSignalRequest.java",
+      "sha256": "f83f9bca81bbc8c1fb94d09b3b404578c3841ed30f2f214379f34ce855af48bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetIOSignalResponse.java",
+      "sha256": "e378a5b225a7433f497705658eb24b5f9333fd15f308111d22beb076edce255b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDBoolRequest.java",
+      "sha256": "46a390d3e707e173607aab6167e6f73e0fd42d50cb846fe70fdde34ee3a7383c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDBoolResponse.java",
+      "sha256": "c5d7f575781e0c50ab755a9d3bfcee5f223cc6427316d5bd40926384a6141602"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDDnumRequest.java",
+      "sha256": "f0859baf75487f9eb118e5890d1a1db44fe52fd2bb6ca7e7991bfe47f0349f71"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDDnumResponse.java",
+      "sha256": "4ae5741fe252bc522b328344dc946cf111bef52b783145e76a7dd5d68fb7e6db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDNumRequest.java",
+      "sha256": "3d6555ec15e436d48dd529b1f29e04a684085fee2f8a4a68a2c6a94a986813a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDNumResponse.java",
+      "sha256": "0ac215a1ca0d12f16a1e3b8bac218367da78071e6f4feb2800a8dd20a6ff75d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDStringRequest.java",
+      "sha256": "92ec9e888c38a6c8676a03ffe5a615c4acb2fccf8e430931948264a32d624e4b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDStringResponse.java",
+      "sha256": "fc79083ac98f61d35e77eb08ac4252a9773f6a0d806fd8a12ff4d72cc28bedf2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDSymbolRequest.java",
+      "sha256": "b9236695c954fe639149234994c0d8745512c59875b19f39d093e451694fd8ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRAPIDSymbolResponse.java",
+      "sha256": "66c29a57eeb0c341441918bc4cd24fb96780b1aa531c065aee6758231b0d8ba4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRobotControllerDescriptionRequest.java",
+      "sha256": "2acc0f3c72c320e574bdd2e9efeda5d4f8255163873c42bc027da543ced7305a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetRobotControllerDescriptionResponse.java",
+      "sha256": "1115082c16be5a72973944e74f2ed76cbe0002e2f114665d29dee95a088a070d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetSpeedRatioRequest.java",
+      "sha256": "61b17ea1abf5fc7a67347029ccb981c15c59660717ddb2053bc5c9c49a92ec06"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsGetSpeedRatioResponse.java",
+      "sha256": "f12531d486deb811d5d399c470818102561011c9e91dd841f4a36b0277585745"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsMechanicalUnitState.java",
+      "sha256": "ead0581af9fe37f5a0a6ed71acce6805c322a708d023373ab4cf397649fa27be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsRAPIDSymbolPath.java",
+      "sha256": "6eebfe3454be700bfe07f1322d9a704c7efa42e60d145f5194cdd4a63bbb2090"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsRAPIDTaskState.java",
+      "sha256": "5c8c0db35d60846ab9cf0abe1d7bf0240fb0d6d6d8d19fe60dee9d5937a1d86d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsServiceResponses.java",
+      "sha256": "4453e5732aebd5ceec1465a2ae71cefa827eb0c9453e38f60113ba8169601014"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetFileContentsRequest.java",
+      "sha256": "07f530717ccf8a871300d3514bd1c4ad4efc56feca4075e8a03f314130fdb7b8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetFileContentsResponse.java",
+      "sha256": "098190eda07198cf6321d3b397267b0ae935dcf303cb2fd8cb0831654fa56181"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetIOSignalRequest.java",
+      "sha256": "df85f46d0df44a887e9843e3f4e41c69dd3918dc48f14b277b55562d012e73ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetIOSignalResponse.java",
+      "sha256": "e011ef87bdbac09466d6ec2ab70bdb0e0c8e26b1847e467cc647d3b82173e20d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDBoolRequest.java",
+      "sha256": "b469a3d4495ba9dc2e0a900dc1268114a016a3eb7656502a6ddcc8ee4928f25c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDBoolResponse.java",
+      "sha256": "670b976d9d8732dceb5a5d0b7d0336c7c47906d404774e1d8fd6b5a915529b09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDDnumRequest.java",
+      "sha256": "cada5407dcfabf756ab65e20e6833d9a89ef37885d24e8f12b11c2f10e182312"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDDnumResponse.java",
+      "sha256": "443668eb085927501bb30fb74b219a97877492a55222a3dda845d8abff7e628a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDNumRequest.java",
+      "sha256": "8719cd45754e9a6ddbabf365193a6d0cff4485ef187ce6061ef406184a507096"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDNumResponse.java",
+      "sha256": "c4b8d24ff297403beaa1b3babf29c477566023e210b13fbc3ffc454d8457a439"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDStringRequest.java",
+      "sha256": "e4b34137087e6ba72a16dfb690f7362bcb1b537d16f0c6d7a37ff22e9b921f74"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDStringResponse.java",
+      "sha256": "0aae22b9f3a694bde4c15f0b0a841994e6ec9f85df698201ad0ec40c07ea2a28"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDSymbolRequest.java",
+      "sha256": "ee9e7dd54f0757f63cf9c9e96f251dfd316e5fef784ab6ba6ed1295189925714"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetRAPIDSymbolResponse.java",
+      "sha256": "1bc208de8ea9ae7d6a9f3c667447c7a2a1c0923fc688d96a7336f8643f8c86be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetSpeedRatioRequest.java",
+      "sha256": "35b26368a2fb8f19846a1400d0764696404d557f9a9636f69474a7abdcd0ecc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSetSpeedRatioResponse.java",
+      "sha256": "212401da4551e0a32a5331da068fbf3afb5eb08b2ccd0874621e6790d205385a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsSystemState.java",
+      "sha256": "ae655dfedd5f7f89f258b84005c5aaf0b5a81a5a2f233e601d2c523eb23e4bcc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsTriggerWithResultCodeRequest.java",
+      "sha256": "bc587ab53bb9d31ac1c23fb714bc16228bf4ae362ade7d869a9b2797f20cecc2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Abb_robot_msgsTriggerWithResultCodeResponse.java",
+      "sha256": "9014288d62572553a040dbe1da45143242d035566474f6685324d23c275fdd3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_egm_msgsEGMChannelState.java",
+      "sha256": "10f726f33529b5f64e09d6ea2990c9e2bc5a226753c1ad0148aa1daf3599b2e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_egm_msgsEGMState.java",
+      "sha256": "5cb02f8787944765b815ccb9490a7d304484c744a35edfbc568fafb94289e174"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsConfData.java",
+      "sha256": "08016f13231bfa79ea7fdfbe9dd44d6dfc02c9d41ce7b64e94d48ae4f19e9616"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsExtJoint.java",
+      "sha256": "d6999925bc8562df210bc2666c9348c0d8c349f57ec3dfc3f26bc4860dfa7651"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsJointTarget.java",
+      "sha256": "d0a25d0607537ba020ad64afd86a90ba421cc63e555a4e3d0ce511a120974e1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsLoadData.java",
+      "sha256": "f3cafd98ae0781574b7d1b668123c1e2ff58b15312ffe814689c9ab841bd2afa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsOrient.java",
+      "sha256": "48a361cd3f9aefb2405eb5317b9beec45f08dbb1ecf0e91f379287464419783d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsPos.java",
+      "sha256": "39a94ccad53ca2b42d7c1d852d7116765ba0a83ea33f58d70f444e371252ca57"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsPose.java",
+      "sha256": "bd2375ab0ac055e0031746c1f914b99d24490d39ebbd3383e5962487292beefd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsRobJoint.java",
+      "sha256": "92068aca69c824ff35c796838c42f8f03e51fccfdaa1004a22dbfee866fb32c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsRobTarget.java",
+      "sha256": "c572763d633793ebddf65c64b65afd484b61a3e34953c38959119fe9ebd6f749"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsToolData.java",
+      "sha256": "e0f027e0f4a364670fa0f7cda6c71d5a42e37ddd0f56ece899247c1969bdc3ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_msgsWObjData.java",
+      "sha256": "104eea450b931ac489278bf428e24ee029a08e2c14f27bbe967c293fcb16d249"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsEGMActivateSettings.java",
+      "sha256": "cbd1b6d9f20f590e0c81c41a48595eab74b11e8c27c845058fabeb1ad39e0606"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsEGMRunSettings.java",
+      "sha256": "b332aaf8a2a260f1fe1d956c538ee898dc76242659dcf7c68a44ab53e82d60d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsEGMSettings.java",
+      "sha256": "2e32c8dfd8738657d6dc4075ce13c7f892f13692f933271a830497c4de0e830b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsEGMSetupSettings.java",
+      "sha256": "7a82e94159a78e0fc02b2ca9550684d02f8cba76d978700cf813e82357947e91"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsEGMStopSettings.java",
+      "sha256": "6d50929c236520f3d0148dabcec653b92c94559f6799edf06786cbfe5bbc7a37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsGetEGMSettings.java",
+      "sha256": "84019bbcb136ff75f85a6901a1bcf2362928dedc7c45cfdc10002b7369e1fd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsRuntimeState.java",
+      "sha256": "38ed79c3ee6f92fa2973d6bdec69bd08f05abafbf5b17f58feab5ad35aa407cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsSetEGMSettings.java",
+      "sha256": "c05d21621f2e7a072810082453c3bee1b36c6870b0df31c0fa66c5e0997ba186"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsSetRAPIDRoutine.java",
+      "sha256": "5d579ccd9fbcd5041f0c76450a67de571d53d3b38af589b5d4a6a254e810468d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsSetSGCommand.java",
+      "sha256": "e6a8824f7fc270504bce7500bd5bbca60be1245214f8f567a601ce6745dcb5ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_rapid_sm_addin_msgsStateMachineState.java",
+      "sha256": "d81ec67b3f999ffd4a697fe7d30b84a4d90253c4603fa080f8e8548120ee8b3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetFileContents.java",
+      "sha256": "4d61d2d5de08e52dedce39c19594126a80d8dcdc115dd2b8b22427e1360603df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetIOSignal.java",
+      "sha256": "34e4b35c3f526c6e664dbe20f7e90d301dd0830eb53d8549d8ef0d411e9d0891"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRAPIDBool.java",
+      "sha256": "3d57a6a423330f8ab69d7256c1ad4545f37a46ebf66ba3e9d88f492ff58ee259"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRAPIDDnum.java",
+      "sha256": "da9780651e0bddfafd554516011c1a9a468b911c7f67b3c6c64badf2b56a168c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRAPIDNum.java",
+      "sha256": "d7f0c2218c0159841c7db9d44103de7022356dc4655d6a915b1c42fed64c5999"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRAPIDString.java",
+      "sha256": "b0b3e729d396375f3b9490007d7965b98a4b8b398edfd222996c78dee65d7a6b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRAPIDSymbol.java",
+      "sha256": "be5f5cafe41d9de48b4ea6449a9c057df4ed97c38b05f912345294f83a9dcf4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetRobotControllerDescription.java",
+      "sha256": "4e0b5db964f9d08262663230afec11acfd05eb56c3903437da2e07461f4a66d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsGetSpeedRatio.java",
+      "sha256": "28535840c8abe80b56d70b64a1736a7cd47540f06054e695a3a7a71f5050c729"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsMechanicalUnitState.java",
+      "sha256": "72f9dc2ac3b2aace8d31e85dcbdb337e076ddfd327aaa9c0911cabb548fea8ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsRAPIDSymbolPath.java",
+      "sha256": "022001d6179d86c1b5e20389d17433f891580c383c8e496b74a61b53a3e5c6dc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsRAPIDTaskState.java",
+      "sha256": "8e20b16e9a579eb83a4f23d774fb02d00b31325eca50a56d534f0e8c75534c0c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsServiceResponses.java",
+      "sha256": "5fb871efa6acd288fd9f5ddb91f9e352e18376f42dfc6314474d4d44d923807e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetFileContents.java",
+      "sha256": "fb3b0d0c117e88f6166076c8c2b5f361f51458b798ac4dda654fc72c378dd511"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetIOSignal.java",
+      "sha256": "e6e4d4e802b4f95b05b752d6b1314921879fd3edafc4a3cf0f4256c66a36a367"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetRAPIDBool.java",
+      "sha256": "1a427af2b7bbe264c81eb0813a9082f318fe5bc8043a60f988a4b6b03b071b52"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetRAPIDDnum.java",
+      "sha256": "54dd1788d85150a67d385c2f466fc44e5604d8b3d60b2388024f755b3801e09d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetRAPIDNum.java",
+      "sha256": "301faf75b2815e6e0469d49e9c4ea5ab0c4b9fe90e568bc9e4338edc7a47c6b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetRAPIDString.java",
+      "sha256": "2b20fdc77cd7aae2e1bee26c0afd54a76d7355827ed01af65a73de0baa7e1fee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetRAPIDSymbol.java",
+      "sha256": "8583b49ab9a03415188d75661a99ec86067f8dc9e5cc6558079d8f361678f00e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSetSpeedRatio.java",
+      "sha256": "56076b78fba5fea6857b5fe6bfc16cf63d34e9c4cb7b67a9874bff99ca1ee110"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsSystemState.java",
+      "sha256": "ae05c3e5f0fdf3937115a84d98488cb506c61fd7bbd903246aef9e212356cb20"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiAbb_robot_msgsTriggerWithResultCode.java",
+      "sha256": "1270b9a46c58aa0dd1740a6b5ee946b0f551ab945a2c894a2a15bba68fbc32d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiControl_msgsFollowJointTrajectory.java",
+      "sha256": "6abe67e7b205320c144f1b824dbbc4931330fa7f22d3f4a56b4b51189a92f22e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiControl_msgsJointTolerance.java",
+      "sha256": "d76ccab2dfb776ebbb4628907d2af42d4fd8e1cd4c28b6bfeebea75660e62b36"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiSensor_msgsJointState.java",
+      "sha256": "a87a9457f7f42d3ac0a07470acc6246ec594c272a61959a29990572a4e937bf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiStd_msgsHeader.java",
+      "sha256": "d9460eaec0f61ec54326ea3a2090ac543fff8b03a02e5ef618c7b4adb4fd3c0f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiTrajectory_msgsJointTrajectory.java",
+      "sha256": "db5df1d61632d029d7304998544bcfaaa4cc497e6b8e5565e48e4d85502a2212"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1ApiTrajectory_msgsJointTrajectoryPoint.java",
+      "sha256": "8b76a35c254939ba41a1bdf0b75ea8a6d82441bb5ea1dbfde1477c8d89e6a055"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Control_msgsFollowJointTrajectoryFeedback.java",
+      "sha256": "f363fb42a5b511ac90a20a695a35c238c12a3a88ec2bd37bdc8f76a09908c167"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Control_msgsFollowJointTrajectoryGoal.java",
+      "sha256": "869c560f576cd79f7cd75cb2c43833c38ef46e05fb395acdd8fcab96aa7800ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Control_msgsFollowJointTrajectoryResult.java",
+      "sha256": "678ab8c2665c5a385cf326b4849e3f87c7f59769a3a64c5f899de08764defffc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Control_msgsJointTolerance.java",
+      "sha256": "428442980ab941d0cd4e47ae23e468f0ea8a8c67b19896d4afd15de4a9cd7c23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Duration.java",
+      "sha256": "e081fcc728a5924d95a9700ee93067c93dfe30f2fd7cac3526ef171a5fc350ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Sensor_msgsJointState.java",
+      "sha256": "202155d8da7d9a6b5e232a0dcde035305e9d47b95a990d65764261af92d1e288"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Std_msgsHeader.java",
+      "sha256": "22d70ed7caa0f3b0b5f4db5833f2ea767373f4a4be47210d38a510beea1d395a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Time.java",
+      "sha256": "09865da9c9a2fe99da92fed5e0cf7ecedca161bbfac04c8a866b2417747df807"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Trajectory_msgsJointTrajectory.java",
+      "sha256": "8b8984b7c1ec262a73ec3474b70a7f4fc7198547ff830987c7ce75c28303e884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros1/uwvm/abb/ros1/Ros1Trajectory_msgsJointTrajectoryPoint.java",
+      "sha256": "f7f8ecc209bde3c7aa6339b745944e0c9b37f8d555abc15e08657380d57f8705"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_egm_msgsMsgEGMChannelState.java",
+      "sha256": "624f9c84f44c9b3b4901518706cbc46f889477ca110fbf7397b2e7d18a53a586"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_egm_msgsMsgEGMState.java",
+      "sha256": "1364c9110bb017dc88e80456a6e122e90bae915c12a1d0e64baa7634b6c02009"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgConfData.java",
+      "sha256": "afbeef412c7d646206d3145e535ded89becd15b27fe4fb51fb8ac947c8e52e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgExtJoint.java",
+      "sha256": "83f549a26fb51e9473c78a13d16b59d00268468251fb18ec99780a88d9a743ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgJointTarget.java",
+      "sha256": "fbc6e3d304ff1ccf5eb4a7ffd6f39720c01f4c383af8261972fa1f9ae8723f6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgLoadData.java",
+      "sha256": "4d3d9bf0c666166085221068aab01f216af7cc968933127299d38691094f59da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgOrient.java",
+      "sha256": "7f0a91c81ae4a1446bbdcaefd4a283f694f9aab1d675c57eeec5cba6408715f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgPos.java",
+      "sha256": "a813634b74e098d6698397a85fb43d0d110fcced518670ea61ab4192994b009a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgPose.java",
+      "sha256": "e3166ee3b8968f861a48d34ff7f61b3636c3fb2979613b61d0f5512d2a45f487"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgRobJoint.java",
+      "sha256": "2c49f2dd93f00d4cddf6b721ecd31839fa55f0c36b3f3a25f759588d627870cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgRobTarget.java",
+      "sha256": "f957ccf6e8895df50b7236caca30172c9499fd38d1f55f4cad89733371db95d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgToolData.java",
+      "sha256": "228921a8fa23edcc4edacc1a41b0a907d13d841c745ee477a3b4467b7cf73ea8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_msgsMsgWObjData.java",
+      "sha256": "594d01a366e36c8f55e1acec8e8034bd894e1c358d286a11746731b73e8d434f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgEGMActivateSettings.java",
+      "sha256": "4b4c74f92e08624026215a1c2fa4cb2a96f6bf59240818796c8590494248d0f5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgEGMRunSettings.java",
+      "sha256": "ac1b8082b350ded75cdc68bd5c440ee914aa093c0bf8824d9ccbffb33ffe4e45"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgEGMSettings.java",
+      "sha256": "ba98b95906a6670a2c7bd785fef6c84145a535f08ff014342bc5ea7713732ead"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgEGMSetupSettings.java",
+      "sha256": "28699189f870986e3a956a5947267d3b630d1d1255f560eb343b7b93c33c0986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgEGMStopSettings.java",
+      "sha256": "4fb01677efc8de0b2af64b37c41611633fa968ab709e40e4911c8c583be83868"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgRuntimeState.java",
+      "sha256": "23d0b6bcba957c52250adbdca4ae35e891e3e77aca4e70bdd83b104a546d1f4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsMsgStateMachineState.java",
+      "sha256": "3fb8265d522b8a60530e5500545ce2df0d84c732abf4d179afca65796716e309"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvGetEGMSettings_Request.java",
+      "sha256": "02290974c76266f24362416e9c32f5636e5603cdc315583c8e98496e43008a1b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvGetEGMSettings_Response.java",
+      "sha256": "058253fd29c210d39aecba1f1a522fbf6bdc8c708140be804370f1840ec01b92"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetEGMSettings_Request.java",
+      "sha256": "c44c99677bec2b7521d5afc82df108df9634529ccab9d1b6e9ce110c7ce69afb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetEGMSettings_Response.java",
+      "sha256": "9a7d3fb5a949a738d8a84b851169e5864ccb75c16d2a23bad5efa7c81e6c7d5b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetRAPIDRoutine_Request.java",
+      "sha256": "b1a306bd13b5ceb550fbb290e6ab06bf42d13c7f51b63e0778808994a46dbd85"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetRAPIDRoutine_Response.java",
+      "sha256": "b99fa93c578898eda52f58adcba6d2bc95f920e0d16db0a781cc74aa49a5e93b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetSGCommand_Request.java",
+      "sha256": "1246c4d5f7f87449fb672eb9d8a53f54c7b20277ab6e65656fde8743d7dff79e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_rapid_sm_addin_msgsSrvSetSGCommand_Response.java",
+      "sha256": "5778f6e3fb8cd662536cf509285d96896984f7920edde7b207e9adba0cd016f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsMsgMechanicalUnitState.java",
+      "sha256": "d07b0d6ef00d1a9aa00e2d709f956b6c2fb92c8555fec2bcdc84ecd7dbfcc2e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsMsgRAPIDSymbolPath.java",
+      "sha256": "41b4cae99308f1f2b2861fca759a39ba824bfc51bb83c7be5d323a68a64a6951"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsMsgRAPIDTaskState.java",
+      "sha256": "959fd515a82ef2a8bd4466d3f5e756522b402a7b7c701fabf036a5c3d353466f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsMsgServiceResponses.java",
+      "sha256": "4086b27ad1e21f815b8a54163933ab14e81e088075e63b2b19d837eb67d5cd5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsMsgSystemState.java",
+      "sha256": "6b4ac6d9c6c0c1ba1a1728c019b40ad83962214bb855f656b72621b892211994"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetFileContents_Request.java",
+      "sha256": "c1ed217b1e281b7581242ae1ec11a5b56e16bb7659a33e47f73f9d401c42cfe6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetFileContents_Response.java",
+      "sha256": "5caead4a937c1aebe2f2a8acd0f6fb3899032c517de150d9383e6b2eabc49498"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetIOSignal_Request.java",
+      "sha256": "f40ff9764d3956877eca6a678907d71d7453d7af1a4125893da50dd4f119e198"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetIOSignal_Response.java",
+      "sha256": "33b6cee0f1f8bd2580c35b532d4cf6cc8d86dfd69cc1a01ee104c769230f0da9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDBool_Request.java",
+      "sha256": "c54039c9331ba7e44823cff3e5d846993adfe86b8e48185d786d083ac6af1798"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDBool_Response.java",
+      "sha256": "4e4f959be1b2c15562ca8022cf5a20f0be928b238eacd386e6667d3285f57f7c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDDnum_Request.java",
+      "sha256": "617d10e929105abb71c75fed90328065bc3680a5905a8a9cb8248cbb8b8d4784"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDDnum_Response.java",
+      "sha256": "2c30c4e423865186dad66e4149dc43194c9bcb241aad900c5fb8c093fb201625"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDNum_Request.java",
+      "sha256": "c62ce236c32b9d1f2ae20b4c97cf137950d4d3d7c1bc7513dad1f07712628c46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDNum_Response.java",
+      "sha256": "fe958053a06726cce414f29804bc22d2857eb90decd7025f225533c14867c77a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDString_Request.java",
+      "sha256": "4fa385e9ac60d41ba16b77ce77baa7a6a03b00298f30c4411372e7929bcdc51d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDString_Response.java",
+      "sha256": "1f3eb2e8b610d1659dc6c92ccf67483416c77b3304320d6fbaef2c4d6e118188"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDSymbol_Request.java",
+      "sha256": "f1cd71fcc57911781d9182a9d3bec425c2e1e64ae1b6fcc2b5f16488f10a805a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRAPIDSymbol_Response.java",
+      "sha256": "c3c974dd4e215cf353a13dfef45c26003fc37f5bbc240cdb0fee0b2d03238bf2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRobotControllerDescription_Request.java",
+      "sha256": "5d222a37870c459aea23369b31a94eda2b5accb17558ef61eb0044e6280251a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetRobotControllerDescription_Response.java",
+      "sha256": "356eacecc30cc2f24ba75c3a372d6bd589777823f7ff0e77c9b56ccdd5ce0e2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetSpeedRatio_Request.java",
+      "sha256": "7f3a75b0d4cbda0ab75da1d89850bf1d6109229e15fe838fe6d7256697f940b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvGetSpeedRatio_Response.java",
+      "sha256": "07db18b31a96d6cf235df8ae3f649f8560de216906377071bb7161e682c7894a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetFileContents_Request.java",
+      "sha256": "05acdf63877cf42e245b6f86457c10fc7a2d0d6915482ffef685c2d382d885f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetFileContents_Response.java",
+      "sha256": "30d8ddb7db1f18a752e5d1aaade4a0afbd58f5dc94c4d67bec8a232ced8be453"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetIOSignal_Request.java",
+      "sha256": "8105dab68abccb824b3ff54fdef7e01bec777ab37d31f2a78f8898cec42c9164"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetIOSignal_Response.java",
+      "sha256": "ceb1f793846e1a1a99135138393a7e43f0af7fd45018595260d5d63107ceea12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDBool_Request.java",
+      "sha256": "78f89a12a5c4726e54bc5bf24159534b7813aea2fd8be02cffd943723322e027"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDBool_Response.java",
+      "sha256": "a677c41bd6a0a9d129ec9227d60fd718c206789a7e03e91f5e03c31c0cbedd8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDDnum_Request.java",
+      "sha256": "8a0a2137035810372fd9485e68baad68e0b346b576fde4037aebd0d585a89765"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDDnum_Response.java",
+      "sha256": "31e109f6a59f66b56aea9c597bbcef01778b43ec41cef125ea9d0683bb35f306"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDNum_Request.java",
+      "sha256": "25de707003b201e810e2a50039302a8fcf3c94cea857baefdef0b54b97d8eb4b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDNum_Response.java",
+      "sha256": "6f34f90bd9a6396df95c0caa9014eac11a2b862002b14085e70aeda1f5c8d7d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDString_Request.java",
+      "sha256": "7d894d2d70a3544757cc5a155d3e0485585bf1d731d6427e63da0b8ebbe265b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDString_Response.java",
+      "sha256": "cd89d3e7c79a33d432077ea5a8750e0ad79812fd3d06d909b8c53e30357b76e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDSymbol_Request.java",
+      "sha256": "5918996dcf344b1e86dfc79723f93864b2d82d104b7cf096dd943e4594d1ad75"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetRAPIDSymbol_Response.java",
+      "sha256": "63be2d3941e68a11bc3e112cb54334c661f6094cded3525304a5bd6e87a60f6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetSpeedRatio_Request.java",
+      "sha256": "b95e01b205feac5b49e48ccedc2a946cf577b2d540cdfe23a26298146defd3af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvSetSpeedRatio_Response.java",
+      "sha256": "7d2e7642b172770554485c9de32ef263049c4c8ef579bfc34e2dad3fdc707782"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvTriggerWithResultCode_Request.java",
+      "sha256": "6efc4233645a5100e0ea1e2e1ba480a54e0a0830c073ad818f3cff59922e9efa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Abb_robot_msgsSrvTriggerWithResultCode_Response.java",
+      "sha256": "000aab2daef385071bf6de22bc555e73be22c7f7a139a9492366c3000ae157ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_egm_msgsMsgEGMChannelState.java",
+      "sha256": "71390fb1ab7d4823b01242826b1bf2fd6dcf736a7bf84246167ebc12d9bf5537"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_egm_msgsMsgEGMState.java",
+      "sha256": "e15371da93ce61fdf45f79eab5a9a764adece4649b6e01cca13d23d4636d6490"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgConfData.java",
+      "sha256": "eca106b92fa56a6ee1e1c25edf84b14a2b6bbed8f2073f15696f3bf315066cfa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgExtJoint.java",
+      "sha256": "2ca77ae5d86a33e6aca8b65d4911ceddccb82803693d25af7593947129b286cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgJointTarget.java",
+      "sha256": "d739ac8af34fabcc2adb77756e940dcdc5493bdf653b6f695cf54a5e97fa7002"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgLoadData.java",
+      "sha256": "85878d7cf2c8cd0c9ae729abe7d23022fe5014661cd6c2f89b70f2771f9f7b34"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgOrient.java",
+      "sha256": "474958921b96371ac07fea6778a296efd8370d53363d4e566e8a5e0110427ee1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgPos.java",
+      "sha256": "bb59685e9a757d238c3aa6dd899ee5c0e3c5323ad92723b5bfc1b144ce8e32e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgPose.java",
+      "sha256": "28691e394848cd70ef64c14f2f24d804a404e9262aa706098e08c6a15362ed0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgRobJoint.java",
+      "sha256": "8c8233c4dbec84773b1617af2f65c77be1144580e8df284e88c2a6e87d76f2f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgRobTarget.java",
+      "sha256": "c7e0f2a6fd6b2a74897638117945d1e68de1f2dad60d09485b34e52a76a5e584"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgToolData.java",
+      "sha256": "319ff071fd904cb7a1f6f442ff937ed7b9dcf8fc283cd87985a15aef9bc964c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_msgsMsgWObjData.java",
+      "sha256": "14a5683017c047cd79bea6823169c0818bb471d25ba7014298f09e57c970b066"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgEGMActivateSettings.java",
+      "sha256": "8df20533d8580784393ce74b7fa24dcadaf12e4dfd0a8bf6c0e5e757f333dda1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgEGMRunSettings.java",
+      "sha256": "7caf1a67d6eb91298f936e98f08a92aaac4734c8f74091ea30a0d5eeaeac2411"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgEGMSettings.java",
+      "sha256": "222b30cd7c1ff7b701acdd31d3337309b77e48775c59b4cf0032ebe6a8f51324"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgEGMSetupSettings.java",
+      "sha256": "5765116eb86fa4be35db8e50052c887986f03b8623f4000eb1fa1e1332b3f205"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgEGMStopSettings.java",
+      "sha256": "97f198882f06262e563f9dceafd6755e1dfbfec287640d97bcc9ef30abf54719"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgRuntimeState.java",
+      "sha256": "e025ffc080d4418d2c601520d302b4d573056814847c512c08cebc06e63a6054"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsMsgStateMachineState.java",
+      "sha256": "adf00ab756c9d8b66ccdd40a45d937feb15b649e04998c10967f2f5adc484034"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsSrvGetEGMSettings.java",
+      "sha256": "7fbd850c69a55dab0309eab472751972092ebc6e661d516537a9dc476ce15153"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsSrvSetEGMSettings.java",
+      "sha256": "8d6e0d9cc4d8dd8823473783349fdb5101d823203365684e531cff4d3ce0c5ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsSrvSetRAPIDRoutine.java",
+      "sha256": "70894abb2c4371c3042b184229f83fae75b7960193d4bdbbc00b02498777abac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_rapid_sm_addin_msgsSrvSetSGCommand.java",
+      "sha256": "fc2af63e87f8d247f70f6fdda37a1f5013ee9a80ce5ff917fddf5ca798c6d841"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsMsgMechanicalUnitState.java",
+      "sha256": "ff6b6efc9ba5fc9bfbc7e8738aeb326d72f6a297ecadec79f4c1ec91a8ffe3c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsMsgRAPIDSymbolPath.java",
+      "sha256": "c494ce0b89fb556102855eb033ba02473ca3c2266e4441bca72718209873b1b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsMsgRAPIDTaskState.java",
+      "sha256": "85e42fe0c47de890ab8824b579ed725d34159e8736df3793cde445ea2c18522f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsMsgServiceResponses.java",
+      "sha256": "dab8f6a3bcce9086dcf6c2e568b2c8cf114d8eee9c5dd382f9348d9c6e2db7c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsMsgSystemState.java",
+      "sha256": "8119ab5a98ad62b7d16c6ae96865fa30865dbd1dc854edef07e1b421fd5aeb99"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetFileContents.java",
+      "sha256": "ec2358234c24b9e65a8f49f0bd76656be46a4bae5e12e790824d18e1431ccf6f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetIOSignal.java",
+      "sha256": "186de0cd7bf3edf69d07ce64d7ece14691e3f037ed789d01aa69d5558f0186d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRAPIDBool.java",
+      "sha256": "5cc2f10ea27af5587a7a0f9a081c2dce142801882ff6e3baf4d0ce7afc70f934"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRAPIDDnum.java",
+      "sha256": "e67689e6191e46e464e27e5710d3ec9f5b6d412d8c0e9fa02f4aae64e6d88d0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRAPIDNum.java",
+      "sha256": "89c395cd0530c3307b407247842eee2cf73d0740884bb814fc693c566244133c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRAPIDString.java",
+      "sha256": "6d9253da1a3512ca2d563684ba2078820e2b49bd2261ffb76a90ae86af2d6fac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRAPIDSymbol.java",
+      "sha256": "43a5b47e361066f5b53b53317940f68549d1eba2c9d7a88ab83d5fedf9029945"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetRobotControllerDescription.java",
+      "sha256": "ee2d98bef2c45c1be02e271feff32ad8e3ecd0f5e6f91373031049981a9cfbdf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvGetSpeedRatio.java",
+      "sha256": "60a5c8ee662115a3bfab7302fff6782d0bdd39878d6c42b03cf52b5d73122d29"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetFileContents.java",
+      "sha256": "445950028b707cf86f93d1f82347030864cb158b76ab14d26c78ecbdaf7dec94"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetIOSignal.java",
+      "sha256": "a4c9e32a24535213a43ae3626101c846b39533678fdb529697b81dba530adf08"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetRAPIDBool.java",
+      "sha256": "e59ce78f61c33bd060fab07ed0a1ee6a4439f1b94d4508f848979135774a4884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetRAPIDDnum.java",
+      "sha256": "f253723448c176f0141f1f61fdd20158256258859b6a35a821b67f6b6c7ebf0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetRAPIDNum.java",
+      "sha256": "48a9c9a6424027abef4e00b00855996afbd815f2e5ee5fc7e059fcab12cf5ec3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetRAPIDString.java",
+      "sha256": "5b48362abc6fcb4490811eafd263cf1b2d5d4224b31209966de1ea1dc5dec7e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetRAPIDSymbol.java",
+      "sha256": "ef303430254d2364aa7d9ac4f289deb3b4cb86ddfe00c34658a86bbba75a961a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvSetSpeedRatio.java",
+      "sha256": "284b3889ca921d2ef8b65f6ae51435db28d2e83a88063f4976fc9e88afcff393"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiAbb_robot_msgsSrvTriggerWithResultCode.java",
+      "sha256": "a6f721333d3a8737e684810586740c700e73810b4c2701f95871fbe12dc05341"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiBuiltin_interfacesMsgDuration.java",
+      "sha256": "ef28d41be79027fad3c6997a5385c89603ac8758a7ed93f89e32a2f90dc9c2a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiBuiltin_interfacesMsgTime.java",
+      "sha256": "22f79e90094da0c6e8686545c76d4668b810b5450c6dd4f71fe3534a236e9095"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiControl_msgsActionFollowJointTrajectory.java",
+      "sha256": "a9404e6a851941c7134000942205cceef6046e3a517f511a34398d7cfba771f2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiControl_msgsMsgJointComponentTolerance.java",
+      "sha256": "e77979c540d11a901b78ce0b47c86f00fbf696e49b080058a27bc8375012379f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiControl_msgsMsgJointTolerance.java",
+      "sha256": "81f5ae643eb97f39bf2d7347df374809c4145f9e6acd939d6d64fc253cc4caa5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiGeometry_msgsMsgQuaternion.java",
+      "sha256": "e74e143cf719c59f9a00d6d2d5ff03a5feec7fdad8fe30ec1d395a07b06ea9b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiGeometry_msgsMsgTransform.java",
+      "sha256": "bb1fcb200957e0066daddaa3b12c2f1b379436928de71f73f4cef4706acdc7bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiGeometry_msgsMsgTwist.java",
+      "sha256": "9210037e5b7e6686c65d3c3e0b6e071d112e256b567026ee20d4694b6a3618b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiGeometry_msgsMsgVector3.java",
+      "sha256": "291acbb72828fe3e1f8ded9ec025293c19c16c9208696c34afc113d3b1236000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiSensor_msgsMsgJointState.java",
+      "sha256": "7837d3c98c3c1e61364da130bc68cca0b8b49378e9ef55f5ee98fd76129fe010"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiStd_msgsMsgHeader.java",
+      "sha256": "7acf72cac7a74135ceafff45cd86befb4ecfad8dfd49b7fdf999c243f5bfdbfc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiStd_srvsSrvTrigger.java",
+      "sha256": "948d953304c9e1cdde5a742342f1e109397c69eabcc1ac66832e91bff09392a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectory.java",
+      "sha256": "a39637d99f54a3843237443adb775118dca2945028bbc5b50fadc723af716c6b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "bd6c542e4703567910dc6b31c82ac457b71a0dd42289d13d2df4df012c06d239"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "01f9a06dbb7b14024a14f922f6ba3c57f1c9abf58a7b8e6fe12f28c42d84ff3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "393739679fdf6cd29536bc38b30b1c853f269716e66653ea48e5b6f1f1ab45e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Builtin_interfacesMsgDuration.java",
+      "sha256": "c3195d046c800db349ead4397291e32908a476c80143f246dd2dc739101a9159"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Builtin_interfacesMsgTime.java",
+      "sha256": "38c95e15b1ecb23317cae39ba8393b97712045b7f5e80bedc5382086ce92edeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Control_msgsActionFollowJointTrajectory_Feedback.java",
+      "sha256": "ff00593228d04362708b89cb6ea156aa35a9933557f850ba7a9c61a520108bcc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Control_msgsActionFollowJointTrajectory_Goal.java",
+      "sha256": "9a46620dd0424d85e46b44c5e52d41213b8e46cb0eb14597fafd08ec853053cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Control_msgsActionFollowJointTrajectory_Result.java",
+      "sha256": "02e1ccf64dd01e64c06c81678ec24e51c71feee00cbe0a9725a62b26c2d64018"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Control_msgsMsgJointComponentTolerance.java",
+      "sha256": "f55ac4e89e0b05a84004d92bad09a2e059f2ffd0cbec736c8b8052a9c5c79de0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Control_msgsMsgJointTolerance.java",
+      "sha256": "cea6e8093c50d9309e5cd17bbf220f8760156b351ca3008242d9b960eef33707"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Geometry_msgsMsgQuaternion.java",
+      "sha256": "906f78bdd03305e63589eb0540d809ad53dbd71a820d7ea570e2bbe4dec7047c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Geometry_msgsMsgTransform.java",
+      "sha256": "e2b1a4282dda6b1ebd985c10eee5337c12fe9bafd24885df600f499ea8d40da8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Geometry_msgsMsgTwist.java",
+      "sha256": "63b69f6ea22180fbd34374ccd417a6c16f0143fc0b3174826d3701949b0b7ba8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Geometry_msgsMsgVector3.java",
+      "sha256": "ffa82f85ccb777b55ce11927afdf991d95fed18ce4134f7bffe9179e0666a597"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Sensor_msgsMsgJointState.java",
+      "sha256": "e28238f7025418885f030d7dc3d13e566675bf2ec81f84ecc4fdaa23a16c7e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Std_msgsMsgHeader.java",
+      "sha256": "87af73525cb692626ec390bb4d3ede17790e1c189b3ddee2efe87ee93d2bf15a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Std_srvsSrvTrigger_Request.java",
+      "sha256": "4f3b07b08d9c9bb18767923c7d5131dcb38f8e3d44942e841cd0efe7c857698a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Std_srvsSrvTrigger_Response.java",
+      "sha256": "22e793a524c87b05c14f4902213c9f0d88160f887529cc7789d6535544eb2475"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Trajectory_msgsMsgJointTrajectory.java",
+      "sha256": "a790db6fc3b59541033a5054e7e95afee7da00bf1479a37a501ac6160d15109a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Trajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "52d52342bc0c9bb2881941150c315d660671949dff03dda426fcfacd52c6bfae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "83e1860fa341313b92429d84c0f39eab547ed8e76503e09b833b5d8d949eb4db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/ros2/uwvm/abb/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "b2bf60905deca0b34bd2564fdbd4843202a8f3f404b34db5b3008ccf42edc1c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/uwvm/abb/CommandOutput.java",
+      "sha256": "67ce5995c4cb216c46d26d270a75d54c1f250e78899ab6d7e727c2ca41735829"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/java/uwvm/abb/Observation.java",
+      "sha256": "9996473f6a2b0a79d02039ae8842390e064d4b19ef197ddc70b56e8b3e9d6885"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/java.json",
+      "sha256": "8f9808cbefcebf1499e7bc1b4ba8c792f87fe814fed3ea456577dc06299ad2b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": "",
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

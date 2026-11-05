@@ -40,6 +40,8 @@ def endpoint_source(language: str, interface, namespace: str) -> tuple[str, str]
     @param namespace Validated public package or CLR namespace for this profile.
     @return Class name and full source with concrete typed operations.
     """
+    if language == "csharp":
+        return clr_endpoint_source(interface, namespace)
     java = language == "java"
     name = f"Ros{interface.version}Api" + "".join(
         part[:1].upper() + part[1:] for part in re.split(r"[^A-Za-z0-9_]", interface.name)
@@ -384,3 +386,48 @@ def endpoint_source(language: str, interface, namespace: str) -> tuple[str, str]
         lines = ["    " + line if line else "" for line in lines] + ["}"]
     return name, "\n".join(preface + lines) + "\n"
 
+
+def clr_endpoint_source(interface, namespace):
+    """Emit complete typed CLR roles through the maintained public Node API."""
+    name = f"Ros{interface.version}Api" + "".join(
+        part[:1].upper() + part[1:] for part in re.split(r"[^A-Za-z0-9_]", interface.name)
+    )
+    lines = ["using System;", "using Uwvm.RosWasm;", "using Uwvm.RosWasm.Catalog;", "",
+             f"namespace {namespace}", "{",
+             "    /// <summary>Complete typed roles with explicit independent grants and caller-owned endpoints.</summary>",
+             f"    public static class {name}", "    {"]
+    def codec(role, typ):
+        lines.extend([f"        public static readonly ICodec<{typ}> {role} =",
+                      f"            new RecordCodec<{typ}>({typ}.Encode, {typ}.Decode);"])
+    if interface.kind == "message":
+        t = interface.components["message"].symbol
+        codec("Codec", t)
+        lines.extend([
+            "        /// <summary>Create a publisher with an explicitly granted alias.</summary>",
+            f"        public static Publisher<{t}> CreatePublisher(Node node, string alias) => node.CreatePublisher(Codec, alias);",
+            "        /// <summary>Create a bounded subscription; the caller owns and closes its handle.</summary>",
+            f"        public static Subscription<{t}> CreateSubscription(Node node, string alias, Action<{t}> callback) =>",
+            f"            node.CreateSubscription(Codec, alias, {t}.MAX_WIRE_BYTES, callback);"])
+    elif interface.kind == "service":
+        q, r = (interface.components[key].symbol for key in ("request", "response"))
+        codec("RequestCodec", q); codec("ResponseCodec", r)
+        lines.extend([
+            "        /// <summary>Create a full typed client with an explicit service-call grant.</summary>",
+            f"        public static ServiceClient<{q}, {r}> CreateClient(Node node, string alias) =>",
+            f"            node.CreateClient(RequestCodec, ResponseCodec, alias, {r}.MAX_WIRE_BYTES);",
+            "        /// <summary>Create a server with separate advertise and response grants and checked setup rollback.</summary>",
+            f"        public static ServiceServer<{q}, {r}> CreateServer(Node node, string advertiseAlias, string respondAlias, Func<{q}, {r}> callback) =>",
+            f"            node.CreateService(RequestCodec, ResponseCodec, advertiseAlias, respondAlias, checked(8 + {q}.MAX_WIRE_BYTES), callback);"])
+    elif interface.kind == "action":
+        g, r, f = (interface.components[key].symbol for key in ("goal", "result", "feedback"))
+        codec("GoalCodec", g); codec("ResultCodec", r); codec("FeedbackCodec", f)
+        lines.extend([
+            "        /// <summary>Acquire separate send, cancel-own, feedback and result roles; callers close all owners.</summary>",
+            f"        public static ActionClient<{g}, {r}, {f}> CreateClient(Node node, string send, string cancel, string feedback, string result, int maximumGoals = 8) =>",
+            "            node.CreateActionClient(GoalCodec, ResultCodec, FeedbackCodec, send, cancel, feedback, result, maximumGoals);",
+            "        /// <summary>Acquire separate incoming-goal and response roles with complete original goal values.</summary>",
+            f"        public static ActionServer<{g}, {r}, {f}> CreateServer(Node node, string advertise, string respond, Action<ulong, {g}, ActionServer<{g}, {r}, {f}>> callback, int maximumGoals = 8) =>",
+            f"            node.CreateActionServer(GoalCodec, ResultCodec, FeedbackCodec, advertise, respond, checked(8 + {g}.MAX_WIRE_BYTES), callback, maximumGoals);"])
+    else:
+        raise ValueError("Unknown complete interface kind: " + interface.kind)
+    return name, "\n".join(lines + ["    }", "}", ""])

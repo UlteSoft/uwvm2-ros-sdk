@@ -17,10 +17,10 @@ behavior and each exact import/export signature.
 
 | Module name | Target kind | Work | Additional runtime authority |
 | --- | --- | --- | --- |
-| `main` | `binary` | Check results and call the three libraries | None |
-| `io` | `shared` | Write readiness/result and read one stdin gate byte | None |
-| `algorithm` | `shared` | Signed addition, real overflow catch and finally counters | None |
-| `ros_comm` | `shared` | Acquire, publish once and close the native topic owner | Only `shared_pub` |
+| `main` | `binary` | Check results and call the three libraries | WASI args and proc-exit |
+| `io` | `shared` | Write readiness/result and read one stdin gate byte | WASI stdin, stdout, stderr, stdio metadata and proc-exit |
+| `algorithm` | `shared` | Signed addition, real overflow catch and finally counters | WASI proc-exit |
+| `ros_comm` | `shared` | Acquire, publish once and close the native topic owner | WASI proc-exit and ROS `shared_pub` |
 
 Only primitive i32/i64 values cross module boundaries. A packed i64 contains
 status in its high 32 bits and a signed i32 value in its low 32 bits. Java
@@ -55,18 +55,20 @@ sh launch.sh
 The three `--wasm-preload-library` commands bind names `io`, `algorithm` and
 `ros_comm`; `--wasm-set-main-module-name main` binds the application. Each name
 is created explicitly as both a WASI Single target and a ROS2 Single target.
-Global ROS is disabled. Only `ros_comm` is enabled and receives the single
-topic grant and every required limit/QoS/audit field. The explicit
+Every module explicitly enables its ROS2 import namespace so the three denial
+probes can validate and execute. Only `ros_comm` receives the single topic
+resource grant. QoS and audit policy are explicit; resource quotas are unset. The explicit
 `disabled-test` DDS security profile, domain 42 and `rmw_fastrtps_cpp` are
 laboratory inputs; provision the matching native gateway/peer independently.
 Use an actual configured keystore/enclave and `enforce` when the deployment
 requires DDS security. This script starts no gateway and performs no network
 or permission discovery.
 
-Every loaded module disables host environment inheritance. Default WASI keeps
-basic standard-stream rights. No extra clock, random, directory or socket
-permission is granted, including for `algorithm`. A run hook must submit
-this exact policy without adding grants.
+Every loaded module starts with zero host authority and explicitly enables its
+WASIp1 namespace. Host environment inheritance is disabled. The command grants
+only the operations listed above; enabling a namespace alone grants no stream,
+clock, random, directory or socket access. Operations have no quota unless the
+operator adds one explicitly. A run hook must preserve this exact policy.
 
 The main application really attempts `shared_pub` opens from `main`, `io`
 and `algorithm`, requiring actual permission-denied errno 13 for each. It then
@@ -91,3 +93,19 @@ by that independent native peer.
 
 Archive extraction, cross-language consumers, collision/mismatch rejection,
 memory64 and QEMU AArch64 execution still need separate receipts.
+
+The four ordinary Xmake contracts use the actual four-module artifact graph.
+Set UWVM_ROS_PAL_PRELOAD_TEST_DEPLOYMENT to an explicit
+uwvm-sdk-pal-preload-native-v1 deployment and UWVM_ROS_TEST_EVIDENCE_ROOT to
+a writable directory, then run xmake test. The native supervisor requires the
+64 GiB, zero-swap Linux test cgroup and an isolated loopback network namespace.
+It reuses pinned runtime, gateway and observer executables. It does not install
+any tools or run Java application logic on the host.
+
+Normal delivery preserves the zero-argument application entry. The denied,
+invalid-input and cleanup contracts execute their assertions inside the same
+Java modules via --contract. The observer checks actual DDS discovery before
+releasing stdin and verifies delivered bytes independently. These finite
+contracts do not qualify an official robot simulator or hardware deployment.
+
+The explicit module-exports call boundary permits a module to use only its own ROS grants when invoked through an export. It does not transfer ros_comm authority to main, io or algorithm. The boundary-denied test retains the publisher grant but omits that admission and requires errno 13 with no native publisher operation. The io gate uses the SDK WASI fd_read binding because this TeaVM target does not implement System.in as a WASI input stream.

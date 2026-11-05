@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -58,7 +58,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Trajectory_msgsMsgJointTrajectoryPoint value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -71,11 +71,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Trajectory_msgsMsgJointTrajectoryPoint Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Trajectory_msgsMsgJointTrajectoryPoint value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -87,67 +87,36 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Trajectory_msgsMsgJointTrajectoryPoint value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Trajectory_msgsMsgJointTrajectoryPoint value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
-            if(value.field_positions == null || value.field_positions.Length > 12)
-            {
-                throw new ArgumentException("Invalid positions extent");
-            }
+            if (value.field_positions == null || value.field_positions.Length > 12) { throw new ArgumentException("Invalid positions extent"); }
             wire.U32((uint)value.field_positions.Length);
-            for(int index = 0; index < value.field_positions.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_positions[index]))
-                {
-                    throw new ArgumentException("Nonfinite positions");
-                }
+            for (int index = 0; index < value.field_positions.Length; ++index) {
+                if (!double.IsFinite(value.field_positions[index])) { throw new ArgumentException("Nonfinite positions"); }
                 wire.F64(value.field_positions[index]);
             }
-            if(value.field_velocities == null || value.field_velocities.Length > 12)
-            {
-                throw new ArgumentException("Invalid velocities extent");
-            }
+            if (value.field_velocities == null || value.field_velocities.Length > 12) { throw new ArgumentException("Invalid velocities extent"); }
             wire.U32((uint)value.field_velocities.Length);
-            for(int index = 0; index < value.field_velocities.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_velocities[index]))
-                {
-                    throw new ArgumentException("Nonfinite velocities");
-                }
+            for (int index = 0; index < value.field_velocities.Length; ++index) {
+                if (!double.IsFinite(value.field_velocities[index])) { throw new ArgumentException("Nonfinite velocities"); }
                 wire.F64(value.field_velocities[index]);
             }
-            if(value.field_accelerations == null || value.field_accelerations.Length > 12)
-            {
-                throw new ArgumentException("Invalid accelerations extent");
-            }
+            if (value.field_accelerations == null || value.field_accelerations.Length > 12) { throw new ArgumentException("Invalid accelerations extent"); }
             wire.U32((uint)value.field_accelerations.Length);
-            for(int index = 0; index < value.field_accelerations.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_accelerations[index]))
-                {
-                    throw new ArgumentException("Nonfinite accelerations");
-                }
+            for (int index = 0; index < value.field_accelerations.Length; ++index) {
+                if (!double.IsFinite(value.field_accelerations[index])) { throw new ArgumentException("Nonfinite accelerations"); }
                 wire.F64(value.field_accelerations[index]);
             }
-            if(value.field_effort == null || value.field_effort.Length > 12)
-            {
-                throw new ArgumentException("Invalid effort extent");
-            }
+            if (value.field_effort == null || value.field_effort.Length > 12) { throw new ArgumentException("Invalid effort extent"); }
             wire.U32((uint)value.field_effort.Length);
-            for(int index = 0; index < value.field_effort.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_effort[index]))
-                {
-                    throw new ArgumentException("Nonfinite effort");
-                }
+            for (int index = 0; index < value.field_effort.Length; ++index) {
+                if (!double.IsFinite(value.field_effort[index])) { throw new ArgumentException("Nonfinite effort"); }
                 wire.F64(value.field_effort[index]);
             }
             Ros2Builtin_interfacesMsgDuration.WriteFields(wire, value.field_time_from_start);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -159,48 +128,32 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Trajectory_msgsMsgJointTrajectoryPoint ReadFields(Wire.Reader wire)
+        internal static Ros2Trajectory_msgsMsgJointTrajectoryPoint ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Trajectory_msgsMsgJointTrajectoryPoint value = new Ros2Trajectory_msgsMsgJointTrajectoryPoint();
             value.field_positions = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_positions.Length; ++index)
-            {
+            for (int index = 0; index < value.field_positions.Length; ++index) {
                 value.field_positions[index] = wire.F64();
-                if(!double.IsFinite(value.field_positions[index]))
-                {
-                    throw new ArgumentException("Nonfinite positions");
-                }
+                if (!double.IsFinite(value.field_positions[index])) { throw new ArgumentException("Nonfinite positions"); }
             }
             value.field_velocities = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_velocities.Length; ++index)
-            {
+            for (int index = 0; index < value.field_velocities.Length; ++index) {
                 value.field_velocities[index] = wire.F64();
-                if(!double.IsFinite(value.field_velocities[index]))
-                {
-                    throw new ArgumentException("Nonfinite velocities");
-                }
+                if (!double.IsFinite(value.field_velocities[index])) { throw new ArgumentException("Nonfinite velocities"); }
             }
             value.field_accelerations = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_accelerations.Length; ++index)
-            {
+            for (int index = 0; index < value.field_accelerations.Length; ++index) {
                 value.field_accelerations[index] = wire.F64();
-                if(!double.IsFinite(value.field_accelerations[index]))
-                {
-                    throw new ArgumentException("Nonfinite accelerations");
-                }
+                if (!double.IsFinite(value.field_accelerations[index])) { throw new ArgumentException("Nonfinite accelerations"); }
             }
             value.field_effort = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_effort.Length; ++index)
-            {
+            for (int index = 0; index < value.field_effort.Length; ++index) {
                 value.field_effort[index] = wire.F64();
-                if(!double.IsFinite(value.field_effort[index]))
-                {
-                    throw new ArgumentException("Nonfinite effort");
-                }
+                if (!double.IsFinite(value.field_effort[index])) { throw new ArgumentException("Nonfinite effort"); }
             }
             value.field_time_from_start = Ros2Builtin_interfacesMsgDuration.ReadFields(wire);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

@@ -9,6 +9,9 @@
 #include "php.h"
 #include "php_embed.h"
 #include "Zend/zend_exceptions.h"
+#include "Zend/zend_constants.h"
+#include "main/php_streams.h"
+#include "main/streams/php_stream_plain_wrapper.h"
 #include "abi.h"
 #include "application.h"
 #include <stdio.h>
@@ -165,13 +168,45 @@ ZEND_END_ARG_INFO()
 // clang-format off
 // Preserve the declaration-list layout of PHP's function-entry macros.
 static zend_function_entry const functions[] = {
+#if !defined(UWVM_LANGUAGE_PURE_WASI)
     ZEND_NS_NAMED_FE("Uwvm\\Native", invoke, ZEND_FN(uwvm_ros_invoke), invoke_arguments)
     ZEND_NS_NAMED_FE("Uwvm\\Native", pause_ms, ZEND_FN(uwvm_ros_pause), pause_arguments)
+#endif
     ZEND_NS_NAMED_FE("Uwvm\\Native", argv, ZEND_FN(uwvm_ros_argv), argv_arguments)
     ZEND_NS_NAMED_FE("Uwvm\\Native", output, ZEND_FN(uwvm_ros_output), output_arguments)
     ZEND_FE_END
 };
 // clang-format on
+
+#if defined(UWVM_LANGUAGE_PURE_WASI)
+/** Expose the command's existing standard streams as ordinary PHP resources.
+ * These guest-side wrappers grant no host permission and open no pathname.
+ * SAPI/libc owns the FILE objects through shutdown; resources borrow them.
+ */
+static zend_result command_standard_streams(void)
+{
+    char const* names[] = {"STDIN", "STDOUT", "STDERR"};
+    FILE* files[] = {stdin, stdout, stderr};
+    for (unsigned index = 0; index != 3; ++index)
+    {
+        php_stream* stream = php_stream_fopen_from_file(files[index], index == 0 ? "rb" : "wb");
+        if (stream == NULL)
+        {
+            return FAILURE;
+        }
+        stream->flags |= PHP_STREAM_FLAG_NO_CLOSE;
+        zend_constant constant;
+        php_stream_to_zval(stream, &constant.value);
+        constant.name = zend_string_init(names[index], strlen(names[index]), 0);
+        ZEND_CONSTANT_SET_FLAGS(&constant, 0, PHP_USER_CONSTANT);
+        if (zend_register_constant(&constant) == FAILURE)
+        {
+            return FAILURE;
+        }
+    }
+    return SUCCESS;
+}
+#endif
 
 /**
  * @brief Start genuine Zend and execute the packed PHP source.
@@ -188,7 +223,7 @@ static int php_application(int argc, char** argv)
     {
         return 1;
     }
-    int status = 1;
+    volatile int status = 1;
     zend_first_try
     {
         uint32_t length = uwvm_load32(application.length);
@@ -196,9 +231,32 @@ static int php_application(int argc, char** argv)
         {
             status = 22;
         }
+#if defined(UWVM_LANGUAGE_PURE_WASI)
+        else if (command_standard_streams() != SUCCESS)
+        {
+            status = 1;
+        }
+#endif
         else if (zend_register_functions(NULL, functions, NULL, MODULE_TEMPORARY) == SUCCESS)
         {
-            if (zend_eval_stringl((char const*)application.source, length, NULL, "uwvm-application") == SUCCESS)
+            zend_result evaluated = zend_eval_stringl((char const*)application.source, length, NULL, "uwvm-application");
+            if (EG(exception) != NULL)
+            {
+                /* PHP 8.4 implements exit() with an unwind exception. Preserve
+                   its original status, including zero; ordinary uncaught
+                   exceptions must never become successful command completion. */
+                if (zend_is_unwind_exit(EG(exception)))
+                {
+                    status = EG(exit_status);
+                    zend_clear_exception();
+                }
+                else
+                {
+                    status = 1;
+                    zend_exception_error(EG(exception), E_ERROR);
+                }
+            }
+            else if (evaluated == SUCCESS)
             {
                 zval* value = zend_hash_str_find(&EG(symbol_table), "uwvm_exit", sizeof("uwvm_exit") - 1);
                 status = value == NULL ? 0 : (int)zval_get_long(value);

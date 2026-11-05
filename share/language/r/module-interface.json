@@ -1,6 +1,6 @@
 {
   "format": "uwvm-single-genuine-r-platform-module-interface-v1",
-  "status": "SOURCE_INTERFACE_COMPLETE_GENUINE_WASM_RUNTIME_UNAVAILABLE",
+  "status": "GENUINE_WASM32_WASM64_BUILT_PUBLIC_EXECUTION_MATRIX_IN_PROGRESS",
   "owner": "07",
   "platform_binding_owner": "06 for Unitree",
   "upstream": {
@@ -79,25 +79,23 @@
     "public_language": "r",
     "provider": "tools/language/r/provider.lua",
     "genuine_runtime_required": true,
-    "currently_installed": false,
-    "static_shared_memory64_qualified": false
+    "currently_installed": true,
+    "static_shared_memory64_qualified": false,
+    "runtime_profiles": [
+      "wasm32-wasip1/eh",
+      "wasm64-wasip1/eh"
+    ],
+    "artifact_layout": "lib/language/r/<backend>/R.wasm and lib/language/r/<backend>/wasm64/R.wasm",
+    "build_entry": "tools/language/r/build_r.py"
   },
-  "blocking_dependencies": [
-    {
-      "owner": "08",
-      "component": "LLVM23 Flang target C/Fortran ABI lowering and genuine target runtime for all51 unchanged original numerical sources",
-      "state": "required-not-yet-built-or-qualified"
-    },
-    {
-      "owner": "07",
-      "component": "Full GNU R build with original numerical closure, WASI dependencies, embedded original R_HOME/base package lazy-load data, original GC/conditions and static .Call",
-      "state": "NOT_BUILT_OR_EXECUTED"
-    }
-  ],
+  "blocking_dependencies": [],
   "no_unitree_binding_reimplemented": true,
   "fortran_sources_replaced": false,
   "private_compiler_created": false,
-  "real_R_runtime_built": false,
+  "real_R_runtime_built": true,
   "language_execution_qualified": false,
-  "native_ros_qualified": false
+  "native_ros_qualified": false,
+  "qualification_scope": "Finite genuine Wasm startup, standard streams, conditions, numerical and filesystem tests have separate receipts. The complete public xmake, native ROS and official simulation matrix is unfinished.",
+  "nonlocal_control": "LLVM 23 native WebAssembly EH/SjLj; no Asyncify or host interpreter execution",
+  "base_profile": "Embedded original base sources and TZif data; recommended packages and source-module libraries are not qualified."
 }

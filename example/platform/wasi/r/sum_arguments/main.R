@@ -13,7 +13,7 @@ main <- function() {
         total <- total + value
         if (total < -2147483648 || total > 2147483647) return(22L)
     }
-    output <- file("stdout", open = "wb")
+    output <- .Call("uwvm_wasi_stdio", "stdout")
     on.exit(close(output), add = TRUE)
     writeBin(charToRaw(sprintf("%.0f\n", total)), output)
     flush(output)

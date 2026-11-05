@@ -104,6 +104,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -189,6 +193,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",
@@ -278,6 +286,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -365,6 +377,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -450,6 +466,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",
@@ -619,6 +639,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -640,14 +664,40 @@
           "root": "include/platform/agibot/go/ros2/agibot-ros2-sdk-v1-1-0-main-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
-          "complete_original_records": 166
+          "complete_original_records": 166,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "go",
+            "go": {
+              "modules": [
+                "include/platform/ros/go",
+                "include/platform/agibot/go/ros2/agibot-ros2-sdk-v1-1-0-main-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "tinygo": {
           "module": "agibot/tinygo/ros2/sdk_v1_1_0_main",
           "root": "include/platform/agibot/tinygo/ros2/agibot-ros2-sdk-v1-1-0-main-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
-          "complete_original_records": 166
+          "complete_original_records": 166,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "tinygo",
+            "go": {
+              "modules": [
+                "include/platform/ros/tinygo",
+                "include/platform/agibot/tinygo/ros2/agibot-ros2-sdk-v1-1-0-main-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "d": {
           "module": "agibot.d.ros2.sdk_v1_1_0_main.records",
@@ -659,16 +709,297 @@
           "producer": "one shared genuine D/BetterC compiler; consumer integration pending",
           "extra_sources": [
             "src/platform/agibot/shared/observation.c"
-          ]
+          ],
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "d",
+            "d": {
+              "import_dirs": [
+                "include/platform/ros/d/source",
+                "src/language"
+              ],
+              "modules": [
+                "agibot.d.client",
+                "agibot.d.ros2.sdk_v1_1_0_main.records",
+                "roswasm.wire",
+                "roswasm"
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/wasip1_main.c"
+            ],
+            "stack_bytes": 4194304
+          }
         },
         "objectc": {
-          "runtime": "one shared genuine GNU Objective-C runtime",
-          "extra_sources": [
-            "src/platform/agibot/shared/observation.c",
-            "src/platform/agibot/objectc/AgibotClient.m",
-            "src/platform/agibot/objectc/ros2/sdk_v1_1_0_main/Records.m"
-          ],
-          "integration_status": "SHARED_PRODUCER_CONTRACT_PENDING"
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "objectc",
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c"
+            ],
+            "objectc_sources": [
+              "src/platform/agibot/objectc/AgibotClient.m",
+              "src/platform/agibot/objectc/ros2/sdk_v1_1_0_main/Records.m"
+            ]
+          }
+        },
+        "js": {
+          "bundle_manifest": "share/platform/agibot/bundles/js/ros2_sdk_v1_1_0_main.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/agibot/bundles/lua/ros2_sdk_v1_1_0_main.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/agibot/bundles/py/ros2_sdk_v1_1_0_main.json"
+        },
+        "java": {
+          "managed_sources": {
+            "java": [
+              "include/platform/agibot/shared/jvm/Core.java",
+              "include/platform/agibot/shared/jvm/Records.java",
+              "include/platform/agibot/java/Client.java"
+            ],
+            "kotlin": [
+              "include/platform/agibot/kotlin/Client.kt"
+            ]
+          }
+        },
+        "kotlin": {
+          "managed_sources": {
+            "java": [
+              "include/platform/agibot/shared/jvm/Core.java",
+              "include/platform/agibot/shared/jvm/Records.java",
+              "include/platform/agibot/java/Client.java"
+            ],
+            "kotlin": [
+              "include/platform/agibot/kotlin/Client.kt"
+            ]
+          }
+        },
+        "csharp": {
+          "managed_sources": {
+            "csharp": [
+              "include/platform/agibot/shared/dotnet/Transport.cs",
+              "include/platform/agibot/csharp/Client.cs"
+            ],
+            "fsharp": [
+              "include/platform/agibot/fsharp/Client.fs"
+            ],
+            "vbnet": [
+              "include/platform/agibot/vbnet/Client.vb"
+            ]
+          },
+          "managed_native_sources": {
+            "agibot_observation": "src/platform/agibot/shared/observation.c",
+            "agibot_json": "src/platform/agibot/shared/observation_json.c"
+          }
+        },
+        "fsharp": {
+          "managed_sources": {
+            "csharp": [
+              "include/platform/agibot/shared/dotnet/Transport.cs",
+              "include/platform/agibot/csharp/Client.cs"
+            ],
+            "fsharp": [
+              "include/platform/agibot/fsharp/Client.fs"
+            ],
+            "vbnet": [
+              "include/platform/agibot/vbnet/Client.vb"
+            ]
+          },
+          "managed_native_sources": {
+            "agibot_observation": "src/platform/agibot/shared/observation.c",
+            "agibot_json": "src/platform/agibot/shared/observation_json.c"
+          }
+        },
+        "vbnet": {
+          "managed_sources": {
+            "csharp": [
+              "include/platform/agibot/shared/dotnet/Transport.cs",
+              "include/platform/agibot/csharp/Client.cs"
+            ],
+            "fsharp": [
+              "include/platform/agibot/fsharp/Client.fs"
+            ],
+            "vbnet": [
+              "include/platform/agibot/vbnet/Client.vb"
+            ]
+          },
+          "managed_native_sources": {
+            "agibot_observation": "src/platform/agibot/shared/observation.c",
+            "agibot_json": "src/platform/agibot/shared/observation_json.c"
+          }
+        },
+        "as": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "as"
+          }
+        },
+        "nim": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "nim",
+            "nim": {
+              "import_dirs": [
+                "include/platform"
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/observation_json.c",
+              "src/platform/agibot/shared/command_io.c",
+              {
+                "source": "src/platform/agibot/shared/wasip1_main.c",
+                "defines": [
+                  "AGIBOT_NIM_RUNTIME_INIT"
+                ]
+              }
+            ]
+          }
+        },
+        "odin": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "odin",
+            "odin": {
+              "collections": [
+                {
+                  "name": "agibot",
+                  "directory": "include/platform/agibot"
+                }
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/observation_json.c",
+              "src/platform/agibot/shared/command_io.c",
+              "src/platform/agibot/shared/wasip1_main.c"
+            ]
+          }
+        },
+        "zig": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "zig",
+            "zig": {
+              "wasi": true,
+              "imports": [
+                "agibot"
+              ],
+              "modules": [
+                {
+                  "name": "agibot",
+                  "source": "include/platform/agibot/zig/client.zig"
+                }
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/observation_json.c",
+              "src/language/native/startup.c"
+            ]
+          }
+        },
+        "rs": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "rs",
+            "rust": {
+              "cfg": [
+                "feature=\"alloc\"",
+                "feature=\"ros2\""
+              ],
+              "crates": [
+                {
+                  "name": "roswasm",
+                  "source": "include/platform/ros/rs/src/lib.rs",
+                  "dependencies": []
+                },
+                {
+                  "name": "agibot",
+                  "source": "include/platform/agibot/rs/lib.rs",
+                  "dependencies": [
+                    "roswasm"
+                  ]
+                }
+              ],
+              "imports": [
+                "roswasm",
+                "agibot"
+              ]
+            }
+          }
+        },
+        "haskell": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "haskell",
+            "haskell": {
+              "import_dirs": [
+                "include/platform/agibot/haskell"
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/observation_json.c",
+              "src/platform/agibot/shared/command_io.c"
+            ]
+          }
+        },
+        "moonbit": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "moonbit",
+            "moonbit": {
+              "backend": "c",
+              "packages": [
+                {
+                  "name": "uwvm/agibot",
+                  "alias": "agibot",
+                  "sources": [
+                    "include/platform/agibot/moonbit/client.mbt"
+                  ]
+                }
+              ],
+              "entry_dependencies": [
+                "agibot"
+              ],
+              "include_dirs": [
+                "lib/language/moonbit/source/include"
+              ],
+              "c_sources": [
+                "src/platform/agibot/moonbit/bridge.c",
+                "src/platform/agibot/shared/observation.c",
+                "src/platform/agibot/shared/observation_json.c",
+                "src/platform/agibot/shared/command_io.c"
+              ]
+            }
+          }
+        },
+        "swift": {
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "swift",
+            "swift": {
+              "module_name": "Agibot",
+              "sources": [
+                "include/platform/agibot/swift/Client.swift"
+              ],
+              "import_dirs": [
+                "include/platform/agibot/swift/c",
+                "include/platform"
+              ]
+            },
+            "c_sources": [
+              "src/platform/agibot/shared/wasip1_main.c",
+              "src/platform/agibot/shared/observation.c",
+              "src/platform/agibot/shared/observation_json.c",
+              "src/platform/agibot/shared/command_io.c"
+            ]
+          }
         }
       }
     },
@@ -718,6 +1049,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",

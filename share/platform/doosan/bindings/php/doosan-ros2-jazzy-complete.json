@@ -17,5 +17,19 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "modules": [
+    {
+      "name": "RosWasm/Word",
+      "path": "include/platform/ros/php/RosWasm/Word.php"
+    },
+    {
+      "name": "RosWasm/Wire",
+      "path": "include/platform/ros/php/RosWasm/Wire.php"
+    },
+    {
+      "name": "doosan/php/ros2/doosan-ros2-jazzy-complete/records",
+      "path": "include/platform/doosan/php/ros2/doosan-ros2-jazzy-complete/records.php"
+    }
+  ]
 }

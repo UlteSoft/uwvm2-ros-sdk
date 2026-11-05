@@ -9,6 +9,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -423,7 +430,7 @@ inline static uint32_t
                                                                                size_t length,
                                                                                roswasmc_bounded_1_franka_example_controllers_JointTorqueComparison* value)
 {
-    roswasmc_bounded_1_franka_example_controllers_JointTorqueComparison next = {0};
+    roswasmc_bounded_1_franka_example_controllers_JointTorqueComparison next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 176u || length > 176u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -593,7 +600,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_GraspEpsilon_encode(ros
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_GraspEpsilon_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_GraspEpsilon* value)
 {
-    roswasmc_bounded_1_franka_gripper_GraspEpsilon next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspEpsilon next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 16u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -806,7 +813,7 @@ inline static uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_franka_gripper_GraspGoal_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_GraspGoal* value)
 {
-    roswasmc_bounded_1_franka_gripper_GraspGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 40u || length > 40u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -969,7 +976,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_GraspResult_encode(rosw
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_GraspResult_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_GraspResult* value)
 {
-    roswasmc_bounded_1_franka_gripper_GraspResult next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1078,7 +1085,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_GraspFeedback_encode(ro
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_GraspFeedback_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_GraspFeedback* value)
 {
-    roswasmc_bounded_1_franka_gripper_GraspFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1187,7 +1194,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_HomingGoal_encode(roswa
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_HomingGoal_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_HomingGoal* value)
 {
-    roswasmc_bounded_1_franka_gripper_HomingGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1351,7 +1358,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_HomingResult_encode(ros
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_HomingResult_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_HomingResult* value)
 {
-    roswasmc_bounded_1_franka_gripper_HomingResult next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1461,7 +1468,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_HomingFeedback_encode(r
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_HomingFeedback_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_HomingFeedback* value)
 {
-    roswasmc_bounded_1_franka_gripper_HomingFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1625,7 +1632,7 @@ inline static uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_franka_gripper_MoveGoal_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_MoveGoal* value)
 {
-    roswasmc_bounded_1_franka_gripper_MoveGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 16u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1788,7 +1795,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_MoveResult_encode(roswa
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_MoveResult_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_MoveResult* value)
 {
-    roswasmc_bounded_1_franka_gripper_MoveResult next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -1897,7 +1904,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_MoveFeedback_encode(ros
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_MoveFeedback_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_MoveFeedback* value)
 {
-    roswasmc_bounded_1_franka_gripper_MoveFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2001,7 +2008,7 @@ inline static uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_franka_gripper_StopGoal_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_StopGoal* value)
 {
-    roswasmc_bounded_1_franka_gripper_StopGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_StopGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2164,7 +2171,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_StopResult_encode(roswa
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_StopResult_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_StopResult* value)
 {
-    roswasmc_bounded_1_franka_gripper_StopResult next = {0};
+    roswasmc_bounded_1_franka_gripper_StopResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2273,7 +2280,7 @@ inline static uint32_t roswasmc_bounded_1_franka_gripper_StopFeedback_encode(ros
 inline static uint32_t
     roswasmc_bounded_1_franka_gripper_StopFeedback_decode(void const* input, size_t length, roswasmc_bounded_1_franka_gripper_StopFeedback* value)
 {
-    roswasmc_bounded_1_franka_gripper_StopFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_StopFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2383,7 +2390,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal_encode(r
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal* value)
 {
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2493,7 +2500,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult_encode
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult* value)
 {
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -2603,7 +2610,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback_enco
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback* value)
 {
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 0u || length > 0u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -3606,7 +3613,7 @@ inline static uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_franka_msgs_Errors_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_Errors* value)
 {
-    roswasmc_bounded_1_franka_msgs_Errors next = {0};
+    roswasmc_bounded_1_franka_msgs_Errors next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 41u || length > 41u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -3741,7 +3748,7 @@ inline static uint32_t roswasmc_bounded_1_time_encode(roswasmc_bounded_1_time co
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_time_decode(void const* input, size_t length, roswasmc_bounded_1_time* value)
 {
-    roswasmc_bounded_1_time next = {0};
+    roswasmc_bounded_1_time next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -3911,7 +3918,7 @@ inline static uint32_t roswasmc_bounded_1_std_msgs_Header_encode(roswasmc_bounde
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_std_msgs_Header_decode(void const* input, size_t length, roswasmc_bounded_1_std_msgs_Header* value)
 {
-    roswasmc_bounded_1_std_msgs_Header next = {0};
+    roswasmc_bounded_1_std_msgs_Header next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 144u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -6393,7 +6400,7 @@ inline static uint32_t
 /** @brief Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 inline static uint32_t roswasmc_bounded_1_franka_msgs_FrankaState_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_FrankaState* value)
 {
-    roswasmc_bounded_1_franka_msgs_FrankaState next = {0};
+    roswasmc_bounded_1_franka_msgs_FrankaState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 2491u || length > 2619u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -6560,7 +6567,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceReque
                                                                                           size_t length,
                                                                                           roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 48u || length > 48u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -6729,7 +6736,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRespo
                                                                                            size_t length,
                                                                                            roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -6892,7 +6899,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetEEFrameRequest_encode(r
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetEEFrameRequest_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetEEFrameRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetEEFrameRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetEEFrameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 128u || length > 128u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -7057,7 +7064,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetEEFrameResponse_encode(
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetEEFrameResponse_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetEEFrameResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetEEFrameResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetEEFrameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -7395,7 +7402,7 @@ inline static uint32_t
                                                                                  size_t length,
                                                                                  roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 208u || length > 208u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -7569,7 +7576,7 @@ inline static uint32_t
                                                                                   size_t length,
                                                                                   roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8126,7 +8133,7 @@ inline static uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 416u || length > 416u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8299,7 +8306,7 @@ inline static uint32_t
                                                                            size_t length,
                                                                            roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8463,7 +8470,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest_d
                                                                                       size_t length,
                                                                                       roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 56u || length > 56u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8629,7 +8636,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8791,7 +8798,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetKFrameRequest_encode(ro
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetKFrameRequest_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetKFrameRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetKFrameRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetKFrameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 128u || length > 128u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -8956,7 +8963,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetKFrameResponse_encode(r
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetKFrameResponse_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetKFrameResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetKFrameResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetKFrameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -9204,7 +9211,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetLoadRequest_encode(rosw
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetLoadRequest_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetLoadRequest* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetLoadRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetLoadRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 104u || length > 104u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {
@@ -9368,7 +9375,7 @@ inline static uint32_t roswasmc_bounded_1_franka_msgs_SetLoadResponse_encode(ros
 inline static uint32_t
     roswasmc_bounded_1_franka_msgs_SetLoadResponse_decode(void const* input, size_t length, roswasmc_bounded_1_franka_msgs_SetLoadResponse* value)
 {
-    roswasmc_bounded_1_franka_msgs_SetLoadResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetLoadResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 5u || length > 261u || uwvm_bounded_overlap(value, sizeof *value, input, length))
     {

@@ -1,0 +1,68 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5167",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "2a3f87afa21a746259dfa31cd77e162bcee999afe89f8dabedcec25916f4f524"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "cac6fd2e7b2dab33d6cd58de2a1241334fae0dc848daddbfc053ab3104c9b725"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/zig/universal-robots-ros2-complete.json",
+      "sha256": "4025bb0eafd9c9f187d62b5766f40a5e0a5b388971115ecd625ac889e46e64bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-complete.ir.json",
+      "sha256": "2f15027c9e89635ac60d730630402b5f7da90172e1284c43d678e7a4cb1c3123"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/msg/IOStates",
+        "bytes": 20
+      }
+    }
+  ]
+}

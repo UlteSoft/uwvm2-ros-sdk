@@ -1,0 +1,140 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4773",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with base WASI and ROS namespace but no resource authority. Assert denied acquisition and complete empty result facts; reject missing alias before acquisition. Native positive transport requires a separate explicit integration deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "29b72e0187f5484b82a0782d69430ec5bddce3b272a7d9bce4ad6edfe997059c"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "a18ac66adc427b2fdfbf9e1474683d1f3d766f5d7e938867780c96c781230636"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/client.zig",
+      "sha256": "2c3d41b2819c07ad553be56693e155d65aab93f9e566f663b6ee5eed09e7f36d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/native_command.zig",
+      "sha256": "3d1b90cd85d2e44dc463956d39d94a8552dcb4941f16dfbb8508e2372f0cbd82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/node.zig",
+      "sha256": "3a364683e4a1dad965502432ab802d9fd01de07b0880ae15b60a24927a9ca4a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros1.zig",
+      "sha256": "64a31ccc7acc19d5bd25a269e941e97260ed6909a8721c01047d635382157f50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros2.zig",
+      "sha256": "094635a63b41bab99a2a14eec6e4488129380912bf109a49b15eaba6626b5eb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/observation.zig",
+      "sha256": "466d735eb2794fbcd15fdb79fa895ac4ac7cb424cf3a48f64f0ed44eea855ef8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/ros1/observation.zig",
+      "sha256": "e5e0b4b6220ff551b53e96aaeba514f54f5fac1af5e15d5a8ade7f7c9838471b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/ros1/records.zig",
+      "sha256": "c4a2768e1eba8c13b3ccaba9dcf76995ba5951d968e112e4e0a43bbb5f23114e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/ros2/observation.zig",
+      "sha256": "e426a62175409f7f2cd86d4b3ba250d361ebbca12aa3d8c920fbe5d694b52ac4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/ros2/records.zig",
+      "sha256": "acc30e7b6c84d5e576c4d506d789f7f19dc7bf7eb6e2e5c51fc3a79e35f2846d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/zig/wire.zig",
+      "sha256": "38530cef258de7c017458dd3dcc97bcb5598cd0bd1d485a9495a3487d9d05ed8"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/native_languages.lua",
+      "sha256": "433f0fb750e5496d2463eb430fd069c9b417693d83b7baeced706c598011a5d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -4,7 +4,21 @@
   "backend": "wasi",
   "runtime": "uwvm2-ros",
   "runtime_arguments": [
-    "--wasip1-global-noinherit-system-environment"
+    "--wasm-set-main-module-name",
+    "main"
   ],
-  "application_arguments": []
+  "application_arguments": [],
+  "wasi_policy": {
+    "format": "uwvm-sdk-wasip1-policy-v2",
+    "modules": {
+      "main": {
+        "enabled": true,
+        "grants": [
+          "proc-exit",
+          "args",
+          "stderr.write"
+        ]
+      }
+    }
+  }
 }

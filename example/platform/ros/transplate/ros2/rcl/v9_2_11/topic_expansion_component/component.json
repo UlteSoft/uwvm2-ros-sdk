@@ -104,17 +104,17 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/example_process.py",
-      "sha256": "fb2526b4b477f5d599e642c25fe7a0a87473df9f1dcf3e5097ded4ea4642638f"
+      "sha256": "4108ced8f0bc233f76d34c06236d193c0df6428c34a72e63d89a8c1cf1f25f8e"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/simulation_example.py",
-      "sha256": "e5c21f913af6aa7be09f4e7d8848212e225e93fdbf3cb3b4567dd195a58d6938"
+      "sha256": "91af18496de4a6d34ade3a608d342db8c7dd1ea4d6384626d85d62c21bb9b91b"
     },
     {
       "scope": "sdk",
@@ -124,7 +124,7 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/runtime_boundary.py",
-      "sha256": "4f206a6d21747e04a8ae0e74558ef6859c31b9856e8aa3bb797c308da0d557cb"
+      "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
     },
     {
       "scope": "sdk",
@@ -149,12 +149,12 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/actor_control.py",
-      "sha256": "5b345c6dadf1e6ecebcdb9a5c23b2300dd24dbe0d586c2f53c754819ae392ea6"
+      "sha256": "22c19335d66b461413a392dc21d6aaad1c6178c2db5bdea6e6dcdaaef613d16c"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/guest_feedback.py",
-      "sha256": "fda455e879c1d5ac23c41261054a7fc1cd51683df4ff7bdbf14d14dcf684a3e8"
+      "sha256": "8ccec978844e503f577eeeb5c6290dda26060b5d6744cfae37a203bc54dd96f5"
     },
     {
       "scope": "sdk",
@@ -164,22 +164,22 @@
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/wasi_component.lua",
-      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/simulation_example.lua",
-      "sha256": "2820af347b9b4033f0466bc0e654ee84a5caa3736118bb47f31c4c1623620f77"
+      "sha256": "c330b77e65cc62915ff1170325969e6aac0fa6ee4fccbf9af8f0af2810711ba2"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/ros.lua",
-      "sha256": "70fcfc66b0aaa683c7d2064091b70ee3da0fbf3332ce46b4be0553bda99df801"
+      "sha256": "1d402507d63260a68da8035c209128474edeeb1f86503714be9ca38ebbc7849f"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/repository.lua",
-      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+      "sha256": "4c5eaac900b3cbef23fcf1390fa130dacdf369db9e4f7e0c9b03455d688d8b61"
     },
     {
       "scope": "sdk",
@@ -200,6 +200,26 @@
       "scope": "sdk",
       "path": "example/platform/ros/transplate/ros2/rcl/v9_2_11/topic_expansion_component/xmake.lua",
       "sha256": "5f79cf35dd73386ae3156861f516dfe36ca0f16df636eb713dcd358d3e615d42"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/pipe_capture.py",
+      "sha256": "17585a3af23b2a76ec8bde1c731c97b326e663f50c1b9815a3359c5c47a04196"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
     }
   ]
 }

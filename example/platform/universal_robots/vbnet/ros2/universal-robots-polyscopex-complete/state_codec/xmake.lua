@@ -41,6 +41,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -51,10 +52,12 @@ set_plat("wasm-wasip1")
 target("universal_robots_ros2_state_codec")
     set_kind("binary")
     set_language("vbnet")
+    set_wasm_exceptions("eh")
     set_ros_platform("universal_robots")
     set_ros2_version("humble")
     set_values("ros.sdk.vendor_version", "universal-robots-polyscopex-complete")
     set_values("ros.sdk.vendor_binding", "share/platform/universal_robots/bindings/vbnet/universal-robots-polyscopex-complete.json")
     set_ros_scenario("state_codec")
     add_files("Program.vb")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

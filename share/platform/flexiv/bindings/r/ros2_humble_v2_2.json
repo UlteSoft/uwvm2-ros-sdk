@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "r",
+  "profile": "ros2_humble_v2_2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/r/ros2/flexiv-ros2-humble-v2-2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "name": "ros/r/roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "flexiv/r/ros2/humble_v2_2/records",
+      "path": "include/platform/flexiv/r/ros2/flexiv-ros2-humble-v2-2-complete/records.R"
+    }
+  ]
+}

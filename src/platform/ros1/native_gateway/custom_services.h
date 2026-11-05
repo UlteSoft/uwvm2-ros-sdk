@@ -10,6 +10,7 @@
  * UWVM2 concrete bounded ROS1 Service adapter. APL-2.0.     *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "custom_topics.h"
 #include "bounded_service.h"
 #include <gateway/common/service.h>
@@ -97,7 +98,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
             // Conversion, discovery, official serialization and canonical
             // response encoding share one call budget; none starts a fresh
             // timeout after consuming CPU under a slow native/QEMU backend.
-            auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
+            auto until{request_deadline(cap,timeout)};
             auto item{ipc::find_custom_service(1, cap.type)};
             if(!item || !ipc::validate_custom_service_request(*item, "service.call", bytes.data(), bytes.size()))
             {
@@ -116,14 +117,14 @@ namespace uwvm2::ros_gateway::ros1_custom_services
             // matches canonical LE scalars/counts. This is a pre-deserialization
             // structural check, never an assertion that every native wire format
             // equals canonical or a shortcut forwarding native response bytes.
-            auto remaining{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
-            if(remaining <= 0)
+            auto remaining{ipc::remaining_ms(until)};
+            if(!remaining)
             {
                 return {110, {}};
             }
             auto error{ros1_service::call(cap,
                                           native,
-                                          static_cast<std::uint32_t>(remaining),
+                                          *remaining,
                                           [item](std::vector<std::uint8_t> const& body)
                                           { return ipc::validate_custom_topic(*item->response, body.data(), body.size()); }, &clients_)};
             if(error)
@@ -140,7 +141,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
             {
                 return {22, {}};
             }
-            if(std::chrono::steady_clock::now() >= until)
+            if(::uwvm2::utils::host_clock::now() >= until)
             {
                 return {110, {}};
             }
@@ -267,7 +268,7 @@ namespace uwvm2::ros_gateway::ros1_custom_services
             {
                 return {13, {}};
             }
-            auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
+            auto until{request_deadline(cap,timeout)};
             for(auto const& item: servers_)
             {
                 if(item.second.cap.resource == cap.resource)

@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "tinygo",
+  "profile": "controller_core_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/tinygo/ros2/flexiv-controller-core-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "tinygo",
+    "go": {
+      "modules": [
+        "include/platform/ros/tinygo",
+        "include/platform/flexiv/tinygo/ros2/flexiv-controller-core-humble-complete"
+      ],
+      "tags": [
+        "ros2"
+      ]
+    }
+  }
+}

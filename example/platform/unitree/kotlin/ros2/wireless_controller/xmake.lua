@@ -42,6 +42,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk_root = root
 set_policy("run.autobuild", false)
@@ -56,4 +57,5 @@ target("unitree-kotlin-ros2-wireless_controller")
     set_arch(get_config("arch") or "wasm32")
     set_values("ros.sdk.main_class", "uwvm.unitree.example.Main")
     add_files("Main.kt")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

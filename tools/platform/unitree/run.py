@@ -17,6 +17,10 @@ from pathlib import Path
 import signal
 import subprocess
 import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared/python"))
+from pipe_capture import PipeLoggedProcess
+from wasi_policy import limit_arguments as wasi_limit_arguments, wait_exit_arguments as wasi_wait_exit_arguments
+import re
 import tempfile
 import time
 
@@ -178,8 +182,10 @@ def run(
         raise ValueError("Select an exact qualified Unitree WASI P1 target")
     raw = config_path.read_bytes()
     config = json.loads(raw)
-    if config.get("format") != "uwvm-unitree-run-v1":
-        raise ValueError("Expected deployment format uwvm-unitree-run-v1")
+    if config.get("format") != "uwvm-unitree-run-v2":
+        raise ValueError("Expected deployment format uwvm-unitree-run-v2")
+    if "wasi_imports" in config or "ros_imports" in config:
+        raise ValueError("Per-function import exposure fields are no longer supported")
     runtime_features = config.get("runtime_features", [])
     if (
         not isinstance(runtime_features, list)
@@ -260,11 +266,27 @@ def run(
         )
     connection = {token(k): token(v) for k, v in config["connection"].items()}
     limits = {token(k): token(v) for k, v in selection["limits"].items()}
+    for key, allowed in {
+        "worker_limits": {"connect-timeout-ms", "connect-timeout-ms.on-proc-exit", "audit-deny-max-rate-hz", "audit-deny-burst", "audit-deny-max-records", "audit-deny-max-bytes"},
+        "gateway_limits": {"timeout-ms", "max-sessions", "audit-max-records-per-second", "audit-max-records", "audit-max-bytes"} | {f"{key}.{action}" for key in ("timeout-ms", "max-sessions", "audit-max-records-per-second", "audit-max-records", "audit-max-bytes") for action in ("on-exhausted", "on-proc-exit")},
+    }.items():
+        value = config.get(key, {})
+        if not isinstance(value, dict) or not set(value).issubset(allowed):
+            raise ValueError("Unknown explicit " + key)
+    if "overflow-policy" in limits and limits["overflow-policy"] not in {"reject", "wait"}:
+        raise ValueError("Local quota overflow-policy must be reject or wait")
     wasi_grants = config["wasi_grants"]
-    if not isinstance(wasi_grants, list) or not all(
-        isinstance(v, str) for v in wasi_grants
-    ):
+    known_wasi = {"stdin.read", "stdout.write", "stderr.write", "stdio.metadata", "stdio.readiness",
+                  "args", "environ", "proc-exit", "realtime-clock", "monotonic-clock", "process-clock",
+                  "thread-clock", "random", "proc-raise", "sched-yield",
+                  "realtime-resolution", "monotonic-resolution", "process-resolution", "thread-resolution",
+                  "realtime-timer", "monotonic-timer", "process-timer", "thread-timer"}
+    if not isinstance(wasi_grants, list) or len(wasi_grants) > 64 or not all(
+        isinstance(v, str) and v in known_wasi for v in wasi_grants
+    ) or len(wasi_grants) != len(set(wasi_grants)):
         raise ValueError("Explicit wasi_grants must be a string array")
+    wasi_limits = wasi_limit_arguments("main", config.get("wasi_limits", {}))
+    wasi_wait_exit_actions = wasi_wait_exit_arguments("main", config.get("wasi_wait_exit_actions", {}))
     deadline = config.get("execution_timeout_seconds", 30)
     if type(deadline) is not int or not 1 <= deadline <= 300:
         raise ValueError(
@@ -295,7 +317,8 @@ def run(
     # A short private directory keeps Unix socket paths below the kernel limit.
     with tempfile.TemporaryDirectory(prefix="uwvm-unitree-") as temporary:
         socket = str(Path(temporary) / (backend + ".sock"))
-        argv = [*runtime_prefix, runtime, "--" + backend + "-global-enable"]
+        argv = [*runtime_prefix, runtime, "--wasm-set-main-module-name", "main",
+                "--" + backend + "-single-create", "main", "--" + backend + "-single-enable", "main"]
         if "exceptions" in runtime_features:
             argv.append("--wasm-feature-enable-exceptions")
         if address_bits == 64:
@@ -304,20 +327,25 @@ def run(
             **connection,
             "gateway-socket": socket,
             "gateway-uid": str(os.getuid()),
-            "connect-timeout-ms": "5000",
-            "audit-deny-max-rate-hz": "100",
-            "audit-deny-burst": "100",
-            "audit-deny-max-records": "10000",
-            "audit-deny-max-bytes": "1048576",
+            **{token(k): token(v) for k, v in config.get("worker_limits", {}).items()},
         }.items():
-            argv += ["--" + backend + "-global-" + key, value]
+            argv += ["--" + backend + "-single-" + key, "main", value]
         fields = [alias, operation, resource, native_type, identity]
-        argv += ["--" + backend + "-global-grant", *fields]
+        argv += ["--" + backend + "-single-grant", "main", *fields]
         for key, value in limits.items():
-            argv += ["--" + backend + "-global-set", alias, key, value]
-        argv += ["--wasip1-global-noinherit-system-environment"]
+            argv += ["--" + backend + "-single-set", "main", alias, key, value]
+        enabled = config.get("wasi_enabled", False)
+        if type(enabled) is not bool:
+            raise ValueError("wasi_enabled must be Boolean")
+        if not enabled and wasi_grants:
+            raise ValueError("Explicit WASIp1 enablement is required before grants")
+        argv += ["--wasip1-single-create", "main",
+                 "--wasip1-single-" + ("enable" if enabled else "disable"), "main",
+                 "--wasip1-single-noinherit-system-environment", "main"]
         for value in wasi_grants:
-            argv += ["--wasip1-global-grant", token(value)]
+            argv += ["--wasip1-single-grant", "main", token(value)]
+        argv += wasi_limits
+        argv += wasi_wait_exit_actions
         argv += ["--run", str(artifact), *guest_arguments]
         result["argv"] = argv
         try:
@@ -326,7 +354,7 @@ def run(
             ).open("wb") as stderr, (evidence / "gateway.log").open(
                 "wb"
             ) as gateway_log:
-                worker = subprocess.Popen(
+                worker = PipeLoggedProcess(
                     [
                         sys.executable,
                         "-B",
@@ -351,11 +379,7 @@ def run(
                     f"worker-uid {os.getuid()}",
                     f"worker-pid {worker.pid}",
                     f"socket {socket}",
-                    "timeout-ms 10000",
-                    "max-sessions 16",
-                    "audit-max-records-per-second 100",
-                    "audit-max-records 10000",
-                    "audit-max-bytes 1048576",
+                    *[f"{token(k)} {token(v)}" for k, v in config.get("gateway_limits", {}).items()],
                 ]
                 lines += [
                     f"connection {key} {value}" for key, value in connection.items()

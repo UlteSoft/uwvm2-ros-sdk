@@ -11,7 +11,7 @@ installed runtime and gateway paths, and replace the argument with the complete
 hexadecimal wire value. Run the public `tools/platform/ros/run.py` entry with
 that configuration, scenario `codec_static`, the selected target,
 and `build/main/main.wasm`. Both module policies explicitly disable ROS and
-list no additional WASI grants. Default WASI standard streams remain available.
+list no additional WASI grants. Base WASI grants no standard-stream operations; required operations must be explicitly authorized.
 
 The program requires eager constructor state before decoding and prints the
 actual library re-encoding. Truncated values, malformed fields and trailing

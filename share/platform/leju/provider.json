@@ -102,6 +102,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -177,6 +181,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -250,6 +258,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",
@@ -407,6 +419,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -428,14 +444,40 @@
           "root": "include/platform/leju/go/ros1/leju-ros1-main-platform-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros1",
-          "complete_original_records": 532
+          "complete_original_records": 532,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "go",
+            "go": {
+              "modules": [
+                "include/platform/ros/go",
+                "include/platform/leju/go/ros1/leju-ros1-main-platform-complete"
+              ],
+              "tags": [
+                "ros1"
+              ]
+            }
+          }
         },
         "tinygo": {
           "module": "leju/tinygo/ros1/main_platform",
           "root": "include/platform/leju/tinygo/ros1/leju-ros1-main-platform-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros1",
-          "complete_original_records": 532
+          "complete_original_records": 532,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "tinygo",
+            "go": {
+              "modules": [
+                "include/platform/ros/tinygo",
+                "include/platform/leju/tinygo/ros1/leju-ros1-main-platform-complete"
+              ],
+              "tags": [
+                "ros1"
+              ]
+            }
+          }
         },
         "d": {
           "module": "leju.d.ros1.main_platform.records",
@@ -446,6 +488,15 @@
           ],
           "producer": "one shared genuine D/BetterC compiler; consumer integration pending",
           "extra_sources": []
+        },
+        "js": {
+          "bundle_manifest": "share/platform/leju/bundles/js/ros1_main_platform.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/leju/bundles/lua/ros1_main_platform.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/leju/bundles/py/ros1_main_platform.json"
         }
       }
     },
@@ -494,6 +545,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",
@@ -571,6 +626,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -644,6 +703,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",
@@ -721,6 +784,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -794,6 +861,10 @@
           {
             "name": "roswasm/wire",
             "path": "include/platform/ros/r/roswasm/wire.R"
+          },
+          {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
           },
           {
             "name": "uwvm/r/native",

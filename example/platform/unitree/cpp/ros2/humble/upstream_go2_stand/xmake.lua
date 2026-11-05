@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/go2_scene_test.lua"))
 
 set_policy("run.autobuild", false)
 local function original_task()
@@ -71,8 +72,7 @@ target("unitree-upstream-go2-stand")
     add_deps("unitree-upstream-go2-motor-crc")
     add_defines('UWVM_RCLCPP_COMPAT_SELECTION_HEADER="platform/unitree/cpp/ros2/go2_stand/selection.hpp"')
     add_files(path.join(root, "src/platform/unitree/cpp/ros2/go2_stand/ported/go2_stand_example.cpp"))
-    -- No official scene is registered yet. The common mandatory-test guard
-    -- must reject this incomplete project until the real scene is provided.
+    uwvm_go2_scene_test({sdk_root = root})
 target_end()
 
 -- Explicit acceptance-only observer: production target retains its original code.
@@ -82,5 +82,6 @@ target("unitree-upstream-go2-stand-observed")
     add_deps("unitree-upstream-go2-motor-crc")
     add_defines('UWVM_RCLCPP_COMPAT_SELECTION_HEADER="platform/unitree/cpp/ros2/go2_stand/selection.hpp"')
     add_defines("UWVM_GO2_STAND_OBSERVE_CALLBACKS=1")
+    uwvm_go2_scene_test({sdk_root = root, observed = true})
     add_files(path.join(root, "src/platform/unitree/cpp/ros2/go2_stand/ported/go2_stand_example.cpp"))
 target_end()

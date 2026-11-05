@@ -17,6 +17,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -161,6 +168,7 @@ static inline int roswasmc_bounded_2_builtin_interfaces_msg_Time_valid(roswasmc_
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_builtin_interfaces_msg_Time_wire_size(roswasmc_bounded_2_builtin_interfaces_msg_Time const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -224,7 +232,7 @@ static inline uint32_t roswasmc_bounded_2_builtin_interfaces_msg_Time_encode(ros
 static inline uint32_t
     roswasmc_bounded_2_builtin_interfaces_msg_Time_decode(void const* input, size_t length, roswasmc_bounded_2_builtin_interfaces_msg_Time* value)
 {
-    roswasmc_bounded_2_builtin_interfaces_msg_Time next = {0};
+    roswasmc_bounded_2_builtin_interfaces_msg_Time next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -327,7 +335,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_RequestHeader_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_RequestHeader_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_RequestHeader* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_RequestHeader next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_RequestHeader next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -430,7 +438,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_CommonRequest_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_CommonRequest_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_CommonRequest* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_CommonRequest next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_CommonRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -546,7 +554,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ResponseHeader_encode(r
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ResponseHeader_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ResponseHeader* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ResponseHeader next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ResponseHeader next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 16u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -622,6 +630,7 @@ static inline int roswasmc_bounded_2_aimdk_msgs_msg_CommonState_valid(roswasmc_b
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_aimdk_msgs_msg_CommonState_wire_size(roswasmc_bounded_2_aimdk_msgs_msg_CommonState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     return n;
@@ -675,7 +684,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_CommonState_encode(rosw
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_CommonState_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_CommonState* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_CommonState next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_CommonState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 4u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -811,7 +820,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_CommonResponse_encode(r
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_CommonResponse_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_CommonResponse* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_CommonResponse next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_CommonResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 152u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -935,7 +944,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_CommonTaskResponse_enco
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_CommonTaskResponse_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_CommonTaskResponse* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_CommonTaskResponse next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_CommonTaskResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 28u || length > 28u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -999,6 +1008,7 @@ static inline int roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState_valid(roswa
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState_wire_size(roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     return n;
@@ -1053,7 +1063,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState_encode
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_DomainErrorState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 1u || length > 1u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1282,7 +1292,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_JointCommand_encode(ros
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_JointCommand_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_JointCommand* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_JointCommand next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_JointCommand next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 44u || length > 172u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1429,7 +1439,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_MessageHeader_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_MessageHeader_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_MessageHeader* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_MessageHeader next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_MessageHeader next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 152u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1585,7 +1595,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_JointCommandArray_encod
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_JointCommandArray_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_JointCommandArray* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_JointCommandArray next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_JointCommandArray next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 28u || length > 11164u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1782,7 +1792,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_JointState_encode(roswa
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_JointState_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_JointState* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_JointState next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_JointState next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 30u || length > 158u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1946,7 +1956,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_JointStateArray_encode(
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_JointStateArray_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_JointStateArray* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_JointStateArray next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_JointStateArray next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 29u || length > 10269u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2308,7 +2318,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ModuleChannelInfo_encod
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ModuleChannelInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ModuleChannelInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ModuleChannelInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ModuleChannelInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 58u || length > 586u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2543,7 +2553,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ModuleRpcInfo_encode(ro
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ModuleRpcInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ModuleRpcInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ModuleRpcInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ModuleRpcInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 672u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2871,7 +2881,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ModuleResourceInfo_enco
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ModuleResourceInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ModuleResourceInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ModuleResourceInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ModuleResourceInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 20u || length > 5180u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3117,7 +3127,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ThreadResourceInfo_enco
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ThreadResourceInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ThreadResourceInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ThreadResourceInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ThreadResourceInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 32u || length > 352u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3369,7 +3379,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ProcessResourceInfo_enc
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ProcessResourceInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ProcessResourceInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ProcessResourceInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ProcessResourceInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 48u || length > 1584u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3556,7 +3566,7 @@ static inline uint32_t roswasmc_bounded_2_aimdk_msgs_msg_ProcessInfo_encode(rosw
 static inline uint32_t
     roswasmc_bounded_2_aimdk_msgs_msg_ProcessInfo_decode(void const* input, size_t length, roswasmc_bounded_2_aimdk_msgs_msg_ProcessInfo* value)
 {
-    roswasmc_bounded_2_aimdk_msgs_msg_ProcessInfo next = {0};
+    roswasmc_bounded_2_aimdk_msgs_msg_ProcessInfo next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 80u || length > 12232u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

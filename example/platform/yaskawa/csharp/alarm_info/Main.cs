@@ -7,7 +7,7 @@
  * required; no grant, replay or controller admission is implicit.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.Yaskawa;
 using Uwvm.Yaskawa.Ros2;
 
 namespace Yaskawa.Examples
@@ -22,15 +22,15 @@ namespace Yaskawa.Examples
         {
             if(args.Length != 1)
                 return 22;
-            var facts = Client.WaitSample(args[0], 25248, 250);
+            var facts = Observation.ReadSample(args[0], 25248, 250);
             byte[] wire = Array.Empty<byte>();
             if(facts.Primary == 0)
             {
                 try
                 {
-                    wire = Ros2Motoros2_interfacesMsgAlarmInfo.Decode(facts.Bytes).Encode();
+                    wire = Ros2Motoros2_interfacesMsgAlarmInfo.Encode(Ros2Motoros2_interfacesMsgAlarmInfo.Decode(facts.Bytes));
                 }
-                catch(ArgumentException)
+                catch(Exception error) when (error is ArgumentException || error is FormatException)
                 {
                     facts.Primary = 22;
                 }

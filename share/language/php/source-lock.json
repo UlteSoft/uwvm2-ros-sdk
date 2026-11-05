@@ -4253,8 +4253,8 @@
   },
   "support_manifest": {
     "path": "src/language/common/asyncify/support-manifest.json",
-    "bytes": 11354,
-    "sha256": "0e77b481d8d18748db30df95e1f7ae186c1ac578216d5fe077f526d96633ca35"
+    "bytes": 11355,
+    "sha256": "e92d8d4fa0b94d5bfad67ed4533d0802e70b4866ce3b465da870c2a48ff2e94c"
   },
   "target_inventory": {
     "path": "src/language/common/asyncify/target-inventory.json",
@@ -4331,6 +4331,86 @@
       "path": "src/language/php/module.c",
       "bytes": 2231,
       "sha256": "e257aea8d03b04f249a42d389f1be11938edf0646de4d991da847aee73787551"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm64/machine_core.S",
+      "bytes": 1801,
+      "sha256": "d6b62a699b78409f0210c27ee171d9b05a73b0989f1823744c5f3f3a1cb0b274"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm64/setjmp_core.S",
+      "bytes": 1712,
+      "sha256": "3318d4f00b8a41c14d85d9ce3255bfb9196c59bce26c5473875c385ecd385e47"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakHash.c",
+      "bytes": 3728,
+      "sha256": "1359246a5096ed424b7ab7fe36354c9a91da34c9868975bdc197cdf2358128ea"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakHash.h",
+      "bytes": 5673,
+      "sha256": "b9d3a9aa92d88c0c89b952f8da1be5e235e1b85bf6427b0fdb541c36ed83e6cc"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-64.macros",
+      "bytes": 70918,
+      "sha256": "cb45f09677fed8b62bca86b58654550aa33a95a4b957d018d870e4f1f5aae0ed"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-SnP.h",
+      "bytes": 2630,
+      "sha256": "b11db7cad45d0c46d8a08bd7ce21f7fe4dcbba76a8d5a1e3ff66ae60e8a057a9"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-opt64-config.h",
+      "bytes": 442,
+      "sha256": "b7e2a5e556266ef8b4652f09dd084502ccbdb2c5364bb700eb8ee99503268c03"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-opt64.c",
+      "bytes": 17408,
+      "sha256": "75ffa360b7468374cd71a9441f9925d0a7f629aa6a90d75746f7ed026ef1c9e4"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-unrolling.macros",
+      "bytes": 6644,
+      "sha256": "0bf1a7910e7cf01cdb68d2f8f0886cf1ec306ad341f567f7bf9979f812a856df"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.c",
+      "bytes": 2996,
+      "sha256": "9607ffc03c43bce2964c75438015ee91938741e2e5399ce63dd3047520d52008"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.h",
+      "bytes": 10742,
+      "sha256": "31cacd603b056feec0e7b4ec15298f56f5c64ef686c3f5ebbcee26a203b13ffa"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.inc",
+      "bytes": 11249,
+      "sha256": "bfd613a66ca4aca5301dc6f5ae48da27a6ac42d663f2fe1b34f1ff5c02fb5867"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/SnP-Relaned.h",
+      "bytes": 13766,
+      "sha256": "ee699b292a07fdcfca62e3e2e9509fd56ad7d67e3375f4e3982c38c34b424048"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/align.h",
+      "bytes": 1201,
+      "sha256": "59cd14645e394118060bfd80898b0cc2e79f24cc8234b779ad94bab5ee5ce714"
+    },
+    {
+      "path": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/brg_endian.h",
+      "bytes": 5472,
+      "sha256": "c9911df51ecb265dd7c0fe908b4e0188a7bc4fe2c18e46984f2a4c6dd1c7847a"
+    },
+    {
+      "path": "share/language/php/memory64-source.json",
+      "bytes": 7497,
+      "sha256": "63faa83d9f16c3f171d2720afa8f8c5f5152d96c040d3b859b229ca80c107bf7"
     }
   ]
 }

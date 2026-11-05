@@ -1,0 +1,77 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-archive-or-denial-3180",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "archive_unused.c",
+      "sha256": "3c8c2b89f95cac67a44bc0083b293fe4f063cafef27c9891ffaa3dcaeee9dcc5"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.c",
+      "sha256": "5e902d2b17925fc715d8fbe1642668345534eeee95c73b7c430d34f8e1859215"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm_api.h",
+      "sha256": "8adb90651cf9729ef71282b02429fb53664a30b1a4cad165e7d997a6a31b803b"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6e799d5639b4e7023461121bd5582c26cdec291beb7a2424fc5444d3dc476e09"
+    },
+    {
+      "scope": "example",
+      "path": "archive_consumer.cpp",
+      "sha256": "5cd51d7885e2181af3c6557396d2a185f7c1cd4337c2675fd09712c40673d9e8"
+    },
+    {
+      "scope": "example",
+      "path": "archive_consumer.c",
+      "sha256": "db3b4283dd00781ad5bdfdf0c59af7fc13cd67bca8deb29d9cd7d287febb4fb6"
+    }
+  ],
+  "cases": [
+    {
+      "id": "real-archive-extraction-and-scalar-call",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "archive_result": 22
+      }
+    }
+  ]
+}

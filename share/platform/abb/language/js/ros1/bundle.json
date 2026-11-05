@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "abb/js/ros1/records",
+      "file": "include/platform/abb/js/ros1/records.mjs",
+      "sha256": "dc5ec9ca1185adb3bd6d983d4fdfd068f84b6ad989ac66278759b1b2eaca0eaf"
+    }
+  ],
+  "default_authority": []
+}

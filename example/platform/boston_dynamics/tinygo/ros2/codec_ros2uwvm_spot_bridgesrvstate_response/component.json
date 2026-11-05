@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-403",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "328f09a2014467db03e358eb7002694040097d56d36ec167a008c71b34ec544e"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "8330f710cdfa4d0e806556f4e561f4e26957adadde680cea39e395cc1a0d91a9"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "7392f93ed1ce1b2f22e5bbae52074eb0d267d7df6dfbbd0f9dffff74dc6a3461"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/catalog.json",
+      "sha256": "6c043dccd0d008dc7cbae8bf683d0356f3a701a9ff65c8f7112e4885d49108e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/uwvm_spot_bridge/srv/State.srv",
+      "sha256": "ab118f0c1bf85c470ff626c139cc1fbffa49be80d213b6994befd5cef8a073aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "57\n"
+    }
+  ]
+}

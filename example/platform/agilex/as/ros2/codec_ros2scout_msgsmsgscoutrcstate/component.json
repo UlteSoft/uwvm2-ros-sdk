@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-272",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "8f55d4ed026e6e326c984aa96c459151c0ad4350088a6b0da717061cadcba2cb"
+    },
+    {
+      "scope": "example",
+      "path": "main.ts",
+      "sha256": "6fc87a1ed3e72d4e7a4d378181f0931b3631853a0d9d6b0426f964931b2ff078"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/catalog.json",
+      "sha256": "7f9213517f2625489b7194e0dacfde24e1085fe570acfa72f2c6788fcbceed5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/scout_msgs/msg/ScoutRCState.msg",
+      "sha256": "f20789a77f045981274fef30b63e60e2a7d8c6294cc741f407c16c6cef95dded"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "9\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "nvidia-groot/js/ros2/complete/records",
+      "file": "include/platform/nvidia-groot/js/ros2/complete/records.mjs",
+      "sha256": "c25c258df46ae7d05d1c1f944addd99a5f72822bed1e5b1fba8bec50d7d9b43c"
+    }
+  ],
+  "default_authority": []
+}

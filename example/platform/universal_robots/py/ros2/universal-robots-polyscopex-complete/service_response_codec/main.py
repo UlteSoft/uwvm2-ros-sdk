@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("universal_robots.py.ros2.universal-robots-polyscopex-complete.bounded_records")
+records = import_module("universal_robots.py.ros2.universal_robots_polyscopex_complete.bounded_records")
 value = records.Ros2UrinterfacesSrvSetAnalogOutput_Response()
 wire = value.encode()
 decoded = records.Ros2UrinterfacesSrvSetAnalogOutput_Response.decode(wire)

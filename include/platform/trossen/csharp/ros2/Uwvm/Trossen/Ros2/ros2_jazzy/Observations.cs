@@ -1,5 +1,4 @@
 using System;
-using Uwvm.Ros;
 using Uwvm.Trossen;
 
 namespace Uwvm.Trossen.Ros2.ros2_jazzy
@@ -20,7 +19,7 @@ namespace Uwvm.Trossen.Ros2.ros2_jazzy
         public static Observation.Result<Ros2Interbotix_xs_msgsMsgJointSingleCommand> ReadJointSingleCommand(string alias, int attempts)
         {
             Observation.Result<Ros2Interbotix_xs_msgsMsgJointSingleCommand> result = new Observation.Result<Ros2Interbotix_xs_msgsMsgJointSingleCommand>(
-                Client.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointSingleCommand.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointSingleCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -48,7 +47,7 @@ namespace Uwvm.Trossen.Ros2.ros2_jazzy
         public static Observation.Result<Ros2Interbotix_xs_msgsMsgJointGroupCommand> ReadJointGroupCommand(string alias, int attempts)
         {
             Observation.Result<Ros2Interbotix_xs_msgsMsgJointGroupCommand> result = new Observation.Result<Ros2Interbotix_xs_msgsMsgJointGroupCommand>(
-                Client.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointGroupCommand.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointGroupCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -77,7 +76,7 @@ namespace Uwvm.Trossen.Ros2.ros2_jazzy
         {
             Observation.Result<Ros2Interbotix_xs_msgsMsgJointTrajectoryCommand> result =
                 new Observation.Result<Ros2Interbotix_xs_msgsMsgJointTrajectoryCommand>(
-                    Client.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointTrajectoryCommand.MAX_WIRE_BYTES, attempts));
+                    Observation.WaitSample(alias, Ros2Interbotix_xs_msgsMsgJointTrajectoryCommand.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try

@@ -39,6 +39,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk = root
 set_policy("run.autobuild", false)
@@ -50,4 +51,5 @@ target("booster-c-remote_controller")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_ros_scenario("remote_controller")
     add_files("main.c")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

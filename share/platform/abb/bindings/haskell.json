@@ -18,5 +18,47 @@
     "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/abb/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_actions": {
+    "ros1": {
+      "format": "uwvm-native-action-v1",
+      "language": "haskell",
+      "c_sources": [
+        {
+          "source": "src/language/native/abi.c",
+          "object": "abi.o",
+          "defines": [
+            "UWVM_NATIVE_ROS1",
+            "UWVM_NATIVE_HASKELL"
+          ]
+        }
+      ],
+      "haskell": {
+        "import_dirs": [
+          "include/platform/abb/haskell",
+          "src/language/native/haskell"
+        ]
+      }
+    },
+    "ros2": {
+      "format": "uwvm-native-action-v1",
+      "language": "haskell",
+      "c_sources": [
+        {
+          "source": "src/platform/ros/native_sources/abi.c",
+          "object": "abi.o",
+          "defines": [
+            "UWVM_NATIVE_ROS2",
+            "UWVM_NATIVE_HASKELL"
+          ]
+        }
+      ],
+      "haskell": {
+        "import_dirs": [
+          "include/platform/abb/haskell",
+          "src/language/native/haskell"
+        ]
+      }
+    }
+  }
 }

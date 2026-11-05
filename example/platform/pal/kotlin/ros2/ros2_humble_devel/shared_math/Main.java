@@ -73,7 +73,7 @@ public final class Main
             {
                 throw new IllegalStateException("WASI rights reduction, denied write or denied rights restoration differs");
             }
-            int diagnostic = write(2, "{\"sdk09_shared_math_denied\":true,\"errno\":" + error +
+            int diagnostic = write(2, "{\"sdk09_shared_math_denied\":true,\"reduce_errno\":0,\"errno\":" + error +
                 ",\"restore_errno\":" + restored + "}\n");
             Wasi.exit(diagnostic == 0 ? error : diagnostic);
             return;

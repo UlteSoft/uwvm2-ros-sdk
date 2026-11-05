@@ -56,7 +56,8 @@ target("fourier-ruby-status")
     add_files("main.rb", {rule = "ros.wasm.source"})
     -- Required execution is pending the actual all-Wasm ROS/client route.
     -- Keep this project visible to Linux CI and fail instead of zero-test green.
-    add_tests("official-ros-wasm-required")
+    uwvm_register_required_test("official-ros-wasm-required", "required-wasm-guest")
+    add_tests("official-ros-wasm-required", {group = "required-wasm-guest"})
     on_test(function(target, opt)
         import("core.base.json")
         local diagnostic = "BLOCKED_REQUIRED_FOURIER_WASM_ROS_STATUS: actual guest query/callback audit and official provider qualification are missing"

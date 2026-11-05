@@ -111,7 +111,7 @@ function configure(target, root, request)
 		target:set("filename", target:name() .. ".wasm")
 	end
 	if not target:get("targetdir") then
-		target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+		target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build/artifacts"))
 	end
 end
 
@@ -189,7 +189,7 @@ end
 -- @return No value; any compiler diagnostic or missing Wasm output fails the build.
 -- @details Compiler class files and caches stay in the selected object tree. No host JVM is part
 -- of the produced guest; the final command imports the selected ROS ABI directly.
-function _jvm(target, root, language, backend, closure, programs)
+function _jvm(target, root, language, backend, closure, programs, binding)
 	-- Each target owns an isolated scratch tree, including when multiple
 	-- applications share one project and their builds execute concurrently.
 	local target_name = target:name()
@@ -245,6 +245,20 @@ function _jvm(target, root, language, backend, closure, programs)
 	local compiler_path = table.concat(jars, separator)
 	local platform = assert(target:values("ros.sdk.platform"), "Select the source platform")
 	local platform_root = path.join(root, "include/platform", platform)
+	binding = binding or {}
+	local managed_sources = binding.managed_sources
+	local function exact_sources(language, extension)
+		local result = {}
+		for _, relative in ipairs((managed_sources or {})[language] or {}) do
+			assert(type(relative) == "string" and not path.is_absolute(relative)
+				and not relative:find("..", 1, true) and relative:endswith(extension),
+				"Managed binding source must be an SDK-relative source file")
+			local source = path.join(root, relative)
+			assert(os.isfile(source), "Missing managed binding source: " .. relative)
+			table.insert(result, source)
+		end
+		return result
+	end
 	local sources = os.files(path.join(root, "include/platform/ros/java/**.java"))
 	-- The shared ROS source root owns org.uwvm.roswasm once for both backends.
 	-- Backend-specific maintained bindings and migration interfaces have separate
@@ -264,8 +278,27 @@ function _jvm(target, root, language, backend, closure, programs)
 			(backend == "ros2" and "v0_1_1/src/main/java/**.java" or "v0_1_0/src/main/java/**.java")
 		))
 	)
-	table.join2(sources, os.files(path.join(platform_root, "java/uwvm/**.java")))
-	table.join2(sources, os.files(path.join(platform_root, "java", backend, "**.java")))
+	if managed_sources then
+		table.join2(sources, exact_sources("java", ".java"))
+	else
+		table.join2(sources, os.files(path.join(platform_root, "java/uwvm/**.java")))
+		table.join2(sources, os.files(path.join(platform_root, "java", backend, "**.java")))
+	end
+	-- Profile-specific source roots may not follow a backend directory layout.
+	-- Compile explicitly declared original units in the corresponding frontend.
+	local function declared_sources(key, extension)
+		local selected = {}
+		for _, relative in ipairs(table.wrap(target:values(key))) do
+			assert(type(relative) == "string" and not path.is_absolute(relative)
+				and not relative:find("..", 1, true) and relative:endswith(extension),
+				"JVM profile source must be an SDK-relative source file")
+			local filename = path.join(root, relative)
+			assert(os.isfile(filename), "Missing declared JVM profile source: " .. relative)
+			table.insert(selected, filename)
+		end
+		return selected
+	end
+	table.join2(sources, declared_sources("ros.sdk.jvm_java_sources", ".java"))
 	table.insert(sources, path.join(root, "tools/language/java/Compile.java"))
 	table.join2(sources, os.files(path.join(root, "tools/language/java/teavm-0.13.1/**.java")))
 	if kind == "shared" then
@@ -295,6 +328,7 @@ function _jvm(target, root, language, backend, closure, programs)
 			table.insert(sources, path.absolute(source))
 		end
 	end
+	sources = table.unique(sources)
 	table.sort(sources)
 	local arguments = {
 		"-Xmx2g",
@@ -314,7 +348,12 @@ function _jvm(target, root, language, backend, closure, programs)
 	table.join2(arguments, sources)
 	_run_java(closure, programs, arguments, environment)
 	if language == "kotlin" then
-		local kotlin_sources = os.files(path.join(platform_root, "kotlin", backend, "**.kt"))
+		local kotlin_sources = managed_sources and exact_sources("kotlin", ".kt")
+			or os.files(path.join(platform_root, "kotlin", backend, "**.kt"))
+		if not managed_sources then
+			table.join2(kotlin_sources, os.files(path.join(platform_root, "kotlin/uwvm/**.kt")))
+		end
+		table.join2(kotlin_sources, declared_sources("ros.sdk.jvm_kotlin_sources", ".kt"))
 		for _, source in ipairs(target:sourcefiles()) do
 			table.insert(kotlin_sources, path.absolute(source))
 		end
@@ -396,5 +435,5 @@ function build(target, root, request)
 	local language, backend = _settings(target)
 	_request(target, request, language, backend)
 	local closure, programs = _tools(target, root)
-	_jvm(target, root, language, backend, closure, programs)
+	_jvm(target, root, language, backend, closure, programs, request.binding)
 end

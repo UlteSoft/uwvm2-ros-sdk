@@ -1,0 +1,96 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3916",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6913c03e7ff41ec208d911cfd09e894a13af9b63523b297656c90c6f0c0b9d6d"
+    },
+    {
+      "scope": "example",
+      "path": "main.swift",
+      "sha256": "28b1b7aec9097a6268845b423d1e284d037405e4eb5dd043f018d7b2e5771877"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/swift.json",
+      "sha256": "e91c7ff21a31cce0e3d6acca675e6dfe2e1a761ce2460a5540f4f49373aa9a31"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Package.swift",
+      "sha256": "358e4b9d15cf094a310b161a0a4c86ab36fa4cfb58ba2e8714e6ae2a99819570"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/NativeCommand.swift",
+      "sha256": "81bc006814a11f23459c5293995a842e472ab2791316e84fcce351b3150331d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/CRosWasm/module.modulemap",
+      "sha256": "06b324428c51609a50eb3b349d704eccc9636b2d148c934f3c5b1502746d4030"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+      "sha256": "ce36bdc296944928a49afcdc1e66740533977757f9e31303953c74fec5d90c5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+      "sha256": "9f95d3ab9782d9c04ffa6ca1fbbeb5d1ed90ab04b43a02fd5934e9de442da4b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+      "sha256": "1b0f34eae0a7024b08c365f70cfc0f4efe45155f3c96c1035b22668ed555aab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Wire.swift",
+      "sha256": "2946096cf81e5c682aa9d0fc016098283ef082871a1dd50518f624aa4325b423"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "response_present": false,
+        "length": "18446744073709551615",
+        "wire_hex": "1000000068656c6c6f206e617469766520524f53",
+        "length_present": false
+      }
+    }
+  ],
+  "ros_namespace": "ros2"
+}

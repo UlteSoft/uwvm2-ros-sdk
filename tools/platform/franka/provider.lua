@@ -1,12 +1,22 @@
--- @brief Supply vendor module locations to the unchanged common Zig producer.
--- @param target Actual source target. @param root Installed shared SDK.
--- @param context Public version-one request. @param selected Exact release descriptor.
--- @return Independent request; this descriptor performs no compilation or grant.
-local function zig_request(target, root, context, selected)
+-- @brief Bind one exact release source graph to the public language request.
+-- @details No compiler, runtime authority or version fallback is supplied here.
+local function source_request(target, root, context, selected)
     assert(context and context.api_version == 1, "Use the public provider lifecycle")
     local request = table.clone(context)
-    request.native_action = import("actions", {rootdir = path.join(root, "tools/platform/franka"), anonymous = true})
-        .zig(selected)
+    local language = context.language
+    local native_flows = {call_native_grasp=true, call_native_joint_impedance=true,
+                          cancel_own_grasps=true, lifecycle_grasp_cancel=true}
+    if language == "zig" and native_flows[context.scenario] and "franka" ~= "kinova" then
+        request.native_action = import("actions", {rootdir=path.join(root, "tools/platform/franka"), anonymous=true}).zig(selected)
+        return request
+    end
+    import("core.base.json")
+    local binding = json.loadfile(path.join(root, "share/platform/franka/bindings", language, selected.id .. ".json"))
+    assert(binding.format == "uwvm-vendor-release-binding-v1"
+           and binding.platform == "franka" and binding.language == language
+           and binding.profile == selected.id and binding.backend == context.backend,
+           "Release binding differs from the selected source language or catalog")
+    request.binding = binding
     return request
 end
 -- @file provider.lua
@@ -40,7 +50,7 @@ end
 function configure(target, root, context)
     local selected = selection(target, root)
     if target:values("ros.sdk.language") == "zig" then
-        local request = zig_request(target, root, context, selected)
+        local request = source_request(target, root, context, selected)
         import("language_adapter", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
             .load(root, request).configure(target, root, request)
     end
@@ -49,7 +59,7 @@ function build(target, root, context)
     local selected = selection(target, root)
     if target:values("ros.sdk.language") == "zig" then
         return import("language_adapter", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
-            .build(target, root, zig_request(target, root, context, selected))
+            .build(target, root, source_request(target, root, context, selected))
     end
     local language = target:values("ros.sdk.language")
     if language == "c" or language == "cpp" or language == "objectc" or language == "c_ffi_bridge" then
@@ -74,32 +84,6 @@ function build(target, root, context)
         )
         return
     end
-    local owner = ({
-        as = "native",
-        d = "native",
-        go = "native",
-        haskell = "native",
-        moonbit = "native",
-        nim = "native",
-        odin = "native",
-        rs = "native",
-        swift = "native",
-        tinygo = "native",
-        zig = "native",
-        java = "jvm",
-        kotlin = "jvm",
-        csharp = "dotnet",
-        fsharp = "dotnet",
-        vbnet = "dotnet",
-        py = "python",
-        js = "js",
-        lua = "lua",
-        ruby = "ruby",
-        php = "php",
-        r = "r",
-    })[language]
-    assert(owner, "Unknown declared source language")
-    local folder = path.join(root, "tools/language", owner)
-    assert(os.isfile(path.join(folder, "provider.lua")), "Install the central " .. owner .. " provider")
-    import("provider", { rootdir = folder, anonymous = true }).build(target, root)
+    return import("language_adapter", {rootdir=path.join(root, "tools/xmake"), anonymous=true}).build(
+        target, root, source_request(target, root, context, selected))
 end

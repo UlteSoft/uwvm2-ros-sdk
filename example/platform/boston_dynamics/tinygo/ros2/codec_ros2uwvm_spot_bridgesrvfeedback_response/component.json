@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-401",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "094d29f29a65bb9e91438869cb8d806fa28b0124ee5f2c045a20657a96ac345f"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "20687e25d6d2be1d41023a82bd6c38f5813ce4b1cd1a1134f0aae2429efd783b"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "7eba4292ec9c541a774a16664170bdd3b6f6b4a5fbaaef5148dd9353efe6b91b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/catalog.json",
+      "sha256": "6c043dccd0d008dc7cbae8bf683d0356f3a701a9ff65c8f7112e4885d49108e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/catalogs/ros2/uwvm_spot_bridge/srv/Feedback.srv",
+      "sha256": "234426bd42d9842372b27cea8e760435fe289f623aae46118d3496cd8bd42006"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "45\n"
+    }
+  ]
+}

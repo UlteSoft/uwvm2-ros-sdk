@@ -17,5 +17,15 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb"
+    },
+    {
+      "name": "doosan/ruby/ros1/doosan-ros1-master-complete/records",
+      "path": "include/platform/doosan/ruby/ros1/doosan-ros1-master-complete/records.rb"
+    }
+  ]
 }

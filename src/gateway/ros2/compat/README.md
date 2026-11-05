@@ -19,10 +19,11 @@ states. Historical Noetic/Jazzy evidence remains evidence for its original bytes
 ## Configuration and feature record
 
 `CMakeLists.txt` finds the explicitly selected ament SDK and invokes
-`compat/Probe.cmake`. Select `UWVM_ROS2_CXX_STANDARD=AUTO`, `17`, `20`, or `23`.
+`compat/Probe.cmake`. Select `UWVM_ROS2_CXX_STANDARD=AUTO`, `20`, or `23`.
 AUTO tries the exact effective language standard in increasing order; imported
-SDK requirements cannot silently turn an alleged C++17 probe into C++20.
-The native layer requires a modern C++17-or-later compiler/target library even
+SDK requirements cannot silently change the selected language standard.
+The native layer requires a C++20-or-later compiler/target library for the shared
+fast_io monotonic host clock, even
 when building against older ROS headers. This is independent of the Runtime's
 C++26 compiler and libstdc++ string ABI selection in the external build profile.
 No target architecture or ROS distribution threshold chooses an API branch.

@@ -17,6 +17,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -211,6 +218,7 @@ static inline int roswasmc_bounded_1_motion_capture_ik_armHandPose_valid(roswasm
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_motion_capture_ik_armHandPose_wire_size(roswasmc_bounded_1_motion_capture_ik_armHandPose const* value)
 {
+    (void)value;
     size_t n = 0;
     {
         size_t i;
@@ -383,7 +391,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_armHandPose_encode(r
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_armHandPose_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_armHandPose* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_armHandPose next = {0};
+    roswasmc_bounded_1_motion_capture_ik_armHandPose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 136u || length > 136u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -683,7 +691,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_armHandPoseFree_enco
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_armHandPoseFree_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_armHandPoseFree* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_armHandPoseFree next = {0};
+    roswasmc_bounded_1_motion_capture_ik_armHandPoseFree next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 84u || length > 212u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -742,6 +750,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeRequest_wire_size(roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeRequest const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     return n;
@@ -801,7 +810,7 @@ static inline uint32_t
                                                                          size_t length,
                                                                          roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeRequest* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeRequest next = {0};
+    roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 1u || length > 1u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -860,6 +869,7 @@ static inline int
 static inline size_t
     roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeResponse_wire_size(roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeResponse const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     return n;
@@ -919,7 +929,7 @@ static inline uint32_t
                                                                           size_t length,
                                                                           roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeResponse* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeResponse next = {0};
+    roswasmc_bounded_1_motion_capture_ik_changeArmCtrlModeResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 1u || length > 1u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1019,6 +1029,7 @@ static inline int roswasmc_bounded_1_motion_capture_ik_handPose_valid(roswasmc_b
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_motion_capture_ik_handPose_wire_size(roswasmc_bounded_1_motion_capture_ik_handPose const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1146,7 +1157,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_handPose_encode(rosw
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_handPose_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_handPose* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_handPose next = {0};
+    roswasmc_bounded_1_motion_capture_ik_handPose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 48u || length > 48u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1282,7 +1293,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_ikSolveError_encode(
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_ikSolveError_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_ikSolveError* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_ikSolveError next = {0};
+    roswasmc_bounded_1_motion_capture_ik_ikSolveError next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 100u || length > 356u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1390,6 +1401,7 @@ static inline int roswasmc_bounded_1_motion_capture_ik_ikSolveParam_valid(roswas
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_motion_capture_ik_ikSolveParam_wire_size(roswasmc_bounded_1_motion_capture_ik_ikSolveParam const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1532,7 +1544,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_ikSolveParam_encode(
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_ikSolveParam_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_ikSolveParam* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_ikSolveParam next = {0};
+    roswasmc_bounded_1_motion_capture_ik_ikSolveParam next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 56u || length > 56u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1645,7 +1657,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_recordArmHandPose_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_1_motion_capture_ik_recordArmHandPose* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_recordArmHandPose next = {0};
+    roswasmc_bounded_1_motion_capture_ik_recordArmHandPose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 272u || length > 272u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1761,7 +1773,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_recordArmHandPoseFre
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_motion_capture_ik_recordArmHandPoseFree* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_recordArmHandPoseFree next = {0};
+    roswasmc_bounded_1_motion_capture_ik_recordArmHandPoseFree next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 168u || length > 424u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2055,7 +2067,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_robotArmQVVD_encode(
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_robotArmQVVD_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_robotArmQVVD* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_robotArmQVVD next = {0};
+    roswasmc_bounded_1_motion_capture_ik_robotArmQVVD next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 396u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2109,6 +2121,7 @@ static inline int roswasmc_bounded_1_time_valid(roswasmc_bounded_1_time const* v
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_time_wire_size(roswasmc_bounded_1_time const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 4;
     n += 4;
@@ -2164,7 +2177,7 @@ static inline uint32_t roswasmc_bounded_1_time_encode(roswasmc_bounded_1_time co
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_1_time_decode(void const* input, size_t length, roswasmc_bounded_1_time* value)
 {
-    roswasmc_bounded_1_time next = {0};
+    roswasmc_bounded_1_time next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 8u || length > 8u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2295,7 +2308,7 @@ static inline uint32_t roswasmc_bounded_1_std_msgs_Header_encode(roswasmc_bounde
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_1_std_msgs_Header_decode(void const* input, size_t length, roswasmc_bounded_1_std_msgs_Header* value)
 {
-    roswasmc_bounded_1_std_msgs_Header next = {0};
+    roswasmc_bounded_1_std_msgs_Header next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 272u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2512,7 +2525,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_robotHandPosition_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_1_motion_capture_ik_robotHandPosition* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_robotHandPosition next = {0};
+    roswasmc_bounded_1_motion_capture_ik_robotHandPosition next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 792u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2632,7 +2645,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_twoArmHandPose_encod
 static inline uint32_t
     roswasmc_bounded_1_motion_capture_ik_twoArmHandPose_decode(void const* input, size_t length, roswasmc_bounded_1_motion_capture_ik_twoArmHandPose* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_twoArmHandPose next = {0};
+    roswasmc_bounded_1_motion_capture_ik_twoArmHandPose next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 288u || length > 544u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2773,7 +2786,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmd_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmd* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmd next = {0};
+    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmd next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 346u || length > 602u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -2894,7 +2907,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseFree_d
                                                                                       size_t length,
                                                                                       roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseFree* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseFree next = {0};
+    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseFree next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 184u || length > 696u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -3038,7 +3051,7 @@ static inline uint32_t roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmdFre
                                                                                          size_t length,
                                                                                          roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmdFree* value)
 {
-    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmdFree next = {0};
+    roswasmc_bounded_1_motion_capture_ik_twoArmHandPoseCmdFree next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 242u || length > 754u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

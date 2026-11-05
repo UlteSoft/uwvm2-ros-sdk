@@ -8916,19 +8916,6 @@ INTERFACES <- list(
     )
 )
 
-#' @brief Construct one complete value with native defaults and strict original field names.
-#' @param symbol Exact source-derived record symbol.
-#' @param values Named list of original field overrides.
-#' @return Owned complete record; validation failures raise an R condition.
-record <- function(symbol, values = list()) { roswasm::record(SCHEMAS, symbol, values) }
 
-#' @brief Encode every field under complete finite bounds.
-#' @param value Complete generated value.
-#' @return Owned raw vector; malformed values raise a condition before publication.
-encode <- function(value) { roswasm::encode(SCHEMAS, value) }
-
-#' @brief Transactionally decode exactly one complete canonical value.
-#' @param symbol Original full record symbol.
-#' @param bytes Whole raw-vector input; trailing or truncated input is rejected.
-#' @return Fresh complete value or a codec condition.
-decode <- function(symbol, bytes) { roswasm::decode(SCHEMAS, symbol, bytes) }
+# Bind original complete descriptors to the shared in-Wasm R codec factory.
+UwvmGeneratedRecords <- UwvmRos$records(SCHEMAS)

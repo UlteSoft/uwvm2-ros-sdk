@@ -1,0 +1,198 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "nvidia-complete-codec-3301",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual CPU canonical codec guest: independent complete byte oracle, input-dependent values and malformed input/transactional destination checks. No ROS resource or GPU/simulator execution is claimed.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/as/console.ts",
+      "sha256": "824f4bb5338b380f9166f2864f89eff847dd89bcfe94497ea38290c76494dbf7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/as/ros2/complete/records.ts",
+      "sha256": "affdee5f494658bac7f3ef4bb4c3040b7f2ad125dad5fa80e87177cc299498c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/as/ros2/isaac-ros-complete/bounded_records.ts",
+      "sha256": "169785f488dddf1f3c0fc687ea00e97b0df296027a490a7aa5fbaf45b5040d68"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/api.ts",
+      "sha256": "fe15a451e36c7c4b67b83f1af14f95ac62d1c99b20efdcd80779800ff63a392c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/codecs.ts",
+      "sha256": "7c38acbbb930d20a2d874ef000d1de6eed47e63a3e5ecdbf4145cec1aca98d35"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/command.ts",
+      "sha256": "3636af7f90aa2bfc976d79b2fa44bc57c6d1cc78046daf025bf8286b0d2222cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/custom-types/generated-r3/fixed_records.ts",
+      "sha256": "3e7c63a6769f75be9d27bcdfd6c75c5067bfe3d39335e40a8b05f941ae22e264"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/events.ts",
+      "sha256": "c70a1b6e19b4209e5e47d4e9b25e529a4b7b2b771f08c496a5281fd77ab8c9e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/local.ts",
+      "sha256": "54a66cc498a1022ea52870619479104c2a0216acd5a09fb77fa09cd942fa824c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/package.json",
+      "sha256": "a6f7eb14b66268b4aa7ff7404159c04f9574dc3db82ffc33c43621d5163b9dea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros1/raw.ts",
+      "sha256": "7d46af1d4b03ba2674913977f6ecd2618f05ecaeb03dcf4fcdf3d048b58e6e69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros1/roswasm.ts",
+      "sha256": "69047a4b6f13e8ced919236dcf381da99306a1319a168686714b204091b9cf37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/raw.ts",
+      "sha256": "9a89352857d0d77e20e5e994203a0ffceea4056b53bf930fe0321d4e8f58ad1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/checked.ts",
+      "sha256": "25ded41ef5862ba7b664cc256e7990f9a40d3bbeb9c0bddea8d26143a3585d09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/imports.ts",
+      "sha256": "53bca3a547feed701d6f69f9ca2ae587f22476ec1d2426ba3413100294af2aba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/owned.ts",
+      "sha256": "2d1439f04c68434045c818b40227b1abc9b606b92b432e6eb2ce847041d28f46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/raw.ts",
+      "sha256": "b32f7a8b9da72d9f1d10af2e170d1d444db901e71c49f8922be3cf8cd957f641"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/wire.ts",
+      "sha256": "1bda923f824cc9ca49e8e4444a401c30702956ae18ccc121b92bb6c33359e8bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/roswasm.ts",
+      "sha256": "59cc2fd1eaae52800d7064b9bfaff8f43828a9d299d204633d44599c03f81296"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/roswasm.ts",
+      "sha256": "e7337276ea366379c351ff2baa02f9a09eed220716a1dc80b54e6721180be40a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "1b31ee1a7b66183bee2d7cd47bc60ad556508a20429d88b15a0c1f35807cdecd"
+    },
+    {
+      "scope": "example",
+      "path": "main.ts",
+      "sha256": "3d29c75bacc17425e7ff5366b9d9cb8110eb548215e13e1444793a5fff193885"
+    }
+  ],
+  "cases": [
+    {
+      "id": "seed-0",
+      "arguments": [
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffff000000000300000063616d0100000008000000746167333668313100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f0000000000000440000000000000000000000000000000400000000000001440000000000000000000000000000008400000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f0000000000000000000000000000903f000000000000a03f000000000000a83f000000000000b03f000000000000b43f000000000000b83f000000000000bc3f000000000000c03f000000000000c23f000000000000c43f000000000000c63f000000000000c83f000000000000ca3f000000000000cc3f000000000000ce3f000000000000d03f000000000000d13f000000000000d23f000000000000d33f000000000000d43f000000000000d53f000000000000d63f000000000000d73f000000000000d83f000000000000d93f000000000000da3f000000000000db3f000000000000dc3f000000000000dd3f000000000000de3f000000000000df3f000000000000e03f000000000080e03f000000000000e13f000000000080e13f\n"
+    },
+    {
+      "id": "seed-17",
+      "arguments": [
+        "17"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffff110000000300000063616d010000000800000074616733366831311100000000000000000001400000000000000000000000000000000000000000000031400000000000000000000000000000000000000000000032400000000000000440000000000000000000000000000033400000000000001440000000000000000000000000000034400000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f00000000000031400000000000043140000000000008314000000000000c314000000000001031400000000000143140000000000018314000000000001c314000000000002031400000000000243140000000000028314000000000002c314000000000003031400000000000343140000000000038314000000000003c314000000000004031400000000000443140000000000048314000000000004c314000000000005031400000000000543140000000000058314000000000005c314000000000006031400000000000643140000000000068314000000000006c314000000000007031400000000000743140000000000078314000000000007c314000000000008031400000000000843140000000000088314000000000008c3140\n"
+    },
+    {
+      "id": "seed-4294967295",
+      "arguments": [
+        "4294967295"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffffffd794110300000063616d01000000080000007461673336683131ffffff7f0000e0ffffffbf41000000000000000000000000000000000000e0ffffffef4100000000000000000000000000000000000000000000f04100000000000004400000000000000000000010000000f04100000000000014400000000000000000000020000000f0410000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000084000000000002008400000000000400840000000000060084000000000008008400000000000a008400000000000c008400000000000e00840000000000000094000000000002009400000000000400940000000000060094000000000008009400000000000a009400000000000c009400000000000e009400000000000000a400000000000200a400000000000400a400000000000600a400000000000800a400000000000a00a400000000000c00a400000000000e00a400000000000000b400000000000200b400000000000400b400000000000600b400000000000800b400000000000a00b400000000000c00b400000000000e00b400000000000000c400000000000200c400000000000400c400000000000600c40\n"
+    },
+    {
+      "id": "negative-seed",
+      "arguments": [
+        "-1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "overflow-seed",
+      "arguments": [
+        "4294967296"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "nondecimal-seed",
+      "arguments": [
+        "x"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -45,16 +45,19 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk_root = root
 set_policy("run.autobuild", false)
 
 -- @brief Compile only the declared genuine source into one standalone Wasm command.
 target("unitree-odin-ros1-motor_state")
+    set_targetdir("build/artifacts")
     set_language("odin")
     set_ros_platform("unitree")
     set_ros1_version("noetic")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_arch(get_config("arch") or "wasm32")
     add_files("main.odin", {rule = "ros.wasm.source"})
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

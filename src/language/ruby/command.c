@@ -119,9 +119,14 @@ static int ruby_application(int argc, char** argv)
     {
         return ruby_cleanup(startup);
     }
+    /* ruby_options consumed only the internal bootstrap options. Restore the
+       real command arguments using CRuby\'s public API, excluding argv[0]. */
+    ruby_set_argv(argc > 0 ? argc - 1 : 0, argc > 0 ? argv + 1 : argv);
     VALUE root = rb_define_module("Uwvm");
     VALUE native = rb_define_module_under(root, "Native");
+#if !defined(UWVM_LANGUAGE_PURE_WASI)
     rb_define_singleton_method(native, "invoke", invoke, -1);
+#endif
     rb_define_singleton_method(native, "pause_ms", pause_ms, 1);
     VALUE arguments = rb_ary_new_capa(argc);
     for (int index = 0; index < argc; ++index)

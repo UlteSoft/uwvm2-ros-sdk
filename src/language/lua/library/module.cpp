@@ -16,6 +16,10 @@
 
 static lua_State* state;
 static bool entered;
+#if defined(UWVM_COMMAND_EMBEDDING)
+static int command_argc;
+static char** command_argv;
+#endif
 
 /** @brief Close the retained interpreter exactly once without sending a ROS call. */
 extern "C" uint32_t uwvm_module_close()
@@ -45,6 +49,15 @@ static uint32_t initialize()
         return 12;
     }
     luaL_openlibs(state);
+#if defined(UWVM_COMMAND_EMBEDDING)
+    lua_createtable(state, command_argc, 1);
+    for(int index = 0; index < command_argc; ++index)
+    {
+        lua_pushstring(state, command_argv[index]);
+        lua_rawseti(state, -2, index);
+    }
+    lua_setglobal(state, "arg");
+#endif
 #if defined(UWVM_CONSUMER_HOOKS)
     if(uwvm_install_foreign(state) != 0)
     {
@@ -115,12 +128,19 @@ extern "C" uint64_t uwvm_module_apply(int32_t a, int32_t b)
  * @details No source-defined function is required for a command. Module libraries
  * instead retain their state until their explicit scalar close export is called.
  */
-extern "C" uint32_t uwvm_module_execute(void)
+extern "C" uint32_t uwvm_module_execute(int argc, char** argv)
 {
     if(entered)
     {
         return 16;
     }
+#if defined(UWVM_COMMAND_EMBEDDING)
+    command_argc = argc;
+    command_argv = argv;
+#else
+    (void)argc;
+    (void)argv;
+#endif
     uint32_t error = initialize();
     return error != 0 ? error : uwvm_module_close();
 }

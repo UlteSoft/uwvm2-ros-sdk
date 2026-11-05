@@ -1,0 +1,3 @@
+module uwvm2.local/examples/platform/kinova/go/ros2/humble/decode-state
+
+go 1.24

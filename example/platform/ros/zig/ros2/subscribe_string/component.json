@@ -1,0 +1,91 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3939",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b9a76294b9fc9c63569644ae178d74f17396efe325c68c6365c4c106197ba485"
+    },
+    {
+      "scope": "example",
+      "path": "main.zig",
+      "sha256": "d5c5d28d94d7ad7cf73c58004c996021e04452b92d1755717acab094124687df"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/zig.json",
+      "sha256": "f3263be3c8a596fe5b7a9b94536c105db5a1ecca727f5d23901c8edf959fef61"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros1.zig",
+      "sha256": "64a31ccc7acc19d5bd25a269e941e97260ed6909a8721c01047d635382157f50"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/wire.zig",
+      "sha256": "d16dd6ebc1aef414d96bf70ce74486ed3e0135f1d8037200ec3597abf66f9794"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/client.zig",
+      "sha256": "2c3d41b2819c07ad553be56693e155d65aab93f9e566f663b6ee5eed09e7f36d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/ros2.zig",
+      "sha256": "094635a63b41bab99a2a14eec6e4488129380912bf109a49b15eaba6626b5eb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/native_command.zig",
+      "sha256": "3d1b90cd85d2e44dc463956d39d94a8552dcb4941f16dfbb8508e2372f0cbd82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/zig/node.zig",
+      "sha256": "3a364683e4a1dad965502432ab802d9fd01de07b0880ae15b60a24927a9ca4a9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "response_present": false,
+        "length": "18446744073709551615",
+        "wire_hex": "",
+        "length_present": false
+      }
+    }
+  ],
+  "ros_namespace": "ros2"
+}

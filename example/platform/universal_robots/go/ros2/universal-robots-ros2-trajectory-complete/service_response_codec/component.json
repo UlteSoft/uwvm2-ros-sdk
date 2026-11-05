@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4899",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "d541b6b68fedf378c720e8c78deb5d8e5aa2517aed21f06554f22e546e0a22c2"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "59dc5c5ec8a8892ca4a1c410c067b8fd16be413ec4818f51ce864d5a1ae8a4ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/go/universal-robots-ros2-trajectory-complete.json",
+      "sha256": "b8d633c019e47f44427fafce0792c72d7f759eeaeb8ea9f839ecd9da636fb09e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-trajectory-complete.ir.json",
+      "sha256": "b07460b64ac1367c17e4f2ad56016cbb592fd2c058ce94aeaa689b8fbf76a498"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "93869381825eea166f02026f23e2bfa967e942a30ec96b245ebe5e291d2e33f0"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_dashboard_msgs/srv/AddToLog_Response",
+        "bytes": 5,
+        "wire_hex": "0000000000"
+      }
+    }
+  ]
+}

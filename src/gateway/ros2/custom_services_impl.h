@@ -6,6 +6,7 @@
 #ifndef UWVM_ROS2_CUSTOM_SERVICE_SHARD_IMPLEMENTATION
 # error "Custom Service typed definitions belong only to generated shard translation units"
 #endif
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "custom_services.h"
 #include <tuple>
 
@@ -20,20 +21,23 @@ namespace uwvm2::ros_gateway::ros2_custom_services
         auto item{ipc::find_custom_service(2, cap.type)};
         if(!item || !ipc::validate_custom_service_request(*item, "service.call", bytes.data(), bytes.size())) { return {22, {}}; }
         if(bytes.size() > limit(cap, "max-request-bytes")) { return {90, {}}; }
-        auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
+        auto until{request_deadline(cap,timeout)};
         auto request{std::make_shared<typename Service::Request>()};
         if(!RequestCodec::decode(bytes.data(), bytes.size(), *request)) { return {22, {}}; }
+        if(::uwvm2::utils::host_clock::now()>=until)return {110,{}};
+        auto serialization=native_serialization_check(*request);
+        if(serialization) return {serialization,{}};
         auto client{ros2_service_client::acquire<Service>(clients_, node_, cap, cap.resource)};
         if(!client) { return {95, {}}; }
-        auto remaining{until - std::chrono::steady_clock::now()};
-        if(remaining <= decltype(remaining)::zero() || (!client->service_is_ready() && !client->wait_for_service(remaining)) ||
-           std::chrono::steady_clock::now() >= until)
-        {
-            return {110, {}};
-        }
-        auto pending{client->async_send_request(request)};
-        ros2_service_client::pending_request cleanup{clients_, cap.alias, client, pending};
-        if(pending.wait_until(until) != std::future_status::ready || std::chrono::steady_clock::now() >= until) { return {110, {}}; }
+        auto ready{ros2_service_client::wait_ready(node_,client,until)};
+        if(ready) return {ready,{}};
+        auto completed{std::make_shared<ros::synchronous_quota_wait>()};
+        if(!completed->select_exit(ros::synchronous_wait_context::native_exit_policy())) return {125,{}};
+        if(::uwvm2::utils::host_clock::now()>=until) return {110,{}};
+        auto pending{client->async_send_request(request,[completed](typename rclcpp::Client<Service>::SharedFuture){completed->notify();})};
+        ros2_service_client::pending_request cleanup{clients_,cap.alias,client,pending};
+        auto status{ros2_service_client::wait_response(pending,*completed,until)};
+        if(status) return {status,{}};
         auto response{pending.get()};
         cleanup.complete();
         std::vector<std::uint8_t> out;
@@ -42,7 +46,7 @@ namespace uwvm2::ros_gateway::ros2_custom_services
         if(response_size > limit(cap, "max-response-bytes")) { return {90, {}}; }
         if(!ResponseCodec::encode(*response, out) || !ipc::validate_custom_service_output(*item, "service.call", out.data(), out.size())) { return {22, {}}; }
         if(out.size() > limit(cap, "max-response-bytes")) { return {90, {}}; }
-        return std::chrono::steady_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{0, std::move(out)};
+        return ::uwvm2::utils::host_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{0, std::move(out)};
     }
 
     template <class Service, class RequestCodec, class ResponseCodec>
@@ -86,9 +90,12 @@ namespace uwvm2::ros_gateway::ros2_custom_services
                                        {
                                            typename Service::Response native{};
                                            if(!ResponseCodec::decode(response.data(), response.size(), native)) { return 22; }
-                                           if(std::chrono::steady_clock::now() >= until) { return 110; }
+                                           if(::uwvm2::utils::host_clock::now() >= until) { return 110; }
+                                           auto serialization=native_serialization_check(native);
+                                           if(serialization) return serialization;
+                                           if(::uwvm2::utils::host_clock::now()>=until) return 110;
                                            service->send_response(*header, native);
-                                           return std::chrono::steady_clock::now() >= until ? 110 : 0;
+                                           return ::uwvm2::utils::host_clock::now() >= until ? 110 : 0;
                                        });
                       }};
         auto configured{ros2_qos::configured(cap)};

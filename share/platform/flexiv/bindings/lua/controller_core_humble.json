@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "lua",
+  "profile": "controller_core_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/lua/ros2/flexiv_controller_core_humble_complete",
+  "bundle_manifest": "share/platform/flexiv/bindings/lua/controller_core_humble-bundle.json"
+}

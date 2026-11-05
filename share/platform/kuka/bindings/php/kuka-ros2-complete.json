@@ -17,5 +17,19 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/kuka/flows"
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "modules": [
+    {
+      "name": "RosWasm/Word",
+      "path": "include/platform/ros/php/RosWasm/Word.php"
+    },
+    {
+      "name": "RosWasm/Wire",
+      "path": "include/platform/ros/php/RosWasm/Wire.php"
+    },
+    {
+      "name": "kuka/php/ros2/kuka-ros2-complete/records",
+      "path": "include/platform/kuka/php/ros2/kuka-ros2-complete/records.php"
+    }
+  ]
 }

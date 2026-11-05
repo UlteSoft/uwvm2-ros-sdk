@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "kotlin",
+  "profile": "ros2_jazzy_v2_2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/kotlin/ros2/flexiv-ros2-jazzy-v2-2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/flexiv/java/ros2/flexiv-ros2-jazzy-v2-2-complete/org/uwvm/flexiv/ros2jazzyv22/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/flexiv/kotlin/ros2/flexiv-ros2-jazzy-v2-2-complete/Records.kt"
+    ]
+  }
+}

@@ -146,7 +146,8 @@ Outcome run(uint operation, const(ubyte)[] capabilityAlias) @nogc nothrow
     if(operation == 1)
     {
         immutable sample = "hello native ROS";
-        facts.stringValue.data.data[0..sample.length] = cast(const(ubyte)[]) sample;
+        foreach (index, byteValue; cast(const(ubyte)[]) sample)
+            facts.stringValue.data.data[index] = byteValue;
         facts.stringValue.data.size = cast(uint) sample.length;
         size_t extent;
         facts.primary = encode(facts.stringValue, facts.bytes[], extent);

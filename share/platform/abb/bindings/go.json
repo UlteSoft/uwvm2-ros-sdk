@@ -18,5 +18,34 @@
     "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/abb/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_actions": {
+    "ros1": {
+      "format": "uwvm-native-action-v1",
+      "language": "go",
+      "go": {
+        "modules": [
+          "include/platform/ros/go",
+          "include/platform/abb/go/ros1/abb-ros1-complete"
+        ],
+        "tags": [
+          "ros1"
+        ]
+      }
+    },
+    "ros2": {
+      "format": "uwvm-native-action-v1",
+      "language": "go",
+      "go": {
+        "modules": [
+          "include/platform/ros/go",
+          "include/platform/abb/go/ros2/abb-ros2-complete",
+          "include/platform/abb/go/observation"
+        ],
+        "tags": [
+          "ros2"
+        ]
+      }
+    }
+  }
 }

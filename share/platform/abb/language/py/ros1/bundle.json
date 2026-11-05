@@ -1,0 +1,53 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "ros",
+      "file": "include/platform/ros/py/ros/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5",
+      "package": true
+    },
+    {
+      "name": "ros.py",
+      "file": "include/platform/ros/py/ros/py/__init__.py",
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5",
+      "package": true
+    },
+    {
+      "name": "ros.py.wire",
+      "file": "include/platform/ros/py/ros/py/wire.py",
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
+    },
+    {
+      "name": "ros.py.transport",
+      "file": "include/platform/ros/py/ros/py/transport.py",
+      "sha256": "f4dac7ca14ceb9462ada69936ad0e2798d26593ec2b17be0a110b26bc0c42a6f"
+    },
+    {
+      "name": "abb",
+      "file": "include/platform/abb/py/abb/__init__.py",
+      "sha256": "895f0d1aefe2bf172578e0409b101e662d042238f3fa3d388dc6067ddcefdf6b",
+      "package": true
+    },
+    {
+      "name": "abb.py",
+      "file": "include/platform/abb/py/abb/py/__init__.py",
+      "sha256": "895f0d1aefe2bf172578e0409b101e662d042238f3fa3d388dc6067ddcefdf6b",
+      "package": true
+    },
+    {
+      "name": "abb.py.ros1",
+      "file": "include/platform/abb/py/abb/py/__init__.py",
+      "sha256": "895f0d1aefe2bf172578e0409b101e662d042238f3fa3d388dc6067ddcefdf6b",
+      "package": true
+    },
+    {
+      "name": "abb.py.ros1.records",
+      "file": "include/platform/abb/py/ros1/records.py",
+      "sha256": "8ba68ce12f0938cfcd2b65c1c3086f9b59f41aa73572908d8e2691950c9f0c24"
+    }
+  ],
+  "default_authority": []
+}

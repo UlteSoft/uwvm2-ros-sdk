@@ -17,5 +17,33 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/kuka/flows"
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "rs",
+    "rust": {
+      "cfg": [
+        "feature=\"alloc\"",
+        "feature=\"ros2\""
+      ],
+      "crates": [
+        {
+          "name": "roswasm",
+          "source": "include/platform/ros/rs/src/lib.rs",
+          "dependencies": []
+        },
+        {
+          "name": "kuka",
+          "source": "include/platform/kuka/rs/lib.rs",
+          "dependencies": [
+            "roswasm"
+          ]
+        }
+      ],
+      "imports": [
+        "roswasm",
+        "kuka"
+      ]
+    }
+  }
 }

@@ -2,8 +2,10 @@
  * UWVM2 ROS Runtime Extension. APL-2.0.                     *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "config.h"
 #include "event_stream.h"
+#include "quota_wait.h"
 
 namespace uwvm2::ros_gateway
 {
@@ -22,15 +24,13 @@ namespace uwvm2::ros_gateway
     {
         if(receiver.operation!="action.receive-feedback"&&receiver.operation!="action.receive-result") { return false; }
         if(sender.resource!=receiver.resource||sender.type!=receiver.type||sender.type_identity!=receiver.type_identity) { return false; }
-        for(auto key:{"max-event-queue-depth","max-event-queue-bytes","overflow-policy","max-feedback-bytes","max-result-bytes"})
-        { if(field(sender,key)!=field(receiver,key)) { return false; } }
-        if(field(sender,"overflow-policy")=="backpressure")
-        { for(auto key:{"max-pending-events","max-pending-event-bytes"}) { if(field(sender,key)!=field(receiver,key)) { return false; } } }
+        for(auto key:{"max-event-queue-depth","max-event-queue-bytes","max-feedback-bytes","max-result-bytes"})
+        {if(limit(sender,key)!=limit(receiver,key))return false;}
+        if(field(sender,"overflow-policy")!=field(receiver,"overflow-policy"))return false;
         return version!=2||ros::equal_action_server_qos_contract(sender,receiver);
     }
-    // Caller holds the owning Goal mutex. Helpers never sleep or wait for credit
-    // in a native callback. Pending capacity is an explicit separate grant and
-    // is exactly one; a second full push is refused, rather than blocking DDS.
+    // Caller holds the owning Goal mutex. Only the explicit locked admission
+    // helper releases it while waiting; the native message remains owned here.
     template<class Goal> inline bool feedback_fits(Goal const& goal,std::size_t bytes)
     { auto maximum{limit(goal.capability,"max-event-queue-bytes")};return goal.feedback.size()<limit(goal.capability,"max-event-queue-depth")&&goal.feedback_bytes<=maximum&&bytes<=maximum-goal.feedback_bytes; }
     template<class Goal> inline void feedback_high_water(Goal& goal) noexcept
@@ -47,26 +47,37 @@ namespace uwvm2::ros_gateway
     {
         auto& stats{goal.feedback_stats};auto bump=[](std::uint64_t& value){if(value!=UINT64_MAX) { ++value; }};
         if(bytes.size()>limit(goal.capability,"max-feedback-bytes")) { bump(stats.rejected);return false; }
-        feedback_promote(goal);auto size{bytes.capacity()};auto overflow{field(goal.capability,"overflow-policy")};
+        feedback_promote(goal);auto size{bytes.capacity()};
         if(!goal.feedback_pending&&feedback_fits(goal,size)) { goal.feedback.push_back(std::move(bytes));goal.feedback_bytes+=size;bump(stats.enqueued);feedback_high_water(goal);return true; }
-        if(overflow=="backpressure")
+        bump(stats.admission_refused);bump(stats.rejected);return false;
+    }
+    template<class Goal> inline bool feedback_admit_locked(Goal& goal,std::vector<std::uint8_t> bytes,std::unique_lock<std::mutex>& lock)
+    {
+        auto const size{bytes.capacity()};auto const& cap{goal.capability};
+        if(bytes.size()>limit(cap,"max-feedback-bytes")||size>limit(cap,"max-event-queue-bytes")||!limit(cap,"max-event-queue-depth"))
+            return feedback_admit(goal,std::move(bytes));
+        ros::synchronous_quota_wait waiting;
+        while(!feedback_fits(goal,size))
         {
-            bump(stats.backpressured);
-            if(!goal.feedback_pending&&size<=limit(goal.capability,"max-pending-event-bytes")) { goal.feedback_pending=std::move(bytes);bump(stats.enqueued);feedback_high_water(goal);return true; }
-            bump(stats.admission_refused);return false;
+            bool count_full{goal.feedback.size()>=limit(cap,"max-event-queue-depth")};
+            bool bytes_full{goal.feedback_bytes>limit(cap,"max-event-queue-bytes")-size};
+            auto action=[&](char const* key) {auto configured=ros::quota_setting(cap,key,".on-exhausted");return configured.empty()?field(cap,"overflow-policy")=="wait":configured=="wait";};
+            if((count_full&&!action("max-event-queue-depth"))||(bytes_full&&!action("max-event-queue-bytes")))
+                return feedback_admit(goal,std::move(bytes));
+            auto exit_wait{(count_full&&ros::quota_wait_on_exit(cap,"max-event-queue-depth"))||(bytes_full&&ros::quota_wait_on_exit(cap,"max-event-queue-bytes"))};
+            auto status{goal.feedback_quota.wait_locked(waiting,goal.deadline,lock,[&]{return feedback_callback_live(goal.active,goal.error,::uwvm2::utils::host_clock::now()<goal.deadline);},exit_wait)};
+            if(status) {if(goal.feedback_stats.admission_refused!=UINT64_MAX)++goal.feedback_stats.admission_refused;return false;}
         }
-        while(!feedback_fits(goal,size)&&overflow=="drop-oldest"&&!goal.feedback.empty()) { goal.feedback_bytes-=goal.feedback.front().capacity();goal.feedback.pop_front();bump(stats.dropped_oldest); }
-        if(!feedback_fits(goal,size)) { bump(stats.admission_refused);if(overflow=="drop-newest") { bump(stats.dropped_newest); }else { bump(stats.rejected); }return false; }
-        goal.feedback.push_back(std::move(bytes));goal.feedback_bytes+=size;bump(stats.enqueued);feedback_high_water(goal);return true;
+        return feedback_admit(goal,std::move(bytes));
     }
     template<class Goal> inline ipc::call_result feedback_take(Goal& goal)
     {
         feedback_promote(goal);if(goal.feedback.empty()) { return {11,{}}; }
         auto size{goal.feedback.front().capacity()};auto value{std::move(goal.feedback.front())};goal.feedback.pop_front();goal.feedback_bytes-=size;
-        if(goal.feedback_stats.dequeued!=UINT64_MAX) { ++goal.feedback_stats.dequeued; }feedback_promote(goal);return {0,std::move(value)};
+        if(goal.feedback_stats.dequeued!=UINT64_MAX) { ++goal.feedback_stats.dequeued; }feedback_promote(goal);goal.feedback_quota.notify_waiters();return {0,std::move(value)};
     }
     template<class Goal> inline void feedback_discard(Goal& goal) noexcept
-    { goal.feedback.clear();goal.feedback_pending.reset();goal.feedback_bytes=0;if(goal.feedback_stats.closed!=UINT64_MAX) { ++goal.feedback_stats.closed; } }
+    { goal.feedback.clear();goal.feedback_pending.reset();goal.feedback_bytes=0;goal.feedback_quota.notify_waiters();if(goal.feedback_stats.closed!=UINT64_MAX) { ++goal.feedback_stats.closed; } }
     // Trusted fixture snapshot; caller holds Goal's mutex, no payload copied.
     template<class Goal> inline event_queue_statistics feedback_statistics(Goal const& goal) noexcept
     { auto value{goal.feedback_stats};value.depth=goal.feedback.size();value.bytes=goal.feedback_bytes;value.pending_depth=goal.feedback_pending?1:0;value.pending_bytes=goal.feedback_pending?goal.feedback_pending->capacity():0;return value; }

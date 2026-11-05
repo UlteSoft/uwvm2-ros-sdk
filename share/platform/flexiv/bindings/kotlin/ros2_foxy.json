@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "kotlin",
+  "profile": "ros2_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/kotlin/ros2/flexiv-ros2-foxy-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/flexiv/java/ros2/flexiv-ros2-foxy-complete/org/uwvm/flexiv/ros2foxy/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/flexiv/kotlin/ros2/flexiv-ros2-foxy-complete/Records.kt"
+    ]
+  }
+}

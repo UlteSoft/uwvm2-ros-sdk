@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "kuka/js/ros2/kuka-ros2-complete/bounded_interfaces.mjs",
+      "file": "include/platform/kuka/js/ros2/kuka-ros2-complete/bounded_interfaces.mjs",
+      "sha256": "07a971cba80085d3c5a2aa16c41c4a69e64711a352aae67ed792213434b74949"
+    },
+    {
+      "name": "kuka/js/ros2/kuka-ros2-complete/bounded_records.mjs",
+      "file": "include/platform/kuka/js/ros2/kuka-ros2-complete/bounded_records.mjs",
+      "sha256": "e2fc9df16521d183d2719445c257d9b9437261bfb4261221dae5c3706ea4b740"
+    }
+  ],
+  "default_authority": []
+}

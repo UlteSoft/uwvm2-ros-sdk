@@ -1,0 +1,88 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-1620",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "5eb1394fac0fb1782ed2b0d22e6f1f87ee58a3d063e8b5acec1e76bcba5322e1"
+    },
+    {
+      "scope": "example",
+      "path": "main.swift",
+      "sha256": "63783064deb125e54b7d9028da5f475880b414005938faeacfc32790b1bce7c6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/swift/doosan-ros1-master-complete.json",
+      "sha256": "c2a462abdae7dbee4a32f12ece9dd6840e3c9848cc0502ad48c12e8fb09eebf1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros1-master-complete.ir.json",
+      "sha256": "7e30678b4cec1012915926df9c10f6f6360d2cc2977862760856f05dcc125f03"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/swift_modules.lua",
+      "sha256": "e3afafda9b2f6df93fc0fa092463bcf2d380f6bbfe608c031b07e6578e4a6e60"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+      "sha256": "ce36bdc296944928a49afcdc1e66740533977757f9e31303953c74fec5d90c5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+      "sha256": "9f95d3ab9782d9c04ffa6ca1fbbeb5d1ed90ab04b43a02fd5934e9de442da4b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+      "sha256": "1b0f34eae0a7024b08c365f70cfc0f4efe45155f3c96c1035b22668ed555aab4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/swift/Sources/RosWasm/Wire.swift",
+      "sha256": "2946096cf81e5c682aa9d0fc016098283ef082871a1dd50518f624aa4325b423"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs/RobotState",
+        "bytes": 1484
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@
  * UWVM2 deadline-bounded ROS1 Service transport. APL-2.0.    *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "resources.h"
 #include <ros/serialization.h>
 #include <ros/service_traits.h>
@@ -108,7 +109,7 @@ namespace uwvm2::ros_gateway::ros1_service
 
     inline std::uint32_t failure(ipc::deadline until) noexcept
     {
-        return std::chrono::steady_clock::now() >= until || errno == ETIMEDOUT ? 110u : 107u;
+        return ::uwvm2::utils::host_clock::now() >= until || errno == ETIMEDOUT ? 110u : 107u;
     }
 
     inline bool connect_socket(int fd, sockaddr_storage const& address, socklen_t size, ipc::deadline until)
@@ -124,26 +125,7 @@ namespace uwvm2::ros_gateway::ros1_service
         }
         for(;;)
         {
-            auto left{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
-            if(left <= 0)
-            {
-                errno = ETIMEDOUT;
-                return false;
-            }
-            pollfd ready{fd, POLLOUT, 0};
-            rc = ::poll(&ready, 1, static_cast<int>(std::min<std::int64_t>(left, INT_MAX)));
-            if(rc < 0 && errno == EINTR)
-            {
-                continue;
-            }
-            if(rc <= 0)
-            {
-                if(rc == 0)
-                {
-                    errno = ETIMEDOUT;
-                }
-                return false;
-            }
+            if(!ipc::wait_ready(fd,POLLOUT,until,-1))return false;
             int error{};
             socklen_t bytes{sizeof error};
             if(::getsockopt(fd, SOL_SOCKET, SO_ERROR, &error, &bytes) || bytes != sizeof error)
@@ -269,7 +251,7 @@ namespace uwvm2::ros_gateway::ros1_service
     std::uint32_t call(ros::capability_spec const& cap, Service& native, std::uint32_t timeout, Validator validate_native_body,
                        service_client_pool* pool = nullptr)
     {
-        auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
+        auto until{request_deadline(cap,timeout)};
         auto md5{::ros::service_traits::MD5Sum<Service>::value()};
         auto type{::ros::service_traits::DataType<Service>::value()};
         if(cap.operation != "service.call" || cap.type != type || cap.type_identity != md5)
@@ -285,7 +267,7 @@ namespace uwvm2::ros_gateway::ros1_service
         std::unique_lock<std::timed_mutex> lock{active->mutex, std::defer_lock};
         if(!lock.try_lock_until(until)) { return 110; }
         connection_transaction transaction{pool, cap.alias, active};
-        if(std::chrono::steady_clock::now() >= until) { return 110; }
+        if(::uwvm2::utils::host_clock::now() >= until) { return 110; }
         if(!active->socket)
         {
             sockaddr_storage master{};
@@ -303,18 +285,18 @@ namespace uwvm2::ros_gateway::ros1_service
             // second; an admitted TCPROS request is sent exactly once.
             for(;;)
             {
-                auto left{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
-                if(left <= 0)
+                auto left{ipc::remaining_ms(until)};
+                if(!left)
                 {
                     return 110;
                 }
                 ros1_resources::bounded_xmlrpc lookup{::ros::master::getHost(), static_cast<int>(::ros::master::getPort()), 4096};
-                auto lookup_error{lookup.execute_bounded("lookupService", arguments, result, static_cast<std::uint32_t>(left))};
+                auto lookup_error{lookup.execute_bounded("lookupService", arguments, result, *left)};
                 if(lookup_error)
                 {
                     return lookup_error;
                 }
-                if(std::chrono::steady_clock::now() >= until)
+                if(::uwvm2::utils::host_clock::now() >= until)
                 {
                     return 110;
                 }
@@ -330,12 +312,13 @@ namespace uwvm2::ros_gateway::ros1_service
                     }
                     break;
                 }
-                left = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count();
-                if(left <= 0)
+                left = ipc::remaining_ms(until);
+                if(!left)
                 {
                     return 110;
                 }
-                (void)::poll(nullptr, 0, static_cast<int>(std::min<std::int64_t>(left, 200)));
+                auto* waiter=ros::synchronous_wait_context::waiter();if(!waiter)return 95;
+                if(waiter->until(std::min(until,::uwvm2::utils::host_clock::now()+std::chrono::milliseconds(200)))!=ros::quota_wait_result::ready)return 125;
             }
             auto const& uri{static_cast<std::string&>(result[2])};
             sockaddr_storage address{};
@@ -459,7 +442,7 @@ namespace uwvm2::ros_gateway::ros1_service
         {
             return 22;
         }
-        if(std::chrono::steady_clock::now() >= until) { return 110; }
+        if(::uwvm2::utils::host_clock::now() >= until) { return 110; }
         transaction.completed = true;
         return 0;
     }

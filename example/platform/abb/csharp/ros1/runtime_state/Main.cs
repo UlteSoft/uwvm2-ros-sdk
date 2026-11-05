@@ -7,7 +7,7 @@
  * required; no grant, replay or controller admission is implicit.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.Abb;
 using Uwvm.Abb.Ros1;
 
 namespace Abb.Examples
@@ -22,15 +22,15 @@ namespace Abb.Examples
         {
             if(args.Length != 1)
                 return 22;
-            var facts = Client.WaitSample(args[0], 8372, 250);
+            var facts = Observation.ReadSample(args[0], 8372, 250);
             byte[] wire = Array.Empty<byte>();
             if(facts.Primary == 0)
             {
                 try
                 {
-                    wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.Decode(facts.Bytes).Encode();
+                    wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.Encode(Ros1Abb_rapid_sm_addin_msgsRuntimeState.Decode(facts.Bytes));
                 }
-                catch(ArgumentException)
+                catch(Exception error) when (error is ArgumentException || error is FormatException)
                 {
                     facts.Primary = 22;
                 }

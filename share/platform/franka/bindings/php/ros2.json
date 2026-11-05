@@ -1,0 +1,28 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "php",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/php/ros2/franka_ros2_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "name": "ros/php/RosWasm/Word.php"
+    },
+    {
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "name": "ros/php/RosWasm/Wire.php"
+    },
+    {
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "name": "ros/php/RosWasm/Transport.php"
+    },
+    {
+      "path": "include/platform/franka/php/ros2/franka_ros2_complete/Records.php",
+      "name": "franka/php/ros2/franka_ros2_complete/Records.php"
+    }
+  ]
+}

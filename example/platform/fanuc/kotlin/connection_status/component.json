@@ -1,0 +1,1363 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "fanuc-authority-2055",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e199fd5e7221bb1874296a6daf467cdf40331ac2e700b8eeff618cfdfac29272"
+    },
+    {
+      "scope": "example",
+      "path": "Main.kt",
+      "sha256": "22ba3f11bfacbd0a17cb50db762d955ffdb5f3fa4bda73ce604f32318f916611"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiBuiltin_interfacesMsgDuration.java",
+      "sha256": "67dc82c5f6cf5a00e4d5a0bc5a990098517bc8e92e5f41a7491757160f5f172d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiBuiltin_interfacesMsgTime.java",
+      "sha256": "f86e71c68ccf091bbe9ac4b32098df7f985a14476e8e714401404d8f584f93e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiControl_msgsActionFollowJointTrajectory.java",
+      "sha256": "8feceb1fa253b6a561a9f368dcf8374d3792fb5b037f353668a2f2a29f55cb74"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiControl_msgsMsgJointComponentTolerance.java",
+      "sha256": "f9c86cf1856e874284487dc155ea444fc7b547b0e95631bb064e20234172b15c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiControl_msgsMsgJointTolerance.java",
+      "sha256": "1c015b97649b7736167a035747c6d46692c4bdd350664607945f10f2def63ce7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgAnalogIO.java",
+      "sha256": "9381b98345d6e5d722f3223197b590c735bc4b4bbcb9d1ef937c983af479346d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgAnalogIOCmd.java",
+      "sha256": "d92d68e489c56046edd2a248a16db4083a169c6367cad5f977855162fa4b7910"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgAnalogIOState.java",
+      "sha256": "dd198e046eecaa92756546893e5189fd851afd551bea2ca060c8674eab445924"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgBoolIO.java",
+      "sha256": "d256b5fc3088dcc80e42d0ad9d0971e3185536bdffeab5c566425d07d8cf274b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgCollaborativeSpeedScaling.java",
+      "sha256": "5bae12711f10048f230bae8c89a3f60fb2f1e94de586775520e20ae61b351848"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgConnectionStatus.java",
+      "sha256": "595d8a43bd5ec6db9aa6f354140904f0531656e0f0e68f371f08ec2bbe54af7e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgForceSensor.java",
+      "sha256": "5c336399a5053fd16fe69f4ab08a33395cbac632d200de889798c8e420e70c5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgFrame.java",
+      "sha256": "1145e59de3246fedf4fb3ec84372d11d5f241d8ef43d972093ce95fe0506f36b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgIOCmd.java",
+      "sha256": "6262674529ac445c7fde4212ca3a0b02c87005b05f6b86bcf2602b28a6325092"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgIOState.java",
+      "sha256": "d8ad5c4ded063bf9d46b302f41b913141568581e8069befb26da9857b6c315f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgIOType.java",
+      "sha256": "9138b7c3dc1f3931b359872e7577880a794d1e467aeddb0d2b868e7ab2ef0731"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgNumReg.java",
+      "sha256": "773710e90d2847344c70908880271b06e9a6810d1a118f76aab186e3252cfc42"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgNumRegCmd.java",
+      "sha256": "38bfd9c4f192dc9490cbffb3ba1a120bca586639333342d26df49b608fe66d19"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgNumRegState.java",
+      "sha256": "661b4d194d0f9d40c2e6ae20c93332248d0af3c68d73af1c36ff05643b4d736d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgRMIStatus.java",
+      "sha256": "85e62e357acc698a2030560e4efeba0df6156a615f238497ada537459d3d9019"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgRobotStatus.java",
+      "sha256": "1624887525b9a3ba0334b8483cc77fcd639e6c23efed02af6a6d762512c482f4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsMsgRobotStatusExt.java",
+      "sha256": "747fb21add0be5704ac9b395bce79339172734ddf2f52db661a04cdf2b7ca931"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvCfgForceSensor.java",
+      "sha256": "599ab381f3a7ffb5b61bf133166f722775db0aa31dd7a39a6250757af0a0b80b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetAnalogIO.java",
+      "sha256": "313a3215d00a99b1873d0a6f94e4624692ba4ca7c652b6bc779362f7aedb3ab7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetBoolIO.java",
+      "sha256": "59a3e3985b0ca4c38f0b60ebbd4ffeef85adcaea7cba36c0cc49740b5b0f7d85"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetCartesianPosition.java",
+      "sha256": "23d9f7e150268400166cd335615e7fa788d4a42f8cd7b083de8675f3c98c50de"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetGroupIO.java",
+      "sha256": "da7dac1087c1794343de73b606d3799d50f6782d3017da72b4e36ffcc6668496"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetNumReg.java",
+      "sha256": "9a3e20297e13cb091873655edc669023cf339761710827ffcc6877ed50d942e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetPayloadComp.java",
+      "sha256": "47fc745f515cd5519da1a35f083ed617e58bb594bbe9c9217031a26394a598c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetPayloadID.java",
+      "sha256": "861c1b4499044926e18687c44a1345eef6d787ace01b728c8a6bffdbc0114cfb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetPayloadValue.java",
+      "sha256": "b4d0314a7911ce24a51339057ef34c901bc02b2e096ade42adf9089d94f176b8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetPosReg.java",
+      "sha256": "3c5e6b9d14c0ec5d9a547a234cc47b00f8f41e1d811dc32c28c5d78a7a693a83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetTCPSpeed.java",
+      "sha256": "b2c89f4c6125be7c17c4803b9d6f857115c4bc977b342dad3dcdd0e26b699d0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetUFrameData.java",
+      "sha256": "c1806eb218d575f4045d2297aac3d6a855c1e31742ed023bd813811f11608347"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetUFrameUTool.java",
+      "sha256": "4eff5ca7ab615089ff8f398646f46bbca4b1d1111a9f46938af51a30c119f693"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvGetUToolData.java",
+      "sha256": "47f5b00424c83043ccd00dea8f02a1bff2ebf59958b1596978d785755e8c5763"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvReadError.java",
+      "sha256": "10a0d5685be0b16c6af27e51ec0be96b8a5520defe98fa679a41626cb6ea2824"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvReset.java",
+      "sha256": "10c1b579a0e06db5a684b989ab78b43f714d29e32c00ed2c657957fb7798af46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetAnalogIO.java",
+      "sha256": "c6a7fcbc5016bb20efc1b34d59711cc12915bca9f2d8371be75b253f78bd237b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetBoolIO.java",
+      "sha256": "79a4bac6e359352b98120b9e2fa205484e49acdc19a761206006199c7a57d12f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetGenOverride.java",
+      "sha256": "d710560d09556045ab0e4c688e625fbfcab83d92d668bd6bc1f07f6f858ba52b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetGroupIO.java",
+      "sha256": "a356c4b458d0ac5452b305d0c96ed880f7a19de3f8c64381cd29e8d0fadfac5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetNumReg.java",
+      "sha256": "6cf72a293394195f49c9befe07538628f41ea84bce0148d5016cef393252692e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetPayloadComp.java",
+      "sha256": "07b50358e6e1894b334b852c19115c5f98e7296ec13b38610ff0fff4d730dd1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetPayloadID.java",
+      "sha256": "03101843bb1d1f4f297a94f892dc24dd7890b55e9c635be666e4e72da01ef99d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetPayloadValue.java",
+      "sha256": "349bdd3a958ef1996177eb1de01219e1c8b8997d803d605b036ffbc69de82fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetPosReg.java",
+      "sha256": "42faba7d49acdcfe696e05dc77048d864cb62fa13b2ea7218802baabd299db36"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetUFrameData.java",
+      "sha256": "b59754c50eabd6ff5279db28465d7697deff74d5713fcd48ef634f9b84a5ace3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetUFrameUTool.java",
+      "sha256": "5ba215f65c181f14988a3c2e126544274dc7bc63d6282f7369e43d3e38885f67"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSetUToolData.java",
+      "sha256": "194525530f01c030e93db9b78abafc7a4f953417d03cc4b2c7565f6dff7e6b60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiFanuc_msgsSrvSwitchControlState.java",
+      "sha256": "91674daf94483bd08a97ac7be2a99951f94bf5e91c9be62ea89abae917383d5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiGeometry_msgsMsgQuaternion.java",
+      "sha256": "4c9b80e0a58b57800aaf728495e720c999ade7b7ae7873af6701766b64d3c3ac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiGeometry_msgsMsgTransform.java",
+      "sha256": "01b2a8a8b0e74fc581a5a0ddede1a8dc75440b8dfa68d1a17fd1a949ddf50913"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiGeometry_msgsMsgTwist.java",
+      "sha256": "bedcd6c0fbb81386b9c27efb536e70c078fffad6b685e7d45a450ef31fd2471a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiGeometry_msgsMsgVector3.java",
+      "sha256": "62916f2e9f284b714c49cedf93bfadff6ad6806581e28e0a2e457a72b1b58c40"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgCallParam.java",
+      "sha256": "b347720a3b9c34e68d977af4cddb7ef0a87bfef61629f71b1f45610d4a7d7420"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgCartesian.java",
+      "sha256": "64f6af7a8afc4e51ff9a2c6fd4ef5a5a69c75182bc30860b443b382d9b0397b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgCommand.java",
+      "sha256": "e44b3525bc8f892f3de5958e12c8547b6795f8e11122be4731bc70334349abfb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgCommandOptions.java",
+      "sha256": "40f11f814d32becf99b84ec9e5ef0708177adb85eaf071206410cdfa4bf41fb6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgJoint.java",
+      "sha256": "ddb13af1fe56849f4a3e2d8f9530d1c6cfa104b8ad580a0d83e01513261806da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgMotionInstructionOptions.java",
+      "sha256": "2e892219619e6411cfa241fd1ec741f3ce987e8bedaeec304ef67ae129013f88"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgMotionType.java",
+      "sha256": "9670e7f62bd276a90e4bdb26313e42eee233424ed8cb65ef2ea270640d4f3a73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgRepresentation.java",
+      "sha256": "52c6ea5c37e5e16bd68e420c8f86cbd3fb7b64beda3e63986e7c62bd01c80eeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgSpeedType.java",
+      "sha256": "dcc5a4ed27a668a4756834aef1539e5d5d1c8e220e8721335e23108e7db0dce1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsMsgTermType.java",
+      "sha256": "623e987fb3449eec969d6451bfa06a266379bf324e30fd980b6e719b50bf4763"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddCall.java",
+      "sha256": "da1e0c782becf7055160aa0cb3f0f14408f42bd2e8f78f7685709e764116f0cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddMotionInstruction.java",
+      "sha256": "18af055850b5a7f34965907d6c0d716d35bda9d7bda2b6062754fcfc93b8598f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddSetPayload.java",
+      "sha256": "a5a5ccd472d16fdc2121e3a1f4cadd7e5261bcc44a9db7a61bcfb0c394d231ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddSetUFrame.java",
+      "sha256": "e348a42121a7ad33d99fd9a17d89a819b29a16981447780107e800c65ca1dc54"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddSetUTool.java",
+      "sha256": "57b49a0120903dc8f24329f543950d4e057b07515b33b4e966e73c320db4e81c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddWaitDIN.java",
+      "sha256": "d837c6ca7ae2f47bd51582da13746b68a9b6bf2dcde69951aca72b3f0e08f71e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvAddWaitTime.java",
+      "sha256": "7b2bfdb515f8ec816899ada49919553c94fc5608dd72097ffe5b822f4e70514f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiRmi_msgsSrvCallCommand.java",
+      "sha256": "51459d85298fa2336f576483b1d0e00c031c367f23c0bed84253ecb20717490c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiSensor_msgsMsgJointState.java",
+      "sha256": "7e71b18a72727f9c62df384f21ac27ec53dd03b9c91a0a9f431e5102def65d2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiStd_msgsMsgHeader.java",
+      "sha256": "37c2c2f8bf10189cb05d1e2d1f51a1328c85f6f4bce7c78035915e40680af527"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiStd_srvsSrvTrigger.java",
+      "sha256": "8bde88190f28522177c5107999aba311d9a96a6833fa790d2c1bcd55f8e1b42b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectory.java",
+      "sha256": "bf3f6a18e785daceae104f8fcc0ab8171b52cb7b9f556c3d7e8d827680ed60e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "63fac01624a747f27c17c1c60f14fa0ef3a1f57c256644e35a48ff8bfb602078"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "e308249e662b3fa9dda6002cacfacef852f23b9c3759406b99c0451ab64109c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "0bb6f39ee0381c115a88aebafdac67cf2c492da2a63fc4f3d755b556accf6bc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Builtin_interfacesMsgDuration.java",
+      "sha256": "6f04b6f8aff887ae6bf8f602511cf09fb868fe0bab7e47a416efe650a41f06ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Builtin_interfacesMsgTime.java",
+      "sha256": "d13a262a37e5a0a3df48036be8445a018cde2467f3d9be018f368d4bc044cb80"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Control_msgsActionFollowJointTrajectory_Feedback.java",
+      "sha256": "c467a13f0d3c704d56768f553956f197b8fdbebae9831682f8926c5bf314312b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Control_msgsActionFollowJointTrajectory_Goal.java",
+      "sha256": "363844799a95881a7770875e0c83fcb1d3324faea929eedb9d967b9a5d3f7e99"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Control_msgsActionFollowJointTrajectory_Result.java",
+      "sha256": "eebdd629c5bb8b32203df693fa83149a0cccecfffd26d7427eb70ac4aa5384cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Control_msgsMsgJointComponentTolerance.java",
+      "sha256": "db9f0bc3afd950301fbd0c8cfe91a29e99275af2fe56e6686bd828db61c83273"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Control_msgsMsgJointTolerance.java",
+      "sha256": "326e29508e536712eacd824469603e7fe800dac4438203c8f0be563f3525fa73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgAnalogIO.java",
+      "sha256": "2f8ddaef298f199ef011df12e22f91b42bb80c02e6e586cc07e06d45c5670910"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgAnalogIOCmd.java",
+      "sha256": "694639100e8cab87e2d8ad4f034a32c93e35405569f05b6eb6db1d4eece25e0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgAnalogIOState.java",
+      "sha256": "7c2123055c06c6074ecb3186e1d7f2d5b1d4bf2d06a4e2706945b8d10f606dd8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgBoolIO.java",
+      "sha256": "066adeef3fbc17fea336eb63290d6474c690c5ec98e896d84970fc3f23dae7fc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgCollaborativeSpeedScaling.java",
+      "sha256": "8c95eb7f16509f22cea269f9360bfc40e29da2697aa32e1b2bc4b2198214351f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgConnectionStatus.java",
+      "sha256": "dea7242a8765599592011c5fe7345a5e7470f6e92e70bc4dc2b5371aa305211b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgForceSensor.java",
+      "sha256": "9a1f42c011290a230ec8058fa1c40067aaae6aae15d08aea7cc7cf117c85ad08"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgFrame.java",
+      "sha256": "4b389c960d1ce61d933c2234f28986fbb8b17621baf8758bbcdb010546c8f536"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgIOCmd.java",
+      "sha256": "846c8b69fc0742e7fe1137ba8199bc4771dc8b706c53e7982938a7d3325e2023"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgIOState.java",
+      "sha256": "7efb504950ff2500e29db954213f1093093e432f126a7d94aa3aa6adc0502ab7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgIOType.java",
+      "sha256": "ff617f1784f7df44ecf0858866da3d95ac759d0f4189f677b1757ee84b223c52"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgNumReg.java",
+      "sha256": "f637ab1c05fee0a39fec689186219971623aabe8ccdba5d7c3d1bd7b86dc3e38"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgNumRegCmd.java",
+      "sha256": "8d7d5192c40d65426d669dfcc7018ba2cc78d1948d5d7fa3a52b08b628e70a3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgNumRegState.java",
+      "sha256": "322117a5e6ba4a0f2d7e5e412b082a8ab15a52682e3c0f17b27875a8360ed456"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgRMIStatus.java",
+      "sha256": "455ce3e6b4f278fd258de8fa0dca4ed439791dea32e52dbfa198214e5991233f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgRobotStatus.java",
+      "sha256": "4debb869c9a1c27068604b1e928c0c544af9163cff23766e26908d443e5ccecf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsMsgRobotStatusExt.java",
+      "sha256": "93506f33836e3332a1fba4ea784f3e54a0c3f1bb11273cc9f809b2775465178c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvCfgForceSensor_Request.java",
+      "sha256": "6269fde9cdb604142036a04cdbcefbb7b61ef031c55b9b323c7c53f8430b56e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvCfgForceSensor_Response.java",
+      "sha256": "b497f409f1100451943a1f96d026c8e7d03b3b60baa9aaca3f0f98de233422cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetAnalogIO_Request.java",
+      "sha256": "da474c818b54fe6012162e8b7e1501b27d225b6353cefa23cec332be6ec3feb9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetAnalogIO_Response.java",
+      "sha256": "935e789838b7730f1ca9ee148334cf2fef792b6cf1f7f8764c6a3e293cf0a723"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetBoolIO_Request.java",
+      "sha256": "9acab318f810b480d73f0f214448a2c31cc28993b67a465449d52feef05f1c5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetBoolIO_Response.java",
+      "sha256": "b2597379daa7a158ca12899d981b34e8581019631a780b65d5db2378739731b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetCartesianPosition_Request.java",
+      "sha256": "9d1c593bfff6b5e79b1458a6bd3f8c549d24f0e9e6fdcb198086e8be05b65103"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetCartesianPosition_Response.java",
+      "sha256": "6a793b7de81a19c0763e1090c5094bda1582e570e6736bfd2300ea4822645816"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetGroupIO_Request.java",
+      "sha256": "0fe53c87687e35847d1425ddd3dc5c40ce03bfccc239a9c3c73b98de48042fb4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetGroupIO_Response.java",
+      "sha256": "e6500f3da15e0d276676bd0fd7fd0cb2aafaff3ab80418344648423b630f3ed4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetNumReg_Request.java",
+      "sha256": "d6a7892f804d9ea2d484aacc185693c257ea7b6f2562055c45b67f0459525dc4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetNumReg_Response.java",
+      "sha256": "3f4c15af26465916455a1f3b3b18254d651b12b8f4d5325beabf564e08e4ddc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadComp_Request.java",
+      "sha256": "bdcc4f08e3e94ee64c01c9f4fb41e3e4046aae950be1befb9e214273dc948a39"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadComp_Response.java",
+      "sha256": "0fe4d64f76ca8aca7e8e448ff4c25f9bef04d19d4f49a63c366e266dd05d80ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadID_Request.java",
+      "sha256": "525b663b77b688e407132b83837671c6f31d511f51d49e9780e2f0435a98b0fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadID_Response.java",
+      "sha256": "ccc85e77c644d2986d8c45f953d655a4012d92959c1b6ed7b5403fce80f78b4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadValue_Request.java",
+      "sha256": "020aba6ffcc79ca90468705fa30da4015c52fd603ac2dfa14e2f3050e31ed6f0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPayloadValue_Response.java",
+      "sha256": "6d35bc2802bbcbe8489ce7f9804a55de58797cb3de792e06499e58b188a12b2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPosReg_Request.java",
+      "sha256": "02d2804896fa3855ac761d6efce9c0e9f39eceba84f79e7ee8bd979d559f1fb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetPosReg_Response.java",
+      "sha256": "10255589bca3c1c95230dd91932df714a1a10120997b7d0fa82898045461973d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetTCPSpeed_Request.java",
+      "sha256": "b9be0965d0e0e0a6683a05e3de32ce6215b2ef0d9bfeeeb4ad7e9a80c0c5c642"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetTCPSpeed_Response.java",
+      "sha256": "d61c538960fdda2b9c0bbde230ba0288720e7a34094ac23c68111fbad321cec0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUFrameData_Request.java",
+      "sha256": "50d04cd16166204275087a0879fe92e0fbf96e37ba9a92da57837a5e2e75b65f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUFrameData_Response.java",
+      "sha256": "e2715da892df9c807f80d5349315d101d67a872662339697b67bba0307573ca4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUFrameUTool_Request.java",
+      "sha256": "f659fb0996240b341810f56cfe681759a60c5bddd775d0eb788a602bb9f3a5d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUFrameUTool_Response.java",
+      "sha256": "372bedde642ea8c8a0f00688950da780162aeb8eab227d2dd09865480cd3c787"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUToolData_Request.java",
+      "sha256": "e2d589835ffb40425c84c86faab8a736fc2c8c49db1a6f58a8f4ac9d669fdad8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvGetUToolData_Response.java",
+      "sha256": "429957dd4659e02758c7baeaaa8e4a9bcc7fb145fa84e9b546a421827b1ec366"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvReadError_Request.java",
+      "sha256": "86c823880c6dde8e788fe51e15693346fb9740616999b51341fef84b42b64ace"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvReadError_Response.java",
+      "sha256": "315f3d28f8656c8c6fcb368bc2609e2ef7e7ba92a7d041392bc325a5126f2e3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvReset_Request.java",
+      "sha256": "b6f2473a483f74949e0e3619f93cc383ff10ba10125d5673d1af6b2c1170cdb5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvReset_Response.java",
+      "sha256": "bf102030da69883f16ae371e4bbe64a665d779e86bca3e9d7cdf217714e879a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetAnalogIO_Request.java",
+      "sha256": "6d62842f37352828bd11c0b65bcb8b7ec52b74442b79faf2cd64666cb005738b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetAnalogIO_Response.java",
+      "sha256": "02e75363eb74707d3cc60785aa20456e3f4f4251544e2d8815cac9600d2be78b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetBoolIO_Request.java",
+      "sha256": "b3a17704b9cb0fd00255dab3c5c055d61801faf8dfc262dad4d3e6552927aa20"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetBoolIO_Response.java",
+      "sha256": "172a672e8f76b39c101d48e9a40e85ba8748d7d4bbede0b632b3cdbe1a4c546f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetGenOverride_Request.java",
+      "sha256": "f2a66a0331d14f80c9d24018e77046a7b57d41a4a707d0037c4dc6516e03e14e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetGenOverride_Response.java",
+      "sha256": "ddbdd39220b628f99aac1afeffee76807ee0ae005ec12be590fb40563bd9a348"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetGroupIO_Request.java",
+      "sha256": "56a2357a882fa6413a5142124276c4fb21921cd7e1995baa569f388c0ab4580c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetGroupIO_Response.java",
+      "sha256": "79fe32b4281a33369bcaf6b4b9c403a8d8e70a71ddb56f2d6a1ffa2118c239e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetNumReg_Request.java",
+      "sha256": "f968d7b7c175d0520688e3ca74dae3dbde14fdeef13fe21ea3ef87c42be3383e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetNumReg_Response.java",
+      "sha256": "9fb42833e13564d414e5d3e707987828d392d1ed7df9ce0c53366579c3bf25fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadComp_Request.java",
+      "sha256": "cbf4f61141e45bef379e8c1bb6505648dae85524606d2fbb20e1930e14f84d6d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadComp_Response.java",
+      "sha256": "29f18a9afe295d4855e1401a89fd347294522e9c52db24c0e0e7aa3ff3270e13"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadID_Request.java",
+      "sha256": "859f541b5f260f7b75d61bc2b9a5eee1352ab0f12aa48729bb08d7fa01574570"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadID_Response.java",
+      "sha256": "e3ad03d13c8f3c96c01238dc09c5997c62ec8530385b22739fb3b8dc790eb7b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadValue_Request.java",
+      "sha256": "572d0d92b0154fab48465ac45ab4a1a6d0fcce177197548858c7eb59ecbfa834"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPayloadValue_Response.java",
+      "sha256": "8192833df47d3781ec05a78eb1bf8ebcd3c96e4bc15b05ae92262bf65c73998c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPosReg_Request.java",
+      "sha256": "9e2046981206b2db8f6ea05d4136a87d1d4179405f6111ba8ed12e058d0de857"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetPosReg_Response.java",
+      "sha256": "77cb18b7b22c333e8a7e093d108149c327911a78892949abd908ccbb47fdb3e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUFrameData_Request.java",
+      "sha256": "d16b6c51fdf29fb25666661a46ba8b46ca711f6c6bd8c444747ad1158532705b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUFrameData_Response.java",
+      "sha256": "1a4fd7a41b8b139f2843b82b559f80e696ff0b5cd12e591d1eb7e690badc7909"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUFrameUTool_Request.java",
+      "sha256": "e1a5b92e66be913a4e90fc12a590e7b9dfc89e1b446eb4628c0e5194e8f8f0e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUFrameUTool_Response.java",
+      "sha256": "390a397a12dbaff2c4ef5cc448d6a17ef36fc1c44d6609430d7891f9b441c39b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUToolData_Request.java",
+      "sha256": "5d19d24f7bfeee49c43259dffabca4e9f283dc87ff644af618bf4fb9e39c505c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSetUToolData_Response.java",
+      "sha256": "e917d470a3fdf292fe00ac93f61a714699aef015c6b2d766990e181c1e7e5820"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSwitchControlState_Request.java",
+      "sha256": "671b64d0d816a77ac0ccd073bd974a8db200f7940ab64831a9aa339686f80d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Fanuc_msgsSrvSwitchControlState_Response.java",
+      "sha256": "0c5bb7f7df0beea876a8484a0804a38bc962f5d15a8e728c6c8d97c6fa1d37c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Geometry_msgsMsgQuaternion.java",
+      "sha256": "6d158df2c43b2c0717598bc4e1d76e9849f7705562dc2fafe5ab24358968aede"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Geometry_msgsMsgTransform.java",
+      "sha256": "4ca14323f14f6b3164554d99170e0af29050c2556209099349ab71c64a93b1cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Geometry_msgsMsgTwist.java",
+      "sha256": "d4ac2b3788ff1cd423c1febdb91d06d1960aed637fa0c935e4ff746cd58adc97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Geometry_msgsMsgVector3.java",
+      "sha256": "2fd7a6aa46b34d40d768fd3d1a4de9719cd5598daa6c09f94f1cfafc03e9827f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgCallParam.java",
+      "sha256": "465a8c379408e73c2feee853dc06586c6b89d929f9be1f44cfd080578d0a691a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgCartesian.java",
+      "sha256": "ba0d53ca91afc4b5a0899b0a78f1a82b89fbbf563d494e740fefe5518b2f58cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgCommand.java",
+      "sha256": "aa72fd0a8b4607807cae75994f274d3de1728e5f54c441172add59c3d73fd8af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgCommandOptions.java",
+      "sha256": "e54f9d7eecd3a86a4014133af26a98c61cf2990558cce57b9533244b67b33fad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgJoint.java",
+      "sha256": "65cc62ef5ab77eb1273dbb165c0b3267e362aab6cc98460730d7de473bfd06ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgMotionInstructionOptions.java",
+      "sha256": "c7268fc3504ebc4da96036917cae83e8286e56a4aade7095798a493bb267d48a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgMotionType.java",
+      "sha256": "ff091340361281da72b5417fc1db0560b4c4bdc4c11a836617fb5518988d5b35"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgRepresentation.java",
+      "sha256": "8eee32ead3199382ca5a368e0ebc78290a29b2c2ae804584657cedb2a1be7a80"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgSpeedType.java",
+      "sha256": "625fac4b185838b2e0041b8cc13c4b000176b757d300a7e8db7df31d0d30a4f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsMsgTermType.java",
+      "sha256": "1ea11afee22d8de16ce9dae4ec4e6d7ebcdc0c49cc3ea9bffc6904af568965d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddCall_Request.java",
+      "sha256": "0c0461ea0584fc3125eb4da89352ff4b92be2ce5bc450b5fca39abc38f78360a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddCall_Response.java",
+      "sha256": "506b6af3c023be145e2befd765f33053aaa0a69be1bb1e6688f2267845fa0c39"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddMotionInstruction_Request.java",
+      "sha256": "4ea1140f255606b56a6092311b82a7ed6eef23ab37793cc1b95e3a69427344c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddMotionInstruction_Response.java",
+      "sha256": "351364d0842b912cc090d99813f97020764ceedeb581fb9f3e7f2ee0aa44c92f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetPayload_Request.java",
+      "sha256": "915c05e1091b267f2575c6a1d8315878993e97d4f6714bf95fcd6e5fd159daf0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetPayload_Response.java",
+      "sha256": "7c27ad3cae645f8cd3399b1aa925412aab3ba8070e729208659ab60118630722"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetUFrame_Request.java",
+      "sha256": "98923e4cd13c5a2b1cfc6d53d098069c0f30430983caf1fd07db4aee3ed1e7d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetUFrame_Response.java",
+      "sha256": "806c24d85281c1a2f5b99c8a172cf43e946757c8512b972e4c723c3ff4d0330e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetUTool_Request.java",
+      "sha256": "94f517c00b72789458bd8ced1d29c95b525f2ddf9f72f2e334f2355cbe2725bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddSetUTool_Response.java",
+      "sha256": "b1e640a6304f7db971cadfcd83b3dee92fad80b58676a327dd6bd2e51f9e1526"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddWaitDIN_Request.java",
+      "sha256": "5b0b637ed7dc1c9f8e0657b7b5344c5b10c2fd4e1ee46df07c24ac8e6df88b44"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddWaitDIN_Response.java",
+      "sha256": "37502e22e0c31a7d4e83e45fa5390db874ec8536da8bb103cd4af68b126b38a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddWaitTime_Request.java",
+      "sha256": "1cb2fcb08cbdf7d1f2c7c6cdb4871875f7d953edee0a792f7a0b0ea62e11775a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvAddWaitTime_Response.java",
+      "sha256": "62a8d5d100a503c15155447942b569fa2e0a73b8e5e77073063b41cd3b14b182"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvCallCommand_Request.java",
+      "sha256": "7faaa5bdf5e9d455f40e9e78b73964e06760f5d93fc6f5ee0f64257ebd43e0da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Rmi_msgsSrvCallCommand_Response.java",
+      "sha256": "b9f0d46ee357508bf61bb823d9c30c6ac33c01685ecb14e59b262af5cd11c560"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Sensor_msgsMsgJointState.java",
+      "sha256": "94803c23260a7ae7cb67b1293da6f978b8c428669a68227d06601de13eb3f5f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Std_msgsMsgHeader.java",
+      "sha256": "ccc212df076b2b597d2c21682be89e8bfccf001da247fde771b60b82f5c44da6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Std_srvsSrvTrigger_Request.java",
+      "sha256": "fba12c540a769cc167c93fa4683fbb4887a3012e27737e09a49b13e866d11283"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Std_srvsSrvTrigger_Response.java",
+      "sha256": "da30964fb587174716477e2aecb82975bc66c935615b479178e1b8a6fc6b2dc5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Trajectory_msgsMsgJointTrajectory.java",
+      "sha256": "8e857ade56db0f5a48b2b58a3f423ff0398bc19d261df3c30f76158a62c72135"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Trajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "395a53bec94d4dffa0886df30809a3dd20e024c7833114c24a5b4dd89406ea60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "fe6ea84b67def49f9187b76b907e7241feb887329fd6561208b063cfca2cb3cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fanuc/java/ros2/uwvm/fanuc/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "24dbc1d8d37051d4758b3575e25b335b2968d9c5f2a951d9dcbd34195e5b8e27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fanuc/bindings/kotlin.json",
+      "sha256": "99d35921136f3fb763eda2c20577d7c9f865519fe41d4ba220a71e833a6467af"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fanuc/provider.lua",
+      "sha256": "6849324394fe79225d7652539437d65731d93614f624b27a49db2c8a38156493"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

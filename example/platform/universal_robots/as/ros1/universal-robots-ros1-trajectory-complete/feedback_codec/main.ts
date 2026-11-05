@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete control_msgs/FollowJointTrajectoryFeedback value with genuine AssemblyScript.

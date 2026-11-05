@@ -24,7 +24,7 @@ in their defining module.
 
 All three module policies explicitly set `ros_enabled=false`, `grants=[]`,
 `wasi_grants=[]`. The public runner creates each module's WASI/ROS Single binding;
-no ROS gateway is started. Default WASI retains basic standard-stream authority;
+no ROS gateway is started. Base WASI exposes interfaces with zero operation grants;
 an empty extra-grant list does not mean zero descriptor rights. No environment,
 filesystem or socket permission is added by the run hook.
 

@@ -1,0 +1,116 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4697",
+  "ros_namespace": "ros1",
+  "test_scope": "Execute the original Unitree observation guest with base WASI and ROS namespace, but no resource authority. Denial preserves complete empty response/owner facts; missing alias fails before acquisition. Positive native transport is a separate test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "7da3c3254b2c127e5a2d47ea3c8558c7ea4fd5f7c84838c5688e123fc63f5b8d"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "c0aec55ef122d98c48eee1c993f0759fdcd5bd00d66fd301298e8e2eeb8bb2bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/lua/native_command.lua",
+      "sha256": "f1d0b98c491bfeacd180aa203e7828fffeb1fc6f68378bc1afd91bace82db430"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/lua/roswasm/init.lua",
+      "sha256": "9d3d4a5af0f0255a330d34cd840e9a84247b2905f3afacd1daa46c49c38bae5e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/lua/observation.lua",
+      "sha256": "92e71a9ae34c569b0c243e0fe4787b2ad62a3c8457969855fce187c961256dbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/lua/ros1/observation.lua",
+      "sha256": "de7fee3c85ce3174ad8346f4328122e63eec10b664890bfe0c68330b64d821e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/lua/ros1/records.lua",
+      "sha256": "d86a400738d2d55a4179f748cc46c9baf1d44433b1743951d2fb98bf19c94105"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/lua/ros2/observation.lua",
+      "sha256": "d9192bc30a3394ab8b8b6c77bf699771a9538a62c6099ed4099b6cc9d42fe6b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/lua/ros2/records.lua",
+      "sha256": "97c08f5dfdcd21fcb3b1030bba01971e1159283427275dd2c1408fe5f8c561d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/unitree/language/lua/ros1/bundle.json",
+      "sha256": "3ade00dfa7d95cddc4abcd81c71e41e6fd34de214add18525d4dd9adf513c344"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": "0",
+        "wire_hex": "",
+        "length": "18446744073709551615"
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

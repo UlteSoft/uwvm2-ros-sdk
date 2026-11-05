@@ -1,0 +1,91 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observation-authority-361",
+  "ros_namespace": "ros2",
+  "test_scope": "Original complete typed guest: exact empty facts on resource denial, argument rejection before acquisition. Positive native transport and simulator admission remain separate.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "f0a609b0f541ad870dfbaff576b9e59122da8f3fc7a4643694d1d5f824c098b3"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "cbdd6c7c50ae204286ec34f95816e391bc2a0b33e5ea1cb81439ee606bc32c18"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/booster/lua/ros2/observation.lua",
+      "sha256": "f51c81aff7f44c6fc6842e61c190b97e3dab3df69f0a156d591b330b61f1fddd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/booster/lua/ros2/records.lua",
+      "sha256": "5fbbfa85aed35431b830f512f9dbd864475b2ff29d7fe1054ed6941bfadff442"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/booster/language/lua/ros2/bundle.json",
+      "sha256": "a2efce571b1923abf1f14e719d00ee439b702892f33ff9e8956d3e5f45e1ccc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/deep_robotics/selection.lua",
+      "sha256": "10ee4895796190ab436fbeb52fd07c08954817b6512e97355bb7935e6ed08d00"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "rpc_status": 0,
+        "rpc_present": 0,
+        "response_present": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": "0",
+        "length": "18446744073709551615",
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 -- @details All values own their bytes; successful acquisitions close exactly once.
 module ABB.Ros1.Observation where
 import Data.Word
-import Ros.Observation
+import Native.Observation
 import qualified ABB.Ros1.Records as R
 
 -- | @brief Observe every original abb_robot_msgs/SystemState field through one retained owner.

@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "backend": "ros2",
   "distribution": "jazzy",
   "runtime": "/absolute/native/uwvm2-ros-original-array",
@@ -54,7 +54,8 @@
             "audit-max-records": "10000",
             "audit-max-bytes": "1048576"
           },
-          "call_boundary": "same-module"
+          "call_boundary": "same-module",
+          "wasi_enabled": true
         }
       }
     }

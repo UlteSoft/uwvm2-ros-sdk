@@ -34,3 +34,6 @@ export function _start(): void
     const outputError = write(resourcesJson(response) + '\n');
     exit(outputError != 0 ? outputError : response.header.header.code == 0 ? 0 : 1);
 }
+
+/** @brief Bind the genuine compiler abort to the explicit trapping SDK implementation. */
+export {abortGuest} from "ros/as/api";

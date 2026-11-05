@@ -3,8 +3,9 @@
 module main;
 import doosan.ros1.doosan_ros1_patch_1_complete.records;
 import roswasm.wire : Arena;
-import core.stdc.stdio : printf;
-extern(C) int main() @nogc nothrow {
+// WASI libc supplies this exact C variadic printf entry.
+extern(C) int printf(scope const(char)* format, ...) @nogc nothrow;
+extern(C) uint nl_entry() @nogc nothrow {
     Ros1Dsr_msgsGetRobotStateResponse value;
     ubyte[2] bytes, again;
     ubyte[1048576] arenaBytes;

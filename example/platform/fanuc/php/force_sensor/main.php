@@ -12,8 +12,9 @@ declare(strict_types=1);
 /** @file main.php
  * @brief Read every original fanuc_msgs/msg/ForceSensor field using genuine PHP.
  * @details Shared transport/codecs execute in the VM packed inside this command. */
-use Uwvm\RosWasm\Observation;
+use Uwvm\Language\PhpObservation;
+$arguments = \Uwvm\Native\argv();
 use Uwvm\Fanuc\Ros2\Ros2Fanuc_msgsMsgForceSensor;
-if (count($argv) !== 2) { exit(22); }
-$report = Observation::receive($argv[1], Ros2Fanuc_msgsMsgForceSensor::class, 250, static fn(): int => \Uwvm\Native\pause_ms(20));
-exit(Observation::output($report));
+if (count($arguments) !== 2) { exit(22); }
+$report = PhpObservation::receive($arguments[1], Ros2Fanuc_msgsMsgForceSensor::class, "", true);
+exit(PhpObservation::output($report));

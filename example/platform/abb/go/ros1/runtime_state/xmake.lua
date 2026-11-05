@@ -41,6 +41,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk = root
 set_policy("run.autobuild", false)
@@ -56,4 +57,5 @@ target("abb-go-runtime_state")
     -- @brief Select the immutable complete interface catalog, not robot firmware.
     set_abb_version("complete")
     add_files("main.go")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

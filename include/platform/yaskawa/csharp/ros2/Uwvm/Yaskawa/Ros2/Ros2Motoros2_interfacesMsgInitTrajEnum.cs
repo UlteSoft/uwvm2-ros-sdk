@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Yaskawa.Ros2
 {
@@ -120,7 +120,7 @@ namespace Uwvm.Yaskawa.Ros2
          */
         public static byte[] Encode(Ros2Motoros2_interfacesMsgInitTrajEnum value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -137,7 +137,7 @@ namespace Uwvm.Yaskawa.Ros2
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Motoros2_interfacesMsgInitTrajEnum value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -149,7 +149,7 @@ namespace Uwvm.Yaskawa.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Motoros2_interfacesMsgInitTrajEnum value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Motoros2_interfacesMsgInitTrajEnum value)
         {
             if(value == null)
             {
@@ -169,7 +169,7 @@ namespace Uwvm.Yaskawa.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Motoros2_interfacesMsgInitTrajEnum ReadFields(Wire.Reader wire)
+        internal static Ros2Motoros2_interfacesMsgInitTrajEnum ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Motoros2_interfacesMsgInitTrajEnum value = new Ros2Motoros2_interfacesMsgInitTrajEnum();

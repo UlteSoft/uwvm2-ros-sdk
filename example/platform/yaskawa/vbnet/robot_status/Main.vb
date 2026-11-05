@@ -5,7 +5,7 @@
 ' supplies an existing alias and its matching native type binding. A source-backed compiler or VM is
 ' required; no grant, replay or controller admission is implicit.
 Imports System
-Imports Uwvm.Ros
+Imports Uwvm.Yaskawa
 Imports Uwvm.Yaskawa.Ros2
 Namespace Yaskawa.Examples
 ''' <summary>@brief Observe the whole industrial_msgs/msg/RobotStatus record using genuine VB.NET full
@@ -18,11 +18,11 @@ Public Module MainProgram
     ''' <returns>First operation or independent cleanup status.</returns>
     Public Function Main(args As String()) As Integer
         If args.Length <> 1 Then Return 22
-        Dim facts = Client.WaitSample(args(0), 150, 250)
+        Dim facts = Observation.ReadSample(args(0), 150, 250)
         Dim wire = Array.Empty(Of Byte)()
         If facts.Primary = 0UI Then
             Try
-                wire = Ros2Industrial_msgsMsgRobotStatus.Decode(facts.Bytes).Encode()
+                wire = Ros2Industrial_msgsMsgRobotStatus.Encode(Ros2Industrial_msgsMsgRobotStatus.Decode(facts.Bytes))
             Catch failure As ArgumentException
                 facts.Primary = 22UI
             End Try

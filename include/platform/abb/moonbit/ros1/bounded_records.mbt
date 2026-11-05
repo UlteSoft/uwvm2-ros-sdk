@@ -98,7 +98,7 @@ fn BoundedReader::signed16(self : BoundedReader) -> Int {
 fn BoundedReader::float32(self : BoundedReader) -> Float {
   let bits = self.unsigned(4)
   if (bits & 2139095040UL) == 2139095040UL { self.error = 22 }
-  bits.to_uint().reinterpret_as_float()
+  Float::reinterpret_from_uint(bits.to_uint())
 }
 
 fn BoundedReader::float64(self : BoundedReader) -> Double {
@@ -407,10 +407,10 @@ pub(all) struct Ros1Abb_rapid_msgsConfData {
 }
 pub fn Ros1Abb_rapid_msgsConfData::new() -> Ros1Abb_rapid_msgsConfData {
   {
-    field_cf1: (0U).reinterpret_as_float(),
-    field_cf4: (0U).reinterpret_as_float(),
-    field_cf6: (0U).reinterpret_as_float(),
-    field_cfx: (0U).reinterpret_as_float(),
+    field_cf1: Float::reinterpret_from_uint(0U),
+    field_cf4: Float::reinterpret_from_uint(0U),
+    field_cf6: Float::reinterpret_from_uint(0U),
+    field_cfx: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsConfDataCodec {
@@ -472,12 +472,12 @@ pub(all) struct Ros1Abb_rapid_msgsExtJoint {
 }
 pub fn Ros1Abb_rapid_msgsExtJoint::new() -> Ros1Abb_rapid_msgsExtJoint {
   {
-    field_eax_a: (0U).reinterpret_as_float(),
-    field_eax_b: (0U).reinterpret_as_float(),
-    field_eax_c: (0U).reinterpret_as_float(),
-    field_eax_d: (0U).reinterpret_as_float(),
-    field_eax_e: (0U).reinterpret_as_float(),
-    field_eax_f: (0U).reinterpret_as_float(),
+    field_eax_a: Float::reinterpret_from_uint(0U),
+    field_eax_b: Float::reinterpret_from_uint(0U),
+    field_eax_c: Float::reinterpret_from_uint(0U),
+    field_eax_d: Float::reinterpret_from_uint(0U),
+    field_eax_e: Float::reinterpret_from_uint(0U),
+    field_eax_f: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsExtJointCodec {
@@ -552,12 +552,12 @@ pub(all) struct Ros1Abb_rapid_msgsRobJoint {
 }
 pub fn Ros1Abb_rapid_msgsRobJoint::new() -> Ros1Abb_rapid_msgsRobJoint {
   {
-    field_rax_1: (0U).reinterpret_as_float(),
-    field_rax_2: (0U).reinterpret_as_float(),
-    field_rax_3: (0U).reinterpret_as_float(),
-    field_rax_4: (0U).reinterpret_as_float(),
-    field_rax_5: (0U).reinterpret_as_float(),
-    field_rax_6: (0U).reinterpret_as_float(),
+    field_rax_1: Float::reinterpret_from_uint(0U),
+    field_rax_2: Float::reinterpret_from_uint(0U),
+    field_rax_3: Float::reinterpret_from_uint(0U),
+    field_rax_4: Float::reinterpret_from_uint(0U),
+    field_rax_5: Float::reinterpret_from_uint(0U),
+    field_rax_6: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsRobJointCodec {
@@ -682,9 +682,9 @@ pub(all) struct Ros1Abb_rapid_msgsPos {
 }
 pub fn Ros1Abb_rapid_msgsPos::new() -> Ros1Abb_rapid_msgsPos {
   {
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsPosCodec {
@@ -741,10 +741,10 @@ pub(all) struct Ros1Abb_rapid_msgsOrient {
 }
 pub fn Ros1Abb_rapid_msgsOrient::new() -> Ros1Abb_rapid_msgsOrient {
   {
-    field_q1: (0U).reinterpret_as_float(),
-    field_q2: (0U).reinterpret_as_float(),
-    field_q3: (0U).reinterpret_as_float(),
-    field_q4: (0U).reinterpret_as_float(),
+    field_q1: Float::reinterpret_from_uint(0U),
+    field_q2: Float::reinterpret_from_uint(0U),
+    field_q3: Float::reinterpret_from_uint(0U),
+    field_q4: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsOrientCodec {
@@ -806,12 +806,12 @@ pub(all) struct Ros1Abb_rapid_msgsLoadData {
 }
 pub fn Ros1Abb_rapid_msgsLoadData::new() -> Ros1Abb_rapid_msgsLoadData {
   {
-    field_mass: (0U).reinterpret_as_float(),
+    field_mass: Float::reinterpret_from_uint(0U),
     field_cog: Ros1Abb_rapid_msgsPos::new(),
     field_aom: Ros1Abb_rapid_msgsOrient::new(),
-    field_ix: (0U).reinterpret_as_float(),
-    field_iy: (0U).reinterpret_as_float(),
-    field_iz: (0U).reinterpret_as_float(),
+    field_ix: Float::reinterpret_from_uint(0U),
+    field_iy: Float::reinterpret_from_uint(0U),
+    field_iz: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_msgsLoadDataCodec {
@@ -1127,10 +1127,10 @@ pub fn Ros1Abb_rapid_sm_addin_msgsEGMActivateSettings::new() -> Ros1Abb_rapid_sm
     field_wobj: Ros1Abb_rapid_msgsWObjData::new(),
     field_correction_frame: Ros1Abb_rapid_msgsPose::new(),
     field_sensor_frame: Ros1Abb_rapid_msgsPose::new(),
-    field_cond_min_max: (0U).reinterpret_as_float(),
-    field_lp_filter: (0U).reinterpret_as_float(),
+    field_cond_min_max: Float::reinterpret_from_uint(0U),
+    field_lp_filter: Float::reinterpret_from_uint(0U),
     field_sample_rate: 0,
-    field_max_speed_deviation: (0U).reinterpret_as_float(),
+    field_max_speed_deviation: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMActivateSettingsCodec {
@@ -1217,10 +1217,10 @@ pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMRunSettings {
 }
 pub fn Ros1Abb_rapid_sm_addin_msgsEGMRunSettings::new() -> Ros1Abb_rapid_sm_addin_msgsEGMRunSettings {
   {
-    field_cond_time: (0U).reinterpret_as_float(),
-    field_ramp_in_time: (0U).reinterpret_as_float(),
+    field_cond_time: Float::reinterpret_from_uint(0U),
+    field_ramp_in_time: Float::reinterpret_from_uint(0U),
     field_offset: Ros1Abb_rapid_msgsPose::new(),
-    field_pos_corr_gain: (0U).reinterpret_as_float(),
+    field_pos_corr_gain: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMRunSettingsCodec {
@@ -1280,7 +1280,7 @@ pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings {
 pub fn Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings::new() -> Ros1Abb_rapid_sm_addin_msgsEGMSetupSettings {
   {
     field_use_filtering: false,
-    field_comm_timeout: (0U).reinterpret_as_float(),
+    field_comm_timeout: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMSetupSettingsCodec {
@@ -1335,7 +1335,7 @@ pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMStopSettings {
 }
 pub fn Ros1Abb_rapid_sm_addin_msgsEGMStopSettings::new() -> Ros1Abb_rapid_sm_addin_msgsEGMStopSettings {
   {
-    field_ramp_out_time: (0U).reinterpret_as_float(),
+    field_ramp_out_time: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_sm_addin_msgsEGMStopSettingsCodec {
@@ -1949,7 +1949,7 @@ pub fn Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequest::new() -> Ros1Abb_rapid_sm
   {
     field_task: "",
     field_command: 0,
-    field_target_position: (0U).reinterpret_as_float(),
+    field_target_position: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_rapid_sm_addin_msgsSetSGCommandRequestCodec {
@@ -2613,7 +2613,7 @@ pub(all) struct Ros1Abb_robot_msgsGetRAPIDNumResponse {
 }
 pub fn Ros1Abb_robot_msgsGetRAPIDNumResponse::new() -> Ros1Abb_robot_msgsGetRAPIDNumResponse {
   {
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
     field_result_code: 0,
     field_message: "",
   }
@@ -3698,7 +3698,7 @@ pub(all) struct Ros1Abb_robot_msgsSetRAPIDNumRequest {
 pub fn Ros1Abb_robot_msgsSetRAPIDNumRequest::new() -> Ros1Abb_robot_msgsSetRAPIDNumRequest {
   {
     field_path: Ros1Abb_robot_msgsRAPIDSymbolPath::new(),
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros1Abb_robot_msgsSetRAPIDNumRequestCodec {
@@ -5180,8 +5180,7 @@ pub fn Ros1Abb_robot_msgsServiceResponsesCodec::constant_RC_SUCCESS(
 
 /// @brief Original abb_robot_msgs/ServiceResponses.FAILED constant; no instance bytes or ROS authority.
 pub fn Ros1Abb_robot_msgsServiceResponsesCodec::constant_FAILED(
-    _self : Ros1Abb_robot_msgsServiceResponsesCodec) -> String { "Service failed (e.g. timeout or resource not found,
-    see the DEBUG log for details)" }
+    _self : Ros1Abb_robot_msgsServiceResponsesCodec) -> String { "Service failed (e.g. timeout or resource not found, see the DEBUG log for details)" }
 
 /// @brief Original abb_robot_msgs/ServiceResponses.RC_FAILED constant; no instance bytes or ROS authority.
 pub fn Ros1Abb_robot_msgsServiceResponsesCodec::constant_RC_FAILED(

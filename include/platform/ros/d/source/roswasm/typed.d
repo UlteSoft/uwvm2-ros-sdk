@@ -58,6 +58,7 @@ uint callValue(Q,S)(Owner owner, const ref Q request, ubyte[] input, ubyte[] out
 /// @param[in] T Exact complete selected original request record type.
 /// @see pollIncoming; respondValue; roswasm.Owner.advertiseService
 struct Incoming(T) {
+    @nogc nothrow:
     /// @brief Full original request ID, checked nonzero by successful pollIncoming.
     /// @details Use only the original Instance/backend; a numeric copy is not authority.
     /// @see pollIncoming; respondValue
@@ -159,6 +160,7 @@ uint feedbackValue(T)(Owner owner, ulong goalId, ubyte[] output, ref Arena arena
 /// @param[in] T Complete selected original result component type.
 /// @see resultValue; actionReplyValue; sendGoalValue
 struct Terminal(T) {
+    @nogc nothrow:
     /// @brief Full original goal ID verified against the caller's requested nonzero ID.
     /// @details Never narrow it or transfer it between Instance/backend owner associations.
     /// @see resultValue; sendGoalValue
@@ -222,6 +224,7 @@ uint actionReplyValue(T)(Owner owner, ulong goalId, ubyte kind, const ref T valu
 /// @param[in] capacity Compile-time positive owner ceiling accepted by Session, at most 1024.
 /// @see Node.initialize; Node.open; Node.close; Session
 struct Node(size_t capacity) {
+    @nogc nothrow:
     /// @brief Embedded fixed pool retaining all original State cell addresses.
     /// @details Never copy, move or reset it while borrowed Owner/Executor views
     /// survive; those views still refer to the original cell addresses.
@@ -285,6 +288,7 @@ alias Callback=uint function(const(ubyte)[],void*) @nogc nothrow;
 /// @param[in] capacity Compile-time positive entry ceiling, inclusive maximum 1024.
 /// @see Executor.add; Executor.spinOnce; Executor.close; Callback
 struct Executor(size_t capacity) if(capacity>0 && capacity<=1024) {
+    @nogc nothrow:
     /// @brief Complete local registration value for one owner/buffer/Guest function.
     /// @details Public construction grants no liveness/schema/Host validation.
     /// Retain every referenced allocation for the complete registration lifetime.

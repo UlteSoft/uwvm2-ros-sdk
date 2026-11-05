@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # @file manual-run.sh
 # @brief Apply this fully visible operator-reviewed module-local offline fixture policy.
-# @details No xmake hook invokes this script or creates grants. Default WASI
-# retains basic stdio; only ros_comm receives the additional clock/ROS grant.
+# @details Base WASI is enabled per module. Only io receives stdout access;
+# only ros_comm receives the monotonic-clock and ROS capability.
 set -euo pipefail
 : "${UWVM_EXECUTABLE:?Set the installed genuine runtime executable}"
 : "${SDK_GATEWAY_SOCKET:?Set the actual matching controlled native gateway socket}"
@@ -16,13 +16,22 @@ exec "${UWVM_EXECUTABLE}" \
     --wasm-set-main-module-name main \
     --wasip1-single-create main \
     --wasip1-single-enable main \
+    --wasip1-single-noinherit-system-environment main \
+    --wasip1-single-grant main proc-exit \
     --wasip1-single-create io \
     --wasip1-single-enable io \
+    --wasip1-single-noinherit-system-environment io \
+    --wasip1-single-grant io stdout.write \
+    --wasip1-single-grant io stdio.metadata \
     --wasip1-single-create algorithm \
     --wasip1-single-enable algorithm \
+    --wasip1-single-noinherit-system-environment algorithm \
     --wasip1-single-create ros_comm \
     --wasip1-single-enable ros_comm \
+    --wasip1-single-noinherit-system-environment ros_comm \
     --wasip1-single-grant ros_comm monotonic-clock \
+    --ros2-single-create algorithm \
+    --ros2-single-enable algorithm \
     --ros2-single-create ros_comm \
     --ros2-single-enable ros_comm \
     --ros2-single-call-boundary ros_comm module-exports \
@@ -57,7 +66,7 @@ exec "${UWVM_EXECUTABLE}" \
     --ros2-single-set ros_comm dobot.status max-subscribers 1 \
     --ros2-single-set ros_comm dobot.status max-message-bytes 2 \
     --ros2-single-set ros_comm dobot.status max-queue-bytes 8 \
-    --ros2-single-set ros_comm dobot.status overflow-policy drop-oldest \
+    --ros2-single-set ros_comm dobot.status overflow-policy reject \
     --ros2-single-set ros_comm dobot.status audit allow-and-deny \
     --ros2-single-set ros_comm dobot.status audit-max-rate-hz 100 \
     --ros2-single-set ros_comm dobot.status audit-burst 100 \

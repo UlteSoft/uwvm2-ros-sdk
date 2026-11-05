@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -106,7 +106,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Fanuc_msgsSrvGetPosReg_Response value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -119,11 +119,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Fanuc_msgsSrvGetPosReg_Response Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Fanuc_msgsSrvGetPosReg_Response value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -135,12 +135,9 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Fanuc_msgsSrvGetPosReg_Response value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Fanuc_msgsSrvGetPosReg_Response value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             wire.I32(value.field_result);
             wire.String(value.field_representation, 512);
@@ -153,97 +150,43 @@ namespace Uwvm.Fanuc.Ros2
             wire.I8(value.field_turn4);
             wire.I8(value.field_turn5);
             wire.I8(value.field_turn6);
-            if(!float.IsFinite(value.field_x))
-            {
-                throw new ArgumentException("Nonfinite x");
-            }
+            if (!float.IsFinite(value.field_x)) { throw new ArgumentException("Nonfinite x"); }
             wire.F32(value.field_x);
-            if(!float.IsFinite(value.field_y))
-            {
-                throw new ArgumentException("Nonfinite y");
-            }
+            if (!float.IsFinite(value.field_y)) { throw new ArgumentException("Nonfinite y"); }
             wire.F32(value.field_y);
-            if(!float.IsFinite(value.field_z))
-            {
-                throw new ArgumentException("Nonfinite z");
-            }
+            if (!float.IsFinite(value.field_z)) { throw new ArgumentException("Nonfinite z"); }
             wire.F32(value.field_z);
-            if(!float.IsFinite(value.field_w))
-            {
-                throw new ArgumentException("Nonfinite w");
-            }
+            if (!float.IsFinite(value.field_w)) { throw new ArgumentException("Nonfinite w"); }
             wire.F32(value.field_w);
-            if(!float.IsFinite(value.field_p))
-            {
-                throw new ArgumentException("Nonfinite p");
-            }
+            if (!float.IsFinite(value.field_p)) { throw new ArgumentException("Nonfinite p"); }
             wire.F32(value.field_p);
-            if(!float.IsFinite(value.field_r))
-            {
-                throw new ArgumentException("Nonfinite r");
-            }
+            if (!float.IsFinite(value.field_r)) { throw new ArgumentException("Nonfinite r"); }
             wire.F32(value.field_r);
-            if(!float.IsFinite(value.field_ext1))
-            {
-                throw new ArgumentException("Nonfinite ext1");
-            }
+            if (!float.IsFinite(value.field_ext1)) { throw new ArgumentException("Nonfinite ext1"); }
             wire.F32(value.field_ext1);
-            if(!float.IsFinite(value.field_ext2))
-            {
-                throw new ArgumentException("Nonfinite ext2");
-            }
+            if (!float.IsFinite(value.field_ext2)) { throw new ArgumentException("Nonfinite ext2"); }
             wire.F32(value.field_ext2);
-            if(!float.IsFinite(value.field_ext3))
-            {
-                throw new ArgumentException("Nonfinite ext3");
-            }
+            if (!float.IsFinite(value.field_ext3)) { throw new ArgumentException("Nonfinite ext3"); }
             wire.F32(value.field_ext3);
-            if(!float.IsFinite(value.field_j1))
-            {
-                throw new ArgumentException("Nonfinite j1");
-            }
+            if (!float.IsFinite(value.field_j1)) { throw new ArgumentException("Nonfinite j1"); }
             wire.F32(value.field_j1);
-            if(!float.IsFinite(value.field_j2))
-            {
-                throw new ArgumentException("Nonfinite j2");
-            }
+            if (!float.IsFinite(value.field_j2)) { throw new ArgumentException("Nonfinite j2"); }
             wire.F32(value.field_j2);
-            if(!float.IsFinite(value.field_j3))
-            {
-                throw new ArgumentException("Nonfinite j3");
-            }
+            if (!float.IsFinite(value.field_j3)) { throw new ArgumentException("Nonfinite j3"); }
             wire.F32(value.field_j3);
-            if(!float.IsFinite(value.field_j4))
-            {
-                throw new ArgumentException("Nonfinite j4");
-            }
+            if (!float.IsFinite(value.field_j4)) { throw new ArgumentException("Nonfinite j4"); }
             wire.F32(value.field_j4);
-            if(!float.IsFinite(value.field_j5))
-            {
-                throw new ArgumentException("Nonfinite j5");
-            }
+            if (!float.IsFinite(value.field_j5)) { throw new ArgumentException("Nonfinite j5"); }
             wire.F32(value.field_j5);
-            if(!float.IsFinite(value.field_j6))
-            {
-                throw new ArgumentException("Nonfinite j6");
-            }
+            if (!float.IsFinite(value.field_j6)) { throw new ArgumentException("Nonfinite j6"); }
             wire.F32(value.field_j6);
-            if(!float.IsFinite(value.field_j7))
-            {
-                throw new ArgumentException("Nonfinite j7");
-            }
+            if (!float.IsFinite(value.field_j7)) { throw new ArgumentException("Nonfinite j7"); }
             wire.F32(value.field_j7);
-            if(!float.IsFinite(value.field_j8))
-            {
-                throw new ArgumentException("Nonfinite j8");
-            }
+            if (!float.IsFinite(value.field_j8)) { throw new ArgumentException("Nonfinite j8"); }
             wire.F32(value.field_j8);
-            if(!float.IsFinite(value.field_j9))
-            {
-                throw new ArgumentException("Nonfinite j9");
-            }
+            if (!float.IsFinite(value.field_j9)) { throw new ArgumentException("Nonfinite j9"); }
             wire.F32(value.field_j9);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -255,7 +198,7 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Fanuc_msgsSrvGetPosReg_Response ReadFields(Wire.Reader wire)
+        internal static Ros2Fanuc_msgsSrvGetPosReg_Response ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Fanuc_msgsSrvGetPosReg_Response value = new Ros2Fanuc_msgsSrvGetPosReg_Response();
@@ -271,96 +214,42 @@ namespace Uwvm.Fanuc.Ros2
             value.field_turn5 = wire.I8();
             value.field_turn6 = wire.I8();
             value.field_x = wire.F32();
-            if(!float.IsFinite(value.field_x))
-            {
-                throw new ArgumentException("Nonfinite x");
-            }
+            if (!float.IsFinite(value.field_x)) { throw new ArgumentException("Nonfinite x"); }
             value.field_y = wire.F32();
-            if(!float.IsFinite(value.field_y))
-            {
-                throw new ArgumentException("Nonfinite y");
-            }
+            if (!float.IsFinite(value.field_y)) { throw new ArgumentException("Nonfinite y"); }
             value.field_z = wire.F32();
-            if(!float.IsFinite(value.field_z))
-            {
-                throw new ArgumentException("Nonfinite z");
-            }
+            if (!float.IsFinite(value.field_z)) { throw new ArgumentException("Nonfinite z"); }
             value.field_w = wire.F32();
-            if(!float.IsFinite(value.field_w))
-            {
-                throw new ArgumentException("Nonfinite w");
-            }
+            if (!float.IsFinite(value.field_w)) { throw new ArgumentException("Nonfinite w"); }
             value.field_p = wire.F32();
-            if(!float.IsFinite(value.field_p))
-            {
-                throw new ArgumentException("Nonfinite p");
-            }
+            if (!float.IsFinite(value.field_p)) { throw new ArgumentException("Nonfinite p"); }
             value.field_r = wire.F32();
-            if(!float.IsFinite(value.field_r))
-            {
-                throw new ArgumentException("Nonfinite r");
-            }
+            if (!float.IsFinite(value.field_r)) { throw new ArgumentException("Nonfinite r"); }
             value.field_ext1 = wire.F32();
-            if(!float.IsFinite(value.field_ext1))
-            {
-                throw new ArgumentException("Nonfinite ext1");
-            }
+            if (!float.IsFinite(value.field_ext1)) { throw new ArgumentException("Nonfinite ext1"); }
             value.field_ext2 = wire.F32();
-            if(!float.IsFinite(value.field_ext2))
-            {
-                throw new ArgumentException("Nonfinite ext2");
-            }
+            if (!float.IsFinite(value.field_ext2)) { throw new ArgumentException("Nonfinite ext2"); }
             value.field_ext3 = wire.F32();
-            if(!float.IsFinite(value.field_ext3))
-            {
-                throw new ArgumentException("Nonfinite ext3");
-            }
+            if (!float.IsFinite(value.field_ext3)) { throw new ArgumentException("Nonfinite ext3"); }
             value.field_j1 = wire.F32();
-            if(!float.IsFinite(value.field_j1))
-            {
-                throw new ArgumentException("Nonfinite j1");
-            }
+            if (!float.IsFinite(value.field_j1)) { throw new ArgumentException("Nonfinite j1"); }
             value.field_j2 = wire.F32();
-            if(!float.IsFinite(value.field_j2))
-            {
-                throw new ArgumentException("Nonfinite j2");
-            }
+            if (!float.IsFinite(value.field_j2)) { throw new ArgumentException("Nonfinite j2"); }
             value.field_j3 = wire.F32();
-            if(!float.IsFinite(value.field_j3))
-            {
-                throw new ArgumentException("Nonfinite j3");
-            }
+            if (!float.IsFinite(value.field_j3)) { throw new ArgumentException("Nonfinite j3"); }
             value.field_j4 = wire.F32();
-            if(!float.IsFinite(value.field_j4))
-            {
-                throw new ArgumentException("Nonfinite j4");
-            }
+            if (!float.IsFinite(value.field_j4)) { throw new ArgumentException("Nonfinite j4"); }
             value.field_j5 = wire.F32();
-            if(!float.IsFinite(value.field_j5))
-            {
-                throw new ArgumentException("Nonfinite j5");
-            }
+            if (!float.IsFinite(value.field_j5)) { throw new ArgumentException("Nonfinite j5"); }
             value.field_j6 = wire.F32();
-            if(!float.IsFinite(value.field_j6))
-            {
-                throw new ArgumentException("Nonfinite j6");
-            }
+            if (!float.IsFinite(value.field_j6)) { throw new ArgumentException("Nonfinite j6"); }
             value.field_j7 = wire.F32();
-            if(!float.IsFinite(value.field_j7))
-            {
-                throw new ArgumentException("Nonfinite j7");
-            }
+            if (!float.IsFinite(value.field_j7)) { throw new ArgumentException("Nonfinite j7"); }
             value.field_j8 = wire.F32();
-            if(!float.IsFinite(value.field_j8))
-            {
-                throw new ArgumentException("Nonfinite j8");
-            }
+            if (!float.IsFinite(value.field_j8)) { throw new ArgumentException("Nonfinite j8"); }
             value.field_j9 = wire.F32();
-            if(!float.IsFinite(value.field_j9))
-            {
-                throw new ArgumentException("Nonfinite j9");
-            }
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (!float.IsFinite(value.field_j9)) { throw new ArgumentException("Nonfinite j9"); }
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

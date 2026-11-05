@@ -67,7 +67,8 @@ final class NativeCommand
                     if ($primary !== 0) {
                         break;
                     }
-                    usleep($sample === 0 ? 1000000 : 200000);
+                    $primary = \Uwvm\Native\pause_ms($sample === 0 ? 1000 : 200);
+                    if ($primary !== 0) { break; }
                 }
             } elseif ($operation === 2) {
                 $primary = $owner->invoke('topic_subscribe')[0];
@@ -78,7 +79,8 @@ final class NativeCommand
                         if ($primary !== 11 || $attempt === 249) {
                             break;
                         }
-                        usleep(20000);
+                        $primary = \Uwvm\Native\pause_ms(20);
+                        if ($primary !== 0) { break; }
                     }
                 }
             } else {
@@ -86,6 +88,9 @@ final class NativeCommand
                 $primary = $rpc;
             }
             if ($primary === 0 && $operation !== 1) {
+                if ($required === null || $required->bytes !== pack('V2', strlen($wire), 0)) {
+                    throw new \UnexpectedValueException('complete returned extent required');
+                }
                 if ($operation === 2) {
                     $value = self::text($wire, 0, 252);
                 } else {
@@ -110,7 +115,7 @@ final class NativeCommand
             'cleanup' => $cleanup, 'cleanup_present' => true,
             'response_present' => $response, 'success' => $success,
             'wire' => bin2hex($wire), 'text' => $value];
-        echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR), "\n";
-        return $primary !== 0 ? $primary : $cleanup;
+        $output = \Uwvm\Native\output(json_encode($result, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR));
+        return $primary !== 0 ? $primary : ($cleanup !== 0 ? $cleanup : $output);
     }
 }

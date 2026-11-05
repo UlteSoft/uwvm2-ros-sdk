@@ -1,0 +1,4 @@
+module WASILibc [system] {
+    header "wasi_libc.h"
+    export *
+}

@@ -7,14 +7,14 @@ namespace nvidia_values
 {
     /**
      * @brief Format one complete telemetry line and check its complete stdio write.
-     * @details Uses actual fast_io owning formatting, followed by bounded WASIp1
+     * @details Uses actual fast_io owning formatting, followed by checked WASIp1
      * output. Arguments must already satisfy the generated complete-value quotas;
-     * allocation happens before the 4096-byte line-output admission. Requires
+     * allocation happens before the checked complete write. Requires
      * ordinary stdout write access, no ROS/device right, and immutable argument
      * lifetimes through this synchronous call. Allocation exceptions propagate when
      * EH is enabled; no-EH allocation failure is not an errno guarantee.
      * @param[in] a Actual complete scalar/string-view fields in display order.
-     * @return 0 after the entire line or the exact bounded output error.
+     * @return 0 after the entire line or the exact output error.
      * @see humanoid_io::output
      * @see detections
      */
@@ -38,7 +38,7 @@ namespace nvidia_values
     template <class H>
     std::uint32_t header(H const& h)
     {
-        return line("sec=", h.stamp.sec, " nanosec=", h.stamp.nanosec, " frame_id=", std::string_view{h.frame_id.data, h.frame_id.size});
+        return line("sec=", h.stamp.sec, " nanosec=", h.stamp.nanosec, " frame_id=", std::string_view{reinterpret_cast<char const*>(h.frame_id.data), h.frame_id.size});
     }
 
     /**
@@ -81,7 +81,7 @@ namespace nvidia_values
         for(std::size_t i{}; i < v.detections.size; ++i)
         {
             auto const& d = v.detections.data[i];
-            if(auto e = line("family=", std::string_view{d.family.data, d.family.size}, " id=", d.id))
+            if(auto e = line("family=", std::string_view{reinterpret_cast<char const*>(d.family.data), d.family.size}, " id=", d.id))
                 return e;
             if(auto e = point(d.center))
                 return e;

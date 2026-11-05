@@ -1,13 +1,15 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "../../compat/node.h"
 #include "service_proof.hpp"
 #include "selection.hpp"
+#include "native_serialization.hpp"
 #include "native_rcl_service_registry.h"
 #include "custom_owned_service_records.h"
 /** Dynamic full-native Service provider, all sources private and additive.
- * It retains ONE actual rcl client/service and original Node ownership. Every
- * canonical history slab/native object is reserved before init. Middleware can
+ * It retains ONE actual rcl client/service and original Node ownership. Canonical history grows on actual admission; the native objects needed for a
+ * send/take are allocated before that one native effect. Middleware can
  * allocate while deserializing an ORIGINAL unbounded field: canonical caps do
  * not preempt foreign code; real RSS/cgroup/deadline/drain remain mandatory.
  * No old81/ephemeral client, projected native schema, fake timestamp/GID or
@@ -39,10 +41,17 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
             std::shared_ptr<uwvm_rmw_cpp::Registry const> original,std::shared_ptr<Proof const> codecs,uwvm_rmw_codec const* root,
             ros::capability_spec cap,wire::binding owner,std::uint64_t id,std::size_t history,std::shared_ptr<report> diagnostics):
             node_{std::move(node)},rcl_node_{std::move(native)},original_registry_{std::move(original)},codecs_{std::move(codecs)},root_{root},cap_{std::move(cap)},
-            records_{history,std::max(root->request->maximum_wire_bytes,root->response->maximum_wire_bytes),owner,id},report_{std::move(diagnostics)},requests_(history),responses_(history),response_{std::make_unique<Response>()},
+            records_{history,std::max(root->request->maximum_wire_bytes,root->response->maximum_wire_bytes),owner,id},report_{std::move(diagnostics)},response_{std::make_unique<Response>()},
             encoded_(std::max(root->request->maximum_wire_bytes,root->response->maximum_wire_bytes))
-        {for(std::size_t i{};i<history;++i){requests_[i]=std::make_unique<Request>();responses_[i]=std::make_unique<Response>();}
-         association_.owner=owner;association_.incarnation=id;association_.kind=Client?wire::role::client:wire::role::service;}
+        {association_.owner=owner;association_.incarnation=id;association_.kind=Client?wire::role::client:wire::role::service;}
+        std::uint32_t ensure_objects(std::size_t index) noexcept
+        {
+            try {
+                while(requests_.size()<=index)requests_.push_back(std::make_unique<Request>());
+                while(responses_.size()<=index)responses_.push_back(std::make_unique<Response>());
+                return 0;
+            }catch(std::bad_alloc const&){return 12;}catch(std::length_error const&){return 90;}
+        }
         bool owns(wire::binding const& owner,std::uint64_t id)const noexcept{return records_.owns(owner,id);}
         std::uint32_t live(wire::binding const& owner,std::uint64_t id)const noexcept
         {if(!owns(owner,id))return 13;if(retired_||!initialized_||!rcl_node_is_valid(rcl_node_.get()))return 125;return failed_;}
@@ -53,7 +62,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
         std::size_t pending()const noexcept
         {std::size_t n{};for(std::size_t i{};i<records_.used();++i){auto const& r=records_.at(i);if(!r.discard&&!r.response_seen&&!r.response_attempted&&r.phase!=state::completed)++n;}return n;}
         void expire()noexcept
-        {if(failed_)return;auto now=std::chrono::steady_clock::now();for(std::size_t i{};i<records_.used();++i){auto& r=records_.at(i);
+        {if(failed_)return;auto now=::uwvm2::utils::host_clock::now();for(std::size_t i{};i<records_.used();++i){auto& r=records_.at(i);
             if(!r.discard&&!r.response_seen&&!r.response_attempted&&r.phase!=state::completed&&now>=r.deadline){auto error=records_.request_error(i,110);if(error){fail(error,r.ticket);return;}}}}
         std::uint32_t query(wire::packet& output)noexcept
         {
@@ -87,8 +96,8 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
         ~typed_endpoint(){auto error=finalize();if(error)report_->error(error);}
         /** Publish outputs only after actual native init, exact resolved name,
          * both actual native QoS getters and native client writer-GID association.
-         * Every local owner, report, canonical history/body buffer and ORIGINAL native object exists
-         * BEFORE init. The caller reserves its own registry slot beforehand.
+         * The local owner and report exist before init. Each ORIGINAL request/response
+         * object and history record is allocated before its corresponding native effect. The caller reserves its own registry slot beforehand.
          * Unsupported compiled SDK returns95 before native initialization.
          */
         static std::uint32_t create(::uwvm2::ros_gateway::ros2_compat::node_type::SharedPtr const& node,
@@ -96,6 +105,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
             wire::binding const& owner,std::uint64_t id,std::size_t history,std::shared_ptr<report> const& diagnostics,
             std::shared_ptr<endpoint>& output,wire::packet& observed)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
 #if !UWVM_NATIVE_RCL_SERVICE_API || !UWVM_ROS2_HAVE_COMPLETE_RMW_QOS
             (void)node;(void)original;(void)codecs;(void)cap;(void)owner;(void)id;(void)history;(void)diagnostics;(void)output;(void)observed;return 95;
 #else
@@ -106,25 +116,25 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                 if(!root||root->generated_support!=actual){diagnostics->error(13);return 13;}
                 auto validation=root->validate(root,actual);if(validation){diagnostics->error(validation);return validation;}
                 if(!codecs->selected(cap)){diagnostics->error(13);return 13;}
-                auto until=std::chrono::steady_clock::now()+std::chrono::milliseconds(limit(cap,"timeout-ms"));
+                auto until=quota_deadline(cap,entered);
                 auto maximum=std::max(root->request->maximum_wire_bytes,root->response->maximum_wire_bytes);
-                if(!records::valid_options(history,maximum)||history<limit(cap,"max-inflight")){diagnostics->error(90);return 90;}
+                if(!records::valid_options(history,maximum)){diagnostics->error(90);return 90;}
                 auto native=node->get_node_base_interface()->get_shared_rcl_node_handle();if(!native||!rcl_node_is_valid(native.get())){diagnostics->error(125);return 125;}
                 auto holder=std::shared_ptr<typed_endpoint>{new typed_endpoint{node,native,original,codecs,root,cap,owner,id,history,diagnostics}};
                 auto configured=ros2_qos::configured(cap);auto requested=native_rmw_metadata::profile(configured);
-                if(std::chrono::steady_clock::now()>=until){diagnostics->error(110);return 110;}
+                if(::uwvm2::utils::host_clock::now()>=until){diagnostics->error(110);return 110;}
                 rcl_ret_t result;
                 if constexpr(Client){auto options=rcl_client_get_default_options();options.qos=requested;result=rcl_client_init(&holder->client_,native.get(),actual,cap.resource.c_str(),&options);}
                 else{auto options=rcl_service_get_default_options();options.qos=requested;result=rcl_service_init(&holder->service_,native.get(),actual,cap.resource.c_str(),&options);}
                 diagnostics->call(operation::init,result);if(result!=RCL_RET_OK){diagnostics->error(5);return 5;}
                 holder->initialized_=true;diagnostics->initialized();
-                if(std::chrono::steady_clock::now()>=until){diagnostics->error(110);return 110;}
+                if(::uwvm2::utils::host_clock::now()>=until){diagnostics->error(110);return 110;}
                 auto name=Client?rcl_client_get_service_name(&holder->client_):rcl_service_get_service_name(&holder->service_);
                 if(!name||std::string_view{name}!=cap.resource){diagnostics->error(13);return 13;}
                 wire::packet p{};auto error=holder->query(p);if(error){diagnostics->error(error);return error;}
                 wire::qos explicit_requested{};
                 if(!native_rmw_metadata::actual_profile(requested,explicit_requested)||!wire::same(explicit_requested,p.actual[0])||!wire::same(explicit_requested,p.actual[1])){diagnostics->error(95);return 95;}
-                if(std::chrono::steady_clock::now()>=until){diagnostics->error(110);return 110;}
+                if(::uwvm2::utils::host_clock::now()>=until){diagnostics->error(110);return 110;}
                 holder->association_=p;observed=p;output=std::move(holder);return 0;
             }catch(std::bad_alloc const&){diagnostics->error(12);return 12;}catch(...){diagnostics->error(5);return 5;}
 #endif
@@ -146,6 +156,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
         std::uint32_t available(wire::binding const& owner,std::uint64_t id,
             wire::binding const& availability_owner,ros::capability_spec const& availability_cap,bool& output)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
             if constexpr(!Client){(void)owner;(void)id;(void)availability_owner;(void)availability_cap;(void)output;return 95;}
             else{
 #if UWVM_NATIVE_RCL_SERVICE_API && UWVM_NATIVE_RCL_AVAILABILITY_API && UWVM_ROS2_HAVE_COMPLETE_RMW_QOS
@@ -154,17 +165,17 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                     if(!same_domain(owner,availability_owner)||availability_owner.source==owner.source||!uwvm_default_control_gateway_detail::availability_selected(availability_cap,cap_))return 13;
                     // Reinspect the same retained native instance, not a probe
                     // endpoint. Independently retain requested/actual QoS facts.
-                    auto until=std::chrono::steady_clock::now()+std::chrono::milliseconds(limit(availability_cap,"timeout-ms"));
+                    auto until=quota_deadline(availability_cap,entered);
                     wire::packet observed{};error=query(observed);if(error)return error;
                     if(!wire::same(observed.actual[0],association_.actual[0])||!wire::same(observed.actual[1],association_.actual[1])||
                         observed.gid_size!=association_.gid_size||observed.gid!=association_.gid)return 13;
                     auto configured=ros2_qos::configured(availability_cap);wire::qos declared{};
                     if(!native_rmw_metadata::actual_profile(native_rmw_metadata::profile(configured),declared)||
                         !wire::same(declared,observed.actual[0])||!wire::same(declared,observed.actual[1]))return 13;
-                    if(std::chrono::steady_clock::now()>=until)return 110;
+                    if(::uwvm2::utils::host_clock::now()>=until)return 110;
                     bool actual{};auto result=rcl_service_server_is_available(rcl_node_.get(),&client_,&actual);report_->call(operation::available,result);
                     if(result==RCL_RET_UNSUPPORTED)return 95;if(result==RCL_RET_BAD_ALLOC)return 12;if(result!=RCL_RET_OK)return 5;
-                    if(std::chrono::steady_clock::now()>=until)return 110;
+                    if(::uwvm2::utils::host_clock::now()>=until)return 110;
                     output=actual;return 0;
                 }catch(std::bad_alloc const&){return 12;}catch(...){return 5;}
 #else
@@ -190,6 +201,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
             std::uint64_t wait_ns,ipc::deadline transport_until,
             native_rcl_graph_wait::admission const& waiting,bool& output)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
             if(!wait_ns)return available(owner,id,availability_owner,availability_cap,output);
             if constexpr(!Client){(void)owner;(void)id;(void)availability_owner;(void)availability_cap;(void)transport_until;(void)waiting;(void)output;return 95;}
             else{
@@ -199,12 +211,11 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                 try
                 {
                     if(!same_domain(owner,availability_owner)||availability_owner.source==owner.source||!uwvm_default_control_gateway_detail::availability_selected(availability_cap,cap_))return 13;
-                    if(wait_ns>limit(availability_cap,"max-wait-ns")||wait_ns>60000000000ULL)return 22;
+                    if(wait_ns>limit(availability_cap,"max-wait-ns"))return 90;
                     if(!waiting.graph||!waiting.graph->same_node(node_)||!waiting.cancel.valid())return 95;
                     error=waiting.graph->status();if(error)return error;
-                    auto entered=std::chrono::steady_clock::now();
-                    auto until=std::min(transport_until,entered+std::chrono::milliseconds(limit(availability_cap,"timeout-ms")));
-                    auto requested=entered+std::chrono::nanoseconds{static_cast<std::int64_t>(wait_ns)};
+                    auto until=std::min(transport_until,quota_deadline(availability_cap,entered));
+                    auto requested_value=logical_deadline(entered,wait_ns);if(!requested_value)return 22;auto requested=*requested_value;
                     error=native_rcl_graph_wait::check(waiting.cancel,node_,until);if(error)return error;
                     // Full SAME-instance actual QoS/GID reinspection precedes
                     // the first native readiness query and graph registration.
@@ -233,7 +244,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                     };
                     bool actual{};error=sample(actual);if(error)return error;
                     if(actual)return finish(true);
-                    if(std::chrono::steady_clock::now()>=requested)return finish(false);
+                    if(::uwvm2::utils::host_clock::now()>=requested)return finish(false);
                     rclcpp::Event::SharedPtr event;
                     error=waiting.graph->loan(node_,event);
                     lifetime_error=native_rcl_graph_wait::check(waiting.cancel,node_,until);if(lifetime_error)return lifetime_error;
@@ -244,7 +255,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                         // graph wait, including timeout/spurious/missed events.
                         error=sample(actual);if(error)return error;
                         if(actual)return finish(true);
-                        auto now=std::chrono::steady_clock::now();
+                        auto now=::uwvm2::utils::host_clock::now();
                         if(now>=requested)return finish(false);
                         auto duration=native_rcl_graph_wait::slice(now,requested,until);
                         error=waiting.graph->wait(event,duration);
@@ -262,16 +273,21 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
          * rcl_send_request. Error/timeout is never permission to replay it. */
         std::uint32_t submit(wire::binding const& owner,std::uint64_t id,std::uint8_t const* bytes,std::size_t size,std::uint64_t& ticket)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
             if constexpr(!Client){(void)owner;(void)id;(void)bytes;(void)size;(void)ticket;return 95;}
             else{
 #if UWVM_NATIVE_RCL_SERVICE_API
                 std::unique_lock<std::mutex> g{mutex_,std::try_to_lock};if(!g.owns_lock())return 17;auto error=live(owner,id);if(error)return error;expire();if(failed_)return failed_;
-                if(!bytes&&size)return 22;if(size>root_->request->maximum_wire_bytes)return 90;
+                if(!bytes&&size)return 22;if(size>root_->request->maximum_wire_bytes||size>limit(cap_,"max-request-bytes"))return 90;
+                if(::uwvm2::utils::host_clock::now()>=quota_deadline(cap_,entered))return 110;
                 if(!records_.can_reserve()||pending()>=limit(cap_,"max-inflight"))return 90;
                 error=codecs_->validate(false,bytes,size);if(error)return error;
+                error=ensure_objects(records_.used());if(error)return error;
                 error=root_->request->decode(bytes,size,requests_[records_.used()].get());if(error)return error;
-                auto selected_ticket=mint_ticket();if(!selected_ticket)return 90;auto i=records_.reserve(selected_ticket);if(i==records::no_slot)return 90;
-                auto& r=records_.at(i);r.deadline=std::chrono::steady_clock::now()+std::chrono::milliseconds(limit(cap_,"timeout-ms"));
+                error=native_serialization_check(*requests_[records_.used()]);if(error)return error;
+                auto selected_ticket=mint_ticket();if(!selected_ticket)return 90;std::size_t i=records::no_slot;error=records_.reserve(selected_ticket,i);if(error)return error;
+                auto& r=records_.at(i);r.deadline=quota_deadline(cap_,entered);
+                if(::uwvm2::utils::host_clock::now()>=r.deadline){records_.release_unattempted(i);return 110;}
                 r.native_attempted=true;report_->ticket(selected_ticket);std::int64_t native_sequence{};
                 auto result=rcl_send_request(&client_,requests_[i].get(),&native_sequence);report_->call(operation::send,result);
                 if(result!=RCL_RET_OK)return fail(result==RCL_RET_TIMEOUT?110:5,selected_ticket);
@@ -283,7 +299,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                 r.identity.sequence_number=native_sequence;r.sequence_known=true;
                 if(records_.find_sequence(native_sequence,i)!=records::no_slot)return fail(22,selected_ticket);
                 r.phase=state::pending;
-                if(std::chrono::steady_clock::now()>=r.deadline){(void)records_.request_error(i,110);return 110;}
+                if(::uwvm2::utils::host_clock::now()>=r.deadline){(void)records_.request_error(i,110);return 110;}
                 ticket=selected_ticket;return 0;
 #else
                 (void)owner;(void)id;(void)bytes;(void)size;(void)ticket;return 95;
@@ -295,11 +311,13 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
          * discard; no old accepted record is substituted for this take's info. */
         std::uint32_t poll(wire::binding const& owner,std::uint64_t id)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
 #if UWVM_NATIVE_RCL_SERVICE_API
             std::unique_lock<std::mutex> g{mutex_,std::try_to_lock};if(!g.owns_lock())return 17;auto error=live(owner,id);if(error)return error;expire();if(failed_)return failed_;
             if(!records_.can_take())return 90;rmw_service_info_t native{};std::size_t i=records::no_slot;
-            if constexpr(!Client){if(!records_.can_reserve()||pending()>=limit(cap_,"max-inflight"))return 90;auto t=mint_ticket();if(!t)return 90;i=records_.reserve(t);if(i==records::no_slot)return 90;}
+            if constexpr(!Client){if(!records_.can_reserve()||pending()>=limit(cap_,"max-inflight"))return 90;error=ensure_objects(records_.used());if(error)return error;auto t=mint_ticket();if(!t)return 90;error=records_.reserve(t,i);if(error)return error;}
             else{bool waiting{};for(std::size_t n{};n<records_.used();++n)if(records_.at(n).sequence_known&&!records_.at(n).response_seen)waiting=true;if(!waiting)return 11;}
+            if(::uwvm2::utils::host_clock::now()>=quota_deadline(cap_,entered)){if constexpr(!Client)records_.release_unattempted(i);return 110;}
             rcl_ret_t result;
             if constexpr(Client)result=rcl_take_response_with_info(&client_,&native,response_.get());
             else result=rcl_take_request_with_info(&service_,&native,requests_[i].get());
@@ -314,13 +332,21 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
             if(error){report_->unmatched(native);return fail(error,i==records::no_slot?0:records_.at(i).ticket);}
             if(i==records::no_slot){report_->unmatched(native);return fail(22);}
             auto& r=records_.at(i);r.native_attempted=true;
-            if constexpr(!Client){r.identity=native.request_id;r.sequence_known=true;r.identity_known=true;r.deadline=std::chrono::steady_clock::now()+std::chrono::milliseconds(limit(cap_,"timeout-ms"));}
+            if constexpr(!Client){r.identity=native.request_id;r.sequence_known=true;r.identity_known=true;r.deadline=quota_deadline(cap_,entered);}
             // The full actual object has now been validated even for a tombstone.
             if constexpr(Client){if(r.response_seen){report_->unmatched(native);return fail(22,r.ticket);}responses_[i].swap(response_);r.identity=native.request_id;r.identity_known=true;r.response_seen=true;}
             else if(records_.find(r.identity,i)!=records::no_slot){report_->unmatched(native);return fail(22,r.ticket);}
             r.native_info=native;
             if(r.discard)return 0;
+            if(::uwvm2::utils::host_clock::now()>=std::min(r.deadline,quota_deadline(cap_,entered)))
+            {auto timed_out=records_.request_error(i,110);return timed_out?fail(timed_out,r.ticket):110;}
+            if(length>limit(cap_,Client?"max-response-bytes":"max-request-bytes"))return fail(90,r.ticket);
+            error=records_.resize_body(i,length);if(error)return fail(error,r.ticket);
             if(length)std::copy_n(encoded_.data(),length,r.body.data());
+            // These native backends do not populate the response writer GUID.
+            // Preserve the actual same-take body/sequence, but never publish
+            // zero-initialized storage as a complete native request identity.
+            if constexpr(Client){if(native_rcl_service::known_missing_response_writer_id(client_))return fail(95,r.ticket);}
             info::header h{};h.kind=Client?events::event_kind::service_response:events::event_kind::service_request;h.owner=owner;h.incarnation=id;h.sequence=1;h.correlation=r.ticket;h.payload_bytes=length;
             error=native_rmw_metadata::service_record(native,h);if(error)return fail(error,r.ticket);
             error=records_.enqueue(i,h,length);return error?fail(error,r.ticket):0u;
@@ -343,6 +369,7 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
         std::uint32_t respond(wire::binding const& owner,std::uint64_t id,wire::binding const& responder,
             ros::capability_spec const& response_cap,std::uint64_t ticket,std::uint8_t const* bytes,std::size_t size)noexcept
         {
+            auto const entered=::uwvm2::utils::host_clock::now();
             if constexpr(Client){(void)owner;(void)id;(void)responder;(void)response_cap;(void)ticket;(void)bytes;(void)size;return 95;}
             else{
 #if UWVM_NATIVE_RCL_SERVICE_API
@@ -357,14 +384,15 @@ namespace uwvm2::ros_gateway::default_control_gateway::detail
                 if(r.discard||r.response_attempted)return 125;if(r.phase!=state::delivered)return 17;
                 error=codecs_->validate(true,bytes,size);if(error)return error;
                 error=root_->response->decode(bytes,size,responses_[i].get());if(error)return error;
-                auto delivery_until=std::min(r.deadline,std::chrono::steady_clock::now()+std::chrono::milliseconds(limit(response_cap,"timeout-ms")));
-                if(std::chrono::steady_clock::now()>=delivery_until)return 110;
+                error=native_serialization_check(*responses_[i]);if(error)return error;
+                auto delivery_until=std::min(r.deadline,quota_deadline(response_cap,entered));
+                if(::uwvm2::utils::host_clock::now()>=delivery_until)return 110;
                 // Set attempted BEFORE entering middleware: even a native timeout
                  // or uncertain failure cannot cause a second response send.
                 r.response_attempted=true;r.response_identity=r.identity;
                 auto result=rcl_send_response(&service_,&r.response_identity,responses_[i].get());report_->call(operation::respond,result);r.phase=state::completed;
                 if(result!=RCL_RET_OK){auto code=result==RCL_RET_TIMEOUT?110u:5u;(void)records_.request_error(i,code);report_->error(code);return code;}
-                return std::chrono::steady_clock::now()>=delivery_until?110u:0u;
+                return ::uwvm2::utils::host_clock::now()>=delivery_until?110u:0u;
                 }catch(std::bad_alloc const&){return 12;}catch(...){return 5;}
 #else
                 (void)owner;(void)id;(void)responder;(void)response_cap;(void)ticket;(void)bytes;(void)size;return 95;

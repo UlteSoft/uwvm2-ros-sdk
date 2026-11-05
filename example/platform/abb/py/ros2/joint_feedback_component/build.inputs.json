@@ -19,9 +19,9 @@
       "sha256": "64ba2cd4019f5b8368266c643dc49afb3052050f48859db80f299b364be90a5d"
     },
     {
-      "bytes": 45683,
+      "bytes": 45901,
       "path": "include/platform/ros/py/roswasm/client.py",
-      "sha256": "3a62411c436cadf0b7c95a0478f6d3797675a32c78d0369430d52db0e3d84933"
+      "sha256": "646ec713d96b6a280ffd579923eb93230a9d29a4ee33edd861ef2d1ce5cf224f"
     },
     {
       "bytes": 30768,
@@ -44,9 +44,9 @@
       "sha256": "06d1fa6a0aa1927fc878f06a12a22a81746adc14c3219a9899da5fe7a0a2d9e1"
     },
     {
-      "bytes": 13542,
+      "bytes": 13722,
       "path": "include/platform/ros/transplate/ros2/rclpy/v1/bundle.json",
-      "sha256": "5db5e19333a1a080f2b1fce9f6eb569fc4698eacb373e192342d92edf28e76bb"
+      "sha256": "cd9a4c6ee06566c35ef912cb69c16f823220ee3ee81942a07433948441b1a057"
     },
     {
       "bytes": 5357,
@@ -119,9 +119,9 @@
       "sha256": "d9f60f2dd08b738c12c4f03e7817e05c0e35a482987c115ac7a568fa3b837d1b"
     },
     {
-      "bytes": 3049,
+      "bytes": 3086,
       "path": "include/platform/ros/transplate/ros2/rclpy/v1/profile.json",
-      "sha256": "e26e44b58649ba6cc86de30b0ded62ce9fc2c55f91d58267c51725f52cc762a7"
+      "sha256": "2b3334514b3f165d6bc47dd6471e9f67134ce881b9c202854d52d9c9cc54867f"
     },
     {
       "bytes": 95726,
@@ -11429,9 +11429,9 @@
       "sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0"
     },
     {
-      "bytes": 4301,
+      "bytes": 6954,
       "path": "share/language/python/README.md",
-      "sha256": "b81b094a5849db2e2f0538d6330e75cf452c6c573e6552dfd676a924b5813175"
+      "sha256": "7248e7edbe428302240642b90a5b0ca26ca717a9aa51cb2a721bd9fb008a2241"
     },
     {
       "bytes": 2999,
@@ -11439,9 +11439,9 @@
       "sha256": "150d0fcc28493d86e1dac864f78c138fd36b99d8ef03793613f1ea6d59d332d2"
     },
     {
-      "bytes": 764,
+      "bytes": 1535,
       "path": "share/language/python/construction-input-map.json",
-      "sha256": "796cd7944049cb9b62cef3082040ac2e0bf5991b73ff113d82de54628558e93e"
+      "sha256": "b082ae25584489ef2b56938d8b9fa684912748f72e30dea14597cf611dfa6e60"
     },
     {
       "bytes": 1004579,
@@ -11454,19 +11454,19 @@
       "sha256": "5996407985af08c03e1552a5929cf75cb744c9cbc38b9bae0beef537cb2e89d6"
     },
     {
-      "bytes": 1491,
+      "bytes": 1720,
       "path": "share/language/python/ros1/bundle.json",
-      "sha256": "2c0e6132883de460cd3a1cfe9c31186cb0b30db1238849da4a387d86697655e6"
+      "sha256": "fa037e7488764e272d05ae7e905167753b039717c2d7966eb2259f8b422b69a3"
     },
     {
-      "bytes": 1491,
+      "bytes": 1720,
       "path": "share/language/python/ros2/bundle.json",
-      "sha256": "727d77edc81a3023d8f8c146446a6fbb3c91087cd47521cc314fa7bed9064feb"
+      "sha256": "4e896ba18234c927a55990d77f7bb0990548c5beeb0ec65b74cbb46f8596ad05"
     },
     {
-      "bytes": 1004579,
+      "bytes": 1005981,
       "path": "share/language/python/source-lock.json",
-      "sha256": "7a7f20918859a1193cece3feba4a1d755489bc715b97aba594496ef779355aeb"
+      "sha256": "b2bd300108c2a4048e3cc35c54d2b7e82f14b6e54287137f5493fe15e40a0a16"
     },
     {
       "bytes": 1397165,
@@ -13014,9 +13014,9 @@
       "sha256": "e57be4284b5bc47c2f23987487f6ef8f47a1855e7861c71f2dff4cde907aa6ab"
     },
     {
-      "bytes": 3260,
+      "bytes": 3261,
       "path": "src/language/python/transplate/command.c",
-      "sha256": "41c4b6b1912fbe2387fc7c7e13dff52b14fa7c1d85b1622c7e1d4dfe82f13a11"
+      "sha256": "d0faf867197872d280d8fff3b8356f692b8a4913b171f302d76860625a5fe259"
     },
     {
       "bytes": 32275,
@@ -13259,9 +13259,9 @@
       "sha256": "74aaa1c4bbe36db792d5c6326442db233c5ba91dc4ccc63926019abb505acc11"
     },
     {
-      "bytes": 48999,
+      "bytes": 52515,
       "path": "src/platform/ros/py/_native.c",
-      "sha256": "3790f25af5850e6cb6a3a60d3c23e1d2fece97f9b841dfbbfe97221c4c4a6721"
+      "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
     },
     {
       "bytes": 6577,
@@ -13274,9 +13274,9 @@
       "sha256": "325bb8d430cf0757d87dc49848bc0991500da5252becbc90112a93e6e580ecba"
     },
     {
-      "bytes": 15984,
+      "bytes": 16524,
       "path": "tools/language/js/library.lua",
-      "sha256": "b707c6d38326b425306e8709c8e1e4a746311a86a4d6652b4254c1f3669f72d6"
+      "sha256": "0aac314e612612a6b9de6d9ea5e25464a39d7313145298911b4afb6cc21afebf"
     },
     {
       "bytes": 14971,
@@ -13284,14 +13284,14 @@
       "sha256": "c312ed49e0cdcf228ed0c73c34826c91faf723ed7aa7f0720a48039832771e89"
     },
     {
-      "bytes": 16011,
+      "bytes": 17857,
       "path": "tools/language/js/pack.lua",
-      "sha256": "46a60e2189ea1fe4798ab1c07b7cde44052f03903bcfbcaa2e504ade01e5aced"
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
     },
     {
-      "bytes": 4980,
+      "bytes": 5173,
       "path": "tools/language/js/provider.lua",
-      "sha256": "ae22fa3a2cfa38e6ca4ea27150d357f8dfbc9db062c87d2d6840469c023aaaee"
+      "sha256": "f1f3d9538ea6dfb1893a028841ed48b2049550d9ed0deccb1a02d1b8124e9ea9"
     },
     {
       "bytes": 7883,
@@ -13314,19 +13314,19 @@
       "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
     },
     {
-      "bytes": 14371,
+      "bytes": 17873,
       "path": "tools/language/native/compiled.lua",
-      "sha256": "d459bad4293741a1716519ed414c5cae45f2f00c2f07ae4e260aa70deca9d353"
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
     },
     {
-      "bytes": 7007,
+      "bytes": 7255,
       "path": "tools/language/native/core.lua",
-      "sha256": "a29dc9417d2745bfbf63cf96db8a0e0dc727f9506b4f6f88c84894f2d01c0625"
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
     },
     {
-      "bytes": 4723,
+      "bytes": 4846,
       "path": "tools/language/native/frontends.json",
-      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+      "sha256": "42345a5ef409e9d1bc64a2858145c4fcf8790ff84e73ad8f69ed95ff8decac0e"
     },
     {
       "bytes": 8296,
@@ -13339,14 +13339,14 @@
       "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
     },
     {
-      "bytes": 14196,
+      "bytes": 14831,
       "path": "tools/language/native/library.lua",
-      "sha256": "3f74464fd59f29d359740f6fb3a28f566a455b0fc8f772ff386ef74f814a0dbe"
+      "sha256": "789cca696eb094c051aa6c8161f45fbd3dba34569281789f9a837810eb7e1ca2"
     },
     {
-      "bytes": 4583,
+      "bytes": 4901,
       "path": "tools/language/native/moonbit.lua",
-      "sha256": "7d233a23e2b194117896fe8ad384b79d894964c6ce604de58f144acca20df3e2"
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
     },
     {
       "bytes": 16707,
@@ -13354,9 +13354,9 @@
       "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
     },
     {
-      "bytes": 11829,
+      "bytes": 13665,
       "path": "tools/language/native/provider.lua",
-      "sha256": "fa8691e5db820dd7c0b6a496f837507f14f7b433dccc35269f4c3bf4b7e98ad9"
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
     },
     {
       "bytes": 3632,
@@ -13374,9 +13374,9 @@
       "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
     },
     {
-      "bytes": 10302,
+      "bytes": 10619,
       "path": "tools/language/python/build.py",
-      "sha256": "18dc6579ae1095b8a4ab72fbf1d457c7b722834a281acbc86ad200545b32fb39"
+      "sha256": "5d3fff60b953363c5413d1951a8fbff8d1a9344f7f4132a5208b1d40545c1539"
     },
     {
       "bytes": 370,
@@ -13414,14 +13414,14 @@
       "sha256": "3709ad9df68d5838b1bb10ab2a1a6dc0b6d0221fd261c258fb856243e598e79b"
     },
     {
-      "bytes": 8402,
+      "bytes": 9186,
       "path": "tools/language/python/transplate.lua",
-      "sha256": "e8942fb89f3c10d8a2d48b773334fddb20b2298fa12b3c57f4686e189f374f93"
+      "sha256": "7749fa42894242e5d232f7c164eecb705b655fecd62bbea350cec33a3c1d6e15"
     },
     {
-      "bytes": 4117,
+      "bytes": 4264,
       "path": "tools/platform/ros/cmake/CppCodecs.cmake",
-      "sha256": "92406daee3a3d7dc7b8dcf7d2840f95addfe09dad15e5543125b4572f56720ff"
+      "sha256": "b2f7d6624b77796de28f9df1263e4e860bb24845951d579673572a42cd0ddf65"
     },
     {
       "bytes": 3855,
@@ -13429,14 +13429,14 @@
       "sha256": "da3dca53d3deca4e1e8932869829e24d5eb5a4230a52dd9d613be5e98d39b7c8"
     },
     {
-      "bytes": 17096,
+      "bytes": 18932,
       "path": "tools/platform/ros/deployment.py",
-      "sha256": "72b1c2ee85b6e27a5c584f76b610edb7a26055b999ab833e17ac12c142423710"
+      "sha256": "f72940993de46b2fdff6ca3079d738c66c3fc0cfe611c86ba4216e93612d5cbd"
     },
     {
-      "bytes": 16306,
+      "bytes": 16368,
       "path": "tools/platform/ros/go_rust.lua",
-      "sha256": "16c1fdbe96fb36140ff2dcbeff2d81c322c09659b7cbd5c2be751917eff011a4"
+      "sha256": "d43fdb014963d76207395f24660227d22d5849eb66321c4a9fc97e0b6cd0cd7e"
     },
     {
       "bytes": 5652,
@@ -13444,9 +13444,9 @@
       "sha256": "45840583a8de43383656becff57c9cac5ca246c9e9d4745191f07edea1c76d7e"
     },
     {
-      "bytes": 18836,
+      "bytes": 18996,
       "path": "tools/platform/ros/lua/records.py",
-      "sha256": "adfca05d4c2cba7e389a482584b2c2d62e592e7b90ae43a63a4a5143654429b4"
+      "sha256": "7145c12b2f469b34eaff1a73090f2a5c104dac2c0179a433faf0ca631f2d5818"
     },
     {
       "bytes": 2760,
@@ -13454,14 +13454,14 @@
       "sha256": "f55c280afc3de60861ea01fabebd8003380e7ed773b792cf2390baba2ee1a7e2"
     },
     {
-      "bytes": 5821,
+      "bytes": 5790,
       "path": "tools/platform/ros/provider.lua",
-      "sha256": "20be3db985431236a13cacbdbafa773d22ad91ece68f01bd154f25072d178de6"
+      "sha256": "2c5e19d620e2e43555d234b0c8cead9a872e6615a254ecd367a5ca618a967e51"
     },
     {
-      "bytes": 12035,
+      "bytes": 12158,
       "path": "tools/platform/ros/run.py",
-      "sha256": "d78f1d06c56b64fc6d186ff3e4517fdc1f863625b1df5291b39af556fefbb10c"
+      "sha256": "6c7485ca1a735456d67241f4c595bb5cd280601ff5ae745bed93c08e86b6cb47"
     },
     {
       "bytes": 1884,
@@ -13469,9 +13469,9 @@
       "sha256": "3b70c0cbb075fd2bb1a63fb9f80040a74b9fc88dd164c17ed63cb5335ab09289"
     },
     {
-      "bytes": 17118,
+      "bytes": 19342,
       "path": "tools/shared/xmake/example_matrix.lua",
-      "sha256": "7b86f8a2323589604badf391414c572cce5df328b4384957e46617954d63e01d"
+      "sha256": "8f98963eb8fb7f8e4ad1f5b4edbbbb3e262161c0493e881649f5a614f85981d9"
     },
     {
       "bytes": 1360,
@@ -13484,14 +13484,14 @@
       "sha256": "c1f9d6a02a2dcc16f4e6a3b3e30716f8292a743eb6bfba1d7491944d9ddc6062"
     },
     {
-      "bytes": 12062,
+      "bytes": 19238,
       "path": "tools/shared/xmake/simulation_example.lua",
-      "sha256": "192419711be707052b938259d9156e9903fd59bd3087133e1d2a1e37d6825fee"
+      "sha256": "c330b77e65cc62915ff1170325969e6aac0fa6ee4fccbf9af8f0af2810711ba2"
     },
     {
-      "bytes": 4143,
+      "bytes": 5901,
       "path": "tools/shared/xmake/wasi_component.lua",
-      "sha256": "fb6e03b5f87d3e404f99d0ace09a0d8ea59d7797768b279c914004e5dd3ab1e9"
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
     },
     {
       "bytes": 4457,
@@ -13499,9 +13499,9 @@
       "sha256": "ccee907735622e719009b5eecae859b4a3a07c08d36b1e981385b6082ee244a3"
     },
     {
-      "bytes": 10065,
+      "bytes": 16078,
       "path": "tools/xmake/artifact_contract.lua",
-      "sha256": "271da84746c6fb86739b606ce63f17c6e47da48b2b85d141d03687cca2225f38"
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
     },
     {
       "bytes": 1444,
@@ -13509,14 +13509,14 @@
       "sha256": "13b0aab0957c52043137ba036aeb6ff5fac96eb8fd2dea1a74dc63b6017bdde1"
     },
     {
-      "bytes": 18949,
+      "bytes": 20578,
       "path": "tools/xmake/cfamily.lua",
-      "sha256": "b229f93f5412b95e7ee038b3cc6de33e42662b759b770675cc34ece671d87c27"
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
     },
     {
-      "bytes": 7742,
+      "bytes": 9539,
       "path": "tools/xmake/dispatch.lua",
-      "sha256": "8a8cd39c6294f07591c76eee08c2168439a699f249976a0d8beaa348fa6bc3ae"
+      "sha256": "24219cc623405fca4b0cfd3a71f6252ba723eab12cbd733d213247cdc9b91116"
     },
     {
       "bytes": 2391,
@@ -13524,39 +13524,39 @@
       "sha256": "9df66a0403692e3a2a473979d9fb7ae0d187214817220de172ac3e326a4abdd3"
     },
     {
-      "bytes": 5130,
+      "bytes": 5467,
       "path": "tools/xmake/language_adapter.lua",
-      "sha256": "faacfaefefe368a85620bd30c228a82702bbb8f4752ed80534b836bdfc16a794"
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
     },
     {
-      "bytes": 4897,
+      "bytes": 5194,
       "path": "tools/xmake/package_bundle.lua",
-      "sha256": "544f0d73508d96285c121030aa0bcaa3f98d7c6fac3d992712652aeabbbb9b5a"
+      "sha256": "b6eb1a74934aedc4fe91c527e05f5bc48c0eccfd7f04b2e16cfa6b503bddd31f"
     },
     {
-      "bytes": 5611,
+      "bytes": 6071,
       "path": "tools/xmake/package_host.lua",
-      "sha256": "e21233e4d5aa0a6ed7a5f0ed4c3cf9d1a17d7f879d06d0a3ad7b75b478a54803"
+      "sha256": "79bc970e7d23df5dcabf8c3cde62d277efb17acadf49bc423d05b3e980087efc"
     },
     {
-      "bytes": 7308,
+      "bytes": 7519,
       "path": "tools/xmake/provider_contract.lua",
-      "sha256": "231ece08cf12f189384f9ceffa93c5253a70159b532b345b2f0c1d4b10fef387"
+      "sha256": "e7d34605eca68fc1753504fa46af81c9c473a4c3e1e7bd23dfede7ea5c35071a"
     },
     {
-      "bytes": 1401,
+      "bytes": 3304,
       "path": "tools/xmake/repository.lua",
-      "sha256": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a"
+      "sha256": "4c5eaac900b3cbef23fcf1390fa130dacdf369db9e4f7e0c9b03455d688d8b61"
     },
     {
-      "bytes": 8421,
+      "bytes": 10285,
       "path": "tools/xmake/ros.lua",
-      "sha256": "70fcfc66b0aaa683c7d2064091b70ee3da0fbf3332ce46b4be0553bda99df801"
+      "sha256": "1d402507d63260a68da8035c209128474edeeb1f86503714be9ca38ebbc7849f"
     },
     {
-      "bytes": 2796,
+      "bytes": 3089,
       "path": "tools/xmake/run.lua",
-      "sha256": "c098486d0eb62b23e7148e9ad2b7ed9a99c666578024b44c2cf3160dc9d4d5c0"
+      "sha256": "e25b82561d75ed51c32638194634884fac1a322dfe240df3813130d4c7cbd63d"
     },
     {
       "bytes": 2069,
@@ -13564,19 +13564,19 @@
       "sha256": "5a1f1e337bbe1e79fee3474eab9a283cb200c4553ee3c40c05efe378e3eddb6d"
     },
     {
-      "bytes": 11012,
+      "bytes": 14983,
       "path": "tools/xmake/tool_bundle.lua",
-      "sha256": "21c06abae4c7b948c35ba9a3a009eee1816695bd4e89c4b552ed5f2b88a0c6d0"
+      "sha256": "93c777db53d096fce54ed17d2bf8dab854f5db571879d951dcaba289b3bc1d2d"
     },
     {
-      "bytes": 9207,
+      "bytes": 9168,
       "path": "tools/xmake/wasm_link.lua",
-      "sha256": "fa681aa3e367a4dc675d2b03d4acea52fbc5da5cfbda4736b5e03b735e7a84fd"
+      "sha256": "ae681451bb2e969273bc1c00e401827a5a3e7c97e9ada79d7b4ab673e380c7a3"
     },
     {
-      "bytes": 10158,
+      "bytes": 15824,
       "path": "tools/xmake/wasm_module.lua",
-      "sha256": "72cb446d90cb148cc06188ffb5528a7204033941b2154c206624fdb77f6f4dbe"
+      "sha256": "70488ba6ae830e08d2fa6d878e5f718067dc92535b2225b18a4a1efdb424d18b"
     },
     {
       "bytes": 1933,

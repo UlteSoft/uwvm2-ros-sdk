@@ -60,7 +60,125 @@
           "response": "mycobot_interfaces/msg/MycobotGripperStatus",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/elephant/bundles/js/foxy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/foxy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/foxy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/foxy/records",
+              "path": "include/platform/elephant/php/foxy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/foxy/records",
+              "path": "include/platform/elephant/ruby/foxy/records.rb"
+            }
+          ]
+        },
+        "java": {
+          "sources": [
+            "include/platform/elephant/java/foxy/elephant/foxy/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/foxy/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/foxy/elephant/foxy/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      }
     },
     {
       "id": "galactic",
@@ -120,7 +238,125 @@
           "response": "mycobot_interfaces/msg/MycobotGripperStatus",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/elephant/bundles/js/galactic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/galactic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/galactic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/galactic/records",
+              "path": "include/platform/elephant/php/galactic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/galactic/records",
+              "path": "include/platform/elephant/ruby/galactic/records.rb"
+            }
+          ]
+        },
+        "java": {
+          "sources": [
+            "include/platform/elephant/java/galactic/elephant/galactic/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/galactic/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/galactic/elephant/galactic/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      }
     },
     {
       "id": "humble",
@@ -186,19 +422,120 @@
       ],
       "source_graph_v1": {
         "java": {
-          "format": "uwvm-vendor-source-graph-v1",
-          "language": "java",
           "sources": [
             "include/platform/elephant/java/humble/elephant/humble/BoundedRecords.java"
           ],
           "main_class": "Main"
         },
         "js": {
-          "format": "uwvm-vendor-source-graph-v1",
-          "language": "js",
-          "bundle_manifest": "share/platform/elephant/bundles/js/humble.json",
-          "module_count": 13,
-          "native_definition_catalog": "share/platform/elephant/catalogs/humble/catalog.json"
+          "bundle_manifest": "share/platform/elephant/bundles/js/humble.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/humble.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/humble.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/humble/records",
+              "path": "include/platform/elephant/php/humble/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/humble/records",
+              "path": "include/platform/elephant/ruby/humble/records.rb"
+            }
+          ]
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/humble/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/humble/elephant/humble/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      },
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
         }
       }
     },
@@ -260,7 +597,125 @@
           "response": "mycobot_communication/MycobotGripperStatus",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/elephant/bundles/js/kinetic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/kinetic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/kinetic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/kinetic/records",
+              "path": "include/platform/elephant/php/kinetic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/kinetic/records",
+              "path": "include/platform/elephant/ruby/kinetic/records.rb"
+            }
+          ]
+        },
+        "java": {
+          "sources": [
+            "include/platform/elephant/java/kinetic/elephant/kinetic/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/kinetic/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/kinetic/elephant/kinetic/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      }
     },
     {
       "id": "melodic",
@@ -320,7 +775,125 @@
           "response": "mycobot_communication/MycobotGripperStatus",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/elephant/bundles/js/melodic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/melodic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/melodic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/melodic/records",
+              "path": "include/platform/elephant/php/melodic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/melodic/records",
+              "path": "include/platform/elephant/ruby/melodic/records.rb"
+            }
+          ]
+        },
+        "java": {
+          "sources": [
+            "include/platform/elephant/java/melodic/elephant/melodic/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/melodic/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/melodic/elephant/melodic/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      }
     },
     {
       "id": "noetic",
@@ -380,7 +953,125 @@
           "response": "mycobot_communication/MycobotGripperStatus",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/elephant/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/elephant/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "elephant",
+                "source": "include/platform/elephant/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "elephant"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/elephant/bundles/js/noetic.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/elephant/bundles/lua/noetic.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/elephant/bundles/py/noetic.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "elephant/php/noetic/records",
+              "path": "include/platform/elephant/php/noetic/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "elephant/ruby/noetic/records",
+              "path": "include/platform/elephant/ruby/noetic/records.rb"
+            }
+          ]
+        },
+        "java": {
+          "sources": [
+            "include/platform/elephant/java/noetic/elephant/noetic/BoundedRecords.java"
+          ],
+          "main_class": "Main"
+        },
+        "kotlin": {
+          "sources": [
+            "include/platform/elephant/kotlin/noetic/Records.kt"
+          ],
+          "java_sources": [
+            "include/platform/elephant/java/noetic/elephant/noetic/BoundedRecords.java"
+          ],
+          "main_class": "MainKt"
+        }
+      }
     }
   ],
   "requested_languages": [

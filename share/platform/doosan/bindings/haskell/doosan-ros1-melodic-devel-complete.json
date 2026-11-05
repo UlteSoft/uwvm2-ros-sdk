@@ -17,5 +17,20 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "Doosan.Records.DoosanRos1MelodicDevelComplete",
+          "source": "include/platform/doosan/haskell/ros1/doosan-ros1-melodic-devel-complete/Records.hs"
+        }
+      ]
+    }
+  }
 }

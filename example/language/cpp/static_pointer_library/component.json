@@ -30,7 +30,7 @@
     {
       "scope": "sdk",
       "path": "example/language/cpp/static_pointer_library/xmake.lua",
-      "sha256": "679994b7cb8bb5405e52fd0413855e95f5eea92aad5e848b9df967e1db12933d"
+      "sha256": "3fde8b9ca1945370f0b6b72b056a29a6814bd969755a652059b7dd826ded1c77"
     },
     {
       "scope": "sdk",
@@ -50,47 +50,47 @@
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/wasi_component.lua",
-      "sha256": "0677bc38cf0cb4195e3861ab67bf1711ab3aa239df0256422921c07c22e7161a"
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/simulation_example.lua",
-      "sha256": "2820af347b9b4033f0466bc0e654ee84a5caa3736118bb47f31c4c1623620f77"
+      "sha256": "c330b77e65cc62915ff1170325969e6aac0fa6ee4fccbf9af8f0af2810711ba2"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "add213664b6e6fdd6733b758f2da95775219d0d772586c5e188aa3996a749335"
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/example_process.py",
-      "sha256": "fb2526b4b477f5d599e642c25fe7a0a87473df9f1dcf3e5097ded4ea4642638f"
+      "sha256": "4108ced8f0bc233f76d34c06236d193c0df6428c34a72e63d89a8c1cf1f25f8e"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/runtime_boundary.py",
-      "sha256": "4f206a6d21747e04a8ae0e74558ef6859c31b9856e8aa3bb797c308da0d557cb"
+      "sha256": "d9b6f1357e247e46ef1212faad4542f283c57230f1670c9c9114b3666485e484"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/simulation_example.py",
-      "sha256": "e5c21f913af6aa7be09f4e7d8848212e225e93fdbf3cb3b4567dd195a58d6938"
+      "sha256": "91af18496de4a6d34ade3a608d342db8c7dd1ea4d6384626d85d62c21bb9b91b"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/artifact_contract.lua",
-      "sha256": "8b0edf7310ee931587937199ba90828c12216097a37a01c11658a3c2b7347dcc"
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/cfamily.lua",
-      "sha256": "1af9d3ed5d32bac6b7a420cc6a991368a664fe88f805d12401186a82988f2700"
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/dispatch.lua",
-      "sha256": "87b295e0576cbf517804d48bb0a8673c962f4739454b6ef17bb4a30eb28b3f3f"
+      "sha256": "24219cc623405fca4b0cfd3a71f6252ba723eab12cbd733d213247cdc9b91116"
     },
     {
       "scope": "sdk",
@@ -105,12 +105,12 @@
     {
       "scope": "sdk",
       "path": "tools/xmake/package_bundle.lua",
-      "sha256": "544f0d73508d96285c121030aa0bcaa3f98d7c6fac3d992712652aeabbbb9b5a"
+      "sha256": "b6eb1a74934aedc4fe91c527e05f5bc48c0eccfd7f04b2e16cfa6b503bddd31f"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/package_host.lua",
-      "sha256": "e21233e4d5aa0a6ed7a5f0ed4c3cf9d1a17d7f879d06d0a3ad7b75b478a54803"
+      "sha256": "79bc970e7d23df5dcabf8c3cde62d277efb17acadf49bc423d05b3e980087efc"
     },
     {
       "scope": "sdk",
@@ -120,17 +120,17 @@
     {
       "scope": "sdk",
       "path": "tools/xmake/repository.lua",
-      "sha256": "0a3ea35367a3e0772607b837d6576005b75c1e1c9406b801f80d335035d0d62a"
+      "sha256": "4c5eaac900b3cbef23fcf1390fa130dacdf369db9e4f7e0c9b03455d688d8b61"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/ros.lua",
-      "sha256": "5fa2ade79f22d76915f1a512c4c97cba410b73c943ee5bb00681f407f4266c78"
+      "sha256": "1d402507d63260a68da8035c209128474edeeb1f86503714be9ca38ebbc7849f"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/run.lua",
-      "sha256": "c098486d0eb62b23e7148e9ad2b7ed9a99c666578024b44c2cf3160dc9d4d5c0"
+      "sha256": "e25b82561d75ed51c32638194634884fac1a322dfe240df3813130d4c7cbd63d"
     },
     {
       "scope": "sdk",
@@ -140,17 +140,37 @@
     {
       "scope": "sdk",
       "path": "tools/xmake/tool_bundle.lua",
-      "sha256": "21c06abae4c7b948c35ba9a3a009eee1816695bd4e89c4b552ed5f2b88a0c6d0"
+      "sha256": "93c777db53d096fce54ed17d2bf8dab854f5db571879d951dcaba289b3bc1d2d"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/wasm_link.lua",
-      "sha256": "fa681aa3e367a4dc675d2b03d4acea52fbc5da5cfbda4736b5e03b735e7a84fd"
+      "sha256": "ae681451bb2e969273bc1c00e401827a5a3e7c97e9ada79d7b4ab673e380c7a3"
     },
     {
       "scope": "sdk",
       "path": "tools/xmake/wasm_module.lua",
-      "sha256": "5dcd67cb10940ce8b86bfc4bce7705ae7597da2ebff1ebc113c61ad5513a44e0"
+      "sha256": "70488ba6ae830e08d2fa6d878e5f718067dc92535b2225b18a4a1efdb424d18b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/wasi_policy.lua",
+      "sha256": "d139a8fde741a9ec10dab009177611aec43cbc82d50bafe10d6617c05eb1442d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
     }
   ]
 }

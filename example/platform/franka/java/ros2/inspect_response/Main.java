@@ -5,7 +5,7 @@ public final class Main
 {
     public static void main(String[] args) throws Exception
     {
-        byte[] bytes = System.in.readNBytes(262);
+        byte[] bytes = uwvm.ros.Wasi.readStdin(262);
         BoundedRecords.Ros2Franka_msgsSrvSetCartesianStiffness_Response value =
             BoundedRecords.Ros2Franka_msgsSrvSetCartesianStiffness_Response.CODEC.decode(bytes);
         byte[] encoded = BoundedRecords.Ros2Franka_msgsSrvSetCartesianStiffness_Response.CODEC.encode(value);

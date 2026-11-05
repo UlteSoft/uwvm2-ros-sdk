@@ -14,9 +14,9 @@ public enum AbbRos1 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitSystemState(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros1Abb_robot_msgsSystemState>
+    -> NativeObservation<Ros1Abb_robot_msgsSystemState>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 2331, attempts, Ros1Abb_robot_msgsSystemState.decode, { $0.encode() })
   }
 
@@ -26,9 +26,9 @@ public enum AbbRos1 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitEgmState(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros1Abb_egm_msgsEGMState>
+    -> NativeObservation<Ros1Abb_egm_msgsEGMState>
   {
-    return rosReceive(aliasBytes, 1380, attempts, Ros1Abb_egm_msgsEGMState.decode, { $0.encode() })
+    return nativeReceive(aliasBytes, 1380, attempts, Ros1Abb_egm_msgsEGMState.decode, { $0.encode() })
   }
 
   /// @brief Observe every original abb_rapid_sm_addin_msgs/RuntimeState field through one retained owner.
@@ -37,9 +37,9 @@ public enum AbbRos1 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitRuntimeState(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros1Abb_rapid_sm_addin_msgsRuntimeState>
+    -> NativeObservation<Ros1Abb_rapid_sm_addin_msgsRuntimeState>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 8372, attempts, Ros1Abb_rapid_sm_addin_msgsRuntimeState.decode, { $0.encode() })
   }
 

@@ -3,8 +3,9 @@
 module main;
 import universal_robots.ros2.universal_robots_ros2_complete.records;
 import roswasm.wire : Arena;
-import core.stdc.stdio : printf;
-extern(C) int main() @nogc nothrow {
+// WASI libc supplies this exact C variadic printf entry.
+extern(C) int printf(scope const(char)* format, ...) @nogc nothrow;
+extern(C) uint nl_entry() @nogc nothrow {
     Ros2Ur_msgsActionFollowJointTrajectoryUntil_Feedback value;
     ubyte[2352] bytes, again;
     ubyte[1048576] arenaBytes;

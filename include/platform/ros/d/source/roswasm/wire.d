@@ -1,5 +1,7 @@
 module roswasm.wire;
 import roswasm : validUtf8, maximumRequest, maximumOutput;
+// Exact bounded byte transfer through the selected WASI libc.
+extern(C) void* memmove(void*, const(void)*, size_t) @nogc nothrow;
 
 // BetterC cursor codecs. Readers borrow input; decoded strings borrow that
 // input. Generated variable containers use an explicit caller-owned Arena.
@@ -12,6 +14,7 @@ import roswasm : validUtf8, maximumRequest, maximumOutput;
 /// dependent values are dead; resetting storage while values survive is invalid.
 /// @see Arena.allocate; Reader; roswasm.typed.callValue
 struct Arena {
+    @nogc nothrow:
     /// @brief Caller-owned writable region retained for all allocated typed views.
     /// @details Keep its base allocation stable and exclusive during allocation;
     /// do not resize/free/overwrite it while decoded arrays or nested values survive.
@@ -54,6 +57,7 @@ struct Arena {
 /// discard/reset the attempted whole value before reusing its cursor/storage.
 /// @see Writer.put; Writer.bytes; Reader
 struct Writer {
+    @nogc nothrow:
     /// @brief Exclusive caller-owned output bytes, borrowed while writing/using prefix views.
     /// @details Ordinary writes are bounded by both storage.length and limit.
     /// Measurement mode never copies bytes and does not reserve a future buffer.
@@ -93,7 +97,7 @@ struct Writer {
              code=90;
              return false;
         }
-        if(!measuring) storage[position..position+b.length]=b;
+        if(!measuring && b.length) memmove(storage.ptr + position, b.ptr, b.length);
         position+=b.length; return true;
     }
     /// @brief Write the exact selected standard integral scalar in canonical LE bytes.
@@ -218,6 +222,7 @@ double float64Bits(ulong n) {
 /// A semantic refusal can consume a prefix; discard partial reader/value state.
 /// @see Reader.take; Reader.finish; Arena; Writer
 struct Reader {
+    @nogc nothrow:
     /// @brief Complete immutable original input bytes, at most maximumOutput.
     /// @details Retain the allocation unchanged for decoding and every borrowed
     /// string/raw field. No Native pointer or implicit ownership transfer occurs.

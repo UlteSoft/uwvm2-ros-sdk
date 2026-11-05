@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "ros-authority-denial-1904",
+  "test_scope": "Actual observation guest: namespace visibility alone grants no alias. Assert original denial, no response and no acquired owner; invalid argument rejection. Positive native communication requires its separate deployment integration suite.",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "89ef57e2379e542e7d47e66ab1c0e8f477492e259da7ebb8cfd18c22410df8dd"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "2615d1521b54dd0bd522ec3d74da0c8cd4aba94cce7d1fbaa1ff05cddf008e0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/elephant/provider.json",
+      "sha256": "94fff4561170ba5e81286ebb3c4a43acba9ea0055483b6c6e72a6225eeb2ca7b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

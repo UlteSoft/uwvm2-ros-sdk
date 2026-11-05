@@ -1,0 +1,993 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "yaskawa-authority-5263",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with the ROS 2 interface enabled and zero resource grants: verify exact denial and retained operation/cleanup diagnostics; missing arguments must fail before acquisition. Complete payload and native deployment qualification are separate tests.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "dc7eec00ecf7334f6bf1ed7ba30e2e9f55e9c94365d93a7f4881f46b989eaba0"
+    },
+    {
+      "scope": "example",
+      "path": "Main.kt",
+      "sha256": "e01601c846bb116873dc19216929ff34c182a324c882fe525b413d3f02fe4620"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiBuiltin_interfacesMsgDuration.java",
+      "sha256": "a08248958bc00880a0d9b6772310dd0591272c7b560ce388f2ac3217c26cb995"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiBuiltin_interfacesMsgTime.java",
+      "sha256": "16c4c47332261a0d25d57bc5b064f249ac20f76648a7959aac1fc885a05c3f89"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiControl_msgsActionFollowJointTrajectory.java",
+      "sha256": "352bb8b9e456675aa45b5f13dac44b66b90cc97d60044580a9df33a13fb76212"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiControl_msgsMsgJointComponentTolerance.java",
+      "sha256": "72f909ba9f8923971f64d49f8eeaacc17756228aa1578f7c61305b3a8f35803d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiControl_msgsMsgJointTolerance.java",
+      "sha256": "e9be3d4033e88b0f2ab653167e2988dd338f36b909c0dfca179b01ec792ba2ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiGeometry_msgsMsgQuaternion.java",
+      "sha256": "6286aa8282b29cd89438182159e7dd28264320a815bf0c90264712dc48a27794"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiGeometry_msgsMsgTransform.java",
+      "sha256": "4e63f06ae7622f44c08d424c5c0310d12de6851a161dabfa230bfb916933d8a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiGeometry_msgsMsgTransformStamped.java",
+      "sha256": "188f44aa454e1dab84308affff11e62ab08be325402de49b02114c917b8d809e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiGeometry_msgsMsgTwist.java",
+      "sha256": "556f4589b902272a1b927a518dd39fbb6fa520d3a9f1e5ba59e27b9f14ad6a5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiGeometry_msgsMsgVector3.java",
+      "sha256": "bfb3c9f396fc1539ff39af8e10696f54414195319077f1b9ba5bd7113a5582d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgDebugLevel.java",
+      "sha256": "47d6e39f3c692c6fff3faa1b07db328a9db2b059cafad6abb60da16fba9d6e32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgDeviceInfo.java",
+      "sha256": "ac0cf9adb19cba377ce87c1f8373320880a9725a1a21d09e93ce8a5645be4410"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgRobotMode.java",
+      "sha256": "2d58cf1156ea7ba73fbee71b227dce87b5533682cf5c569ff0e6133750e54d31"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgRobotStatus.java",
+      "sha256": "d5aa3944851f6a2f8082925c3ee6d227cbce9d7845367bca57dc0d731c0cf69f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgServiceReturnCode.java",
+      "sha256": "f2642e3c42686c926efdd914ccba7f469f5f28d6259c2eba00cf387382631ea3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsMsgTriState.java",
+      "sha256": "117dde4623eb3b8a7c756f1e49ba7a5013752b2a7e1de83b7a31b52f0012e058"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvCmdJointTrajectory.java",
+      "sha256": "a38b2ed788c714c5211c033ad3a11959b125be661f26dda16bc9d0f96d45819a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvGetRobotInfo.java",
+      "sha256": "d75b64d9c63abe03e2c83f3f8370a286b8c625f8d3da90a1c6e1c74e05a63dec"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvSetDrivePower.java",
+      "sha256": "95db196d136732c9012f97e7fbe45306387137ed8a9b3c3b62b2ce758ccf6dc4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvSetRemoteLoggerLevel.java",
+      "sha256": "eba4a317d29b1db87a565c3efff6a4a0d3762576cb6b5c52090b72c2e4d871a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvStartMotion.java",
+      "sha256": "646e8987e321a8f491a5a413728562fca8be41793730a1e782d82fbcc94b57c4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiIndustrial_msgsSrvStopMotion.java",
+      "sha256": "14061c4e20aa2e98aa40405da544bb2d002d1f4f0b322d03e109aa377df51b34"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgAlarmCauseRemedy.java",
+      "sha256": "e02cb185d3a3e98ec971cc014e8bb0cd9d75933a0fb55a78980f6b06657a0bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgAlarmInfo.java",
+      "sha256": "f9f91469cb5fcdf3dccf7c5af7450f1997acb0abf92da1856c491ac95b2cb001"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgErrorInfo.java",
+      "sha256": "4618631b03859537a2e3e206e3e5f90a4dd8ac9b0adaef008424317e67331696"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgInformJobCrudResultCodes.java",
+      "sha256": "fafff65d3b5f57a0e1d804ec4375383b7472298a9622dc118fdd06d2e0c9c791"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgInitTrajEnum.java",
+      "sha256": "6832f65041f4e58d43cf279e25030a0ff1f6824ac194c735e3c91559888b9b1b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgIoResultCodes.java",
+      "sha256": "8d01cf3325512b7456ed1469c4061fd99ac890dd486ed67b85bff3f0e822ee4b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgMotionReadyEnum.java",
+      "sha256": "3ce0007bfdff40f7e5ef3522723d5cd9688ee1bb5e289badb5c324551f48beb3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgQueueResultEnum.java",
+      "sha256": "329a2ef0df5a72e0193664fbe62fe97c80f445affbb4009deb9c99e361c465ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesMsgSelectionResultCodes.java",
+      "sha256": "239e8094c1d79c825237251b0e2dbf7e456c4605daf19b04d7cdbb7dd19ec796"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvGetActiveAlarmInfo.java",
+      "sha256": "ae8038c1cc2317cf0c1972ceed2059e639b8302a3fc2c0119ca94f6f63838362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvListInformJobs.java",
+      "sha256": "f178daaa662868c0ee4eaed0e651aca94dc77dbd6b6731167d7f8a2584e3d22d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvQueueTrajPoint.java",
+      "sha256": "2f4082f6c4939ea8541c101f8106f2e16b19caa3f4bb28492479134583ee9216"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvReadGroupIO.java",
+      "sha256": "028eced2aff43c79f1177b091f6b11fb480174cf42645d76e9a1ddc6920ba86d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvReadMRegister.java",
+      "sha256": "5c08191d8f73942712618184988b3cee7010a2a36b79f2aad7fdd1f16f44ffbe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvReadSingleIO.java",
+      "sha256": "65dee4c26a96d2c6fb3a58f46af154f2bcb1e6b19bed588e55f4a1b9ade86aad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvResetError.java",
+      "sha256": "41208ba544c75c749d81e012eff0c0543b55543eded79ed11e67808cf89c8d68"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvSelectMotionTool.java",
+      "sha256": "cd4e172695a7d5b4bb67150fddcb3fe0c52ca8a1fc7ff9b89686d05b5c7cd400"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvStartPointQueueMode.java",
+      "sha256": "e4e43416c83c666b9c742d5ea43ee34e30e298c0e0689a2a784dda1dcb19b3a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvStartTrajMode.java",
+      "sha256": "e38af319245d49fd709336dba8fcbc1f43544be20eeaa0b449a9afd3fc03284a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvWriteGroupIO.java",
+      "sha256": "1addea3c7e03d8c0d0d5f1c3dfaa8da9be9e789f67362d0161b002373729b0ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvWriteMRegister.java",
+      "sha256": "d1a1b88ddfb26ce028780e4b4c16dbbab9e069d8be9506dcc3ebed410aad720f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiMotoros2_interfacesSrvWriteSingleIO.java",
+      "sha256": "d8367a0c48cfb5a6049c2754a1ef179b800cebc7b95f3da118a9999642d80f6b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiSensor_msgsMsgJointState.java",
+      "sha256": "4fc74071a67fc8e0dc632649e646deca565513c3f83001cf4f33a080c4554c85"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiStd_msgsMsgHeader.java",
+      "sha256": "b9ec0e4b65bd59575d121eb896154742a50d26d100bc2a9631311acaa6bb6ac5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiStd_srvsSrvTrigger.java",
+      "sha256": "9db70bfcf7cb6f05ffe60c165e2233c49746ea5c77b18b23593b313369902db1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiTf2_msgsMsgTFMessage.java",
+      "sha256": "b6133d1cb831f1ccbb2508378c27515d51aa500c4959c8157b191facbd831b00"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectory.java",
+      "sha256": "323dc64835aeda1b6f604d3b0b81b89c673d30036c422e2e67365899f897ebc6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiTrajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "0cc37f5da00f5924a0e2caef819f4d80a0d102c227a17ec4137337588c6f4343"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "0640969954e810aacbfd466ac9ccd065687f37459e24041d02b38c869bce2a0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2ApiTrajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "0e19e42592772ee0bd66406901433a5a3234584e78492d44fa4aa4ada7ac8bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Builtin_interfacesMsgDuration.java",
+      "sha256": "b6d8b0b3c5a037587a3168a1e8e5b6604913876aba65801c8c34ab3b6d1dbf09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Builtin_interfacesMsgTime.java",
+      "sha256": "15ba1e7b2845d30a6afa635d41a11d7422cb591093fd33e5f9104922c44b65a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Control_msgsActionFollowJointTrajectory_Feedback.java",
+      "sha256": "1b2a1f0c187c654eafdd615eede53b56e4513047006a0f3060dc3d49f33ad8c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Control_msgsActionFollowJointTrajectory_Goal.java",
+      "sha256": "cd738c7829d8c62b36b8e705e796f6ca5b610f2e3d3659ea4f73ec867e893f45"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Control_msgsActionFollowJointTrajectory_Result.java",
+      "sha256": "a5f3d8be6369a567b1a0f65aa5a6c57e39ffeae89a84f049d740b666dd12252c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Control_msgsMsgJointComponentTolerance.java",
+      "sha256": "c3c71cecb69cdfcfd2411a383363538f68a588952156e073e8210201d40747e8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Control_msgsMsgJointTolerance.java",
+      "sha256": "ab36999d93432c3c4ae6bd05569f2b39a409cf139411f187bf9759b199f7e5ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Geometry_msgsMsgQuaternion.java",
+      "sha256": "38896924a55fadd844a90a13263abd9c1b8578f630f63687773b70cc238e83f7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Geometry_msgsMsgTransform.java",
+      "sha256": "1564be3f848a2daf09a41a31dcc14b497e686f08fdfa19391253f3f6924b1b4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Geometry_msgsMsgTransformStamped.java",
+      "sha256": "39abdaa76baa24477d1f2a68085eab892bba9b9f46b855ea7af4a6250777c9e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Geometry_msgsMsgTwist.java",
+      "sha256": "987ced06d800288b86eb0b7fc49c04d3281defe7664e96cb314ffc2dc4b29ebe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Geometry_msgsMsgVector3.java",
+      "sha256": "1fb475610c5134ab52752e164f1fec7e4bf4a6f17a86911f3d1e924c8a029c30"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgDebugLevel.java",
+      "sha256": "f133fad3b6611fc4be7d892492bc829ef31b246cb017ebc0c3496272e2d64156"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgDeviceInfo.java",
+      "sha256": "8470fe751bb6b523ef653b7bfc93a95b17cc00e9833e650434a59d9c64323df1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgRobotMode.java",
+      "sha256": "54ed20bb515fe660ed98d2a276c2575cd723b7cb620b34b27661b6c81f0d6d2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgRobotStatus.java",
+      "sha256": "74e78556e49618dae8d250c577f56f1cda4fea7688ba0552359c4927968f374b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgServiceReturnCode.java",
+      "sha256": "0a451dfc412c0ee7bfa1e0c566c31e657499518541eca560be2dea92b7f03934"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsMsgTriState.java",
+      "sha256": "14b1e28da339406162ba378e555dad4ea5461896c52bdaae15968e961a7df09b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvCmdJointTrajectory_Request.java",
+      "sha256": "22ba712c020b05555db854c0d64d35470339c57520c36480c9d2d835bb380b6a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvCmdJointTrajectory_Response.java",
+      "sha256": "a698033b45df9b2d5459d506a2612ee8642a5e212646ae90de99bb9f6a87ce2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvGetRobotInfo_Request.java",
+      "sha256": "75030a81d9833dc9b26b2dc3e812d09aff880f1c474f670bd0affcf11f8331da"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvGetRobotInfo_Response.java",
+      "sha256": "7d69f86ac5a431b9d6e2e13e54b3094d3551b4b5865fda6ef0f7c1ad05b2e216"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvSetDrivePower_Request.java",
+      "sha256": "2b3c729483bce8b61be53d94272956049bb9bd8dfd1ad26585b3e3fdf48feb2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvSetDrivePower_Response.java",
+      "sha256": "1b6ffac0bfc039378f07fda99b9ba5544d63a32a9493c19bea8b666d4cff5d9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Request.java",
+      "sha256": "ce2e73d6a08032ead0019b720f404298da09acae548b1ff81756e8e5010ee000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvSetRemoteLoggerLevel_Response.java",
+      "sha256": "80bf48d109246fc8d610e78faf3a2c59823d57f1e3293a1de2298ee360bfa357"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvStartMotion_Request.java",
+      "sha256": "7c3fdebf00a8c72d0ebb75e8f813fb3fc0d17d905d33141b15e7f2d28066f4c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvStartMotion_Response.java",
+      "sha256": "6ad23063ca516ca1a167370e443f9356875a9dbd50155b83cccb2bb07350a169"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvStopMotion_Request.java",
+      "sha256": "665201ec959fa87609f2d9f7c2dddc2353c951042b3ca6a30caa28a377eaf515"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Industrial_msgsSrvStopMotion_Response.java",
+      "sha256": "c0506d4bbc78412bb5c57502dcb0cf12e82e7a3242563031d0afdbaa70fcc17d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgAlarmCauseRemedy.java",
+      "sha256": "eaa40f7038f0e009032d96d2227b90f1f841ef31602b429c22a1a2b00180e2ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgAlarmInfo.java",
+      "sha256": "a2fc14ace59526e5507998566bf28b55132efc371c2a566e6c785f4d909c8289"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgErrorInfo.java",
+      "sha256": "46c83a729ff6bb6528539ce670ce30270dde64e095cd6544a9f24414630e474b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgInformJobCrudResultCodes.java",
+      "sha256": "c1ffa74fb5166aba0d19b6328158828686bdb6a86dc6aac03d6e84d9fc7f324a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgInitTrajEnum.java",
+      "sha256": "87852dc15135819016109e6ce40acac1c311c29a8c42aa72835e94b69f1261e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgIoResultCodes.java",
+      "sha256": "21c6189ad87c0ffdf14762a087f44bf9ae1b06e5d81695422eb7d986283d3717"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgMotionReadyEnum.java",
+      "sha256": "105781d355ab24d27f2db87f773360c045e69731f9677d8b3884cc22ee9d95e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgQueueResultEnum.java",
+      "sha256": "9532cbdeb6caf4e79b28a90f3aa89ec40977fc06348e15833f02d1a9db72f0a7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesMsgSelectionResultCodes.java",
+      "sha256": "23107a82c22cf9760f981b6800df65295655e02f05069e842f8650ad694cd8ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Request.java",
+      "sha256": "a0483f11e38c285554e10b1e5aa24a2cace07bb1b9c877c7410f6af56e4abe46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvGetActiveAlarmInfo_Response.java",
+      "sha256": "b8a18692ee8a60b20748a0b7b9fe54ca2b072e76368f79b016ccf892842d8561"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvListInformJobs_Request.java",
+      "sha256": "c0cffd244fbf8fa25b11a975ee40f449f666e91109fef13b90d43cda9c15e347"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvListInformJobs_Response.java",
+      "sha256": "a63bfb110f545d9b661b5aa7c759e764d9cdd133d7a1589f6e29c96b2fbdfbd7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvQueueTrajPoint_Request.java",
+      "sha256": "a68ff15b19edab9576bdabd31df764c123e814d1ba30ca644b2ecf8daaf13cf3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvQueueTrajPoint_Response.java",
+      "sha256": "62623dc2f4e7724b89cd8fc0084f40451ab6a2e65e3b2dca5d91d465e117d924"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadGroupIO_Request.java",
+      "sha256": "f4a87bee90d5675424b924a49d937ebf63039a77c88566b75aedc699a299900a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadGroupIO_Response.java",
+      "sha256": "0c2f5a297509271894c309c8f50c78abcb5655d9e8d560fdc65dae4546db7a78"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadMRegister_Request.java",
+      "sha256": "8123da259534776fc9c827defa70f714684b17d147ef0d235a2c640381c5b7c7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadMRegister_Response.java",
+      "sha256": "ee1222cdee519f1c16bbdc90ef805431c6c3ff30577da52fb22f5480460bea4f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadSingleIO_Request.java",
+      "sha256": "e5b3e39e10fc3eee6cfa7111e6a998cbf93b30cf9ed129427d2fd1b1b9edaef2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvReadSingleIO_Response.java",
+      "sha256": "785dae327e3f2687ee59dd2f1607fbeeca466c2a5e6c234441cac8ca21074692"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvResetError_Request.java",
+      "sha256": "094b085ddafd582c342de2f71f0598711db0f8958299247cc07853f7b5106877"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvResetError_Response.java",
+      "sha256": "f2190f11b899b9aa969037fdbecb4b2cde203a9e8bc7f14a11be02c02b0e3477"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvSelectMotionTool_Request.java",
+      "sha256": "105805308927fbb55e3db91df65919037e0d6e872bb819c4ada4fa93fd9e44b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvSelectMotionTool_Response.java",
+      "sha256": "2bb03145f0da476e57aebbafb97783ac8cfc12036e1990bac3be89df5a0806c6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvStartPointQueueMode_Request.java",
+      "sha256": "90321ab2c6089bc2cc04d87e211347c5dcbaa31031dfc968efedf1e0afcef875"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvStartPointQueueMode_Response.java",
+      "sha256": "586cdd38a2c6279aea0622a7dcc63aa81047aa8d884d19db27e2330191f80f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvStartTrajMode_Request.java",
+      "sha256": "c3ae49a7116dee5bf183e741029d2269084dc50c29453036383d3aa15fd05e37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvStartTrajMode_Response.java",
+      "sha256": "ff3fab51093628449b74037525732d9b69271ef8d27aa3701d5c18f84fe159b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteGroupIO_Request.java",
+      "sha256": "dae6b7af87e1d980c10e5b0db36536bee2bb84f37de6d697f1c59f961d16ab2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteGroupIO_Response.java",
+      "sha256": "e4d25c7055cedf1d8e916bc2c1e7e3d71a056130e041dbd8d586b6a2a14fc0af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteMRegister_Request.java",
+      "sha256": "01bdc3f025e78ec100b04d6299b35a535ed46cc76dfd10693b9e42781d219621"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteMRegister_Response.java",
+      "sha256": "566c47cabe7665d19315c3a8921c2affa2c88979cb664187f0b7c097e38dc9f1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteSingleIO_Request.java",
+      "sha256": "ef57144ff0838bc0821d3aefd8b934b730f1ca78cfa20668a5b558d99c55d35d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Motoros2_interfacesSrvWriteSingleIO_Response.java",
+      "sha256": "e2bb492f11b30b16c4bf27abb4a4870c589795c17e5136f2112232e9cdbb81e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Sensor_msgsMsgJointState.java",
+      "sha256": "aec293378b1e2017387bd905d5ad683d157a628e59f7b631b706b29f03bbbdc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Std_msgsMsgHeader.java",
+      "sha256": "e7f7191482501b8c60bea462d531b64a8c8b85984e69f9421323215df8c2b560"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Std_srvsSrvTrigger_Request.java",
+      "sha256": "65f31d553ad0e053a3a25dd640b14207dc7b7b05e88d3fb1d2b01eb60e8bdd02"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Std_srvsSrvTrigger_Response.java",
+      "sha256": "cf0c3b2883e4a0925f6bd5c9a1513f5fee9ccc133ccf7386cf422bdd7fe2b9bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Tf2_msgsMsgTFMessage.java",
+      "sha256": "e652a14129f4db8a7c58db9766701aaa90c466411c645510ab7a92f0cadb0609"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Trajectory_msgsMsgJointTrajectory.java",
+      "sha256": "d43011bcd38c462a7c82947224bbe81cebe647ceeeee629d9958dd99eb3d80aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Trajectory_msgsMsgJointTrajectoryPoint.java",
+      "sha256": "d31d06f5392f16c656dc78e8a2f5d8fb227b638813a2c5a7e281225bd7ccc17b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.java",
+      "sha256": "e0f710e6700e46dfd6da9cc74e6ffc98e40eaa6825459c4ef84d6497f3b8492c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/yaskawa/java/ros2/uwvm/yaskawa/ros2/Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint.java",
+      "sha256": "3e52f857171dee1a47dbfda743dc824ad7cc76525686aaef683f3cf0d53152d8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/yaskawa/bindings/kotlin.json",
+      "sha256": "cc88e3cdc9d84bcaab09b8f1cf6e44c6658b7b07426dc207d325c3f576ced0bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/yaskawa/provider.lua",
+      "sha256": "af10d01cfddf57d742d5a98ba7e70da14463e2cb69be510d94e8f823b09152cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

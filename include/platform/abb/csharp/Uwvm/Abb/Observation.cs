@@ -9,7 +9,9 @@
 using System;
 using System.IO;
 using System.Text;
-using Uwvm.Ros;
+using System.Threading;
+using Uwvm.RosWasm;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Abb
 {
@@ -20,12 +22,87 @@ namespace Uwvm.Abb
      */
     public static class Observation
     {
+        /// <summary>Completed data and independent cleanup facts; never a live capability.</summary>
+        public sealed class Exchange
+        {
+            public uint Primary, Cleanup, RpcStatus;
+            public bool CleanupPresent, RpcPresent, RequiredPresent;
+            public ulong Required;
+            public byte[] Bytes = Array.Empty<byte>();
+            public Exception? CleanupException;
+            public RetirementDiagnostic? CleanupRetirement;
+            public uint Status => Primary != 0 ? Primary : Cleanup;
+        }
+
+        /// <summary>Observe once through the maintained Session/Capability API.
+        /// Only an idle event poll may be repeated; an acquired owner is closed exactly once.</summary>
+        public static Exchange ReadSample(string alias, int capacity, int attempts) =>
+            ExchangeResource(alias, true, attempts, Array.Empty<byte>(), capacity);
+
+        private static Exchange ExchangeResource(string alias, bool subscription, int attempts,
+                                                  byte[] request, int capacity)
+        {
+            var report = new Exchange();
+            if (attempts <= 0 || capacity < 0)
+            {
+                report.Primary = 22;
+                return report;
+            }
+            var session = new Session(new NativeTransport(), 1);
+            Capability? owner = null;
+            try
+            {
+                session.CheckAbi();
+                owner = session.Open(alias);
+                if (subscription)
+                {
+                    var activation = owner.Invoke("topic_subscribe");
+                    report.RpcPresent = true;
+                    report.Primary = report.RpcStatus = activation.Error;
+                    if (report.Primary != 0) return report;
+                }
+                for (int attempt = 0; attempt < attempts; ++attempt)
+                {
+                    var result = owner.Invoke(subscription ? "event_poll" : "service_call", request, capacity);
+                    report.RpcPresent = true;
+                    report.Primary = report.RpcStatus = result.Error;
+                    report.RequiredPresent = result.Required.HasValue;
+                    report.Required = result.Required.GetValueOrDefault();
+                    report.Bytes = result.Data;
+                    if (!subscription || result.Error != 11 || attempt == attempts - 1) break;
+                    Thread.Sleep(20);
+                }
+            }
+            catch (RosException error) { report.Primary = error.Result.Error; }
+            catch (ArgumentException) { report.Primary = 22; }
+            catch (FormatException) { report.Primary = 22; }
+            finally
+            {
+                if (owner != null)
+                {
+                    report.CleanupPresent = true;
+                    try
+                    {
+                        report.Cleanup = owner.CloseChecked().Error;
+                        report.CleanupRetirement = owner.LastRetirement;
+                    }
+                    catch (Exception error)
+                    {
+                        report.CleanupException = error;
+                        report.Cleanup = error is RosException failure ? failure.Result.Error : 5u;
+                        report.CleanupRetirement = owner.LastRetirement;
+                    }
+                }
+            }
+            return report;
+        }
+
         /** @brief Own a complete typed response and independent transport/cleanup facts. */
         public sealed class Result<T>
             where T : class
         {
             /** @brief Owned complete operation, length and once-only close facts; no live handle escapes. */
-            public readonly Client.Exchange Exchange;
+            public readonly Exchange Exchange;
             /** @brief Owned complete response; null before transactional validation commits. */
             public T Response;
 
@@ -34,7 +111,7 @@ namespace Uwvm.Abb
              * @param exchange Owned completed report with its close result.
              * @details Response stays null until a complete transactional decode succeeds.
              */
-            internal Result(Client.Exchange exchange)
+            internal Result(Exchange exchange)
             {
                 Exchange = exchange;
             }
@@ -118,14 +195,14 @@ namespace Uwvm.Abb
          */
         public static Result<SpeedRatio> ReadSpeed(string alias)
         {
-            Result<SpeedRatio> result = new Result<SpeedRatio>(Client.Call(alias, Array.Empty<byte>(), 519));
+            Result<SpeedRatio> result = new Result<SpeedRatio>(ExchangeResource(alias, false, 1, Array.Empty<byte>(), 519));
             if(result.Exchange.Primary != 0)
             {
                 return result;
             }
             try
             {
-                Wire.Reader wire = new Wire.Reader(result.Exchange.Bytes);
+                CatalogWire.Reader wire = new CatalogWire.Reader(result.Exchange.Bytes);
                 SpeedRatio response = new SpeedRatio { Speed = wire.U8(), ResultCode = wire.U16(), Message = wire.String(512) };
                 wire.Finish();
                 result.Response = response;
@@ -134,7 +211,7 @@ namespace Uwvm.Abb
                     result.Exchange.Primary = 5;
                 }
             }
-            catch(ArgumentException)
+            catch(Exception error) when (error is ArgumentException || error is FormatException)
             {
                 result.Exchange.Primary = 22;
             }
@@ -154,20 +231,22 @@ namespace Uwvm.Abb
             byte[] request;
             try
             {
-                request = Wire.String(signal, 512);
+                var writer = new CatalogWire.Writer(516);
+                writer.String(signal, 512);
+                request = writer.Finish();
             }
-            catch(ArgumentException)
+            catch(Exception error) when (error is ArgumentException || error is FormatException)
             {
-                return new Result<IOSignal>(new Client.Exchange { Primary = 22 });
+                return new Result<IOSignal>(new Exchange { Primary = 22 });
             }
-            Result<IOSignal> result = new Result<IOSignal>(Client.Call(alias, request, 1034));
+            Result<IOSignal> result = new Result<IOSignal>(ExchangeResource(alias, false, 1, request, 1034));
             if(result.Exchange.Primary != 0)
             {
                 return result;
             }
             try
             {
-                Wire.Reader wire = new Wire.Reader(result.Exchange.Bytes);
+                CatalogWire.Reader wire = new CatalogWire.Reader(result.Exchange.Bytes);
                 IOSignal response = new IOSignal { Value = wire.String(512), ResultCode = wire.U16(), Message = wire.String(512) };
                 wire.Finish();
                 result.Response = response;
@@ -176,7 +255,7 @@ namespace Uwvm.Abb
                     result.Exchange.Primary = 5;
                 }
             }
-            catch(ArgumentException)
+            catch(Exception error) when (error is ArgumentException || error is FormatException)
             {
                 result.Exchange.Primary = 22;
             }
@@ -193,15 +272,15 @@ namespace Uwvm.Abb
          */
         public static Result<SystemState> ReadSystemState(string alias, int attempts)
         {
-            bool ros1 = Client.Backend == 1;
-            Result<SystemState> result = new Result<SystemState>(Client.WaitSample(alias, ros1 ? 2331 : 2327, attempts));
+            bool ros1 = new NativeTransport().Backend == 1;
+            Result<SystemState> result = new Result<SystemState>(ReadSample(alias, ros1 ? 2331 : 2327, attempts));
             if(result.Exchange.Primary != 0)
             {
                 return result;
             }
             try
             {
-                Wire.Reader wire = new Wire.Reader(result.Exchange.Bytes);
+                CatalogWire.Reader wire = new CatalogWire.Reader(result.Exchange.Bytes);
                 SystemState response = new SystemState();
                 response.HasSequence = ros1;
                 if(ros1)
@@ -233,7 +312,7 @@ namespace Uwvm.Abb
                 wire.Finish();
                 result.Response = response;
             }
-            catch(ArgumentException)
+            catch(Exception error) when (error is ArgumentException || error is FormatException)
             {
                 result.Exchange.Primary = 22;
             }
@@ -250,7 +329,7 @@ namespace Uwvm.Abb
         public static int Write<T>(Result<T> result)
             where T : class
         {
-            Client.Exchange facts = result.Exchange;
+            Exchange facts = result.Exchange;
             uint status = facts.Status;
             StringBuilder output = new StringBuilder();
             output.Append("{\"primary\":")

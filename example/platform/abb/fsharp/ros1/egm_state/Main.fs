@@ -6,7 +6,7 @@
 // required; no grant, replay or controller admission is implicit.
 module Abb.Examples.Main
 open System
-open Uwvm.Ros
+open Uwvm.Abb
 open Uwvm.Abb.Ros1
 /// @brief Read the complete abb_egm_msgs/EGMState value with genuine F# full AOT.
 /// @param args Exactly one explicit policy alias.
@@ -14,10 +14,10 @@ open Uwvm.Abb.Ros1
 [<EntryPoint>]
 let main (args: string array) =
     if args.Length <> 1 then 22 else
-        let facts = Client.WaitSample(args.[0], 1380, 250)
+        let facts = Observation.ReadSample(args.[0], 1380, 250)
         let mutable wire = Array.empty<byte>
         if facts.Primary = 0u then
-            try wire <- Ros1Abb_egm_msgsEGMState.Decode(facts.Bytes).Encode()
+            try wire <- Ros1Abb_egm_msgsEGMState.Encode(Ros1Abb_egm_msgsEGMState.Decode(facts.Bytes))
             with :? ArgumentException -> facts.Primary <- 22u
         Console.WriteLine("{\"primary\":" + string facts.Primary + ",\"cleanup\":" + string facts.Cleanup + ",\"wire_hex\":\"" + Convert.ToHexString(wire).ToLowerInvariant() + "\"}")
         int (min 125u (if facts.Primary <> 0u then facts.Primary else facts.Cleanup))

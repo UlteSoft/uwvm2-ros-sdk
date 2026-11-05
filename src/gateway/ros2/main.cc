@@ -1,4 +1,5 @@
 #if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "native_observation_profile.h"
 #include "serialized_observation.h"
 #endif
@@ -301,7 +302,10 @@ namespace
                                      typename S::Response response;
                                      response.success = bytes[0] != 0;
                                      response.message.assign(reinterpret_cast<char const*>(bytes.data() + 5), bytes.size() - 5);
-                                     if(std::chrono::steady_clock::now() >= until) { return 110; }
+                                     if(::uwvm2::utils::host_clock::now() >= until) { return 110; }
+                                     auto serialization=gateway::native_serialization_check(response);
+                                     if(serialization) { return serialization; }
+                                     if(::uwvm2::utils::host_clock::now()>=until) { return 110; }
                                      service->send_response(*header, response);
                                      return 0;
                                  });
@@ -349,6 +353,8 @@ namespace
             (void)input;
 #endif
             if constexpr(!gateway::ros2_qos::supports_entity_qos<rclcpp::Publisher<M>>::value) { return {95, {}}; }
+            auto serialization=gateway::native_serialization_check(m);
+            if(serialization) { return {serialization,{}}; }
             auto p{publishers_.find(c.alias)};
             if(p == publishers_.end())
             {
@@ -446,16 +452,21 @@ namespace
         ipc::call_result invoke(capability const& c, std::shared_ptr<typename S::Request> request, std::uint32_t timeout)
         {
             if constexpr(!gateway::ros2_qos::supports_client_qos<rclcpp::Client<S>>::value) { return {95, {}}; }
-            auto end{std::chrono::steady_clock::now() + std::chrono::milliseconds(timeout)};
+            auto end{gateway::request_deadline(c,timeout)};
+            if(::uwvm2::utils::host_clock::now()>=end)return {110,{}};
+            auto serialization=gateway::native_serialization_check(*request);
+            if(serialization) { return {serialization,{}}; }
             auto client{gateway::ros2_service_client::acquire<S>(service_clients_, node_, c, c.resource)};
             if(!client) { return {95, {}}; }
-            auto remaining{end - std::chrono::steady_clock::now()};
-            if(remaining <= decltype(remaining)::zero() || (!client->service_is_ready() && !client->wait_for_service(remaining))) { return {110, {}}; }
-            if(std::chrono::steady_clock::now() >= end) { return {110, {}}; }
-            auto pending{client->async_send_request(request)};
-            gateway::ros2_service_client::pending_request cleanup{service_clients_, c.alias, client, pending};
-            if(pending.wait_until(end) != std::future_status::ready) { return {110, {}}; }
-            if(std::chrono::steady_clock::now() >= end) { return {110, {}}; }
+            auto ready{gateway::ros2_service_client::wait_ready(node_,client,end)};
+            if(ready) return {ready,{}};
+            auto completed{std::make_shared<gateway::ros::synchronous_quota_wait>()};
+            if(!completed->select_exit(gateway::ros::synchronous_wait_context::native_exit_policy())) return {125,{}};
+            if(::uwvm2::utils::host_clock::now()>=end) { return {110,{}}; }
+            auto pending{client->async_send_request(request,[completed](typename rclcpp::Client<S>::SharedFuture){completed->notify();})};
+            gateway::ros2_service_client::pending_request cleanup{service_clients_,c.alias,client,pending};
+            auto status{gateway::ros2_service_client::wait_response(pending,*completed,end)};
+            if(status) return {status,{}};
             auto response{pending.get()};
             cleanup.complete();
             if(!response) { return {5, {}}; }
@@ -467,7 +478,7 @@ namespace
             d.push_back(static_cast<std::uint8_t>(response->success ? 1 : 0));
             ipc::put(d, response->message.size(), 4);
             d.insert(d.end(), response->message.begin(), response->message.end());
-            if(std::chrono::steady_clock::now() >= end) { return {110, {}}; }
+            if(::uwvm2::utils::host_clock::now() >= end) { return {110, {}}; }
             if(d.size() > gateway::limit(c, "max-response-bytes")) { return {90, {}}; }
             return {0, std::move(d)};
         }
@@ -925,7 +936,7 @@ namespace
 
         ipc::call_result operation(capability const& c, std::vector<std::uint8_t> const& d, std::uint32_t timeout) override
         {
-            auto started{std::chrono::steady_clock::now()};
+            auto started{::uwvm2::utils::host_clock::now()};
             if(c.operation == "tf.lookup" || c.operation == "tf.broadcast") { return tf_.call(c, d, timeout); }
             if(c.operation.rfind("action.", 0) == 0)
             {
@@ -947,7 +958,7 @@ namespace
                 }
 #endif
                 if(ipc::find_custom_service(2, c.type)) { return custom_services_.respond(c, d, timeout); }
-                auto until{started + std::chrono::milliseconds(std::min<std::uint64_t>(timeout, gateway::limit(c, "timeout-ms")))};
+                auto until{gateway::request_deadline(c,timeout,started)};
                 for(auto const& s: service_states_)
                 {
                     if(s.second->capability.resource != c.resource) { continue; }
@@ -969,7 +980,7 @@ namespace
                 }
                 else
                 {
-                    ns = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
+                    ns = std::chrono::duration_cast<std::chrono::nanoseconds>(::uwvm2::utils::host_clock::now().time_since_epoch()).count();
                 }
                 if(ns < 0) { return {22, {}}; }
                 std::vector<std::uint8_t> bytes;
@@ -1219,16 +1230,16 @@ int main(int argc, char** argv)
             if(item.second.operation != "action.send-goal") { continue; }
             auto maximum{gateway::limit(item.second, "max-active-goals")};
             auto& selected{ipc::find_custom_action(2, item.second.type) ? custom_pending_per_session : pending_per_session};
-            if(maximum > std::numeric_limits<std::uint64_t>::max() - selected) { throw std::runtime_error("Action cleanup quota sum overflow"); }
-            selected += maximum;
+            selected = maximum > UINT64_MAX-selected ? UINT64_MAX : selected+maximum;
         }
-        if(pending_per_session > std::numeric_limits<std::uint64_t>::max() / c.max_sessions ||
-           custom_pending_per_session > std::numeric_limits<std::uint64_t>::max() / c.max_sessions)
-        {
-            throw std::runtime_error("Action cleanup session quota overflow");
-        }
-        auto cleanup{std::make_shared<gateway::ros2_action::cleanup_pool>(pending_per_session * c.max_sessions)};
-        auto custom_cleanup{std::make_shared<gateway::ros2_custom_actions::cleanup_pool>(custom_pending_per_session * c.max_sessions)};
+        // Saturation represents a bound larger than the host container's
+        // addressable cardinality; no quota-sized storage is preallocated.
+        auto total_cleanup = [&](std::uint64_t per_session) {
+            if(!per_session || !c.max_sessions) return std::uint64_t{};
+            return per_session > UINT64_MAX/c.max_sessions ? UINT64_MAX : per_session*c.max_sessions;
+        };
+        auto cleanup{std::make_shared<gateway::ros2_action::cleanup_pool>(total_cleanup(pending_per_session))};
+        auto custom_cleanup{std::make_shared<gateway::ros2_custom_actions::cleanup_pool>(total_cleanup(custom_pending_per_session))};
         std::thread spinner{[&] { executor.spin(); }};
         int rc{};
         try

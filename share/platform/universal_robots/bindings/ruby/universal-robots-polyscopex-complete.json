@@ -17,5 +17,15 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb"
+    },
+    {
+      "name": "universal_robots/ruby/ros2/universal-robots-polyscopex-complete/records",
+      "path": "include/platform/universal_robots/ruby/ros2/universal-robots-polyscopex-complete/records.rb"
+    }
+  ]
 }

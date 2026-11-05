@@ -15,7 +15,7 @@
  * 64-bit integers remain BigInt. Strings are strict UTF-8 with no embedded NUL.
  * Owned Service transport is a separate explicit raw12 adapter, not legacy RPC.
  */
-const utf8Encoder = new TextEncoder(), utf8Decoder = new TextDecoder("utf-8", {fatal : true, ignoreBOM : true});
+import {utf8Encode, utf8Decode} from "ros/js/wire";
 
 export class ControlCodecError extends Error
 {
@@ -70,7 +70,8 @@ function textBytes(value, bound)
         else if(c >= 0xdc00 && c <= 0xdfff)
             bad();
     }
-    const b = utf8Encoder.encode(value);
+    let b;
+    try { b = utf8Encode(value, bound); } catch { bad(); }
     if(b.length > bound)
         bad();
     return b;
@@ -121,7 +122,7 @@ class Reader
         let s;
         try
         {
-            s = utf8Decoder.decode(this.b.subarray(p, p + n));
+            s = utf8Decode(this.b.subarray(p, p + n));
         }
         catch
         {

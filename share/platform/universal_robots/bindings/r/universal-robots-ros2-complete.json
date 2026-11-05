@@ -17,5 +17,15 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "universal_robots/r/ros2/universal-robots-ros2-complete/records",
+      "path": "include/platform/universal_robots/r/ros2/universal-robots-ros2-complete/records.R"
+    }
+  ]
 }

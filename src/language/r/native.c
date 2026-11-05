@@ -143,7 +143,9 @@ static SEXP pause_ms(SEXP duration)
 }
 
 /** @brief Static entry list; no shared object or host dynamic lookup is required. */
+SEXP uwvm_r_wasi_stdio(SEXP);
 static R_CallMethodDef const methods[] = {
+    {"uwvm_wasi_stdio", (DL_FUNC)&uwvm_r_wasi_stdio, 1},
     {"uwvm_ros_invoke", (DL_FUNC)&invoke, 6}, {"uwvm_ros_pause_ms", (DL_FUNC)&pause_ms, 1}, {NULL, NULL, 0}};
 
 void uwvm_r_register_native(void)

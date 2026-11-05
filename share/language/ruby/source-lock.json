@@ -7284,8 +7284,8 @@
   },
   "support_manifest": {
     "path": "src/language/common/asyncify/support-manifest.json",
-    "bytes": 11354,
-    "sha256": "0e77b481d8d18748db30df95e1f7ae186c1ac578216d5fe077f526d96633ca35"
+    "bytes": 11355,
+    "sha256": "e92d8d4fa0b94d5bfad67ed4533d0802e70b4866ce3b465da870c2a48ff2e94c"
   },
   "target_inventory": {
     "path": "src/language/common/asyncify/target-inventory.json",
@@ -7332,6 +7332,31 @@
       "path": "src/language/ruby/transdb.h.tmpl",
       "sha256": "9893eb94c8cc11beb32564d23002a5b77668cb65ab6ad1c55f2df21bcad73f36",
       "bytes": 2549
+    },
+    {
+      "path": "src/language/ruby/memory64-source/wasm/setjmp.h",
+      "bytes": 3796,
+      "sha256": "c20102b0bd1bb6700c42bae8d9aab6e60d572bab12a80288818bcd0b213987cf"
+    },
+    {
+      "path": "src/language/ruby/memory64-source/wasm/fiber.h",
+      "bytes": 2099,
+      "sha256": "87a9fcdd011b87a761fcb0e77d38763035b8085a99710cbcd117412668182dbf"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm64/machine_core.S",
+      "bytes": 1801,
+      "sha256": "d6b62a699b78409f0210c27ee171d9b05a73b0989f1823744c5f3f3a1cb0b274"
+    },
+    {
+      "path": "src/language/common/asyncify/asyncify/wasm64/setjmp_core.S",
+      "bytes": 1712,
+      "sha256": "3318d4f00b8a41c14d85d9ce3255bfb9196c59bce26c5473875c385ecd385e47"
+    },
+    {
+      "path": "share/language/ruby/memory64-source.json",
+      "bytes": 1638,
+      "sha256": "458c08efe35c75e975546bdab902a46a09e6884216d96ddd3b2cb98dc7ce6080"
     }
   ],
   "upstream": {

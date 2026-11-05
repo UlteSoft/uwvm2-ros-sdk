@@ -1,0 +1,206 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-nvidia-c-client-3363",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.en.md",
+      "sha256": "5d228edd1ba395fdb402a08ee5d1d34e1a1682d377e72e466b2eb716564399f9"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "f0311050f3b5c09d1f37bcb4f6f9e53b8d5be330eb9a6c3f5a0c8d407b0d62da"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.zh_CN.md",
+      "sha256": "8a710df6d0773dc05192d1eb19af8f7c61f8b4d10198629d910a79ff6cdd2063"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "6fdc378b231c15e60e41c11fd430dcaeb5d24d4843fae3737abe5b7d1f9594c9"
+    },
+    {
+      "scope": "example",
+      "path": "producer.cpp",
+      "sha256": "680309b638dfe3ae57fcd99375c1f131bbfeaf7314a8aab73757f77e1aca37d1"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6d684d59e2a890105ae1f568b7a60da93e7c44155ad360a238d17ab61c0f792c"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "14ffc67e53e4c449a7ae0312b5ff0432451ff60a7bdbf0bb90f69cdecd89440b"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "8af2999f969093bb2b0fd9afe7ededf9cb1dffa2312ed198929d8e652eb898dd"
+    },
+    {
+      "scope": "example",
+      "path": "unreferenced.c",
+      "sha256": "caea1352d95d19350f845b4bcf8391f39b0f0ac49109dc9dc743e2c3c5869d92"
+    },
+    {
+      "scope": "example",
+      "path": "include/array_library.h",
+      "sha256": "770b471346ab8087b6610de2b8b980b0cf91f1e6155f4840b7f898863ef5d999"
+    }
+  ],
+  "cases": [
+    {
+      "id": "ungranted-lifecycle-mode-0",
+      "arguments": [
+        "sdk-test-denied",
+        "0"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 0,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "library_error": 0,
+        "library_contract": 0,
+        "library_count": 0,
+        "library_id_sum": 0,
+        "library_checksum": 0,
+        "producer_ros": 0,
+        "producer_clock": 0
+      }
+    },
+    {
+      "id": "ungranted-lifecycle-mode-1",
+      "arguments": [
+        "sdk-test-denied",
+        "1"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 1,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "library_error": 0,
+        "library_contract": 0,
+        "library_count": 0,
+        "library_id_sum": 0,
+        "library_checksum": 0,
+        "producer_ros": 0,
+        "producer_clock": 0
+      }
+    },
+    {
+      "id": "ungranted-lifecycle-mode-2",
+      "arguments": [
+        "sdk-test-denied",
+        "2"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 2,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "library_error": 0,
+        "library_contract": 0,
+        "library_count": 0,
+        "library_id_sum": 0,
+        "library_checksum": 0,
+        "producer_ros": 0,
+        "producer_clock": 0
+      }
+    },
+    {
+      "id": "missing-mode",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "invalid-mode",
+      "arguments": [
+        "sdk-test-denied",
+        "3"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

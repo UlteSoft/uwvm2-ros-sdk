@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "ros/lua/native_command",
+      "file": "include/platform/ros/lua/native_command.lua",
+      "sha256": "f1d0b98c491bfeacd180aa203e7828fffeb1fc6f68378bc1afd91bace82db430"
+    },
+    {
+      "name": "roswasm",
+      "file": "include/platform/ros/lua/roswasm/init.lua",
+      "sha256": "9d3d4a5af0f0255a330d34cd840e9a84247b2905f3afacd1daa46c49c38bae5e"
+    },
+    {
+      "name": "roswasm/wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "leju/lua/ros1/main_platform/records",
+      "file": "include/platform/leju/lua/ros1/main_platform/records.lua",
+      "sha256": "f84aee51df254d3758b96d090ba32297ba34507295fef18e32c53862bfda760f"
+    },
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    }
+  ],
+  "default_authority": []
+}

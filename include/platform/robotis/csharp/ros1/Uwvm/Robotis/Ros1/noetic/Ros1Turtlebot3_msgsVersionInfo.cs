@@ -1,5 +1,5 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Robotis.Ros1.noetic
 {
@@ -46,7 +46,7 @@ namespace Uwvm.Robotis.Ros1.noetic
          */
         public static byte[] Encode(Ros1Turtlebot3_msgsVersionInfo value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -63,7 +63,7 @@ namespace Uwvm.Robotis.Ros1.noetic
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros1Turtlebot3_msgsVersionInfo value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -75,7 +75,7 @@ namespace Uwvm.Robotis.Ros1.noetic
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros1Turtlebot3_msgsVersionInfo value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros1Turtlebot3_msgsVersionInfo value)
         {
             if(value == null)
             {
@@ -97,7 +97,7 @@ namespace Uwvm.Robotis.Ros1.noetic
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros1Turtlebot3_msgsVersionInfo ReadFields(Wire.Reader wire)
+        internal static Ros1Turtlebot3_msgsVersionInfo ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros1Turtlebot3_msgsVersionInfo value = new Ros1Turtlebot3_msgsVersionInfo();

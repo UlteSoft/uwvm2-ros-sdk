@@ -1,0 +1,82 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros",
+      "file": "include/platform/ros/py/ros/__init__.py",
+      "package": true,
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "name": "ros.py",
+      "file": "include/platform/ros/py/ros/py/__init__.py",
+      "package": true,
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "name": "ros.py.wire",
+      "file": "include/platform/ros/py/ros/py/wire.py",
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
+    },
+    {
+      "name": "ros.py.transport",
+      "file": "include/platform/ros/py/ros/py/transport.py",
+      "sha256": "f4dac7ca14ceb9462ada69936ad0e2798d26593ec2b17be0a110b26bc0c42a6f"
+    },
+    {
+      "name": "uwvm",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py.observation",
+      "file": "src/language/python/modules/observation.py",
+      "sha256": "239bb6f3404deffc18aad68b8e3155f0fa6dd5f701b1e9d900be2eab170dddfc"
+    },
+    {
+      "name": "ros.py.native_command",
+      "file": "include/platform/ros/py/ros/py/native_command.py",
+      "sha256": "a997296e715f1aab492e50fe0888945ada5ca4d0efa721156a700fc38b0d96e3"
+    },
+    {
+      "name": "fourier",
+      "file": "include/platform/fourier/__init__.py",
+      "package": true,
+      "sha256": "b8cb5f2b303be9e5da5130f14ff7421373fac2e2ca1c27eb3b5fbdf366a95195"
+    },
+    {
+      "name": "fourier.py",
+      "file": "include/platform/fourier/py/__init__.py",
+      "package": true,
+      "sha256": "72f782765c58ea15bb8dec4d11c6122c0570f6a506cd1f8c36f831c5decc4044"
+    },
+    {
+      "name": "fourier.py.ros2",
+      "file": "include/platform/fourier/py/ros2/__init__.py",
+      "package": true,
+      "sha256": "d265459bcdb33cd8f9eae5d7257b6838ec7577089b39584e00e9d2d12829156f"
+    },
+    {
+      "name": "fourier.py.ros2.aurora_bridge_v1",
+      "file": "include/platform/fourier/py/ros2/aurora_bridge_v1/__init__.py",
+      "package": true,
+      "sha256": "5d04f9a627531d6874f87f94324058ea7569e0e866a08b30291b3cac2b7b85d6"
+    },
+    {
+      "name": "fourier.py.ros2.aurora_bridge_v1.records",
+      "file": "include/platform/fourier/py/ros2/aurora_bridge_v1/records.py",
+      "sha256": "a6eeee524eed3fdcd42304638fe2907dad0d08f407bc3ce63ef9f787cfda71fd"
+    }
+  ],
+  "default_authority": [],
+  "module_loading": "lazy"
+}

@@ -1,5 +1,5 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Trossen.Ros1.ros1_melodic
 {
@@ -48,7 +48,7 @@ namespace Uwvm.Trossen.Ros1.ros1_melodic
          */
         public static byte[] Encode(Ros1Xarm_msgsIOState value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -65,7 +65,7 @@ namespace Uwvm.Trossen.Ros1.ros1_melodic
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros1Xarm_msgsIOState value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -77,7 +77,7 @@ namespace Uwvm.Trossen.Ros1.ros1_melodic
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros1Xarm_msgsIOState value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros1Xarm_msgsIOState value)
         {
             if(value == null)
             {
@@ -108,7 +108,7 @@ namespace Uwvm.Trossen.Ros1.ros1_melodic
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros1Xarm_msgsIOState ReadFields(Wire.Reader wire)
+        internal static Ros1Xarm_msgsIOState ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros1Xarm_msgsIOState value = new Ros1Xarm_msgsIOState();

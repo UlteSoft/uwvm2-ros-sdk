@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete dsr_msgs/LogAlarm value with genuine AssemblyScript.

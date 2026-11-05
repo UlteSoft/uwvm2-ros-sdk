@@ -1,0 +1,351 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2408",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "dbdbeabc7166235d6bee0ded25cdc562424356f45bf67ba414e8489f7daa27ca"
+    },
+    {
+      "scope": "example",
+      "path": "Main.java",
+      "sha256": "0516be779e7c8fd0b65b45ae816d0cc58e2561aeb3d954fcfe9ddb2c0415c1f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/java/ros2/flexiv-ros2-foxy-complete/org/uwvm/flexiv/ros2foxy/BoundedRecords.java",
+      "sha256": "6cce9f34f4c656cb5db4705a96b3b06f6dae6d53cff18c5b530dbf524ce89972"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/kotlin/ros2/flexiv-ros2-foxy-complete/Records.kt",
+      "sha256": "60cf9f1ff872132e99765076bc8c7a6515a0e29d47b38fe0a3b33456286f5bc6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/java/ros2_foxy.json",
+      "sha256": "33e2b5458e9ff6ee0a8dc6d53a54709c733f85db56902d3cda2e71e328be692d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/Compile.java",
+      "sha256": "82dbc0408fee0b9745b1086c46130885f7fa950b96d952dadb930c58f5ff505c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/README.md",
+      "sha256": "34ab585d8170de5a88599915c7d7440a073bccd39bab41ef907e1eecbe35a98e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/UPSTREAM.json",
+      "sha256": "fca7835fc6c3f86566ef1b71d889d44110648f85db0359f92fe954221a969423"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/WasmBinaryRenderer.java.patch",
+      "sha256": "e14d9d209e1c5a981904eff6c21d567e47f02827851060ef43310d518902a524"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/WasmGenerationVisitor.java.patch",
+      "sha256": "c69ced8e21e9b526e957aa4a01f2706fc97f5771f9fb14d3d52e4773c19c59ec"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/generate/WasmGenerationVisitor.java",
+      "sha256": "616249c08a31d7ed14070bb58958804b63858eace0ca1ea1e7e6b17ac655aa46"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/java/teavm-0.13.1/org/teavm/backend/wasm/render/WasmBinaryRenderer.java",
+      "sha256": "265e8d170ce2884faf8cc2f91826d1240dca732baedfa01305e14a1173c9cfbd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/SOURCES.json",
+      "sha256": "4d305b8c8c066cdb554e85828bc6f89a2dc31b15b3fa8035af2c234e59d53a5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/additional_record_emitters.py",
+      "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/generate_records.py",
+      "sha256": "8647d2f5b178e30457e4948159060a7beda8ad4a6f9709f079a1fec48fff37bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_records.py",
+      "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_documentation.py",
+      "sha256": "5c5fb155cb868913895f81fc43b47d1fd3c94dea9600845fe0868fa8929c28db"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_emitters.py",
+      "sha256": "a764f7c1958f7d89eda7a38deb688843b9e0dc98e186b82592b56172d22b1719"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/source_layout.py",
+      "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030300a",
+      "stdin_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

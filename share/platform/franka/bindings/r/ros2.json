@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "r",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/r/ros2/franka-ros2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "name": "ros/r/roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "franka/r/ros2/records",
+      "path": "include/platform/franka/r/ros2/franka-ros2-complete/records.R"
+    }
+  ]
+}

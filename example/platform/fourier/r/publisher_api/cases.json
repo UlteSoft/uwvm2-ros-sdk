@@ -39,5 +39,88 @@
   "no_zero_case_success": true,
   "vendor_official_API_compatibility": false,
   "component_isolation_pass": false,
-  "Stage_B_pass": false
+  "Stage_B_pass": false,
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/fourier/r/publisher_api/main.R",
+      "sha256": "4c9b146f8ca77857326ea35a473fd81fc6d812638c8fe125368b56a036df6bea"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/fourier/r/publisher_api/xmake.lua",
+      "sha256": "14da8fc4061d7649052eea61184ba6d4b8529174a8ecb013074f8e9da35c46a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fourier/r/ros1/aurora_bridge_v1/records.R",
+      "sha256": "b3066d191465282bf9a6d05da8e1dd288cb6e0aa9fd0cd552ea0521c49b0bf7b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/fourier/r/ros2/aurora_bridge_v1/records.R",
+      "sha256": "65df0a2fcc904c5b016ab60115111da421a572e012cfa7217608a51b7db0cd9b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/r/roswasm/native_command.R",
+      "sha256": "b28dca58291dea2884fd3801556211ac61f2aeb7405227a6f2342af8e3825bc6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/r/roswasm/wire.R",
+      "sha256": "46ff393c72747c117ecf52d5a561ef3d7017d15b99dda818d25d01cd92b78f96"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fourier/xmake/publisher_tests.lua",
+      "sha256": "9a7b3ea501f36674982f4057d576c1398696d235ff45a21bb16bad5f8f04b6d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/native_fourier_publisher_test.py",
+      "sha256": "12ab2c143921b5eca29b1c20623afc6d21d4a707ab20e7398be1d12bbe39785f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/pipe_capture.py",
+      "sha256": "17585a3af23b2a76ec8bde1c731c97b326e663f50c1b9815a3359c5c47a04196"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fourier/provider.json",
+      "sha256": "fcc4ffe044b577dfc5a9a908aca7afb867bab2b586e66ff1d248af16e69f9aa3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fourier/provider.lua",
+      "sha256": "26f2fe5fbb5154d148353d96865c3208f774f938c408356ac777a807b661accd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/r/bootstrap.R",
+      "sha256": "af6d283017f3abc412fd7c22acd53319dd1480c0f543bd6ceeb9a25fc92f9771"
+    }
+  ],
+  "test_execution": "Six assertions run in genuine Wasm. One-shot publish acceptance and explicit close do not promise remote delivery. A second distinct sample retains its publisher until an independent typed transient-local relay returns the exact bytes; no publication is retried."
 }

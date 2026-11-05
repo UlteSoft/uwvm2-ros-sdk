@@ -13,6 +13,13 @@
  * Empty Service/Action components use a C layout dummy that is never a wire field. */
 #ifndef UWVM_ROS_BOUNDED_RECORDS_H
 #define UWVM_ROS_BOUNDED_RECORDS_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <stdint.h>
 #include <stddef.h>
 #include <float.h>
@@ -135,6 +142,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request_valid(
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -210,7 +218,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request_d
                                                                                       size_t length,
                                                                                       roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 24u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -256,6 +264,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response_valid
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -361,7 +370,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Command_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 26u || length > 26u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -399,6 +408,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request_valid
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -484,7 +494,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 32u || length > 32u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -829,7 +839,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response
     if(length > 16429u)
         return UWVM_BOUNDED_TOO_LARGE;
     {
-        roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response next = {0};
+        roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
         error = roswasmc_bounded_2_uwvm_spot_bridge_srv_Feedback_Response_read_status((unsigned char const*)input, length, &offset, &next);
         if(error)
             return error;
@@ -866,6 +876,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request_valid(ro
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -940,7 +951,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request_enc
 static inline uint32_t
     roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request_decode(void const* input, size_t length, roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 24u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -984,6 +995,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response_valid(r
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1079,7 +1091,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response_de
                                                                                      size_t length,
                                                                                      roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Lease_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 22u || length > 22u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1115,6 +1127,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request_valid(ro
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1189,7 +1202,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request_enc
 static inline uint32_t
     roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request_decode(void const* input, size_t length, roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 24u || length > 24u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1729,7 +1742,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response_de
     if(length > 21433u)
         return UWVM_BOUNDED_TOO_LARGE;
     {
-        roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response next = {0};
+        roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
         error = roswasmc_bounded_2_uwvm_spot_bridge_srv_State_Response_read_status((unsigned char const*)input, length, &offset, &next);
         if(error)
             return error;
@@ -1792,6 +1805,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request_valid
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -1919,7 +1933,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request_
                                                                                        size_t length,
                                                                                        roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 56u || length > 56u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -1965,6 +1979,7 @@ static inline int roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response_vali
 /** Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response_wire_size(roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 8;
     n += 8;
@@ -2071,7 +2086,7 @@ static inline uint32_t roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response
                                                                                         size_t length,
                                                                                         roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response* value)
 {
-    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response next = {0};
+    roswasmc_bounded_2_uwvm_spot_bridge_srv_Velocity_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 26u || length > 26u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

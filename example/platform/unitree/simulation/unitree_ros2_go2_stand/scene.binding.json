@@ -38,8 +38,8 @@
     },
     {
       "path": "native_launcher.py",
-      "bytes": 4061,
-      "sha256": "abd5497821619ee30c700d7733423e9761de4c89443929dfd614b0b35d9ffa36"
+      "bytes": 4057,
+      "sha256": "308a7f5fdbfc2fc65b38d5ea0bcde4aaa806098112c16cbd1110e47b99eee917"
     },
     {
       "path": "native_scene.lua",
@@ -56,7 +56,8 @@
   "scope_of_actual_public_xmake_validation": [
     "020 actual public Xmake native endpoint startup/normal local thread/channel/factory shutdown",
     "020 explicit native-object-reserialization provenance and retained raw serialized bytes; no received CDR/guest memory proof",
-    "020 current-source native owner-loss and fresh restart from exact terminal/retired predecessor; guest task resume NOT_RUN"
+    "020 current-source native owner-loss and fresh restart from exact terminal/retired predecessor; guest task resume NOT_RUN",
+    "Prior public launcher evidence retains its original source identity; revised portable kernel-budget launcher requires a new execution receipt."
   ],
   "native_environment_versions_not_sdk_language_qualification": true,
   "host_scope": "Linuxx86_64native reference only",
@@ -94,5 +95,10 @@
     "driver_packet_counts": "Compatibility field counting object reserialization observations only"
   },
   "cleanup_regression_scope": "Actual native bridge and filesystem EACCES for ready/trace creation,post-original Wait/GetResult/Close and partial constructor after first thread start; remaining threads/channels retire. Regression PASS does not turn the expected failing endpoint operation into PASS.",
-  "native_owner_restart_new_source": "Additional current-source jobs are pinned in delivery artifacts; original018results are never relabeled as020source."
+  "native_owner_restart_new_source": "Additional current-source jobs are pinned in delivery artifacts; original018results are never relabeled as020source.",
+  "budget_checker": {
+    "path": "tools/shared/python/kernel_budget.py",
+    "sha256": "90c701642e48d9349f1c4f1abc7b8e87b1aef20ef6b883337a5254735c99e4b5",
+    "checks": "actual actor ancestry up to an exact 64 GiB/zero-swap boundary; native launcher separately requires <=2 GiB and <=2 CPU"
+  }
 }

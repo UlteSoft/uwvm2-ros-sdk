@@ -1,0 +1,43 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "hello_robot-c_ffi_bridge-ros2-mobile_fjt_humble-encode_value",
+  "scope": "Actual complete C foreign-ABI codec success, exact capacity, malformed extent and transactional refusal checks inside Wasm.",
+  "cases": [
+    {
+      "id": "codec-normal",
+      "arguments": [
+        "--guest-test",
+        "normal"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "codec-normal PASS\n"
+    },
+    {
+      "id": "codec-boundary",
+      "arguments": [
+        "--guest-test",
+        "boundary"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "codec-boundary PASS\n"
+    },
+    {
+      "id": "codec-malformed",
+      "arguments": [
+        "--guest-test",
+        "malformed"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "codec-malformed PASS\n"
+    },
+    {
+      "id": "codec-abi-refusal",
+      "arguments": [
+        "--guest-test",
+        "abi-refusal"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "codec-abi-refusal PASS\n"
+    }
+  ]
+}

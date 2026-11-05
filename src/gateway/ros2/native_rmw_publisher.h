@@ -15,6 +15,7 @@
 #include "compat/node.h"
 #include "custom_topics.h"
 #include "native_rmw_metadata.h"
+#include "native_serialization.h"
 #include <mutex>
 
 namespace uwvm2::ros_gateway::native_rmw_publisher
@@ -117,6 +118,7 @@ namespace uwvm2::ros_gateway::native_rmw_publisher
             {
                 if(!Contract::validate(capability_,bytes,count)){return 22;}
                 Native value;if(!Codec::decode(bytes,count,value)||!Codec::valid(value)){return 22;}
+                auto error=native_serialization_check(value);if(error){return error;}
                 // Exactly one actual publication on the retained native object.
                 // A transport timeout cannot make this safe to replay.
                 publisher_->publish(value);return 0;

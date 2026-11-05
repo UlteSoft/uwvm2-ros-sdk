@@ -1,0 +1,36 @@
+{
+  "format": "uwvm-ruby-memory64-source-v1",
+  "version": "3.4.7",
+  "language": "ruby",
+  "scope": "Explicit pointer64 maintenance overlay: pointer64 stack assembly and 1536 pointer-word Asyncify setjmp/fiber capacity. Wasm32 sources are unchanged. Overflow guards remain mandatory; this is not a WASI quota or unlimited guest stack claim.",
+  "files": [
+    {
+      "source": "src/language/ruby/memory64-source/wasm/setjmp.h",
+      "destination": "wasm/setjmp.h",
+      "bytes": 3796,
+      "sha256": "c20102b0bd1bb6700c42bae8d9aab6e60d572bab12a80288818bcd0b213987cf",
+      "base_sha256": "3e050014e0e9df603dedc1b3a5d799fe85e632dc733ce3769e25b7dbf341725a"
+    },
+    {
+      "source": "src/language/ruby/memory64-source/wasm/fiber.h",
+      "destination": "wasm/fiber.h",
+      "bytes": 2099,
+      "sha256": "87a9fcdd011b87a761fcb0e77d38763035b8085a99710cbcd117412668182dbf",
+      "base_sha256": "1b90e7e26ccad3f07ebd45afde99ebd577658c84315fde6535439804eec63053"
+    },
+    {
+      "source": "src/language/common/asyncify/asyncify/wasm64/machine_core.S",
+      "destination": "wasm/machine_core.S",
+      "bytes": 1801,
+      "sha256": "d6b62a699b78409f0210c27ee171d9b05a73b0989f1823744c5f3f3a1cb0b274",
+      "base_sha256": "9129ec129fb4a62c07cdc37f14acf877432853f42562ef5deb34d3153c8d12c0"
+    },
+    {
+      "source": "src/language/common/asyncify/asyncify/wasm64/setjmp_core.S",
+      "destination": "wasm/setjmp_core.S",
+      "bytes": 1712,
+      "sha256": "3318d4f00b8a41c14d85d9ce3255bfb9196c59bce26c5473875c385ecd385e47",
+      "base_sha256": "4b2af6d439ecf32019f2402bded931820f4a2612730d66dbef0f0103cc1977d9"
+    }
+  ]
+}

@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Abb.Ros1
 {
@@ -52,7 +52,7 @@ namespace Uwvm.Abb.Ros1
          */
         public static byte[] Encode(Ros1Abb_egm_msgsEGMState value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -69,7 +69,7 @@ namespace Uwvm.Abb.Ros1
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros1Abb_egm_msgsEGMState value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -81,7 +81,7 @@ namespace Uwvm.Abb.Ros1
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros1Abb_egm_msgsEGMState value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros1Abb_egm_msgsEGMState value)
         {
             if(value == null)
             {
@@ -110,7 +110,7 @@ namespace Uwvm.Abb.Ros1
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros1Abb_egm_msgsEGMState ReadFields(Wire.Reader wire)
+        internal static Ros1Abb_egm_msgsEGMState ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros1Abb_egm_msgsEGMState value = new Ros1Abb_egm_msgsEGMState();

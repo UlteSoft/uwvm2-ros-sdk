@@ -1,0 +1,190 @@
+{
+  "format": "uwvm-php-memory64-source-v1",
+  "language": "php",
+  "version": "8.4.13",
+  "scope": "Retained maintained generic64lc Keccak implementation; upstream and maintained identities are distinct. No target runtime installation.",
+  "files": [
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakHash.c",
+      "destination": "ext/hash/sha3/generic64lc/KeccakHash.c",
+      "bytes": 3728,
+      "sha256": "1359246a5096ed424b7ab7fe36354c9a91da34c9868975bdc197cdf2358128ea",
+      "upstream": {
+        "sha256": "78f55671fa3eb01d6bdc11a22e1c2a58b94340983186733ac0fbce39a6065220",
+        "bytes": 3267
+      },
+      "maintained": {
+        "sha256": "1359246a5096ed424b7ab7fe36354c9a91da34c9868975bdc197cdf2358128ea",
+        "bytes": 3728
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakHash.h",
+      "destination": "ext/hash/sha3/generic64lc/KeccakHash.h",
+      "bytes": 5673,
+      "sha256": "b9d3a9aa92d88c0c89b952f8da1be5e235e1b85bf6427b0fdb541c36ed83e6cc",
+      "upstream": {
+        "sha256": "4f128d6b7a57f591ed54a14eea6bbf01f6b699d8d66cd0e672556c60434ff71c",
+        "bytes": 5432
+      },
+      "maintained": {
+        "sha256": "b9d3a9aa92d88c0c89b952f8da1be5e235e1b85bf6427b0fdb541c36ed83e6cc",
+        "bytes": 5673
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-64.macros",
+      "destination": "ext/hash/sha3/generic64lc/KeccakP-1600-64.macros",
+      "bytes": 70918,
+      "sha256": "cb45f09677fed8b62bca86b58654550aa33a95a4b957d018d870e4f1f5aae0ed",
+      "upstream": {
+        "sha256": "cb45f09677fed8b62bca86b58654550aa33a95a4b957d018d870e4f1f5aae0ed",
+        "bytes": 70918
+      },
+      "maintained": {
+        "sha256": "cb45f09677fed8b62bca86b58654550aa33a95a4b957d018d870e4f1f5aae0ed",
+        "bytes": 70918
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-SnP.h",
+      "destination": "ext/hash/sha3/generic64lc/KeccakP-1600-SnP.h",
+      "bytes": 2630,
+      "sha256": "b11db7cad45d0c46d8a08bd7ce21f7fe4dcbba76a8d5a1e3ff66ae60e8a057a9",
+      "upstream": {
+        "sha256": "c10b976acec4f79b935ca8194d00d385acb7645d3f71d6e5e0a4d5bd625ac3a4",
+        "bytes": 2161
+      },
+      "maintained": {
+        "sha256": "b11db7cad45d0c46d8a08bd7ce21f7fe4dcbba76a8d5a1e3ff66ae60e8a057a9",
+        "bytes": 2630
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-opt64-config.h",
+      "destination": "ext/hash/sha3/generic64lc/KeccakP-1600-opt64-config.h",
+      "bytes": 442,
+      "sha256": "b7e2a5e556266ef8b4652f09dd084502ccbdb2c5364bb700eb8ee99503268c03",
+      "upstream": {
+        "sha256": "cf8c66a7b8a6dba39d8a5088e8ec91763f27fbc9585c94271a947dac7e54f0a8",
+        "bytes": 159
+      },
+      "maintained": {
+        "sha256": "b7e2a5e556266ef8b4652f09dd084502ccbdb2c5364bb700eb8ee99503268c03",
+        "bytes": 442
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-opt64.c",
+      "destination": "ext/hash/sha3/generic64lc/KeccakP-1600-opt64.c",
+      "bytes": 17408,
+      "sha256": "75ffa360b7468374cd71a9441f9925d0a7f629aa6a90d75746f7ed026ef1c9e4",
+      "upstream": {
+        "sha256": "ddf1e1a415b84bef703908f539596b351bba3b230d5f231e490fef419eb66292",
+        "bytes": 15735
+      },
+      "maintained": {
+        "sha256": "75ffa360b7468374cd71a9441f9925d0a7f629aa6a90d75746f7ed026ef1c9e4",
+        "bytes": 17408
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakP-1600-unrolling.macros",
+      "destination": "ext/hash/sha3/generic64lc/KeccakP-1600-unrolling.macros",
+      "bytes": 6644,
+      "sha256": "0bf1a7910e7cf01cdb68d2f8f0886cf1ec306ad341f567f7bf9979f812a856df",
+      "upstream": {
+        "sha256": "0bf1a7910e7cf01cdb68d2f8f0886cf1ec306ad341f567f7bf9979f812a856df",
+        "bytes": 6644
+      },
+      "maintained": {
+        "sha256": "0bf1a7910e7cf01cdb68d2f8f0886cf1ec306ad341f567f7bf9979f812a856df",
+        "bytes": 6644
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.c",
+      "destination": "ext/hash/sha3/generic64lc/KeccakSponge.c",
+      "bytes": 2996,
+      "sha256": "9607ffc03c43bce2964c75438015ee91938741e2e5399ce63dd3047520d52008",
+      "upstream": {
+        "sha256": "0b8d11174d13d5e3f5cfa4017bc6e2398a5c525bc3ccac35920856ffc620aaff",
+        "bytes": 3050
+      },
+      "maintained": {
+        "sha256": "9607ffc03c43bce2964c75438015ee91938741e2e5399ce63dd3047520d52008",
+        "bytes": 2996
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.h",
+      "destination": "ext/hash/sha3/generic64lc/KeccakSponge.h",
+      "bytes": 10742,
+      "sha256": "31cacd603b056feec0e7b4ec15298f56f5c64ef686c3f5ebbcee26a203b13ffa",
+      "upstream": {
+        "sha256": "2ef6fc0c5bd79e0b91768d03040ac821cc3085b6249e7f47463848bb0213eb8a",
+        "bytes": 9235
+      },
+      "maintained": {
+        "sha256": "31cacd603b056feec0e7b4ec15298f56f5c64ef686c3f5ebbcee26a203b13ffa",
+        "bytes": 10742
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/KeccakSponge.inc",
+      "destination": "ext/hash/sha3/generic64lc/KeccakSponge.inc",
+      "bytes": 11249,
+      "sha256": "bfd613a66ca4aca5301dc6f5ae48da27a6ac42d663f2fe1b34f1ff5c02fb5867",
+      "upstream": {
+        "sha256": "bfd613a66ca4aca5301dc6f5ae48da27a6ac42d663f2fe1b34f1ff5c02fb5867",
+        "bytes": 11249
+      },
+      "maintained": {
+        "sha256": "bfd613a66ca4aca5301dc6f5ae48da27a6ac42d663f2fe1b34f1ff5c02fb5867",
+        "bytes": 11249
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/SnP-Relaned.h",
+      "destination": "ext/hash/sha3/generic64lc/SnP-Relaned.h",
+      "bytes": 13766,
+      "sha256": "ee699b292a07fdcfca62e3e2e9509fd56ad7d67e3375f4e3982c38c34b424048",
+      "upstream": {
+        "sha256": "6ec91a787285a7b29874344523cb587b8691c124b9e4d184c0c7973ead8dc196",
+        "bytes": 5959
+      },
+      "maintained": {
+        "sha256": "ee699b292a07fdcfca62e3e2e9509fd56ad7d67e3375f4e3982c38c34b424048",
+        "bytes": 13766
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/align.h",
+      "destination": "ext/hash/sha3/generic64lc/align.h",
+      "bytes": 1201,
+      "sha256": "59cd14645e394118060bfd80898b0cc2e79f24cc8234b779ad94bab5ee5ce714",
+      "upstream": {
+        "sha256": "5033313cf7203ce3514cc22d8ce113b430237e8b15a6c66a79d3ee8b5e3d80b5",
+        "bytes": 939
+      },
+      "maintained": {
+        "sha256": "59cd14645e394118060bfd80898b0cc2e79f24cc8234b779ad94bab5ee5ce714",
+        "bytes": 1201
+      }
+    },
+    {
+      "source": "src/language/php/memory64-source/ext/hash/sha3/generic64lc/brg_endian.h",
+      "destination": "ext/hash/sha3/generic64lc/brg_endian.h",
+      "bytes": 5472,
+      "sha256": "c9911df51ecb265dd7c0fe908b4e0188a7bc4fe2c18e46984f2a4c6dd1c7847a",
+      "upstream": {
+        "sha256": "5fbc8e476a28827e0fb764db47b4e94947fd9138cd9f26fce114cbc1ee507aa9",
+        "bytes": 5546
+      },
+      "maintained": {
+        "sha256": "c9911df51ecb265dd7c0fe908b4e0188a7bc4fe2c18e46984f2a4c6dd1c7847a",
+        "bytes": 5472
+      }
+    }
+  ]
+}

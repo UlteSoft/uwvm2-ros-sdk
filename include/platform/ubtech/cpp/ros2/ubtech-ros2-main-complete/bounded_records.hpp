@@ -320,7 +320,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgQuaternion default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&value);
             return value;
         }
@@ -426,7 +426,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPose default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPose value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPose value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Pose_default(&value);
             return value;
         }
@@ -624,7 +624,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPoseStamped default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPoseStamped value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPoseStamped value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_PoseStamped_default(&value);
             return value;
         }
@@ -732,7 +732,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Grab_demo_msgsMsgGraspCandidate default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Grab_demo_msgsMsgGraspCandidate value = {0};
+            uwvm_custom::Ros2Grab_demo_msgsMsgGraspCandidate value = {};
             (void)roswasmc_bounded_2_grab_demo_msgs_msg_GraspCandidate_default(&value);
             return value;
         }
@@ -839,7 +839,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Grab_demo_msgsMsgIKRequest default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Grab_demo_msgsMsgIKRequest value = {0};
+            uwvm_custom::Ros2Grab_demo_msgsMsgIKRequest value = {};
             (void)roswasmc_bounded_2_grab_demo_msgs_msg_IKRequest_default(&value);
             return value;
         }

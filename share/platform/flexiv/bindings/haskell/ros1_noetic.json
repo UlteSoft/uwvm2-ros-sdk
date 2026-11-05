@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "haskell",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/haskell/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "Flexiv.Ros1Noetic.Records",
+          "source": "include/platform/flexiv/haskell/ros1/flexiv-ros1-noetic-complete/Records.hs"
+        }
+      ]
+    }
+  }
+}

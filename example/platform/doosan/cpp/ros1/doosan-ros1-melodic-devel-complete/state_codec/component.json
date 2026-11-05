@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-938",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "ec1dcd5ad7f5cf1fee9b5f4e0318333a2d8dd2b3e8ff17f10e19d3c15c14ae24"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "e1e4fadd2f01ae2885f495d6b530b9f78c79854ea516f7bb8e5cd32a3e0b5291"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/cpp/doosan-ros1-melodic-devel-complete.json",
+      "sha256": "ffa273b6d2c107d6d85f7787ba0205d3a846e191296aee1d083f6e70a29d226c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros1-melodic-devel-complete.ir.json",
+      "sha256": "3b2a13031522b04e1d5e870e6ee3cfb753d9f8723a8df2d0c85d0be428270977"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs/RobotState",
+        "bytes": 1484
+      }
+    }
+  ]
+}

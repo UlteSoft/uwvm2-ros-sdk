@@ -1,0 +1,70 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "ros-authority-denial-4613",
+  "test_scope": "Actual observation guest: namespace visibility alone grants no alias. Assert original denial, no response and no acquired owner; invalid argument rejection. Positive native communication requires its separate deployment integration suite.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "20c83c28d6ab83c8f02d2378ba6a723b3bf424b156842b43c76e0933cc38a9be"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "24491afd6c59e152f5e0de74e296080927fb51603cc5bc3556bd36ae5ae23c6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ufactory/provider.json",
+      "sha256": "b5f6d060cdb30bb95c4029f2726fcb75bedf7f5ff03acb807e48611f52fdf609"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "554d87156e5080bfee13756aba2bc7b1b780f35238fa0b1ad15e3ea94d8fc9aa"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

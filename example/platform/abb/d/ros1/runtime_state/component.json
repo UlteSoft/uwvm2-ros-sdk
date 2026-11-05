@@ -1,0 +1,165 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-native-authority-61",
+  "ros_namespace": "ros1",
+  "test_scope": "Original compiled language source with explicit base WASI and ROS namespace, zero resource grants, exact denial and untouched ownership facts. Missing alias validates before acquisition.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/d/observation.d",
+      "sha256": "d7be0cac781055801937aedd8b5e2a39f2f350c4f759e1aea223e7f261de90f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/d/ros1/observation.d",
+      "sha256": "0326b312b3c134d08ebdf63910591f8a461b3aa9dbfbf227493c3c51cbd54c20"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/d/ros1/records.d",
+      "sha256": "ace1f0ba587648c4a1e7289c565861d945d5153fb77ee3361f807d792f1fd083"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/d/ros2/records.d",
+      "sha256": "9af9c98b39c047b4a7a346fdb9200b23121ab9c4d5583bc7808d621bbfacec9f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/.gitignore",
+      "sha256": "a8b0c3df4bdc42985e5ec2ac61ad10e263c3b02c9d63c8683dc0d65ef1b096b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/dub.json",
+      "sha256": "a557ae11b49d725331432e2af4af6d5efe70ffc5730b6dbc17b30f5e5b3e939c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/native_command.d",
+      "sha256": "e9e03df1146dcaa1ee54c4b3bca771f49b6d712e07f185c5753d8f8dd6234ffd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/package.d",
+      "sha256": "20ef2bc37f354d54ae6df0e34902ef41b69bdc5ddd80fc83733db3ab2572e2fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/raw.d",
+      "sha256": "a8d59877978bc6abca1109ebe2e52ce9f2d603997c64f5cccd386ed364841992"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/typed.d",
+      "sha256": "953f6ae1a896f1a1801ce026633f471876310921aeee980a6c9c996dfd774c73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/wire.d",
+      "sha256": "7809b9ddeab64afaf06d50a758319ea8692c4153baf8b32526a94d6166b2219c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/wire.d",
+      "sha256": "9883d18de0f236d6fad8c68b75bd4a633a1d1e30452170b71672281265e0e6e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/d.json",
+      "sha256": "b68a00e32f6c24e66db338850601659dd316d1d4e39870480813dc094ef65b75"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/observation.d",
+      "sha256": "24122e2fc2057c6419b423bca5813cc145528166ad741c83b46ac8337f9513a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/wire.d",
+      "sha256": "5c9fd175947be05f6f16edf61a2456492c5c06e4a42fc7e30bf615398290319a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros/native_sources/abi.c",
+      "sha256": "722cc70f2d003add1aea92cb3ef8719e08b614c7385df1869446269dd43e3189"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.d",
+      "sha256": "253b1385e6056ad985a07042beaa3fca08d937c53f3674500bea84ce0698f6b7"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "542b7c169a0eb7da2c756dfb26352bc76c7228e62e84f3bf673787c94fed3bfe"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "wire_hex": "",
+        "polls": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

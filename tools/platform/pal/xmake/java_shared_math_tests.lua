@@ -5,6 +5,7 @@ set_policy("test.stop_on_first_failure", false)
 
 function uwvm_pal_java_shared_math_tests(config)
     local producer_language = (config or {}).producer_language or "java"
+    uwvm_register_required_test("required-" .. producer_language .. "-producer-shared-math", "required-wasm-guest")
     add_tests("required-" .. producer_language .. "-producer-shared-math", {group = "required-wasm-guest", run_timeout = 300000})
     on_test(function(target, opt)
         import("core.base.json")
@@ -15,7 +16,10 @@ function uwvm_pal_java_shared_math_tests(config)
         assert((producer_language == "java" or producer_language == "kotlin")
             and producer:values("ros.sdk.language") == producer_language
             and target:values("ros.sdk.language") == "java", "Managed producer/consumer language selection differs")
-        local state = path.absolute(path.join(target:scriptdir(), ".uwvm-ros/component-tests/shared-math"))
+        local evidence = os.getenv("UWVM_ROS_TEST_EVIDENCE_ROOT")
+        assert(not evidence or path.is_absolute(evidence), "Select an absolute test evidence directory")
+        local state = evidence and path.join(evidence, "shared-math")
+            or path.absolute(path.join(target:scriptdir(), ".uwvm-ros/component-tests/shared-math"))
         os.mkdir(state)
         local output = path.join(state, path.filename(os.tmpfile({ramdisk = false})))
         assert(not os.exists(output), "Refusing to overwrite a previous guest test")
@@ -28,16 +32,15 @@ function uwvm_pal_java_shared_math_tests(config)
             local metadata = reader.inspect(assert(io.readfile(filename, {encoding = "binary"})))
             metadata.sections = nil -- Raw section bytes stay in the complete retained Wasm.
             modules[name] = {path = filename, sha256 = hash.sha256(filename), metadata = metadata}
-            local matches = {}
-            for _, receiptfile in ipairs(os.files(path.join(current:scriptdir(), ".uwvm-ros/managed-aot/**/aot-receipt.json"))) do
-                local receipt = json.loadfile(receiptfile)
-                if receipt.artifact_sha256 == modules[name].sha256 and receipt.language == current:values("ros.sdk.language")
-                    and receipt.target_kind == current:kind() then
-                    table.insert(matches, {path = path.absolute(receiptfile), sha256 = hash.sha256(receiptfile)})
-                end
-            end
-            assert(#matches == 1, "Exactly one real matching compiler receipt is required for " .. name)
-            modules[name].compiler_receipt = matches[1]
+            local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+            local receiptfile = path.join(artifacts.workspace(current, "managed-aot"), "aot-receipt.json")
+            assert(os.isfile(receiptfile), "The target's actual compiler receipt is missing: " .. receiptfile)
+            local receipt = json.loadfile(receiptfile)
+            assert(receipt.artifact_sha256 == modules[name].sha256
+                and receipt.language == current:values("ros.sdk.language")
+                and receipt.target_kind == current:kind(),
+                "The target compiler receipt does not bind the current Wasm/frontend/kind")
+            modules[name].compiler_receipt = {path = path.absolute(receiptfile), sha256 = hash.sha256(receiptfile)}
         end
         local metadatafile = path.join(output, "modules.json")
         json.savefile(metadatafile, modules)

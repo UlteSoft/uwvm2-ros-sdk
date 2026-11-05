@@ -17,5 +17,32 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "d",
+    "stack_bytes": 4194304,
+    "d": {
+      "import_dirs": [
+        "include/platform/ros/d/source"
+      ],
+      "source_modules": [
+        {
+          "name": "universal_robots.ros1.universal_robots_ros1_trajectory_complete.records",
+          "source": "include/platform/universal_robots/d/ros1/universal-robots-ros1-trajectory-complete/records.d"
+        }
+      ],
+      "modules": [
+        "universal_robots.ros1.universal_robots_ros1_trajectory_complete.records",
+        "roswasm.wire",
+        "roswasm"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/startup.c",
+        "object": "startup.o"
+      }
+    ]
+  }
 }

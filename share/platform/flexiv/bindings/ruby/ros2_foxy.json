@@ -1,0 +1,24 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "ruby",
+  "profile": "ros2_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/ruby/ros2/flexiv_ros2_foxy_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "path": "include/platform/ros/ruby/roswasm/wire.rb",
+      "name": "ros/ruby/roswasm/wire"
+    },
+    {
+      "path": "include/platform/ros/ruby/roswasm/transport.rb",
+      "name": "ros/ruby/roswasm/transport"
+    },
+    {
+      "path": "include/platform/flexiv/ruby/ros2/flexiv_ros2_foxy_complete/records.rb",
+      "name": "flexiv/ruby/ros2/flexiv_ros2_foxy_complete/records"
+    }
+  ]
+}

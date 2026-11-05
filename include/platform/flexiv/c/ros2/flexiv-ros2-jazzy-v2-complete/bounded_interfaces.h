@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_C047D7B1E2C3FD37586EBA61A3FDDBEFCC019465B0D31436E868E1FE2B650564
 #define UWVM_ROS_BOUNDED_INTERFACES_C047D7B1E2C3FD37586EBA61A3FDDBEFCC019465B0D31436E868E1FE2B650564
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <flexiv/c/ros2/flexiv-ros2-jazzy-v2-complete/bounded_records.h>
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -89,7 +96,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Grasp_feedba
                                                                                    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback* feedback)
 {
     unsigned char input[8], output[25];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -127,7 +134,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Grasp_result
                                                                                  roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -176,7 +183,7 @@ inline static roswasmc_result
     roswasmc_bounded_2_flexiv_msgs_action_Grasp_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal* goal)
 {
     unsigned char output[16];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -313,7 +320,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Move_feedbac
                                                                                   roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback* feedback)
 {
     unsigned char input[8], output[25];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -351,7 +358,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Move_result(
                                                                                 roswasmc_bounded_2_flexiv_msgs_action_Move_Result* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Result next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -400,7 +407,7 @@ inline static roswasmc_result
     roswasmc_bounded_2_flexiv_msgs_action_Move_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_flexiv_msgs_action_Move_Goal* goal)
 {
     unsigned char output[32];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Goal next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||

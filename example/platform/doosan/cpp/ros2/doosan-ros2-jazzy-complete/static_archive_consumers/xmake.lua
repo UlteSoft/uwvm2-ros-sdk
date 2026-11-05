@@ -44,6 +44,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -68,6 +69,7 @@ set_values("ros.sdk.vendor_version", "doosan-ros2-jazzy-complete")
 set_ros_scenario("library_archive_consumer")
 add_files("archive_consumer.c")
 add_deps("algorithm_archive")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()
 target("static_cpp_consumer")
 set_kind("binary")
@@ -78,4 +80,5 @@ set_values("ros.sdk.vendor_version", "doosan-ros2-jazzy-complete")
 set_ros_scenario("library_archive_consumer")
 add_files("archive_consumer.cpp")
 add_deps("algorithm_archive")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

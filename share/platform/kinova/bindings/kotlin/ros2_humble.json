@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "kotlin",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/kotlin/ros2/mobile-fjt-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/kinova/java/ros2/mobile-fjt-humble-complete/org/uwvm/kinova/ros2humble/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/kinova/kotlin/ros2/mobile-fjt-humble-complete/Records.kt"
+    ]
+  }
+}

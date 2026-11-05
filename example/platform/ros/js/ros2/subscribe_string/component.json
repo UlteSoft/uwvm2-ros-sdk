@@ -1,0 +1,175 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-3835",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "101a0c3a931e5dc69efbca00309908863c2c7025e549e9cb671ddf9bc76b96a9"
+    },
+    {
+      "scope": "example",
+      "path": "main.mjs",
+      "sha256": "bb86d82ace9bc54050896fdfb4071235a88a78a113e2225de9a12915d56f0f0f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/js.json",
+      "sha256": "ffa93b5578b8f578aecf0b52782e423041446399f4caf1e73af30669b810acc0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/scheduling.mjs",
+      "sha256": "f5f58eb7b216044d9a1cac8d33a5f7922e77d9dd437bb0efebbd6b0a96a76b7a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/relay.mjs",
+      "sha256": "92c86a4ee95d37b50771de0975f85acb74f56da83992c5812ca4a77d71ee9799"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/guest.mjs",
+      "sha256": "3edd811a54dde9f83c898a1eb12b2969ea789d3db60e6d6e1df712d3f94e2bbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/abi.mjs",
+      "sha256": "16cd533ff7db44f40159ca4bd30a4fde9871164b79bd3328c119aefec2b92172"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/copied_transport.mjs",
+      "sha256": "8fd1b56c12a0c2ab03cf5d90aca1188858d7ccadecaf7f723ab4119ca0b53f51"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/package.json",
+      "sha256": "88b4154a060190a6c538b4e1281881c2d2f655586bb095d668c732738c4b4f0d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/async.mjs",
+      "sha256": "e35ae2b7f58ecd0c4968f92537b311bd39ef7d6834d05cf3a0348629462e391b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/bridge.mjs",
+      "sha256": "021703f402bdc69420b793f89af72c20dd9be890d00994ee6c8de610840d1cbc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/roswasm.mjs",
+      "sha256": "24ae75c07bcae869c86d2956a85bf6337efb5e9669431c4b7d0bca6975481150"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/ownership.mjs",
+      "sha256": "563d8be2f6476124a8e10c5712d552d8ded80fc282c0c0b5ad41713028f8eea8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/events.mjs",
+      "sha256": "bd5aa8e7ede943b36040144accbd29d4ba5aa1147a81cd55e351e5b46e21942b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/raw.mjs",
+      "sha256": "5dac974e99c812d9ea6f7904af0c3965ed641c69d1ecc5fd5855396969b7b6a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/codecs.mjs",
+      "sha256": "4793789410ec944f208c05714d9479b3a4562075eab9ad22365803a63ef07227"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/native_command.mjs",
+      "sha256": "4de0417acedda6b901b28169e32e573641eb7598232c06522a5ea99ee0697377"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/guest/owned_service_native_refusals.mjs",
+      "sha256": "dc8d40c409b4d85eac25fa940dd927bd8d3e3f795ccf3ad38980e1d54b95ffbe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/guest/bootstrap.mjs",
+      "sha256": "2d492e30afb8dbf4663be170000c35f1acf3a927c9862fa1065c4f53ed0e0939"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/owned_service/wire.mjs",
+      "sha256": "5d92b60183683e0f53b14c8eebae115367a02bc4f7d7a3f72de09849aed7d7a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/owned_service/bridge.mjs",
+      "sha256": "8f7dddbfb764e9a8f5f545533c905b59db7d81a03f37ecc0f44475bdc7c60b4a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/owned_service/owned.mjs",
+      "sha256": "33f3aa18ec59fccb117d6bc23e7dcd11e4ed9bc510fbf53f7791131399d29d65"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/owned_service/control.mjs",
+      "sha256": "c51e25b51820a469f5d745d92b45ae90ab8c83de4a92035e23f67e5ece6c9d8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/custom-types/generated-r3/fixed_records.mjs",
+      "sha256": "85ff090d5abbe631f803e39b6fc6449456d9b1a1beb49e8141736bb9306b6a34"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "response_present": false,
+        "length": "18446744073709551615",
+        "wire_hex": ""
+      }
+    }
+  ],
+  "ros_namespace": "ros2"
+}

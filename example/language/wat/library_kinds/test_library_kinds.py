@@ -18,6 +18,12 @@ import time
 LOG_LIMIT = 8 * 1024**2
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "tools/shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def need(condition, message):
     if not condition:
         raise RuntimeError(message)
@@ -42,7 +48,8 @@ def process(pid):
     need(membership.startswith("0::/") and "\n" not in membership, "unified actual cgroup required")
     group = Path("/sys/fs/cgroup") / membership[3:].lstrip("/")
     limits = {name: (group / name).read_text().strip()
-              for name in ("memory.max", "memory.swap.max", "cpuset.cpus.effective")}
+              for name in ("memory.max", "memory.swap.max")}
+    limits["cpu_affinity"] = sorted(os.sched_getaffinity(pid))
     executable = root / "exe"
     before = executable.stat()
     sha = digest(executable)
@@ -81,8 +88,12 @@ def retire_session(child, known):
     session = child.pid
     deadline = time.monotonic() + 10
     while True:
+        running = child.poll() is None
         rows = session_members(session)
-        if child.poll() is None:
+        if not rows:
+            need(not running, "live runtime session leader is unavailable")
+            return
+        if running:
             leader = next((row for row in rows if row["pid"] == child.pid), None)
             need(leader is not None and known.get(child.pid) == leader["birth"],
                  "original runtime session leader identity is unavailable")
@@ -177,12 +188,18 @@ def main():
              and produced["artifact"]["bytes"] == runtime.stat().st_size
              and produced["source_identity"] == source_identity,
              "Public installation and producer records must bind the actual runtime")
+        cpus = config["cpu_affinity"]
+        need(type(cpus) is list and cpus and all(type(cpu) is int and cpu >= 0 for cpu in cpus)
+             and cpus == sorted(set(cpus)), "Supply a nonempty exact CPU affinity set")
+        need(set(cpus) <= os.sched_getaffinity(0), "Configured CPUs are outside the enclosing job")
+        os.sched_setaffinity(0, cpus)
+        need(sorted(os.sched_getaffinity(0)) == cpus, "CPU affinity was not applied")
         arguments = config["runtime_arguments"]
         need(type(arguments) is list and 0 < len(arguments) <= 128
              and all(type(v) is str and "\0" not in v for v in arguments), "Bounded explicit runtime arguments required")
         need("--runtime-aot" in arguments or "-Raot" in arguments, "Select actual native AOT")
-        need("--wasip1-global-noinherit-system-environment" in arguments,
-             "Explicit isolated WASI environment required")
+        need(not any(value.startswith("--wasip1-global-") for value in arguments),
+             "Removed Global WASI options are not accepted; use explicit per-module policy")
         need("-WFE-multi-memory" in arguments, "Explicit multi-memory feature selection required")
         need(not any(v in ("--run", "-r", "--wasm-preload-library", "--wasm-set-main-module-name")
                      or "unwind" in v or v.startswith("--ros") for v in arguments),
@@ -206,7 +223,7 @@ def main():
                 need(stream.read(8) == b"\0asm\1\0\0\0", "A genuine built Wasm input is required")
         if args.case == "independent-three":
             need(pins[1][1] == pins[2][1], "Both independent peers must use the identical complete Wasm SHA")
-        argv += ["--run", str(wasm)]
+        argv = [argv[0], *wasi_test_arguments(argv[1:], selected.get("wasi_policy")), "--run", str(wasm)]
         need(digest(args.config) == configuration_sha, "Explicit runtime configuration changed before launch")
         report.update(runtime_sha256=runtime_sha, runtime_source_identity=source_identity,
                       configuration_sha256=configuration_sha, argv=argv,
@@ -215,7 +232,11 @@ def main():
                       frozen_modules=[{"path": str(q), "sha256": h} for q, h in pins])
         stdout, stderr = args.output / "vm.stdout", args.output / "vm.stderr"
         with stdout.open("xb") as out, stderr.open("xb") as err:
-            child = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)
+            # These WAT graphs intentionally block in fd_read until admission is
+            # observed. A nonblocking read would return EAGAIN and trap before
+            # the supervisor can verify the barrier process.
+            child = PipeLoggedProcess(argv, stdin=subprocess.PIPE, stdout=out, stderr=err,
+                                      start_new_session=True, nonblocking_stdin=False)
             known[child.pid] = process(child.pid)["birth"]
             deadline = time.monotonic() + 150
             ready = "SDK_LIBRARY_READY:" + args.case + "\n"
@@ -227,7 +248,7 @@ def main():
             need(actual["birth"] == known[child.pid] and actual["executable_sha256"] == runtime_sha,
                  "Actual VM process identity differs")
             need(actual["memory.max"] == "68719476736" and actual["memory.swap.max"] == "0"
-                 and actual["cpuset.cpus.effective"] == "0,2,4,6,16-31", "Actual manual VM resource limits differ")
+                 and actual["cpu_affinity"] == cpus, "Actual manual VM resource limits differ")
             need(actual["file_limit_soft"] == actual["file_limit_hard"] == "134217728",
                  "Actual regular-file ceiling differs")
             report.update(actual_VM_at_guest_barrier=actual, guest_started=True,
@@ -245,8 +266,12 @@ def main():
         markers = re.findall(r"\[unwind-check\] status=(ok|failed) elapsed_ns=([0-9]+) native_target_ns=10000000 provider=paired-llvm23", diagnostic)
         need(len(markers) == 1 and markers[0][0] == "ok" and int(markers[0][1]) > 0,
              "Actual checked paired-LLVM unwind result missing or failed")
-        need("body-fallback=no" in diagnostic and "body-fallback=yes" not in diagnostic,
-             "Actual AOT body fallback must be absent")
+        need("mode=full_compile, compiler=llvm_jit_only, uwvm-int-translation=disabled, llvm-jit-ir-translation=enabled"
+             in diagnostic and "body-fallback=yes" not in diagnostic,
+             "Actual LLVM-only full compilation must exclude interpreter fallback")
+        for module in (main_alias, *aliases):
+            need('LLVM JIT materialization for module "' + module + '" done.' in diagnostic,
+                 "Every selected module must finish actual native materialization")
         need(all(digest(path) == expected for path, expected in pins), "Frozen graph changed during execution")
         need(digest(runtime) == runtime_sha and digest(args.config) == configuration_sha
              and all(digest(path) == expected for path, expected in deployment_pins),
@@ -256,7 +281,7 @@ def main():
                       body_fallback=False)
     except BaseException as error:
         report.update(status="FAIL" if report["executed"] else "BLOCKED",
-                      error=repr(error), failed=report["executed"], passed=0)
+                      error=repr(error), error_detail=str(error), failed=report["executed"], passed=0)
     finally:
         if child is not None:
             try:

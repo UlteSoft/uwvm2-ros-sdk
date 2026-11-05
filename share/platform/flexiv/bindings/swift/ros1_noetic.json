@@ -1,0 +1,42 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "swift",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/swift/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "swift",
+    "swift": {
+      "module_name": "VendorCodecCommand",
+      "top_level": true,
+      "import_dirs": [
+        "include/platform/ros/swift/Sources/CRosWasm",
+        "include/language/swift/wasilibc"
+      ],
+      "c_defines": [
+        "ROSWASM_C_FFI_BACKEND=1"
+      ],
+      "modules": [
+        {
+          "name": "RosWasm",
+          "sources": [
+            "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Wire.swift"
+          ]
+        },
+        {
+          "name": "FlexivRecords",
+          "sources": [
+            "include/platform/flexiv/swift/ros1/flexiv-ros1-noetic-complete/Records.swift"
+          ]
+        }
+      ]
+    }
+  }
+}

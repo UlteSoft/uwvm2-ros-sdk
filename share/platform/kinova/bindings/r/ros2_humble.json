@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "r",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/r/ros2/mobile-fjt-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "name": "ros/r/roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "kinova/r/ros2/humble/records",
+      "path": "include/platform/kinova/r/ros2/mobile-fjt-humble-complete/records.R"
+    }
+  ]
+}

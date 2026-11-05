@@ -2,6 +2,7 @@
  * UWVM2 ROS2 exact-node Lifecycle adapter. APL-2.0.           *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "../common/config.h"
 #include "qos.h"
@@ -45,26 +46,33 @@ namespace uwvm2::ros_gateway::ros2_lifecycle
                                                               service_client_pool& clients)
     {
         error = 110;
-        auto remaining{std::chrono::duration_cast<std::chrono::nanoseconds>(deadline - std::chrono::steady_clock::now())};
+        auto remaining{std::chrono::duration_cast<std::chrono::nanoseconds>(deadline - ::uwvm2::utils::host_clock::now())};
         if(remaining.count() <= 0) { return {}; }
         if constexpr(!ros2_qos::supports_client_qos<::rclcpp::Client<Service>>::value)
         {
             error = 95;
             return {};
         }
+        auto serialization=native_serialization_check(*request);
+        if(serialization) {error=serialization;return {};}
         auto client{ros2_service_client::acquire<Service>(clients, node, cap, resource)};
         if(!client)
         {
             error = 95;
             return {};
         }
-        remaining = std::chrono::duration_cast<std::chrono::nanoseconds>(deadline - std::chrono::steady_clock::now());
-        if(remaining.count() <= 0 || (!client->service_is_ready() && !client->wait_for_service(remaining))) { return {}; }
-        if(std::chrono::steady_clock::now() >= deadline) { return {}; }
-        auto pending{client->async_send_request(request)};
-        ros2_service_client::pending_request cleanup{clients, cap.alias, client, pending};
-        if(pending.wait_until(deadline) != std::future_status::ready) { return {}; }
-        if(std::chrono::steady_clock::now() >= deadline) { return {}; }
+        auto ready{ros2_service_client::wait_ready(node,client,deadline)};
+        if(ready) {error=ready;return {};}
+        auto completed{std::make_shared<ros::synchronous_quota_wait>()};
+        if(!completed->select_exit(ros::synchronous_wait_context::native_exit_policy())) {error=125;return {};}
+        // The native callback owns only its notification object. Cancellation
+        // removes the pending request; a racing completion never touches guest
+        // memory, the session, or this stack and never resends the request.
+        if(::uwvm2::utils::host_clock::now()>=deadline) {error=110;return {};}
+        auto pending{client->async_send_request(request,[completed](typename rclcpp::Client<Service>::SharedFuture) {completed->notify();})};
+        ros2_service_client::pending_request cleanup{clients,cap.alias,client,pending};
+        auto status{ros2_service_client::wait_response(pending,*completed,deadline)};
+        if(status) {error=status;return {};}
         auto response{pending.get()};
         cleanup.complete();
         error = response ? 0 : 5;
@@ -81,7 +89,7 @@ namespace uwvm2::ros_gateway::ros2_lifecycle
         auto& clients{retained ? *retained : ephemeral};
         if(!known(cap)) { return {13, {}}; }
         if(!request.empty()) { return {22, {}}; }
-        auto deadline{std::chrono::steady_clock::now() + std::chrono::milliseconds(std::min(timeout, static_cast<std::uint32_t>(limit(cap, "timeout-ms"))))};
+        auto deadline{request_deadline(cap,timeout)};
         std::uint32_t error{};
         if(cap.operation == "lifecycle.get-state")
         {
@@ -100,7 +108,7 @@ namespace uwvm2::ros_gateway::ros2_lifecycle
             data.push_back(state->current_state.id);
             ipc::put(data, state->current_state.label.size(), 4);
             data.insert(data.end(), state->current_state.label.begin(), state->current_state.label.end());
-            if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+            if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
             return {0, std::move(data)};
         }
         auto transition{std::make_shared<lifecycle_msgs::srv::ChangeState::Request>()};
@@ -138,7 +146,7 @@ namespace uwvm2::ros_gateway::ros2_lifecycle
         if(!result) { return {error, {}}; }
         if(limit(cap, "max-response-bytes") < 1) { return {90, {}}; }
         std::vector<std::uint8_t> data{static_cast<std::uint8_t>(result->success ? 1 : 0)};
-        if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+        if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
         return {0, std::move(data)};
     }
 }  // namespace uwvm2::ros_gateway::ros2_lifecycle

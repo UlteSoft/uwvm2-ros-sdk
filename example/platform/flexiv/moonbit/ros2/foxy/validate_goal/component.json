@@ -1,0 +1,302 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2513",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "8da8823a72eb09dba66266fecedfa73bbb4b4b39d0aad698bc59ecbe9ae219e1"
+    },
+    {
+      "scope": "example",
+      "path": "main.mbt",
+      "sha256": "002078e6fcca6cac59500a5bc14fe070d3d15a3f0fb97cc813d81198407d2c73"
+    },
+    {
+      "scope": "example",
+      "path": "moon.pkg",
+      "sha256": "c1e9772eb20df9e4df0227114b8a854deb1d5660272bb80fc31d814c1ef71ce9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/moonbit/ros2/flexiv-ros2-foxy-complete/bounded_records.mbt",
+      "sha256": "d90c998ae2666cb7f95fe5dc6aaaf1fd0dbe24ef1992df084fd252f2ac1d1654"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/moonbit/ros2/flexiv-ros2-foxy-complete/moon.pkg",
+      "sha256": "239bf0662d7e91a4a1c2dab9a5426e849ed8457277f9adc80aba89cbf0f80b1c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/linear/linear.mbt",
+      "sha256": "c5391359d54c827eded04e3c9b529a6c4cb6a8386e40b744d6a64f1267d960d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/linear/moon.pkg",
+      "sha256": "ee5de904ec605da0619b58162ede6705bcb5385b982cdf5c83b476a901e90e57"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/linear/owned_reserved.mbt",
+      "sha256": "8b479e4529fa3c75e701b1b2a552065f46c44d028232d79ef659e61f09e7b82f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/moon.mod",
+      "sha256": "ab318357192f4833565830137e9f10e971c6700cb0bd4b97cf1e98861e7a2182"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/native_command/native_command.mbt",
+      "sha256": "0c82c3df70e183c87c35e79bb533364a5af0033847126a1be066ce23f17f7c0f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/access.mbt",
+      "sha256": "f0da3dffa9ed79a3d6d498619af30a65a41dbd9dd3a6ce478f6079e958c992d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/coverage.mbt",
+      "sha256": "3f85df27afb1731f6aa924849ff26019995666219cdc3f6803e9c747200159fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/endpoint.mbt",
+      "sha256": "8fdeb2ab31e8d77e07bdadd0f4600d7addeb53ba2e5e218fcc9f9f6a2302df97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/expected_qos.mbt",
+      "sha256": "04da02b1ab85df488dba47192951c82b9875a6fd29bcda94d8d0b613d3dfdbb5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/moon.pkg",
+      "sha256": "47b73265c3f5bed2382cd3fef4cf95576c88d5bd3e5b736b04dfc76d12abebaf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/raw.mbt",
+      "sha256": "4be3a1c2570b97d2461aadc249eedd7218e027fa8a1ad112bb0386ccccfa4748"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/owned_service/wire.mbt",
+      "sha256": "704ebae18984f4f8c225e4690d5f4d1b1c60c47849430ec9e2ab1eb3c1ff7294"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/client.mbt",
+      "sha256": "897fa5e259ac5353d647f45c9a1ea78722ce7b6c6be2b35a4d1ee31e9ee8c701"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/coverage.mbt",
+      "sha256": "d9863e89040f8c694c6f04e497ad040b1e871b4a119540abec2b5c5216c9c9e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/image.mbt",
+      "sha256": "3359f22e845d8302dbefd13864063784513b339a633f1c9f42399636f8e2428a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/moon.pkg",
+      "sha256": "4105ac8d5b4cafd04f4dcd5ff6f3ded0d4cd6f69d0e05a56122fa25435720a48"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/raw.mbt",
+      "sha256": "a54f88a49e67fab9208bdd1104723f4f9214045a7a82c1131d232a8827a12ca8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros1/transform.mbt",
+      "sha256": "39911aedddace1d065756395ec446cd39baf9190daae5ab5770761b296a7c477"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/client.mbt",
+      "sha256": "8cc830d862a48f9aeb14f849da4bbc7b5930d13eeeb675d11722c4804b5fd2a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/coverage.mbt",
+      "sha256": "bcf7a1a7ead3afd7c6a38b5de442089ee034d82ed02db61aa16f6c55293a8944"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/image.mbt",
+      "sha256": "5bf999867ba532f640ebbd940fc4a7d08de1c43cb6e17cab4389616646447b08"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/moon.pkg",
+      "sha256": "4105ac8d5b4cafd04f4dcd5ff6f3ded0d4cd6f69d0e05a56122fa25435720a48"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+      "sha256": "9fcbdf1680e929d65799da4c58c25a525a93743d878575a3b07dfb0832129e1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/raw.mbt",
+      "sha256": "f7d50cfc24e530111d44f9668753035a5aa24a9219a5d3ba2a47b174e5652dfc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/ros2/transform.mbt",
+      "sha256": "4f14419e2b053a8956d9767b0deb6574da428ae8526b1e5ced97eaadddf4af03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/wasi_arguments/arguments.mbt",
+      "sha256": "e2a1fffef071a04a005b56f92369ba3dd58413506132a725851eff42b521fe64"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/wire/image.mbt",
+      "sha256": "e721ef446a816d4e797bf13a4cf7425a6117ba01e4d8defda9a6772a46a23ee6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/wire/moon.pkg",
+      "sha256": "91bb995022fc1ca6a85909fec919b6d82250ef90f7785de80f0c3ea3001a842b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/wire/transform.mbt",
+      "sha256": "eb1c74e67d6d9826d596c431ceb4f8e608cd8f52b847db57e9e8f344db0edf1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/moonbit/wire/wire.mbt",
+      "sha256": "52ab35844525d60b647ebe397da2d460a5f2e15c859c6b770d7d9a16f01c5dd6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/moonbit/ros2_foxy.json",
+      "sha256": "98b340653e890007f454e841c67b6cc4c55d48b8417d372313aeda58e7d6f935"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/SOURCES.json",
+      "sha256": "4d305b8c8c066cdb554e85828bc6f89a2dc31b15b3fa8035af2c234e59d53a5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/additional_record_emitters.py",
+      "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/generate_records.py",
+      "sha256": "8647d2f5b178e30457e4948159060a7beda8ad4a6f9709f079a1fec48fff37bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_records.py",
+      "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_documentation.py",
+      "sha256": "5c5fb155cb868913895f81fc43b47d1fd3c94dea9600845fe0868fa8929c28db"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_emitters.py",
+      "sha256": "a764f7c1958f7d89eda7a38deb688843b9e0dc98e186b82592b56172d22b1719"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/source_layout.py",
+      "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-argument",
+      "arguments": [
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030300a"
+    }
+  ]
+}

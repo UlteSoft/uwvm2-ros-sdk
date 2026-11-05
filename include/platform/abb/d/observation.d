@@ -6,6 +6,7 @@
  * The pointer adapter contains no codec, owner or polling policy.
  */
 module abb.d.observation;
+import core.stdc.string : memmove;
 extern(C) @nogc nothrow
 {
     /// @brief Read the selected original ROS transport ABI version.
@@ -316,7 +317,7 @@ struct Cursor
                 failed = true;
                 return;
             }
-            bytes[at..at + value.size] = value.data[0 ..value.size];
+            memmove(bytes[at..at + value.size].ptr, value.data[0 ..value.size].ptr, value.size);
         }
         else
         {
@@ -325,7 +326,7 @@ struct Cursor
                 failed = true;
                 return;
             }
-            value.data[0 ..value.size] = bytes[at..at + value.size];
+            memmove(value.data[0 ..value.size].ptr, bytes[at..at + value.size].ptr, value.size);
         }
         at += value.size;
     }
@@ -451,7 +452,7 @@ Observation observe(uint operation, const(ubyte)[] capabilityAlias, const(ubyte)
         {
             request[index] = cast(ubyte)(size >> (index * 8));
         }
-        request[4 ..4 + size] = signal;
+        memmove(request[4 ..4 + size].ptr, signal.ptr, size);
         requestSize = size + 4;
     }
     if (nl_version() != 1)

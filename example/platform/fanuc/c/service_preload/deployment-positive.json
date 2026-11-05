@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "backend": "ros2",
   "distribution": "jazzy",
   "runtime": "__RUNTIME__",
@@ -43,19 +43,22 @@
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "call_boundary": "same-module"
+          "call_boundary": "same-module",
+          "wasi_enabled": true
         },
         "io": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "call_boundary": "same-module"
+          "call_boundary": "same-module",
+          "wasi_enabled": true
         },
         "algorithm": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "call_boundary": "same-module"
+          "call_boundary": "same-module",
+          "wasi_enabled": true
         },
         "ros_comm": {
           "ros_enabled": true,
@@ -116,7 +119,8 @@
             "audit-max-records-per-second": "100",
             "audit-max-records": "10000",
             "audit-max-bytes": "1048576"
-          }
+          },
+          "wasi_enabled": true
         }
       }
     }

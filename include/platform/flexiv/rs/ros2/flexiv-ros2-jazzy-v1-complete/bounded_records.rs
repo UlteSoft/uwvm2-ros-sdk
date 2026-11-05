@@ -6113,7 +6113,7 @@ impl Ros2Flexiv_msgsSrvSetMaxContactWrench_Request {
         }
         n = add_size(n, 4)?;
         for element in &self.max_wrench {
-            if (!element.is_finite() && element != f64::INFINITY) {
+            if (!element.is_finite() && *element != f64::INFINITY) {
                 return Err(invalid());
             }
             n = add_size(n, 8)?;

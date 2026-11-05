@@ -1,0 +1,49 @@
+{
+  "format": "uwvm-objectc-runtime-v1",
+  "profile": "noeh",
+  "upstream_revision": "a21ae931e4c186312701d7a4a8e85204955965a6",
+  "include_dir": "include/language/objectc",
+  "headers": {
+    "include/language/objectc/objc/Availability.h": "be633a26832062b5d9eb4c2ee37b4dd60190ac068a40686df02b03d8cedb0a0c",
+    "include/language/objectc/objc/Object.h": "5e48ba193f9990cf703bc759b65642c45437e03a1b2a0327439a9beec0812fa1",
+    "include/language/objectc/objc/Protocol.h": "8777f16ad5b9e2673bcb0f477cb07d89eb5bfca95124ae2877e1f8f14c21eab2",
+    "include/language/objectc/objc/blocks_private.h": "2dec1c278bc73850d4ebffef2a5230fdafbed77cf725cc8aa5df41736cf8856f",
+    "include/language/objectc/objc/blocks_runtime.h": "fb185ee0a3beb5a933db8a55db2660c74f01ef3e55e2080d31dc01712a52b8ba",
+    "include/language/objectc/objc/capabilities.h": "507639ff2305ee36ca1f790704b47ae8b43f21131f3e4a22b992c892b73947b4",
+    "include/language/objectc/objc/developer.h": "52bb83528be1eb2f8fbe3b41f0481653a6f99aebc7fe919d2b8c74bd36ac4a05",
+    "include/language/objectc/objc/encoding.h": "1d02cdf227809a50efce9788de29ba17cac322feb0bdc5993a7e200f85b8e857",
+    "include/language/objectc/objc/hooks.h": "ec4f678eeb4ce356c006f06b46e950c4f4005444a99edad5f9b8fc3193946178",
+    "include/language/objectc/objc/message.h": "3efff88041be9131fbf06ad8b066d3703040d66b81042c86bbf9de7d5204ca9d",
+    "include/language/objectc/objc/objc-api.h": "57f130d6d09f850119f923170011d01b537e45126cbb13267b027cc162a7a730",
+    "include/language/objectc/objc/objc-arc.h": "3bdc61f1d0f50a84bd661dc7d9c3842fa9333d8f0259284c9035b355aa57c060",
+    "include/language/objectc/objc/objc-auto.h": "5dfe6e7b0547394a5c596528c38ff7ac1e822e245901fb2304af370638414ab9",
+    "include/language/objectc/objc/objc-class.h": "8c863d53fc231ef4231dd9f3c6040cf75a176f0e701457d29a654ac7d064ca6a",
+    "include/language/objectc/objc/objc-config.h": "c149cf50f50bdd02b6a4ef05512c09f4d8c3d98fe7c4ada8736095766a145497",
+    "include/language/objectc/objc/objc-config.h.in": "f81c2c047ade86ebd182675eda136aeb6d982400ed49280737b9d94ce008ce30",
+    "include/language/objectc/objc/objc-exception.h": "9d62186be3e4e449d83d8e12cbccdacc90007e3cc88bbee288846ad03ed7ed9e",
+    "include/language/objectc/objc/objc-runtime.h": "8c863d53fc231ef4231dd9f3c6040cf75a176f0e701457d29a654ac7d064ca6a",
+    "include/language/objectc/objc/objc-visibility.h": "2194a1a87d98a1ca34d8e449975bf7d2ac735dac68612ea9bbe74d3721354e21",
+    "include/language/objectc/objc/objc.h": "3b226e7db71912ffbdc1dfd740c90448a6de51ca9b175e3851e217d46485954c",
+    "include/language/objectc/objc/runtime-deprecated.h": "0e575483775486609d470801231c9fa61a975daabfc56243375b02d45307b779",
+    "include/language/objectc/objc/runtime.h": "8196f6eec18a91212b4c130886c1e41c7a83bcf7f07bfbcf075caadfde69e2bc",
+    "include/language/objectc/objc/slot.h": "0ec3ea994411076d762510ddb3a62f6daf293e4fe92b5b803b20b50846fc8dae",
+    "include/language/objectc/objc/toydispatch.h": "3bc440c1686a0b3a5e8ed8205b40ac7f2a6cc6e5d2dab8c8e02817f8f9b258a8"
+  },
+  "targets": {
+    "wasm32-wasip1": {
+      "archive": "lib/language/objectc/noeh/wasm32-wasip1/libobjc.a",
+      "sha256": "264c30bbeef066aa5a0dc85230124f9ccb80ab176fccef3e42b138cfc7a782c8",
+      "bytes": 201800
+    },
+    "wasm64-wasip1": {
+      "archive": "lib/language/objectc/noeh/wasm64-wasip1/libobjc.a",
+      "sha256": "f5e0f3b2a902781db02e4428fb03bcf539bc7f0ef47c0f1dce93d3ba84ba4202",
+      "bytes": 218888
+    }
+  },
+  "sdk_root_class": {
+    "source": "src/language/objectc/base_object.m",
+    "sha256": "752103cfb3866b6ab2a28ebc1da09a0855fd33dd4702824f3b1cabd9e175f097",
+    "scope": "Objective-C Object root class matching the upstream public header; genuine class metadata compiled into each Wasm runtime archive"
+  }
+}

@@ -65,6 +65,11 @@ function(uwvm_rmw_attach_cpp_codecs target mode)
         endforeach()
     endforeach()
 
+    if(mode STREQUAL "NATIVE_CONTRACT")
+        find_package(rmw REQUIRED)
+        target_link_libraries("${target}" PUBLIC rmw::rmw)
+    endif()
+
     target_sources("${target}" PRIVATE "${codec_source}")
     target_compile_features("${target}" PUBLIC cxx_std_20)
     target_include_directories("${target}" PUBLIC

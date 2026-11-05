@@ -1,0 +1,68 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "module-consumer-5227",
+  "preload_modules": [
+    "counter"
+  ],
+  "test_scope": "Execute the original guest assertions across the actual built preload module: initialization count, stateful calls, typed error packing and close/reinitialize behavior. Every module gets explicit base WASI; operation grants stay in deployment policy.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "example",
+      "path": "main64.wat",
+      "sha256": "a42d6dfbc6cbc9c3164143bc594aefb991c014380cb18317c9242589d1ed248d"
+    },
+    {
+      "scope": "example",
+      "path": "counter64.wat",
+      "sha256": "2c0d29d5629b52eaff9b5f40ed5ec769bf1be8d4d272df732f3dec6eeecf4c69"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6ebd2511b538bdc72e36719fff86e2f604f4d93b56f50305f4a2845e3efece6c"
+    },
+    {
+      "scope": "example",
+      "path": "main32.wat",
+      "sha256": "d425e0ed9e57e25c87763e9683c01ccecc2aeec4faf5f4bea5ae1e57f5d5d325"
+    },
+    {
+      "scope": "example",
+      "path": "counter32.wat",
+      "sha256": "cfafa6e03aa3773d92092f998a12d8d18ccfd621d6e8b5bb221680cef7c8033f"
+    }
+  ],
+  "cases": [
+    {
+      "id": "actual-preloaded-module-contract",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -29,7 +29,7 @@ python3 -B "$UWVM_ROS_SDK_ROOT/tools/platform/ros/run.py" \
   --wasm "$PWD/build/main/main.wasm" --report-directory "$PWD/run-evidence"
 ```
 
-每个模块名都有独立 WASI/ROS Single 绑定。算法仅保留默认 WASI（含基本标准流），
+每个模块名都有独立 WASI/ROS Single 绑定。算法只启用基础 WASI 接口，不自动获得标准流操作权限，
 不追加权限；IO 的两次显式发现等待单独授予 monotonic-clock。只有 ros_comm 获得
 精确 sample/topic.publish/std_msgs/String 授权，其原生 Noetic MD5 为
 992ce8a1687cec8c8bd883ec73ca41d1，且显式选择 module-exports 调用边界。
@@ -58,7 +58,6 @@ socket=/tmp/uwvm-preload-$$.sock
 sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --runtime-aot \
   --wasm-set-main-module-name main \
-  --wasip1-global-noinherit-system-environment \
   --wasm-preload-library "build/io/io.wasm" io \
   --wasm-set-preload-module-attribute io none \
   --wasm-preload-library "build/algorithm/algorithm.wasm" algorithm \

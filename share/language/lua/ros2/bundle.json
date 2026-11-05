@@ -7,6 +7,11 @@
       "name": "uwvm/lua/observation",
       "file": "src/language/lua/modules/observation.lua",
       "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "ros/lua/native_command",
+      "file": "include/platform/ros/lua/native_command.lua",
+      "sha256": "f1d0b98c491bfeacd180aa203e7828fffeb1fc6f68378bc1afd91bace82db430"
     }
   ],
   "default_authority": []

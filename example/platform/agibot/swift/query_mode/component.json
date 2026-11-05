@@ -1,0 +1,180 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-agibot-observer-258",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/as/wasi.ts",
+      "sha256": "307b12e3ca99ec0361fb84671ffe093690e135883b9a6eaaba3789341cd33362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/client.h",
+      "sha256": "2bc506b36b480328170cc8bb4672b81b9a58c51387c5452cf85a72b1485c529a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/command_io.h",
+      "sha256": "f4e82373a34e897becee683b97f832ff23b09a35137bb7a92bfc63e2220d76fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/dotnet/Transport.cs",
+      "sha256": "f328604cb92c12c57a5b248ece31d2e15757e780b19626a8e2548c4d187c7148"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/go/aimdk_v1_1_0/records.go",
+      "sha256": "2fbdeb5c3d1da4fd437289e1eb1008af449b2ee12a0820a3e5a82ff410f9249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Core.java",
+      "sha256": "3ae4fcd5ee86002fa448065426d70e8dd147bf461f077a316aee71530867153e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Records.java",
+      "sha256": "2359a8ad7b6e227c96d6d545bf721449fbdd4b2d31ad11694c9a312ccbf843b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/observation_json.h",
+      "sha256": "8cc5a02f29ab0bbe4e1ce5d4a97f592aeb318215d503404618829992b811aef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/output.h",
+      "sha256": "5bcccffe16c559898888b0ae6aabebc6afb941904ca93090e806b76146240f87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.js",
+      "sha256": "8fcfa583dc92d43fb3ae38c93c469aaa72ad59464d60fdbe6bfda2d1674da9dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.json",
+      "sha256": "f29309e03422d038a4cf7206aafeebf978654e7a1f4a440bd04a91342b907d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.lua",
+      "sha256": "b283aa633a73772fb8fe5c513b354e0ce66a84297c4fbb6bb0e5d9055d9f402f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.php",
+      "sha256": "953da8dbea4e96cb022f98b4b2e2ef076fc48514cb40ff0e5f4f6ff332a58fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.py",
+      "sha256": "164ee7e75af9761cd7cef8423309dd9b9daf608d8fe7403eda9b9789a000d3e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.rb",
+      "sha256": "0ae98b296275097a2e2a02b87c1d12deb503d55328732524231e438f60d46701"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/swift/Client.swift",
+      "sha256": "8bb3f9b98bce122ff6be7bceab98bbfce1ac7d44cc47fd4c8870e860f8e29bae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/swift/c/agibot_c.h",
+      "sha256": "e8f099a09f8790ab38cbb3640efcb82b0dbb13121be268a4e439132161447ac9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/swift/c/module.modulemap",
+      "sha256": "3c34a1c5106b90f3c2d62e176bc76111bad0e59277bfde5ef224c714536beefb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agibot/provider.json",
+      "sha256": "c42e2f8f25cc45823af00cf44685f337d4723fff5c5273207649128cf42d8ade"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/command_io.c",
+      "sha256": "5f1397ed8b672966ba20df20de9063db38fa84b678771a98e978b89d78cc5f68"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation.c",
+      "sha256": "dd305d33ce99ac9d14186c4b94fd51abd27af2c8c479eb17d09300783ffdbbdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation_json.c",
+      "sha256": "49a79c3cbf9b28d730f1e39124f47821818bb67f616db4ff4ff8c77f73ead065"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/wasip1_main.c",
+      "sha256": "6c1f5353b8c58056868f661481a5f96b60ab964f738f41c34a942dc29202324d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agibot/provider.lua",
+      "sha256": "40610d8482fb4368a16b5664c1cf542e6f5f373764db009e7e85fc8d5f69b24e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3aa6555a45d8bbfbc4f1cc316f7cae0b8e202f621c842a3948c58ca076117692"
+    },
+    {
+      "scope": "example",
+      "path": "main.swift",
+      "sha256": "63d4d56f044d8b1f7d4315427dccf4dd8feac35a7adae5f35163d7deac45698a"
+    }
+  ],
+  "cases": [
+    {
+      "id": "no-resource-diagnostic-cleanup",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "stderr_contains": "failed: 13; close: 0"
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": "",
+      "stderr_contains": "Expected exactly one granted Agibot alias"
+    }
+  ]
+}

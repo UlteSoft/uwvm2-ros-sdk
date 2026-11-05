@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-ros-authority-4034",
+  "test_scope": "Actual source-language ROS command with its namespace exposed and zero resource grants. Refusal and original diagnostic facts are checked. This case does not qualify positive transport or a simulator.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "454f9108eb6cbb38f783d7b358e01a71cd3c1b8ed7737a79bbcc2a83c0548f8e"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "3ce2d658c15a062fa5668b5384f5c7048cf19d50dddce3e2cf701c0754b71a25"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/ros/bindings/c.json",
+      "sha256": "f0e9584dcc1b572499edbfcb40ed0cc5e569e329ca9066f0aec6a68017bd500f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/native_ros_std_component.lua",
+      "sha256": "b2b4bb5076c48150dbc426d9cd57d2e40d9f41a4dd9026eaa75e4d2677426f40"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/native_ros_std_test.py",
+      "sha256": "2623161ac1bc1b4b7f7bdbc81373357eddea294eef439d0bc6943e2720cee54f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/native/ros2_component_peer.cpp",
+      "sha256": "e1eeb290a2fb0be8d270e3c4550ec367ba80a059dc926b7cc22423575eb6fb71"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-enabled-without-resource-grants",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": "primary=0x0000000d rpc=0x00000000 rpc_present=0 cleanup=0x00000000 cleanup_present=0\nlength=0x0000000000000000 length_present=0 response_present=0 success=0\nwire=\ntext=\n"
+    }
+  ]
+}

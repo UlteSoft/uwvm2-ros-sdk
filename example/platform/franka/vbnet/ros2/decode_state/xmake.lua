@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -47,6 +48,7 @@ set_policy("run.autobuild", false)
 local sdk = root
 target("franka-vbnet-ros2-decode_state")
     set_language("vbnet")
+    set_wasm_exceptions("eh")
     set_ros_platform("franka")
     set_ros2_version("jazzy")
     set_values("ros.vendor.profile", "ros2")
@@ -55,4 +57,5 @@ target("franka-vbnet-ros2-decode_state")
     set_plat(get_config("plat") or "wasm-wasip1")
     add_files("main.vb")
 
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

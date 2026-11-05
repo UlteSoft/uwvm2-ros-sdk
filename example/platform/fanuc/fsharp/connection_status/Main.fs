@@ -6,18 +6,46 @@
 // required; no grant, replay or controller admission is implicit.
 module Fanuc.Examples.Main
 open System
-open Uwvm.Ros
+open System.Threading
+open Uwvm.RosWasm
 open Uwvm.Fanuc.Ros2
-/// @brief Read the complete fanuc_msgs/msg/ConnectionStatus value with genuine F# full AOT.
-/// @param args Exactly one explicit policy alias.
-/// @return First operation or independent cleanup failure.
+
+/// Observe in the real F# Wasm guest. Poll only idle results and retire an acquired owner once.
 [<EntryPoint>]
 let main (args: string array) =
     if args.Length <> 1 then 22 else
-        let facts = Client.WaitSample(args.[0], 1, 250)
+        let mutable primary = 0u
+        let mutable cleanup = 0u
         let mutable wire = Array.empty<byte>
-        if facts.Primary = 0u then
-            try wire <- Ros2Fanuc_msgsMsgConnectionStatus.Decode(facts.Bytes).Encode()
-            with :? ArgumentException -> facts.Primary <- 22u
-        Console.WriteLine("{\"primary\":" + string facts.Primary + ",\"cleanup\":" + string facts.Cleanup + ",\"wire_hex\":\"" + Convert.ToHexString(wire).ToLowerInvariant() + "\"}")
-        int (min 125u (if facts.Primary <> 0u then facts.Primary else facts.Cleanup))
+        let mutable owner: Capability option = None
+        let session = new Session(new NativeTransport(), 1)
+        try
+            try
+                session.CheckAbi()
+                let capability = session.Open(args.[0])
+                owner <- Some capability
+                primary <- capability.Invoke("topic_subscribe").Error
+                let mutable attempt = 0
+                let mutable waiting = primary = 0u
+                while waiting && attempt < 250 do
+                    let result = capability.Invoke("event_poll", capacity = 1)
+                    primary <- result.Error
+                    attempt <- attempt + 1
+                    waiting <- primary = 11u
+                    if primary = 0u then
+                        wire <- Ros2Fanuc_msgsMsgConnectionStatus.Encode(Ros2Fanuc_msgsMsgConnectionStatus.Decode(result.Data))
+                    if waiting && attempt < 250 then Thread.Sleep(20)
+            with
+            | :? RosException as error -> primary <- error.Result.Error
+            | :? ArgumentException -> primary <- 22u
+            | :? FormatException -> primary <- 22u
+        finally
+            match owner with
+            | Some capability ->
+                try cleanup <- capability.CloseChecked().Error
+                with
+                | :? RosException as error -> cleanup <- error.Result.Error
+                | _ -> cleanup <- 5u
+            | None -> ()
+        Console.WriteLine("{\"primary\":" + string primary + ",\"cleanup\":" + string cleanup + ",\"wire_hex\":\"" + Convert.ToHexString(wire).ToLowerInvariant() + "\"}")
+        int (min 125u (if primary <> 0u then primary else cleanup))

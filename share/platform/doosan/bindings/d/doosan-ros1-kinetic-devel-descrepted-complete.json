@@ -17,5 +17,32 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "d",
+    "stack_bytes": 4194304,
+    "d": {
+      "import_dirs": [
+        "include/platform/ros/d/source"
+      ],
+      "source_modules": [
+        {
+          "name": "doosan.ros1.doosan_ros1_kinetic_devel_descrepted_complete.records",
+          "source": "include/platform/doosan/d/ros1/doosan-ros1-kinetic-devel-descrepted-complete/records.d"
+        }
+      ],
+      "modules": [
+        "doosan.ros1.doosan_ros1_kinetic_devel_descrepted_complete.records",
+        "roswasm.wire",
+        "roswasm"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/startup.c",
+        "object": "startup.o"
+      }
+    ]
+  }
 }

@@ -3,21 +3,18 @@
   "language": "r",
   "version": "4.5.1",
   "source_complete": true,
-  "runtime_installed": false,
-  "status": "SOURCE_RESTORED_REAL_RUNTIME_NOT_BUILT",
+  "runtime_installed": true,
+  "status": "GENUINE_WASM_NATIVE_EH_BUILT_EXECUTION_MATRIX_IN_PROGRESS",
   "written": [
-    "All5081 maintained GNU R4.5.1 source files restored with exact original manifest and51 unchanged Fortran sources",
-    "Original R_ParseVector/Rf_eval command entry and statically registered six-argument .Call bridge",
-    "Exact raw64-bit R handle/length wrappers",
-    "Version-one public language adapter lifecycle and native_command compatibility source fix"
+    "Original GNU R 4.5.1 compiled to wasm32 and wasm64 with existing LLVM/Flang inputs",
+    "Original C/Fortran numerical algorithms and static raw ROS adapter",
+    "Read-only base package and TZif data embedded in Wasm",
+    "Native WebAssembly EH/SjLj; binary standard streams stay inside WASI permissions"
   ],
   "pending": [
-    "fresh complete numerical boundary receipt",
-    "Fortran 90 target lowering and runtime",
-    "WASI dependency/configuration closure",
-    "embedded base-package startup filesystem",
-    "whole-module nonlocal control and genuine interpreter tests",
-    "native ROS and memory64 acceptance"
+    "complete xmake guest and ROS regression matrix",
+    "source-language module library artifacts",
+    "recommended R packages beyond embedded base"
   ],
   "historical_evidence": "Historical f2c/Flang results remain input evidence only; fresh tests have separate receipts",
   "installed_toy_parser": false,
@@ -28,5 +25,31 @@
   "public_xmake_test_qualified": false,
   "Fortran_originals_unchanged": 51,
   "new_boot_execution_admission": false,
-  "qualified_execution": "NOT_RUN"
+  "qualified_execution": "Finite explicit receipts only; whole SDK matrix unfinished",
+  "installed_runtime_artifacts": [
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/wasi/R.wasm",
+      "sha256": "6c0e6e47f41fc772fcf8447e196f5c813952b63e640ed01349c148a1bc6f042e"
+    },
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/ros1/R.wasm",
+      "sha256": "7dc80b878e2330a3e26a578a370a39ee2761d5205a6596e95b1ad12928f6500b"
+    },
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/ros2/R.wasm",
+      "sha256": "457fb797666631aca1888f05a5fd8fc05a537018b04b2c24232e5400276165eb"
+    },
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/wasi/wasm64/R.wasm",
+      "sha256": "a8067d02faffd60c67ce5f08a2e5a990f2caca87fed9cf41e3bec05ede9c2815"
+    },
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/ros1/wasm64/R.wasm",
+      "sha256": "e03a3adfe753a27bce435eccc2a47d63447dd2b75624f9a25f7840dbba9666ca"
+    },
+    {
+      "path": "/home/macromodel/Documents/src/uwvm2-ros-sdk/lib/language/r/ros2/wasm64/R.wasm",
+      "sha256": "2ec355e82b138e8a5c59d78f6917cc9aef6a5462fbf8a795972c3a07f4e429e4"
+    }
+  ]
 }

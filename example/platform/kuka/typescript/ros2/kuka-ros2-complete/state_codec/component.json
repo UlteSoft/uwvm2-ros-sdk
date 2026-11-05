@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-3243",
+  "test_scope": "Execute the original TypeScript dense canonical-wire and direct-field assertions; verify the complete successful contract output. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b1d2aa327b81d4c4bedfa635bd974341a2a9f73fa30756e3c9b405bf0a8b5d2b"
+    },
+    {
+      "scope": "example",
+      "path": "main.mts",
+      "sha256": "19ecf7d0b0c7774093d334bc3728d27e4b6cf7c3629b5c0e919d0bfdf88eb3d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/bindings/typescript/kuka-ros2-complete.json",
+      "sha256": "677c01ad5605ed562a591e775a13a025448e97038e97c82498d6a938dc02419f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+      "sha256": "3e6ccb5e70ec5e75137b5fc91b76778a7c450246ceab2416695a2e58e58d0954"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "dense-canonical-wire-and-direct-field-contract",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "kuka_driver_interfaces/msg/KssStatus",
+        "status": "PASS",
+        "denseCases": 2,
+        "directChecks": 18
+      }
+    }
+  ]
+}

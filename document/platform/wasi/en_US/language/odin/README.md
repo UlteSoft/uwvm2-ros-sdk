@@ -46,7 +46,6 @@ A runtime installation is a separate deployment input. Build explicitly before `
   "runtime": "/absolute/path/to/uwvm2-ros",
   "runtime_arguments": [
     "--runtime-aot",
-    "--wasip1-global-noinherit-system-environment"
   ],
   "application_arguments": [
     "7",
@@ -58,4 +57,4 @@ A runtime installation is a separate deployment input. Build explicitly before `
 
 Use empty `application_arguments` for the two stdin operations and provide their stdin. For a wasm64 application, set `target` to `wasm64-wasip1` and explicitly append `--wasm-feature-enable-memory64` and `--wasm-feature-enable-table64` to `runtime_arguments`. The launcher appends the sole `--run` operand and preserves application arguments, including empty strings. It adds no permission, environment, preopen or Core feature option. This generic command format is separate from the public native-ROS deployment v2 format.
 
-Default WASI provides basic inherited standard-stream descriptors. That is sufficient for these programs and does not imply zero descriptor authority. Disabling system-environment inheritance does not grant a directory, socket or ROS resource. Libraries use native Xmake `set_kind("static")` or `set_kind("shared")`; support must be declared by the exact language adapter. An indexed relocatable `.a` and a real preloadable Core `.wasm` require independent producer/consumer verification. A packaged interpreter source module alone proves neither kind.
+Base WASI grants no standard-stream operations; explicitly grant each operation required by the module. That is sufficient for these programs and does not imply zero descriptor authority. Disabling system-environment inheritance does not grant a directory, socket or ROS resource. Libraries use native Xmake `set_kind("static")` or `set_kind("shared")`; support must be declared by the exact language adapter. An indexed relocatable `.a` and a real preloadable Core `.wasm` require independent producer/consumer verification. A packaged interpreter source module alone proves neither kind.

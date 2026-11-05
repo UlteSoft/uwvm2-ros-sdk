@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "ros/js/native_command",
+      "file": "include/platform/ros/js/native_command.mjs",
+      "sha256": "4de0417acedda6b901b28169e32e573641eb7598232c06522a5ea99ee0697377"
+    },
+    {
+      "name": "ubtech/js/ros2/main/records",
+      "file": "include/platform/ubtech/js/ros2/main/records.mjs",
+      "sha256": "f3b0cf83f9f340b6d7f6760aa77099303f4a3649bd2f466faf809d2641d13cbb"
+    }
+  ],
+  "default_authority": []
+}

@@ -1,12 +1,14 @@
--- @file xmake.lua
--- @brief Build the independent ABB observation commands from the platform root.
--- @details Each child also builds directly from its own directory. The shared
--- helper uses real WASI compilers and never launches an application implicitly.
-includes("c/read_speed/xmake.lua", "c/read_io/xmake.lua", "c/system_state/xmake.lua")
-includes("cpp/read_speed/xmake.lua", "cpp/read_io/xmake.lua", "cpp/system_state/xmake.lua")
-includes("go/read_speed/xmake.lua", "go/read_io/xmake.lua", "go/system_state/xmake.lua")
-includes("tinygo/read_speed/xmake.lua", "tinygo/read_io/xmake.lua", "tinygo/system_state/xmake.lua")
-includes("rs/read_speed/xmake.lua", "rs/read_io/xmake.lua", "rs/system_state/xmake.lua")
-includes("as/read_speed/xmake.lua", "as/read_io/xmake.lua", "as/system_state/xmake.lua")
-includes("objectc/read_speed/xmake.lua", "objectc/read_io/xmake.lua", "objectc/system_state/xmake.lua")
-includes("c_ffi_bridge/read_speed/xmake.lua", "c_ffi_bridge/read_io/xmake.lua", "c_ffi_bridge/system_state/xmake.lua")
+-- Aggregate the original child commands without changing their execution directories.
+local root=os.getenv("UWVM_ROS_SDK_ROOT")
+if not root then
+    root=path.absolute(os.scriptdir())
+    while not os.isfile(path.join(root,"tools/xmake/ros.lua")) do
+        local parent=path.directory(root)
+        if parent==root then break end
+        root=parent
+    end
+end
+includes(path.join(root,"tools/xmake/ros.lua"))
+includes(path.join(root,"tools/shared/xmake/guest_aggregate.lua"))
+set_policy("run.autobuild",false)
+uwvm_guest_aggregate({api_version=1,sdk_root=root,project_root=path.absolute(os.scriptdir()),children={"c/read_speed","c/read_io","c/system_state","cpp/read_speed","cpp/read_io","cpp/system_state","go/read_speed","go/read_io","go/system_state","tinygo/read_speed","tinygo/read_io","tinygo/system_state","rs/read_speed","rs/read_io","rs/system_state","as/read_speed","as/read_io","as/system_state","objectc/read_speed","objectc/read_io","objectc/system_state","c_ffi_bridge/read_speed","c_ffi_bridge/read_io","c_ffi_bridge/system_state"}})

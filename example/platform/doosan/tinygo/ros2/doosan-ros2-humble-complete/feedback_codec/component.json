@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-1669",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "d68873b53d95ffb90e7a04e7390c59768a2b9dd7763692828ba096ed11787bf2"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "d9faf2d165b0aadc76a7b8c6bd3f09ecd8ccf9b3d4d5640464eb3e3a596a487b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/tinygo/doosan-ros2-humble-complete.json",
+      "sha256": "3553416d9ac23e23f8a4a0d34deeec333199a295e111d23dd621ef410a18eb5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros2-humble-complete.ir.json",
+      "sha256": "37f8b7a8de734eda41f5471ea858368bc8c227e2d9598a66ff8ec334914ed5c3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "6782735a2a990ce2cccaf1f372c5b4aa5ccb0820b06dcdf5dc3f0acb751b1db7"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs2/action/JogH2r_Feedback",
+        "bytes": 48,
+        "wire_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

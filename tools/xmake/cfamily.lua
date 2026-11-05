@@ -97,7 +97,11 @@ function _command(target, root, triple, extra)
     local entry = target:values("ros.sdk.entry") or "command"
     assert(entry == "command" or entry == "freestanding", "Select command or freestanding startup")
     if entry == "freestanding" then
-        table.join2(extra, {"-ffreestanding", "-fno-builtin", "-nostdlib", "-Wl,--entry=_start", "-Wl,--export=_start"})
+        -- Objective-C still needs its genuine class/selector runtime even when
+        -- the application supplies _start. Omit only the C startup object;
+        -- runtime/library code remains inside this Wasm instance.
+        local startup = language == "objectc" and "-nostartfiles" or "-nostdlib"
+        table.join2(extra, {"-ffreestanding", "-fno-builtin", startup, "-Wl,--entry=_start", "-Wl,--export=_start"})
         if cpp then table.join2(extra, {"-fno-rtti", "-fno-threadsafe-statics"}) end
     end
     -- A freestanding command supplies its own entry and deliberately omits
@@ -120,6 +124,11 @@ function _command(target, root, triple, extra)
         or { c89 = true, c90 = true, c99 = true, c11 = true, c17 = true, c23 = true, c2y = true }
     assert(accepted[standard], "Unsupported explicit C-family source standard: " .. tostring(standard))
     local compiler = programs[cpp and "cxx" or "cc"]
+    local objective
+    if language == "objectc" then
+        objective = import("objectc", {rootdir = path.join(root, "tools/language/native"), anonymous = true})
+        compiler = objective.compiler(root)
+    end
     local version = os.iorunv(compiler, { "--version" })
     assert(version:find("clang version 23.", 1, true), "The actual application compiler must be LLVM 23")
     target:data_set("ros.sdk.compiler_version", version:trim())
@@ -143,6 +152,7 @@ function _command(target, root, triple, extra)
         "-Wl,--max-memory=67108864",
         "-Wl,--threads=1",
     }
+    if cpp then table.insert(arguments, "-I" .. path.join(root, "include/language/c++/include")) end
     local feature_flags = {
         ["simd128"] = "-msimd128", ["relaxed-simd"] = "-mrelaxed-simd",
         ["bulk-memory"] = "-mbulk-memory", ["reference-types"] = "-mreference-types",
@@ -183,7 +193,8 @@ function _command(target, root, triple, extra)
         table.join2(arguments, { "-Wl,-mllvm,-wasm-use-legacy-eh=false" })
     end
     if language == "objectc" then
-        table.join2(arguments, { "-x", "objective-c", "-fno-objc-arc", "-fno-objc-exceptions" })
+        table.join2(arguments, { "-x", "objective-c" })
+        table.join2(arguments, objective.flags(root, triple, profile))
     end
     for _, directory in ipairs(table.wrap(target:get("includedirs"))) do
         table.insert(arguments, "-I" .. path.absolute(directory))
@@ -197,6 +208,10 @@ function _command(target, root, triple, extra)
     table.join2(arguments, extra or {})
     for _, source in ipairs(target:sourcefiles()) do
         table.insert(arguments, path.absolute(source))
+    end
+    if objective and not freestanding then
+        table.join2(arguments, {"-x", "none"})
+        table.join2(arguments, objective.libraries(root, triple, profile))
     end
     local output = path.absolute(target:targetfile())
     os.mkdir(path.directory(output))
@@ -241,6 +256,7 @@ function _linked(target, root, triple, extra)
                    "-ffile-prefix-map=" .. root .. "=/sdk", "-fmacro-prefix-map=" .. root .. "=/sdk",
                    "-ffile-prefix-map=" .. path.absolute(target:scriptdir()) .. "=/application",
                    "-fmacro-prefix-map=" .. path.absolute(target:scriptdir()) .. "=/application"}
+    table.insert(flags, "-I" .. path.join(root, "include/language/c++/include"))
     local feature_flags = {simd128 = "-msimd128", ["relaxed-simd"] = "-mrelaxed-simd",
         ["bulk-memory"] = "-mbulk-memory", ["reference-types"] = "-mreference-types",
         ["multi-value"] = "-mmultivalue", ["sign-extension"] = "-msign-ext",
@@ -337,6 +353,13 @@ function _linked(target, root, triple, extra)
         import("wasm_module", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
             .initialize(output, entry == "freestanding" and "__wasm_call_ctors" or "_initialize")
     end
+end
+
+-- @brief Compile mixed C and C++ sources with their respective frontends.
+-- @details Reuse the explicit object/link graph; C adapters retain C ABI and
+-- language semantics even when the command entry is C++.
+function build_mixed(target, root, triple, extra)
+    return _linked(target, root, triple, extra)
 end
 
 -- @brief Build the selected native Xmake kind with the one pinned real toolchain.

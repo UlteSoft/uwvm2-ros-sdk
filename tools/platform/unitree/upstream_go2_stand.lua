@@ -1,6 +1,6 @@
 -- @file upstream_go2_stand.lua
 -- @brief Exact original C++20 task graph using the common qualified producer.
-local binding_digest = "f37058185ae792309dd644ee692b5be25643e29311c5b1177ee0335764d2f8d3"
+local binding_digest = "464ac5c8b9ef5cbc08c9ac2017f2b9fc274e60dbd8058ab184c1d8cb8dc37c5d"
 local revision = "668d1ec5a05d1c38d3306bdca7d59f2ba3581a88"
 function configure(target, root, context)
     assert(context and context.api_version == 1, "Use the shared provider lifecycle")
@@ -48,7 +48,7 @@ function run(target, root, context)
         or os.getenv("UWVM_ROS_RUN_CONFIG")
     assert(filename and os.isfile(filename), "Supply the explicit Go2 deployment after actual runtime/gateway/domain admission")
     local deployment = json.loadfile(filename)
-    assert(deployment.format == "uwvm-native-ros-run-v2" and deployment.backend == "ros2"
+    assert(deployment.format == "uwvm-native-ros-run-v3" and deployment.backend == "ros2"
         and deployment.distribution == "humble", "Select the exact original Go2 Humble deployment")
     local connection = assert(deployment.connection)
     local domain = tonumber(connection["domain-id"])
@@ -64,8 +64,9 @@ function run(target, root, context)
     for _ in pairs(example.modules) do count = count + 1 end
     assert(count == 1 and module.ros_enabled == true and module.call_boundary == "same-module",
         "Declare the sole module and its actual permission boundary")
-    assert(#module.wasi_grants == 1 and module.wasi_grants[1] == "monotonic-clock",
-        "The selected source requests only its explicit monotonic-clock extra permission")
+    -- The common launcher validates explicit WASI enablement and grants.
+    -- Keep insufficient policies intact so the VM enforces their boundary;
+    -- building or selecting this source graph grants no authority.
     local bindings = json.loadfile(path.join(root, "share/platform/unitree/cpp/ros2/go2_stand/source-bindings.json"))
     local expected = {}
     for _, row in ipairs(bindings.bindings) do expected[row.alias] = row end

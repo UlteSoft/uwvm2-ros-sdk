@@ -96,7 +96,7 @@ fn BoundedReader::signed16(self : BoundedReader) -> Int {
 fn BoundedReader::float32(self : BoundedReader) -> Float {
   let bits = self.unsigned(4)
   if (bits & 2139095040UL) == 2139095040UL { self.error = 22 }
-  bits.to_uint().reinterpret_as_float()
+  Float::reinterpret_from_uint(bits.to_uint())
 }
 
 fn BoundedReader::float64(self : BoundedReader) -> Double {
@@ -108,8 +108,7 @@ fn BoundedReader::float64(self : BoundedReader) -> Double {
 fn BoundedReader::count(self : BoundedReader, maximum : Int, element_minimum : Int) -> Int {
   let count = self.unsigned(4)
   if self.error != 0 { return 0 }
-  if count > maximum.to_uint64() ||
-      (element_minimum > 0 && count > ((self.bytes.length() - self.position) / element_minimum).to_uint64()) {
+  if count > maximum.to_uint64() || (element_minimum > 0 && count > ((self.bytes.length() - self.position) / element_minimum).to_uint64()) {
     self.error = 22
     return 0
   }
@@ -175,16 +174,14 @@ pub fn Ros2Builtin_interfacesMsgDurationCodec::new() -> Ros2Builtin_interfacesMs
     codec_identity: "UWVMROS1_3804444fae7a82a57907d25c2c3dc54d9a42dcd305f41ca073b1221dca7d36e4",
     min_wire_bytes: 8, max_wire_bytes: 8 }
 }
-pub fn Ros2Builtin_interfacesMsgDurationCodec::encode(_self : Ros2Builtin_interfacesMsgDurationCodec, value :
-        Ros2Builtin_interfacesMsgDuration) -> Result[Bytes, Int] {
+pub fn Ros2Builtin_interfacesMsgDurationCodec::encode(_self : Ros2Builtin_interfacesMsgDurationCodec, value : Ros2Builtin_interfacesMsgDuration) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 8, error: 0 }
   write_Ros2Builtin_interfacesMsgDuration(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 8 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Builtin_interfacesMsgDurationCodec::decode(_self : Ros2Builtin_interfacesMsgDurationCodec, input : Bytes) ->
-        Result[Ros2Builtin_interfacesMsgDuration, Int] {
+pub fn Ros2Builtin_interfacesMsgDurationCodec::decode(_self : Ros2Builtin_interfacesMsgDurationCodec, input : Bytes) -> Result[Ros2Builtin_interfacesMsgDuration, Int] {
   if input.length() < 8 || input.length() > 8 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Builtin_interfacesMsgDuration(reader)
@@ -241,16 +238,14 @@ pub fn Ros2Builtin_interfacesMsgTimeCodec::new() -> Ros2Builtin_interfacesMsgTim
     codec_identity: "UWVMROS1_0fd520c23fd8cb06e2c27292fdc20694732fa9332d452fc3fa31da90f7605fb7",
     min_wire_bytes: 8, max_wire_bytes: 8 }
 }
-pub fn Ros2Builtin_interfacesMsgTimeCodec::encode(_self : Ros2Builtin_interfacesMsgTimeCodec, value : Ros2Builtin_interfacesMsgTime)
-        -> Result[Bytes, Int] {
+pub fn Ros2Builtin_interfacesMsgTimeCodec::encode(_self : Ros2Builtin_interfacesMsgTimeCodec, value : Ros2Builtin_interfacesMsgTime) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 8, error: 0 }
   write_Ros2Builtin_interfacesMsgTime(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 8 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Builtin_interfacesMsgTimeCodec::decode(_self : Ros2Builtin_interfacesMsgTimeCodec, input : Bytes) ->
-        Result[Ros2Builtin_interfacesMsgTime, Int] {
+pub fn Ros2Builtin_interfacesMsgTimeCodec::decode(_self : Ros2Builtin_interfacesMsgTimeCodec, input : Bytes) -> Result[Ros2Builtin_interfacesMsgTime, Int] {
   if input.length() < 8 || input.length() > 8 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Builtin_interfacesMsgTime(reader)
@@ -390,23 +385,20 @@ pub fn Ros2Trajectory_msgsMsgJointTrajectoryPointCodec::new() -> Ros2Trajectory_
     codec_identity: "UWVMROS1_a512b971211baa8604440e02a046b586e7970293242607002ceb89196c9d99b1",
     min_wire_bytes: 24, max_wire_bytes: 280 }
 }
-pub fn Ros2Trajectory_msgsMsgJointTrajectoryPointCodec::encode(_self : Ros2Trajectory_msgsMsgJointTrajectoryPointCodec, value :
-        Ros2Trajectory_msgsMsgJointTrajectoryPoint) -> Result[Bytes, Int] {
+pub fn Ros2Trajectory_msgsMsgJointTrajectoryPointCodec::encode(_self : Ros2Trajectory_msgsMsgJointTrajectoryPointCodec, value : Ros2Trajectory_msgsMsgJointTrajectoryPoint) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 280, error: 0 }
   write_Ros2Trajectory_msgsMsgJointTrajectoryPoint(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 24 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Trajectory_msgsMsgJointTrajectoryPointCodec::decode(_self : Ros2Trajectory_msgsMsgJointTrajectoryPointCodec, input :
-        Bytes) -> Result[Ros2Trajectory_msgsMsgJointTrajectoryPoint, Int] {
+pub fn Ros2Trajectory_msgsMsgJointTrajectoryPointCodec::decode(_self : Ros2Trajectory_msgsMsgJointTrajectoryPointCodec, input : Bytes) -> Result[Ros2Trajectory_msgsMsgJointTrajectoryPoint, Int] {
   if input.length() < 24 || input.length() > 280 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Trajectory_msgsMsgJointTrajectoryPoint(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Trajectory_msgsMsgJointTrajectoryPoint(writer : BoundedWriter, value : Ros2Trajectory_msgsMsgJointTrajectoryPoint) ->
-        Unit {
+fn write_Ros2Trajectory_msgsMsgJointTrajectoryPoint(writer : BoundedWriter, value : Ros2Trajectory_msgsMsgJointTrajectoryPoint) -> Unit {
   let part0 = value.positions
   let count0 = part0.length()
   if count0 > 8 { writer.error = 22; return () }
@@ -510,16 +502,14 @@ pub fn Ros2Trajectory_msgsMsgJointTrajectoryCodec::new() -> Ros2Trajectory_msgsM
     codec_identity: "UWVMROS1_e32bd7016b5fefcab6adeb42072e2d56c45d4b9f7cb372bdb5bfac97abf8cb77",
     min_wire_bytes: 20, max_wire_bytes: 1484 }
 }
-pub fn Ros2Trajectory_msgsMsgJointTrajectoryCodec::encode(_self : Ros2Trajectory_msgsMsgJointTrajectoryCodec, value :
-        Ros2Trajectory_msgsMsgJointTrajectory) -> Result[Bytes, Int] {
+pub fn Ros2Trajectory_msgsMsgJointTrajectoryCodec::encode(_self : Ros2Trajectory_msgsMsgJointTrajectoryCodec, value : Ros2Trajectory_msgsMsgJointTrajectory) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 1484, error: 0 }
   write_Ros2Trajectory_msgsMsgJointTrajectory(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 20 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Trajectory_msgsMsgJointTrajectoryCodec::decode(_self : Ros2Trajectory_msgsMsgJointTrajectoryCodec, input : Bytes) ->
-        Result[Ros2Trajectory_msgsMsgJointTrajectory, Int] {
+pub fn Ros2Trajectory_msgsMsgJointTrajectoryCodec::decode(_self : Ros2Trajectory_msgsMsgJointTrajectoryCodec, input : Bytes) -> Result[Ros2Trajectory_msgsMsgJointTrajectory, Int] {
   if input.length() < 20 || input.length() > 1484 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Trajectory_msgsMsgJointTrajectory(reader)
@@ -603,16 +593,14 @@ pub fn Ros2Geometry_msgsMsgVector3Codec::new() -> Ros2Geometry_msgsMsgVector3Cod
     codec_identity: "UWVMROS1_5adebf211fe375fba92c0628f9b8ebf05bff9ab22ddc4bbf00629167af295d5e",
     min_wire_bytes: 24, max_wire_bytes: 24 }
 }
-pub fn Ros2Geometry_msgsMsgVector3Codec::encode(_self : Ros2Geometry_msgsMsgVector3Codec, value : Ros2Geometry_msgsMsgVector3) ->
-        Result[Bytes, Int] {
+pub fn Ros2Geometry_msgsMsgVector3Codec::encode(_self : Ros2Geometry_msgsMsgVector3Codec, value : Ros2Geometry_msgsMsgVector3) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 24, error: 0 }
   write_Ros2Geometry_msgsMsgVector3(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 24 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Geometry_msgsMsgVector3Codec::decode(_self : Ros2Geometry_msgsMsgVector3Codec, input : Bytes) ->
-        Result[Ros2Geometry_msgsMsgVector3, Int] {
+pub fn Ros2Geometry_msgsMsgVector3Codec::decode(_self : Ros2Geometry_msgsMsgVector3Codec, input : Bytes) -> Result[Ros2Geometry_msgsMsgVector3, Int] {
   if input.length() < 24 || input.length() > 24 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Geometry_msgsMsgVector3(reader)
@@ -680,16 +668,14 @@ pub fn Ros2Geometry_msgsMsgQuaternionCodec::new() -> Ros2Geometry_msgsMsgQuatern
     codec_identity: "UWVMROS1_34a32c3470cbfe2ff12340781a5bf22f6c370a8f5c06669f25a34321ade81672",
     min_wire_bytes: 32, max_wire_bytes: 32 }
 }
-pub fn Ros2Geometry_msgsMsgQuaternionCodec::encode(_self : Ros2Geometry_msgsMsgQuaternionCodec, value :
-        Ros2Geometry_msgsMsgQuaternion) -> Result[Bytes, Int] {
+pub fn Ros2Geometry_msgsMsgQuaternionCodec::encode(_self : Ros2Geometry_msgsMsgQuaternionCodec, value : Ros2Geometry_msgsMsgQuaternion) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 32, error: 0 }
   write_Ros2Geometry_msgsMsgQuaternion(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 32 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Geometry_msgsMsgQuaternionCodec::decode(_self : Ros2Geometry_msgsMsgQuaternionCodec, input : Bytes) ->
-        Result[Ros2Geometry_msgsMsgQuaternion, Int] {
+pub fn Ros2Geometry_msgsMsgQuaternionCodec::decode(_self : Ros2Geometry_msgsMsgQuaternionCodec, input : Bytes) -> Result[Ros2Geometry_msgsMsgQuaternion, Int] {
   if input.length() < 32 || input.length() > 32 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Geometry_msgsMsgQuaternion(reader)
@@ -746,16 +732,14 @@ pub fn Ros2Geometry_msgsMsgTransformCodec::new() -> Ros2Geometry_msgsMsgTransfor
     codec_identity: "UWVMROS1_7ddcb1c3fca43f4a0299d43fb6fac1b77a8f26001af809dc13307f4f9c61d65b",
     min_wire_bytes: 56, max_wire_bytes: 56 }
 }
-pub fn Ros2Geometry_msgsMsgTransformCodec::encode(_self : Ros2Geometry_msgsMsgTransformCodec, value : Ros2Geometry_msgsMsgTransform)
-        -> Result[Bytes, Int] {
+pub fn Ros2Geometry_msgsMsgTransformCodec::encode(_self : Ros2Geometry_msgsMsgTransformCodec, value : Ros2Geometry_msgsMsgTransform) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 56, error: 0 }
   write_Ros2Geometry_msgsMsgTransform(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 56 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Geometry_msgsMsgTransformCodec::decode(_self : Ros2Geometry_msgsMsgTransformCodec, input : Bytes) ->
-        Result[Ros2Geometry_msgsMsgTransform, Int] {
+pub fn Ros2Geometry_msgsMsgTransformCodec::decode(_self : Ros2Geometry_msgsMsgTransformCodec, input : Bytes) -> Result[Ros2Geometry_msgsMsgTransform, Int] {
   if input.length() < 56 || input.length() > 56 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Geometry_msgsMsgTransform(reader)
@@ -806,16 +790,14 @@ pub fn Ros2Geometry_msgsMsgTwistCodec::new() -> Ros2Geometry_msgsMsgTwistCodec {
     codec_identity: "UWVMROS1_1a6c18d19bb6853a2cff3b775974ba31f8e3674c1bbe566444ccabf0ef9d117e",
     min_wire_bytes: 48, max_wire_bytes: 48 }
 }
-pub fn Ros2Geometry_msgsMsgTwistCodec::encode(_self : Ros2Geometry_msgsMsgTwistCodec, value : Ros2Geometry_msgsMsgTwist) ->
-        Result[Bytes, Int] {
+pub fn Ros2Geometry_msgsMsgTwistCodec::encode(_self : Ros2Geometry_msgsMsgTwistCodec, value : Ros2Geometry_msgsMsgTwist) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 48, error: 0 }
   write_Ros2Geometry_msgsMsgTwist(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 48 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Geometry_msgsMsgTwistCodec::decode(_self : Ros2Geometry_msgsMsgTwistCodec, input : Bytes) ->
-        Result[Ros2Geometry_msgsMsgTwist, Int] {
+pub fn Ros2Geometry_msgsMsgTwistCodec::decode(_self : Ros2Geometry_msgsMsgTwistCodec, input : Bytes) -> Result[Ros2Geometry_msgsMsgTwist, Int] {
   if input.length() < 48 || input.length() > 48 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Geometry_msgsMsgTwist(reader)
@@ -880,25 +862,20 @@ pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec::new() -> Ros2Tra
     codec_identity: "UWVMROS1_4b4b6ba78f11918fcdc138544f7ef1a140d1fc51b385349ab1ad5716472c3daf",
     min_wire_bytes: 20, max_wire_bytes: 844 }
 }
-pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec::encode(_self :
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec, value : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint) ->
-        Result[Bytes, Int] {
+pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec::encode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec, value : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 844, error: 0 }
   write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 20 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec::decode(_self :
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec, input : Bytes) ->
-        Result[Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint, Int] {
+pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec::decode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPointCodec, input : Bytes) -> Result[Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint, Int] {
   if input.length() < 20 || input.length() > 844 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(writer : BoundedWriter, value :
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint) -> Unit {
+fn write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(writer : BoundedWriter, value : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint) -> Unit {
   let part0 = value.transforms
   let count0 = part0.length()
   if count0 > 1 { writer.error = 22; return () }
@@ -926,8 +903,7 @@ fn write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(writer : BoundedWrit
   let part3 = value.time_from_start
   write_Ros2Builtin_interfacesMsgDuration(writer, part3)
 }
-fn read_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(reader : BoundedReader) ->
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint {
+fn read_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(reader : BoundedReader) -> Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint {
   let part0 : Array[Ros2Geometry_msgsMsgTransform] = []
   let count0 = reader.count(1, 56)
   for index = 0; index < count0; index = index + 1 {
@@ -991,23 +967,20 @@ pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec::new() -> Ros2Trajecto
     codec_identity: "UWVMROS1_b822a2d5db9b83e916dcc9db4932952a314773ef53c9fbaf825902e0eb7c8cb5",
     min_wire_bytes: 20, max_wire_bytes: 2048 }
 }
-pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec::encode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec, value
-        : Ros2Trajectory_msgsMsgMultiDOFJointTrajectory) -> Result[Bytes, Int] {
+pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec::encode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec, value : Ros2Trajectory_msgsMsgMultiDOFJointTrajectory) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 2048, error: 0 }
   write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectory(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 20 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec::decode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec, input
-        : Bytes) -> Result[Ros2Trajectory_msgsMsgMultiDOFJointTrajectory, Int] {
+pub fn Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec::decode(_self : Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryCodec, input : Bytes) -> Result[Ros2Trajectory_msgsMsgMultiDOFJointTrajectory, Int] {
   if input.length() < 20 || input.length() > 2048 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Trajectory_msgsMsgMultiDOFJointTrajectory(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectory(writer : BoundedWriter, value :
-        Ros2Trajectory_msgsMsgMultiDOFJointTrajectory) -> Unit {
+fn write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectory(writer : BoundedWriter, value : Ros2Trajectory_msgsMsgMultiDOFJointTrajectory) -> Unit {
   let part0 = value.header
   write_Ros2Std_msgsMsgHeader(writer, part0)
   let part1 = value.joint_names
@@ -1094,16 +1067,14 @@ pub fn Ros2Control_msgsMsgJointToleranceCodec::new() -> Ros2Control_msgsMsgJoint
     codec_identity: "UWVMROS1_3864af88029b3b1f51907b3da63d2d821104c29b9469a146a5a34f73f3598b8a",
     min_wire_bytes: 28, max_wire_bytes: 156 }
 }
-pub fn Ros2Control_msgsMsgJointToleranceCodec::encode(_self : Ros2Control_msgsMsgJointToleranceCodec, value :
-        Ros2Control_msgsMsgJointTolerance) -> Result[Bytes, Int] {
+pub fn Ros2Control_msgsMsgJointToleranceCodec::encode(_self : Ros2Control_msgsMsgJointToleranceCodec, value : Ros2Control_msgsMsgJointTolerance) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 156, error: 0 }
   write_Ros2Control_msgsMsgJointTolerance(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 28 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Control_msgsMsgJointToleranceCodec::decode(_self : Ros2Control_msgsMsgJointToleranceCodec, input : Bytes) ->
-        Result[Ros2Control_msgsMsgJointTolerance, Int] {
+pub fn Ros2Control_msgsMsgJointToleranceCodec::decode(_self : Ros2Control_msgsMsgJointToleranceCodec, input : Bytes) -> Result[Ros2Control_msgsMsgJointTolerance, Int] {
   if input.length() < 28 || input.length() > 156 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Control_msgsMsgJointTolerance(reader)
@@ -1179,23 +1150,20 @@ pub fn Ros2Control_msgsMsgJointComponentToleranceCodec::new() -> Ros2Control_msg
     codec_identity: "UWVMROS1_8a10f659b38feae6dfcf89818d35a164743b02c0e5cfe2d86aae7eda56e914fb",
     min_wire_bytes: 30, max_wire_bytes: 158 }
 }
-pub fn Ros2Control_msgsMsgJointComponentToleranceCodec::encode(_self : Ros2Control_msgsMsgJointComponentToleranceCodec, value :
-        Ros2Control_msgsMsgJointComponentTolerance) -> Result[Bytes, Int] {
+pub fn Ros2Control_msgsMsgJointComponentToleranceCodec::encode(_self : Ros2Control_msgsMsgJointComponentToleranceCodec, value : Ros2Control_msgsMsgJointComponentTolerance) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 158, error: 0 }
   write_Ros2Control_msgsMsgJointComponentTolerance(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 30 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Control_msgsMsgJointComponentToleranceCodec::decode(_self : Ros2Control_msgsMsgJointComponentToleranceCodec, input :
-        Bytes) -> Result[Ros2Control_msgsMsgJointComponentTolerance, Int] {
+pub fn Ros2Control_msgsMsgJointComponentToleranceCodec::decode(_self : Ros2Control_msgsMsgJointComponentToleranceCodec, input : Bytes) -> Result[Ros2Control_msgsMsgJointComponentTolerance, Int] {
   if input.length() < 30 || input.length() > 158 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Control_msgsMsgJointComponentTolerance(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Control_msgsMsgJointComponentTolerance(writer : BoundedWriter, value : Ros2Control_msgsMsgJointComponentTolerance) ->
-        Unit {
+fn write_Ros2Control_msgsMsgJointComponentTolerance(writer : BoundedWriter, value : Ros2Control_msgsMsgJointComponentTolerance) -> Unit {
   let part0 = value.joint_name
   writer.text(part0, 128)
   let part1 = value.component
@@ -1292,23 +1260,20 @@ pub fn Ros2Control_msgsActionFollowJointTrajectory_GoalCodec::new() -> Ros2Contr
     codec_identity: "UWVMROS1_fa8334eb129cc91c50febaccfebb371f6fbdd82188d6301823344d6664300018",
     min_wire_bytes: 64, max_wire_bytes: 8580 }
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_GoalCodec::encode(_self : Ros2Control_msgsActionFollowJointTrajectory_GoalCodec,
-        value : Ros2Control_msgsActionFollowJointTrajectory_Goal) -> Result[Bytes, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_GoalCodec::encode(_self : Ros2Control_msgsActionFollowJointTrajectory_GoalCodec, value : Ros2Control_msgsActionFollowJointTrajectory_Goal) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 8580, error: 0 }
   write_Ros2Control_msgsActionFollowJointTrajectory_Goal(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 64 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_GoalCodec::decode(_self : Ros2Control_msgsActionFollowJointTrajectory_GoalCodec,
-        input : Bytes) -> Result[Ros2Control_msgsActionFollowJointTrajectory_Goal, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_GoalCodec::decode(_self : Ros2Control_msgsActionFollowJointTrajectory_GoalCodec, input : Bytes) -> Result[Ros2Control_msgsActionFollowJointTrajectory_Goal, Int] {
   if input.length() < 64 || input.length() > 8580 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Control_msgsActionFollowJointTrajectory_Goal(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Control_msgsActionFollowJointTrajectory_Goal(writer : BoundedWriter, value :
-        Ros2Control_msgsActionFollowJointTrajectory_Goal) -> Unit {
+fn write_Ros2Control_msgsActionFollowJointTrajectory_Goal(writer : BoundedWriter, value : Ros2Control_msgsActionFollowJointTrajectory_Goal) -> Unit {
   let part0 = value.trajectory
   write_Ros2Trajectory_msgsMsgJointTrajectory(writer, part0)
   let part1 = value.multi_dof_trajectory
@@ -1348,8 +1313,7 @@ fn write_Ros2Control_msgsActionFollowJointTrajectory_Goal(writer : BoundedWriter
   let part6 = value.goal_time_tolerance
   write_Ros2Builtin_interfacesMsgDuration(writer, part6)
 }
-fn read_Ros2Control_msgsActionFollowJointTrajectory_Goal(reader : BoundedReader) -> Ros2Control_msgsActionFollowJointTrajectory_Goal
-        {
+fn read_Ros2Control_msgsActionFollowJointTrajectory_Goal(reader : BoundedReader) -> Ros2Control_msgsActionFollowJointTrajectory_Goal {
   let part0 = read_Ros2Trajectory_msgsMsgJointTrajectory(reader)
   let part1 = read_Ros2Trajectory_msgsMsgMultiDOFJointTrajectory(reader)
   let part2 : Array[Ros2Control_msgsMsgJointTolerance] = []
@@ -1415,32 +1379,26 @@ pub fn Ros2Control_msgsActionFollowJointTrajectory_ResultCodec::new() -> Ros2Con
     codec_identity: "UWVMROS1_df1e08076a5c725b865cc8807462d9ccf9577df11cbb71fcc0d280d77d0e5649",
     min_wire_bytes: 8, max_wire_bytes: 264 }
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_ResultCodec::encode(_self :
-        Ros2Control_msgsActionFollowJointTrajectory_ResultCodec, value : Ros2Control_msgsActionFollowJointTrajectory_Result) ->
-        Result[Bytes, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_ResultCodec::encode(_self : Ros2Control_msgsActionFollowJointTrajectory_ResultCodec, value : Ros2Control_msgsActionFollowJointTrajectory_Result) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 264, error: 0 }
   write_Ros2Control_msgsActionFollowJointTrajectory_Result(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 8 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_ResultCodec::decode(_self :
-        Ros2Control_msgsActionFollowJointTrajectory_ResultCodec, input : Bytes) ->
-        Result[Ros2Control_msgsActionFollowJointTrajectory_Result, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_ResultCodec::decode(_self : Ros2Control_msgsActionFollowJointTrajectory_ResultCodec, input : Bytes) -> Result[Ros2Control_msgsActionFollowJointTrajectory_Result, Int] {
   if input.length() < 8 || input.length() > 264 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Control_msgsActionFollowJointTrajectory_Result(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Control_msgsActionFollowJointTrajectory_Result(writer : BoundedWriter, value :
-        Ros2Control_msgsActionFollowJointTrajectory_Result) -> Unit {
+fn write_Ros2Control_msgsActionFollowJointTrajectory_Result(writer : BoundedWriter, value : Ros2Control_msgsActionFollowJointTrajectory_Result) -> Unit {
   let part0 = value.error_code
   writer.unsigned(part0.to_int64().reinterpret_as_uint64() & 4294967295UL, 4)
   let part1 = value.error_string
   writer.text(part1, 256)
 }
-fn read_Ros2Control_msgsActionFollowJointTrajectory_Result(reader : BoundedReader) ->
-        Ros2Control_msgsActionFollowJointTrajectory_Result {
+fn read_Ros2Control_msgsActionFollowJointTrajectory_Result(reader : BoundedReader) -> Ros2Control_msgsActionFollowJointTrajectory_Result {
   let part0 = reader.unsigned(4).to_uint().reinterpret_as_int()
   let part1 = reader.text(256)
   { error_code: part0, error_string: part1 }
@@ -1517,32 +1475,26 @@ pub(all) struct Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec {
   min_wire_bytes : Int
   max_wire_bytes : Int
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::new() -> Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec
-        {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::new() -> Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec {
   { ros_version: 2, native_type: "control_msgs/action/FollowJointTrajectory_Feedback",
     native_identity: None,
     codec_identity: "UWVMROS1_ae2175027c3e45997d272b9610d15ef52cc665d23c0a371892d10b3d100e3529",
     min_wire_bytes: 152, max_wire_bytes: 4708 }
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::encode(_self :
-        Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec, value : Ros2Control_msgsActionFollowJointTrajectory_Feedback) ->
-        Result[Bytes, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::encode(_self : Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec, value : Ros2Control_msgsActionFollowJointTrajectory_Feedback) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 4708, error: 0 }
   write_Ros2Control_msgsActionFollowJointTrajectory_Feedback(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 152 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::decode(_self :
-        Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec, input : Bytes) ->
-        Result[Ros2Control_msgsActionFollowJointTrajectory_Feedback, Int] {
+pub fn Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec::decode(_self : Ros2Control_msgsActionFollowJointTrajectory_FeedbackCodec, input : Bytes) -> Result[Ros2Control_msgsActionFollowJointTrajectory_Feedback, Int] {
   if input.length() < 152 || input.length() > 4708 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Control_msgsActionFollowJointTrajectory_Feedback(reader)
   if reader.error != 0 || reader.position != reader.bytes.length() { Err(22) } else { Ok(value) }
 }
-fn write_Ros2Control_msgsActionFollowJointTrajectory_Feedback(writer : BoundedWriter, value :
-        Ros2Control_msgsActionFollowJointTrajectory_Feedback) -> Unit {
+fn write_Ros2Control_msgsActionFollowJointTrajectory_Feedback(writer : BoundedWriter, value : Ros2Control_msgsActionFollowJointTrajectory_Feedback) -> Unit {
   let part0 = value.header
   write_Ros2Std_msgsMsgHeader(writer, part0)
   let part1 = value.joint_names
@@ -1574,8 +1526,7 @@ fn write_Ros2Control_msgsActionFollowJointTrajectory_Feedback(writer : BoundedWr
   let part8 = value.multi_dof_error
   write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint(writer, part8)
 }
-fn read_Ros2Control_msgsActionFollowJointTrajectory_Feedback(reader : BoundedReader) ->
-        Ros2Control_msgsActionFollowJointTrajectory_Feedback {
+fn read_Ros2Control_msgsActionFollowJointTrajectory_Feedback(reader : BoundedReader) -> Ros2Control_msgsActionFollowJointTrajectory_Feedback {
   let part0 = read_Ros2Std_msgsMsgHeader(reader)
   let part1 : Array[String] = []
   let count1 = reader.count(8, 4)
@@ -1657,16 +1608,14 @@ pub fn Ros2Sensor_msgsMsgJointStateCodec::new() -> Ros2Sensor_msgsMsgJointStateC
     codec_identity: "UWVMROS1_bba20c36db70a98b594ba603d05b8a979038fb95b701221ba3b8689f55b06b11",
     min_wire_bytes: 28, max_wire_bytes: 1404 }
 }
-pub fn Ros2Sensor_msgsMsgJointStateCodec::encode(_self : Ros2Sensor_msgsMsgJointStateCodec, value : Ros2Sensor_msgsMsgJointState) ->
-        Result[Bytes, Int] {
+pub fn Ros2Sensor_msgsMsgJointStateCodec::encode(_self : Ros2Sensor_msgsMsgJointStateCodec, value : Ros2Sensor_msgsMsgJointState) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 1404, error: 0 }
   write_Ros2Sensor_msgsMsgJointState(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 28 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros2Sensor_msgsMsgJointStateCodec::decode(_self : Ros2Sensor_msgsMsgJointStateCodec, input : Bytes) ->
-        Result[Ros2Sensor_msgsMsgJointState, Int] {
+pub fn Ros2Sensor_msgsMsgJointStateCodec::decode(_self : Ros2Sensor_msgsMsgJointStateCodec, input : Bytes) -> Result[Ros2Sensor_msgsMsgJointState, Int] {
   if input.length() < 28 || input.length() > 1404 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros2Sensor_msgsMsgJointState(reader)
@@ -1707,9 +1656,7 @@ fn write_Ros2Sensor_msgsMsgJointState(writer : BoundedWriter, value : Ros2Sensor
     let element = part4[index]
     writer.float64(element)
   }
-  if (count1 != 0 && count2 != 0 && count1 != count2) || (count1 != 0 && count3 != 0 && count1 != count3) || (count1 != 0 && count4
-          != 0 && count1 != count4) || (count2 != 0 && count3 != 0 && count2 != count3) || (count2 != 0 && count4 != 0 && count2 !=
-          count4) || (count3 != 0 && count4 != 0 && count3 != count4) { writer.error = 22 }
+  if (count1 != 0 && count2 != 0 && count1 != count2) || (count1 != 0 && count3 != 0 && count1 != count3) || (count1 != 0 && count4 != 0 && count1 != count4) || (count2 != 0 && count3 != 0 && count2 != count3) || (count2 != 0 && count4 != 0 && count2 != count4) || (count3 != 0 && count4 != 0 && count3 != count4) { writer.error = 22 }
 }
 fn read_Ros2Sensor_msgsMsgJointState(reader : BoundedReader) -> Ros2Sensor_msgsMsgJointState {
   let part0 = read_Ros2Std_msgsMsgHeader(reader)
@@ -1733,11 +1680,7 @@ fn read_Ros2Sensor_msgsMsgJointState(reader : BoundedReader) -> Ros2Sensor_msgsM
   for index = 0; index < count4; index = index + 1 {
     part4.push(reader.float64())
   }
-  if (part1.length() != 0 && part2.length() != 0 && part1.length() != part2.length()) || (part1.length() != 0 && part3.length() != 0
-          && part1.length() != part3.length()) || (part1.length() != 0 && part4.length() != 0 && part1.length() != part4.length())
-          || (part2.length() != 0 && part3.length() != 0 && part2.length() != part3.length()) || (part2.length() != 0 &&
-          part4.length() != 0 && part2.length() != part4.length()) || (part3.length() != 0 && part4.length() != 0 && part3.length()
-          != part4.length()) { reader.error = 22 }
+  if (part1.length() != 0 && part2.length() != 0 && part1.length() != part2.length()) || (part1.length() != 0 && part3.length() != 0 && part1.length() != part3.length()) || (part1.length() != 0 && part4.length() != 0 && part1.length() != part4.length()) || (part2.length() != 0 && part3.length() != 0 && part2.length() != part3.length()) || (part2.length() != 0 && part4.length() != 0 && part2.length() != part4.length()) || (part3.length() != 0 && part4.length() != 0 && part3.length() != part4.length()) { reader.error = 22 }
   { header: part0, name: part1, position: part2, velocity: part3, effort: part4 }
 }
 

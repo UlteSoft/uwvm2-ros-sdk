@@ -30,7 +30,7 @@ ROS1 使用 `set_ros1_version`。Agibot 另提供 `set_agibot_version` 和
 
 ## 部署协议
 
-`uwvm-native-ros-run-v2` 必须包含 `runtime`、`backend`、`distribution`、
+`uwvm-native-ros-run-v3` 必须包含 `runtime`、`backend`、`distribution`、
 `connection` 和 `examples`。主模块或任一预加载模块设置 `ros_enabled: true`
 时，必须提供 `gateway`。运行时和网关均为明确的可执行文件
 路径，相对路径以 JSON 所在目录为基准。可选的 `runtime_loader` 与
@@ -79,7 +79,7 @@ native identity。完整消息、服务和动作 adapter 必须进入运行时�
 | --- | --- | --- |
 | `main` | 无 | 禁用；调用经过审查的库导出。 |
 | `io` | 模板显式授予 `monotonic-clock` | 禁用。 |
-| `algorithm` | 无；保留默认 WASI 基本标准流 | 禁用。 |
+| `algorithm` | 仅基础 WASI 接口；无标准流操作授权 | 禁用。 |
 | `ros_comm` | 无 | 仅手工列出的 ROS 操作，并显式允许导出委托。 |
 
 ROS 默认拒绝具有跨模块调用祖先的导入。经过审查的通信库可以显式设置

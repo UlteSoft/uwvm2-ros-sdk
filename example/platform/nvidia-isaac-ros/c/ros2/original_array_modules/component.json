@@ -1,0 +1,809 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "four-module-isolation-3364",
+  "test_scope": "Actual original multi-module guest: module-local host denial, constructors, checked cleanup and complete outputs. Native positive resource behavior requires separate integration tests.",
+  "ros_namespace": "ros2",
+  "preload_modules": [
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "ros_modules": [
+    "main",
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/cpu_sensor_contract.h",
+      "sha256": "3fc6505ace9dcb99d2a5cabbd37bce626e1994963aaab0cb719d01c77a1a443e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_interfaces.h",
+      "sha256": "936f9d73dac106ba4e98c1feaddf20bb9c94fed16a14b7fd5cfdca1c98cbed9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_records.h",
+      "sha256": "61038bd330e7dd3857f40a161a4baef3100e1ad6d318a084a1f7adb66ae96272"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/full_values.hpp",
+      "sha256": "a78ade52b204ba19d2376d515b5acac425cb6ba6e155de661cf4cb3b99619db7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/native/cpu_snapshot.hpp",
+      "sha256": "651e803256132945c0eb706b812949e8bd9bd57e2f8d01c9f86738d635a2710a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/interfaces.hpp",
+      "sha256": "6380ced43f47b01306c900cd4e5af6b88cd1496121c75411d63b69c29b600ee2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/complete/records.hpp",
+      "sha256": "b37b04a0bccdf7c065a6e4170cfd27201cb3253bc77e13dd95ca74307c81558b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/isaac-ros-complete/bounded_interfaces.hpp",
+      "sha256": "363f215f44093a5f7b0e157109b4a489865c33cebc195c03f22eb4628ff5a392"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/cpp/ros2/isaac-ros-complete/bounded_records.hpp",
+      "sha256": "93bc4ebf2875c678aba8063156c921dfc74eedd61fac66246c388a0be3927bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/command.h",
+      "sha256": "1a54497e519c726d090ecca4ee9132bd1ac8216bcc32ea666262926edf1f678f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/custom-types/generated-r3/fixed_records.h",
+      "sha256": "e69844b9d60364c3565871bf48acad708878a24cf9c32d937da5b1b82a06a38d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/native_command.h",
+      "sha256": "b5917f95c2b04f5cb2505ccb542c406be1eb99c1f20a1511a0ebe4d5e144512a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/action_bundle.h",
+      "sha256": "cf47e1ab8b834cba62c4789782471c4f34b4195b65fd0c5d9651a33d0ef80a54"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/codec.h",
+      "sha256": "b96510d62c400169f1c214d5ff9f3113a09ffff6057ef7fccd61e25410bf73a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/abi.h",
+      "sha256": "7aa9dc1e30bbba3ff3ceb0fe9d97c73cffffbf86bbe0b3b7a70b3d389d6b029b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/detail/common/c_portability.h",
+      "sha256": "adb03faee9f7ec38c75e5723d7eefa0a6a9b7e8931f7bbe4953efc417a0dbff6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/events.h",
+      "sha256": "ede12ed7cee9c8c47996e8edc63c93c2554de042c9f7a798310e2a3d93b220b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/executor.h",
+      "sha256": "71509b8f4ef50dd6de26f5bd503c0df7af48274a974bf4d13e8ed8e21b232107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/library_profile.h",
+      "sha256": "462a40c4e66aba83d7919aa2aa5dfb1c41b9d7480a838a615b2dc711a0542ef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/node.h",
+      "sha256": "0f82b360008076934ac8b72398aa017d98c076821166fbeaeaa467817e33e9e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/resources.h",
+      "sha256": "2eccace2f77d6fda80d3e1d8474fcb9edcab1242cc6c4302ffb2e81aff008a8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_publisher_v1.h",
+      "sha256": "48b6622c343498fab49d09e83eec126019cb6da643295289ee832467b18365e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_service_v1.h",
+      "sha256": "fe8bad1be614755ffac42c4455535b7009ca8232359fba95038cef9c13126369"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/rmw_subscription_v1.h",
+      "sha256": "646ce79d5e879ea82327c67aa2c594a3f1b6466019d8dde69b8d8dd7f46e54e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasm.h",
+      "sha256": "68127aa26335cd0a52d9885243a4028ef839e01f8ed15e94d173695cad41e814"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/roswasmc.h",
+      "sha256": "ba68039a0052d27e5abb3d6fa6503661085ea86229f60f2974b239099dc410aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client.h",
+      "sha256": "0b4355701e8a82252c54b8aa59f7dda74595c5068c2572b90cfbef51c149544c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/service_client_v1.h",
+      "sha256": "5fcbeeaa80fad26ba62f403680f0095ce00a8bf65a78f1f4dc818d189298dfd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/c/roswasm/session.h",
+      "sha256": "4fea9017e46677eda3202a6eaaf146c6fa879eb07a0e24243e58bb4510db8a2f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/abi.h",
+      "sha256": "0f95d12558872bffe193ecf4c18121ca03abdf51dbfc82049f710b82e10cce80"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/example_interfaces/srv/add_two_ints.h",
+      "sha256": "9d5ecec2c63d32037e77bafee626d4d70152a08c4ac1fa20c54ca88999c99532"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/allocator.h",
+      "sha256": "7b35a62299fe64739c0697bcb190ca40afb5fc0b7d83063b6ea482ad479c48be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/client.h",
+      "sha256": "e29fba0ed83531efd8d7cc66d429b3f828760f02523032812e59075d5dd76664"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/context.h",
+      "sha256": "f1eb949f0db20eb7723dc3f2bc9121e15692c479ffb929131862f3454e2008d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/error_handling.h",
+      "sha256": "d97e4b3d330355c23e9c7d04ee3fba60d9b230bc02ed1f6b72d5f1b0af4a1b4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/node.h",
+      "sha256": "c77c070ef4f3215590a71aef2ace77e4a9169585aaec2694c661f3c5abf0901a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/publisher.h",
+      "sha256": "baf28e6e55c044650d2080d8d95c328eaebdd93d627517e0b751499992757685"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/rcl.h",
+      "sha256": "62fdd37ce59db4196da4d024b73298b17df19d9d5bde643109f97291aebdeb76"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/service.h",
+      "sha256": "30cc6cc0733558f0d0674acb4538ce07aeac542b8c0ef14622594f8f0612809d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/subscription.h",
+      "sha256": "f79dd65adc7429535916b4cd9cb350d3aed564ff3cfd8f777a531485785756a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/time.h",
+      "sha256": "a2cb0b94de64759b322a55c2515a5fdc7b964b95ee922d9d2f7ead6048af446f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/timer.h",
+      "sha256": "055b144455d561328ba49dae208f37fb067ccde40e5c95ec81d6f31eed5de541"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcl/types.h",
+      "sha256": "273fac2f014a2e4ac3117043812c945ecba5cc195991522202d74f6de1e2bc97"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/client.h",
+      "sha256": "e29fba0ed83531efd8d7cc66d429b3f828760f02523032812e59075d5dd76664"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/executor.h",
+      "sha256": "a4ba4f2ddc536998111fb5826dfc08414efa83bf70f8ee287be69842ce9442e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/rclc.h",
+      "sha256": "614dce95d602dacc435aa86d7629780d918873fa2036636ca1944b0d38ed19c6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/service.h",
+      "sha256": "30cc6cc0733558f0d0674acb4538ce07aeac542b8c0ef14622594f8f0612809d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/sleep.h",
+      "sha256": "5c4c251f94c2f6693acf36ea3da060c83f874c1902aff1609aa4cb78c0e5fb69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rclc/types.h",
+      "sha256": "2a43c622188ecb9e130bedbbe9f6df3d3c5454d9b600445483d8452d0ccada91"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcutils/allocator.h",
+      "sha256": "61cf85b17c10282eedb4d1d5749d4828b81caacc8ceb96398fafec9ea77d0413"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rcutils/error_handling.h",
+      "sha256": "5f3e46d30ec0f8f5441a979ce55c81115ac702105207046845598ab8438e0dd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rmw/qos_profiles.h",
+      "sha256": "088fb847b07dac44aada63dbc703fb07605e97e38c347e0fc1810a17df175d29"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rmw/types.h",
+      "sha256": "06924a39d3d45af24beac781529e64e7cee747791b83f3b4bb4eb63b52948118"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/message_type_support_struct.h",
+      "sha256": "283c4010b992f98c09b61a31d24c74f48a2a2764eb09ba40c4b150381ea8b83a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/service_type_support_struct.h",
+      "sha256": "480260ea0dc14a8e7d3c7788994932dfca31ac363a1668a6a8a30af35daebbee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/string.h",
+      "sha256": "bfe3ec1141fd95a3b90b0e225eb7864c0c551cb1cd86dcb8d17ab49d82befc8b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/rosidl_runtime_c/string_functions.h",
+      "sha256": "830107996cdaa598dc951f428e78b56d9ef5b0c47d5940ce0c396e335a8ca5e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/roswasm_rclc/compat.h",
+      "sha256": "ac7b78ff11e001b4f2671a5c8594820b5c375015477b36a35f796b4afa84ce05"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/roswasm_rclc/services.h",
+      "sha256": "46a6b375b6af6fb4de7516fad83b518822425358b175424f5a6153be36b119fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_msgs/msg/string.h",
+      "sha256": "f781906ca4523947ba910b40115fa2d3baebc8f6d1c91629ce2f530c14453afc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_srvs/srv/set_bool.h",
+      "sha256": "e8217b463fefae53db9e4660d9d9b7102a8872c176e5b8496d6c244b9f766cff"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/compat/rclc/std_srvs/srv/trigger.h",
+      "sha256": "686fb7b4adb9260393df224f5228f9b8ea440e547f298fbb72015d96e0adf0b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/abi/ros2.h",
+      "sha256": "e5a0136444306a780dc651119b1bc594a887b7bca38cc9ba94777df946d3d24f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
+      "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/ros2.h",
+      "sha256": "a0079a2eb1e840c039ac46fc171afe9b1ea604d86a40fc987a6ed6db4f471bf4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm/service_client_ros2.h",
+      "sha256": "85a744f57f50cd8e25df73823598467da64919bf3fd52eca1af455edd88d1a12"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/roswasm.h",
+      "sha256": "dfe7e743ccc8a3559701b6e2bf1e74bbf7d6d393e8ec6b13cd3c441356da5e40"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/bridge.h",
+      "sha256": "9a89bfa25ade2c0358a3307d256d69a2ae950e0d94e9c943546270bd10e6f809"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/c_codecs.h",
+      "sha256": "856e816e767ca26acdbab0753b1da0464ece7d78517913d51b07daeb98910b41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/codec.h",
+      "sha256": "68bc21072f0053ac04dac191e93a751902819a601c78a33f40d3f79c1cbf40e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/codec_composer.h",
+      "sha256": "d0cf3068bc894694cacec7e1778a033657af3324072339b5212419c9a9cb4de9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/contracts.h",
+      "sha256": "2528f106117777f0bb8015b1833f903389c232433ed00e2a5c8b5c84074be486"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/default_control.h",
+      "sha256": "56c29b71a81f809a2a3341cae2d17615bcacf664d4544251e858a7c4bc0dda7f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/dispatch.h",
+      "sha256": "e622ea4e85272ee78c742c519c9b91fe1de596b0ae4eef1e2324e488df51544b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/internal.h",
+      "sha256": "5036fb1aefae140befab385f4a5ebc0185863fcb28088cdc127ba05fb00af7f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/publisher_transport.h",
+      "sha256": "2421759d3b86e45d9be6d8b2ca1ad659cb36a70c5d4c21fb877db4b345e339e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/service_transport.h",
+      "sha256": "e9d2ebb6ba763eb719d8c3b90cc12c4e3113e5fd8212410a1d4aefbbbf73a854"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/subscription_transport.h",
+      "sha256": "876cee078c5289b8d71d73f1225c2bb292ee016be142243accc4dcc470cb9d14"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/threaded.h",
+      "sha256": "0439c3f8786b8c986d1086e0f44670fd8028fcb6c34712e02e83d35e8ab76592"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw/wasi_wait.h",
+      "sha256": "1fff52d192b2442fcdb231d119c90c2623789c72b0fef0e0526f8a75f0da2a88"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw_c/provider.h",
+      "sha256": "237a5c06b6798ed28e5332649e7028f7bb362faf4e0b8f1b22a04ce7426dd1db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/c/uwvm_rmw_platform.h",
+      "sha256": "d15846abdf9349ef99573985c27254d17133ba1305ba44185659559ffc466eb7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/bundles/js/complete.json",
+      "sha256": "6df519aaf35a2b3348d70e2759a928c182f95520f457ac6d38928e6a0b64553b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/catalog.json",
+      "sha256": "2b17e9538e88edca5736f5d6a93814a91d7b3280378e71395f7514cd38cb0014"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/licenses/NVIDIA-LICENSE",
+      "sha256": "d3ae3fd96db12c049c7a2293d8da8f5acf762790c5b07b4f0a5345e60b84098d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/licenses/ORIGINAL-SDK-LICENSE",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/licenses/geometry_msgs-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/licenses/sensor_msgs-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/licenses/std_msgs-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/binding-proof.json",
+      "sha256": "b3e6dccaf61939433128b1c69bcf7d35af024a21444fc956b539ffef754a298c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/cross-library-review38.json",
+      "sha256": "2d582195d3ed673d2da5e762b51829c5415325ff27cb88b984b771331b93ed2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/format-review38.json",
+      "sha256": "d2286f5f07915c1f6d7d5c03070af5763d678bc33dcf2b4fb56fba83d66bd3c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/generation.vendor.json",
+      "sha256": "9b3b09984dddfbb320ebe0bbaa7b7d68864903656346e1c4e82c796bbb7f6cc9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-header-review39.json",
+      "sha256": "6eb62104960136d8bc267370476568200b8215a342605e112451c2cc1a3467d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-metadata.json",
+      "sha256": "8594f18e3bc89f124f58357e2db6efdfcfe60b37cf1ef32b8b2c5a36c193e7e2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/native-type-support-inputs.json",
+      "sha256": "f205a1bf36c9e0028378d8fb9d5023832a440a6a1748c75262b7f0f66f327ef7"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/qualification.json",
+      "sha256": "b80f573df94bc588c7db433c42fe031019e79f3a58cce5296cb342938f27971b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/native/first-array-jazzy/source-layout-proof.json",
+      "sha256": "2a593416eaaf8dea6085fad10099a9ab0fabd4d60c781c35adee3c92e07bc3b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/provider.json",
+      "sha256": "3a641ac8b29ab29ed9d644084e3a47628fa20726dcffd5f952c98f3f35efe890"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/review-status.json",
+      "sha256": "0f8d85c7b20f1276169b97ea7e820da273d7a1c12dbb35972806dcf63dc7cf6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.complete.json",
+      "sha256": "7d9aa5ff80d70a210d63aab787d4e490c29dbc94243c8d05a290c996f2e4b09c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.first-array.native.json",
+      "sha256": "592ab1d81d7a93a2b052a357fd03feea75620b6ab17a3f4e507d1002e66e225b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.first-array.preparation.json",
+      "sha256": "e8b3d24daa1da01bbce20a7dc9320cbd948f1456b30c3744bf00c58a63055afa"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/catalog.preparation.json",
+      "sha256": "7d9aa5ff80d70a210d63aab787d4e490c29dbc94243c8d05a290c996f2e4b09c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Pose.msg",
+      "sha256": "3eceb77c63ebbb544c11d7f991e475e9819e0cf534deb1a879392c1b3dc997de"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/PoseWithCovarianceStamped.msg",
+      "sha256": "87b6851480902effb5232f87bf68e76f19bf7b26affa11001be9e515542c21fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/isaac_ros_apriltag_interfaces/msg/AprilTagDetection.msg",
+      "sha256": "ca1f15f12f565f9e8b0c9ed4b407ef99596424aaedbab3a0398140b6a771fc48"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/isaac_ros_apriltag_interfaces/msg/AprilTagDetectionArray.msg",
+      "sha256": "04265d730aef8b08214eeebf8f820b63954a655b53b464fd1d1a59b017d67ced"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/schemas/ros2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.en.md",
+      "sha256": "be995c402c14dcd3488740a58405d4ad6ac288048df945c636bf14ec1758ef60"
+    },
+    {
+      "scope": "example",
+      "path": "io.c",
+      "sha256": "35342ea490cf7d4f0cbcbf2287ac7e710f38c3af7599dfc29b0dae8cdba00a4d"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "26a15c32e65d818c391b36f05c161fa266e28ea7bdcf914a827bbb414568d349"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.cpp",
+      "sha256": "41b3eced1437821f7216e7dabfa42214fe61a13b879d62b67e1856dd0eb03a93"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.zh_CN.md",
+      "sha256": "9f370467f0b77c804efec7bcfb553675c3a7d03b892414dea16fc57e0c2834eb"
+    },
+    {
+      "scope": "example",
+      "path": "ros_comm.c",
+      "sha256": "90604799b25f9e25a810ed3cec691431dbc3b5463f141a8e163a5d7cc8f4eaf5"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "241d1a132c817bdfc6cbe1608f342644973b9f4c346bc285859d4e9319113868"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "f538cc279948af452988da8cd119cd26b294f589afc0b5be7ce98bd03ec0a144"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "5525a14fdf18e2c2b4bd648ea66a8bc04f0b99127474686f5c95d0e90645f64b"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "687fa05dd1daa12b1fdb42c7e4e592ffe291bc07e8807c588c7217c7ef9f3523"
+    },
+    {
+      "scope": "example",
+      "path": "include/array_modules.h",
+      "sha256": "3cfa5cc8e88b733053c485c63a679e4201d6ab6270e31a354d16dd6911b846f0"
+    }
+  ],
+  "cases": [
+    {
+      "id": "four-module-isolation-mode-0",
+      "arguments": [
+        "sdk-test-denied",
+        "0"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "mode": 0,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "main_ros": 13,
+        "io_ros": 13,
+        "algorithm_ros": 13,
+        "algorithm_clock": 76,
+        "algorithm_random": 76,
+        "ros_clock": 76,
+        "io_wait": 0,
+        "io_stale": 9,
+        "algorithm_count": 0,
+        "algorithm_id_sum": 0,
+        "algorithm_checksum": 0,
+        "clock_unchanged": 1,
+        "random_unchanged": 1,
+        "ros_clock_unchanged": 1,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "four-module-isolation-mode-1",
+      "arguments": [
+        "sdk-test-denied",
+        "1"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "mode": 1,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "main_ros": 13,
+        "io_ros": 13,
+        "algorithm_ros": 13,
+        "algorithm_clock": 76,
+        "algorithm_random": 76,
+        "ros_clock": 76,
+        "io_wait": 0,
+        "io_stale": 9,
+        "algorithm_count": 0,
+        "algorithm_id_sum": 0,
+        "algorithm_checksum": 0,
+        "clock_unchanged": 1,
+        "random_unchanged": 1,
+        "ros_clock_unchanged": 1,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "four-module-isolation-mode-2",
+      "arguments": [
+        "sdk-test-denied",
+        "2"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "mode": 2,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0,
+        "main_ros": 13,
+        "io_ros": 13,
+        "algorithm_ros": 13,
+        "algorithm_clock": 76,
+        "algorithm_random": 76,
+        "ros_clock": 76,
+        "io_wait": 0,
+        "io_stale": 9,
+        "algorithm_count": 0,
+        "algorithm_id_sum": 0,
+        "algorithm_checksum": 0,
+        "clock_unchanged": 1,
+        "random_unchanged": 1,
+        "ros_clock_unchanged": 1,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-mode",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "invalid-mode",
+      "arguments": [
+        "sdk-test-denied",
+        "3"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -96,7 +96,7 @@ fn BoundedReader::signed16(self : BoundedReader) -> Int {
 fn BoundedReader::float32(self : BoundedReader) -> Float {
   let bits = self.unsigned(4)
   if (bits & 2139095040UL) == 2139095040UL { self.error = 22 }
-  bits.to_uint().reinterpret_as_float()
+  Float::reinterpret_from_uint(bits.to_uint())
 }
 
 fn BoundedReader::float64(self : BoundedReader) -> Double {
@@ -108,8 +108,7 @@ fn BoundedReader::float64(self : BoundedReader) -> Double {
 fn BoundedReader::count(self : BoundedReader, maximum : Int, element_minimum : Int) -> Int {
   let count = self.unsigned(4)
   if self.error != 0 { return 0 }
-  if count > maximum.to_uint64() ||
-      (element_minimum > 0 && count > ((self.bytes.length() - self.position) / element_minimum).to_uint64()) {
+  if count > maximum.to_uint64() || (element_minimum > 0 && count > ((self.bytes.length() - self.position) / element_minimum).to_uint64()) {
     self.error = 22
     return 0
   }
@@ -173,16 +172,14 @@ pub fn Ros1Flexiv_msgsJointPosVelCodec::new() -> Ros1Flexiv_msgsJointPosVelCodec
     codec_identity: "UWVMROS1_60868295fe1798f349d7f675035bd476f0f6caa8b7568e7a66487c32459fdfaa",
     min_wire_bytes: 112, max_wire_bytes: 112 }
 }
-pub fn Ros1Flexiv_msgsJointPosVelCodec::encode(_self : Ros1Flexiv_msgsJointPosVelCodec, value : Ros1Flexiv_msgsJointPosVel) ->
-        Result[Bytes, Int] {
+pub fn Ros1Flexiv_msgsJointPosVelCodec::encode(_self : Ros1Flexiv_msgsJointPosVelCodec, value : Ros1Flexiv_msgsJointPosVel) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 112, error: 0 }
   write_Ros1Flexiv_msgsJointPosVel(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 112 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Flexiv_msgsJointPosVelCodec::decode(_self : Ros1Flexiv_msgsJointPosVelCodec, input : Bytes) ->
-        Result[Ros1Flexiv_msgsJointPosVel, Int] {
+pub fn Ros1Flexiv_msgsJointPosVelCodec::decode(_self : Ros1Flexiv_msgsJointPosVelCodec, input : Bytes) -> Result[Ros1Flexiv_msgsJointPosVel, Int] {
   if input.length() < 112 || input.length() > 112 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Flexiv_msgsJointPosVel(reader)
@@ -307,16 +304,14 @@ pub fn Ros1Geometry_msgsPointCodec::new() -> Ros1Geometry_msgsPointCodec {
     codec_identity: "UWVMROS1_b55e2bde60f6cedb426cada54bc7baefc536c7bc731bd49fb152d89a892de62b",
     min_wire_bytes: 24, max_wire_bytes: 24 }
 }
-pub fn Ros1Geometry_msgsPointCodec::encode(_self : Ros1Geometry_msgsPointCodec, value : Ros1Geometry_msgsPoint) -> Result[Bytes,
-        Int] {
+pub fn Ros1Geometry_msgsPointCodec::encode(_self : Ros1Geometry_msgsPointCodec, value : Ros1Geometry_msgsPoint) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 24, error: 0 }
   write_Ros1Geometry_msgsPoint(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 24 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Geometry_msgsPointCodec::decode(_self : Ros1Geometry_msgsPointCodec, input : Bytes) -> Result[Ros1Geometry_msgsPoint,
-        Int] {
+pub fn Ros1Geometry_msgsPointCodec::decode(_self : Ros1Geometry_msgsPointCodec, input : Bytes) -> Result[Ros1Geometry_msgsPoint, Int] {
   if input.length() < 24 || input.length() > 24 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Geometry_msgsPoint(reader)
@@ -380,16 +375,14 @@ pub fn Ros1Geometry_msgsQuaternionCodec::new() -> Ros1Geometry_msgsQuaternionCod
     codec_identity: "UWVMROS1_48fe20d5d29a8ca1a630605a58f80baacc52d9a65b1ca87efd50ffdd52882934",
     min_wire_bytes: 32, max_wire_bytes: 32 }
 }
-pub fn Ros1Geometry_msgsQuaternionCodec::encode(_self : Ros1Geometry_msgsQuaternionCodec, value : Ros1Geometry_msgsQuaternion) ->
-        Result[Bytes, Int] {
+pub fn Ros1Geometry_msgsQuaternionCodec::encode(_self : Ros1Geometry_msgsQuaternionCodec, value : Ros1Geometry_msgsQuaternion) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 32, error: 0 }
   write_Ros1Geometry_msgsQuaternion(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 32 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Geometry_msgsQuaternionCodec::decode(_self : Ros1Geometry_msgsQuaternionCodec, input : Bytes) ->
-        Result[Ros1Geometry_msgsQuaternion, Int] {
+pub fn Ros1Geometry_msgsQuaternionCodec::decode(_self : Ros1Geometry_msgsQuaternionCodec, input : Bytes) -> Result[Ros1Geometry_msgsQuaternion, Int] {
   if input.length() < 32 || input.length() > 32 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Geometry_msgsQuaternion(reader)
@@ -512,16 +505,14 @@ pub fn Ros1Geometry_msgsVector3Codec::new() -> Ros1Geometry_msgsVector3Codec {
     codec_identity: "UWVMROS1_e90efcf4803d82763e0b83f8ef5502b5d042158873fcc91be32543d25d7632bc",
     min_wire_bytes: 24, max_wire_bytes: 24 }
 }
-pub fn Ros1Geometry_msgsVector3Codec::encode(_self : Ros1Geometry_msgsVector3Codec, value : Ros1Geometry_msgsVector3) ->
-        Result[Bytes, Int] {
+pub fn Ros1Geometry_msgsVector3Codec::encode(_self : Ros1Geometry_msgsVector3Codec, value : Ros1Geometry_msgsVector3) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 24, error: 0 }
   write_Ros1Geometry_msgsVector3(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 24 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Geometry_msgsVector3Codec::decode(_self : Ros1Geometry_msgsVector3Codec, input : Bytes) ->
-        Result[Ros1Geometry_msgsVector3, Int] {
+pub fn Ros1Geometry_msgsVector3Codec::decode(_self : Ros1Geometry_msgsVector3Codec, input : Bytes) -> Result[Ros1Geometry_msgsVector3, Int] {
   if input.length() < 24 || input.length() > 24 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Geometry_msgsVector3(reader)
@@ -575,16 +566,14 @@ pub fn Ros1Geometry_msgsAccelCodec::new() -> Ros1Geometry_msgsAccelCodec {
     codec_identity: "UWVMROS1_3345762fc354a5698d41098276702c7d3cee87fe9a531b0229111b9b3bf700ed",
     min_wire_bytes: 48, max_wire_bytes: 48 }
 }
-pub fn Ros1Geometry_msgsAccelCodec::encode(_self : Ros1Geometry_msgsAccelCodec, value : Ros1Geometry_msgsAccel) -> Result[Bytes,
-        Int] {
+pub fn Ros1Geometry_msgsAccelCodec::encode(_self : Ros1Geometry_msgsAccelCodec, value : Ros1Geometry_msgsAccel) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 48, error: 0 }
   write_Ros1Geometry_msgsAccel(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 48 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Geometry_msgsAccelCodec::decode(_self : Ros1Geometry_msgsAccelCodec, input : Bytes) -> Result[Ros1Geometry_msgsAccel,
-        Int] {
+pub fn Ros1Geometry_msgsAccelCodec::decode(_self : Ros1Geometry_msgsAccelCodec, input : Bytes) -> Result[Ros1Geometry_msgsAccel, Int] {
   if input.length() < 48 || input.length() > 48 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Geometry_msgsAccel(reader)
@@ -635,16 +624,14 @@ pub fn Ros1Geometry_msgsWrenchCodec::new() -> Ros1Geometry_msgsWrenchCodec {
     codec_identity: "UWVMROS1_b0938c4e084df68cf7c46445070ac3e9305d06f678275845aec6055db77617c3",
     min_wire_bytes: 48, max_wire_bytes: 48 }
 }
-pub fn Ros1Geometry_msgsWrenchCodec::encode(_self : Ros1Geometry_msgsWrenchCodec, value : Ros1Geometry_msgsWrench) -> Result[Bytes,
-        Int] {
+pub fn Ros1Geometry_msgsWrenchCodec::encode(_self : Ros1Geometry_msgsWrenchCodec, value : Ros1Geometry_msgsWrench) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 48, error: 0 }
   write_Ros1Geometry_msgsWrench(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 48 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Geometry_msgsWrenchCodec::decode(_self : Ros1Geometry_msgsWrenchCodec, input : Bytes) -> Result[Ros1Geometry_msgsWrench,
-        Int] {
+pub fn Ros1Geometry_msgsWrenchCodec::decode(_self : Ros1Geometry_msgsWrenchCodec, input : Bytes) -> Result[Ros1Geometry_msgsWrench, Int] {
   if input.length() < 48 || input.length() > 48 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Geometry_msgsWrench(reader)
@@ -773,16 +760,14 @@ pub fn Ros1Flexiv_msgsRobotStatesCodec::new() -> Ros1Flexiv_msgsRobotStatesCodec
     codec_identity: "UWVMROS1_a64419da913e6fafce645177a491cc77a1dcee9ef785bc04380e7aebaeeb12a8",
     min_wire_bytes: 864, max_wire_bytes: 864 }
 }
-pub fn Ros1Flexiv_msgsRobotStatesCodec::encode(_self : Ros1Flexiv_msgsRobotStatesCodec, value : Ros1Flexiv_msgsRobotStates) ->
-        Result[Bytes, Int] {
+pub fn Ros1Flexiv_msgsRobotStatesCodec::encode(_self : Ros1Flexiv_msgsRobotStatesCodec, value : Ros1Flexiv_msgsRobotStates) -> Result[Bytes, Int] {
   let writer : BoundedWriter = { bytes: [], maximum: 864, error: 0 }
   write_Ros1Flexiv_msgsRobotStates(writer, value)
   if writer.error != 0 { return Err(writer.error) }
   if writer.bytes.length() < 864 { return Err(22) }
   Ok(Bytes::makei(writer.bytes.length(), fn(index) { writer.bytes[index] }))
 }
-pub fn Ros1Flexiv_msgsRobotStatesCodec::decode(_self : Ros1Flexiv_msgsRobotStatesCodec, input : Bytes) ->
-        Result[Ros1Flexiv_msgsRobotStates, Int] {
+pub fn Ros1Flexiv_msgsRobotStatesCodec::decode(_self : Ros1Flexiv_msgsRobotStatesCodec, input : Bytes) -> Result[Ros1Flexiv_msgsRobotStates, Int] {
   if input.length() < 864 || input.length() > 864 { return Err(22) }
   let reader : BoundedReader = { bytes: input.copy(), position: 0, error: 0 }
   let value = read_Ros1Flexiv_msgsRobotStates(reader)

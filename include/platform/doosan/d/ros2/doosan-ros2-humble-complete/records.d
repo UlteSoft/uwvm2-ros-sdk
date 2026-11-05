@@ -20,6 +20,7 @@ import roswasm.wire;
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionJogH2r_Goal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/JogH2r_Goal in bytes.
  /// @details The inclusive bound is 10 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionJogH2r_Goal; share/platform/ros/d/API-CONTRACT.md
@@ -151,6 +152,7 @@ struct Ros2Dsr_msgs2ActionJogH2r_Goal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionJogH2r_Result {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/JogH2r_Result in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionJogH2r_Result; share/platform/ros/d/API-CONTRACT.md
@@ -262,6 +264,7 @@ struct Ros2Dsr_msgs2ActionJogH2r_Result {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionJogH2r_Feedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/JogH2r_Feedback in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionJogH2r_Feedback; share/platform/ros/d/API-CONTRACT.md
@@ -377,6 +380,7 @@ struct Ros2Dsr_msgs2ActionJogH2r_Feedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovejH2r_Goal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovejH2r_Goal in bytes.
  /// @details The inclusive bound is 144 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovejH2r_Goal; share/platform/ros/d/API-CONTRACT.md
@@ -520,6 +524,7 @@ struct Ros2Dsr_msgs2ActionMovejH2r_Goal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovejH2r_Result {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovejH2r_Result in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovejH2r_Result; share/platform/ros/d/API-CONTRACT.md
@@ -631,6 +636,7 @@ struct Ros2Dsr_msgs2ActionMovejH2r_Result {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovejH2r_Feedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovejH2r_Feedback in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovejH2r_Feedback; share/platform/ros/d/API-CONTRACT.md
@@ -746,6 +752,7 @@ struct Ros2Dsr_msgs2ActionMovejH2r_Feedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovelH2r_Goal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovelH2r_Goal in bytes.
  /// @details The inclusive bound is 80 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovelH2r_Goal; share/platform/ros/d/API-CONTRACT.md
@@ -889,6 +896,7 @@ struct Ros2Dsr_msgs2ActionMovelH2r_Goal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovelH2r_Result {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovelH2r_Result in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovelH2r_Result; share/platform/ros/d/API-CONTRACT.md
@@ -1000,6 +1008,7 @@ struct Ros2Dsr_msgs2ActionMovelH2r_Result {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2ActionMovelH2r_Feedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/action/MovelH2r_Feedback in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2ActionMovelH2r_Feedback; share/platform/ros/d/API-CONTRACT.md
@@ -1115,6 +1124,7 @@ struct Ros2Dsr_msgs2ActionMovelH2r_Feedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgAlterMotionStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/AlterMotionStream in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgAlterMotionStream; share/platform/ros/d/API-CONTRACT.md
@@ -1230,6 +1240,7 @@ struct Ros2Dsr_msgs2MsgAlterMotionStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgJogMultiAxis {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/JogMultiAxis in bytes.
  /// @details The inclusive bound is 57 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgJogMultiAxis; share/platform/ros/d/API-CONTRACT.md
@@ -1365,6 +1376,7 @@ struct Ros2Dsr_msgs2MsgJogMultiAxis {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgLogAlarm {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/LogAlarm in bytes.
  /// @details The inclusive bound is 792 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgLogAlarm; share/platform/ros/d/API-CONTRACT.md
@@ -1510,6 +1522,7 @@ struct Ros2Dsr_msgs2MsgLogAlarm {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgModbusState {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/ModbusState in bytes.
  /// @details The inclusive bound is 264 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgModbusState; share/platform/ros/d/API-CONTRACT.md
@@ -1631,6 +1644,7 @@ struct Ros2Dsr_msgs2MsgModbusState {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgRobotDisconnection {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/RobotDisconnection in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgRobotDisconnection; share/platform/ros/d/API-CONTRACT.md
@@ -1732,6 +1746,7 @@ struct Ros2Dsr_msgs2MsgRobotDisconnection {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgRobotError {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/RobotError in bytes.
  /// @details The inclusive bound is 792 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgRobotError; share/platform/ros/d/API-CONTRACT.md
@@ -1893,6 +1908,7 @@ struct Ros2Dsr_msgs2MsgRobotError {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgMultiArrayDimension {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/MultiArrayDimension in bytes.
  /// @details The inclusive bound is 76 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Std_msgsMsgMultiArrayDimension; share/platform/ros/d/API-CONTRACT.md
@@ -2024,6 +2040,7 @@ struct Ros2Std_msgsMsgMultiArrayDimension {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgMultiArrayLayout {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/MultiArrayLayout in bytes.
  /// @details The inclusive bound is 236 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Std_msgsMsgMultiArrayLayout; share/platform/ros/d/API-CONTRACT.md
@@ -2164,6 +2181,7 @@ struct Ros2Std_msgsMsgMultiArrayLayout {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgFloat64MultiArray {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/Float64MultiArray in bytes.
  /// @details The inclusive bound is 368 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Std_msgsMsgFloat64MultiArray; share/platform/ros/d/API-CONTRACT.md
@@ -2304,6 +2322,7 @@ struct Ros2Std_msgsMsgFloat64MultiArray {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgRobotState {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/RobotState in bytes.
  /// @details The inclusive bound is 17004 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgRobotState; share/platform/ros/d/API-CONTRACT.md
@@ -3307,6 +3326,7 @@ struct Ros2Dsr_msgs2MsgRobotState {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgRobotStateRt {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/RobotStateRt in bytes.
  /// @details The inclusive bound is 8154 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgRobotStateRt; share/platform/ros/d/API-CONTRACT.md
@@ -4053,6 +4073,7 @@ struct Ros2Dsr_msgs2MsgRobotStateRt {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgRobotStop {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/RobotStop in bytes.
  /// @details The inclusive bound is 4 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgRobotStop; share/platform/ros/d/API-CONTRACT.md
@@ -4164,6 +4185,7 @@ struct Ros2Dsr_msgs2MsgRobotStop {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgServojRtStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/ServojRtStream in bytes.
  /// @details The inclusive bound is 152 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgServojRtStream; share/platform/ros/d/API-CONTRACT.md
@@ -4317,6 +4339,7 @@ struct Ros2Dsr_msgs2MsgServojRtStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgServojStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/ServojStream in bytes.
  /// @details The inclusive bound is 153 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgServojStream; share/platform/ros/d/API-CONTRACT.md
@@ -4480,6 +4503,7 @@ struct Ros2Dsr_msgs2MsgServojStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgServolRtStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/ServolRtStream in bytes.
  /// @details The inclusive bound is 152 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgServolRtStream; share/platform/ros/d/API-CONTRACT.md
@@ -4633,6 +4657,7 @@ struct Ros2Dsr_msgs2MsgServolRtStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgServolStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/ServolStream in bytes.
  /// @details The inclusive bound is 88 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgServolStream; share/platform/ros/d/API-CONTRACT.md
@@ -4786,6 +4811,7 @@ struct Ros2Dsr_msgs2MsgServolStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgSpeedjRtStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/SpeedjRtStream in bytes.
  /// @details The inclusive bound is 104 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgSpeedjRtStream; share/platform/ros/d/API-CONTRACT.md
@@ -4925,6 +4951,7 @@ struct Ros2Dsr_msgs2MsgSpeedjRtStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgSpeedjStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/SpeedjStream in bytes.
  /// @details The inclusive bound is 104 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgSpeedjStream; share/platform/ros/d/API-CONTRACT.md
@@ -5064,6 +5091,7 @@ struct Ros2Dsr_msgs2MsgSpeedjStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgSpeedlRtStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/SpeedlRtStream in bytes.
  /// @details The inclusive bound is 104 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgSpeedlRtStream; share/platform/ros/d/API-CONTRACT.md
@@ -5203,6 +5231,7 @@ struct Ros2Dsr_msgs2MsgSpeedlRtStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgSpeedlStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/SpeedlStream in bytes.
  /// @details The inclusive bound is 72 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgSpeedlStream; share/platform/ros/d/API-CONTRACT.md
@@ -5342,6 +5371,7 @@ struct Ros2Dsr_msgs2MsgSpeedlStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2MsgTorqueRtStream {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/msg/TorqueRtStream in bytes.
  /// @details The inclusive bound is 56 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2MsgTorqueRtStream; share/platform/ros/d/API-CONTRACT.md
@@ -5467,6 +5497,7 @@ struct Ros2Dsr_msgs2MsgTorqueRtStream {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlignAxis1_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlignAxis1_Request in bytes.
  /// @details The inclusive bound is 170 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlignAxis1_Request; share/platform/ros/d/API-CONTRACT.md
@@ -5644,6 +5675,7 @@ struct Ros2Dsr_msgs2SrvAlignAxis1_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlignAxis1_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlignAxis1_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlignAxis1_Response; share/platform/ros/d/API-CONTRACT.md
@@ -5755,6 +5787,7 @@ struct Ros2Dsr_msgs2SrvAlignAxis1_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlignAxis2_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlignAxis2_Request in bytes.
  /// @details The inclusive bound is 50 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlignAxis2_Request; share/platform/ros/d/API-CONTRACT.md
@@ -5904,6 +5937,7 @@ struct Ros2Dsr_msgs2SrvAlignAxis2_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlignAxis2_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlignAxis2_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlignAxis2_Response; share/platform/ros/d/API-CONTRACT.md
@@ -6015,6 +6049,7 @@ struct Ros2Dsr_msgs2SrvAlignAxis2_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlterMotion_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlterMotion_Request in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlterMotion_Request; share/platform/ros/d/API-CONTRACT.md
@@ -6130,6 +6165,7 @@ struct Ros2Dsr_msgs2SrvAlterMotion_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvAlterMotion_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/AlterMotion_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvAlterMotion_Response; share/platform/ros/d/API-CONTRACT.md
@@ -6241,6 +6277,7 @@ struct Ros2Dsr_msgs2SrvAlterMotion_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCalcCoord_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CalcCoord_Request in bytes.
  /// @details The inclusive bound is 195 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCalcCoord_Request; share/platform/ros/d/API-CONTRACT.md
@@ -6428,6 +6465,7 @@ struct Ros2Dsr_msgs2SrvCalcCoord_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCalcCoord_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CalcCoord_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCalcCoord_Response; share/platform/ros/d/API-CONTRACT.md
@@ -6553,6 +6591,7 @@ struct Ros2Dsr_msgs2SrvCalcCoord_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ChangeCollisionSensitivity_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Request; share/platform/ros/d/API-CONTRACT.md
@@ -6664,6 +6703,7 @@ struct Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ChangeCollisionSensitivity_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Response; share/platform/ros/d/API-CONTRACT.md
@@ -6775,6 +6815,7 @@ struct Ros2Dsr_msgs2SrvChangeCollisionSensitivity_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvChangeOperationSpeed_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ChangeOperationSpeed_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvChangeOperationSpeed_Request; share/platform/ros/d/API-CONTRACT.md
@@ -6886,6 +6927,7 @@ struct Ros2Dsr_msgs2SrvChangeOperationSpeed_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvChangeOperationSpeed_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ChangeOperationSpeed_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvChangeOperationSpeed_Response; share/platform/ros/d/API-CONTRACT.md
@@ -6997,6 +7039,7 @@ struct Ros2Dsr_msgs2SrvChangeOperationSpeed_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckForceCondition_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckForceCondition_Request in bytes.
  /// @details The inclusive bound is 18 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckForceCondition_Request; share/platform/ros/d/API-CONTRACT.md
@@ -7138,6 +7181,7 @@ struct Ros2Dsr_msgs2SrvCheckForceCondition_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckForceCondition_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckForceCondition_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckForceCondition_Response; share/platform/ros/d/API-CONTRACT.md
@@ -7249,6 +7293,7 @@ struct Ros2Dsr_msgs2SrvCheckForceCondition_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckMotion_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckMotion_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckMotion_Request; share/platform/ros/d/API-CONTRACT.md
@@ -7350,6 +7395,7 @@ struct Ros2Dsr_msgs2SrvCheckMotion_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckMotion_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckMotion_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckMotion_Response; share/platform/ros/d/API-CONTRACT.md
@@ -7471,6 +7517,7 @@ struct Ros2Dsr_msgs2SrvCheckMotion_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckOrientationCondition1_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckOrientationCondition1_Request in bytes.
  /// @details The inclusive bound is 99 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckOrientationCondition1_Request; share/platform/ros/d/API-CONTRACT.md
@@ -7630,6 +7677,7 @@ struct Ros2Dsr_msgs2SrvCheckOrientationCondition1_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckOrientationCondition1_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckOrientationCondition1_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckOrientationCondition1_Response; share/platform/ros/d/API-CONTRACT.md
@@ -7741,6 +7789,7 @@ struct Ros2Dsr_msgs2SrvCheckOrientationCondition1_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckOrientationCondition2_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckOrientationCondition2_Request in bytes.
  /// @details The inclusive bound is 67 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckOrientationCondition2_Request; share/platform/ros/d/API-CONTRACT.md
@@ -7906,6 +7955,7 @@ struct Ros2Dsr_msgs2SrvCheckOrientationCondition2_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckOrientationCondition2_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckOrientationCondition2_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckOrientationCondition2_Response; share/platform/ros/d/API-CONTRACT.md
@@ -8017,6 +8067,7 @@ struct Ros2Dsr_msgs2SrvCheckOrientationCondition2_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckPositionCondition_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckPositionCondition_Request in bytes.
  /// @details The inclusive bound is 67 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckPositionCondition_Request; share/platform/ros/d/API-CONTRACT.md
@@ -8182,6 +8233,7 @@ struct Ros2Dsr_msgs2SrvCheckPositionCondition_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCheckPositionCondition_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CheckPositionCondition_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCheckPositionCondition_Response; share/platform/ros/d/API-CONTRACT.md
@@ -8293,6 +8345,7 @@ struct Ros2Dsr_msgs2SrvCheckPositionCondition_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateModbus_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateModbus_Request in bytes.
  /// @details The inclusive bound is 531 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateModbus_Request; share/platform/ros/d/API-CONTRACT.md
@@ -8464,6 +8517,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateModbus_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateModbus_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateModbus_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateModbus_Response; share/platform/ros/d/API-CONTRACT.md
@@ -8575,6 +8629,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateModbus_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateTcp_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateTcp_Request in bytes.
  /// @details The inclusive bound is 308 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateTcp_Request; share/platform/ros/d/API-CONTRACT.md
@@ -8700,6 +8755,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateTcp_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateTcp_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateTcp_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateTcp_Response; share/platform/ros/d/API-CONTRACT.md
@@ -8811,6 +8867,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateTcp_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateTool_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateTool_Request in bytes.
  /// @details The inclusive bound is 340 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateTool_Request; share/platform/ros/d/API-CONTRACT.md
@@ -8960,6 +9017,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateTool_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigCreateTool_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigCreateTool_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigCreateTool_Response; share/platform/ros/d/API-CONTRACT.md
@@ -9071,6 +9129,7 @@ struct Ros2Dsr_msgs2SrvConfigCreateTool_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteModbus_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteModbus_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteModbus_Request; share/platform/ros/d/API-CONTRACT.md
@@ -9182,6 +9241,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteModbus_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteModbus_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteModbus_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteModbus_Response; share/platform/ros/d/API-CONTRACT.md
@@ -9293,6 +9353,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteModbus_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteTcp_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteTcp_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteTcp_Request; share/platform/ros/d/API-CONTRACT.md
@@ -9404,6 +9465,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteTcp_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteTcp_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteTcp_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteTcp_Response; share/platform/ros/d/API-CONTRACT.md
@@ -9515,6 +9577,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteTcp_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteTool_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteTool_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteTool_Request; share/platform/ros/d/API-CONTRACT.md
@@ -9626,6 +9689,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteTool_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConfigDeleteTool_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConfigDeleteTool_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConfigDeleteTool_Response; share/platform/ros/d/API-CONTRACT.md
@@ -9737,6 +9801,7 @@ struct Ros2Dsr_msgs2SrvConfigDeleteTool_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConnectRtControl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConnectRtControl_Request in bytes.
  /// @details The inclusive bound is 264 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConnectRtControl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -9858,6 +9923,7 @@ struct Ros2Dsr_msgs2SrvConnectRtControl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvConnectRtControl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ConnectRtControl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvConnectRtControl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -9969,6 +10035,7 @@ struct Ros2Dsr_msgs2SrvConnectRtControl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCoordTransform_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CoordTransform_Request in bytes.
  /// @details The inclusive bound is 50 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCoordTransform_Request; share/platform/ros/d/API-CONTRACT.md
@@ -10104,6 +10171,7 @@ struct Ros2Dsr_msgs2SrvCoordTransform_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvCoordTransform_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/CoordTransform_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvCoordTransform_Response; share/platform/ros/d/API-CONTRACT.md
@@ -10229,6 +10297,7 @@ struct Ros2Dsr_msgs2SrvCoordTransform_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDisableAlterMotion_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DisableAlterMotion_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDisableAlterMotion_Request; share/platform/ros/d/API-CONTRACT.md
@@ -10330,6 +10399,7 @@ struct Ros2Dsr_msgs2SrvDisableAlterMotion_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDisableAlterMotion_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DisableAlterMotion_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDisableAlterMotion_Response; share/platform/ros/d/API-CONTRACT.md
@@ -10441,6 +10511,7 @@ struct Ros2Dsr_msgs2SrvDisableAlterMotion_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDisconnectRtControl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DisconnectRtControl_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDisconnectRtControl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -10542,6 +10613,7 @@ struct Ros2Dsr_msgs2SrvDisconnectRtControl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDisconnectRtControl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DisconnectRtControl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDisconnectRtControl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -10653,6 +10725,7 @@ struct Ros2Dsr_msgs2SrvDisconnectRtControl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlPause_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlPause_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlPause_Request; share/platform/ros/d/API-CONTRACT.md
@@ -10754,6 +10827,7 @@ struct Ros2Dsr_msgs2SrvDrlPause_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlPause_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlPause_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlPause_Response; share/platform/ros/d/API-CONTRACT.md
@@ -10865,6 +10939,7 @@ struct Ros2Dsr_msgs2SrvDrlPause_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlResume_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlResume_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlResume_Request; share/platform/ros/d/API-CONTRACT.md
@@ -10966,6 +11041,7 @@ struct Ros2Dsr_msgs2SrvDrlResume_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlResume_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlResume_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlResume_Response; share/platform/ros/d/API-CONTRACT.md
@@ -11077,6 +11153,7 @@ struct Ros2Dsr_msgs2SrvDrlResume_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlStart_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlStart_Request in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlStart_Request; share/platform/ros/d/API-CONTRACT.md
@@ -11198,6 +11275,7 @@ struct Ros2Dsr_msgs2SrvDrlStart_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlStart_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlStart_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlStart_Response; share/platform/ros/d/API-CONTRACT.md
@@ -11309,6 +11387,7 @@ struct Ros2Dsr_msgs2SrvDrlStart_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlStop_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlStop_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlStop_Request; share/platform/ros/d/API-CONTRACT.md
@@ -11420,6 +11499,7 @@ struct Ros2Dsr_msgs2SrvDrlStop_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvDrlStop_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/DrlStop_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvDrlStop_Response; share/platform/ros/d/API-CONTRACT.md
@@ -11531,6 +11611,7 @@ struct Ros2Dsr_msgs2SrvDrlStop_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvEnableAlterMotion_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/EnableAlterMotion_Request in bytes.
  /// @details The inclusive bound is 38 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvEnableAlterMotion_Request; share/platform/ros/d/API-CONTRACT.md
@@ -11690,6 +11771,7 @@ struct Ros2Dsr_msgs2SrvEnableAlterMotion_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvEnableAlterMotion_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/EnableAlterMotion_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvEnableAlterMotion_Response; share/platform/ros/d/API-CONTRACT.md
@@ -11801,6 +11883,7 @@ struct Ros2Dsr_msgs2SrvEnableAlterMotion_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvFkin_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Fkin_Request in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvFkin_Request; share/platform/ros/d/API-CONTRACT.md
@@ -11926,6 +12009,7 @@ struct Ros2Dsr_msgs2SrvFkin_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvFkin_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Fkin_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvFkin_Response; share/platform/ros/d/API-CONTRACT.md
@@ -12051,6 +12135,7 @@ struct Ros2Dsr_msgs2SrvFkin_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetControlMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetControlMode_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetControlMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -12152,6 +12237,7 @@ struct Ros2Dsr_msgs2SrvGetControlMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetControlMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetControlMode_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetControlMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -12273,6 +12359,7 @@ struct Ros2Dsr_msgs2SrvGetControlMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetControlSpace_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetControlSpace_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetControlSpace_Request; share/platform/ros/d/API-CONTRACT.md
@@ -12374,6 +12461,7 @@ struct Ros2Dsr_msgs2SrvGetControlSpace_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetControlSpace_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetControlSpace_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetControlSpace_Response; share/platform/ros/d/API-CONTRACT.md
@@ -12495,6 +12583,7 @@ struct Ros2Dsr_msgs2SrvGetControlSpace_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxAnalogInput_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -12606,6 +12695,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxAnalogInput_Response in bytes.
  /// @details The inclusive bound is 9 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -12727,6 +12817,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxAnalogInput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxDigitalInput_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -12838,6 +12929,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxDigitalInput_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -12959,6 +13051,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalInput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxDigitalOutput_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -13070,6 +13163,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCtrlBoxDigitalOutput_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -13191,6 +13285,7 @@ struct Ros2Dsr_msgs2SrvGetCtrlBoxDigitalOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPose_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPose_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPose_Request; share/platform/ros/d/API-CONTRACT.md
@@ -13302,6 +13397,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPose_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPose_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPose_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPose_Response; share/platform/ros/d/API-CONTRACT.md
@@ -13427,6 +13523,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPose_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPosj_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPosj_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPosj_Request; share/platform/ros/d/API-CONTRACT.md
@@ -13528,6 +13625,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPosj_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPosj_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPosj_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPosj_Response; share/platform/ros/d/API-CONTRACT.md
@@ -13653,6 +13751,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPosj_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPosx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPosx_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPosx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -13764,6 +13863,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPosx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentPosx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentPosx_Response in bytes.
  /// @details The inclusive bound is 2213 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentPosx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -13904,6 +14004,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentPosx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentRotm_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentRotm_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentRotm_Request; share/platform/ros/d/API-CONTRACT.md
@@ -14015,6 +14116,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentRotm_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentRotm_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentRotm_Response in bytes.
  /// @details The inclusive bound is 2213 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentRotm_Response; share/platform/ros/d/API-CONTRACT.md
@@ -14155,6 +14257,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentRotm_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentSolutionSpace_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Request; share/platform/ros/d/API-CONTRACT.md
@@ -14256,6 +14359,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentSolutionSpace_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Response; share/platform/ros/d/API-CONTRACT.md
@@ -14377,6 +14481,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentSolutionSpace_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentTcp_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentTcp_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentTcp_Request; share/platform/ros/d/API-CONTRACT.md
@@ -14478,6 +14583,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentTcp_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentTcp_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentTcp_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentTcp_Response; share/platform/ros/d/API-CONTRACT.md
@@ -14599,6 +14705,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentTcp_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentTool_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentTool_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentTool_Request; share/platform/ros/d/API-CONTRACT.md
@@ -14700,6 +14807,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentTool_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentTool_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentTool_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentTool_Response; share/platform/ros/d/API-CONTRACT.md
@@ -14821,6 +14929,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentTool_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentToolFlangePosx_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -14932,6 +15041,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentToolFlangePosx_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -15057,6 +15167,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentToolFlangePosx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentVelj_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentVelj_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentVelj_Request; share/platform/ros/d/API-CONTRACT.md
@@ -15158,6 +15269,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentVelj_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentVelj_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentVelj_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentVelj_Response; share/platform/ros/d/API-CONTRACT.md
@@ -15283,6 +15395,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentVelj_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentVelx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentVelx_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentVelx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -15394,6 +15507,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentVelx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetCurrentVelx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetCurrentVelx_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetCurrentVelx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -15519,6 +15633,7 @@ struct Ros2Dsr_msgs2SrvGetCurrentVelx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredPosj_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredPosj_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredPosj_Request; share/platform/ros/d/API-CONTRACT.md
@@ -15620,6 +15735,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredPosj_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredPosj_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredPosj_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredPosj_Response; share/platform/ros/d/API-CONTRACT.md
@@ -15745,6 +15861,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredPosj_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredPosx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredPosx_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredPosx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -15856,6 +15973,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredPosx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredPosx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredPosx_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredPosx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -15981,6 +16099,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredPosx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredVelj_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredVelj_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredVelj_Request; share/platform/ros/d/API-CONTRACT.md
@@ -16082,6 +16201,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredVelj_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredVelj_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredVelj_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredVelj_Response; share/platform/ros/d/API-CONTRACT.md
@@ -16207,6 +16327,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredVelj_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredVelx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredVelx_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredVelx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -16318,6 +16439,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredVelx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDesiredVelx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDesiredVelx_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDesiredVelx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -16443,6 +16565,7 @@ struct Ros2Dsr_msgs2SrvGetDesiredVelx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDrlState_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDrlState_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDrlState_Request; share/platform/ros/d/API-CONTRACT.md
@@ -16544,6 +16667,7 @@ struct Ros2Dsr_msgs2SrvGetDrlState_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetDrlState_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetDrlState_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetDrlState_Response; share/platform/ros/d/API-CONTRACT.md
@@ -16665,6 +16789,7 @@ struct Ros2Dsr_msgs2SrvGetDrlState_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetExternalTorque_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetExternalTorque_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetExternalTorque_Request; share/platform/ros/d/API-CONTRACT.md
@@ -16766,6 +16891,7 @@ struct Ros2Dsr_msgs2SrvGetExternalTorque_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetExternalTorque_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetExternalTorque_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetExternalTorque_Response; share/platform/ros/d/API-CONTRACT.md
@@ -16891,6 +17017,7 @@ struct Ros2Dsr_msgs2SrvGetExternalTorque_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterBit_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterBit_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterBit_Request; share/platform/ros/d/API-CONTRACT.md
@@ -17012,6 +17139,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterBit_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterBit_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterBit_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterBit_Response; share/platform/ros/d/API-CONTRACT.md
@@ -17133,6 +17261,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterBit_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterFloat_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterFloat_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterFloat_Request; share/platform/ros/d/API-CONTRACT.md
@@ -17254,6 +17383,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterFloat_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterFloat_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterFloat_Response in bytes.
  /// @details The inclusive bound is 9 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterFloat_Response; share/platform/ros/d/API-CONTRACT.md
@@ -17375,6 +17505,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterFloat_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterInt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterInt_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterInt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -17496,6 +17627,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterInt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetInputRegisterInt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetInputRegisterInt_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetInputRegisterInt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -17617,6 +17749,7 @@ struct Ros2Dsr_msgs2SrvGetInputRegisterInt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetJointTorque_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetJointTorque_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetJointTorque_Request; share/platform/ros/d/API-CONTRACT.md
@@ -17718,6 +17851,7 @@ struct Ros2Dsr_msgs2SrvGetJointTorque_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetJointTorque_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetJointTorque_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetJointTorque_Response; share/platform/ros/d/API-CONTRACT.md
@@ -17843,6 +17977,7 @@ struct Ros2Dsr_msgs2SrvGetJointTorque_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetLastAlarm_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetLastAlarm_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetLastAlarm_Request; share/platform/ros/d/API-CONTRACT.md
@@ -17944,6 +18079,7 @@ struct Ros2Dsr_msgs2SrvGetLastAlarm_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetLastAlarm_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetLastAlarm_Response in bytes.
  /// @details The inclusive bound is 793 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetLastAlarm_Response; share/platform/ros/d/API-CONTRACT.md
@@ -18065,6 +18201,7 @@ struct Ros2Dsr_msgs2SrvGetLastAlarm_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetModbusInput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetModbusInput_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetModbusInput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -18176,6 +18313,7 @@ struct Ros2Dsr_msgs2SrvGetModbusInput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetModbusInput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetModbusInput_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetModbusInput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -18297,6 +18435,7 @@ struct Ros2Dsr_msgs2SrvGetModbusInput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOrientationError_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOrientationError_Request in bytes.
  /// @details The inclusive bound is 97 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOrientationError_Request; share/platform/ros/d/API-CONTRACT.md
@@ -18436,6 +18575,7 @@ struct Ros2Dsr_msgs2SrvGetOrientationError_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOrientationError_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOrientationError_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOrientationError_Response; share/platform/ros/d/API-CONTRACT.md
@@ -18557,6 +18697,7 @@ struct Ros2Dsr_msgs2SrvGetOrientationError_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterBit_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterBit_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterBit_Request; share/platform/ros/d/API-CONTRACT.md
@@ -18678,6 +18819,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterBit_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterBit_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterBit_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterBit_Response; share/platform/ros/d/API-CONTRACT.md
@@ -18799,6 +18941,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterBit_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterFloat_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Request; share/platform/ros/d/API-CONTRACT.md
@@ -18920,6 +19063,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterFloat_Response in bytes.
  /// @details The inclusive bound is 9 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Response; share/platform/ros/d/API-CONTRACT.md
@@ -19041,6 +19185,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterFloat_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterInt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterInt_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterInt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -19162,6 +19307,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterInt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetOutputRegisterInt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetOutputRegisterInt_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetOutputRegisterInt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -19283,6 +19429,7 @@ struct Ros2Dsr_msgs2SrvGetOutputRegisterInt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotLinkInfo_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotLinkInfo_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotLinkInfo_Request; share/platform/ros/d/API-CONTRACT.md
@@ -19384,6 +19531,7 @@ struct Ros2Dsr_msgs2SrvGetRobotLinkInfo_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotLinkInfo_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotLinkInfo_Response in bytes.
  /// @details The inclusive bound is 129 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotLinkInfo_Response; share/platform/ros/d/API-CONTRACT.md
@@ -19585,6 +19733,7 @@ struct Ros2Dsr_msgs2SrvGetRobotLinkInfo_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotMode_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -19686,6 +19835,7 @@ struct Ros2Dsr_msgs2SrvGetRobotMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotMode_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -19807,6 +19957,7 @@ struct Ros2Dsr_msgs2SrvGetRobotMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotSpeedMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotSpeedMode_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotSpeedMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -19908,6 +20059,7 @@ struct Ros2Dsr_msgs2SrvGetRobotSpeedMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotSpeedMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotSpeedMode_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotSpeedMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -20029,6 +20181,7 @@ struct Ros2Dsr_msgs2SrvGetRobotSpeedMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotState_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotState_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotState_Request; share/platform/ros/d/API-CONTRACT.md
@@ -20130,6 +20283,7 @@ struct Ros2Dsr_msgs2SrvGetRobotState_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotState_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotState_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotState_Response; share/platform/ros/d/API-CONTRACT.md
@@ -20251,6 +20405,7 @@ struct Ros2Dsr_msgs2SrvGetRobotState_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotSystem_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotSystem_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotSystem_Request; share/platform/ros/d/API-CONTRACT.md
@@ -20352,6 +20507,7 @@ struct Ros2Dsr_msgs2SrvGetRobotSystem_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRobotSystem_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRobotSystem_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRobotSystem_Response; share/platform/ros/d/API-CONTRACT.md
@@ -20473,6 +20629,7 @@ struct Ros2Dsr_msgs2SrvGetRobotSystem_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlInputDataList_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlInputDataList_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlInputDataList_Request; share/platform/ros/d/API-CONTRACT.md
@@ -20584,6 +20741,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlInputDataList_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlInputDataList_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlInputDataList_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlInputDataList_Response; share/platform/ros/d/API-CONTRACT.md
@@ -20705,6 +20863,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlInputDataList_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlInputVersionList_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Request; share/platform/ros/d/API-CONTRACT.md
@@ -20806,6 +20965,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlInputVersionList_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Response; share/platform/ros/d/API-CONTRACT.md
@@ -20927,6 +21087,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlInputVersionList_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlOutputDataList_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Request; share/platform/ros/d/API-CONTRACT.md
@@ -21038,6 +21199,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlOutputDataList_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Response; share/platform/ros/d/API-CONTRACT.md
@@ -21159,6 +21321,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlOutputDataList_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlOutputVersionList_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Request; share/platform/ros/d/API-CONTRACT.md
@@ -21260,6 +21423,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetRtControlOutputVersionList_Response in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Response; share/platform/ros/d/API-CONTRACT.md
@@ -21381,6 +21545,7 @@ struct Ros2Dsr_msgs2SrvGetRtControlOutputVersionList_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetSolutionSpace_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetSolutionSpace_Request in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetSolutionSpace_Request; share/platform/ros/d/API-CONTRACT.md
@@ -21496,6 +21661,7 @@ struct Ros2Dsr_msgs2SrvGetSolutionSpace_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetSolutionSpace_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetSolutionSpace_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetSolutionSpace_Response; share/platform/ros/d/API-CONTRACT.md
@@ -21617,6 +21783,7 @@ struct Ros2Dsr_msgs2SrvGetSolutionSpace_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolDigitalInput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolDigitalInput_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolDigitalInput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -21728,6 +21895,7 @@ struct Ros2Dsr_msgs2SrvGetToolDigitalInput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolDigitalInput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolDigitalInput_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolDigitalInput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -21849,6 +22017,7 @@ struct Ros2Dsr_msgs2SrvGetToolDigitalInput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolDigitalOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolDigitalOutput_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolDigitalOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -21960,6 +22129,7 @@ struct Ros2Dsr_msgs2SrvGetToolDigitalOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolDigitalOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolDigitalOutput_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolDigitalOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -22081,6 +22251,7 @@ struct Ros2Dsr_msgs2SrvGetToolDigitalOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolForce_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolForce_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolForce_Request; share/platform/ros/d/API-CONTRACT.md
@@ -22192,6 +22363,7 @@ struct Ros2Dsr_msgs2SrvGetToolForce_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetToolForce_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetToolForce_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetToolForce_Response; share/platform/ros/d/API-CONTRACT.md
@@ -22317,6 +22489,7 @@ struct Ros2Dsr_msgs2SrvGetToolForce_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetUserCartCoord_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetUserCartCoord_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetUserCartCoord_Request; share/platform/ros/d/API-CONTRACT.md
@@ -22428,6 +22601,7 @@ struct Ros2Dsr_msgs2SrvGetUserCartCoord_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetUserCartCoord_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetUserCartCoord_Response in bytes.
  /// @details The inclusive bound is 50 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetUserCartCoord_Response; share/platform/ros/d/API-CONTRACT.md
@@ -22563,6 +22737,7 @@ struct Ros2Dsr_msgs2SrvGetUserCartCoord_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetWorkpieceWeight_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetWorkpieceWeight_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetWorkpieceWeight_Request; share/platform/ros/d/API-CONTRACT.md
@@ -22664,6 +22839,7 @@ struct Ros2Dsr_msgs2SrvGetWorkpieceWeight_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvGetWorkpieceWeight_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/GetWorkpieceWeight_Response in bytes.
  /// @details The inclusive bound is 5 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvGetWorkpieceWeight_Response; share/platform/ros/d/API-CONTRACT.md
@@ -22785,6 +22961,7 @@ struct Ros2Dsr_msgs2SrvGetWorkpieceWeight_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvIkin_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Ikin_Request in bytes.
  /// @details The inclusive bound is 50 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvIkin_Request; share/platform/ros/d/API-CONTRACT.md
@@ -22920,6 +23097,7 @@ struct Ros2Dsr_msgs2SrvIkin_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvIkin_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Ikin_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvIkin_Response; share/platform/ros/d/API-CONTRACT.md
@@ -23045,6 +23223,7 @@ struct Ros2Dsr_msgs2SrvIkin_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvIsDoneBoltTightening_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/IsDoneBoltTightening_Request in bytes.
  /// @details The inclusive bound is 17 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvIsDoneBoltTightening_Request; share/platform/ros/d/API-CONTRACT.md
@@ -23176,6 +23355,7 @@ struct Ros2Dsr_msgs2SrvIsDoneBoltTightening_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvIsDoneBoltTightening_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/IsDoneBoltTightening_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvIsDoneBoltTightening_Response; share/platform/ros/d/API-CONTRACT.md
@@ -23287,6 +23467,7 @@ struct Ros2Dsr_msgs2SrvIsDoneBoltTightening_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvJog_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Jog_Request in bytes.
  /// @details The inclusive bound is 10 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvJog_Request; share/platform/ros/d/API-CONTRACT.md
@@ -23418,6 +23599,7 @@ struct Ros2Dsr_msgs2SrvJog_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvJog_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Jog_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvJog_Response; share/platform/ros/d/API-CONTRACT.md
@@ -23529,6 +23711,7 @@ struct Ros2Dsr_msgs2SrvJog_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvJogMulti_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/JogMulti_Request in bytes.
  /// @details The inclusive bound is 57 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvJogMulti_Request; share/platform/ros/d/API-CONTRACT.md
@@ -23664,6 +23847,7 @@ struct Ros2Dsr_msgs2SrvJogMulti_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvJogMulti_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/JogMulti_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvJogMulti_Response; share/platform/ros/d/API-CONTRACT.md
@@ -23775,6 +23959,7 @@ struct Ros2Dsr_msgs2SrvJogMulti_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveBlending_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveBlending_Request in bytes.
  /// @details The inclusive bound is 2256 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveBlending_Request; share/platform/ros/d/API-CONTRACT.md
@@ -23983,6 +24168,7 @@ struct Ros2Dsr_msgs2SrvMoveBlending_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveBlending_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveBlending_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveBlending_Response; share/platform/ros/d/API-CONTRACT.md
@@ -24094,6 +24280,7 @@ struct Ros2Dsr_msgs2SrvMoveBlending_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveCircle_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveCircle_Request in bytes.
  /// @details The inclusive bound is 2280 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveCircle_Request; share/platform/ros/d/API-CONTRACT.md
@@ -24332,6 +24519,7 @@ struct Ros2Dsr_msgs2SrvMoveCircle_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveCircle_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveCircle_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveCircle_Response; share/platform/ros/d/API-CONTRACT.md
@@ -24443,6 +24631,7 @@ struct Ros2Dsr_msgs2SrvMoveCircle_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveHome_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveHome_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveHome_Request; share/platform/ros/d/API-CONTRACT.md
@@ -24554,6 +24743,7 @@ struct Ros2Dsr_msgs2SrvMoveHome_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveHome_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveHome_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveHome_Response; share/platform/ros/d/API-CONTRACT.md
@@ -24675,6 +24865,7 @@ struct Ros2Dsr_msgs2SrvMoveHome_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveJoint_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveJoint_Request in bytes.
  /// @details The inclusive bound is 83 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveJoint_Request; share/platform/ros/d/API-CONTRACT.md
@@ -24860,6 +25051,7 @@ struct Ros2Dsr_msgs2SrvMoveJoint_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveJoint_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveJoint_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveJoint_Response; share/platform/ros/d/API-CONTRACT.md
@@ -24971,6 +25163,7 @@ struct Ros2Dsr_msgs2SrvMoveJoint_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveJointx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveJointx_Request in bytes.
  /// @details The inclusive bound is 85 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveJointx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -25176,6 +25369,7 @@ struct Ros2Dsr_msgs2SrvMoveJointx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveJointx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveJointx_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveJointx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -25287,6 +25481,7 @@ struct Ros2Dsr_msgs2SrvMoveJointx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveLine_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveLine_Request in bytes.
  /// @details The inclusive bound is 100 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveLine_Request; share/platform/ros/d/API-CONTRACT.md
@@ -25490,6 +25685,7 @@ struct Ros2Dsr_msgs2SrvMoveLine_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveLine_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveLine_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveLine_Response; share/platform/ros/d/API-CONTRACT.md
@@ -25601,6 +25797,7 @@ struct Ros2Dsr_msgs2SrvMoveLine_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMovePause_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MovePause_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMovePause_Request; share/platform/ros/d/API-CONTRACT.md
@@ -25702,6 +25899,7 @@ struct Ros2Dsr_msgs2SrvMovePause_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMovePause_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MovePause_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMovePause_Response; share/platform/ros/d/API-CONTRACT.md
@@ -25813,6 +26011,7 @@ struct Ros2Dsr_msgs2SrvMovePause_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMovePeriodic_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MovePeriodic_Request in bytes.
  /// @details The inclusive bound is 107 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMovePeriodic_Request; share/platform/ros/d/API-CONTRACT.md
@@ -25982,6 +26181,7 @@ struct Ros2Dsr_msgs2SrvMovePeriodic_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMovePeriodic_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MovePeriodic_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMovePeriodic_Response; share/platform/ros/d/API-CONTRACT.md
@@ -26093,6 +26293,7 @@ struct Ros2Dsr_msgs2SrvMovePeriodic_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveResume_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveResume_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveResume_Request; share/platform/ros/d/API-CONTRACT.md
@@ -26194,6 +26395,7 @@ struct Ros2Dsr_msgs2SrvMoveResume_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveResume_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveResume_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveResume_Response; share/platform/ros/d/API-CONTRACT.md
@@ -26305,6 +26507,7 @@ struct Ros2Dsr_msgs2SrvMoveResume_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSpiral_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSpiral_Request in bytes.
  /// @details The inclusive bound is 94 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSpiral_Request; share/platform/ros/d/API-CONTRACT.md
@@ -26548,6 +26751,7 @@ struct Ros2Dsr_msgs2SrvMoveSpiral_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSpiral_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSpiral_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSpiral_Response; share/platform/ros/d/API-CONTRACT.md
@@ -26659,6 +26863,7 @@ struct Ros2Dsr_msgs2SrvMoveSpiral_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSplineJoint_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSplineJoint_Request in bytes.
  /// @details The inclusive bound is 2319 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSplineJoint_Request; share/platform/ros/d/API-CONTRACT.md
@@ -26857,6 +27062,7 @@ struct Ros2Dsr_msgs2SrvMoveSplineJoint_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSplineJoint_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSplineJoint_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSplineJoint_Response; share/platform/ros/d/API-CONTRACT.md
@@ -26968,6 +27174,7 @@ struct Ros2Dsr_msgs2SrvMoveSplineJoint_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSplineTask_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSplineTask_Request in bytes.
  /// @details The inclusive bound is 2257 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSplineTask_Request; share/platform/ros/d/API-CONTRACT.md
@@ -27186,6 +27393,7 @@ struct Ros2Dsr_msgs2SrvMoveSplineTask_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveSplineTask_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveSplineTask_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveSplineTask_Response; share/platform/ros/d/API-CONTRACT.md
@@ -27297,6 +27505,7 @@ struct Ros2Dsr_msgs2SrvMoveSplineTask_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveStop_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveStop_Request in bytes.
  /// @details The inclusive bound is 4 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveStop_Request; share/platform/ros/d/API-CONTRACT.md
@@ -27408,6 +27617,7 @@ struct Ros2Dsr_msgs2SrvMoveStop_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveStop_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveStop_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveStop_Response; share/platform/ros/d/API-CONTRACT.md
@@ -27519,6 +27729,7 @@ struct Ros2Dsr_msgs2SrvMoveStop_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveWait_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveWait_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveWait_Request; share/platform/ros/d/API-CONTRACT.md
@@ -27620,6 +27831,7 @@ struct Ros2Dsr_msgs2SrvMoveWait_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvMoveWait_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/MoveWait_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvMoveWait_Response; share/platform/ros/d/API-CONTRACT.md
@@ -27731,6 +27943,7 @@ struct Ros2Dsr_msgs2SrvMoveWait_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/OverwriteUserCartCoord_Request in bytes.
  /// @details The inclusive bound is 50 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Request; share/platform/ros/d/API-CONTRACT.md
@@ -27866,6 +28079,7 @@ struct Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/OverwriteUserCartCoord_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Response; share/platform/ros/d/API-CONTRACT.md
@@ -27987,6 +28201,7 @@ struct Ros2Dsr_msgs2SrvOverwriteUserCartCoord_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvParallelAxis1_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ParallelAxis1_Request in bytes.
  /// @details The inclusive bound is 146 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvParallelAxis1_Request; share/platform/ros/d/API-CONTRACT.md
@@ -28150,6 +28365,7 @@ struct Ros2Dsr_msgs2SrvParallelAxis1_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvParallelAxis1_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ParallelAxis1_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvParallelAxis1_Response; share/platform/ros/d/API-CONTRACT.md
@@ -28261,6 +28477,7 @@ struct Ros2Dsr_msgs2SrvParallelAxis1_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvParallelAxis2_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ParallelAxis2_Request in bytes.
  /// @details The inclusive bound is 26 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvParallelAxis2_Request; share/platform/ros/d/API-CONTRACT.md
@@ -28396,6 +28613,7 @@ struct Ros2Dsr_msgs2SrvParallelAxis2_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvParallelAxis2_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ParallelAxis2_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvParallelAxis2_Response; share/platform/ros/d/API-CONTRACT.md
@@ -28507,6 +28725,7 @@ struct Ros2Dsr_msgs2SrvParallelAxis2_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReadDataRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReadDataRt_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReadDataRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -28608,6 +28827,7 @@ struct Ros2Dsr_msgs2SrvReadDataRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReadDataRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReadDataRt_Response in bytes.
  /// @details The inclusive bound is 8154 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReadDataRt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -28719,6 +28939,7 @@ struct Ros2Dsr_msgs2SrvReadDataRt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReleaseComplianceCtrl_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -28820,6 +29041,7 @@ struct Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReleaseComplianceCtrl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -28931,6 +29153,7 @@ struct Ros2Dsr_msgs2SrvReleaseComplianceCtrl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReleaseForce_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReleaseForce_Request in bytes.
  /// @details The inclusive bound is 8 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReleaseForce_Request; share/platform/ros/d/API-CONTRACT.md
@@ -29042,6 +29265,7 @@ struct Ros2Dsr_msgs2SrvReleaseForce_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvReleaseForce_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ReleaseForce_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvReleaseForce_Response; share/platform/ros/d/API-CONTRACT.md
@@ -29153,6 +29377,7 @@ struct Ros2Dsr_msgs2SrvReleaseForce_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvResetWorkpieceWeight_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ResetWorkpieceWeight_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvResetWorkpieceWeight_Request; share/platform/ros/d/API-CONTRACT.md
@@ -29254,6 +29479,7 @@ struct Ros2Dsr_msgs2SrvResetWorkpieceWeight_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvResetWorkpieceWeight_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ResetWorkpieceWeight_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvResetWorkpieceWeight_Response; share/platform/ros/d/API-CONTRACT.md
@@ -29365,6 +29591,7 @@ struct Ros2Dsr_msgs2SrvResetWorkpieceWeight_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FClose_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FClose_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FClose_Request; share/platform/ros/d/API-CONTRACT.md
@@ -29466,6 +29693,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FClose_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FClose_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FClose_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FClose_Response; share/platform/ros/d/API-CONTRACT.md
@@ -29577,6 +29805,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FClose_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FMove_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FMove_Request in bytes.
  /// @details The inclusive bound is 8 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FMove_Request; share/platform/ros/d/API-CONTRACT.md
@@ -29688,6 +29917,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FMove_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FMove_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FMove_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FMove_Response; share/platform/ros/d/API-CONTRACT.md
@@ -29799,6 +30029,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FMove_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FOpen_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FOpen_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FOpen_Request; share/platform/ros/d/API-CONTRACT.md
@@ -29900,6 +30131,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FOpen_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvRobotiq2FOpen_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Robotiq2FOpen_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvRobotiq2FOpen_Response; share/platform/ros/d/API-CONTRACT.md
@@ -30011,6 +30243,7 @@ struct Ros2Dsr_msgs2SrvRobotiq2FOpen_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSerialSendData_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SerialSendData_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSerialSendData_Request; share/platform/ros/d/API-CONTRACT.md
@@ -30122,6 +30355,7 @@ struct Ros2Dsr_msgs2SrvSerialSendData_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSerialSendData_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SerialSendData_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSerialSendData_Response; share/platform/ros/d/API-CONTRACT.md
@@ -30233,6 +30467,7 @@ struct Ros2Dsr_msgs2SrvSerialSendData_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvServoOff_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ServoOff_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvServoOff_Request; share/platform/ros/d/API-CONTRACT.md
@@ -30364,6 +30599,7 @@ struct Ros2Dsr_msgs2SrvServoOff_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvServoOff_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/ServoOff_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvServoOff_Response; share/platform/ros/d/API-CONTRACT.md
@@ -30475,6 +30711,7 @@ struct Ros2Dsr_msgs2SrvServoOff_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetAccjRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetAccjRt_Request in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetAccjRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -30590,6 +30827,7 @@ struct Ros2Dsr_msgs2SrvSetAccjRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetAccjRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetAccjRt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetAccjRt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -30701,6 +30939,7 @@ struct Ros2Dsr_msgs2SrvSetAccjRt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetAccxRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetAccxRt_Request in bytes.
  /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetAccxRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -30822,6 +31061,7 @@ struct Ros2Dsr_msgs2SrvSetAccxRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetAccxRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetAccxRt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetAccxRt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -30933,6 +31173,7 @@ struct Ros2Dsr_msgs2SrvSetAccxRt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogInputType_Request in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Request; share/platform/ros/d/API-CONTRACT.md
@@ -31054,6 +31295,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogInputType_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Response; share/platform/ros/d/API-CONTRACT.md
@@ -31165,6 +31407,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogInputType_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogOutput_Request in bytes.
  /// @details The inclusive bound is 9 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -31286,6 +31529,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogOutput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -31397,6 +31641,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogOutputType_Request in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Request; share/platform/ros/d/API-CONTRACT.md
@@ -31518,6 +31763,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxAnalogOutputType_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Response; share/platform/ros/d/API-CONTRACT.md
@@ -31629,6 +31875,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxAnalogOutputType_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxDigitalOutput_Request in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -31750,6 +31997,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCtrlBoxDigitalOutput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -31861,6 +32109,7 @@ struct Ros2Dsr_msgs2SrvSetCtrlBoxDigitalOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCurrentTcp_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCurrentTcp_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCurrentTcp_Request; share/platform/ros/d/API-CONTRACT.md
@@ -31972,6 +32221,7 @@ struct Ros2Dsr_msgs2SrvSetCurrentTcp_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCurrentTcp_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCurrentTcp_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCurrentTcp_Response; share/platform/ros/d/API-CONTRACT.md
@@ -32083,6 +32333,7 @@ struct Ros2Dsr_msgs2SrvSetCurrentTcp_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCurrentTool_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCurrentTool_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCurrentTool_Request; share/platform/ros/d/API-CONTRACT.md
@@ -32194,6 +32445,7 @@ struct Ros2Dsr_msgs2SrvSetCurrentTool_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetCurrentTool_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetCurrentTool_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetCurrentTool_Response; share/platform/ros/d/API-CONTRACT.md
@@ -32305,6 +32557,7 @@ struct Ros2Dsr_msgs2SrvSetCurrentTool_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetDesiredForce_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetDesiredForce_Request in bytes.
  /// @details The inclusive bound is 64 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetDesiredForce_Request; share/platform/ros/d/API-CONTRACT.md
@@ -32464,6 +32717,7 @@ struct Ros2Dsr_msgs2SrvSetDesiredForce_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetDesiredForce_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetDesiredForce_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetDesiredForce_Response; share/platform/ros/d/API-CONTRACT.md
@@ -32575,6 +32829,7 @@ struct Ros2Dsr_msgs2SrvSetDesiredForce_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetModbusOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetModbusOutput_Request in bytes.
  /// @details The inclusive bound is 264 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetModbusOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -32696,6 +32951,7 @@ struct Ros2Dsr_msgs2SrvSetModbusOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetModbusOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetModbusOutput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetModbusOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -32807,6 +33063,7 @@ struct Ros2Dsr_msgs2SrvSetModbusOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterBit_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterBit_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterBit_Request; share/platform/ros/d/API-CONTRACT.md
@@ -32928,6 +33185,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterBit_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterBit_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterBit_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterBit_Response; share/platform/ros/d/API-CONTRACT.md
@@ -33039,6 +33297,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterBit_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterFloat_Request in bytes.
  /// @details The inclusive bound is 10 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Request; share/platform/ros/d/API-CONTRACT.md
@@ -33160,6 +33419,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterFloat_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Response; share/platform/ros/d/API-CONTRACT.md
@@ -33271,6 +33531,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterFloat_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterInt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterInt_Request in bytes.
  /// @details The inclusive bound is 6 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterInt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -33392,6 +33653,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterInt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetOutputRegisterInt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetOutputRegisterInt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetOutputRegisterInt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -33503,6 +33765,7 @@ struct Ros2Dsr_msgs2SrvSetOutputRegisterInt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRefCoord_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRefCoord_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRefCoord_Request; share/platform/ros/d/API-CONTRACT.md
@@ -33614,6 +33877,7 @@ struct Ros2Dsr_msgs2SrvSetRefCoord_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRefCoord_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRefCoord_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRefCoord_Response; share/platform/ros/d/API-CONTRACT.md
@@ -33725,6 +33989,7 @@ struct Ros2Dsr_msgs2SrvSetRefCoord_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotControl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotControl_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotControl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -33836,6 +34101,7 @@ struct Ros2Dsr_msgs2SrvSetRobotControl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotControl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotControl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotControl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -33947,6 +34213,7 @@ struct Ros2Dsr_msgs2SrvSetRobotControl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotMode_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -34058,6 +34325,7 @@ struct Ros2Dsr_msgs2SrvSetRobotMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotMode_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -34169,6 +34437,7 @@ struct Ros2Dsr_msgs2SrvSetRobotMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotSpeedMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotSpeedMode_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotSpeedMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -34280,6 +34549,7 @@ struct Ros2Dsr_msgs2SrvSetRobotSpeedMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotSpeedMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotSpeedMode_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotSpeedMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -34391,6 +34661,7 @@ struct Ros2Dsr_msgs2SrvSetRobotSpeedMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotSystem_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotSystem_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotSystem_Request; share/platform/ros/d/API-CONTRACT.md
@@ -34502,6 +34773,7 @@ struct Ros2Dsr_msgs2SrvSetRobotSystem_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRobotSystem_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRobotSystem_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRobotSystem_Response; share/platform/ros/d/API-CONTRACT.md
@@ -34613,6 +34885,7 @@ struct Ros2Dsr_msgs2SrvSetRobotSystem_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRtControlInput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRtControlInput_Request in bytes.
  /// @details The inclusive bound is 272 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRtControlInput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -34744,6 +35017,7 @@ struct Ros2Dsr_msgs2SrvSetRtControlInput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRtControlInput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRtControlInput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRtControlInput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -34855,6 +35129,7 @@ struct Ros2Dsr_msgs2SrvSetRtControlInput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRtControlOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRtControlOutput_Request in bytes.
  /// @details The inclusive bound is 272 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRtControlOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -34986,6 +35261,7 @@ struct Ros2Dsr_msgs2SrvSetRtControlOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetRtControlOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetRtControlOutput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetRtControlOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -35097,6 +35373,7 @@ struct Ros2Dsr_msgs2SrvSetRtControlOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSafeStopResetType_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSafeStopResetType_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSafeStopResetType_Request; share/platform/ros/d/API-CONTRACT.md
@@ -35208,6 +35485,7 @@ struct Ros2Dsr_msgs2SrvSetSafeStopResetType_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSafeStopResetType_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSafeStopResetType_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSafeStopResetType_Response; share/platform/ros/d/API-CONTRACT.md
@@ -35319,6 +35597,7 @@ struct Ros2Dsr_msgs2SrvSetSafeStopResetType_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSafetyMode_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSafetyMode_Request in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSafetyMode_Request; share/platform/ros/d/API-CONTRACT.md
@@ -35440,6 +35719,7 @@ struct Ros2Dsr_msgs2SrvSetSafetyMode_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSafetyMode_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSafetyMode_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSafetyMode_Response; share/platform/ros/d/API-CONTRACT.md
@@ -35551,6 +35831,7 @@ struct Ros2Dsr_msgs2SrvSetSafetyMode_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSingularHandlingForce_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSingularHandlingForce_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSingularHandlingForce_Request; share/platform/ros/d/API-CONTRACT.md
@@ -35662,6 +35943,7 @@ struct Ros2Dsr_msgs2SrvSetSingularHandlingForce_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSingularHandlingForce_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSingularHandlingForce_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSingularHandlingForce_Response; share/platform/ros/d/API-CONTRACT.md
@@ -35773,6 +36055,7 @@ struct Ros2Dsr_msgs2SrvSetSingularHandlingForce_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSingularityHandling_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSingularityHandling_Request in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSingularityHandling_Request; share/platform/ros/d/API-CONTRACT.md
@@ -35884,6 +36167,7 @@ struct Ros2Dsr_msgs2SrvSetSingularityHandling_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetSingularityHandling_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetSingularityHandling_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetSingularityHandling_Response; share/platform/ros/d/API-CONTRACT.md
@@ -35995,6 +36279,7 @@ struct Ros2Dsr_msgs2SrvSetSingularityHandling_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetStiffnessx_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetStiffnessx_Request in bytes.
  /// @details The inclusive bound is 57 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetStiffnessx_Request; share/platform/ros/d/API-CONTRACT.md
@@ -36130,6 +36415,7 @@ struct Ros2Dsr_msgs2SrvSetStiffnessx_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetStiffnessx_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetStiffnessx_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetStiffnessx_Response; share/platform/ros/d/API-CONTRACT.md
@@ -36241,6 +36527,7 @@ struct Ros2Dsr_msgs2SrvSetStiffnessx_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetToolDigitalOutput_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetToolDigitalOutput_Request in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetToolDigitalOutput_Request; share/platform/ros/d/API-CONTRACT.md
@@ -36362,6 +36649,7 @@ struct Ros2Dsr_msgs2SrvSetToolDigitalOutput_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetToolDigitalOutput_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetToolDigitalOutput_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetToolDigitalOutput_Response; share/platform/ros/d/API-CONTRACT.md
@@ -36473,6 +36761,7 @@ struct Ros2Dsr_msgs2SrvSetToolDigitalOutput_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetToolShape_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetToolShape_Request in bytes.
  /// @details The inclusive bound is 260 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetToolShape_Request; share/platform/ros/d/API-CONTRACT.md
@@ -36584,6 +36873,7 @@ struct Ros2Dsr_msgs2SrvSetToolShape_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetToolShape_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetToolShape_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetToolShape_Response; share/platform/ros/d/API-CONTRACT.md
@@ -36695,6 +36985,7 @@ struct Ros2Dsr_msgs2SrvSetToolShape_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord1_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord1_Request in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord1_Request; share/platform/ros/d/API-CONTRACT.md
@@ -36820,6 +37111,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord1_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord1_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord1_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord1_Response; share/platform/ros/d/API-CONTRACT.md
@@ -36941,6 +37233,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord1_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord2_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord2_Request in bytes.
  /// @details The inclusive bound is 193 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord2_Request; share/platform/ros/d/API-CONTRACT.md
@@ -37108,6 +37401,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord2_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord2_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord2_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord2_Response; share/platform/ros/d/API-CONTRACT.md
@@ -37229,6 +37523,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord2_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord3_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord3_Request in bytes.
  /// @details The inclusive bound is 97 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord3_Request; share/platform/ros/d/API-CONTRACT.md
@@ -37382,6 +37677,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord3_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetUserCartCoord3_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetUserCartCoord3_Response in bytes.
  /// @details The inclusive bound is 2 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetUserCartCoord3_Response; share/platform/ros/d/API-CONTRACT.md
@@ -37503,6 +37799,7 @@ struct Ros2Dsr_msgs2SrvSetUserCartCoord3_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetVeljRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetVeljRt_Request in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetVeljRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -37618,6 +37915,7 @@ struct Ros2Dsr_msgs2SrvSetVeljRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetVeljRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetVeljRt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetVeljRt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -37729,6 +38027,7 @@ struct Ros2Dsr_msgs2SrvSetVeljRt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetVelxRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetVelxRt_Request in bytes.
  /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetVelxRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -37850,6 +38149,7 @@ struct Ros2Dsr_msgs2SrvSetVelxRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvSetVelxRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/SetVelxRt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvSetVelxRt_Response; share/platform/ros/d/API-CONTRACT.md
@@ -37961,6 +38261,7 @@ struct Ros2Dsr_msgs2SrvSetVelxRt_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvStartRtControl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/StartRtControl_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvStartRtControl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -38062,6 +38363,7 @@ struct Ros2Dsr_msgs2SrvStartRtControl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvStartRtControl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/StartRtControl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvStartRtControl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -38173,6 +38475,7 @@ struct Ros2Dsr_msgs2SrvStartRtControl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvStopRtControl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/StopRtControl_Request in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvStopRtControl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -38274,6 +38577,7 @@ struct Ros2Dsr_msgs2SrvStopRtControl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvStopRtControl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/StopRtControl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvStopRtControl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -38385,6 +38689,7 @@ struct Ros2Dsr_msgs2SrvStopRtControl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvTaskComplianceCtrl_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/TaskComplianceCtrl_Request in bytes.
  /// @details The inclusive bound is 57 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvTaskComplianceCtrl_Request; share/platform/ros/d/API-CONTRACT.md
@@ -38520,6 +38825,7 @@ struct Ros2Dsr_msgs2SrvTaskComplianceCtrl_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvTaskComplianceCtrl_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/TaskComplianceCtrl_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvTaskComplianceCtrl_Response; share/platform/ros/d/API-CONTRACT.md
@@ -38631,6 +38937,7 @@ struct Ros2Dsr_msgs2SrvTaskComplianceCtrl_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvTrans_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Trans_Request in bytes.
  /// @details The inclusive bound is 98 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvTrans_Request; share/platform/ros/d/API-CONTRACT.md
@@ -38780,6 +39087,7 @@ struct Ros2Dsr_msgs2SrvTrans_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvTrans_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/Trans_Response in bytes.
  /// @details The inclusive bound is 49 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvTrans_Response; share/platform/ros/d/API-CONTRACT.md
@@ -38905,6 +39213,7 @@ struct Ros2Dsr_msgs2SrvTrans_Response {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvWriteDataRt_Request {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/WriteDataRt_Request in bytes.
  /// @details The inclusive bound is 152 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvWriteDataRt_Request; share/platform/ros/d/API-CONTRACT.md
@@ -39068,6 +39377,7 @@ struct Ros2Dsr_msgs2SrvWriteDataRt_Request {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Dsr_msgs2SrvWriteDataRt_Response {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of dsr_msgs2/srv/WriteDataRt_Response in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue reservation.
  /// @see Ros2Dsr_msgs2SrvWriteDataRt_Response; share/platform/ros/d/API-CONTRACT.md

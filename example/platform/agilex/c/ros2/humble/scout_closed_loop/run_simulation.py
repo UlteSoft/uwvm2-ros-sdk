@@ -44,6 +44,7 @@ def main():
     sdk=args.sdk.resolve(strict=True);here=Path(__file__).resolve().parent
     sys.path.insert(0,str(sdk/'tools/shared/python'))
     from owned_processes import OwnedProcesses,process
+    from pipe_capture import PipeLoggedProcess
     owned=OwnedProcesses();actors=[];gate_write=None;directory=None;audit_fd=None
     report={'format':'scout-real-wasm-simulation-v1','status':'RUNNING',
             'production_enrollment':False,'physical_robot':False,'native_application_controller':False,
@@ -54,7 +55,8 @@ def main():
         (out/'simulation-result.json').write_text(json.dumps(report,indent=2)+'\n')
     def spawn(label,argv,env=None,pass_fds=()):
         with (out/(label+'.stdout')).open('xb') as a,(out/(label+'.stderr')).open('xb') as e:
-            child=subprocess.Popen([str(x) for x in argv],stdout=a,stderr=e,env=env,
+            launch = PipeLoggedProcess if label == 'vm' else subprocess.Popen
+            child=launch([str(x) for x in argv],stdout=a,stderr=e,env=env,
                                    start_new_session=True,close_fds=True,pass_fds=pass_fds)
         row=process(child.pid);actor={'process':child,'pid':child.pid,'birth':row['birth']}
         actors.append(actor);owned.observe()
@@ -116,7 +118,7 @@ def main():
         audit_fd=os.open(audit_path,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_CLOEXEC,0o600)
         command=deployment.command(plan,[str(args.vm),'--ros2-buffer-audit-limits','1024','20000','67108864','32768',
             sha(here/'deployment.template.json'),'--ros2-buffer-audit',run_id,str(audit_fd),
-            '--runtime-compile-threads','1'],{'scout_control':address},os.getuid())
+            '--runtime-compile-threads','1'],{'scout_control':address},os.getuid(),test=True)
         gate_read,gate_write=os.pipe2(os.O_CLOEXEC)
         vm=spawn('vm',[sys.executable,'-B',here/'exec_gate.py',str(gate_read),str(audit_fd),*command],
                  pass_fds=(gate_read,audit_fd))

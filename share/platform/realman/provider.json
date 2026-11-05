@@ -77,7 +77,110 @@
           "response": "rm_msgs/Six_Force",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/realman/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/realman/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "realman",
+                "source": "include/platform/realman/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "realman"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/realman/bundles/js/ros1_develop.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/realman/bundles/lua/ros1_develop.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/realman/bundles/py/ros1_develop.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "realman/php/ros1/develop/records",
+              "path": "include/platform/realman/php/ros1/develop/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "realman/ruby/ros1/develop/records",
+              "path": "include/platform/realman/ruby/ros1/develop/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_main",
@@ -154,7 +257,110 @@
           "response": "rm_msgs/Six_Force",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/realman/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/realman/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "realman",
+                "source": "include/platform/realman/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "realman"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/realman/bundles/js/ros1_main.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/realman/bundles/lua/ros1_main.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/realman/bundles/py/ros1_main.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "realman/php/ros1/main/records",
+              "path": "include/platform/realman/php/ros1/main/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "realman/ruby/ros1/main/records",
+              "path": "include/platform/realman/ruby/ros1/main/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_foxy",
@@ -224,7 +430,110 @@
           "response": "rm_ros_interfaces/msg/Sixforce",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/realman/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/realman/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "realman",
+                "source": "include/platform/realman/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "realman"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/realman/bundles/js/ros2_foxy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/realman/bundles/lua/ros2_foxy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/realman/bundles/py/ros2_foxy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "realman/php/ros2/foxy/records",
+              "path": "include/platform/realman/php/ros2/foxy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "realman/ruby/ros2/foxy/records",
+              "path": "include/platform/realman/ruby/ros2/foxy/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_humble",
@@ -308,11 +617,105 @@
           "main_class": "Main"
         },
         "js": {
-          "format": "uwvm-vendor-source-graph-v1",
-          "language": "js",
-          "bundle_manifest": "share/platform/realman/bundles/js/ros2_humble.json",
-          "module_count": 4,
-          "native_definition_catalog": "share/platform/realman/catalogs/ros2_humble/catalog.json"
+          "bundle_manifest": "share/platform/realman/bundles/js/ros2_humble.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/realman/bundles/lua/ros2_humble.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/realman/bundles/py/ros2_humble.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "realman/php/ros2/humble/records",
+              "path": "include/platform/realman/php/ros2/humble/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "realman/ruby/ros2/humble/records",
+              "path": "include/platform/realman/ruby/ros2/humble/records.rb"
+            }
+          ]
+        }
+      },
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/realman/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/realman/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "realman",
+                "source": "include/platform/realman/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "realman"
+            ]
+          }
         }
       }
     },
@@ -384,7 +787,110 @@
           "response": "rm_ros_interfaces/msg/Sixforce",
           "request": null
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/realman/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/realman/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "realman",
+                "source": "include/platform/realman/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "realman"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/realman/bundles/js/ros2_jazzy.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/realman/bundles/lua/ros2_jazzy.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/realman/bundles/py/ros2_jazzy.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "realman/php/ros2/jazzy/records",
+              "path": "include/platform/realman/php/ros2/jazzy/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "realman/ruby/ros2/jazzy/records",
+              "path": "include/platform/realman/ruby/ros2/jazzy/records.rb"
+            }
+          ]
+        }
+      }
     }
   ],
   "requested_languages": [

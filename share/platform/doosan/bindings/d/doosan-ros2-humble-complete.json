@@ -17,5 +17,32 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "d",
+    "stack_bytes": 4194304,
+    "d": {
+      "import_dirs": [
+        "include/platform/ros/d/source"
+      ],
+      "source_modules": [
+        {
+          "name": "doosan.ros2.doosan_ros2_humble_complete.records",
+          "source": "include/platform/doosan/d/ros2/doosan-ros2-humble-complete/records.d"
+        }
+      ],
+      "modules": [
+        "doosan.ros2.doosan_ros2_humble_complete.records",
+        "roswasm.wire",
+        "roswasm"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/startup.c",
+        "object": "startup.o"
+      }
+    ]
+  }
 }

@@ -1,3 +1,24 @@
+-- @brief Bind one exact release source graph to the public language request.
+-- @details No compiler, runtime authority or version fallback is supplied here.
+local function source_request(target, root, context, selected)
+    assert(context and context.api_version == 1, "Use the public provider lifecycle")
+    local request = table.clone(context)
+    local language = context.language
+    local native_flows = {call_native_grasp=true, call_native_joint_impedance=true,
+                          cancel_own_grasps=true, lifecycle_grasp_cancel=true}
+    if language == "zig" and native_flows[context.scenario] and "kinova" ~= "kinova" then
+        request.native_action = import("actions", {rootdir=path.join(root, "tools/platform/kinova"), anonymous=true}).zig(selected)
+        return request
+    end
+    import("core.base.json")
+    local binding = json.loadfile(path.join(root, "share/platform/kinova/bindings", language, selected.id .. ".json"))
+    assert(binding.format == "uwvm-vendor-release-binding-v1"
+           and binding.platform == "kinova" and binding.language == language
+           and binding.profile == selected.id and binding.backend == context.backend,
+           "Release binding differs from the selected source language or catalog")
+    request.binding = binding
+    return request
+end
 -- @file provider.lua
 -- @brief Consume this vendor's exact release descriptor and central producers.
 -- @details No compiler, language engine, ROS runtime, policy grant, or DSL is
@@ -26,10 +47,10 @@ function selection(target, root)
     target:add("includedirs", path.join(root, "include/platform/kinova/cpp", selected.backend, selected.bundle))
     return selected
 end
-function configure(target, root)
+function configure(target, root, context)
     selection(target, root)
 end
-function build(target, root)
+function build(target, root, context)
     local selected = selection(target, root)
     local language = target:values("ros.sdk.language")
     if language == "c" or language == "cpp" or language == "objectc" or language == "c_ffi_bridge" then
@@ -54,32 +75,6 @@ function build(target, root)
         )
         return
     end
-    local owner = ({
-        as = "native",
-        d = "native",
-        go = "native",
-        haskell = "native",
-        moonbit = "native",
-        nim = "native",
-        odin = "native",
-        rs = "native",
-        swift = "native",
-        tinygo = "native",
-        zig = "native",
-        java = "jvm",
-        kotlin = "jvm",
-        csharp = "dotnet",
-        fsharp = "dotnet",
-        vbnet = "dotnet",
-        py = "python",
-        js = "js",
-        lua = "lua",
-        ruby = "ruby",
-        php = "php",
-        r = "r",
-    })[language]
-    assert(owner, "Unknown declared source language")
-    local folder = path.join(root, "tools/language", owner)
-    assert(os.isfile(path.join(folder, "provider.lua")), "Install the central " .. owner .. " provider")
-    import("provider", { rootdir = folder, anonymous = true }).build(target, root)
+    return import("language_adapter", {rootdir=path.join(root, "tools/xmake"), anonymous=true}).build(
+        target, root, source_request(target, root, context, selected))
 end

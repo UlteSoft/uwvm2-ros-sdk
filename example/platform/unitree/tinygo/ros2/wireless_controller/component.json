@@ -1,0 +1,266 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4762",
+  "ros_namespace": "ros2",
+  "test_scope": "Execute the original Unitree observation guest with base WASI and ROS namespace, but no resource authority. Denial preserves complete empty response/owner facts; missing alias fails before acquisition. Positive native transport is a separate test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "fb38699814a117a4a969ace3d26ffe146df5c63095fd6c905616190e5e72787e"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "9dca035246068f2ea9f9506a5faf03ca9e45c31fee24ef705bb673a47e0d2bfd"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "e94bdaa40109be5734a04ec82ed1665cf6ff1c140cd53d050e8b4c5ce251146f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/capability.go",
+      "sha256": "b4b04935b40b431358c4638f745fe3d53f3333b29be34cb6b2ff6b101ce45748"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/codec.go",
+      "sha256": "af670aae3a1cf5851d70866421e70929079c4ae62148a077c3f4f7d41b1bc9b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/construction.go",
+      "sha256": "b3e8e7892e03765af2e7d79091933781e02a4bc33d5ce766ffd26a88e9e84697"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/custom-types/generated-r3/fixed_records.go",
+      "sha256": "13f4aef4d324ed1df3d9c401dee20e306dcc5ae349f9709a3a0e5823a9f093a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_backend_ros1.go",
+      "sha256": "a5da2d961caed5b48fd11c164d4b2b8768a91245d7b7272222e1f043ccd71adf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_backend_ros2.go",
+      "sha256": "8c1353a925917c94d288ab6769992841bbdbff7552e30fd4dc3e2080d84b77c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_client.go",
+      "sha256": "7ed592ef1acb9bd5498c6d2eeb2b236b73da163e20d1811189f7cbd6b3c0251f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_dispatch.go",
+      "sha256": "d07eb3fc3fa695212a0c90a6649c3da8dcfdde5a0166094167e54fa9d95b1686"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_stream.go",
+      "sha256": "0c592e957aada0b5abad17a119153d3da8f8a4fd2ae46240fb41fa05d78c7013"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/events.go",
+      "sha256": "3197dabadf0bab936186a2ab7c78ea68a69a250bdcdae3488245a4cddd55527c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/executor.go",
+      "sha256": "35a72dbecd861e145077ceda1f17bc93d6b3131bdcbbaac14f0439ca2bd33fd3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/go.mod",
+      "sha256": "3fccc99a756ef89435c8ba2500e710b57f60bff459147951a500e471233c0eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/local.go",
+      "sha256": "30e4e61bda28f2b21692ba9bd325bc58e6f64f24fea1eb45358f268329c7f96e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/native_command/command.go",
+      "sha256": "76926f053d58f44e8d233e4754467d695bb5dd4f9cd16ca89f54e21c719cc635"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/node.go",
+      "sha256": "56e7390a7dff37d57e4b6c86a5267cdec97273998f19897560f4cc52444e72af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/owner_state.go",
+      "sha256": "c48b859d02101dd2079b4b3f300487fbed7bb4a0ef0f8247f9012d8b6b75a184"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/raw_ros1.go",
+      "sha256": "d749eb03c83833f3a6d417644be6cb53a69a7a26d05939757f47a6a30634ee37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/raw_ros2.go",
+      "sha256": "51be171768228f7a195f50e0cc9ca4a49d5ac01fc0a8a53a4c01350d304ad3d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/endpoint.go",
+      "sha256": "572d8ad476f1e434fb77d608b366c8c033381605e114cbe19316974bbfbf16af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/group.go",
+      "sha256": "3e52bca84113dd2acee3928107adfff8e40e68ba09ceff9cb77209026c19048a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/raw_ros2.go",
+      "sha256": "285b7da8dba9ea055a0a5d9e4327ef0562d758d9e5401b68b031c7ff1678c4b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/recipe.json",
+      "sha256": "efb5b22dfb05dd2208c543e21803add7b8d6bcd79eceb817f0419e93274abfa2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/typed.go",
+      "sha256": "25e9776aab626338c44576cec6db7c2c3581a4640230fbd5e01c48f4b464696a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/wire.go",
+      "sha256": "5dc25fc533f3e4a9056964a1c19f7d7aa00ab4b22f1eca7ea53fa02a3079568d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/selection_error.go",
+      "sha256": "f35d54391dbc59cb5fde72df130f6969c88eb835ad577eb0eac6c78196560ea0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/server_callbacks.go",
+      "sha256": "fd6f5d2071a9cf77aa6b7b486a90ceecbb1a08e6d121b75aa4d9da708553ac5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/session.go",
+      "sha256": "356c874f3af38ecfcaeb89e8ad9ad25b4660e20cf170e42a16a8f930b49ef9d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/typed.go",
+      "sha256": "4b31de91a800aecaa76d3188296aa6b89703465729423058616e49e962faa560"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/types.go",
+      "sha256": "c9ca83e1594cc1626af93f50121a5e9436ae2710808e4df71f2d200e9cffa733"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/command_io.go",
+      "sha256": "6b903f371bfa3648b261fe77202e54f15d2c5e0ea547e723389d1732029c060a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/go.mod",
+      "sha256": "9bde5cdb1d7cd27cd7fcf53e77b9f7c2f85c76f22ae3afe341927b54a816ffc0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/observation.go",
+      "sha256": "13cd2888bd5f30a1a6b420bd1eb12c513607cdcbd70d92d1bf967e59744f065c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/observation_ros1.go",
+      "sha256": "ae8aae99305a21d237b6e977fdb61291e4c9e876153510b2b051ab5176fb1f62"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/observation_ros2.go",
+      "sha256": "5cf4a6d093acf1641ba3539d8faca8ce7d7b5e7afe65d030689a1b1562faf292"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/ros1/go.mod",
+      "sha256": "ab0744dae00c023997bd77328fc1d4723d30e900a1c18f6395c8502f700dadca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/ros1/records.go",
+      "sha256": "eaa5aff469296e00025e95ef82445635538db13963a797a8b49bf066f1fe6ea5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/ros2/go.mod",
+      "sha256": "2211d455ba2f37753ae0b715dd243cde301d1cec4be0ddbb3844bf2d9838af6b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/tinygo/ros2/records.go",
+      "sha256": "39150fcb345d16f8da0bce24ac4cc5713ab37592364586e77c6993dfc7c6b726"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "rpc_present": false,
+        "rpc_status": 0,
+        "polls": 0,
+        "required_present": false,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -7,6 +7,7 @@
  * no reconnect, eviction, replay, discovery grant or legacy-service fallback.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "config.h"
 #include <uwvm2/imported/ros/ipc/rmw_service.h>
 #include <uwvm2/imported/ros/common/rmw_service_bindings.h>
@@ -202,8 +203,8 @@ namespace uwvm2::ros_gateway
             admission.session_fd=session_fd_;admission.worker_pidfd=worker_pidfd_;admission.stopping=stopping_;
             auto const& source=*admission.source;
             for(auto cap:{admission.source,admission.paired,admission.availability})if(cap&&cap->limits.count("timeout-ms"))
-                until=std::min(until,started+std::chrono::milliseconds(limit(*cap,"timeout-ms")));
-            if(std::chrono::steady_clock::now()>=until)return {110,{}};
+                until=std::min(until,quota_deadline(*cap,started));
+            if(::uwvm2::utils::host_clock::now()>=until)return {110,{}};
             if(request.operation==command::activate)
             {
                 // Client pending max-inflight is NOT an endpoint count. The
@@ -230,11 +231,11 @@ namespace uwvm2::ros_gateway
             }
             else if(request.operation==command::available)
             {
-                if(request.wait_ns>limit(alias,"max-wait-ns"))return {22,{}};
+                if(request.wait_ns>limit(alias,"max-wait-ns"))return {90,{}};
                 if(request.wait_ns&&(session_fd_<0||worker_pidfd_<0||!stopping_))return {95,{}};
                 if(!charge(alias,ipc::client_availability::bytes,charge_kind::operation))return {11,{}};
             }
-            if(std::chrono::steady_clock::now()>=until)
+            if(::uwvm2::utils::host_clock::now()>=until)
             {if(request.operation==command::activate&&row)(void)history_.retire(row->owner,row->kind,110);return {110,{}};}
             auto result=backend_.owned_rmw_service(admission,request,
                 original.data.data()+ipc::rmw_service::header_bytes,static_cast<std::size_t>(request.body_bytes),until);
@@ -283,7 +284,7 @@ namespace uwvm2::ros_gateway
                 }
             }
             else if(!ipc::rmw_service::associated_ack(result.payload.data(),result.payload.size(),request,reply))error=13;
-            if(!error&&std::chrono::steady_clock::now()>=until)error=110;
+            if(!error&&::uwvm2::utils::host_clock::now()>=until)error=110;
             if(error)
             {
                 delivery_failed(error);

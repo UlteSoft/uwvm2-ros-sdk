@@ -1,0 +1,155 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-native-authority-81",
+  "ros_namespace": "ros1",
+  "test_scope": "Original compiled language source with explicit base WASI and ROS namespace, zero resource grants, exact denial and untouched ownership facts. Missing alias validates before acquisition.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/haskell/ABB/Observation.hs",
+      "sha256": "0b305d8019530cad06255de7b7c6c3727f0bbe65e1349f6bea2167112a1174f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/haskell/ABB/Ros1/Observation.hs",
+      "sha256": "6c4168d1d637fcb5f1b78a0a301d2e94f88ccf056f1fc8ecda33246c11b4a8a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/haskell/ABB/Ros1/Records.hs",
+      "sha256": "b108fef95f5c75e898119ed6fd30fca966398724af206c1b6bcd96c8d1588c49"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/haskell/ABB/Ros2/Records.hs",
+      "sha256": "9e9754676718ad72b19ad72fc9169a11abb449f6c45d6d3e0a6002f23e26647a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/Ros/NativeCommand.hs",
+      "sha256": "4d7bde42eed95303ae8dc2c4b792d7b93e5969b266d70d172556a9f84394fa6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/roswasm.cabal",
+      "sha256": "9c9c85b6c7a86e140eaa32dd565a76b244a438714a5aa1f979e5f5440be9f08e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/src/RosWasm/Raw.hs",
+      "sha256": "28fc59e4a4df561a6d009e20005b88aae6ae6946758fde55183c6b52bfb7f890"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/src/RosWasm/Typed.hs",
+      "sha256": "c295934a991399f58a38e9deb295f718cf3fa859e9edf5a57c5816286306eeb3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/src/RosWasm/Wire.hs",
+      "sha256": "3407b8c2d3b84a4fb764faa73788d339ce1e5cf319b8728311f05f007c723100"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/haskell/src/RosWasm.hs",
+      "sha256": "8422436464c47fc9a8c416e13a1d2b59078d30bbf633ef6db380c2df4f7502c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/haskell.json",
+      "sha256": "cd45572369cf6db46599c88bfdd3347088bb71bb19966e5e90f114cdebbdb0d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Observation.hs",
+      "sha256": "8d8973f7f660fa2e1b739f1ff8a55fc585cbfd5d535f56953fba9c8b1d9923f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/haskell/Native/Wire.hs",
+      "sha256": "cf3745389aed91fc88552a0ff352f3709512ebb22d924d468df1399a1fe9afbf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros/native_sources/abi.c",
+      "sha256": "722cc70f2d003add1aea92cb3ef8719e08b614c7385df1869446269dd43e3189"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.hs",
+      "sha256": "def73c7b68d4884b3e11fe10e533223b38edd5e3e93f447eb769a9ce72d6158d"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "13166246351e62ac4115865216943f6c9215ce9f7c086991c6632a77964721f3"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "wire_hex": "",
+        "polls": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

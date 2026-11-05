@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "ros/lua/native_command",
+      "file": "include/platform/ros/lua/native_command.lua",
+      "sha256": "f1d0b98c491bfeacd180aa203e7828fffeb1fc6f68378bc1afd91bace82db430"
+    },
+    {
+      "name": "roswasm",
+      "file": "include/platform/ros/lua/roswasm/init.lua",
+      "sha256": "9d3d4a5af0f0255a330d34cd840e9a84247b2905f3afacd1daa46c49c38bae5e"
+    },
+    {
+      "name": "roswasm/wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "agibot/lua/ros2/sdk_v1_1_0_main/records",
+      "file": "include/platform/agibot/lua/ros2/sdk_v1_1_0_main/records.lua",
+      "sha256": "1e31e58e325845481239a488d7bf0cbda0ae26a3c1024fd8246434a4fb6e8fdc"
+    },
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    }
+  ],
+  "default_authority": []
+}

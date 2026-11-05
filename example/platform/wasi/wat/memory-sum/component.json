@@ -1,0 +1,45 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "platform-wasi-wat-memory-sum",
+  "scope": "Execute the original guest assertions for arithmetic, owned state and library lifecycle. No native substitute or ROS simulation claim.",
+  "cases": [
+    {
+      "id": "actual-guest-assertions",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/memory-sum/main32.wat",
+      "sha256": "922e505d169a5ed94f67fd4f9ea61cf720231c52d207cf1291fc7e7ae77a2424"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/memory-sum/main64.wat",
+      "sha256": "675dc34426213380ff0a5ed0cb6f5db412e83be72eef74587329d21d436a2a86"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/memory-sum/xmake.lua",
+      "sha256": "18229a5f6926db515dea85292e652591271a4434b091a646938987c3dfdb092a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ]
+}

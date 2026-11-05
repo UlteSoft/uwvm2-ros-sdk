@@ -46,7 +46,6 @@ set_plat("wasm-wasip1")
   "runtime": "/absolute/path/to/uwvm2-ros",
   "runtime_arguments": [
     "--runtime-aot",
-    "--wasip1-global-noinherit-system-environment"
   ],
   "application_arguments": [
     "7",
@@ -58,4 +57,4 @@ set_plat("wasm-wasip1")
 
 两个 stdin 操作使用空 `application_arguments` 并提供标准输入。wasm64 应用将 `target` 改为 `wasm64-wasip1`，在 `runtime_arguments` 中明确增加 `--wasm-feature-enable-memory64` 和 `--wasm-feature-enable-table64`。启动器仅追加唯一 `--run` 应用操作数，原样保留包括空字符串在内的应用参数，不自动增加权限、环境、preopen 或 Core 特性。此通用 command 格式与原生 ROS 部署 v2 格式相互独立。
 
-默认 WASI 具有继承的基本标准流描述符，足以执行这些操作；不能声称完全没有描述符权限。禁止系统环境继承不会授权目录、socket 或 ROS 资源。库仍使用原生 Xmake `set_kind("static")` 或 `set_kind("shared")`，必须由所选语言适配器明确支持。带符号索引的真实可重定位 `.a` 和可预加载的 Core `.wasm` 必须分别验证生产者与消费者；仅打包解释器源模块不能证明任一库类型支持。
+基础 WASI 不授予标准流操作权限；执行这些操作必须在所属模块中逐项显式授权。禁止系统环境继承不会授权目录、socket 或 ROS 资源。库仍使用原生 Xmake `set_kind("static")` 或 `set_kind("shared")`，必须由所选语言适配器明确支持。带符号索引的真实可重定位 `.a` 和可预加载的 Core `.wasm` 必须分别验证生产者与消费者；仅打包解释器源模块不能证明任一库类型支持。

@@ -1,0 +1,100 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-authority-90",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with complete ABB bindings: deny resource acquisition, reject missing arguments and reject empty IO signals before acquisition. Positive native transport remains a separate deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "392b7dfeeec240e188cfd9a5670c6d163492c6ba775cc0e3508324052b70d2ac"
+    },
+    {
+      "scope": "example",
+      "path": "main.mjs",
+      "sha256": "7e5d1d0e7fe41541baf0259b32284497f387adab374862c8fe796cb730f47333"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/js/observation.mjs",
+      "sha256": "4c238e5f59891e1f0539ad0ce919f6df7dc83bc9950a98fe26e2c0adc5bcb9ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/js/ros2/records.mjs",
+      "sha256": "480885ff9d2375d77fbba81db344737f6743f7a9c203fd2a503623d708602be0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/js.json",
+      "sha256": "0e267af17ca27e4482c6e608a50969c2cf17a5a67d0cf4c3d8ff339ab38ca1a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/language/js/ros2/bundle.json",
+      "sha256": "a04c06b45c7dfdc10d0a1556ffecd6a46df6e539da41f0da1146acf9f6a8c080"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "required_present": 0,
+        "required": "0",
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-arguments",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

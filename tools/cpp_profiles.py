@@ -146,7 +146,7 @@ def emit_records(records):
             )
             lines += [
                 "static uwvm_custom::" + name + " default_value() ROSWASM_CPP_NOEXCEPT {",
-                "uwvm_custom::" + name + " value = {0};",
+                "uwvm_custom::" + name + " value = {};",
                 "(void)" + c + "_default(&value);",
                 "return value;",
                 "}",

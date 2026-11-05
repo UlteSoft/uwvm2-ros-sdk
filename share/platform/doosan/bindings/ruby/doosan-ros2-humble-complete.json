@@ -17,5 +17,15 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb"
+    },
+    {
+      "name": "doosan/ruby/ros2/doosan-ros2-humble-complete/records",
+      "path": "include/platform/doosan/ruby/ros2/doosan-ros2-humble-complete/records.rb"
+    }
+  ]
 }

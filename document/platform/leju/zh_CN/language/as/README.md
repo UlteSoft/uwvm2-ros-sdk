@@ -49,7 +49,7 @@
 ## 显式原生部署
 
 用 `set_ros_run_config("deployment.json")` 选择操作员配置。唯一公共入口
-`tools/platform/ros/run.py` 使用 `uwvm-native-ros-run-v2`，后端及发行版须与目标
+`tools/platform/ros/run.py` 使用 `uwvm-native-ros-run-v3`，后端及发行版须与目标
 完全一致。`examples.<scenario>` 必须显式提供 `arguments`、`main_module`、
 `preloads`、`modules`。`arguments` 是原始 UTF-8 参数数组，含别名，以及示例要求时
 由调用方维护的序号；启动器不会根据平台或场景名字合成这些参数。
@@ -60,7 +60,7 @@
 准备均由部署方提供。编解码身份不能替代已注册的原生类型身份。空闲等待还须显式
 授予 WASI 单调时钟权限。
 
-预加载库按精确模块名独立配置。算法保留默认 WASI（含基本标准流权限），不追加
+预加载库按精确模块名独立配置。算法只启用基础 WASI 接口，不自动获得标准流操作权限；不追加
 资源或 ROS 授权；只有 `ros_comm` 获得 ROS 权限，并以显式
 `call_boundary: "module-exports"` 选择导出接口委托。全局授权不能证明此隔离。
 公共共享库、静态库 Xmake 生产器仍为独立依赖；源码和私有 Core 实验不等于普通库

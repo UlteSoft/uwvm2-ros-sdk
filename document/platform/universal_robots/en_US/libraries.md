@@ -32,7 +32,7 @@ integration topology; a qualifying runnable four-module example is still pending
 | algorithm | Separate computation module | Default WASI, no additional resource or ROS grant |
 | ros_comm | Separate module communicating with a controlled native peer | Only this exact loaded identity receives selected ROS Single grants |
 
-Default WASI retains basic standard-stream rights. It does not mean zero
+Base WASI exposes interfaces with zero operation grants; standard-stream operations require explicit authorization. It does not mean zero
 descriptor authority. WASI/ROS Single targets must be created for and bound to
 the actual loaded identity before applying their manual settings. A global ROS
 grant cannot establish module-local isolation. The runner must preserve the

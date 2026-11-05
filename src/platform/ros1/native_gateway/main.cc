@@ -6,6 +6,7 @@
  * remain authoritative; this file grants no guest rights. It is compiled as
  * infrastructure, independently from all guest source languages.
  */
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include <gateway/common/server.h>
 #include <ros/ros.h>
 #include <ros/master.h>
@@ -199,7 +200,7 @@ namespace
                     }
                     response.success = bytes[0] != 0;
                     response.message.assign(reinterpret_cast<char const*>(bytes.data() + 5), bytes.size() - 5);
-                    return std::chrono::steady_clock::now() < std::min(pending->deadline, pending->answer_deadline);
+                    return ::uwvm2::utils::host_clock::now() < std::min(pending->deadline, pending->answer_deadline);
                 }};
             auto server{node_.advertiseService(c.resource, callback)};
             if(!server)
@@ -220,7 +221,7 @@ namespace
                 p = publishers_
                         .emplace(
                             c.alias,
-                            node_.advertise<M>(c.resource, static_cast<std::uint32_t>(gateway::limit(c, "queue-depth")), gateway::field(c, "latch") == "true"))
+                            node_.advertise<M>(c.resource, gateway::native_queue_depth(c, "queue-depth"), gateway::field(c, "latch") == "true"))
                         .first;
             }
             p->second.publish(m);
@@ -271,7 +272,7 @@ namespace
                 }};
             subscribers_.emplace(c.alias,
                                  node_.subscribe<M>(c.resource,
-                                                    static_cast<std::uint32_t>(gateway::limit(c, "queue-depth")),
+                                                    gateway::native_queue_depth(c, "queue-depth"),
                                                     callback,
                                                     ros::VoidConstPtr{},
                                                     ros::TransportHints{}.tcp()));
@@ -281,15 +282,15 @@ namespace
         template <typename S>
         ipc::call_result invoke(capability const& c, S request, std::uint32_t timeout)
         {
-            auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, gateway::limit(c, "timeout-ms"))))};
-            auto remaining{std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count()};
-            if(remaining <= 0)
+            auto until{gateway::request_deadline(c,timeout)};
+            auto remaining{ipc::remaining_ms(until)};
+            if(!remaining)
             {
                 return {110, {}};
             }
             auto error{gateway::ros1_service::call(c,
                                                    request,
-                                                   static_cast<std::uint32_t>(remaining),
+                                                   *remaining,
                                                    [](std::vector<std::uint8_t> const& data)
                                                    {
                                                        return data.size() >= 5 && data[0] <= 1 && ipc::get(data.data() + 1, 4) == data.size() - 5 &&
@@ -317,7 +318,7 @@ namespace
             {
                 return {90, {}};
             }
-            return std::chrono::steady_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{0, std::move(d)};
+            return ::uwvm2::utils::host_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{0, std::move(d)};
         }
 
     public:
@@ -507,7 +508,7 @@ namespace
 
         ipc::call_result operation(capability const& c, std::vector<std::uint8_t> const& d, std::uint32_t timeout) override
         {
-            auto started{std::chrono::steady_clock::now()};
+            auto started{::uwvm2::utils::host_clock::now()};
             if(c.operation == "tf.lookup" || c.operation == "tf.broadcast")
             {
                 return tf_.call(c, d, timeout);
@@ -518,7 +519,7 @@ namespace
             }
             if(c.operation == "service.respond")
             {
-                auto until{started + std::chrono::milliseconds(std::min<std::uint64_t>(timeout, gateway::limit(c, "timeout-ms")))};
+                auto until{gateway::request_deadline(c,timeout,started)};
                 if(ipc::find_custom_service(1, c.type))
                 {
                     return custom_services_.respond(c, d, timeout);

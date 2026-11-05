@@ -1,0 +1,96 @@
+{
+  "format": "uwvm-sdk-pal-preload-tests-v1",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "Main.java",
+      "sha256": "61546ad3b767a7b9e22edbda3878276580cdc714b45bbdac1a51a64d972ca6ed"
+    },
+    {
+      "scope": "example",
+      "path": "Io.java",
+      "sha256": "97256f2e0df854d5106884156d8645200935d0fa3713d8ce8f1a74eb8e6a2316"
+    },
+    {
+      "scope": "example",
+      "path": "Algorithm.java",
+      "sha256": "c8027a6678031e82315a896255d0d13b0f3e32af9f0428149b3c965cd4e2007f"
+    },
+    {
+      "scope": "example",
+      "path": "RosComm.java",
+      "sha256": "db6c00237779ec910ac2d00eb8f725eb54e7f5180d3ba57d9626b794acb9c5d3"
+    },
+    {
+      "scope": "example",
+      "path": "Denied.java",
+      "sha256": "d9bcab65c1429753a9fc4ee9564a000b2177b8ce464e9c0d548e2f03d89d789b"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9ef005e1c8cbf694ec80c5291b8ea3cc66e0e81b99af38863f6349d9f279c57b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/pal/xmake/preload_tests.lua",
+      "sha256": "5faabc4da889aa69b181048077f2b11d85332dc541c80c00269e79aaf25442cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/native_pal_preload_test.py",
+      "sha256": "4d0e0dc0724fef28154a7b941007b14ae96165c9ed10486681b7e1494a2dc2fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/pipe_capture.py",
+      "sha256": "17585a3af23b2a76ec8bde1c731c97b326e663f50c1b9815a3359c5c47a04196"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros2/java/uwvm/ros/RmwPublisher.java",
+      "sha256": "eaee0af93fdeba0ca60c213403fd470506f24ff6f03ac7d85c1e13f8797c566e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "16d991ac2ef888bc3c6c6ae71fc045e4658d67da4680934d6cf3762d5e2b221d"
+    },
+    {
+      "scope": "example",
+      "path": "launch.sh",
+      "sha256": "c658ee67774b24d4379b64c1be3d545070025b9335f86102b6e43fe1d6ecc26d"
+    }
+  ],
+  "scope": "Four real Java/Wasm instances, per-module denial, arithmetic/exception state, native publisher delivery and once-only retirement. No official simulator qualification."
+}

@@ -9,7 +9,7 @@ run <- function() {
     input <- NULL
     bytes <- raw()
     tryCatch({
-        input <- file("stdin", open = "rb")
+        input <- .Call("uwvm_wasi_stdio", "stdin")
         bytes <- readBin(input, what = "raw", n = 2)
     }, error = function(error) { primary <<- 5 })
     if (primary == 0) {

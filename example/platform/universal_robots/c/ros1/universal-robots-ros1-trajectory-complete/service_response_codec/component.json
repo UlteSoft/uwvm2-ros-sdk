@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4796",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "d1bfeacd1d59be8d90b463f0b3a3b517f290783cd18b1f5943a11e3c35db1b1e"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "e9356dda28f79e1f6dc905fcb0b680ef0ee68530c9289f34654d0550c244cfe1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/c/universal-robots-ros1-trajectory-complete.json",
+      "sha256": "d1948f5ad308095d5b04a01e23c6eb3d479d31baff58d1a161e6bdeaaf45627d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros1-trajectory-complete.ir.json",
+      "sha256": "263d200249a365fb049385437e3c674a0bd8bd31581c6c76abb29a357c438e19"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_dashboard_msgs/AddToLogResponse",
+        "bytes": 5,
+        "wire_hex": "0000000000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "d",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/d/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "d",
+    "d": {
+      "import_dirs": [
+        "include/platform/ros/d/source",
+        "src/language"
+      ],
+      "source_modules": [
+        {
+          "name": "flexiv.ros1noetic.records",
+          "source": "include/platform/flexiv/d/ros1/flexiv-ros1-noetic-complete/records.d"
+        }
+      ],
+      "modules": [
+        "flexiv.ros1noetic.records",
+        "roswasm.wire",
+        "roswasm"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/startup.c",
+        "object": "startup.o"
+      }
+    ],
+    "stack_bytes": 4194304
+  }
+}

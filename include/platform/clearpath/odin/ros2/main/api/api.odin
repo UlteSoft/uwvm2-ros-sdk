@@ -2,7 +2,7 @@
 // @brief Typed complete clearpath observers and service clients.
 package api
 import core "native:odin/observation"
-import records "clearpath:odin/ros2_main"
+import records "clearpath:odin/ros2/main"
 // @brief Observe every original builtin_interfaces/msg/Duration field through one retained owner.
 // @param alias_bytes Borrowed exact-type strict UTF-8 subscription alias.
 // @param attempts Total finite poll budget in 1..250.

@@ -1,96 +1,30 @@
-# Python Wasm ROS2 pub/sub migration candidate
+# Jazzy rclpy Python Wasm native test
 
-This source candidate targets the documented subset of the ROS2 Jazzy rclpy
-7.1.12 API with CPython 3.14.8, wasm32-wasip1, no native exceptions and one guest
-thread. Build and runtime qualification require independent evidence. The public test uses the existing SDK genuine guest-component consumer.
-This expanded source and test registration await Linux validation; no ROS,
-isolation or simulator qualification is claimed.
+The original main.py runs completely inside the genuine CPython Wasm application under uwvm2-ros. The host Python runner starts and retires test processes and checks their evidence. It does not import or evaluate the application. The configured native gateway and C++ peer provide actual ROS transport.
 
-From this directory, using the installed SDK and its pinned LLVM 23.1.4 tools:
+Build the Wasm, then select an explicit native test deployment:
 
 ```sh
+export UWVM_ROS_PYTHON_NATIVE_TEST_DEPLOYMENT=/absolute/path/to/native-test.json
+export UWVM_ROS_TEST_EVIDENCE_ROOT=/absolute/path/to/evidence
 xmake
 xmake test
 ```
 
-To keep generated files outside the source tree, first configure an output
-directory with `xmake f -o /absolute/path/to/build`. This target places its Wasm
-in `artifacts/` below that directory; the producer keeps objects and dependency
-records there too. The shared artifact recorder places its metadata in the generated object
-directory so source and deployable-artifact directories can remain read-only.
+Run in a private loopback-only network namespace and the required 64 GiB, zero-swap cgroup. No toolchain or ROS installation occurs during this test. The deployment format is uwvm-sdk-python-transplate-native-v1; it declares:
 
-The intended build emits one complete application Wasm. Both the publisher and
-subscription callback execute in that module. The producer links the existing
-CPython static core and the real target `_roswasm_native` C bridge. It packages
-an explicitly hashed Python/standard-library closure and never evaluates the
-application with build-host Python. No pip, host rclpy, `_rclpy_pybind11`, socket
-relay, shell application or replacement Python toolchain is used.
+- backend (ros2), pinned absolute runtime, gateway and observer paths with SHA-256 identities; ROS1 additionally requires master and master_script pins.
+- native_inputs with exact path/SHA-256 pairs for the selected native dependency closure, and an explicit native_environment.
+- host_network_namespace (device/inode) captured outside the test namespace, and an absolute socket_directory in owned test storage. The runner creates a private short socket directory there, independently of the full evidence path.
+- runtime_arguments, an explicit uwvm-sdk-wasip1-policy-v2 wasi_policy, the exact connection fields, and three ROS grants: migration.string.publish, migration.string.subscribe and migration.graph.topics.
+- limits.timeout_seconds and limits.output_bytes for test supervision.
 
-The two endpoints share that interpreter's linear memory, heap, stack and
-authority trust domain. Separate Node or Context objects do not create
-independent components. Components needing different permissions must use
-distinct genuine Wasm runtime instances with private memories. Cross-instance
-data must use the shared SDK's qualified typed channel/copy contract; Python
-object IDs, raw pointers and guest-supplied component names cannot establish
-the calling principal. That independent-component route is not qualified by
-this example.
+The policy must explicitly enable WASIp1 for main. Declare each required operation separately: args, environ, stdout.write, stderr.write, stdio.metadata, proc-exit, monotonic-clock and monotonic-timer. There are no implicit guest quotas or ROS resource grants. ROS2 preopen host paths select the owned fixture placeholders {readonly} and {workspace} with explicit per-root rights; no external directory is substituted.
 
-The application uses the guest-local role names `migration.string.publish` and
-`migration.string.subscribe`, topic `/migration/echo`, type
-`std_msgs/msg/String`, and reliable volatile KEEP_LAST depth 10. The guest also requires an explicitly scoped monotonic clock for freshness and bounded waits. A deployment
-must independently bind and grant both operations through the runtime's
-controlled ROS2 ABI. Capability aliases use the existing VM identifier grammar: ASCII letters, digits, underscore, hyphen and dot, at most 255 bytes; `.` and `..` are invalid. ROS resources such as `/migration/echo` use the separate canonical ROS-name grammar. These local names confer no authority. The source neither
-starts a native client nor supplies native host policy.
+The explicit native deployment maps the publish alias to /migration/outbound and the subscription alias to /migration/echo. The independent rclcpp peer records and forwards the original message from outbound to echo, so the guest callback depends on an actual cross-process roundtrip. It also watches the deliberately ungranted /migration/denied topic. The deployment mounts owned /readonly and /workspace fixtures with separate base/inheriting rights. The host can write both fixtures; the guest must receive WASI ENOTCAPABLE for the readonly write, then successfully round-trip the same message through its writable directory.
 
-The bounded loop publishes a fresh guest-clock-derived string and requires that
-the same string arrive through the real native-to-Wasm subscription callback.
-Its stdout is an application observation; qualification additionally requires
-native operation IDs, audited permission decisions, matching payload identity,
-the actual runtime/provider SHA256 and verified actor retirement. Missing
-feedback raises `TimeoutError`; refused imports propagate their original error.
+The native-python-guest test executes the complete original case in guest-cases.json. It requires the exact completion object, actual native payload agreement, graph access, ungranted-alias refusal and closed-handle rejection. An empty event poll may return EAGAIN while the guest waits for its callback; a successful matching callback remains mandatory. Other unexpected gateway errors fail the test. No native request may follow a resource close, and no message may appear on the denied topic.
 
-`xmake test` now registers the standard `guest-cases` suite, with the required
-`required-wasm-feedback` case from `guest-cases.json`. It consumes the existing
-VM-owned live boundary and runtime-test deployment, executes this entire Wasm,
-and checks successful exit plus the exact completion object. Missing public
-admission, deployment or any runtime permission remains a reported blocker;
-there is no unconditional success or failure callback.
+Evidence includes the actual VM/guest identities, argv, explicit authority, original stdout/stderr, gateway audit, file effects and owned-process retirement. A successful guest exit alone is insufficient.
 
-The guest attempts denied ROS/file opens before permitted topic endpoints,
-checks the fresh reverse callback, decodes the real canonical graph response,
-reuses a closed graph handle through the actual Wasm import to require error9,
-and checks a Python file roundtrip. Per-step guest diagnostics go to stderr;
-the completion object is emitted only after cleanup. These are genuine guest
-business assertions when actually executed, not native audit attestations.
-The component report keeps official simulation unqualified. Stage A additionally
-requires original independent native ROS operation/payload observations,
-permission/no-effect audits, fresh same-instance correlations and complete
-retirement. The existing shared official-simulation verifier supports a frozen
-joint profile; its String/query/callback extension belongs to that owner.
-
-Serialization boundaries, foreign handles, controlled disconnect/timeout,
-restart, pause/resume, permission-preserving update rollback, debugger ownership
-and all applicable official simulators remain mandatory separate obligations.
-A ROS loopback alone cannot satisfy official simulation.
-
-Qualification proceeds first through a real official ROS communication
-scenario, with causal fresh feedback asserted in the same genuine guest, then
-through the full vendor simulator scenarios. These stages keep separate
-required/selected/executed/pass/fail/blocked/not-run counts. The component
-isolation follow-up must additionally execute private-memory growth, stolen
-handle/descriptor, typed-channel generation, callback ownership and update
-negative cases. A build, lifecycle proof or startup diagnostic fills none of
-those communication, isolation or simulator result cells.
-
-See the shared profile in
-`include/platform/ros/transplate/ros2/rclpy/v1/profile.json` and its accompanying
-README for the exact implemented and unsupported API scope. The Unitree image
-simulation remains a separate mandatory blocked target.
-
-The source requirements, including the deliberately ungranted alias and checked
-WASIp1 preopens, are in `binding-requirements.json`; they create no permissions.
-
-The source also closes the actual publisher/subscription, then requires error9
-from wrapper and raw import calls. A closed publisher must not invoke a codec;
-a closed subscription must not poll natively or dispatch a callback. The native
-no-forward/no-effect verdict still requires the independent original audit.
+This is a finite native communication test. It does not establish official simulator coverage, independent component isolation or support for the entire host Python ROS API. The two guest endpoints share one interpreter and authority domain. See include/platform/ros/transplate/ros2/rclpy/v1 for the supported API and lifetime semantics; binding-requirements.json declares requests, not permissions.

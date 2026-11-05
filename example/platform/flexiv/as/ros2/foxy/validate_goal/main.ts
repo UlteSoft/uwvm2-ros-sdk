@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros2Flexiv_msgsMsgJointPosVel, Ros2Flexiv_msgsMsgJointPosVelCodec} from "flexiv/as/ros2/flexiv-ros2-foxy-complete/bounded_records";
 import {write, exit} from "ros/as/command";

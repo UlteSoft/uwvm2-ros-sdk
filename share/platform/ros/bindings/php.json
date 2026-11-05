@@ -45,5 +45,19 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "modules": [
+    {
+      "name": "RosWasm/Word",
+      "path": "include/platform/ros/php/RosWasm/Word.php"
+    },
+    {
+      "name": "RosWasm/Transport",
+      "path": "include/platform/ros/php/RosWasm/Transport.php"
+    },
+    {
+      "name": "RosWasm/NativeCommand",
+      "path": "include/platform/ros/php/RosWasm/NativeCommand.php"
+    }
+  ]
 }

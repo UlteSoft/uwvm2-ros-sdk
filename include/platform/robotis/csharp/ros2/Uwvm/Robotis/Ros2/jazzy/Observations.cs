@@ -1,5 +1,4 @@
 using System;
-using Uwvm.Ros;
 using Uwvm.Robotis;
 
 namespace Uwvm.Robotis.Ros2.jazzy
@@ -20,7 +19,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
         public static Observation.Result<Ros2Turtlebot3_msgsMsgSensorState> ReadSensorState(string alias, int attempts)
         {
             Observation.Result<Ros2Turtlebot3_msgsMsgSensorState> result =
-                new Observation.Result<Ros2Turtlebot3_msgsMsgSensorState>(Client.WaitSample(alias, Ros2Turtlebot3_msgsMsgSensorState.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros2Turtlebot3_msgsMsgSensorState>(Observation.WaitSample(alias, Ros2Turtlebot3_msgsMsgSensorState.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -48,7 +47,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
         public static Observation.Result<Ros2Turtlebot3_msgsMsgVersionInfo> ReadVersionInfo(string alias, int attempts)
         {
             Observation.Result<Ros2Turtlebot3_msgsMsgVersionInfo> result =
-                new Observation.Result<Ros2Turtlebot3_msgsMsgVersionInfo>(Client.WaitSample(alias, Ros2Turtlebot3_msgsMsgVersionInfo.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros2Turtlebot3_msgsMsgVersionInfo>(Observation.WaitSample(alias, Ros2Turtlebot3_msgsMsgVersionInfo.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -76,7 +75,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
         public static Observation.Result<Ros2Turtlebot3_msgsMsgSound> ReadSound(string alias, int attempts)
         {
             Observation.Result<Ros2Turtlebot3_msgsMsgSound> result =
-                new Observation.Result<Ros2Turtlebot3_msgsMsgSound>(Client.WaitSample(alias, Ros2Turtlebot3_msgsMsgSound.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros2Turtlebot3_msgsMsgSound>(Observation.WaitSample(alias, Ros2Turtlebot3_msgsMsgSound.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try

@@ -17,5 +17,18 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/kuka/flows"
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "go",
+    "go": {
+      "modules": [
+        "include/platform/ros/go",
+        "include/platform/kuka/go/ros2/kuka-ros2-complete"
+      ],
+      "tags": [
+        "ros2"
+      ]
+    }
+  }
 }

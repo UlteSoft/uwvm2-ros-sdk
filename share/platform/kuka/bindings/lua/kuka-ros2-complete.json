@@ -17,5 +17,6 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/kuka/flows"
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "bundle_manifest": "share/platform/kuka/bundles/lua/kuka-ros2-complete.json"
 }

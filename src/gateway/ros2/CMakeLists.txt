@@ -11,6 +11,7 @@ set(UWVM_ROS_SOURCE_ROOT "${UWVM_ROS_SDK_ROOT}/../uwvm2-ros" CACHE PATH
 if(NOT EXISTS "${UWVM_ROS_SOURCE_ROOT}/src/uwvm2/imported/ros/common/types.h")
   message(FATAL_ERROR "Set UWVM_ROS_SOURCE_ROOT to the matching uwvm2-ros VM checkout")
 endif()
+include_directories("${UWVM_ROS_SDK_ROOT}/src" "${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include")
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action QUIET)
@@ -61,7 +62,7 @@ endif()
 target_link_libraries(uwvm-ros2-gateway pthread)
 
 # Opt-in actual original RCL Client/Service transport. OFF retains the original
-# C++17 SDK route and does not compile CPP10, create a Registry or add rights.
+# ordinary SDK route and does not compile CPP10, create a Registry or add rights.
 option(UWVM_ROS2_BUILD_OWNED_RCL_SERVICE "Build explicitly selected complete original RCL service transport" OFF)
 option(UWVM_ROS2_BUILD_OWNED_RCL_SERVICE_CONTRACTS "Build source-only authored owned service contracts" OFF)
 option(UWVM_ROS2_BUILD_OWNED_CUSTOM_RCL_SERVICE "Build complete selected owned custom service adapters" OFF)
@@ -77,7 +78,7 @@ if(UWVM_ROS2_BUILD_OWNED_RCL_SERVICE)
     message(FATAL_ERROR "Owned RCL service requires actual CMake3.20 or newer")
   endif()
   if(CMAKE_CXX_STANDARD LESS 20)
-    message(FATAL_ERROR "Owned RCL service requires explicitly selected UWVM_ROS2_CXX_STANDARD=20 or23; legacy C++17 is unchanged")
+    message(FATAL_ERROR "Owned RCL service requires explicitly selected UWVM_ROS2_CXX_STANDARD=20 or23; all host deadlines use the matching fast_io clock")
   endif()
   set(_uwvm_owned_root "${UWVM_ROS_SOURCE_ROOT}")
   if(NOT EXISTS "${_uwvm_owned_root}/third-parties/fast_io/include/fast_io.h")

@@ -5,6 +5,7 @@
  * calling this registry. Nothing here opens, discovers or grants a capability.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "native_rmw_builtin.h"
 #include <uwvm2/imported/ros/common/rmw_endpoint_history.h>
@@ -74,13 +75,13 @@ namespace uwvm2::ros_gateway::native_rmw_publisher
         {
             if(sealed_){return {125,{}};}
             if(!wire::valid_request(request)||request.kind!=wire::role::publisher||cap.operation!="topic.publish"){return {22,{}};}
-            if(std::chrono::steady_clock::now()>=until){return {110,{}};}
+            if(::uwvm2::utils::host_clock::now()>=until){return {110,{}};}
             history::entry const* row{};
             if(request.operation==wire::command::activate)
             {
                 if(!node_||!create_){return {95,{}};}
                 auto maximum{limit(cap,"max-publishers")};
-                if(!maximum||maximum>history::maximum_entries){return {22,{}};}
+                if(!maximum||maximum>history::maximum_entries){return {90,{}};}
                 auto error{history_.reserve(request,cap.alias,static_cast<std::size_t>(maximum),row)};
                 if(error){return {error,{}};}
                 // Every map/control-block slot exists before native creation.
@@ -100,7 +101,7 @@ namespace uwvm2::ros_gateway::native_rmw_publisher
                 if(actual.incarnation!=incarnation||!slot->second){history_.abandon(request.owner.source,13);slot->second.reset();return {13,{}};}
                 error=history_.activate(actual);
                 if(error){history_.abandon(request.owner.source,error);slot->second.reset();return {error,{}};}
-                if(std::chrono::steady_clock::now()>=until)
+                if(::uwvm2::utils::host_clock::now()>=until)
                 {history_.abandon(request.owner.source,110);(void)retire_one(request.owner.source);return {110,{}};}
                 try{return encode(actual);}
                 catch(...){history_.abandon(request.owner.source,12);(void)retire_one(request.owner.source);return {12,{}};}
@@ -113,7 +114,7 @@ namespace uwvm2::ros_gateway::native_rmw_publisher
             {
                 wire::packet actual{};error=object->second->inspect(request.owner,request.incarnation,actual);
                 if(error){return {error,{}};}error=history_.inspect(actual);if(error){return {error,{}};}
-                if(std::chrono::steady_clock::now()>=until){return {110,{}};}
+                if(::uwvm2::utils::host_clock::now()>=until){return {110,{}};}
                 return encode(actual);
             }
             error=history_.retire(request.owner,request.incarnation,request.kind);if(error){return {error,{}};}
@@ -129,9 +130,9 @@ namespace uwvm2::ros_gateway::native_rmw_publisher
             if(error){return {error,{}};}if(row->alias!=cap.alias){return {13,{}};}
             auto found{objects_.find(envelope.owner.source)};
             if(found==objects_.end()||!found->second){return {125,{}};}
-            if(std::chrono::steady_clock::now()>=until){return {110,{}};}
+            if(::uwvm2::utils::host_clock::now()>=until){return {110,{}};}
             error=found->second->publish(envelope.owner,envelope.incarnation,bytes,count);
-            if(!error&&std::chrono::steady_clock::now()>=until){return {110,{}};}
+            if(!error&&::uwvm2::utils::host_clock::now()>=until){return {110,{}};}
             return {error,{}};
         }
         void close_alias(std::string_view alias,std::uint32_t reason=125) noexcept

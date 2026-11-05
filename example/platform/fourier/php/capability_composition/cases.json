@@ -1,7 +1,6 @@
 {
-  "format": "uwvm-sdk-api-composition-required-cases-v1",
-  "language": "php",
-  "required": 14,
+  "format": "uwvm-sdk-php-metadata-tests-v1",
+  "scenario": "composition",
   "cases": [
     "genuine-zend-runtime",
     "borrow-full-width-unsigned-owner",
@@ -18,8 +17,71 @@
     "invoke-after-close-refused",
     "second-close-is-not-replayed"
   ],
-  "actual_execution_status": "NOT_RUN",
-  "permission_fixture": "Two separately granted aliases observe and source under current SDK01/VM trusted deployment contract; no default rights",
-  "Stage_A_communication_pass": false,
-  "component_isolation_pass": false
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "main.php",
+      "sha256": "b4d2e8d0f582526fade22ebdaad13501d6bba1b28a446d530385d2e96f5eb42b"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "68d03737485b64ed62c5e3339bd10894601a038f92709050775839674c3b07c9"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "314d2277f03a86e2884aea056665f737ed7ecf1a6bd330cd45e0f67bf5a20ea2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/native_php_metadata_test.py",
+      "sha256": "746210ab7f4114dccc94258a2261673993130add187a4318e083c2eb2be34827"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/pipe_capture.py",
+      "sha256": "17585a3af23b2a76ec8bde1c731c97b326e663f50c1b9815a3359c5c47a04196"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/owned_processes.py",
+      "sha256": "40777b1336d5b166c9f96e6dc2df15e733c1e06cf71de5bd9ef451c40bae1268"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fourier/xmake/metadata_tests.lua",
+      "sha256": "860408591ef4fa813b50e722b2923a4a14020818f9b4a4097314eda362a1fc80"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/php/provider.lua",
+      "sha256": "1bf7be89dc9c585a60730810bcf1eaa1776c6b94935c2d6deafc2c59c7cd9440"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "sha256": "09b46a3f454cb73bce620f7a12b87a45c3295986a43baab4299e38f872d2c349"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "sha256": "4c8a9e723fbc057a8a2da63f3b1c2609608954600af407169dde5f2e0df30bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "sha256": "a98012e8de8a46996b45267f41e77043de1ad9d69cfc5d7462875a37580f9b2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/NativeCommand.php",
+      "sha256": "a393c99a4f117882f4739a1cbd77e9c5f21703cdcf0833a87d42343ace68c29e"
+    }
+  ]
 }

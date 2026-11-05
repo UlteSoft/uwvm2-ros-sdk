@@ -1,5 +1,5 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Trossen.Ros2.ros2_iron
 {
@@ -44,7 +44,7 @@ namespace Uwvm.Trossen.Ros2.ros2_iron
          */
         public static byte[] Encode(Ros2Interbotix_xs_msgsMsgJointGroupCommand value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -61,7 +61,7 @@ namespace Uwvm.Trossen.Ros2.ros2_iron
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Interbotix_xs_msgsMsgJointGroupCommand value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -73,7 +73,7 @@ namespace Uwvm.Trossen.Ros2.ros2_iron
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Interbotix_xs_msgsMsgJointGroupCommand value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Interbotix_xs_msgsMsgJointGroupCommand value)
         {
             if(value == null)
             {
@@ -106,7 +106,7 @@ namespace Uwvm.Trossen.Ros2.ros2_iron
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Interbotix_xs_msgsMsgJointGroupCommand ReadFields(Wire.Reader wire)
+        internal static Ros2Interbotix_xs_msgsMsgJointGroupCommand ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Interbotix_xs_msgsMsgJointGroupCommand value = new Ros2Interbotix_xs_msgsMsgJointGroupCommand();

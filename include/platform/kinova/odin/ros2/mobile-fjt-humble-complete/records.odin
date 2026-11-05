@@ -1627,8 +1627,7 @@ init_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint :: proc() -> Ros2Traject
 // synchronous encoding; do not share mutable cursors during a call.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint; share/platform/ros/odin/API-CONTRACT.md
-write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint :: proc(v: ^Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint, w: ^Writer)
-        -> bool {
+write_Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint :: proc(v: ^Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint, w: ^Writer) -> bool {
  if len(v.field_transforms)>1 { w.code=22; return false }
  if !put_integer(w,u64(len(v.field_transforms)),4) { return false }
  for e in v.field_transforms {
@@ -2599,8 +2598,7 @@ read_Ros2Control_msgsActionFollowJointTrajectory_Goal :: proc(r: ^Reader, alloca
 // no ownership is transferred to Native.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Control_msgsActionFollowJointTrajectory_Goal; share/platform/ros/odin/API-CONTRACT.md
-encode_Ros2Control_msgsActionFollowJointTrajectory_Goal :: proc(v: ^Ros2Control_msgsActionFollowJointTrajectory_Goal, output: []u8)
-        -> ([]u8,u32) {
+encode_Ros2Control_msgsActionFollowJointTrajectory_Goal :: proc(v: ^Ros2Control_msgsActionFollowJointTrajectory_Goal, output: []u8) -> ([]u8,u32) {
  measure:=Writer{measuring=true,limit=8580}
  if !write_Ros2Control_msgsActionFollowJointTrajectory_Goal(v,&measure) { return nil,measure.code }
  if len(output)<measure.position { return nil,90 }
@@ -2737,8 +2735,7 @@ init_Ros2Control_msgsActionFollowJointTrajectory_Result :: proc() -> Ros2Control
 // synchronous encoding; do not share mutable cursors during a call.
 // @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
 // @see Ros2Control_msgsActionFollowJointTrajectory_Result; share/platform/ros/odin/API-CONTRACT.md
-write_Ros2Control_msgsActionFollowJointTrajectory_Result :: proc(v: ^Ros2Control_msgsActionFollowJointTrajectory_Result, w: ^Writer)
-        -> bool {
+write_Ros2Control_msgsActionFollowJointTrajectory_Result :: proc(v: ^Ros2Control_msgsActionFollowJointTrajectory_Result, w: ^Writer) -> bool {
  if !put_integer(w,u64(v.field_error_code),4) { return false }
  if !put_string(w,v.field_error_string,256) { return false }
  return true
@@ -3213,8 +3210,7 @@ write_Ros2Sensor_msgsMsgJointState :: proc(v: ^Ros2Sensor_msgsMsgJointState, w: 
  if len(v.field_name) != 0 && len(v.field_position) != 0 && len(v.field_name) != len(v.field_position) { w.code=22; return false }
  if len(v.field_name) != 0 && len(v.field_velocity) != 0 && len(v.field_name) != len(v.field_velocity) { w.code=22; return false }
  if len(v.field_name) != 0 && len(v.field_effort) != 0 && len(v.field_name) != len(v.field_effort) { w.code=22; return false }
- if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { w.code=22; return
-         false }
+ if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { w.code=22; return false }
  if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { w.code=22; return false
          }
  if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { w.code=22; return false
@@ -3309,12 +3305,9 @@ read_Ros2Sensor_msgsMsgJointState :: proc(r: ^Reader, allocator: runtime.Allocat
  if len(v.field_name) != 0 && len(v.field_position) != 0 && len(v.field_name) != len(v.field_position) { r.code=22; return v,false }
  if len(v.field_name) != 0 && len(v.field_velocity) != 0 && len(v.field_name) != len(v.field_velocity) { r.code=22; return v,false }
  if len(v.field_name) != 0 && len(v.field_effort) != 0 && len(v.field_name) != len(v.field_effort) { r.code=22; return v,false }
- if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { r.code=22; return
-         v,false }
- if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { r.code=22; return
-         v,false }
- if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { r.code=22; return
-         v,false }
+ if len(v.field_position) != 0 && len(v.field_velocity) != 0 && len(v.field_position) != len(v.field_velocity) { r.code=22; return v,false }
+ if len(v.field_position) != 0 && len(v.field_effort) != 0 && len(v.field_position) != len(v.field_effort) { r.code=22; return v,false }
+ if len(v.field_velocity) != 0 && len(v.field_effort) != 0 && len(v.field_velocity) != len(v.field_effort) { r.code=22; return v,false }
  return v,true
 }
 // @brief Encode one complete sensor_msgs/msg/JointState value.

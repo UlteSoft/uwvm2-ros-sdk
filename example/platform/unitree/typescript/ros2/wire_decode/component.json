@@ -1,0 +1,195 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-typescript-contract-4767",
+  "ros_namespace": "ros2",
+  "test_scope": "Whole-field wire encode/decode including malformed inputs and authority-denied native entry. Native success requires a separate integration suite.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/js/observation.mjs",
+      "sha256": "dcd994b350fe897c287a1c1e1388e547830cf6200f9c78c36f42b1391ab51cf8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/js/ros1/observation.mjs",
+      "sha256": "ec2450f999f6ec5eacf3c3da16fb1acd932bd5ab45855c94ae365c5e79e0e303"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/js/ros1/records.mjs",
+      "sha256": "49a981aa167dda1b7d32cd1af59f6bfbd7deb74ae8b0e7bf08ca8e405f5afa37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/js/ros2/observation.mjs",
+      "sha256": "bfc5dd792937943502aa9dd4706ac3621ce1a1fefcdebdc65be5ee18cc48b195"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/js/ros2/records.mjs",
+      "sha256": "936677507348bf0772c50994edef7873a472e2aec669af33a05255655bf20037"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/typescript/ros1/records.ts",
+      "sha256": "5d0b13a48e400364744818c3a188ed01213e61d96656819f5c08ae3098429183"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/typescript/ros2/records.ts",
+      "sha256": "551884e18eecc3dca01a3f1f1204f8208471dc2febfde0211a042ee49ec5c247"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/typescript/transport.ts",
+      "sha256": "2220b663a8559bdf2349204b1d78ea0b4bd830858efe2f55eadfb49be0ceb18f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/pack.lua",
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/typescript/compile.cjs",
+      "sha256": "403c7abcb7c6f5166ea34860e7f46c0581a6d462a544ee33771b30b42f83a9ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/typescript/provider.lua",
+      "sha256": "8912062ec66503412cc5a577314d52e15d8777618c6cea32175e1c320800f6ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.json",
+      "sha256": "8ef20ae44abbf69bcd96e8ead99ef05bc36be30fb679e6fc7cf8bd2f191a0fba"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "50814e435d72c57a8d9ba1d50615ddbb5132885b1a807c2a99a2825a2044bcd0"
+    },
+    {
+      "scope": "example",
+      "path": "main.ts",
+      "sha256": "6f37f1fd6bff0bfdb14f28bb48e463ae06739b9cb2800857601af49607e9026b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "sample",
+      "arguments": [
+        "0000003e000080be0000003f000040bf5344"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "unitree_go/msg/WirelessController",
+        "bytes": 18,
+        "checked_fields": 5,
+        "nondefault_fields": 5,
+        "fields": {
+          "lx": 0.125,
+          "ly": -0.25,
+          "rx": 0.5,
+          "ry": -0.75,
+          "keys": 17491
+        },
+        "hex": "0000003e000080be0000003f000040bf5344"
+      }
+    },
+    {
+      "id": "zeros",
+      "arguments": [
+        "000000000000000000000000000000000000"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "unitree_go/msg/WirelessController",
+        "bytes": 18,
+        "checked_fields": 5,
+        "nondefault_fields": 0,
+        "fields": {
+          "lx": 0.0,
+          "ly": 0.0,
+          "rx": 0.0,
+          "ry": 0.0,
+          "keys": 0
+        },
+        "hex": "000000000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "mixed",
+      "arguments": [
+        "000040c000000040000080bf0000803effff"
+      ],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "unitree_go/msg/WirelessController",
+        "bytes": 18,
+        "checked_fields": 5,
+        "nondefault_fields": 5,
+        "fields": {
+          "lx": -3.0,
+          "ly": 2.0,
+          "rx": -1.0,
+          "ry": 0.25,
+          "keys": 65535
+        },
+        "hex": "000040c000000040000080bf0000803effff"
+      }
+    },
+    {
+      "id": "truncated",
+      "arguments": [
+        "0000003e000080be0000003f000040bf53"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": "RangeError: hex frame has an invalid character or byte extent\n"
+    },
+    {
+      "id": "trailing",
+      "arguments": [
+        "0000003e000080be0000003f000040bf534400"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": "RangeError: hex frame has an invalid character or byte extent\n"
+    },
+    {
+      "id": "nonhex",
+      "arguments": [
+        "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": "RangeError: hex frame has an invalid character or byte extent\n"
+    },
+    {
+      "id": "odd",
+      "arguments": [
+        "0"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": "RangeError: hex frame has an invalid character or byte extent\n"
+    }
+  ]
+}

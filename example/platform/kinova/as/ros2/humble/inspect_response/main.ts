@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {
     Ros2Control_msgsActionFollowJointTrajectory_Result,

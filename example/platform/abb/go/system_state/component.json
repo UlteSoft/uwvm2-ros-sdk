@@ -1,0 +1,205 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-authority-75",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual complete original guest with the interface enabled and no resource grants; exact denial facts and argument rejection. No positive native or simulator qualification is inferred.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/observation/go.mod",
+      "sha256": "de2d7c239fb2e8c977787f413ddb87ac5e501ee4867b185913922f52a837009b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/observation/observation.go",
+      "sha256": "510de85e633e10d5200fc6ad6784c322c881e536a964037aa5abfa39473f4dd9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/query/go.mod",
+      "sha256": "f5957608b7334e8e3eaac1e474e6913795997ece882f38598411ab2f8b65ad7e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/query/query.go",
+      "sha256": "7aceb24aec363b34a2bd25e7c8ed2bd1af25b6243ec096fcd67d2de632ccd270"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/ros1/abb-ros1-complete/bounded_records.go",
+      "sha256": "a90e20f57229abda22456efd41489ef79638a69331edc066a56bf8d1ef03a262"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/ros1/abb-ros1-complete/go.mod",
+      "sha256": "12e094ea75f42c50c90eae17c2b19b856b3358523ecbd2a13878552062dc3058"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/ros2/abb-ros2-complete/bounded_records.go",
+      "sha256": "b437e019bc433a2bdac70261e2661dfe1ebe7476429e66a9cc842a9b929e430b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/go/ros2/abb-ros2-complete/go.mod",
+      "sha256": "12e094ea75f42c50c90eae17c2b19b856b3358523ecbd2a13878552062dc3058"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/builtin_codec.go",
+      "sha256": "23a95fb330de121052f30e0b79c3e4cdb56e2180157ca1bf3ecc8b6fe9a7e986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/client.go",
+      "sha256": "78855ebc74fe7fe705c8cb7262dc638185cc2f6863dd57d8926cdb9b74283a03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/codec.go",
+      "sha256": "a81b000812fc30197db7fe18f18bac73041e4abb530788475a9a32e45dc0294a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/go.mod",
+      "sha256": "dad02148dfc7550b14721ff91915f6cf3bbd8d5c060b6248dfb1c211664e85df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/native_command/command.go",
+      "sha256": "375e9f9562d5177a8ea39c4cdd31dea61539e98cf8f222f7d0b70a670e292b9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation.go",
+      "sha256": "21170e363e678d935a32b3c731bc124ee8e8fc3870a540aed76250ed91d15a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros1.go",
+      "sha256": "4b7b2bb8b6261f055eb18a8aa86ffd7d66047d8d0c8e235457c5332133b4244e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros2.go",
+      "sha256": "2dbd550c6dc47de4fcefbaef50633c423fdd0aa7f4d946b3c708983c83ba58f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros1.go",
+      "sha256": "4e0bf1b61c90163bf03403524daaf672345d3b77ed9dbf3314efbf7075c90fa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros2.go",
+      "sha256": "06d86038b4ae4373419db737839606676393163fd622be3acc4ff002f02e7000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/selection_error.go",
+      "sha256": "7815c65a49918d2db230a2b5940670ae829157bcc2cb5eb14521c85f4fd6c927"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/session.go",
+      "sha256": "3411bbc25486200f4d7f4512356b22447dc9209098d06e1fc1eb5dff730bd884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/typed.go",
+      "sha256": "cd2cec63b5721e900ce37c7645943ea2119d550c3d916f30b72370c766965e4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/value_helpers.go",
+      "sha256": "05ea589f722e821d4003ece92a31b8a548b6d567294b43854b99293b5c7d7ee8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/values.go",
+      "sha256": "4b076f0ac087a2ea643390c7a3ad061daf1f42f79a17d01cf85a0c58116ebd38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/go.json",
+      "sha256": "9a742cae5393cfff41e70ff5c75100c96c012a8e71b66838c02193350a122c85"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "74c61bccb87aaeff34b681768ca6536d19bbe42e109f702e4ec96ffd8a716db4"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "5e36bdcaf926bbd6d932bac74c66d61c3029fa1331719166bc45e5734386e841"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "1296518da6122281f40d70ee5eab2972d5acd340921f2e3a88e8d505d0e2c03c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": "",
+        "cleanup_present": false,
+        "response_present": false,
+        "rpc_present": false,
+        "rpc_status": 0,
+        "required_present": false,
+        "required": 0,
+        "encoding": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

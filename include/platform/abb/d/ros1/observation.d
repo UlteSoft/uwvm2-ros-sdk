@@ -9,7 +9,7 @@
 /// @brief Observe complete original Abb ROS 1 messages in genuine D.
 /// @details All values own their bytes; successful acquisitions close exactly once.
 module abb.d.ros1.observation;
-public import ros.d.observation;
+public import native.d.observation;
 public import abb.d.ros1.records;
 
 /// @brief Observe every original abb_robot_msgs/SystemState field through one retained owner.

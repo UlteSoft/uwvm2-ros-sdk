@@ -17,5 +17,20 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/kuka/flows"
+  "retained_native_operation_flows": "src/platform/kuka/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "Kuka.Records.KukaRos2Complete",
+          "source": "include/platform/kuka/haskell/ros2/kuka-ros2-complete/Records.hs"
+        }
+      ]
+    }
+  }
 }

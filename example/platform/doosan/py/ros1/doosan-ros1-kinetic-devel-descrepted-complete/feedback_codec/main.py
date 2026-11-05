@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("doosan.py.ros1.doosan-ros1-kinetic-devel-descrepted-complete.bounded_records")
+records = import_module("doosan.py.ros1.doosan_ros1_kinetic_devel_descrepted_complete.bounded_records")
 value = records.Ros1Dsr_msgsLogAlarm()
 wire = value.encode()
 decoded = records.Ros1Dsr_msgsLogAlarm.decode(wire)

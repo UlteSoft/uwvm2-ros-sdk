@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "fsharp",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/fsharp/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "csharp": [
+      "include/platform/flexiv/csharp/ros1/flexiv-ros1-noetic-complete/BoundedRecords.cs"
+    ],
+    "fsharp": [
+      "include/platform/flexiv/fsharp/ros1/flexiv-ros1-noetic-complete/Records.fs"
+    ],
+    "vbnet": [
+      "include/platform/flexiv/vbnet/ros1/flexiv-ros1-noetic-complete/Records.vb"
+    ]
+  }
+}

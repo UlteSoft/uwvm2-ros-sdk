@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_DB81CF502662BCBDBD45E782EE46FA3D3E2093092E3052E7136016BE54AD8EAB
 #define UWVM_ROS_BOUNDED_INTERFACES_DB81CF502662BCBDBD45E782EE46FA3D3E2093092E3052E7136016BE54AD8EAB
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <flexiv/c/ros2/flexiv-ros2-jazzy-v2-2-complete/bounded_records.h>
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -91,7 +98,7 @@ inline static roswasmc_result
                                                                  roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Feedback* feedback)
 {
     unsigned char input[8], output[273];
-    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Feedback next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -129,7 +136,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_ErrorRecover
                                                                                          roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Result* result)
 {
     unsigned char input[8], output[272];
-    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Result next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -179,7 +186,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_ErrorRecover
                                                                                        roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Goal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Goal next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_ErrorRecovery_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -318,7 +325,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Grasp_feedba
                                                                                    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback* feedback)
 {
     unsigned char input[8], output[25];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -356,7 +363,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Grasp_result
                                                                                  roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -405,7 +412,7 @@ inline static roswasmc_result
     roswasmc_bounded_2_flexiv_msgs_action_Grasp_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal* goal)
 {
     unsigned char output[16];
-    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Grasp_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -542,7 +549,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Move_feedbac
                                                                                   roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback* feedback)
 {
     unsigned char input[8], output[25];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -580,7 +587,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_action_Move_result(
                                                                                 roswasmc_bounded_2_flexiv_msgs_action_Move_Result* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Result next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -629,7 +636,7 @@ inline static roswasmc_result
     roswasmc_bounded_2_flexiv_msgs_action_Move_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_2_flexiv_msgs_action_Move_Goal* goal)
 {
     unsigned char output[32];
-    roswasmc_bounded_2_flexiv_msgs_action_Move_Goal next = {0};
+    roswasmc_bounded_2_flexiv_msgs_action_Move_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -729,7 +736,7 @@ inline static roswasmc_result
     unsigned char input[1], output[17650];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_GetOperationalStatus_Response next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_GetOperationalStatus_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_flexiv_msgs_srv_GetOperationalStatus_Request_encode(request, input, 0, &n))
     {
@@ -757,7 +764,7 @@ inline static roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_GetOperationalStatus_Request next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_GetOperationalStatus_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -833,7 +840,7 @@ inline static roswasmc_result
     unsigned char input[8844], output[9634];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedance_Response next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedance_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedance_Request_encode(request, input, 8844, &n))
     {
@@ -860,7 +867,7 @@ inline static roswasmc_result roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedan
 {
     unsigned char output[8852];
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedance_Request next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetJointImpedance_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -936,7 +943,7 @@ inline static roswasmc_result
     unsigned char input[8584], output[9114];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetJointInertiaScale_Response next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetJointInertiaScale_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_flexiv_msgs_srv_SetJointInertiaScale_Request_encode(request, input, 8584, &n))
     {
@@ -964,7 +971,7 @@ inline static roswasmc_result
 {
     unsigned char output[8592];
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetJointInertiaScale_Request next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetJointInertiaScale_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1040,7 +1047,7 @@ inline static roswasmc_result
     unsigned char input[8584], output[9374];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetMaxContactTorque_Response next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetMaxContactTorque_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_flexiv_msgs_srv_SetMaxContactTorque_Request_encode(request, input, 8584, &n))
     {
@@ -1068,7 +1075,7 @@ inline static roswasmc_result
 {
     unsigned char output[8592];
     roswasmc_result r;
-    roswasmc_bounded_2_flexiv_msgs_srv_SetMaxContactTorque_Request next = {0};
+    roswasmc_bounded_2_flexiv_msgs_srv_SetMaxContactTorque_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

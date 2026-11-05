@@ -154,7 +154,7 @@ cmake -S /absolute/src/sdk/origin/robots/arms/doosan \
   -DUWVM_DOOSAN_SOURCE_ROOT=/absolute/src \
   -DUWVM_DOOSAN_GENERATED=/absolute/src/sdk/origin/custom-types/doosan-ros2-humble-complete
 cmake --build /absolute/test-root/doosan-wasi --parallel 1
-uwvm2-ros -Rint --wasip1-global-noinherit-system-environment \
+uwvm2-ros -Rint \
   --run /absolute/test-root/doosan-wasi/doosan_guest_cpp.wasm \
   state doosan.observation
 ```

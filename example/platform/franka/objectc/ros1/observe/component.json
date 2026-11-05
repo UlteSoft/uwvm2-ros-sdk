@@ -1,0 +1,87 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "observation-denied-2991",
+  "test_scope": "Actual application must return permission-denied when its ROS namespace is enabled without resource grants. This checks refusal handling; it does not qualify successful native transport.",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9129b3a2a8491e6a2dd4139453622f0dbc2e0c4e3a6fb6cc5a49981c693067ca"
+    },
+    {
+      "scope": "example",
+      "path": "main.m",
+      "sha256": "67fb3e56a24f4df8152a713dc38182e57372487ddadb97cc1ddae731b118785b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/objectc.lua",
+      "sha256": "8668ec7b6be117825b0dbb9382181f622228b3483ee6e906963c9187213821a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "789cca696eb094c051aa6c8161f45fbd3dba34569281789f9a837810eb7e1ca2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "42345a5ef409e9d1bc64a2858145c4fcf8790ff84e73ad8f69ed95ff8decac0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/toolchains/host/linux-x86_64/native-objectc.json",
+      "sha256": "d93961ab93edcc02e223133902b987512002af5956524d09571a0a33bac777a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/objectc/runtime.json",
+      "sha256": "cfe9d3bf20d0a81d8985f5bfc9b01eda095331a0c0beb08ac29ae87d1358c56d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/objectc/base_object.m",
+      "sha256": "752103cfb3866b6ab2a28ebc1da09a0855fd33dd4702824f3b1cabd9e175f097"
+    }
+  ],
+  "cases": [
+    {
+      "id": "resource-authority-denied",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-ros1-authority-104",
+  "ros_namespace": "ros1",
+  "test_scope": "Actual original ROS 1 observation guest with the namespace enabled and no resource grant: exact resource denial and empty facts, plus missing argument rejection before acquisition. Positive native communication is a separate explicit deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "0e010fca56bd44197a63336f305479718772310c2f895ccbaebebbead1422229"
+    },
+    {
+      "scope": "example",
+      "path": "main.lua",
+      "sha256": "c36d7236cedc93df03c7b67687aef3105c7c94ef97d19c812cdb6eac5afe3b3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/lua/ros1/records.lua",
+      "sha256": "0527229298b8e6a3204bbb38c3712aa7ddd47f0a18a92a41504f025082fee038"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/lua.json",
+      "sha256": "443c0207c0a09ea9707d5f7c2ac45c277ed656bbd589d2427f074aa3f0703eff"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/language/lua/ros1/bundle.json",
+      "sha256": "ac4f48c97c80a887a3e1f38101d2ebbca9740c2b27b71dce796ae7991efaf689"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": "",
+        "cleanup_present": 0,
+        "response_present": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

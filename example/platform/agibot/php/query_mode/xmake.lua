@@ -42,6 +42,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 set_plat(get_config("plat") or "wasm-wasip1")
@@ -54,4 +55,5 @@ target("agibot-php-query_mode")
     set_values("ros.sdk.profile", "ros2_sdk_v1_1_0_main")
     set_ros_scenario("query_mode")
     add_files("main.php", {rule = "ros.wasm.source"})
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

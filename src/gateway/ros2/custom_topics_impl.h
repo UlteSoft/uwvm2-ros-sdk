@@ -11,6 +11,7 @@
 // Only generated shard translation units include this header. In particular,
 // neither main.cc nor custom_topics_dispatch.cc sees these rclcpp bodies.
 #include "custom_topics.h"
+#include "native_serialization.h"
 #include "native_rmw_publisher.h"
 #include "native_rmw_subscription.h"
 #if UWVM_ROS2_NATIVE_BUFFER_OBSERVATION
@@ -38,6 +39,13 @@ namespace uwvm2::ros_gateway::ros2_custom_topics
             if(!Codec::encode(native,roundtrip)||roundtrip!=data)return {22,{}};
         }
 #endif
+        // The observed route serializes into its private message before send.
+        // Typed publishers need the same check before entering native history.
+        if(!wants_serialized)
+        {
+            auto error=native_serialization_check(native);
+            if(error) { return {error,{}}; }
+        }
         auto found{publishers_.find(cap.alias)};
         if(found==publishers_.end())
         {

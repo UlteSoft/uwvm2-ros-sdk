@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-1658",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "6f6b2cfe90615e8fd3b9ff2100805e9eca7adfda0f6a25d077d36ade76373881"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "334da5e8e3c8557670faeb80a06f53bc1784d264e6c3bc7ad893b76869595393"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/bindings/tinygo/doosan-ros1-melodic-devel-complete.json",
+      "sha256": "cdce006a8f23de7dedc43445c41d20a562f8dbe609e33f36e895a7bc269aac7d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/doosan/domains/doosan-ros1-melodic-devel-complete.ir.json",
+      "sha256": "3b2a13031522b04e1d5e870e6ee3cfb753d9f8723a8df2d0c85d0be428270977"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "8fa9ace55b5c862336fca2c84b902640c2785a61ddcf92edd7fff6956d6ec234"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "dsr_msgs/GetRobotStateResponse",
+        "bytes": 2,
+        "wire_hex": "0000"
+      }
+    }
+  ]
+}

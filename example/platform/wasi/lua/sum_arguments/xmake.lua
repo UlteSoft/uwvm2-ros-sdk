@@ -39,6 +39,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 -- Run uses existing Wasm; compiler restoration belongs to an explicit build.
 set_policy("run.autobuild", false)
 
@@ -51,4 +52,5 @@ target("wasi-lua-sum_arguments")
     set_ros_platform("wasi")
     set_wasm_exceptions("eh")
     add_files("main.lua", {rule = "ros.wasm.source"})
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

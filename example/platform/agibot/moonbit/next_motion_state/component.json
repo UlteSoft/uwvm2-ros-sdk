@@ -1,0 +1,229 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-moonbit-c-230",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/moonbit/client.mbt",
+      "sha256": "17413994eb3393306c4a7446f2c03dafb60a9cc7e2535df8610e84d59b735b80"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/as/wasi.ts",
+      "sha256": "307b12e3ca99ec0361fb84671ffe093690e135883b9a6eaaba3789341cd33362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/client.h",
+      "sha256": "2bc506b36b480328170cc8bb4672b81b9a58c51387c5452cf85a72b1485c529a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/command_io.h",
+      "sha256": "f4e82373a34e897becee683b97f832ff23b09a35137bb7a92bfc63e2220d76fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/dotnet/Transport.cs",
+      "sha256": "f328604cb92c12c57a5b248ece31d2e15757e780b19626a8e2548c4d187c7148"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/go/aimdk_v1_1_0/records.go",
+      "sha256": "2fbdeb5c3d1da4fd437289e1eb1008af449b2ee12a0820a3e5a82ff410f9249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Core.java",
+      "sha256": "3ae4fcd5ee86002fa448065426d70e8dd147bf461f077a316aee71530867153e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Records.java",
+      "sha256": "2359a8ad7b6e227c96d6d545bf721449fbdd4b2d31ad11694c9a312ccbf843b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/observation_json.h",
+      "sha256": "8cc5a02f29ab0bbe4e1ce5d4a97f592aeb318215d503404618829992b811aef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/output.h",
+      "sha256": "5bcccffe16c559898888b0ae6aabebc6afb941904ca93090e806b76146240f87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.js",
+      "sha256": "8fcfa583dc92d43fb3ae38c93c469aaa72ad59464d60fdbe6bfda2d1674da9dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.json",
+      "sha256": "f29309e03422d038a4cf7206aafeebf978654e7a1f4a440bd04a91342b907d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.lua",
+      "sha256": "b283aa633a73772fb8fe5c513b354e0ce66a84297c4fbb6bb0e5d9055d9f402f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.php",
+      "sha256": "953da8dbea4e96cb022f98b4b2e2ef076fc48514cb40ff0e5f4f6ff332a58fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.py",
+      "sha256": "164ee7e75af9761cd7cef8423309dd9b9daf608d8fe7403eda9b9789a000d3e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.rb",
+      "sha256": "0ae98b296275097a2e2a02b87c1d12deb503d55328732524231e438f60d46701"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/include/backtrace.h",
+      "sha256": "d2ac7d5c6910c011f860d04a04a4a6a6fbea2882f23878f1f5f6721831a28acd"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/include/moonbit-fundamental.h",
+      "sha256": "afd2c5d1ecb6b5cabb6781207d87a1074d9e87b54dfd85367d91e8a45ebbd567"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/include/moonbit.h",
+      "sha256": "eee8fd5cfe9cd703640cd18bddc210d48e1de5592f19bfca39c9eab8e6e85fdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/include/moonbit_runtime.h",
+      "sha256": "8aa8531211930208ba80aaf920e6d7b9899ad23784356d75bdd8e3ec02f84b14"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/include/moonbit_simd.h",
+      "sha256": "4995faa31ac633768430bad1b7ea28699ab601e216fb357739a092cbea455022"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/runtime.c",
+      "sha256": "f6d1fe63742ae1383361a136f0c30534ff3c729674f6ef31d07ce79420ff45fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/source.json",
+      "sha256": "1748082e6f032bd5a84abb510335de8057180eeba08ff5a7cdebbaf15030db36"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/moonbit/source/wasip1.c",
+      "sha256": "bf801e74ba6fddfd6fb20f95ce3d46e5bd4659f4d59a6ebe26cc84edd85fe837"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agibot/provider.json",
+      "sha256": "c42e2f8f25cc45823af00cf44685f337d4723fff5c5273207649128cf42d8ade"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/moonbit/bridge.c",
+      "sha256": "f48da42ca571c9ec0a5730db12c79082a64dbf6dd422076ced349ccef9b3d8f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/command_io.c",
+      "sha256": "5f1397ed8b672966ba20df20de9063db38fa84b678771a98e978b89d78cc5f68"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/json_records.inc",
+      "sha256": "de4aeb006c4085d0307b180866fb81ec4597d0c5c19d537e4445814c193a8a8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation.c",
+      "sha256": "dd305d33ce99ac9d14186c4b94fd51abd27af2c8c479eb17d09300783ffdbbdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation_json.c",
+      "sha256": "49a79c3cbf9b28d730f1e39124f47821818bb67f616db4ff4ff8c77f73ead065"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/wasip1_main.c",
+      "sha256": "6c1f5353b8c58056868f661481a5f96b60ab964f738f41c34a942dc29202324d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_c.lua",
+      "sha256": "7119cec8c401c01a3ac5fc72dc0ac8645a07a5d72f4c0fd013a8049db09b7b76"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_c_core.json",
+      "sha256": "b188d2f995cd6d5f009e373cb4980ec326b0e2fa7c8a8109183f76522468c5a6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agibot/provider.lua",
+      "sha256": "40610d8482fb4368a16b5664c1cf542e6f5f373764db009e7e85fc8d5f69b24e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.mbt",
+      "sha256": "4ecc3a9e55ed75afcd1a6f012cc3eb70716f764e2465288ade77ee00a0361583"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e1bbf8bf73bbad5d84b1f22c79918e5437059dae884da9bbdfc43e4aa1cc4d96"
+    }
+  ],
+  "cases": [
+    {
+      "id": "no-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "stderr_contains": "failed: 13; close: 0"
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

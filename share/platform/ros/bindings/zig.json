@@ -86,6 +86,402 @@
           }
         ]
       }
+    },
+    "publish_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "subscribe_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "call_trigger": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "publish_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "subscribe_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "call_trigger_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS1"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "zig",
+        "c_sources": [
+          {
+            "source": "src/platform/ros/native_sources/abi.c",
+            "object": "abi.o",
+            "defines": [
+              "UWVM_NATIVE_ROS2"
+            ]
+          }
+        ],
+        "zig": {
+          "wasi": true,
+          "imports": [
+            "native_ros"
+          ],
+          "modules": [
+            {
+              "name": "roswire",
+              "source": "include/platform/ros/zig/wire.zig"
+            },
+            {
+              "name": "native_ros",
+              "source": "include/platform/ros/zig/native_command.zig",
+              "imports": [
+                "roswire"
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 }

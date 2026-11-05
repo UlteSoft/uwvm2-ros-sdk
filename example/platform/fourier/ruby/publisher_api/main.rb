@@ -5,6 +5,8 @@
 status = 1
 echo = nil
 echo_retired = false
+publisher = nil
+publisher_retired = false
 passed = 0
 current = "bootstrap"
 check = lambda { |ok| raise "required publisher API assertion failed" unless ok }
@@ -42,16 +44,30 @@ begin
         facts[:cleanup_present] && facts[:cleanup] == 0 && !facts[:response_present] &&
         facts[:wire_hex] == codec.encode(message).unpack1("H*"))
     current = "fresh-complete-typed-echo-inside-guest"
+    # This separate sample needs a live publisher until external delivery.
+    roundtrip_nonce = nonce + "-roundtrip"
+    roundtrip = codec.new({"group" => roundtrip_nonce, "values" => [1.25, -2.5]})
+    publisher, error = Uwvm::RosWasm::Capability.open("publish")
+    check.call(error == 0 && !publisher.nil?)
+    check.call(publisher.invoke("topic_publish", codec.encode(roundtrip))[0] == 0)
     frame = nil
-    250.times do |attempt|
+    250.times do
         frame = echo.invoke("event_poll", "".b, codec::MAX_WIRE_BYTES)
-        break if frame[0] != 11 || attempt == 249
+        if frame[0] == 0
+            check.call(frame[2] == frame[1].bytesize && frame[3].nil?)
+            break if frame[1] == codec.encode(roundtrip)
+            check.call(frame[1] == codec.encode(message))
+        else
+            check.call(frame[0] == 11)
+        end
         check.call(Uwvm::Native.pause_ms(20) == 0)
     end
-    check.call(frame[0] == 0 && frame[2] == frame[1].bytesize && frame[3].nil?)
+    check.call(frame[0] == 0)
     received = codec.decode(frame[1])
-    report.call(current, frame[1] == codec.encode(message) && received["group"] == nonce &&
+    report.call(current, frame[1] == codec.encode(roundtrip) && received["group"] == roundtrip_nonce &&
         received["values"] == [1.25, -2.5])
+    publisher_retired = true
+    check.call(publisher.close == 0)
     echo_retired = true
     check.call(echo.close == 0 && passed == 6)
     text = '{"format":"uwvm-sdk-publisher-api-summary-v1","language":"ruby","nonce":"' + nonce + '","required":6,"selected":6,"executed":6,"passed":6,"failed":0,"blocked":0,"not_run":0,"vendor_official_API_compatibility":false,"component_isolation_pass":false}' + "\n"
@@ -62,6 +78,7 @@ rescue Exception
     STDOUT.flush
     status = 1
 ensure
+    status = 1 if !publisher.nil? && !publisher_retired && publisher.close != 0
     status = 1 if !echo.nil? && !echo_retired && echo.close != 0
 end
 exit(status)

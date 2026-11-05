@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/turtlebot_scene_test.lua"))
 
 set_policy("run.autobuild", false)
 target("robotis-upstream_obstacle_detection")
@@ -54,4 +55,5 @@ target("robotis-upstream_obstacle_detection")
     set_arch(get_config("arch") or "wasm32")
     set_values("ros.sdk.bundle_manifest", "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bundle.json")
     add_files("main.py")
+    uwvm_turtlebot_scene_test({sdk_root = root})
 target_end()

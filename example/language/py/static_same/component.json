@@ -1,0 +1,50 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "language-py-static-same",
+  "scope": "Execute the original guest assertions for arithmetic, owned state and library lifecycle. No native substitute or ROS simulation claim.",
+  "cases": [
+    {
+      "id": "actual-guest-assertions",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/language/py/static_same/README.md",
+      "sha256": "01b2d14d7c0e94aaa535b495c1bbf9fe5d99cef86f003f24924efb293012c099"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/py/static_same/algorithm.py",
+      "sha256": "0ca5229306818a5ae83a4fab8a66a5c3eed0cb817b630baeef18b3cd514a2d96"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/py/static_same/consumer.py",
+      "sha256": "44b32612a8302a7b9ae9d8d88fc92115278388708737cc016492d56d2cd5bd98"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/language/py/static_same/xmake.lua",
+      "sha256": "2f078bdfba15c867a1eca56400a1892443b6e42554b128804aaef012744c1555"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ __attribute__((export_name("ready"))) uint32_t franka_module_io_ready(void)
     return initialized;
 }
 
-__attribute__((export_name("report"))) void franka_module_report(uint32_t length,
+__attribute__((export_name("report"))) uint32_t franka_module_report(uint32_t length,
                                                                  uint32_t digest,
                                                                  uint32_t value,
                                                                  uint32_t primary,
@@ -30,7 +30,7 @@ __attribute__((export_name("report"))) void franka_module_report(uint32_t length
                                                                  uint64_t io_probe,
                                                                  uint64_t algorithm_probe)
 {
-    printf("bytes=%" PRIu32 " digest=%" PRIu32 " value=%" PRIu32 " primary=%" PRIu32 " cleanup=%" PRIu32 " main_probe=%" PRIu64 " io_probe=%" PRIu64
+    int written = printf("bytes=%" PRIu32 " digest=%" PRIu32 " value=%" PRIu32 " primary=%" PRIu32 " cleanup=%" PRIu32 " main_probe=%" PRIu64 " io_probe=%" PRIu64
            " algorithm_probe=%" PRIu64 "\n",
            length,
            digest,
@@ -40,6 +40,8 @@ __attribute__((export_name("report"))) void franka_module_report(uint32_t length
            main_probe,
            io_probe,
            algorithm_probe);
+    int flushed = fflush(stdout);
+    return written < 0 || flushed ? 5u : 0u;
 }
 
 __attribute__((export_name("denied_probe"))) uint64_t franka_module_io_probe(void)

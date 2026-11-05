@@ -1,0 +1,56 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "portable-resource-denial-3881",
+  "test_scope": "Execute the unchanged portable Wasm entry with explicit WASI and ROS2 base linkage but no portable deployment/resource. It must return EACCES without opening a robot. This permission test does not qualify a simulation or successful robot operation.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/portable/v0_1_0/abi.h",
+      "sha256": "9feeb5eb1354edfa06274b77cbe83d24569366fd49e2bf67400bab970ddd902d"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "019edf20b8c3c7e21d85b8d32459d33d7f92e3fa46cb69254342536875cb3a29"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "f59e3850d7b9cdd640066bdd6cd7e93c261a59d95d8bf58796ff2a6f13bbfd30"
+    }
+  ],
+  "cases": [
+    {
+      "id": "base-interface-without-robot-authority",
+      "arguments": [],
+      "expected_exit": 13,
+      "expected_stdout": ""
+    }
+  ]
+}

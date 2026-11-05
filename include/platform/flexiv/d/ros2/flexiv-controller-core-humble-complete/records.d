@@ -14,6 +14,7 @@ import roswasm.wire;
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Builtin_interfacesMsgTime {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of builtin_interfaces/msg/Time in bytes.
  /// @details The inclusive bound is 8 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -153,6 +154,7 @@ struct Ros2Builtin_interfacesMsgTime {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Builtin_interfacesMsgDuration {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of builtin_interfaces/msg/Duration in bytes.
  /// @details The inclusive bound is 8 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -292,6 +294,7 @@ struct Ros2Builtin_interfacesMsgDuration {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgHeader {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/Header in bytes.
  /// @details The inclusive bound is 268 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -423,6 +426,7 @@ struct Ros2Std_msgsMsgHeader {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Sensor_msgsMsgJointState {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of sensor_msgs/msg/JointState in bytes.
  /// @details The inclusive bound is 9372 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -699,6 +703,7 @@ struct Ros2Sensor_msgsMsgJointState {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Trajectory_msgsMsgJointTrajectoryPoint {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of trajectory_msgs/msg/JointTrajectoryPoint in bytes.
  /// @details The inclusive bound is 1048 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -939,6 +944,7 @@ struct Ros2Trajectory_msgsMsgJointTrajectoryPoint {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Trajectory_msgsMsgJointTrajectory {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of trajectory_msgs/msg/JointTrajectory in bytes.
  /// @details The inclusive bound is 16980 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1120,6 +1126,7 @@ struct Ros2Trajectory_msgsMsgJointTrajectory {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgMultiArrayDimension {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/MultiArrayDimension in bytes.
  /// @details The inclusive bound is 268 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1263,6 +1270,7 @@ struct Ros2Std_msgsMsgMultiArrayDimension {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgMultiArrayLayout {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/MultiArrayLayout in bytes.
  /// @details The inclusive bound is 2152 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1413,6 +1421,7 @@ struct Ros2Std_msgsMsgMultiArrayLayout {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Std_msgsMsgFloat64MultiArray {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/msg/Float64MultiArray in bytes.
  /// @details The inclusive bound is 2412 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.

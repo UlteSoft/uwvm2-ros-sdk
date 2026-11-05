@@ -12,8 +12,9 @@ declare(strict_types=1);
 /** @file main.php
  * @brief Read every original industrial_msgs/msg/RobotStatus field using genuine PHP.
  * @details Shared transport/codecs execute in the VM packed inside this command. */
-use Uwvm\RosWasm\Observation;
+use Uwvm\Language\PhpObservation;
+$arguments = \Uwvm\Native\argv();
 use Uwvm\Yaskawa\Ros2\Ros2Industrial_msgsMsgRobotStatus;
-if (count($argv) !== 2) { exit(22); }
-$report = Observation::receive($argv[1], Ros2Industrial_msgsMsgRobotStatus::class, 250, static fn(): int => \Uwvm\Native\pause_ms(20));
-exit(Observation::output($report));
+if (count($arguments) !== 2) { exit(22); }
+$report = PhpObservation::receive($arguments[1], Ros2Industrial_msgsMsgRobotStatus::class, "", true);
+exit(PhpObservation::output($report));

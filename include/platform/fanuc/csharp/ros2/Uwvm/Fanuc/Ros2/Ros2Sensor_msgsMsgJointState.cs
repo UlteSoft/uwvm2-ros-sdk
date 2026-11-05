@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -58,7 +58,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Sensor_msgsMsgJointState value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -71,11 +71,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Sensor_msgsMsgJointState Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Sensor_msgsMsgJointState value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -87,75 +87,41 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Sensor_msgsMsgJointState value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Sensor_msgsMsgJointState value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             Ros2Std_msgsMsgHeader.WriteFields(wire, value.field_header);
-            if(value.field_name == null || value.field_name.Length > 12)
-            {
-                throw new ArgumentException("Invalid name extent");
-            }
+            if (value.field_name == null || value.field_name.Length > 12) { throw new ArgumentException("Invalid name extent"); }
             wire.U32((uint)value.field_name.Length);
-            for(int index = 0; index < value.field_name.Length; ++index)
-            {
+            for (int index = 0; index < value.field_name.Length; ++index) {
                 wire.String(value.field_name[index], 64);
             }
-            if(value.field_position == null || value.field_position.Length > 12)
-            {
-                throw new ArgumentException("Invalid position extent");
-            }
+            if (value.field_position == null || value.field_position.Length > 12) { throw new ArgumentException("Invalid position extent"); }
             wire.U32((uint)value.field_position.Length);
-            for(int index = 0; index < value.field_position.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_position[index]))
-                {
-                    throw new ArgumentException("Nonfinite position");
-                }
+            for (int index = 0; index < value.field_position.Length; ++index) {
+                if (!double.IsFinite(value.field_position[index])) { throw new ArgumentException("Nonfinite position"); }
                 wire.F64(value.field_position[index]);
             }
-            if(value.field_velocity == null || value.field_velocity.Length > 12)
-            {
-                throw new ArgumentException("Invalid velocity extent");
-            }
+            if (value.field_velocity == null || value.field_velocity.Length > 12) { throw new ArgumentException("Invalid velocity extent"); }
             wire.U32((uint)value.field_velocity.Length);
-            for(int index = 0; index < value.field_velocity.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_velocity[index]))
-                {
-                    throw new ArgumentException("Nonfinite velocity");
-                }
+            for (int index = 0; index < value.field_velocity.Length; ++index) {
+                if (!double.IsFinite(value.field_velocity[index])) { throw new ArgumentException("Nonfinite velocity"); }
                 wire.F64(value.field_velocity[index]);
             }
-            if(value.field_effort == null || value.field_effort.Length > 12)
-            {
-                throw new ArgumentException("Invalid effort extent");
-            }
+            if (value.field_effort == null || value.field_effort.Length > 12) { throw new ArgumentException("Invalid effort extent"); }
             wire.U32((uint)value.field_effort.Length);
-            for(int index = 0; index < value.field_effort.Length; ++index)
-            {
-                if(!double.IsFinite(value.field_effort[index]))
-                {
-                    throw new ArgumentException("Nonfinite effort");
-                }
+            for (int index = 0; index < value.field_effort.Length; ++index) {
+                if (!double.IsFinite(value.field_effort[index])) { throw new ArgumentException("Nonfinite effort"); }
                 wire.F64(value.field_effort[index]);
             }
-            if(value.field_position.Length != 0 && value.field_position.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(value.field_velocity.Length != 0 && value.field_velocity.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(value.field_effort.Length != 0 && value.field_effort.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (value.field_name.Length != 0 && value.field_position.Length != 0 && value.field_name.Length != value.field_position.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_name.Length != 0 && value.field_velocity.Length != 0 && value.field_name.Length != value.field_velocity.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_name.Length != 0 && value.field_effort.Length != 0 && value.field_name.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_position.Length != 0 && value.field_velocity.Length != 0 && value.field_position.Length != value.field_velocity.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_position.Length != 0 && value.field_effort.Length != 0 && value.field_position.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_velocity.Length != 0 && value.field_effort.Length != 0 && value.field_velocity.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -167,56 +133,37 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Sensor_msgsMsgJointState ReadFields(Wire.Reader wire)
+        internal static Ros2Sensor_msgsMsgJointState ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Sensor_msgsMsgJointState value = new Ros2Sensor_msgsMsgJointState();
             value.field_header = Ros2Std_msgsMsgHeader.ReadFields(wire);
             value.field_name = new string[wire.Count(12)];
-            for(int index = 0; index < value.field_name.Length; ++index)
-            {
+            for (int index = 0; index < value.field_name.Length; ++index) {
                 value.field_name[index] = wire.String(64);
             }
             value.field_position = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_position.Length; ++index)
-            {
+            for (int index = 0; index < value.field_position.Length; ++index) {
                 value.field_position[index] = wire.F64();
-                if(!double.IsFinite(value.field_position[index]))
-                {
-                    throw new ArgumentException("Nonfinite position");
-                }
+                if (!double.IsFinite(value.field_position[index])) { throw new ArgumentException("Nonfinite position"); }
             }
             value.field_velocity = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_velocity.Length; ++index)
-            {
+            for (int index = 0; index < value.field_velocity.Length; ++index) {
                 value.field_velocity[index] = wire.F64();
-                if(!double.IsFinite(value.field_velocity[index]))
-                {
-                    throw new ArgumentException("Nonfinite velocity");
-                }
+                if (!double.IsFinite(value.field_velocity[index])) { throw new ArgumentException("Nonfinite velocity"); }
             }
             value.field_effort = new double[wire.Count(12)];
-            for(int index = 0; index < value.field_effort.Length; ++index)
-            {
+            for (int index = 0; index < value.field_effort.Length; ++index) {
                 value.field_effort[index] = wire.F64();
-                if(!double.IsFinite(value.field_effort[index]))
-                {
-                    throw new ArgumentException("Nonfinite effort");
-                }
+                if (!double.IsFinite(value.field_effort[index])) { throw new ArgumentException("Nonfinite effort"); }
             }
-            if(value.field_position.Length != 0 && value.field_position.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(value.field_velocity.Length != 0 && value.field_velocity.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(value.field_effort.Length != 0 && value.field_effort.Length != value.field_name.Length)
-            {
-                throw new ArgumentException("JointState optional array length mismatch");
-            }
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (value.field_name.Length != 0 && value.field_position.Length != 0 && value.field_name.Length != value.field_position.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_name.Length != 0 && value.field_velocity.Length != 0 && value.field_name.Length != value.field_velocity.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_name.Length != 0 && value.field_effort.Length != 0 && value.field_name.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_position.Length != 0 && value.field_velocity.Length != 0 && value.field_position.Length != value.field_velocity.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_position.Length != 0 && value.field_effort.Length != 0 && value.field_position.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (value.field_velocity.Length != 0 && value.field_effort.Length != 0 && value.field_velocity.Length != value.field_effort.Length) { throw new ArgumentException("JointState optional array length mismatch"); }
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

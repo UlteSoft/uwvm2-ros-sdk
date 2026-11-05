@@ -38,7 +38,7 @@ pub fn Sequence(comptime Element: type, comptime capacity: usize) type {
 }
 
 /// @brief Represent canonical-shape, field-domain and finite-capacity rejection.
-pub const Error = error{Invalid};
+pub const Error = error{ Invalid, TooLarge, OutOfMemory };
 
 /// @brief Own no storage while borrowing one exclusive bounded wire span.
 /// @details A failed composite operation may advance a prefix. No record is

@@ -17,5 +17,31 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "zig",
+    "c_sources": [
+      "src/language/native/startup.c"
+    ],
+    "zig": {
+      "wasi": true,
+      "imports": [
+        "universal_robots"
+      ],
+      "modules": [
+        {
+          "name": "roswire",
+          "source": "include/platform/ros/zig/wire.zig"
+        },
+        {
+          "name": "universal_robots",
+          "source": "include/platform/universal_robots/zig/ros1/universal-robots-ros1-complete/records.zig",
+          "imports": [
+            "roswire"
+          ]
+        }
+      ]
+    }
+  }
 }

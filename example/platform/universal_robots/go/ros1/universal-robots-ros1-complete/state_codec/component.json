@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4888",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "538592b2d500281b1d9df95ca0687a754586ee7c4e87f39548c7666bc5aba1e8"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "7a1f3460bbb5208b669970138361568078d608a48ad966ab7fcfff40030a1ace"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/go/universal-robots-ros1-complete.json",
+      "sha256": "25c9ade2703d26e8afc8c51ef70e15c472c60d411e494d87916d6231a98809e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros1-complete.ir.json",
+      "sha256": "2de701a5683ec6b8c769e26e95c0de25dc8f0b4f056a4e29345e491125104c79"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "04433fcbc1949c7244cc8236f75c8f6670351a921282096147382abf49bd94ef"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/IOStates",
+        "bytes": 20,
+        "wire_hex": "0000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

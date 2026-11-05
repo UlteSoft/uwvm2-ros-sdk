@@ -1,5 +1,5 @@
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Robotis.Ros2.jazzy
 {
@@ -48,7 +48,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
          */
         public static byte[] Encode(Ros2Nav_msgsMsgOdometry value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -65,7 +65,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Nav_msgsMsgOdometry value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -77,7 +77,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Nav_msgsMsgOdometry value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Nav_msgsMsgOdometry value)
         {
             if(value == null)
             {
@@ -100,7 +100,7 @@ namespace Uwvm.Robotis.Ros2.jazzy
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Nav_msgsMsgOdometry ReadFields(Wire.Reader wire)
+        internal static Ros2Nav_msgsMsgOdometry ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Nav_msgsMsgOdometry value = new Ros2Nav_msgsMsgOdometry();

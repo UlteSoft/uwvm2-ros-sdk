@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_4EAEC0E2868249E55C0E6093455D03CAF876FE10590CB9A66FE2F979B728F505
 #define UWVM_ROS_BOUNDED_INTERFACES_4EAEC0E2868249E55C0E6093455D03CAF876FE10590CB9A66FE2F979B728F505
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include "bounded_records.h"
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -52,7 +59,7 @@ static inline roswasmc_result
     unsigned char input[292], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request_encode(request, input, 292, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -75,7 +82,7 @@ static inline roswasmc_result roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGai
 {
     unsigned char output[300];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_MotorGains_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -143,7 +150,7 @@ static inline roswasmc_result
     unsigned char input[536], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request_encode(request, input, 536, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -167,7 +174,7 @@ static inline roswasmc_result
 {
     unsigned char output[544];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_OperatingModes_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -234,7 +241,7 @@ static inline roswasmc_result roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_c
     unsigned char input[266], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request_encode(request, input, 266, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -257,7 +264,7 @@ static inline roswasmc_result roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_p
 {
     unsigned char output[274];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_Reboot_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -325,7 +332,7 @@ static inline roswasmc_result
     unsigned char input[400], output[68];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request_encode(request, input, 400, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -349,7 +356,7 @@ static inline roswasmc_result
 {
     unsigned char output[408];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RegisterValues_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -417,7 +424,7 @@ static inline roswasmc_result
     unsigned char input[264], output[18474];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request_encode(request, input, 264, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -440,7 +447,7 @@ static inline roswasmc_result roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInf
 {
     unsigned char output[272];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_RobotInfo_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -508,7 +515,7 @@ static inline roswasmc_result
     unsigned char input[265], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request_encode(request, input, 265, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -532,7 +539,7 @@ static inline roswasmc_result
 {
     unsigned char output[273];
     roswasmc_result r;
-    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request next = {0};
+    roswasmc_bounded_2_interbotix_xs_msgs_srv_TorqueEnable_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

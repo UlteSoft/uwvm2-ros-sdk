@@ -40,7 +40,7 @@ func main() {
 		payload, err := request.Encode()
 		primary = code(err)
 		if primary == 0 {
-			result, status := owner.Request(ros.ServiceCall, payload, 264)
+			result, status := owner.Request(ros.OpServiceCall, payload, 264)
 			primary, wire = status, result.Data
 		}
 		if primary == 0 {

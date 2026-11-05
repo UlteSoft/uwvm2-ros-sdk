@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("universal_robots.py.ros1.universal-robots-ros1-complete.bounded_records")
+records = import_module("universal_robots.py.ros1.universal_robots_ros1_complete.bounded_records")
 value = records.Ros1Ur_dashboard_msgsAddToLogResponse()
 wire = value.encode()
 decoded = records.Ros1Ur_dashboard_msgsAddToLogResponse.decode(wire)

@@ -140,6 +140,9 @@ end
 -- @brief Build source archives, standalone modules or complete genuine commands.
 -- @details Source is parsed and evaluated only by the guest's genuine engine.
 function build(target, root, request)
+	if request.binding and request.binding.bundle_manifest then
+		target:set("values", "ros.sdk.bundle_manifest", request.binding.bundle_manifest)
+	end
 	if target:data("ros.sdk.genuine_library_route") then
 		return import(
 			"library",

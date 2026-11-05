@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -68,7 +68,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Control_msgsMsgJointComponentTolerance value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -81,11 +81,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Control_msgsMsgJointComponentTolerance Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Control_msgsMsgJointComponentTolerance value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -97,31 +97,19 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Control_msgsMsgJointComponentTolerance value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Control_msgsMsgJointComponentTolerance value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             wire.String(value.field_joint_name, 512);
             wire.U16(value.field_component);
-            if(!double.IsFinite(value.field_position))
-            {
-                throw new ArgumentException("Nonfinite position");
-            }
+            if (!double.IsFinite(value.field_position)) { throw new ArgumentException("Nonfinite position"); }
             wire.F64(value.field_position);
-            if(!double.IsFinite(value.field_velocity))
-            {
-                throw new ArgumentException("Nonfinite velocity");
-            }
+            if (!double.IsFinite(value.field_velocity)) { throw new ArgumentException("Nonfinite velocity"); }
             wire.F64(value.field_velocity);
-            if(!double.IsFinite(value.field_acceleration))
-            {
-                throw new ArgumentException("Nonfinite acceleration");
-            }
+            if (!double.IsFinite(value.field_acceleration)) { throw new ArgumentException("Nonfinite acceleration"); }
             wire.F64(value.field_acceleration);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -133,28 +121,19 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Control_msgsMsgJointComponentTolerance ReadFields(Wire.Reader wire)
+        internal static Ros2Control_msgsMsgJointComponentTolerance ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Control_msgsMsgJointComponentTolerance value = new Ros2Control_msgsMsgJointComponentTolerance();
             value.field_joint_name = wire.String(512);
             value.field_component = wire.U16();
             value.field_position = wire.F64();
-            if(!double.IsFinite(value.field_position))
-            {
-                throw new ArgumentException("Nonfinite position");
-            }
+            if (!double.IsFinite(value.field_position)) { throw new ArgumentException("Nonfinite position"); }
             value.field_velocity = wire.F64();
-            if(!double.IsFinite(value.field_velocity))
-            {
-                throw new ArgumentException("Nonfinite velocity");
-            }
+            if (!double.IsFinite(value.field_velocity)) { throw new ArgumentException("Nonfinite velocity"); }
             value.field_acceleration = wire.F64();
-            if(!double.IsFinite(value.field_acceleration))
-            {
-                throw new ArgumentException("Nonfinite acceleration");
-            }
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (!double.IsFinite(value.field_acceleration)) { throw new ArgumentException("Nonfinite acceleration"); }
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

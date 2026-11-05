@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete urinterfaces/msg/RobotMode value with genuine AssemblyScript.

@@ -16,7 +16,7 @@
 
 共享生产者名为 array_c，自有字节和记录存储。begin(size) 返回代际令牌，忙/超界/耗尽返回 0。put(token,index,byte) 只接受下一个 0–255 字节，陈旧/外国令牌返回 9，索引或字节非法返回 22。finish(token) 解码完整长度并封存写权限。fact(token,key) 在 0/1/2 返回检测数、id 总和、FNV32，非法令牌/键返回 -9/-22。close(token) 退休封存代际的全部访问。标量 ABI 不传递指针、ROS 句柄或借用 span。
 
-共享模块直接 ROS/clock 探针应返回 13/76，拒绝时钟操作不得改写输出。它无 ROS 权限或额外 WASI 授权，但默认 Preview 1 WASI 仍保留基本标准流。只有 main 获得显式订阅和 monotonic-clock，ROS 调用边界是 same-module。以 array_c 名称、none 属性预加载相同真实位宽产物。这是自有内存的 Core preload，不是 ELF/PIC/dylink。
+共享模块直接 ROS/clock 探针应返回 13/76，拒绝时钟操作不得改写输出。它没有 ROS 操作权限；基础 WASI 不授予标准流操作，所需操作必须显式授权。只有 main 获得显式订阅和 monotonic-clock，ROS 调用边界是 same-module。以 array_c 名称、none 属性预加载相同真实位宽产物。这是自有内存的 Core preload，不是 ELF/PIC/dylink。
 
 各示例自带双语 README、部署说明和完整 v2 模板。使用统一锁定 LLVM 23，显式选择 wasm32/wasm64，仅在操作员提供 UWVM_ROS_RUN_CONFIG 后运行。公共入口保持授权与已有产物；静态图部署单一 main，动态图部署 main 加命名生产者，不需要原生可执行 sidecar。
 

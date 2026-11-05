@@ -1,5 +1,4 @@
 using System;
-using Uwvm.Ros;
 using Uwvm.Robotis;
 
 namespace Uwvm.Robotis.Ros1.noetic
@@ -20,7 +19,7 @@ namespace Uwvm.Robotis.Ros1.noetic
         public static Observation.Result<Ros1Turtlebot3_msgsSensorState> ReadSensorState(string alias, int attempts)
         {
             Observation.Result<Ros1Turtlebot3_msgsSensorState> result =
-                new Observation.Result<Ros1Turtlebot3_msgsSensorState>(Client.WaitSample(alias, Ros1Turtlebot3_msgsSensorState.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros1Turtlebot3_msgsSensorState>(Observation.WaitSample(alias, Ros1Turtlebot3_msgsSensorState.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -48,7 +47,7 @@ namespace Uwvm.Robotis.Ros1.noetic
         public static Observation.Result<Ros1Turtlebot3_msgsVersionInfo> ReadVersionInfo(string alias, int attempts)
         {
             Observation.Result<Ros1Turtlebot3_msgsVersionInfo> result =
-                new Observation.Result<Ros1Turtlebot3_msgsVersionInfo>(Client.WaitSample(alias, Ros1Turtlebot3_msgsVersionInfo.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros1Turtlebot3_msgsVersionInfo>(Observation.WaitSample(alias, Ros1Turtlebot3_msgsVersionInfo.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -76,7 +75,7 @@ namespace Uwvm.Robotis.Ros1.noetic
         public static Observation.Result<Ros1Turtlebot3_msgsSound> ReadSound(string alias, int attempts)
         {
             Observation.Result<Ros1Turtlebot3_msgsSound> result =
-                new Observation.Result<Ros1Turtlebot3_msgsSound>(Client.WaitSample(alias, Ros1Turtlebot3_msgsSound.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros1Turtlebot3_msgsSound>(Observation.WaitSample(alias, Ros1Turtlebot3_msgsSound.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try

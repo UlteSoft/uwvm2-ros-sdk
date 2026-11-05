@@ -1,0 +1,17 @@
+--- a/clang/lib/CodeGen/CGObjCGNU.cpp
++++ b/clang/lib/CodeGen/CGObjCGNU.cpp
+@@ -2973,6 +2973,14 @@
+       hasParamDestroyedInCallee = true;
+     }
+ 
++    // Upstream a976856: Wasm indirect calls require exact function types.
++    // A generic nil IMP cannot implement every Objective-C method signature.
++    if (CGM.getTriple().isWasm() && !isDirect) {
++      requiresExplicitZeroResult =
++          !Return.isUnused() && !ResultType->isVoidType();
++      return true;
++    }
++
+     // If the return value isn't flagged as unused, and the result
+     // type isn't in our narrow set where we assume compatibility,
+     // we need a nil check to ensure a nil value.

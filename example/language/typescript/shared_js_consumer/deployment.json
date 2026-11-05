@@ -4,14 +4,24 @@
   "backend": "wasi",
   "runtime": "uwvm2-ros",
   "runtime_arguments": [
-    "--wasip1-single-create",
-    "algorithm",
-    "--wasip1-single-noinherit-system-environment",
-    "algorithm",
+    "--wasm-set-main-module-name",
+    "main",
     "--wasm-preload-library",
     "build/targets/616c676f726974686d/algorithm.wasm",
-    "algorithm",
-    "--wasip1-global-noinherit-system-environment"
+    "algorithm"
   ],
-  "application_arguments": []
+  "application_arguments": [],
+  "wasi_policy": {
+    "format": "uwvm-sdk-wasip1-policy-v2",
+    "modules": {
+      "main": {
+        "enabled": true,
+        "grants": []
+      },
+      "algorithm": {
+        "enabled": true,
+        "grants": []
+      }
+    }
+  }
 }

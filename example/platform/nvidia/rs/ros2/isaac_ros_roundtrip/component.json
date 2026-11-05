@@ -1,0 +1,228 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "nvidia-complete-codec-3319",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual CPU canonical codec guest: independent complete byte oracle, input-dependent values and malformed input/transactional destination checks. No ROS resource or GPU/simulator execution is claimed.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/rs/ros2/complete/records.rs",
+      "sha256": "29d8dc295a273713d6bde727e672b90bff6dec89182061d58d376dbcef93b322"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/rs/ros2/isaac-ros-complete/bounded_records.rs",
+      "sha256": "19fcd4d4832aebc63ca69ef1f0353c1200c5748a6ed4119af0e793e38327db8b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/Cargo.lock",
+      "sha256": "9ae53ccdcee712d523f5b21ee86a3a4214f3cc373fac3eb137ca6c457ec52527"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/Cargo.toml",
+      "sha256": "42967fe91d5ecfec2ab11381cb55a2fbf44c67a1e59440a6264cba05f7a11ec2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/LICENSE",
+      "sha256": "b86209cd440e06f748c1c79db03da604384b2cc586370c6f98d2f457bacaba04"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/custom-types/generated-r3/fixed_records.rs",
+      "sha256": "1f0d6e1f420c1426b3aae8ad38f6260aa2cb21b22c3339bf3d85086509d06228"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/native_command/lib.rs",
+      "sha256": "a9f709c544006ae1ec078c6648df2e2c98b50d0893e9589222c157bb786b66a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/Cargo.lock",
+      "sha256": "f636a75a98a948272ebe007a5b29b9b1aec6241f86845ba61d7bb5e4edec6396"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/Cargo.toml",
+      "sha256": "0268583dce7115c7650153296787a7623adef0fbf98f1dcac1d85f255f37e2fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/recipe.json",
+      "sha256": "196eca6b54d8164e35c7126e8e5a1e83678cff03e486ac7a4e01010e0ee05149"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/lib.rs",
+      "sha256": "39bd38ea169c5669acc214c02ba7d9d2d925cdcc367911504f54ddf7f6457541"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/raw.rs",
+      "sha256": "c0263483715fd1c462f04451d6af001ce00559bc26aedd6be7b20e72cdf8f22f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/records.rs",
+      "sha256": "80e679a01f7e43a28c7d0b6339093a23be2c0ba9e025b036855e914062a7308e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/wire.rs",
+      "sha256": "ea8070b280111fe3e5b40575f911471b0977ff55d4615d4c303a23d960675408"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/callback.rs",
+      "sha256": "e15c2710bf624690156386100621c6dc7f8352276df34f14e2c9257bc4e6941c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/capability.rs",
+      "sha256": "4bb9261d132ed7365d0de72abc422e2b5f9e450915b453b8e75a2fd77607dc1f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/codec.rs",
+      "sha256": "dbe6504380f1b96984baee3014c615d2bec639ea579cb4f24e52a62e34b80831"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/events.rs",
+      "sha256": "8c406c331eab8773417eee506db3dd7f54e5fb373cdc8cdd1c6f052662b4d0bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/lib.rs",
+      "sha256": "bf6f533f6d39a4d99b8a46e41fb1359f8b285664e2ea5f1790390687896777b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/local.rs",
+      "sha256": "23e5006be987adc3f2890bd9d923fceead77344236f1c0ba1de2355846a06d78"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/node.rs",
+      "sha256": "a185afe70ab35ff752593ffd19baac2fd6a6d71acae69df51c36d171224e3522"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/mod.rs",
+      "sha256": "fde2b3d8b13dbf3f6705242acf3ebee44378cef4c64981f72c8ada5d42ad0fb4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/ros1.rs",
+      "sha256": "ea162a6848711b7e080a8b237a9f9c3c6f11964c61e46f9d9bcfe1e5a54c53b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/ros2.rs",
+      "sha256": "858b0abcd5529e5f5685ecca4f5f441f7a46ce09b50da87e77e961ec677d019b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/session.rs",
+      "sha256": "8186f1cc8f2c427d9fb3f0861a6f4b8d574097567afd1f292a071886397f9e70"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/typed.rs",
+      "sha256": "e6451057c13827d96700eaa9afc02cbf14fb61ac96c40647146847468bd24a5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.rs",
+      "sha256": "0588fbbf216efe85233fe5d9780a2ca54a9abfaa161605e99ff34536b491f139"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "05f290db97cbef83c23076c3e99b7e05d9f800e925e9765ca5529068f4bf2339"
+    }
+  ],
+  "cases": [
+    {
+      "id": "seed-0",
+      "arguments": [
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffff000000000300000063616d0100000008000000746167333668313100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f0000000000000440000000000000000000000000000000400000000000001440000000000000000000000000000008400000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f0000000000000000000000000000903f000000000000a03f000000000000a83f000000000000b03f000000000000b43f000000000000b83f000000000000bc3f000000000000c03f000000000000c23f000000000000c43f000000000000c63f000000000000c83f000000000000ca3f000000000000cc3f000000000000ce3f000000000000d03f000000000000d13f000000000000d23f000000000000d33f000000000000d43f000000000000d53f000000000000d63f000000000000d73f000000000000d83f000000000000d93f000000000000da3f000000000000db3f000000000000dc3f000000000000dd3f000000000000de3f000000000000df3f000000000000e03f000000000080e03f000000000000e13f000000000080e13f\n"
+    },
+    {
+      "id": "seed-17",
+      "arguments": [
+        "17"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffff110000000300000063616d010000000800000074616733366831311100000000000000000001400000000000000000000000000000000000000000000031400000000000000000000000000000000000000000000032400000000000000440000000000000000000000000000033400000000000001440000000000000000000000000000034400000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f00000000000031400000000000043140000000000008314000000000000c314000000000001031400000000000143140000000000018314000000000001c314000000000002031400000000000243140000000000028314000000000002c314000000000003031400000000000343140000000000038314000000000003c314000000000004031400000000000443140000000000048314000000000004c314000000000005031400000000000543140000000000058314000000000005c314000000000006031400000000000643140000000000068314000000000006c314000000000007031400000000000743140000000000078314000000000007c314000000000008031400000000000843140000000000088314000000000008c3140\n"
+    },
+    {
+      "id": "seed-4294967295",
+      "arguments": [
+        "4294967295"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=511 wire_hex=fdffffffffd794110300000063616d01000000080000007461673336683131ffffff7f0000e0ffffffbf41000000000000000000000000000000000000e0ffffffef4100000000000000000000000000000000000000000000f04100000000000004400000000000000000000010000000f04100000000000014400000000000000000000020000000f0410000000000001e400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f03f000000000000084000000000002008400000000000400840000000000060084000000000008008400000000000a008400000000000c008400000000000e00840000000000000094000000000002009400000000000400940000000000060094000000000008009400000000000a009400000000000c009400000000000e009400000000000000a400000000000200a400000000000400a400000000000600a400000000000800a400000000000a00a400000000000c00a400000000000e00a400000000000000b400000000000200b400000000000400b400000000000600b400000000000800b400000000000a00b400000000000c00b400000000000e00b400000000000000c400000000000200c400000000000400c400000000000600c40\n"
+    },
+    {
+      "id": "negative-seed",
+      "arguments": [
+        "-1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "overflow-seed",
+      "arguments": [
+        "4294967296"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "nondecimal-seed",
+      "arguments": [
+        "x"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

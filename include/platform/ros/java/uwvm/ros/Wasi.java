@@ -74,4 +74,32 @@ public final class Wasi
             ? 0
             : 5;
     }
+    /** Read the caller's capacity from WASI stdin, preserving short reads and errno. */
+    public static byte[] readStdin(int capacity) throws java.io.IOException
+    {
+        if(capacity < 0) throw new IllegalArgumentException("Negative input capacity");
+        byte[] bytes = new byte[capacity], vector = new byte[11], used = new byte[7];
+        long vectorBase = address(vector), usedBase = address(used);
+        int vectorOffset = (int)(((vectorBase + 3) & ~3L) - vectorBase);
+        int usedOffset = (int)(((usedBase + 3) & ~3L) - usedBase);
+        int count = 0;
+        while(count < capacity)
+        {
+            Wire.put32(vector, vectorOffset, (int)(address(bytes) + count));
+            Wire.put32(vector, vectorOffset + 4, capacity - count);
+            Wire.put32(used, usedOffset, -1);
+            int error = read(0, (int)(vectorBase + vectorOffset), 1, (int)(usedBase + usedOffset));
+            if(error != 0) throw new java.io.IOException("WASI fd_read errno " + error);
+            long received = Wire.get32(used, usedOffset) & 0xffffffffL;
+            if(received > capacity - count) throw new java.io.IOException("Invalid WASI byte count");
+            if(received == 0) break;
+            count += (int)received;
+        }
+        return java.util.Arrays.copyOf(bytes, count);
+    }
+
+    @Import(module = "wasi_snapshot_preview1", name = "fd_read")
+    @Unmanaged
+    private static native int read(int fd, int vector, int count, int used);
+
 }

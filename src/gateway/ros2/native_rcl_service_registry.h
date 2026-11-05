@@ -14,6 +14,7 @@
  * post-call clock check does not preempt foreign middleware.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "native_rcl_service.h"
 #include "../common/owned_service_storage.h"
@@ -45,12 +46,10 @@ namespace uwvm2::ros_gateway::native_rcl_service_registry
     };
     struct limits
     {
-        // These are finite local storage limits, never policy grants. The
-        // owning process must separately admit their complete physical memory.
-        std::size_t maximum_entries{},history_per_endpoint{};
-        bool valid()const noexcept
-        {return maximum_entries&&maximum_entries<=pair_history::maximum_entries&&
-            history_per_endpoint&&history_per_endpoint<=256;}
+        // Optional host quotas. Containers grow for actual admitted records;
+        // zero is a valid empty budget and SIZE_MAX means no configured quota.
+        std::size_t maximum_entries{SIZE_MAX},history_per_endpoint{SIZE_MAX};
+        bool valid()const noexcept {return true;}
     };
     struct diagnostics
     {
@@ -206,7 +205,7 @@ namespace uwvm2::ros_gateway::native_rcl_service_registry
         std::mutex mutex_;
         bool sealed_{};
         inline static nonreusing_id_allocator incarnations_;
-        static bool expired(ipc::deadline d)noexcept{return std::chrono::steady_clock::now()>=d;}
+        static bool expired(ipc::deadline d)noexcept{return ::uwvm2::utils::host_clock::now()>=d;}
         static void bump(std::uint64_t& n)noexcept{if(n!=UINT64_MAX)++n;}
         static void clear_pending(object& o)noexcept{o.facts.pending_sequence=o.facts.pending_reservation=0;}
         /** One actual native fini attempt, with diagnostic storage surviving the

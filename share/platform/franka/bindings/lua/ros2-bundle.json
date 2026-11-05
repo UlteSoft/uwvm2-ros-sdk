@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "franka.lua.ros2.franka_ros2_complete.records",
+      "file": "include/platform/franka/lua/ros2/franka_ros2_complete/records.lua",
+      "sha256": "97a1505353b36b7bf2c0ea5313724ca9164fa47b2d07804b678f8ae1eff0b8e8"
+    }
+  ],
+  "default_authority": []
+}

@@ -3,8 +3,10 @@
  * @brief Independent Wasm input/observer for the unchanged official Humble task.
  * @details Start before the original application; launch that application only
  * after baseline-ready. This actor never publishes /cmd_vel, substitutes a
- * sensor, or runs the obstacle application. It sends three raw Twist inputs and
- * one Bool cancellation only after actual native feedback. Its completion is
+ * sensor, or runs the obstacle application. It sends three raw Twist phases and
+ * one Bool cancellation only after actual native feedback. Each phase retries
+ * its idempotent setpoint every 100 ms until real command/odometry feedback
+ * confirms receipt; successful publish alone is not delivery acknowledgement. Its completion is
  * not application/callback/native-causality/permission acceptance. Native and
  * original guest occurrence receipts must independently corroborate every phase.
  */
@@ -31,7 +33,7 @@ typedef struct State {
     Odometry odom, origin, resumed;
     Twist command;
     uint64_t odom_ns, scan_ns, stable_ns, phase_ns, phase_odom_ns;
-    uint64_t scan_at, command_at, odom_at, closed_scan_at;
+    uint64_t scan_at, command_at, odom_at, closed_scan_at, input_at, cancel_at;
     uint64_t records, trace_bytes, odom_count, scan_count, command_count;
     unsigned phase, seen_odom, seen_scan, seen_command, moved, turned;
     unsigned zero_after_close, yaw_command, resumed_motion, sent_inputs;
@@ -48,7 +50,7 @@ static unsigned now_ns(uint64_t* value)
 static unsigned wait_tick(void)
 {
     struct timespec delay = {0, 1000000};
-    return nanosleep(&delay, 0) ? 5u : 0u; /* Never relabel a WASI error as ROS idle. */
+    return (unsigned)clock_nanosleep(CLOCK_MONOTONIC, 0, &delay, 0); /* Preserve a WASI error; only ROS idle11 is benign. */
 }
 static unsigned event(State const* s, char const* label, uint64_t now)
 {
@@ -154,7 +156,7 @@ static unsigned input(State* s, roswasmc_capability* owner, double vx, double wz
     roswasmc_twist value={{vx,0,0},{0,0,wz}};
     unsigned error=roswasmc_publish_twist(owner,&value);
     if(error)return error;
-    ++s->sent_inputs;
+    ++s->sent_inputs;s->input_at=now;
     return event(s,label,now);
 }
 static unsigned advance(State* s, unsigned phase, uint64_t now)
@@ -192,6 +194,9 @@ static unsigned step(State* s, roswasmc_capability* cap, uint64_t now)
             s->rotate_origin=s->yaw_sum;return advance(s,ROTATE,now);
         }
     } else if(s->phase==ROTATE) {
+        if(!s->yaw_command && now-s->input_at>=UINT64_C(100000000)) {
+            unsigned error=input(s,&cap[RAW_INPUT],0,.5,now,"raw-turn-retry");if(error)return error;
+        }
         double angle=s->yaw_sum-s->rotate_origin;
         if(distance(&s->odom,&s->origin)>1.05 || angle<-.04 || angle>2.65)return 34;
         if(s->yaw_command && velocity(&s->odom.twist.twist,0,.5,.02,.08))s->turned=1;
@@ -201,6 +206,9 @@ static unsigned step(State* s, roswasmc_capability* cap, uint64_t now)
             return advance(s,RESUME,now);
         }
     } else if(s->phase==RESUME) {
+        if(!s->resumed_motion && now-s->input_at>=UINT64_C(100000000)) {
+            unsigned error=input(s,&cap[RAW_INPUT],.2,0,now,"raw-resume-retry");if(error)return error;
+        }
         double traveled=distance(&s->odom,&s->resumed);
         if(traveled>.40 || fabs(s->yaw_sum-s->rotate_origin-2.3)>.18)return 34;
         if(s->seen_command && velocity(&s->command,.2,0,1e-12,1e-12) && velocity(&s->odom.twist.twist,.2,0,.04,.03) && s->front>=.5)s->resumed_motion=1;
@@ -208,10 +216,24 @@ static unsigned step(State* s, roswasmc_capability* cap, uint64_t now)
             unsigned error=input(s,&cap[RAW_INPUT],0,0,now,"raw-zero");if(error)return error;
             return advance(s,STOP,now);
         }
-    } else if(s->phase==STOP && stable_zero(s,now)) {
-        unsigned error=roswasmc_publish_bool(&cap[CANCEL],1);if(error)return error;
-        ++s->sent_inputs;
-        return advance(s,COMPLETE,now);
+    } else if(s->phase==STOP) {
+        if(s->cancel_at) {
+            /* Keep the transient-local publisher alive through discovery. The
+               supervisor separately requires the actual Python Wasm to exit 0;
+               this delay is not a delivery acknowledgement. */
+            if(!velocity(&s->odom.twist.twist,0,0,.01,.02))return 34;
+            if(now-s->cancel_at>=UINT64_C(2000000000))return advance(s,COMPLETE,now);
+            return 0;
+        }
+        if((!s->seen_command || s->command_at<s->phase_ns || !velocity(&s->command,0,0,1e-12,1e-12))
+           && now-s->input_at>=UINT64_C(100000000)) {
+            unsigned error=input(s,&cap[RAW_INPUT],0,0,now,"raw-zero-retry");if(error)return error;
+        }
+        if(stable_zero(s,now)) {
+            unsigned error=roswasmc_publish_bool(&cap[CANCEL],1);if(error)return error;
+            ++s->sent_inputs;s->cancel_at=now;
+            return event(s,"cancel-request",now);
+        }
     }
     return 0;
 }

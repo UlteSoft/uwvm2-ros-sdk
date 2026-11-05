@@ -16,6 +16,7 @@
  */
 #pragma once
 #include "compat/node.h"
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #if __has_include("native_rcl_service_features.h")
 #include "native_rcl_service_features.h"
 #endif
@@ -69,14 +70,17 @@ namespace uwvm2::ros_gateway::native_rcl_graph_wait
     inline std::uint32_t transport_check(lifetime const& life,deadline until)noexcept
     {
         if(!life.valid())return 95;if(life.stopping->load(std::memory_order_relaxed))return 125;
-        if(clock::now()>=until)return 110;
+        auto now=::uwvm2::utils::host_clock::now();
+        if(!::uwvm2::utils::host_clock::available())return 95;
+        if(now>=until)return 110;
 #if defined(__linux__) && defined(POLLRDHUP)
         pollfd watched[2]{{life.session_fd,POLLRDHUP,0},{life.worker_pidfd,POLLIN,0}};
         int result=::poll(watched,2,0);
         if(result<0)return life.stopping->load(std::memory_order_relaxed)?125u:(errno==EINTR?4u:107u);
         if(watched[0].revents&(POLLHUP|POLLRDHUP|POLLERR|POLLNVAL))return 107;
         if(watched[1].revents)return 107;
-        if(life.stopping->load(std::memory_order_relaxed))return 125;return clock::now()>=until?110u:0u;
+        if(life.stopping->load(std::memory_order_relaxed))return 125;auto current=::uwvm2::utils::host_clock::now();
+        if(!::uwvm2::utils::host_clock::available())return 95;return current>=until?110u:0u;
 #else
         return 95;
 #endif
@@ -87,7 +91,8 @@ namespace uwvm2::ros_gateway::native_rcl_graph_wait
         auto error=transport_check(life,until);if(error)return error;if(!node)return 95;
         try{if(!rclcpp::ok(node->get_node_base_interface()->get_context()))return 125;}
         catch(...){return 5;}
-        if(life.stopping->load(std::memory_order_relaxed))return 125;return clock::now()>=until?110u:0u;
+        if(life.stopping->load(std::memory_order_relaxed))return 125;auto current=::uwvm2::utils::host_clock::now();
+        if(!::uwvm2::utils::host_clock::available())return 95;return current>=until?110u:0u;
 #else
         // No optional NodeBase/Context/utilities dependency on old SDKs.
         (void)life;(void)node;(void)until;return 95;

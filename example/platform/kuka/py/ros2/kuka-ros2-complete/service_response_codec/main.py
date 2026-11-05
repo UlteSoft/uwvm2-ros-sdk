@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("kuka.py.ros2.kuka-ros2-complete.bounded_records")
+records = import_module("kuka.py.ros2.kuka_ros2_complete.bounded_records")
 value = records.Ros2Lifecycle_msgsSrvChangeState_Response()
 wire = value.encode()
 decoded = records.Ros2Lifecycle_msgsSrvChangeState_Response.decode(wire)

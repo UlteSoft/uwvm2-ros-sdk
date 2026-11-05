@@ -29,14 +29,7 @@
       "UWVM_ROS2=1"
     ]
   },
-  "native_sources": {
-    "ros1": [
-      "src/platform/ros/r/bridge.c"
-    ],
-    "ros2": [
-      "src/platform/ros/r/bridge.c"
-    ]
-  },
+  "native_sources": {},
   "operations": {
     "call_trigger": {
       "operation": "service.call",
@@ -60,15 +53,24 @@
       }
     }
   },
-  "package": {
-    "exports": [
-      "roswasm_wire",
-      "ros_native_command"
-    ],
-    "name": "uwvmros",
-    "native_registration": "uwvm_ros_r_register",
-    "native_routine": "uwvm_ros_invoke",
-    "requires": "genuine upstream R with embedded source packages and registered .Call routines"
-  },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "modules": [
+    {
+      "name": "roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "uwvm/r/bootstrap",
+      "path": "src/language/r/bootstrap.R"
+    },
+    {
+      "name": "uwvm/r/native",
+      "path": "src/language/r/native.R"
+    },
+    {
+      "name": "roswasm/native_command",
+      "path": "include/platform/ros/r/roswasm/native_command.R"
+    }
+  ],
+  "entry_contract": "Original R source is embedded after the complete ordered modules. The genuine engine registers the six-argument scalar bridge inside Wasm; no host package load or alternate bridge."
 }

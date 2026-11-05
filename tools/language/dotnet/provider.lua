@@ -193,6 +193,7 @@ function build(target, root, request)
 		closure,
 		programs,
 		library_feed,
-		library_receipt
+		library_receipt,
+		request.binding
 	)
 end

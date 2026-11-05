@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-3223",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "ec83b15ed9ea724607e5f89fec1f7791e0cf3d096e76edc96037686f735191dc"
+    },
+    {
+      "scope": "example",
+      "path": "main.py",
+      "sha256": "b8b4cc549f1a3a35bae4c21863ba1326be5b13fc1ec0b2db142ed23412086357"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/bindings/py/kuka-ros2-complete.json",
+      "sha256": "98c73dc82823197cbe0e3e141002524e1374806927f0bc14142e6270582475e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+      "sha256": "3e6ccb5e70ec5e75137b5fc91b76778a7c450246ceab2416695a2e58e58d0954"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "control_msgs/action/FollowJointTrajectory_Feedback",
+        "bytes": 152,
+        "wire_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

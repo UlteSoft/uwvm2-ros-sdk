@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root,"tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -76,6 +77,8 @@ for _, spec in ipairs(specs) do
         set_plat(requested_plat)
         set_filename(spec.filename)
         set_targetdir(spec.directory)
+        set_objectdir(path.join("compiler-state", spec.name, "objects"))
+        set_dependir(path.join("compiler-state", spec.name, "dependencies"))
         if spec.optional then
             set_default(false)
         end
@@ -89,5 +92,8 @@ for _, spec in ipairs(specs) do
         end
         add_includedirs(path.join(sdk, "include/platform"), {public = true})
         add_files(spec.file)
+        if spec.name == "main" then
+            uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
+        end
     target_end()
 end

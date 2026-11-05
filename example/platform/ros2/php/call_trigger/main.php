@@ -4,7 +4,4 @@
  * @details Public source modules are embedded by the common adapter, with no sidecars.
  */
 declare(strict_types=1);
-require_once 'ros/php/RosWasm/Word.php';
-require_once 'ros/php/RosWasm/Transport.php';
-require_once 'ros/php/RosWasm/NativeCommand.php';
 exit(\Uwvm\RosWasm\NativeCommand::run(3));

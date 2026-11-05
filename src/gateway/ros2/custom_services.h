@@ -178,7 +178,7 @@ namespace uwvm2::ros_gateway::ros2_custom_services
         ipc::call_result respond(ros::capability_spec const& cap, std::vector<std::uint8_t> const& bytes, std::uint32_t timeout)
         {
             if(!known(cap) || cap.operation != "service.respond") { return {13, {}}; }
-            auto until{ipc::after(static_cast<std::uint32_t>(std::min<std::uint64_t>(timeout, limit(cap, "timeout-ms"))))};
+            auto until{request_deadline(cap,timeout)};
             for(auto const& item: servers_)
             {
                 if(item.second.cap.resource == cap.resource)

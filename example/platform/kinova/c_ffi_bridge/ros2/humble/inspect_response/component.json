@@ -1,0 +1,111 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-vendor-bridge-3091",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest. Codec commands consume independent complete canonical bytes, truncations and trailing bytes; observation commands explicitly test denied resource and invalid alias without claiming positive native transport.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/kinova/c/gen3_goal.h",
+      "sha256": "347484bb1018007804f0c5a3d2da25a6356b347d3c32919cdc7bbdb447f9a8d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/kinova/c/ros2/mobile-fjt-humble-complete/bounded_interfaces.h",
+      "sha256": "e22b7d441c9bfd68630bf9a149aa3d8e7ad31252b5d5574e6dfbda859155b782"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/kinova/c/ros2/mobile-fjt-humble-complete/bounded_records.h",
+      "sha256": "b7c695d3756f06f560d1a2712ab2c0d80f1dfdd5101f3d2873c1acde4a7b7960"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/kinova/c_ffi_bridge/ros2/humble/records.h",
+      "sha256": "9b4028cebb353fb374fc0babd775332322772ad3e5963466e306b34c213a011e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kinova/catalogs/ros2_humble/records.json",
+      "sha256": "c60969c4b84d7296ce4508462b2a80572a72367fb9ae6b492457320fd2862c1d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kinova/provider.json",
+      "sha256": "fb92fba6d9937cc601b2cea6d35291d161b7c78c7e36e8bb31f2dc7ef5397e01"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/kinova/c_ffi_bridge/ros2/humble/records.c",
+      "sha256": "f165e85a6446a39aba4072ecb8aacc1323035a910c87c86f477f65850665d6df"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/kinova/provider.lua",
+      "sha256": "7a9bae5e83ac0b3addf3139e9f902ebd90cbb45d6e62a7d8d766d76209ad5393"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "4a181cebbcb7183e939d1cb066ddd69a95f4bfb34e7a1996f9b5fe5db16d0238"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "34aad5aefd8799775be5e256d26430e30a90f5c2790a911f7d8118acd707a8d5"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "82bb11daa7e7cb2f9ba51dcc39f09f905d4a69680e919ffd7e95adb4edb7ee1d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "636f6e74726f6c5f6d7367732f616374696f6e2f466f6c6c6f774a6f696e745472616a6563746f72795f526573756c742062797465733d380a303030303030303030303030303030300a",
+      "stdin_hex": "0000000000000000"
+    },
+    {
+      "id": "truncated-value",
+      "arguments": [],
+      "stdin_hex": "00000000000000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing-byte",
+      "arguments": [],
+      "stdin_hex": "000000000000000000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

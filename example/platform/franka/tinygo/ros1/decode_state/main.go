@@ -24,5 +24,14 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(22)
 	}
-	fmt.Printf("%x\n", encoded)
+	// A WASI pipe may accept only part of a write. TinyGo exposes that
+	// short write directly, so retain and write the remaining bytes.
+	output := []byte(fmt.Sprintf("%x\n", encoded))
+	for len(output) != 0 {
+		n, err := os.Stdout.Write(output)
+		if err != nil || n <= 0 || n > len(output) {
+			os.Exit(5)
+		}
+		output = output[n:]
+	}
 }

@@ -1,0 +1,55 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "platform-wasi-wat-linked-math",
+  "scope": "Execute the original guest assertions for arithmetic, owned state and library lifecycle. No native substitute or ROS simulation claim.",
+  "cases": [
+    {
+      "id": "actual-guest-assertions",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/linked-math/main32.wat",
+      "sha256": "9b6a329f0267ca055eb88c12153f1b5fa9977eea1c06d3a1934747579b04813a"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/linked-math/main64.wat",
+      "sha256": "b3c9bfad2b14e238600da7af326b140f2b07f9f80eece705d9add68d3123a53b"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/linked-math/math32.wat",
+      "sha256": "7cc9ad0aea0bc5b2424a8496888c3ff90d88898ab449f4e81a3784e685aec921"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/linked-math/math64.wat",
+      "sha256": "1b134862445d527b21decfa5cd2eb0d79771cd4bdb9c29017804a8442cab2f3a"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/wat/linked-math/xmake.lua",
+      "sha256": "388bc8c5dfe3a2c32e875ee66538f8f40be87f0b66e42bd3530c266d41a71ed2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ]
+}

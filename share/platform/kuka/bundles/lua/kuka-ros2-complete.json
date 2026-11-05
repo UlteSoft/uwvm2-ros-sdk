@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "kuka/lua/ros2/kuka-ros2-complete/records",
+      "file": "include/platform/kuka/lua/ros2/kuka-ros2-complete/records.lua",
+      "sha256": "69ec3bb402260ee9ca7bfa0abe951eeacb9aab3112511e1642b9c860b49ecc81"
+    }
+  ],
+  "default_authority": []
+}

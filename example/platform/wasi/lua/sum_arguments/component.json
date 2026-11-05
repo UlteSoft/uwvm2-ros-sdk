@@ -1,0 +1,80 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "wasi-lua-sum-arguments",
+  "scope": "Complete original Wasm command execution with explicit standard-stream input and exact result assertions.",
+  "cases": [
+    {
+      "id": "sum-normal",
+      "arguments": [
+        "19",
+        "23"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "42\n"
+    },
+    {
+      "id": "sum-empty",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "0\n"
+    },
+    {
+      "id": "sum-signed",
+      "arguments": [
+        "-41",
+        "+42",
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "1\n"
+    },
+    {
+      "id": "sum-malformed",
+      "arguments": [
+        "12bad"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "sum-overflow",
+      "arguments": [
+        "2147483647",
+        "1"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "sum-no-digits",
+      "arguments": [
+        "+"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/lua/sum_arguments/xmake.lua",
+      "sha256": "654d9d640fb47abafd796b8ee52d52d564b3a813bfda5ca361dcb6d0ca9297b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/wasi/lua/sum_arguments/main.lua",
+      "sha256": "ab7159f53aa4af9ef9e7b6c2c9ca85d26ad7223fdeddb1b9739d85918bdf0329"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    }
+  ],
+  "exception_profile": "eh"
+}

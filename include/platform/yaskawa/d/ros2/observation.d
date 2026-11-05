@@ -9,7 +9,7 @@
 /// @brief Observe complete original Yaskawa ROS 2 messages in genuine D.
 /// @details All values own their bytes; successful acquisitions close exactly once.
 module yaskawa.d.ros2.observation;
-public import ros.d.observation;
+public import native.d.observation;
 public import yaskawa.d.ros2.records;
 
 /// @brief Observe every original industrial_msgs/msg/RobotStatus field through one retained owner.

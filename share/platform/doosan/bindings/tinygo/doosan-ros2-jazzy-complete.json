@@ -17,5 +17,18 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "tinygo",
+    "go": {
+      "modules": [
+        "include/platform/ros/tinygo",
+        "include/platform/doosan/tinygo/ros2/doosan-ros2-jazzy-complete"
+      ],
+      "tags": [
+        "ros2"
+      ]
+    }
+  }
 }

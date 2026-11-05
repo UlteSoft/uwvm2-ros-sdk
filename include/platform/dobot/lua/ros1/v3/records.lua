@@ -5825,6 +5825,7 @@ local schemas = {
 }
 local classes, by_name = wire.records(schemas)
 
+do
 --- @class Ros1Dobot_bringupRobotStatus
 --- @brief Complete ROS1 dobot_bringup/RobotStatus value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -5882,7 +5883,9 @@ local classes, by_name = wire.records(schemas)
 --- @see Ros1Dobot_bringupRobotStatus.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRobotStatus
 local Ros1Dobot_bringupRobotStatus = classes["Ros1Dobot_bringupRobotStatus"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolVectorActual
 --- @brief Complete ROS1 dobot_bringup/ToolVectorActual value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -5944,7 +5947,9 @@ local Ros1Dobot_bringupRobotStatus = classes["Ros1Dobot_bringupRobotStatus"]
 --- @see Ros1Dobot_bringupToolVectorActual.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolVectorActual
 local Ros1Dobot_bringupToolVectorActual = classes["Ros1Dobot_bringupToolVectorActual"]
+end
 
+do
 --- @class Ros1Dobot_bringupAIRequest
 --- @brief Complete ROS1 dobot_bringup/AIRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6001,7 +6006,9 @@ local Ros1Dobot_bringupToolVectorActual = classes["Ros1Dobot_bringupToolVectorAc
 --- @see Ros1Dobot_bringupAIRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAIRequest
 local Ros1Dobot_bringupAIRequest = classes["Ros1Dobot_bringupAIRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupAIResponse
 --- @brief Complete ROS1 dobot_bringup/AIResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6058,7 +6065,9 @@ local Ros1Dobot_bringupAIRequest = classes["Ros1Dobot_bringupAIRequest"]
 --- @see Ros1Dobot_bringupAIResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAIResponse
 local Ros1Dobot_bringupAIResponse = classes["Ros1Dobot_bringupAIResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupAORequest
 --- @brief Complete ROS1 dobot_bringup/AORequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6116,7 +6125,9 @@ local Ros1Dobot_bringupAIResponse = classes["Ros1Dobot_bringupAIResponse"]
 --- @see Ros1Dobot_bringupAORequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAORequest
 local Ros1Dobot_bringupAORequest = classes["Ros1Dobot_bringupAORequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupAOResponse
 --- @brief Complete ROS1 dobot_bringup/AOResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6173,7 +6184,9 @@ local Ros1Dobot_bringupAORequest = classes["Ros1Dobot_bringupAORequest"]
 --- @see Ros1Dobot_bringupAOResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAOResponse
 local Ros1Dobot_bringupAOResponse = classes["Ros1Dobot_bringupAOResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupAOExecuteRequest
 --- @brief Complete ROS1 dobot_bringup/AOExecuteRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6231,7 +6244,9 @@ local Ros1Dobot_bringupAOResponse = classes["Ros1Dobot_bringupAOResponse"]
 --- @see Ros1Dobot_bringupAOExecuteRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAOExecuteRequest
 local Ros1Dobot_bringupAOExecuteRequest = classes["Ros1Dobot_bringupAOExecuteRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupAOExecuteResponse
 --- @brief Complete ROS1 dobot_bringup/AOExecuteResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6288,7 +6303,9 @@ local Ros1Dobot_bringupAOExecuteRequest = classes["Ros1Dobot_bringupAOExecuteReq
 --- @see Ros1Dobot_bringupAOExecuteResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAOExecuteResponse
 local Ros1Dobot_bringupAOExecuteResponse = classes["Ros1Dobot_bringupAOExecuteResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupAccJRequest
 --- @brief Complete ROS1 dobot_bringup/AccJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6345,7 +6362,9 @@ local Ros1Dobot_bringupAOExecuteResponse = classes["Ros1Dobot_bringupAOExecuteRe
 --- @see Ros1Dobot_bringupAccJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAccJRequest
 local Ros1Dobot_bringupAccJRequest = classes["Ros1Dobot_bringupAccJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupAccJResponse
 --- @brief Complete ROS1 dobot_bringup/AccJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6402,7 +6421,9 @@ local Ros1Dobot_bringupAccJRequest = classes["Ros1Dobot_bringupAccJRequest"]
 --- @see Ros1Dobot_bringupAccJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAccJResponse
 local Ros1Dobot_bringupAccJResponse = classes["Ros1Dobot_bringupAccJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupAccLRequest
 --- @brief Complete ROS1 dobot_bringup/AccLRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6459,7 +6480,9 @@ local Ros1Dobot_bringupAccJResponse = classes["Ros1Dobot_bringupAccJResponse"]
 --- @see Ros1Dobot_bringupAccLRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAccLRequest
 local Ros1Dobot_bringupAccLRequest = classes["Ros1Dobot_bringupAccLRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupAccLResponse
 --- @brief Complete ROS1 dobot_bringup/AccLResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6516,7 +6539,9 @@ local Ros1Dobot_bringupAccLRequest = classes["Ros1Dobot_bringupAccLRequest"]
 --- @see Ros1Dobot_bringupAccLResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupAccLResponse
 local Ros1Dobot_bringupAccLResponse = classes["Ros1Dobot_bringupAccLResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupArcRequest
 --- @brief Complete ROS1 dobot_bringup/ArcRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6585,7 +6610,9 @@ local Ros1Dobot_bringupAccLResponse = classes["Ros1Dobot_bringupAccLResponse"]
 --- @see Ros1Dobot_bringupArcRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupArcRequest
 local Ros1Dobot_bringupArcRequest = classes["Ros1Dobot_bringupArcRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupArcResponse
 --- @brief Complete ROS1 dobot_bringup/ArcResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6642,7 +6669,9 @@ local Ros1Dobot_bringupArcRequest = classes["Ros1Dobot_bringupArcRequest"]
 --- @see Ros1Dobot_bringupArcResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupArcResponse
 local Ros1Dobot_bringupArcResponse = classes["Ros1Dobot_bringupArcResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupArchRequest
 --- @brief Complete ROS1 dobot_bringup/ArchRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6700,7 +6729,9 @@ local Ros1Dobot_bringupArcResponse = classes["Ros1Dobot_bringupArcResponse"]
 --- @see Ros1Dobot_bringupArchRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupArchRequest
 local Ros1Dobot_bringupArchRequest = classes["Ros1Dobot_bringupArchRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupArchResponse
 --- @brief Complete ROS1 dobot_bringup/ArchResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6757,7 +6788,9 @@ local Ros1Dobot_bringupArchRequest = classes["Ros1Dobot_bringupArchRequest"]
 --- @see Ros1Dobot_bringupArchResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupArchResponse
 local Ros1Dobot_bringupArchResponse = classes["Ros1Dobot_bringupArchResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupBrakeControlRequest
 --- @brief Complete ROS1 dobot_bringup/BrakeControlRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6815,7 +6848,9 @@ local Ros1Dobot_bringupArchResponse = classes["Ros1Dobot_bringupArchResponse"]
 --- @see Ros1Dobot_bringupBrakeControlRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupBrakeControlRequest
 local Ros1Dobot_bringupBrakeControlRequest = classes["Ros1Dobot_bringupBrakeControlRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupBrakeControlResponse
 --- @brief Complete ROS1 dobot_bringup/BrakeControlResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6872,7 +6907,9 @@ local Ros1Dobot_bringupBrakeControlRequest = classes["Ros1Dobot_bringupBrakeCont
 --- @see Ros1Dobot_bringupBrakeControlResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupBrakeControlResponse
 local Ros1Dobot_bringupBrakeControlResponse = classes["Ros1Dobot_bringupBrakeControlResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupCPRequest
 --- @brief Complete ROS1 dobot_bringup/CPRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6929,7 +6966,9 @@ local Ros1Dobot_bringupBrakeControlResponse = classes["Ros1Dobot_bringupBrakeCon
 --- @see Ros1Dobot_bringupCPRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupCPRequest
 local Ros1Dobot_bringupCPRequest = classes["Ros1Dobot_bringupCPRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupCPResponse
 --- @brief Complete ROS1 dobot_bringup/CPResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -6986,7 +7025,9 @@ local Ros1Dobot_bringupCPRequest = classes["Ros1Dobot_bringupCPRequest"]
 --- @see Ros1Dobot_bringupCPResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupCPResponse
 local Ros1Dobot_bringupCPResponse = classes["Ros1Dobot_bringupCPResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupCircleRequest
 --- @brief Complete ROS1 dobot_bringup/CircleRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7056,7 +7097,9 @@ local Ros1Dobot_bringupCPResponse = classes["Ros1Dobot_bringupCPResponse"]
 --- @see Ros1Dobot_bringupCircleRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupCircleRequest
 local Ros1Dobot_bringupCircleRequest = classes["Ros1Dobot_bringupCircleRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupCircleResponse
 --- @brief Complete ROS1 dobot_bringup/CircleResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7113,7 +7156,9 @@ local Ros1Dobot_bringupCircleRequest = classes["Ros1Dobot_bringupCircleRequest"]
 --- @see Ros1Dobot_bringupCircleResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupCircleResponse
 local Ros1Dobot_bringupCircleResponse = classes["Ros1Dobot_bringupCircleResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupClearErrorRequest
 --- @brief Complete ROS1 dobot_bringup/ClearErrorRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7169,7 +7214,9 @@ local Ros1Dobot_bringupCircleResponse = classes["Ros1Dobot_bringupCircleResponse
 --- @see Ros1Dobot_bringupClearErrorRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupClearErrorRequest
 local Ros1Dobot_bringupClearErrorRequest = classes["Ros1Dobot_bringupClearErrorRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupClearErrorResponse
 --- @brief Complete ROS1 dobot_bringup/ClearErrorResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7226,7 +7273,9 @@ local Ros1Dobot_bringupClearErrorRequest = classes["Ros1Dobot_bringupClearErrorR
 --- @see Ros1Dobot_bringupClearErrorResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupClearErrorResponse
 local Ros1Dobot_bringupClearErrorResponse = classes["Ros1Dobot_bringupClearErrorResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupContinueScriptRequest
 --- @brief Complete ROS1 dobot_bringup/ContinueScriptRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7282,7 +7331,9 @@ local Ros1Dobot_bringupClearErrorResponse = classes["Ros1Dobot_bringupClearError
 --- @see Ros1Dobot_bringupContinueScriptRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupContinueScriptRequest
 local Ros1Dobot_bringupContinueScriptRequest = classes["Ros1Dobot_bringupContinueScriptRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupContinueScriptResponse
 --- @brief Complete ROS1 dobot_bringup/ContinueScriptResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7339,7 +7390,9 @@ local Ros1Dobot_bringupContinueScriptRequest = classes["Ros1Dobot_bringupContinu
 --- @see Ros1Dobot_bringupContinueScriptResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupContinueScriptResponse
 local Ros1Dobot_bringupContinueScriptResponse = classes["Ros1Dobot_bringupContinueScriptResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupContinuesRequest
 --- @brief Complete ROS1 dobot_bringup/ContinuesRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7395,7 +7448,9 @@ local Ros1Dobot_bringupContinueScriptResponse = classes["Ros1Dobot_bringupContin
 --- @see Ros1Dobot_bringupContinuesRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupContinuesRequest
 local Ros1Dobot_bringupContinuesRequest = classes["Ros1Dobot_bringupContinuesRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupContinuesResponse
 --- @brief Complete ROS1 dobot_bringup/ContinuesResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7452,7 +7507,9 @@ local Ros1Dobot_bringupContinuesRequest = classes["Ros1Dobot_bringupContinuesReq
 --- @see Ros1Dobot_bringupContinuesResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupContinuesResponse
 local Ros1Dobot_bringupContinuesResponse = classes["Ros1Dobot_bringupContinuesResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDIRequest
 --- @brief Complete ROS1 dobot_bringup/DIRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7509,7 +7566,9 @@ local Ros1Dobot_bringupContinuesResponse = classes["Ros1Dobot_bringupContinuesRe
 --- @see Ros1Dobot_bringupDIRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDIRequest
 local Ros1Dobot_bringupDIRequest = classes["Ros1Dobot_bringupDIRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDIResponse
 --- @brief Complete ROS1 dobot_bringup/DIResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7566,7 +7625,9 @@ local Ros1Dobot_bringupDIRequest = classes["Ros1Dobot_bringupDIRequest"]
 --- @see Ros1Dobot_bringupDIResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDIResponse
 local Ros1Dobot_bringupDIResponse = classes["Ros1Dobot_bringupDIResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDIGroupRequest
 --- @brief Complete ROS1 dobot_bringup/DIGroupRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7623,7 +7684,9 @@ local Ros1Dobot_bringupDIResponse = classes["Ros1Dobot_bringupDIResponse"]
 --- @see Ros1Dobot_bringupDIGroupRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDIGroupRequest
 local Ros1Dobot_bringupDIGroupRequest = classes["Ros1Dobot_bringupDIGroupRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDIGroupResponse
 --- @brief Complete ROS1 dobot_bringup/DIGroupResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7680,7 +7743,9 @@ local Ros1Dobot_bringupDIGroupRequest = classes["Ros1Dobot_bringupDIGroupRequest
 --- @see Ros1Dobot_bringupDIGroupResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDIGroupResponse
 local Ros1Dobot_bringupDIGroupResponse = classes["Ros1Dobot_bringupDIGroupResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDORequest
 --- @brief Complete ROS1 dobot_bringup/DORequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7738,7 +7803,9 @@ local Ros1Dobot_bringupDIGroupResponse = classes["Ros1Dobot_bringupDIGroupRespon
 --- @see Ros1Dobot_bringupDORequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDORequest
 local Ros1Dobot_bringupDORequest = classes["Ros1Dobot_bringupDORequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDOResponse
 --- @brief Complete ROS1 dobot_bringup/DOResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7795,7 +7862,9 @@ local Ros1Dobot_bringupDORequest = classes["Ros1Dobot_bringupDORequest"]
 --- @see Ros1Dobot_bringupDOResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDOResponse
 local Ros1Dobot_bringupDOResponse = classes["Ros1Dobot_bringupDOResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDOExecuteRequest
 --- @brief Complete ROS1 dobot_bringup/DOExecuteRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7853,7 +7922,9 @@ local Ros1Dobot_bringupDOResponse = classes["Ros1Dobot_bringupDOResponse"]
 --- @see Ros1Dobot_bringupDOExecuteRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDOExecuteRequest
 local Ros1Dobot_bringupDOExecuteRequest = classes["Ros1Dobot_bringupDOExecuteRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDOExecuteResponse
 --- @brief Complete ROS1 dobot_bringup/DOExecuteResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7910,7 +7981,9 @@ local Ros1Dobot_bringupDOExecuteRequest = classes["Ros1Dobot_bringupDOExecuteReq
 --- @see Ros1Dobot_bringupDOExecuteResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDOExecuteResponse
 local Ros1Dobot_bringupDOExecuteResponse = classes["Ros1Dobot_bringupDOExecuteResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDOGroupRequest
 --- @brief Complete ROS1 dobot_bringup/DOGroupRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -7967,7 +8040,9 @@ local Ros1Dobot_bringupDOExecuteResponse = classes["Ros1Dobot_bringupDOExecuteRe
 --- @see Ros1Dobot_bringupDOGroupRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDOGroupRequest
 local Ros1Dobot_bringupDOGroupRequest = classes["Ros1Dobot_bringupDOGroupRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDOGroupResponse
 --- @brief Complete ROS1 dobot_bringup/DOGroupResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8024,7 +8099,9 @@ local Ros1Dobot_bringupDOGroupRequest = classes["Ros1Dobot_bringupDOGroupRequest
 --- @see Ros1Dobot_bringupDOGroupResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDOGroupResponse
 local Ros1Dobot_bringupDOGroupResponse = classes["Ros1Dobot_bringupDOGroupResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDigitalOutputsRequest
 --- @brief Complete ROS1 dobot_bringup/DigitalOutputsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8082,7 +8159,9 @@ local Ros1Dobot_bringupDOGroupResponse = classes["Ros1Dobot_bringupDOGroupRespon
 --- @see Ros1Dobot_bringupDigitalOutputsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDigitalOutputsRequest
 local Ros1Dobot_bringupDigitalOutputsRequest = classes["Ros1Dobot_bringupDigitalOutputsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDigitalOutputsResponse
 --- @brief Complete ROS1 dobot_bringup/DigitalOutputsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8139,7 +8218,9 @@ local Ros1Dobot_bringupDigitalOutputsRequest = classes["Ros1Dobot_bringupDigital
 --- @see Ros1Dobot_bringupDigitalOutputsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDigitalOutputsResponse
 local Ros1Dobot_bringupDigitalOutputsResponse = classes["Ros1Dobot_bringupDigitalOutputsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupDisableRobotRequest
 --- @brief Complete ROS1 dobot_bringup/DisableRobotRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8195,7 +8276,9 @@ local Ros1Dobot_bringupDigitalOutputsResponse = classes["Ros1Dobot_bringupDigita
 --- @see Ros1Dobot_bringupDisableRobotRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDisableRobotRequest
 local Ros1Dobot_bringupDisableRobotRequest = classes["Ros1Dobot_bringupDisableRobotRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupDisableRobotResponse
 --- @brief Complete ROS1 dobot_bringup/DisableRobotResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8252,7 +8335,9 @@ local Ros1Dobot_bringupDisableRobotRequest = classes["Ros1Dobot_bringupDisableRo
 --- @see Ros1Dobot_bringupDisableRobotResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupDisableRobotResponse
 local Ros1Dobot_bringupDisableRobotResponse = classes["Ros1Dobot_bringupDisableRobotResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupEmergencyStopRequest
 --- @brief Complete ROS1 dobot_bringup/EmergencyStopRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8308,7 +8393,9 @@ local Ros1Dobot_bringupDisableRobotResponse = classes["Ros1Dobot_bringupDisableR
 --- @see Ros1Dobot_bringupEmergencyStopRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupEmergencyStopRequest
 local Ros1Dobot_bringupEmergencyStopRequest = classes["Ros1Dobot_bringupEmergencyStopRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupEmergencyStopResponse
 --- @brief Complete ROS1 dobot_bringup/EmergencyStopResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8365,7 +8452,9 @@ local Ros1Dobot_bringupEmergencyStopRequest = classes["Ros1Dobot_bringupEmergenc
 --- @see Ros1Dobot_bringupEmergencyStopResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupEmergencyStopResponse
 local Ros1Dobot_bringupEmergencyStopResponse = classes["Ros1Dobot_bringupEmergencyStopResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupEnableRobotRequest
 --- @brief Complete ROS1 dobot_bringup/EnableRobotRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8422,7 +8511,9 @@ local Ros1Dobot_bringupEmergencyStopResponse = classes["Ros1Dobot_bringupEmergen
 --- @see Ros1Dobot_bringupEnableRobotRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupEnableRobotRequest
 local Ros1Dobot_bringupEnableRobotRequest = classes["Ros1Dobot_bringupEnableRobotRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupEnableRobotResponse
 --- @brief Complete ROS1 dobot_bringup/EnableRobotResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8479,7 +8570,9 @@ local Ros1Dobot_bringupEnableRobotRequest = classes["Ros1Dobot_bringupEnableRobo
 --- @see Ros1Dobot_bringupEnableRobotResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupEnableRobotResponse
 local Ros1Dobot_bringupEnableRobotResponse = classes["Ros1Dobot_bringupEnableRobotResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetAngleRequest
 --- @brief Complete ROS1 dobot_bringup/GetAngleRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8535,7 +8628,9 @@ local Ros1Dobot_bringupEnableRobotResponse = classes["Ros1Dobot_bringupEnableRob
 --- @see Ros1Dobot_bringupGetAngleRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetAngleRequest
 local Ros1Dobot_bringupGetAngleRequest = classes["Ros1Dobot_bringupGetAngleRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetAngleResponse
 --- @brief Complete ROS1 dobot_bringup/GetAngleResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8592,7 +8687,9 @@ local Ros1Dobot_bringupGetAngleRequest = classes["Ros1Dobot_bringupGetAngleReque
 --- @see Ros1Dobot_bringupGetAngleResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetAngleResponse
 local Ros1Dobot_bringupGetAngleResponse = classes["Ros1Dobot_bringupGetAngleResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetCoilsRequest
 --- @brief Complete ROS1 dobot_bringup/GetCoilsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8651,7 +8748,9 @@ local Ros1Dobot_bringupGetAngleResponse = classes["Ros1Dobot_bringupGetAngleResp
 --- @see Ros1Dobot_bringupGetCoilsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetCoilsRequest
 local Ros1Dobot_bringupGetCoilsRequest = classes["Ros1Dobot_bringupGetCoilsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetCoilsResponse
 --- @brief Complete ROS1 dobot_bringup/GetCoilsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8708,7 +8807,9 @@ local Ros1Dobot_bringupGetCoilsRequest = classes["Ros1Dobot_bringupGetCoilsReque
 --- @see Ros1Dobot_bringupGetCoilsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetCoilsResponse
 local Ros1Dobot_bringupGetCoilsResponse = classes["Ros1Dobot_bringupGetCoilsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetErrorIDRequest
 --- @brief Complete ROS1 dobot_bringup/GetErrorIDRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8764,7 +8865,9 @@ local Ros1Dobot_bringupGetCoilsResponse = classes["Ros1Dobot_bringupGetCoilsResp
 --- @see Ros1Dobot_bringupGetErrorIDRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetErrorIDRequest
 local Ros1Dobot_bringupGetErrorIDRequest = classes["Ros1Dobot_bringupGetErrorIDRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetErrorIDResponse
 --- @brief Complete ROS1 dobot_bringup/GetErrorIDResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8822,7 +8925,9 @@ local Ros1Dobot_bringupGetErrorIDRequest = classes["Ros1Dobot_bringupGetErrorIDR
 --- @see Ros1Dobot_bringupGetErrorIDResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetErrorIDResponse
 local Ros1Dobot_bringupGetErrorIDResponse = classes["Ros1Dobot_bringupGetErrorIDResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetHoldRegsRequest
 --- @brief Complete ROS1 dobot_bringup/GetHoldRegsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8882,7 +8987,9 @@ local Ros1Dobot_bringupGetErrorIDResponse = classes["Ros1Dobot_bringupGetErrorID
 --- @see Ros1Dobot_bringupGetHoldRegsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetHoldRegsRequest
 local Ros1Dobot_bringupGetHoldRegsRequest = classes["Ros1Dobot_bringupGetHoldRegsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetHoldRegsResponse
 --- @brief Complete ROS1 dobot_bringup/GetHoldRegsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8940,7 +9047,9 @@ local Ros1Dobot_bringupGetHoldRegsRequest = classes["Ros1Dobot_bringupGetHoldReg
 --- @see Ros1Dobot_bringupGetHoldRegsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetHoldRegsResponse
 local Ros1Dobot_bringupGetHoldRegsResponse = classes["Ros1Dobot_bringupGetHoldRegsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetInBitsRequest
 --- @brief Complete ROS1 dobot_bringup/GetInBitsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8999,7 +9108,9 @@ local Ros1Dobot_bringupGetHoldRegsResponse = classes["Ros1Dobot_bringupGetHoldRe
 --- @see Ros1Dobot_bringupGetInBitsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetInBitsRequest
 local Ros1Dobot_bringupGetInBitsRequest = classes["Ros1Dobot_bringupGetInBitsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetInBitsResponse
 --- @brief Complete ROS1 dobot_bringup/GetInBitsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9056,7 +9167,9 @@ local Ros1Dobot_bringupGetInBitsRequest = classes["Ros1Dobot_bringupGetInBitsReq
 --- @see Ros1Dobot_bringupGetInBitsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetInBitsResponse
 local Ros1Dobot_bringupGetInBitsResponse = classes["Ros1Dobot_bringupGetInBitsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetInRegsRequest
 --- @brief Complete ROS1 dobot_bringup/GetInRegsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9116,7 +9229,9 @@ local Ros1Dobot_bringupGetInBitsResponse = classes["Ros1Dobot_bringupGetInBitsRe
 --- @see Ros1Dobot_bringupGetInRegsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetInRegsRequest
 local Ros1Dobot_bringupGetInRegsRequest = classes["Ros1Dobot_bringupGetInRegsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetInRegsResponse
 --- @brief Complete ROS1 dobot_bringup/GetInRegsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9173,7 +9288,9 @@ local Ros1Dobot_bringupGetInRegsRequest = classes["Ros1Dobot_bringupGetInRegsReq
 --- @see Ros1Dobot_bringupGetInRegsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetInRegsResponse
 local Ros1Dobot_bringupGetInRegsResponse = classes["Ros1Dobot_bringupGetInRegsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetPathStartPoseRequest
 --- @brief Complete ROS1 dobot_bringup/GetPathStartPoseRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9230,7 +9347,9 @@ local Ros1Dobot_bringupGetInRegsResponse = classes["Ros1Dobot_bringupGetInRegsRe
 --- @see Ros1Dobot_bringupGetPathStartPoseRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetPathStartPoseRequest
 local Ros1Dobot_bringupGetPathStartPoseRequest = classes["Ros1Dobot_bringupGetPathStartPoseRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetPathStartPoseResponse
 --- @brief Complete ROS1 dobot_bringup/GetPathStartPoseResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9287,7 +9406,9 @@ local Ros1Dobot_bringupGetPathStartPoseRequest = classes["Ros1Dobot_bringupGetPa
 --- @see Ros1Dobot_bringupGetPathStartPoseResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetPathStartPoseResponse
 local Ros1Dobot_bringupGetPathStartPoseResponse = classes["Ros1Dobot_bringupGetPathStartPoseResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetPoseRequest
 --- @brief Complete ROS1 dobot_bringup/GetPoseRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9345,7 +9466,9 @@ local Ros1Dobot_bringupGetPathStartPoseResponse = classes["Ros1Dobot_bringupGetP
 --- @see Ros1Dobot_bringupGetPoseRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetPoseRequest
 local Ros1Dobot_bringupGetPoseRequest = classes["Ros1Dobot_bringupGetPoseRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetPoseResponse
 --- @brief Complete ROS1 dobot_bringup/GetPoseResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9402,7 +9525,9 @@ local Ros1Dobot_bringupGetPoseRequest = classes["Ros1Dobot_bringupGetPoseRequest
 --- @see Ros1Dobot_bringupGetPoseResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetPoseResponse
 local Ros1Dobot_bringupGetPoseResponse = classes["Ros1Dobot_bringupGetPoseResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetSixForceDataRequest
 --- @brief Complete ROS1 dobot_bringup/GetSixForceDataRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9458,7 +9583,9 @@ local Ros1Dobot_bringupGetPoseResponse = classes["Ros1Dobot_bringupGetPoseRespon
 --- @see Ros1Dobot_bringupGetSixForceDataRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetSixForceDataRequest
 local Ros1Dobot_bringupGetSixForceDataRequest = classes["Ros1Dobot_bringupGetSixForceDataRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetSixForceDataResponse
 --- @brief Complete ROS1 dobot_bringup/GetSixForceDataResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9515,7 +9642,9 @@ local Ros1Dobot_bringupGetSixForceDataRequest = classes["Ros1Dobot_bringupGetSix
 --- @see Ros1Dobot_bringupGetSixForceDataResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetSixForceDataResponse
 local Ros1Dobot_bringupGetSixForceDataResponse = classes["Ros1Dobot_bringupGetSixForceDataResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetTerminal485Request
 --- @brief Complete ROS1 dobot_bringup/GetTerminal485Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9571,7 +9700,9 @@ local Ros1Dobot_bringupGetSixForceDataResponse = classes["Ros1Dobot_bringupGetSi
 --- @see Ros1Dobot_bringupGetTerminal485Request.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetTerminal485Request
 local Ros1Dobot_bringupGetTerminal485Request = classes["Ros1Dobot_bringupGetTerminal485Request"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetTerminal485Response
 --- @brief Complete ROS1 dobot_bringup/GetTerminal485Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9628,7 +9759,9 @@ local Ros1Dobot_bringupGetTerminal485Request = classes["Ros1Dobot_bringupGetTerm
 --- @see Ros1Dobot_bringupGetTerminal485Response.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetTerminal485Response
 local Ros1Dobot_bringupGetTerminal485Response = classes["Ros1Dobot_bringupGetTerminal485Response"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetTraceStartPoseRequest
 --- @brief Complete ROS1 dobot_bringup/GetTraceStartPoseRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9685,7 +9818,9 @@ local Ros1Dobot_bringupGetTerminal485Response = classes["Ros1Dobot_bringupGetTer
 --- @see Ros1Dobot_bringupGetTraceStartPoseRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetTraceStartPoseRequest
 local Ros1Dobot_bringupGetTraceStartPoseRequest = classes["Ros1Dobot_bringupGetTraceStartPoseRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupGetTraceStartPoseResponse
 --- @brief Complete ROS1 dobot_bringup/GetTraceStartPoseResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9742,7 +9877,9 @@ local Ros1Dobot_bringupGetTraceStartPoseRequest = classes["Ros1Dobot_bringupGetT
 --- @see Ros1Dobot_bringupGetTraceStartPoseResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupGetTraceStartPoseResponse
 local Ros1Dobot_bringupGetTraceStartPoseResponse = classes["Ros1Dobot_bringupGetTraceStartPoseResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupHandleTrajPointsRequest
 --- @brief Complete ROS1 dobot_bringup/HandleTrajPointsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9799,7 +9936,9 @@ local Ros1Dobot_bringupGetTraceStartPoseResponse = classes["Ros1Dobot_bringupGet
 --- @see Ros1Dobot_bringupHandleTrajPointsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupHandleTrajPointsRequest
 local Ros1Dobot_bringupHandleTrajPointsRequest = classes["Ros1Dobot_bringupHandleTrajPointsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupHandleTrajPointsResponse
 --- @brief Complete ROS1 dobot_bringup/HandleTrajPointsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9856,7 +9995,9 @@ local Ros1Dobot_bringupHandleTrajPointsRequest = classes["Ros1Dobot_bringupHandl
 --- @see Ros1Dobot_bringupHandleTrajPointsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupHandleTrajPointsResponse
 local Ros1Dobot_bringupHandleTrajPointsResponse = classes["Ros1Dobot_bringupHandleTrajPointsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupInverseSolutionRequest
 --- @brief Complete ROS1 dobot_bringup/InverseSolutionRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9922,7 +10063,9 @@ local Ros1Dobot_bringupHandleTrajPointsResponse = classes["Ros1Dobot_bringupHand
 --- @see Ros1Dobot_bringupInverseSolutionRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupInverseSolutionRequest
 local Ros1Dobot_bringupInverseSolutionRequest = classes["Ros1Dobot_bringupInverseSolutionRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupInverseSolutionResponse
 --- @brief Complete ROS1 dobot_bringup/InverseSolutionResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9979,7 +10122,9 @@ local Ros1Dobot_bringupInverseSolutionRequest = classes["Ros1Dobot_bringupInvers
 --- @see Ros1Dobot_bringupInverseSolutionResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupInverseSolutionResponse
 local Ros1Dobot_bringupInverseSolutionResponse = classes["Ros1Dobot_bringupInverseSolutionResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupJointMovJRequest
 --- @brief Complete ROS1 dobot_bringup/JointMovJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10042,7 +10187,9 @@ local Ros1Dobot_bringupInverseSolutionResponse = classes["Ros1Dobot_bringupInver
 --- @see Ros1Dobot_bringupJointMovJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupJointMovJRequest
 local Ros1Dobot_bringupJointMovJRequest = classes["Ros1Dobot_bringupJointMovJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupJointMovJResponse
 --- @brief Complete ROS1 dobot_bringup/JointMovJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10099,7 +10246,9 @@ local Ros1Dobot_bringupJointMovJRequest = classes["Ros1Dobot_bringupJointMovJReq
 --- @see Ros1Dobot_bringupJointMovJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupJointMovJResponse
 local Ros1Dobot_bringupJointMovJResponse = classes["Ros1Dobot_bringupJointMovJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupJumpRequest
 --- @brief Complete ROS1 dobot_bringup/JumpRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10161,7 +10310,9 @@ local Ros1Dobot_bringupJointMovJResponse = classes["Ros1Dobot_bringupJointMovJRe
 --- @see Ros1Dobot_bringupJumpRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupJumpRequest
 local Ros1Dobot_bringupJumpRequest = classes["Ros1Dobot_bringupJumpRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupJumpResponse
 --- @brief Complete ROS1 dobot_bringup/JumpResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10218,7 +10369,9 @@ local Ros1Dobot_bringupJumpRequest = classes["Ros1Dobot_bringupJumpRequest"]
 --- @see Ros1Dobot_bringupJumpResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupJumpResponse
 local Ros1Dobot_bringupJumpResponse = classes["Ros1Dobot_bringupJumpResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupLimZRequest
 --- @brief Complete ROS1 dobot_bringup/LimZRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10275,7 +10428,9 @@ local Ros1Dobot_bringupJumpResponse = classes["Ros1Dobot_bringupJumpResponse"]
 --- @see Ros1Dobot_bringupLimZRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupLimZRequest
 local Ros1Dobot_bringupLimZRequest = classes["Ros1Dobot_bringupLimZRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupLimZResponse
 --- @brief Complete ROS1 dobot_bringup/LimZResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10332,7 +10487,9 @@ local Ros1Dobot_bringupLimZRequest = classes["Ros1Dobot_bringupLimZRequest"]
 --- @see Ros1Dobot_bringupLimZResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupLimZResponse
 local Ros1Dobot_bringupLimZResponse = classes["Ros1Dobot_bringupLimZResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupLoadSwitchRequest
 --- @brief Complete ROS1 dobot_bringup/LoadSwitchRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10389,7 +10546,9 @@ local Ros1Dobot_bringupLimZResponse = classes["Ros1Dobot_bringupLimZResponse"]
 --- @see Ros1Dobot_bringupLoadSwitchRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupLoadSwitchRequest
 local Ros1Dobot_bringupLoadSwitchRequest = classes["Ros1Dobot_bringupLoadSwitchRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupLoadSwitchResponse
 --- @brief Complete ROS1 dobot_bringup/LoadSwitchResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10446,7 +10605,9 @@ local Ros1Dobot_bringupLoadSwitchRequest = classes["Ros1Dobot_bringupLoadSwitchR
 --- @see Ros1Dobot_bringupLoadSwitchResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupLoadSwitchResponse
 local Ros1Dobot_bringupLoadSwitchResponse = classes["Ros1Dobot_bringupLoadSwitchResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupModbusCloseRequest
 --- @brief Complete ROS1 dobot_bringup/ModbusCloseRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10503,7 +10664,9 @@ local Ros1Dobot_bringupLoadSwitchResponse = classes["Ros1Dobot_bringupLoadSwitch
 --- @see Ros1Dobot_bringupModbusCloseRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupModbusCloseRequest
 local Ros1Dobot_bringupModbusCloseRequest = classes["Ros1Dobot_bringupModbusCloseRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupModbusCloseResponse
 --- @brief Complete ROS1 dobot_bringup/ModbusCloseResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10560,7 +10723,9 @@ local Ros1Dobot_bringupModbusCloseRequest = classes["Ros1Dobot_bringupModbusClos
 --- @see Ros1Dobot_bringupModbusCloseResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupModbusCloseResponse
 local Ros1Dobot_bringupModbusCloseResponse = classes["Ros1Dobot_bringupModbusCloseResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupModbusCreateRequest
 --- @brief Complete ROS1 dobot_bringup/ModbusCreateRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10620,7 +10785,9 @@ local Ros1Dobot_bringupModbusCloseResponse = classes["Ros1Dobot_bringupModbusClo
 --- @see Ros1Dobot_bringupModbusCreateRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupModbusCreateRequest
 local Ros1Dobot_bringupModbusCreateRequest = classes["Ros1Dobot_bringupModbusCreateRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupModbusCreateResponse
 --- @brief Complete ROS1 dobot_bringup/ModbusCreateResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10678,7 +10845,9 @@ local Ros1Dobot_bringupModbusCreateRequest = classes["Ros1Dobot_bringupModbusCre
 --- @see Ros1Dobot_bringupModbusCreateResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupModbusCreateResponse
 local Ros1Dobot_bringupModbusCreateResponse = classes["Ros1Dobot_bringupModbusCreateResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJRequest
 --- @brief Complete ROS1 dobot_bringup/MovJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10741,7 +10910,9 @@ local Ros1Dobot_bringupModbusCreateResponse = classes["Ros1Dobot_bringupModbusCr
 --- @see Ros1Dobot_bringupMovJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJRequest
 local Ros1Dobot_bringupMovJRequest = classes["Ros1Dobot_bringupMovJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJResponse
 --- @brief Complete ROS1 dobot_bringup/MovJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10798,7 +10969,9 @@ local Ros1Dobot_bringupMovJRequest = classes["Ros1Dobot_bringupMovJRequest"]
 --- @see Ros1Dobot_bringupMovJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJResponse
 local Ros1Dobot_bringupMovJResponse = classes["Ros1Dobot_bringupMovJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJExtRequest
 --- @brief Complete ROS1 dobot_bringup/MovJExtRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10856,7 +11029,9 @@ local Ros1Dobot_bringupMovJResponse = classes["Ros1Dobot_bringupMovJResponse"]
 --- @see Ros1Dobot_bringupMovJExtRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJExtRequest
 local Ros1Dobot_bringupMovJExtRequest = classes["Ros1Dobot_bringupMovJExtRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJExtResponse
 --- @brief Complete ROS1 dobot_bringup/MovJExtResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10913,7 +11088,9 @@ local Ros1Dobot_bringupMovJExtRequest = classes["Ros1Dobot_bringupMovJExtRequest
 --- @see Ros1Dobot_bringupMovJExtResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJExtResponse
 local Ros1Dobot_bringupMovJExtResponse = classes["Ros1Dobot_bringupMovJExtResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJIORequest
 --- @brief Complete ROS1 dobot_bringup/MovJIORequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10976,7 +11153,9 @@ local Ros1Dobot_bringupMovJExtResponse = classes["Ros1Dobot_bringupMovJExtRespon
 --- @see Ros1Dobot_bringupMovJIORequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJIORequest
 local Ros1Dobot_bringupMovJIORequest = classes["Ros1Dobot_bringupMovJIORequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovJIOResponse
 --- @brief Complete ROS1 dobot_bringup/MovJIOResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11033,7 +11212,9 @@ local Ros1Dobot_bringupMovJIORequest = classes["Ros1Dobot_bringupMovJIORequest"]
 --- @see Ros1Dobot_bringupMovJIOResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovJIOResponse
 local Ros1Dobot_bringupMovJIOResponse = classes["Ros1Dobot_bringupMovJIOResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovLRequest
 --- @brief Complete ROS1 dobot_bringup/MovLRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11096,7 +11277,9 @@ local Ros1Dobot_bringupMovJIOResponse = classes["Ros1Dobot_bringupMovJIOResponse
 --- @see Ros1Dobot_bringupMovLRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovLRequest
 local Ros1Dobot_bringupMovLRequest = classes["Ros1Dobot_bringupMovLRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovLResponse
 --- @brief Complete ROS1 dobot_bringup/MovLResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11153,7 +11336,9 @@ local Ros1Dobot_bringupMovLRequest = classes["Ros1Dobot_bringupMovLRequest"]
 --- @see Ros1Dobot_bringupMovLResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovLResponse
 local Ros1Dobot_bringupMovLResponse = classes["Ros1Dobot_bringupMovLResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovLIORequest
 --- @brief Complete ROS1 dobot_bringup/MovLIORequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11216,7 +11401,9 @@ local Ros1Dobot_bringupMovLResponse = classes["Ros1Dobot_bringupMovLResponse"]
 --- @see Ros1Dobot_bringupMovLIORequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovLIORequest
 local Ros1Dobot_bringupMovLIORequest = classes["Ros1Dobot_bringupMovLIORequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMovLIOResponse
 --- @brief Complete ROS1 dobot_bringup/MovLIOResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11273,7 +11460,9 @@ local Ros1Dobot_bringupMovLIORequest = classes["Ros1Dobot_bringupMovLIORequest"]
 --- @see Ros1Dobot_bringupMovLIOResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMovLIOResponse
 local Ros1Dobot_bringupMovLIOResponse = classes["Ros1Dobot_bringupMovLIOResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupMoveJogRequest
 --- @brief Complete ROS1 dobot_bringup/MoveJogRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11331,7 +11520,9 @@ local Ros1Dobot_bringupMovLIOResponse = classes["Ros1Dobot_bringupMovLIOResponse
 --- @see Ros1Dobot_bringupMoveJogRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMoveJogRequest
 local Ros1Dobot_bringupMoveJogRequest = classes["Ros1Dobot_bringupMoveJogRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupMoveJogResponse
 --- @brief Complete ROS1 dobot_bringup/MoveJogResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11388,7 +11579,9 @@ local Ros1Dobot_bringupMoveJogRequest = classes["Ros1Dobot_bringupMoveJogRequest
 --- @see Ros1Dobot_bringupMoveJogResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupMoveJogResponse
 local Ros1Dobot_bringupMoveJogResponse = classes["Ros1Dobot_bringupMoveJogResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupPauseScriptRequest
 --- @brief Complete ROS1 dobot_bringup/PauseScriptRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11444,7 +11637,9 @@ local Ros1Dobot_bringupMoveJogResponse = classes["Ros1Dobot_bringupMoveJogRespon
 --- @see Ros1Dobot_bringupPauseScriptRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPauseScriptRequest
 local Ros1Dobot_bringupPauseScriptRequest = classes["Ros1Dobot_bringupPauseScriptRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupPauseScriptResponse
 --- @brief Complete ROS1 dobot_bringup/PauseScriptResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11501,7 +11696,9 @@ local Ros1Dobot_bringupPauseScriptRequest = classes["Ros1Dobot_bringupPauseScrip
 --- @see Ros1Dobot_bringupPauseScriptResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPauseScriptResponse
 local Ros1Dobot_bringupPauseScriptResponse = classes["Ros1Dobot_bringupPauseScriptResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupPayLoadRequest
 --- @brief Complete ROS1 dobot_bringup/PayLoadRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11559,7 +11756,9 @@ local Ros1Dobot_bringupPauseScriptResponse = classes["Ros1Dobot_bringupPauseScri
 --- @see Ros1Dobot_bringupPayLoadRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPayLoadRequest
 local Ros1Dobot_bringupPayLoadRequest = classes["Ros1Dobot_bringupPayLoadRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupPayLoadResponse
 --- @brief Complete ROS1 dobot_bringup/PayLoadResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11616,7 +11815,9 @@ local Ros1Dobot_bringupPayLoadRequest = classes["Ros1Dobot_bringupPayLoadRequest
 --- @see Ros1Dobot_bringupPayLoadResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPayLoadResponse
 local Ros1Dobot_bringupPayLoadResponse = classes["Ros1Dobot_bringupPayLoadResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupPositiveSolutionRequest
 --- @brief Complete ROS1 dobot_bringup/PositiveSolutionRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11680,7 +11881,9 @@ local Ros1Dobot_bringupPayLoadResponse = classes["Ros1Dobot_bringupPayLoadRespon
 --- @see Ros1Dobot_bringupPositiveSolutionRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPositiveSolutionRequest
 local Ros1Dobot_bringupPositiveSolutionRequest = classes["Ros1Dobot_bringupPositiveSolutionRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupPositiveSolutionResponse
 --- @brief Complete ROS1 dobot_bringup/PositiveSolutionResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11737,7 +11940,9 @@ local Ros1Dobot_bringupPositiveSolutionRequest = classes["Ros1Dobot_bringupPosit
 --- @see Ros1Dobot_bringupPositiveSolutionResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPositiveSolutionResponse
 local Ros1Dobot_bringupPositiveSolutionResponse = classes["Ros1Dobot_bringupPositiveSolutionResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupPowerOnRequest
 --- @brief Complete ROS1 dobot_bringup/PowerOnRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11793,7 +11998,9 @@ local Ros1Dobot_bringupPositiveSolutionResponse = classes["Ros1Dobot_bringupPosi
 --- @see Ros1Dobot_bringupPowerOnRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPowerOnRequest
 local Ros1Dobot_bringupPowerOnRequest = classes["Ros1Dobot_bringupPowerOnRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupPowerOnResponse
 --- @brief Complete ROS1 dobot_bringup/PowerOnResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11850,7 +12057,9 @@ local Ros1Dobot_bringupPowerOnRequest = classes["Ros1Dobot_bringupPowerOnRequest
 --- @see Ros1Dobot_bringupPowerOnResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPowerOnResponse
 local Ros1Dobot_bringupPowerOnResponse = classes["Ros1Dobot_bringupPowerOnResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelJointMovJRequest
 --- @brief Complete ROS1 dobot_bringup/RelJointMovJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11913,7 +12122,9 @@ local Ros1Dobot_bringupPowerOnResponse = classes["Ros1Dobot_bringupPowerOnRespon
 --- @see Ros1Dobot_bringupRelJointMovJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelJointMovJRequest
 local Ros1Dobot_bringupRelJointMovJRequest = classes["Ros1Dobot_bringupRelJointMovJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelJointMovJResponse
 --- @brief Complete ROS1 dobot_bringup/RelJointMovJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11970,7 +12181,9 @@ local Ros1Dobot_bringupRelJointMovJRequest = classes["Ros1Dobot_bringupRelJointM
 --- @see Ros1Dobot_bringupRelJointMovJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelJointMovJResponse
 local Ros1Dobot_bringupRelJointMovJResponse = classes["Ros1Dobot_bringupRelJointMovJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12032,7 +12245,9 @@ local Ros1Dobot_bringupRelJointMovJResponse = classes["Ros1Dobot_bringupRelJoint
 --- @see Ros1Dobot_bringupRelMovJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJRequest
 local Ros1Dobot_bringupRelMovJRequest = classes["Ros1Dobot_bringupRelMovJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12089,7 +12304,9 @@ local Ros1Dobot_bringupRelMovJRequest = classes["Ros1Dobot_bringupRelMovJRequest
 --- @see Ros1Dobot_bringupRelMovJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJResponse
 local Ros1Dobot_bringupRelMovJResponse = classes["Ros1Dobot_bringupRelMovJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJToolRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovJToolRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12153,7 +12370,9 @@ local Ros1Dobot_bringupRelMovJResponse = classes["Ros1Dobot_bringupRelMovJRespon
 --- @see Ros1Dobot_bringupRelMovJToolRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJToolRequest
 local Ros1Dobot_bringupRelMovJToolRequest = classes["Ros1Dobot_bringupRelMovJToolRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJToolResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovJToolResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12210,7 +12429,9 @@ local Ros1Dobot_bringupRelMovJToolRequest = classes["Ros1Dobot_bringupRelMovJToo
 --- @see Ros1Dobot_bringupRelMovJToolResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJToolResponse
 local Ros1Dobot_bringupRelMovJToolResponse = classes["Ros1Dobot_bringupRelMovJToolResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJUserRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovJUserRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12274,7 +12495,9 @@ local Ros1Dobot_bringupRelMovJToolResponse = classes["Ros1Dobot_bringupRelMovJTo
 --- @see Ros1Dobot_bringupRelMovJUserRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJUserRequest
 local Ros1Dobot_bringupRelMovJUserRequest = classes["Ros1Dobot_bringupRelMovJUserRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovJUserResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovJUserResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12331,7 +12554,9 @@ local Ros1Dobot_bringupRelMovJUserRequest = classes["Ros1Dobot_bringupRelMovJUse
 --- @see Ros1Dobot_bringupRelMovJUserResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovJUserResponse
 local Ros1Dobot_bringupRelMovJUserResponse = classes["Ros1Dobot_bringupRelMovJUserResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovLRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12390,7 +12615,9 @@ local Ros1Dobot_bringupRelMovJUserResponse = classes["Ros1Dobot_bringupRelMovJUs
 --- @see Ros1Dobot_bringupRelMovLRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLRequest
 local Ros1Dobot_bringupRelMovLRequest = classes["Ros1Dobot_bringupRelMovLRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovLResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12447,7 +12674,9 @@ local Ros1Dobot_bringupRelMovLRequest = classes["Ros1Dobot_bringupRelMovLRequest
 --- @see Ros1Dobot_bringupRelMovLResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLResponse
 local Ros1Dobot_bringupRelMovLResponse = classes["Ros1Dobot_bringupRelMovLResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLToolRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovLToolRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12511,7 +12740,9 @@ local Ros1Dobot_bringupRelMovLResponse = classes["Ros1Dobot_bringupRelMovLRespon
 --- @see Ros1Dobot_bringupRelMovLToolRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLToolRequest
 local Ros1Dobot_bringupRelMovLToolRequest = classes["Ros1Dobot_bringupRelMovLToolRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLToolResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovLToolResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12568,7 +12799,9 @@ local Ros1Dobot_bringupRelMovLToolRequest = classes["Ros1Dobot_bringupRelMovLToo
 --- @see Ros1Dobot_bringupRelMovLToolResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLToolResponse
 local Ros1Dobot_bringupRelMovLToolResponse = classes["Ros1Dobot_bringupRelMovLToolResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLUserRequest
 --- @brief Complete ROS1 dobot_bringup/RelMovLUserRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12632,7 +12865,9 @@ local Ros1Dobot_bringupRelMovLToolResponse = classes["Ros1Dobot_bringupRelMovLTo
 --- @see Ros1Dobot_bringupRelMovLUserRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLUserRequest
 local Ros1Dobot_bringupRelMovLUserRequest = classes["Ros1Dobot_bringupRelMovLUserRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRelMovLUserResponse
 --- @brief Complete ROS1 dobot_bringup/RelMovLUserResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12689,7 +12924,9 @@ local Ros1Dobot_bringupRelMovLUserRequest = classes["Ros1Dobot_bringupRelMovLUse
 --- @see Ros1Dobot_bringupRelMovLUserResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRelMovLUserResponse
 local Ros1Dobot_bringupRelMovLUserResponse = classes["Ros1Dobot_bringupRelMovLUserResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupResetRobotRequest
 --- @brief Complete ROS1 dobot_bringup/ResetRobotRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12745,7 +12982,9 @@ local Ros1Dobot_bringupRelMovLUserResponse = classes["Ros1Dobot_bringupRelMovLUs
 --- @see Ros1Dobot_bringupResetRobotRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupResetRobotRequest
 local Ros1Dobot_bringupResetRobotRequest = classes["Ros1Dobot_bringupResetRobotRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupResetRobotResponse
 --- @brief Complete ROS1 dobot_bringup/ResetRobotResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12802,7 +13041,9 @@ local Ros1Dobot_bringupResetRobotRequest = classes["Ros1Dobot_bringupResetRobotR
 --- @see Ros1Dobot_bringupResetRobotResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupResetRobotResponse
 local Ros1Dobot_bringupResetRobotResponse = classes["Ros1Dobot_bringupResetRobotResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRobotModeRequest
 --- @brief Complete ROS1 dobot_bringup/RobotModeRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12858,7 +13099,9 @@ local Ros1Dobot_bringupResetRobotResponse = classes["Ros1Dobot_bringupResetRobot
 --- @see Ros1Dobot_bringupRobotModeRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRobotModeRequest
 local Ros1Dobot_bringupRobotModeRequest = classes["Ros1Dobot_bringupRobotModeRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRobotModeResponse
 --- @brief Complete ROS1 dobot_bringup/RobotModeResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12916,7 +13159,9 @@ local Ros1Dobot_bringupRobotModeRequest = classes["Ros1Dobot_bringupRobotModeReq
 --- @see Ros1Dobot_bringupRobotModeResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRobotModeResponse
 local Ros1Dobot_bringupRobotModeResponse = classes["Ros1Dobot_bringupRobotModeResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupRunScriptRequest
 --- @brief Complete ROS1 dobot_bringup/RunScriptRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12973,7 +13218,9 @@ local Ros1Dobot_bringupRobotModeResponse = classes["Ros1Dobot_bringupRobotModeRe
 --- @see Ros1Dobot_bringupRunScriptRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRunScriptRequest
 local Ros1Dobot_bringupRunScriptRequest = classes["Ros1Dobot_bringupRunScriptRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupRunScriptResponse
 --- @brief Complete ROS1 dobot_bringup/RunScriptResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13030,7 +13277,9 @@ local Ros1Dobot_bringupRunScriptRequest = classes["Ros1Dobot_bringupRunScriptReq
 --- @see Ros1Dobot_bringupRunScriptResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupRunScriptResponse
 local Ros1Dobot_bringupRunScriptResponse = classes["Ros1Dobot_bringupRunScriptResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoJRequest
 --- @brief Complete ROS1 dobot_bringup/ServoJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13095,7 +13344,9 @@ local Ros1Dobot_bringupRunScriptResponse = classes["Ros1Dobot_bringupRunScriptRe
 --- @see Ros1Dobot_bringupServoJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoJRequest
 local Ros1Dobot_bringupServoJRequest = classes["Ros1Dobot_bringupServoJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoJResponse
 --- @brief Complete ROS1 dobot_bringup/ServoJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13152,7 +13403,9 @@ local Ros1Dobot_bringupServoJRequest = classes["Ros1Dobot_bringupServoJRequest"]
 --- @see Ros1Dobot_bringupServoJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoJResponse
 local Ros1Dobot_bringupServoJResponse = classes["Ros1Dobot_bringupServoJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoJParamRequest
 --- @brief Complete ROS1 dobot_bringup/ServoJParamRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13212,7 +13465,9 @@ local Ros1Dobot_bringupServoJResponse = classes["Ros1Dobot_bringupServoJResponse
 --- @see Ros1Dobot_bringupServoJParamRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoJParamRequest
 local Ros1Dobot_bringupServoJParamRequest = classes["Ros1Dobot_bringupServoJParamRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoJParamResponse
 --- @brief Complete ROS1 dobot_bringup/ServoJParamResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13269,7 +13524,9 @@ local Ros1Dobot_bringupServoJParamRequest = classes["Ros1Dobot_bringupServoJPara
 --- @see Ros1Dobot_bringupServoJParamResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoJParamResponse
 local Ros1Dobot_bringupServoJParamResponse = classes["Ros1Dobot_bringupServoJParamResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoPRequest
 --- @brief Complete ROS1 dobot_bringup/ServoPRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13331,7 +13588,9 @@ local Ros1Dobot_bringupServoJParamResponse = classes["Ros1Dobot_bringupServoJPar
 --- @see Ros1Dobot_bringupServoPRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoPRequest
 local Ros1Dobot_bringupServoPRequest = classes["Ros1Dobot_bringupServoPRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupServoPResponse
 --- @brief Complete ROS1 dobot_bringup/ServoPResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13388,7 +13647,9 @@ local Ros1Dobot_bringupServoPRequest = classes["Ros1Dobot_bringupServoPRequest"]
 --- @see Ros1Dobot_bringupServoPResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupServoPResponse
 local Ros1Dobot_bringupServoPResponse = classes["Ros1Dobot_bringupServoPResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetArmOrientationRequest
 --- @brief Complete ROS1 dobot_bringup/SetArmOrientationRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13448,7 +13709,9 @@ local Ros1Dobot_bringupServoPResponse = classes["Ros1Dobot_bringupServoPResponse
 --- @see Ros1Dobot_bringupSetArmOrientationRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetArmOrientationRequest
 local Ros1Dobot_bringupSetArmOrientationRequest = classes["Ros1Dobot_bringupSetArmOrientationRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetArmOrientationResponse
 --- @brief Complete ROS1 dobot_bringup/SetArmOrientationResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13505,7 +13768,9 @@ local Ros1Dobot_bringupSetArmOrientationRequest = classes["Ros1Dobot_bringupSetA
 --- @see Ros1Dobot_bringupSetArmOrientationResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetArmOrientationResponse
 local Ros1Dobot_bringupSetArmOrientationResponse = classes["Ros1Dobot_bringupSetArmOrientationResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCoilsRequest
 --- @brief Complete ROS1 dobot_bringup/SetCoilsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13565,7 +13830,9 @@ local Ros1Dobot_bringupSetArmOrientationResponse = classes["Ros1Dobot_bringupSet
 --- @see Ros1Dobot_bringupSetCoilsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCoilsRequest
 local Ros1Dobot_bringupSetCoilsRequest = classes["Ros1Dobot_bringupSetCoilsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCoilsResponse
 --- @brief Complete ROS1 dobot_bringup/SetCoilsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13622,7 +13889,9 @@ local Ros1Dobot_bringupSetCoilsRequest = classes["Ros1Dobot_bringupSetCoilsReque
 --- @see Ros1Dobot_bringupSetCoilsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCoilsResponse
 local Ros1Dobot_bringupSetCoilsResponse = classes["Ros1Dobot_bringupSetCoilsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCollideDragRequest
 --- @brief Complete ROS1 dobot_bringup/SetCollideDragRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13679,7 +13948,9 @@ local Ros1Dobot_bringupSetCoilsResponse = classes["Ros1Dobot_bringupSetCoilsResp
 --- @see Ros1Dobot_bringupSetCollideDragRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCollideDragRequest
 local Ros1Dobot_bringupSetCollideDragRequest = classes["Ros1Dobot_bringupSetCollideDragRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCollideDragResponse
 --- @brief Complete ROS1 dobot_bringup/SetCollideDragResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13736,7 +14007,9 @@ local Ros1Dobot_bringupSetCollideDragRequest = classes["Ros1Dobot_bringupSetColl
 --- @see Ros1Dobot_bringupSetCollideDragResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCollideDragResponse
 local Ros1Dobot_bringupSetCollideDragResponse = classes["Ros1Dobot_bringupSetCollideDragResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCollisionLevelRequest
 --- @brief Complete ROS1 dobot_bringup/SetCollisionLevelRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13793,7 +14066,9 @@ local Ros1Dobot_bringupSetCollideDragResponse = classes["Ros1Dobot_bringupSetCol
 --- @see Ros1Dobot_bringupSetCollisionLevelRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCollisionLevelRequest
 local Ros1Dobot_bringupSetCollisionLevelRequest = classes["Ros1Dobot_bringupSetCollisionLevelRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetCollisionLevelResponse
 --- @brief Complete ROS1 dobot_bringup/SetCollisionLevelResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13850,7 +14125,9 @@ local Ros1Dobot_bringupSetCollisionLevelRequest = classes["Ros1Dobot_bringupSetC
 --- @see Ros1Dobot_bringupSetCollisionLevelResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetCollisionLevelResponse
 local Ros1Dobot_bringupSetCollisionLevelResponse = classes["Ros1Dobot_bringupSetCollisionLevelResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetHoldRegsRequest
 --- @brief Complete ROS1 dobot_bringup/SetHoldRegsRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13911,7 +14188,9 @@ local Ros1Dobot_bringupSetCollisionLevelResponse = classes["Ros1Dobot_bringupSet
 --- @see Ros1Dobot_bringupSetHoldRegsRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetHoldRegsRequest
 local Ros1Dobot_bringupSetHoldRegsRequest = classes["Ros1Dobot_bringupSetHoldRegsRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetHoldRegsResponse
 --- @brief Complete ROS1 dobot_bringup/SetHoldRegsResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13968,7 +14247,9 @@ local Ros1Dobot_bringupSetHoldRegsRequest = classes["Ros1Dobot_bringupSetHoldReg
 --- @see Ros1Dobot_bringupSetHoldRegsResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetHoldRegsResponse
 local Ros1Dobot_bringupSetHoldRegsResponse = classes["Ros1Dobot_bringupSetHoldRegsResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetObstacleAvoidRequest
 --- @brief Complete ROS1 dobot_bringup/SetObstacleAvoidRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14025,7 +14306,9 @@ local Ros1Dobot_bringupSetHoldRegsResponse = classes["Ros1Dobot_bringupSetHoldRe
 --- @see Ros1Dobot_bringupSetObstacleAvoidRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetObstacleAvoidRequest
 local Ros1Dobot_bringupSetObstacleAvoidRequest = classes["Ros1Dobot_bringupSetObstacleAvoidRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetObstacleAvoidResponse
 --- @brief Complete ROS1 dobot_bringup/SetObstacleAvoidResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14082,7 +14365,9 @@ local Ros1Dobot_bringupSetObstacleAvoidRequest = classes["Ros1Dobot_bringupSetOb
 --- @see Ros1Dobot_bringupSetObstacleAvoidResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetObstacleAvoidResponse
 local Ros1Dobot_bringupSetObstacleAvoidResponse = classes["Ros1Dobot_bringupSetObstacleAvoidResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetPayloadRequest
 --- @brief Complete ROS1 dobot_bringup/SetPayloadRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14139,7 +14424,9 @@ local Ros1Dobot_bringupSetObstacleAvoidResponse = classes["Ros1Dobot_bringupSetO
 --- @see Ros1Dobot_bringupSetPayloadRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetPayloadRequest
 local Ros1Dobot_bringupSetPayloadRequest = classes["Ros1Dobot_bringupSetPayloadRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetPayloadResponse
 --- @brief Complete ROS1 dobot_bringup/SetPayloadResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14196,7 +14483,9 @@ local Ros1Dobot_bringupSetPayloadRequest = classes["Ros1Dobot_bringupSetPayloadR
 --- @see Ros1Dobot_bringupSetPayloadResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetPayloadResponse
 local Ros1Dobot_bringupSetPayloadResponse = classes["Ros1Dobot_bringupSetPayloadResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetSafeSkinRequest
 --- @brief Complete ROS1 dobot_bringup/SetSafeSkinRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14253,7 +14542,9 @@ local Ros1Dobot_bringupSetPayloadResponse = classes["Ros1Dobot_bringupSetPayload
 --- @see Ros1Dobot_bringupSetSafeSkinRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetSafeSkinRequest
 local Ros1Dobot_bringupSetSafeSkinRequest = classes["Ros1Dobot_bringupSetSafeSkinRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetSafeSkinResponse
 --- @brief Complete ROS1 dobot_bringup/SetSafeSkinResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14310,7 +14601,9 @@ local Ros1Dobot_bringupSetSafeSkinRequest = classes["Ros1Dobot_bringupSetSafeSki
 --- @see Ros1Dobot_bringupSetSafeSkinResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetSafeSkinResponse
 local Ros1Dobot_bringupSetSafeSkinResponse = classes["Ros1Dobot_bringupSetSafeSkinResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetTerminal485Request
 --- @brief Complete ROS1 dobot_bringup/SetTerminal485Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14370,7 +14663,9 @@ local Ros1Dobot_bringupSetSafeSkinResponse = classes["Ros1Dobot_bringupSetSafeSk
 --- @see Ros1Dobot_bringupSetTerminal485Request.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetTerminal485Request
 local Ros1Dobot_bringupSetTerminal485Request = classes["Ros1Dobot_bringupSetTerminal485Request"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetTerminal485Response
 --- @brief Complete ROS1 dobot_bringup/SetTerminal485Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14427,7 +14722,9 @@ local Ros1Dobot_bringupSetTerminal485Request = classes["Ros1Dobot_bringupSetTerm
 --- @see Ros1Dobot_bringupSetTerminal485Response.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetTerminal485Response
 local Ros1Dobot_bringupSetTerminal485Response = classes["Ros1Dobot_bringupSetTerminal485Response"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetTerminalKeysRequest
 --- @brief Complete ROS1 dobot_bringup/SetTerminalKeysRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14484,7 +14781,9 @@ local Ros1Dobot_bringupSetTerminal485Response = classes["Ros1Dobot_bringupSetTer
 --- @see Ros1Dobot_bringupSetTerminalKeysRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetTerminalKeysRequest
 local Ros1Dobot_bringupSetTerminalKeysRequest = classes["Ros1Dobot_bringupSetTerminalKeysRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSetTerminalKeysResponse
 --- @brief Complete ROS1 dobot_bringup/SetTerminalKeysResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14541,7 +14840,9 @@ local Ros1Dobot_bringupSetTerminalKeysRequest = classes["Ros1Dobot_bringupSetTer
 --- @see Ros1Dobot_bringupSetTerminalKeysResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSetTerminalKeysResponse
 local Ros1Dobot_bringupSetTerminalKeysResponse = classes["Ros1Dobot_bringupSetTerminalKeysResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedFactorRequest
 --- @brief Complete ROS1 dobot_bringup/SpeedFactorRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14598,7 +14899,9 @@ local Ros1Dobot_bringupSetTerminalKeysResponse = classes["Ros1Dobot_bringupSetTe
 --- @see Ros1Dobot_bringupSpeedFactorRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedFactorRequest
 local Ros1Dobot_bringupSpeedFactorRequest = classes["Ros1Dobot_bringupSpeedFactorRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedFactorResponse
 --- @brief Complete ROS1 dobot_bringup/SpeedFactorResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14655,7 +14958,9 @@ local Ros1Dobot_bringupSpeedFactorRequest = classes["Ros1Dobot_bringupSpeedFacto
 --- @see Ros1Dobot_bringupSpeedFactorResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedFactorResponse
 local Ros1Dobot_bringupSpeedFactorResponse = classes["Ros1Dobot_bringupSpeedFactorResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedJRequest
 --- @brief Complete ROS1 dobot_bringup/SpeedJRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14712,7 +15017,9 @@ local Ros1Dobot_bringupSpeedFactorResponse = classes["Ros1Dobot_bringupSpeedFact
 --- @see Ros1Dobot_bringupSpeedJRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedJRequest
 local Ros1Dobot_bringupSpeedJRequest = classes["Ros1Dobot_bringupSpeedJRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedJResponse
 --- @brief Complete ROS1 dobot_bringup/SpeedJResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14769,7 +15076,9 @@ local Ros1Dobot_bringupSpeedJRequest = classes["Ros1Dobot_bringupSpeedJRequest"]
 --- @see Ros1Dobot_bringupSpeedJResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedJResponse
 local Ros1Dobot_bringupSpeedJResponse = classes["Ros1Dobot_bringupSpeedJResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedLRequest
 --- @brief Complete ROS1 dobot_bringup/SpeedLRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14826,7 +15135,9 @@ local Ros1Dobot_bringupSpeedJResponse = classes["Ros1Dobot_bringupSpeedJResponse
 --- @see Ros1Dobot_bringupSpeedLRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedLRequest
 local Ros1Dobot_bringupSpeedLRequest = classes["Ros1Dobot_bringupSpeedLRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSpeedLResponse
 --- @brief Complete ROS1 dobot_bringup/SpeedLResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14883,7 +15194,9 @@ local Ros1Dobot_bringupSpeedLRequest = classes["Ros1Dobot_bringupSpeedLRequest"]
 --- @see Ros1Dobot_bringupSpeedLResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSpeedLResponse
 local Ros1Dobot_bringupSpeedLResponse = classes["Ros1Dobot_bringupSpeedLResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartDragRequest
 --- @brief Complete ROS1 dobot_bringup/StartDragRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14939,7 +15252,9 @@ local Ros1Dobot_bringupSpeedLResponse = classes["Ros1Dobot_bringupSpeedLResponse
 --- @see Ros1Dobot_bringupStartDragRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartDragRequest
 local Ros1Dobot_bringupStartDragRequest = classes["Ros1Dobot_bringupStartDragRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartDragResponse
 --- @brief Complete ROS1 dobot_bringup/StartDragResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14996,7 +15311,9 @@ local Ros1Dobot_bringupStartDragRequest = classes["Ros1Dobot_bringupStartDragReq
 --- @see Ros1Dobot_bringupStartDragResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartDragResponse
 local Ros1Dobot_bringupStartDragResponse = classes["Ros1Dobot_bringupStartDragResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartFCTraceRequest
 --- @brief Complete ROS1 dobot_bringup/StartFCTraceRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15053,7 +15370,9 @@ local Ros1Dobot_bringupStartDragResponse = classes["Ros1Dobot_bringupStartDragRe
 --- @see Ros1Dobot_bringupStartFCTraceRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartFCTraceRequest
 local Ros1Dobot_bringupStartFCTraceRequest = classes["Ros1Dobot_bringupStartFCTraceRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartFCTraceResponse
 --- @brief Complete ROS1 dobot_bringup/StartFCTraceResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15110,7 +15429,9 @@ local Ros1Dobot_bringupStartFCTraceRequest = classes["Ros1Dobot_bringupStartFCTr
 --- @see Ros1Dobot_bringupStartFCTraceResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartFCTraceResponse
 local Ros1Dobot_bringupStartFCTraceResponse = classes["Ros1Dobot_bringupStartFCTraceResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartPathRequest
 --- @brief Complete ROS1 dobot_bringup/StartPathRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15169,7 +15490,9 @@ local Ros1Dobot_bringupStartFCTraceResponse = classes["Ros1Dobot_bringupStartFCT
 --- @see Ros1Dobot_bringupStartPathRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartPathRequest
 local Ros1Dobot_bringupStartPathRequest = classes["Ros1Dobot_bringupStartPathRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartPathResponse
 --- @brief Complete ROS1 dobot_bringup/StartPathResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15226,7 +15549,9 @@ local Ros1Dobot_bringupStartPathRequest = classes["Ros1Dobot_bringupStartPathReq
 --- @see Ros1Dobot_bringupStartPathResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartPathResponse
 local Ros1Dobot_bringupStartPathResponse = classes["Ros1Dobot_bringupStartPathResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartTraceRequest
 --- @brief Complete ROS1 dobot_bringup/StartTraceRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15283,7 +15608,9 @@ local Ros1Dobot_bringupStartPathResponse = classes["Ros1Dobot_bringupStartPathRe
 --- @see Ros1Dobot_bringupStartTraceRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartTraceRequest
 local Ros1Dobot_bringupStartTraceRequest = classes["Ros1Dobot_bringupStartTraceRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStartTraceResponse
 --- @brief Complete ROS1 dobot_bringup/StartTraceResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15340,7 +15667,9 @@ local Ros1Dobot_bringupStartTraceRequest = classes["Ros1Dobot_bringupStartTraceR
 --- @see Ros1Dobot_bringupStartTraceResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStartTraceResponse
 local Ros1Dobot_bringupStartTraceResponse = classes["Ros1Dobot_bringupStartTraceResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopDragRequest
 --- @brief Complete ROS1 dobot_bringup/StopDragRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15396,7 +15725,9 @@ local Ros1Dobot_bringupStartTraceResponse = classes["Ros1Dobot_bringupStartTrace
 --- @see Ros1Dobot_bringupStopDragRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopDragRequest
 local Ros1Dobot_bringupStopDragRequest = classes["Ros1Dobot_bringupStopDragRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopDragResponse
 --- @brief Complete ROS1 dobot_bringup/StopDragResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15453,7 +15784,9 @@ local Ros1Dobot_bringupStopDragRequest = classes["Ros1Dobot_bringupStopDragReque
 --- @see Ros1Dobot_bringupStopDragResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopDragResponse
 local Ros1Dobot_bringupStopDragResponse = classes["Ros1Dobot_bringupStopDragResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopScriptRequest
 --- @brief Complete ROS1 dobot_bringup/StopScriptRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15509,7 +15842,9 @@ local Ros1Dobot_bringupStopDragResponse = classes["Ros1Dobot_bringupStopDragResp
 --- @see Ros1Dobot_bringupStopScriptRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopScriptRequest
 local Ros1Dobot_bringupStopScriptRequest = classes["Ros1Dobot_bringupStopScriptRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopScriptResponse
 --- @brief Complete ROS1 dobot_bringup/StopScriptResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15566,7 +15901,9 @@ local Ros1Dobot_bringupStopScriptRequest = classes["Ros1Dobot_bringupStopScriptR
 --- @see Ros1Dobot_bringupStopScriptResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopScriptResponse
 local Ros1Dobot_bringupStopScriptResponse = classes["Ros1Dobot_bringupStopScriptResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopmoveJogRequest
 --- @brief Complete ROS1 dobot_bringup/StopmoveJogRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15622,7 +15959,9 @@ local Ros1Dobot_bringupStopScriptResponse = classes["Ros1Dobot_bringupStopScript
 --- @see Ros1Dobot_bringupStopmoveJogRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopmoveJogRequest
 local Ros1Dobot_bringupStopmoveJogRequest = classes["Ros1Dobot_bringupStopmoveJogRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupStopmoveJogResponse
 --- @brief Complete ROS1 dobot_bringup/StopmoveJogResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15679,7 +16018,9 @@ local Ros1Dobot_bringupStopmoveJogRequest = classes["Ros1Dobot_bringupStopmoveJo
 --- @see Ros1Dobot_bringupStopmoveJogResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupStopmoveJogResponse
 local Ros1Dobot_bringupStopmoveJogResponse = classes["Ros1Dobot_bringupStopmoveJogResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSyncRequest
 --- @brief Complete ROS1 dobot_bringup/SyncRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15735,7 +16076,9 @@ local Ros1Dobot_bringupStopmoveJogResponse = classes["Ros1Dobot_bringupStopmoveJ
 --- @see Ros1Dobot_bringupSyncRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSyncRequest
 local Ros1Dobot_bringupSyncRequest = classes["Ros1Dobot_bringupSyncRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSyncResponse
 --- @brief Complete ROS1 dobot_bringup/SyncResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15792,7 +16135,9 @@ local Ros1Dobot_bringupSyncRequest = classes["Ros1Dobot_bringupSyncRequest"]
 --- @see Ros1Dobot_bringupSyncResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSyncResponse
 local Ros1Dobot_bringupSyncResponse = classes["Ros1Dobot_bringupSyncResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupSyncAllRequest
 --- @brief Complete ROS1 dobot_bringup/SyncAllRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15848,7 +16193,9 @@ local Ros1Dobot_bringupSyncResponse = classes["Ros1Dobot_bringupSyncResponse"]
 --- @see Ros1Dobot_bringupSyncAllRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSyncAllRequest
 local Ros1Dobot_bringupSyncAllRequest = classes["Ros1Dobot_bringupSyncAllRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupSyncAllResponse
 --- @brief Complete ROS1 dobot_bringup/SyncAllResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15905,7 +16252,9 @@ local Ros1Dobot_bringupSyncAllRequest = classes["Ros1Dobot_bringupSyncAllRequest
 --- @see Ros1Dobot_bringupSyncAllResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupSyncAllResponse
 local Ros1Dobot_bringupSyncAllResponse = classes["Ros1Dobot_bringupSyncAllResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupTCPSpeedRequest
 --- @brief Complete ROS1 dobot_bringup/TCPSpeedRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15962,7 +16311,9 @@ local Ros1Dobot_bringupSyncAllResponse = classes["Ros1Dobot_bringupSyncAllRespon
 --- @see Ros1Dobot_bringupTCPSpeedRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTCPSpeedRequest
 local Ros1Dobot_bringupTCPSpeedRequest = classes["Ros1Dobot_bringupTCPSpeedRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupTCPSpeedResponse
 --- @brief Complete ROS1 dobot_bringup/TCPSpeedResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16019,7 +16370,9 @@ local Ros1Dobot_bringupTCPSpeedRequest = classes["Ros1Dobot_bringupTCPSpeedReque
 --- @see Ros1Dobot_bringupTCPSpeedResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTCPSpeedResponse
 local Ros1Dobot_bringupTCPSpeedResponse = classes["Ros1Dobot_bringupTCPSpeedResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupTCPSpeedEndRequest
 --- @brief Complete ROS1 dobot_bringup/TCPSpeedEndRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16075,7 +16428,9 @@ local Ros1Dobot_bringupTCPSpeedResponse = classes["Ros1Dobot_bringupTCPSpeedResp
 --- @see Ros1Dobot_bringupTCPSpeedEndRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTCPSpeedEndRequest
 local Ros1Dobot_bringupTCPSpeedEndRequest = classes["Ros1Dobot_bringupTCPSpeedEndRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupTCPSpeedEndResponse
 --- @brief Complete ROS1 dobot_bringup/TCPSpeedEndResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16132,7 +16487,9 @@ local Ros1Dobot_bringupTCPSpeedEndRequest = classes["Ros1Dobot_bringupTCPSpeedEn
 --- @see Ros1Dobot_bringupTCPSpeedEndResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTCPSpeedEndResponse
 local Ros1Dobot_bringupTCPSpeedEndResponse = classes["Ros1Dobot_bringupTCPSpeedEndResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupTcpDashboardRequest
 --- @brief Complete ROS1 dobot_bringup/TcpDashboardRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16189,7 +16546,9 @@ local Ros1Dobot_bringupTCPSpeedEndResponse = classes["Ros1Dobot_bringupTCPSpeedE
 --- @see Ros1Dobot_bringupTcpDashboardRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTcpDashboardRequest
 local Ros1Dobot_bringupTcpDashboardRequest = classes["Ros1Dobot_bringupTcpDashboardRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupTcpDashboardResponse
 --- @brief Complete ROS1 dobot_bringup/TcpDashboardResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16246,7 +16605,9 @@ local Ros1Dobot_bringupTcpDashboardRequest = classes["Ros1Dobot_bringupTcpDashbo
 --- @see Ros1Dobot_bringupTcpDashboardResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTcpDashboardResponse
 local Ros1Dobot_bringupTcpDashboardResponse = classes["Ros1Dobot_bringupTcpDashboardResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupTcpRealDataRequest
 --- @brief Complete ROS1 dobot_bringup/TcpRealDataRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16304,7 +16665,9 @@ local Ros1Dobot_bringupTcpDashboardResponse = classes["Ros1Dobot_bringupTcpDashb
 --- @see Ros1Dobot_bringupTcpRealDataRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTcpRealDataRequest
 local Ros1Dobot_bringupTcpRealDataRequest = classes["Ros1Dobot_bringupTcpRealDataRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupTcpRealDataResponse
 --- @brief Complete ROS1 dobot_bringup/TcpRealDataResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16361,7 +16724,9 @@ local Ros1Dobot_bringupTcpRealDataRequest = classes["Ros1Dobot_bringupTcpRealDat
 --- @see Ros1Dobot_bringupTcpRealDataResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupTcpRealDataResponse
 local Ros1Dobot_bringupTcpRealDataResponse = classes["Ros1Dobot_bringupTcpRealDataResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolRequest
 --- @brief Complete ROS1 dobot_bringup/ToolRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16418,7 +16783,9 @@ local Ros1Dobot_bringupTcpRealDataResponse = classes["Ros1Dobot_bringupTcpRealDa
 --- @see Ros1Dobot_bringupToolRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolRequest
 local Ros1Dobot_bringupToolRequest = classes["Ros1Dobot_bringupToolRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolResponse
 --- @brief Complete ROS1 dobot_bringup/ToolResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16475,7 +16842,9 @@ local Ros1Dobot_bringupToolRequest = classes["Ros1Dobot_bringupToolRequest"]
 --- @see Ros1Dobot_bringupToolResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolResponse
 local Ros1Dobot_bringupToolResponse = classes["Ros1Dobot_bringupToolResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolAIRequest
 --- @brief Complete ROS1 dobot_bringup/ToolAIRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16532,7 +16901,9 @@ local Ros1Dobot_bringupToolResponse = classes["Ros1Dobot_bringupToolResponse"]
 --- @see Ros1Dobot_bringupToolAIRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolAIRequest
 local Ros1Dobot_bringupToolAIRequest = classes["Ros1Dobot_bringupToolAIRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolAIResponse
 --- @brief Complete ROS1 dobot_bringup/ToolAIResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16589,7 +16960,9 @@ local Ros1Dobot_bringupToolAIRequest = classes["Ros1Dobot_bringupToolAIRequest"]
 --- @see Ros1Dobot_bringupToolAIResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolAIResponse
 local Ros1Dobot_bringupToolAIResponse = classes["Ros1Dobot_bringupToolAIResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDIRequest
 --- @brief Complete ROS1 dobot_bringup/ToolDIRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16646,7 +17019,9 @@ local Ros1Dobot_bringupToolAIResponse = classes["Ros1Dobot_bringupToolAIResponse
 --- @see Ros1Dobot_bringupToolDIRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDIRequest
 local Ros1Dobot_bringupToolDIRequest = classes["Ros1Dobot_bringupToolDIRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDIResponse
 --- @brief Complete ROS1 dobot_bringup/ToolDIResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16703,7 +17078,9 @@ local Ros1Dobot_bringupToolDIRequest = classes["Ros1Dobot_bringupToolDIRequest"]
 --- @see Ros1Dobot_bringupToolDIResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDIResponse
 local Ros1Dobot_bringupToolDIResponse = classes["Ros1Dobot_bringupToolDIResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDORequest
 --- @brief Complete ROS1 dobot_bringup/ToolDORequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16761,7 +17138,9 @@ local Ros1Dobot_bringupToolDIResponse = classes["Ros1Dobot_bringupToolDIResponse
 --- @see Ros1Dobot_bringupToolDORequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDORequest
 local Ros1Dobot_bringupToolDORequest = classes["Ros1Dobot_bringupToolDORequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDOResponse
 --- @brief Complete ROS1 dobot_bringup/ToolDOResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16818,7 +17197,9 @@ local Ros1Dobot_bringupToolDORequest = classes["Ros1Dobot_bringupToolDORequest"]
 --- @see Ros1Dobot_bringupToolDOResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDOResponse
 local Ros1Dobot_bringupToolDOResponse = classes["Ros1Dobot_bringupToolDOResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDOExecuteRequest
 --- @brief Complete ROS1 dobot_bringup/ToolDOExecuteRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16876,7 +17257,9 @@ local Ros1Dobot_bringupToolDOResponse = classes["Ros1Dobot_bringupToolDOResponse
 --- @see Ros1Dobot_bringupToolDOExecuteRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDOExecuteRequest
 local Ros1Dobot_bringupToolDOExecuteRequest = classes["Ros1Dobot_bringupToolDOExecuteRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupToolDOExecuteResponse
 --- @brief Complete ROS1 dobot_bringup/ToolDOExecuteResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16933,7 +17316,9 @@ local Ros1Dobot_bringupToolDOExecuteRequest = classes["Ros1Dobot_bringupToolDOEx
 --- @see Ros1Dobot_bringupToolDOExecuteResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupToolDOExecuteResponse
 local Ros1Dobot_bringupToolDOExecuteResponse = classes["Ros1Dobot_bringupToolDOExecuteResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupUserRequest
 --- @brief Complete ROS1 dobot_bringup/UserRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16990,7 +17375,9 @@ local Ros1Dobot_bringupToolDOExecuteResponse = classes["Ros1Dobot_bringupToolDOE
 --- @see Ros1Dobot_bringupUserRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupUserRequest
 local Ros1Dobot_bringupUserRequest = classes["Ros1Dobot_bringupUserRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupUserResponse
 --- @brief Complete ROS1 dobot_bringup/UserResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17047,7 +17434,9 @@ local Ros1Dobot_bringupUserRequest = classes["Ros1Dobot_bringupUserRequest"]
 --- @see Ros1Dobot_bringupUserResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupUserResponse
 local Ros1Dobot_bringupUserResponse = classes["Ros1Dobot_bringupUserResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupWaitRequest
 --- @brief Complete ROS1 dobot_bringup/WaitRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17104,7 +17493,9 @@ local Ros1Dobot_bringupUserResponse = classes["Ros1Dobot_bringupUserResponse"]
 --- @see Ros1Dobot_bringupWaitRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupWaitRequest
 local Ros1Dobot_bringupWaitRequest = classes["Ros1Dobot_bringupWaitRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupWaitResponse
 --- @brief Complete ROS1 dobot_bringup/WaitResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17161,7 +17552,9 @@ local Ros1Dobot_bringupWaitRequest = classes["Ros1Dobot_bringupWaitRequest"]
 --- @see Ros1Dobot_bringupWaitResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupWaitResponse
 local Ros1Dobot_bringupWaitResponse = classes["Ros1Dobot_bringupWaitResponse"]
+end
 
+do
 --- @class Ros1Dobot_bringupPauseRequest
 --- @brief Complete ROS1 dobot_bringup/pauseRequest value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17217,7 +17610,9 @@ local Ros1Dobot_bringupWaitResponse = classes["Ros1Dobot_bringupWaitResponse"]
 --- @see Ros1Dobot_bringupPauseRequest.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPauseRequest
 local Ros1Dobot_bringupPauseRequest = classes["Ros1Dobot_bringupPauseRequest"]
+end
 
+do
 --- @class Ros1Dobot_bringupPauseResponse
 --- @brief Complete ROS1 dobot_bringup/pauseResponse value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17274,5 +17669,6 @@ local Ros1Dobot_bringupPauseRequest = classes["Ros1Dobot_bringupPauseRequest"]
 --- @see Ros1Dobot_bringupPauseResponse.encode
 --- @field decode fun(bytes: string): Ros1Dobot_bringupPauseResponse
 local Ros1Dobot_bringupPauseResponse = classes["Ros1Dobot_bringupPauseResponse"]
+end
 
 return classes, by_name

@@ -1,0 +1,101 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observation-authority-574",
+  "ros_namespace": "ros2",
+  "test_scope": "Original complete typed guest: exact empty facts on resource denial, argument rejection before acquisition. Positive native transport and simulator admission remain separate.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "819b1624413ca1e5bcbfb3b385b8666c38ed96453a4a9c5897a533737791eb8e"
+    },
+    {
+      "scope": "example",
+      "path": "main.mjs",
+      "sha256": "671348cbe6b51b78b05236e0f5aa2fc369306ad562e6eb217ef7613daaaac1ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/js/ros2/observation.mjs",
+      "sha256": "c6147be1b663486c9ff1b9b01cdc5437b31ff436bfaa2ae42aa9b0077840c531"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/js/ros2/records.mjs",
+      "sha256": "33d1afb71c00ba833f55e442ce7942d39417c085c15ee2428f461b55d9ae6a00"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/deep_robotics/language/js/ros2/bundle.json",
+      "sha256": "542f347ab8e6fb62aae7ac8ed32a1a200b40c26a2e8e17f03a6d63de7305c25e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/deep_robotics/selection.lua",
+      "sha256": "10ee4895796190ab436fbeb52fd07c08954817b6512e97355bb7935e6ed08d00"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "rpc_status": 0,
+        "rpc_present": 0,
+        "response_present": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": "0",
+        "length": "18446744073709551615",
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

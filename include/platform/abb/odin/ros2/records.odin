@@ -2,7 +2,7 @@
 // @brief Complete owned original ABB ROS 2 records and codecs.
 // @details No generated record owns a native ROS object or grants a capability.
 package records
-import wire "ros:odin"
+import wire "native:odin/wire"
 
 /// @brief Complete original abb_egm_msgs/msg/EGMChannelState value.
 /// @details Retain all 7 original fields and 10 constants. Wire extent 17..81 bytes.

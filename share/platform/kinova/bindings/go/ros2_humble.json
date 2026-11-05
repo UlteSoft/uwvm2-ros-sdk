@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "go",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/go/ros2/mobile-fjt-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "go",
+    "go": {
+      "modules": [
+        "include/platform/ros/go",
+        "include/platform/kinova/go/ros2/mobile-fjt-humble-complete"
+      ],
+      "tags": [
+        "ros2"
+      ]
+    }
+  }
+}

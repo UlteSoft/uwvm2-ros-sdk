@@ -1,4 +1,5 @@
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "service_client.h"
 #include "qos.h"
@@ -344,11 +345,7 @@ namespace uwvm2::ros_gateway::ros2_resources
 
     struct local_parameter_event_routes
     {
-        // These references grant no lifetime or authority. The hard ceiling
-        // bounds registry memory independently of the trusted policy size;
-        // normal per-grant resource counts and session limits still apply.
-        static constexpr std::size_t maximum_routes{65536};
-
+        // Weak routes grow only for actually admitted listeners.
         struct route
         {
             std::weak_ptr<::uwvm2::ros_gateway::ros2_compat::node_type> node;
@@ -500,7 +497,7 @@ namespace uwvm2::ros_gateway::ros2_resources
         {
             if(item.node.lock() == node && item.queue.lock() == queue) { return true; }
         }
-        if(registry.routes.size() >= local_parameter_event_routes::maximum_routes) { return false; }
+        if(registry.routes.size() >= registry.routes.max_size()) { return false; }
         registry.routes.push_back({node, queue});
         return true;
     }
@@ -783,7 +780,7 @@ namespace uwvm2::ros_gateway::ros2_resources
 
     inline ipc::call_result result_before_deadline(std::chrono::steady_clock::time_point deadline, ipc::call_result result)
     {
-        if(!result.error && std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+        if(!result.error && ::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
         return result;
     }
 
@@ -797,15 +794,23 @@ namespace uwvm2::ros_gateway::ros2_resources
                                    service_client_pool& clients)
     {
         if constexpr(!ros2_qos::supports_client_qos<::rclcpp::Client<Service>>::value) { return {95, {}}; }
+        if(::uwvm2::utils::host_clock::now()>=deadline)return {110,{}};
+        auto serialization=native_serialization_check(*request);
+        if(serialization) return {serialization,{}};
         auto client{ros2_service_client::acquire<Service>(clients, node, cap, service)};
         if(!client) { return {95, {}}; }
-        auto left{deadline - std::chrono::steady_clock::now()};
-        if(left <= decltype(left)::zero() || (!client->service_is_ready() && !client->wait_for_service(left))) { return {110, {}}; }
-        if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
-        auto pending{client->async_send_request(request)};
-        ros2_service_client::pending_request cleanup{clients, cap.alias, client, pending};
-        if(pending.wait_until(deadline) != std::future_status::ready) { return {110, {}}; }
-        if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+        auto ready{ros2_service_client::wait_ready(node,client,deadline)};
+        if(ready) return {ready,{}};
+        auto completed{std::make_shared<ros::synchronous_quota_wait>()};
+        if(!completed->select_exit(ros::synchronous_wait_context::native_exit_policy())) return {125,{}};
+        // The native callback owns only its notification object. Cancellation
+        // removes the pending request; a racing completion never touches guest
+        // memory, the session, or this stack and never resends the request.
+        if(::uwvm2::utils::host_clock::now()>=deadline) return {110,{}};
+        auto pending{client->async_send_request(request,[completed](typename rclcpp::Client<Service>::SharedFuture) {completed->notify();})};
+        ros2_service_client::pending_request cleanup{clients,cap.alias,client,pending};
+        auto status{ros2_service_client::wait_response(pending,*completed,deadline)};
+        if(status) return {status,{}};
         auto response{pending.get()};
         cleanup.complete();
         if(!response) { return {5, {}}; }
@@ -821,7 +826,7 @@ namespace uwvm2::ros_gateway::ros2_resources
         service_client_pool ephemeral{[&] { ros2_compat::notify(node); }};
         auto& clients{retained ? *retained : ephemeral};
         if(!known(cap)) { return {95, {}}; }
-        auto deadline{std::chrono::steady_clock::now() + std::chrono::milliseconds(std::min(timeout, static_cast<std::uint32_t>(limit(cap, "timeout-ms"))))};
+        auto deadline{request_deadline(cap,timeout)};
         bool graph{cap.operation.rfind("graph.", 0) == 0};
         auto maximum{limit(cap, graph ? "max-graph-result-bytes" : "max-parameter-bytes")};
         if(graph)
@@ -830,7 +835,7 @@ namespace uwvm2::ros_gateway::ros2_resources
             bounded_text::sorted_rows rows{maximum};
             auto add = [&](std::string_view name, std::string_view type) -> std::uint32_t
             {
-                if(std::chrono::steady_clock::now() >= deadline) { return 110; }
+                if(::uwvm2::utils::host_clock::now() >= deadline) { return 110; }
                 if(!canonical(name) || !prefix(cap.resource, name) || !prefix(field(cap, "allowed-name-prefix"), name)) { return 0; }
                 if(cap.operation.rfind("graph.inspect-", 0) == 0 && name != cap.resource) { return 0; }
                 if(type.find_first_of("\t\r\n") != std::string_view::npos) { return 0; }
@@ -889,7 +894,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                 }
             }
             if(cap.operation.rfind("graph.inspect-", 0) == 0 && rows.empty()) { return {2, {}}; }
-            if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+            if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
             return result_before_deadline(deadline, rows.result());
         }
         auto remote{field(cap, "parameter-node")}, name{field(cap, "parameter-name")};
@@ -904,7 +909,7 @@ namespace uwvm2::ros_gateway::ros2_resources
         if(remote == ros2_compat::full_name(node))
         {
             std::unique_lock<std::timed_mutex> guard{local_parameters_mutex(), std::defer_lock};
-            if(!guard.try_lock_until(deadline) || std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+            if(!guard.try_lock_until(deadline) || ::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
             try
             {
 #if UWVM_ROS2_HAVE_PARAMETER_DECLARE
@@ -915,7 +920,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                     ros2_compat::dynamic_typing(descriptor);
                     auto prepared{native_value(value)};
                     local_parameter_commit_snapshot committed{node, name};
-                    if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+                    if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
                     node->declare_parameter(name, prepared, descriptor);
                     committed.committed();
                     if(committed.owned->ready) { notify_local_parameter_event(node, name, 1, committed.owned->value); }
@@ -930,7 +935,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                     bounded_text::sorted_rows names{maximum};
                     for(auto const& parameter: listed.names)
                     {
-                        if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+                        if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
                         if(parameter_name(parameter))
                         {
                             auto actual{parameter_resource(remote, parameter)};
@@ -940,7 +945,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                             }
                         }
                     }
-                    if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+                    if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
                     return result_before_deadline(deadline, names.result());
                 }
                 if(!node->has_parameter(name)) { return {2, {}}; }
@@ -953,7 +958,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                     if(static_cast<std::uint8_t>(node->get_parameter(name).get_type()) != native_kind(value.type)) { return {95, {}}; }
                     rclcpp::Parameter prepared{name, native_value(value)};
                     local_parameter_commit_snapshot committed{node, name};
-                    if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+                    if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
                     auto result{node->set_parameter(prepared)};
                     if(result.successful) { committed.committed(); }
                     if(result.successful && committed.owned->ready) { notify_local_parameter_event(node, name, 2, committed.owned->value); }
@@ -965,7 +970,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                     auto prior{node->get_parameter(name)};
                     auto checked{parameter_result(cap, prior.get_parameter_value())};
                     if(checked.error) { return {checked.error, {}}; }
-                    if(std::chrono::steady_clock::now() >= deadline) { return {110, {}}; }
+                    if(::uwvm2::utils::host_clock::now() >= deadline) { return {110, {}}; }
                     node->undeclare_parameter(name);
                     notify_local_parameter_event(node, name, 3, prior.get_parameter_value());
                     return result_before_deadline(deadline, {});
@@ -1126,7 +1131,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                     bounded_text::sorted_rows names{maximum};
                     for(auto const& parameter: response.result.names)
                     {
-                        if(std::chrono::steady_clock::now() >= deadline) { return ipc::call_result{110, {}}; }
+                        if(::uwvm2::utils::host_clock::now() >= deadline) { return ipc::call_result{110, {}}; }
                         if(parameter_name(parameter))
                         {
                             auto actual{parameter_resource(remote, parameter)};
@@ -1136,7 +1141,7 @@ namespace uwvm2::ros_gateway::ros2_resources
                             }
                         }
                     }
-                    if(std::chrono::steady_clock::now() >= deadline) { return ipc::call_result{110, {}}; }
+                    if(::uwvm2::utils::host_clock::now() >= deadline) { return ipc::call_result{110, {}}; }
                     return names.result();
                 },
                 clients);

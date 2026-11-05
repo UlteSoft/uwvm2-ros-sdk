@@ -48,13 +48,17 @@ try {
     $observerRetired = false;
     $sourceWord = $source->borrowHandle();
     $binding = new EventBinding(2, $sourceWord);
-    $current = 'full-width-ready-snapshot';
-    [$code, $ready] = $observer->readiness();
-    $valid = $code === 0 && count($ready) === 4;
-    foreach ($ready as $word) { $valid = $valid && $word instanceof Word && $word->width === 8 && !$word->signed; }
-    $report($current, $valid);
+    $current = 'unwatched-readiness-refused';
+    $report($current, $observer->readiness() === [9, null]);
     $current = 'explicit-metadata-watch';
     $report($current, $observer->invoke('event_watch', '', 0, $sourceWord) === [0, '', null, null]);
+    $current = 'full-width-ready-snapshot';
+    [$code, $ready] = $observer->readiness();
+    $valid = $code === 0 && is_array($ready) && count($ready) === 4;
+    if (is_array($ready)) {
+        foreach ($ready as $word) { $valid = $valid && $word instanceof Word && $word->width === 8 && !$word->signed; }
+    }
+    $report($current, $valid);
     $current = 'invalid-capacity-does-not-poll';
     $report($current, $binding->dispatchOne($observer, -1, $noop) === [22, null, null, null] && !$binding->delivered());
     $current = 'invalid-signed-source-binding';
@@ -157,10 +161,10 @@ try {
     $report($current, $result === [11, null, null, null] && $throws === 1 && !$nextBinding->delivered());
     $check($nextBinding->retire() === 0);
     $observerRetired = true;
-    $check($observer->close() === 0 && $passed === 21);
+    $check($observer->close() === 0 && $passed === 22);
     $uwvm_exit = \Uwvm\Native\output(json_encode([
         'format' => 'uwvm-sdk-event-dispatch-summary-v1', 'language' => 'php', 'nonce' => $args[1],
-        'required' => 21, 'selected' => 21, 'executed' => 21, 'passed' => 21,
+        'required' => 22, 'selected' => 22, 'executed' => 22, 'passed' => 22,
         'failed' => 0, 'blocked' => 0, 'not_run' => 0, 'Stage_A_communication_pass' => false,
         'component_isolation_pass' => false, 'full_rcl_API_compatibility' => false,
     ], JSON_THROW_ON_ERROR)) === 0 ? 0 : 1;

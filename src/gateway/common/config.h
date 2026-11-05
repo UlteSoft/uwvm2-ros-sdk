@@ -4,7 +4,9 @@
  * Licensed under the APL-2.0 License (see LICENSE file).    *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include <uwvm2/imported/ros/common/types.h>
+#include <uwvm2/imported/ros/common/quota.h>
 #include <uwvm2/imported/ros/common/action_qos_contract.h>
 #include <uwvm2/imported/ros/common/service_availability_history.h>
 #include <uwvm2/imported/ros/common/parameter_search_contract.h>
@@ -47,11 +49,16 @@ namespace uwvm2::ros_gateway
     struct configuration
     {
         ros::target_policy policy{};
-        std::uint32_t worker_uid{}, worker_pid{}, timeout_ms{}, max_sessions{}, audit_records_per_second{};
-        std::uint64_t audit_max_records{},audit_max_bytes{};
+        std::uint32_t worker_uid{}, worker_pid{}, timeout_ms{};
+        bool timeout_unlimited{true};
+        std::uint64_t max_sessions{ros::unlimited_quota},audit_records_per_second{ros::unlimited_quota};
+        std::uint64_t audit_max_records{ros::unlimited_quota},audit_max_bytes{ros::unlimited_quota};
+        std::map<std::string,std::string,std::less<>> quota_actions;
         std::string socket{};
         std::shared_ptr<native_observation::writer> native_observer;
     };
+    inline bool global_quota_wait(configuration const& c,std::string_view key,std::string_view suffix=".on-exhausted")
+    {auto found=c.quota_actions.find(std::string{key}+std::string{suffix});return found!=c.quota_actions.end()&&found->second=="wait";}
     inline std::uint64_t integer(std::string_view s,std::uint64_t maximum=std::numeric_limits<std::uint32_t>::max())
     {
         if(s.empty()||s.front()<'0'||s.front()>'9') { throw std::runtime_error("empty or invalid integer"); }
@@ -94,13 +101,96 @@ namespace uwvm2::ros_gateway
     }
     inline std::uint64_t limit(ros::capability_spec const& c,std::string_view key)
     {
-        auto i{c.limits.find(key)};
-        if(i==c.limits.end()) { throw std::runtime_error("missing explicit limit: "+std::string{key}); }
-        // This field is nanoseconds, not a byte quota. Preserve the original
-        // ceiling for every other key, and apply the protocol's actual finite
-        // wait ceiling before the operation-specific timeout/headroom checks.
-        auto maximum{key=="max-wait-ns" ? ipc::client_availability::maximum_wait_ns : 1073741824ULL};
-        return integer(i->second,maximum);
+        std::uint64_t value{};
+        if(ros::read_quota(c,key,value)) { return value; }
+        throw std::runtime_error("missing or invalid numeric field: "+std::string{key});
+    }
+    inline double quota_rate(ros::capability_spec const& c,std::string_view key)
+    {
+        auto found{c.limits.find(key)};
+        if(found==c.limits.end()||found->second=="unlimited"||found->second=="18446744073709551615")
+        { return std::numeric_limits<double>::infinity(); }
+        double result{};
+#if defined(__cpp_concepts)
+        auto const [end,error]{::fast_io::parse_by_scan(found->second.data(),found->second.data()+found->second.size(),result)};
+        if(error!=::fast_io::parse_code::ok||end!=found->second.data()+found->second.size())
+        { throw std::runtime_error("invalid quota rate"); }
+#else
+        if(!ipc::parse_parameter_real(found->second,result)) { throw std::runtime_error("invalid quota rate"); }
+#endif
+        if(!std::isfinite(result)||result<0) { throw std::runtime_error("invalid quota rate"); }
+        return result;
+    }
+    inline std::size_t storage_count(std::string_view text)
+    {
+        std::uint64_t value{};
+        if(!ros::quota_integer(text,value))throw std::runtime_error("invalid storage quota");
+        if(value==ros::unlimited_quota)return SIZE_MAX;
+        if(value>SIZE_MAX)throw std::runtime_error("storage quota exceeds native representation");
+        return static_cast<std::size_t>(value);
+    }
+    inline double quota_number(ros::capability_spec const& c,std::string_view key)
+    {
+        auto value{limit(c,key)};
+        return value==ros::unlimited_quota?std::numeric_limits<double>::infinity():static_cast<double>(value);
+    }
+    // Zero is the protocol's explicit no-deadline representation. Finite
+    // configured durations must fit the actual wire type without truncation.
+    inline std::uint32_t timeout_limit(ros::capability_spec const& c,std::string_view key="timeout-ms")
+    {
+        auto value{limit(c,key)};
+        if(value==ros::unlimited_quota) { return 0; }
+        if(value>UINT32_MAX) { throw std::runtime_error("finite timeout exceeds wire representation"); }
+        return static_cast<std::uint32_t>(value);
+    }
+    inline std::chrono::steady_clock::time_point quota_deadline(ros::capability_spec const& cap,
+        std::chrono::steady_clock::time_point start=::uwvm2::utils::host_clock::now())
+    {
+        auto raw{limit(cap,"timeout-ms")};
+        if(raw==ros::unlimited_quota) { return std::chrono::steady_clock::time_point::max(); }
+        return start+std::chrono::milliseconds(timeout_limit(cap));
+    }
+    inline std::chrono::steady_clock::time_point request_deadline(ros::capability_spec const& cap,std::uint32_t timeout,
+        std::chrono::steady_clock::time_point start=::uwvm2::utils::host_clock::now())
+    {
+        auto requested{timeout?start+std::chrono::milliseconds(timeout):std::chrono::steady_clock::time_point::max()};
+        return std::min(requested,quota_deadline(cap,start));
+    }
+    inline std::optional<ipc::deadline> logical_deadline(ipc::deadline start,std::uint64_t nanoseconds)
+    {
+        using duration=ipc::deadline::duration;
+        using rep=duration::rep;
+        using ratio=std::ratio_divide<std::chrono::nanoseconds::period,duration::period>;
+        // Round up to a clock tick, without truncating u64 nanoseconds or
+        // overflowing a signed duration. An unreachable absolute deadline
+        // saturates; the caller separately enforces explicit max-wait-ns.
+        auto ticks=(static_cast<__uint128_t>(nanoseconds)*ratio::num+ratio::den-1)/ratio::den;
+        if(ticks>static_cast<__uint128_t>(std::numeric_limits<rep>::max()))return ipc::deadline::max();
+        duration delta{static_cast<rep>(ticks)};
+        if(start>ipc::deadline::max()-delta)return ipc::deadline::max();
+        return start+delta;
+    }
+    inline std::uint64_t queue_capacity(ros::capability_spec const& cap,std::string_view key)
+    {
+        if(key.substr(0,4)=="qos."&&key.size()>6&&key.substr(key.size()-6)==".depth")
+        {
+            auto history{cap.limits.find(std::string{key.substr(0,key.size()-5)}+"history")};
+            if(history!=cap.limits.end()&&history->second=="keep-all") { return ros::unlimited_quota; }
+        }
+        return limit(cap,key);
+    }
+    inline std::uint64_t wire_limit(ros::capability_spec const& cap,std::string_view key,std::uint64_t overhead=0)
+    {
+        if(overhead>ipc::max_payload_bytes) { throw std::runtime_error("wire overhead exceeds protocol extent"); }
+        return std::min<std::uint64_t>(limit(cap,key),ipc::max_payload_bytes-overhead);
+    }
+    inline std::uint32_t native_queue_depth(ros::capability_spec const& c,std::string_view key="queue-depth")
+    {
+        auto value{limit(c,key)};
+        if(value==ros::unlimited_quota) { return 0; }
+        if(!value) { throw std::runtime_error("native queue denied by explicit zero capacity"); }
+        if(value>UINT32_MAX) { throw std::runtime_error("queue depth exceeds native representation"); }
+        return static_cast<std::uint32_t>(value);
     }
     inline std::string const& field(ros::capability_spec const& c,std::string_view key)
     { auto i{c.limits.find(key)}; if(i==c.limits.end()) { throw std::runtime_error("missing explicit field: "+std::string{key}); } return i->second; }
@@ -156,6 +246,13 @@ namespace uwvm2::ros_gateway
         f.insert(f.end(),{"audit-max-rate-hz","audit-burst","audit-max-records","audit-max-bytes"});
         return f;
     }
+    inline bool waitable_quota(std::string_view key) noexcept
+    {
+        return key=="max-rate-hz"||key=="max-bytes-per-second"||key=="max-log-bytes-per-second"||key=="audit-max-rate-hz"||
+            key=="max-inflight"||key=="max-publishers"||key=="max-subscribers"||key=="max-services"||key=="max-actions"||
+            key=="max-active-goals"||key=="max-native-clients"||key=="max-event-queue-depth"||key=="max-event-queue-bytes"||
+            key=="max-queue-bytes"||key=="queue-depth"||key=="qos.depth"||key=="max-pending-events"||key=="max-pending-event-bytes";
+    }
     inline void validate(ros::version v,ros::capability_spec const& c)
     {
         if(!ipc::valid_token(c.alias)||!canonical(c.resource,c.operation.rfind("graph.",0)==0||c.operation=="param.list")) { throw std::runtime_error("invalid alias or canonical resource"); }
@@ -163,18 +260,6 @@ namespace uwvm2::ros_gateway
         auto custom{ipc::find_custom_topic_for_operation(static_cast<unsigned>(v),c.type,c.operation)};
         auto custom_service{ipc::find_custom_service(static_cast<unsigned>(v),c.type)};
         auto custom_action{ipc::find_custom_action(static_cast<unsigned>(v),c.type)};
-        bool backpressure{c.limits.count("overflow-policy")&&field(c,"overflow-policy")=="backpressure"};
-        if(backpressure)
-        {
-            allowed.insert("max-pending-events");allowed.insert("max-pending-event-bytes");
-            if(limit(c,"max-pending-events")!=1) { throw std::runtime_error("backpressure requires exactly one explicit pending event"); }
-            auto key{c.operation=="event.observe"?"max-event-bytes":c.operation=="param.subscribe-events"?"max-parameter-bytes":
-                     c.operation=="service.advertise"?"max-request-bytes":c.operation.rfind("action.",0)==0?"max-result-bytes":"max-message-bytes"};
-            auto record{limit(c,key)};
-            if(c.operation=="service.advertise") { record+=8; }
-            if(c.operation.rfind("action.",0)==0) { record=std::max({record,limit(c,"max-feedback-bytes"),limit(c,"max-goal-bytes")+8}); }
-            if(limit(c,"max-pending-event-bytes")<record) { throw std::runtime_error("pending capacity is smaller than its explicit maximum record"); }
-        }
         if(custom)
         {
             if(c.operation!="topic.publish"&&c.operation!="topic.subscribe")
@@ -197,34 +282,54 @@ namespace uwvm2::ros_gateway
         if(v==ros::version::ros1&&c.operation=="param.search") { allowed.insert("search-parent-namespaces"); }
         if((ipc::scalar_parameter_operation(v,c.operation)&&ipc::array_parameter(ipc::parameter_type(v,c.type)))||
            (c.operation=="param.subscribe-events"&&ipc::array_parameter(ipc::parameter_event_type(v,c.type))))
-        { allowed.insert("max-parameter-elements");(void)field(c,"max-parameter-elements"); }
+        { allowed.insert("max-parameter-elements"); }
         if((ipc::scalar_parameter_operation(v,c.operation)&&ipc::numeric_parameter(ipc::parameter_type(v,c.type)))||
            (c.operation=="param.subscribe-events"&&ipc::numeric_parameter(ipc::parameter_event_type(v,c.type))))
         { allowed.insert("parameter-min-value");allowed.insert("parameter-max-value"); }
         if(c.limits.count("validator")&&field(c,"validator")=="twist-bounds") { allowed.insert("twist.linear-max-abs"); allowed.insert("twist.angular-max-abs"); positive(field(c,"twist.linear-max-abs")); positive(field(c,"twist.angular-max-abs")); }
-        for(auto const& key:f) { (void)field(c,key); }
+        for(auto const& key:f) { if(!ros::resource_quota_field(key)) { (void)field(c,key); } }
+        for(auto rate_key:{"max-rate-hz","audit-max-rate-hz"})
+        {
+            auto burst_key{rate_key==std::string_view{"max-rate-hz"}?"burst":"audit-burst"};
+            if(std::isfinite(quota_rate(c,rate_key))!=(limit(c,burst_key)!=ros::unlimited_quota))
+            { throw std::runtime_error("rate and burst must both be finite or both unlimited"); }
+        }
         for(auto const& kv:c.limits)
         {
             auto const& k{kv.first}; auto const& value{kv.second};
+            auto suffix=std::string_view{k}.rfind(".on-");
+            if(suffix!=std::string_view::npos)
+            {
+                auto base=std::string_view{k}.substr(0,suffix),action=std::string_view{k}.substr(suffix);
+                bool native=base=="native-wait"&&action==".on-proc-exit";
+                if((!native&&(!allowed.count(std::string{base})||!ros::resource_quota_field(base)))||
+                   (action!=".on-exhausted"&&action!=".on-proc-exit")||
+                   (action==".on-exhausted"&&value!="reject"&&value!="wait")||
+                   (action==".on-proc-exit"&&value!="cancel"&&value!="wait")||
+                   (value=="wait"&&!native&&!waitable_quota(base)&&!(base=="timeout-ms"&&action==".on-proc-exit")))
+                { throw std::runtime_error("invalid/inapplicable quota action: "+k); }
+                if(action==".on-exhausted"&&value=="wait"&&
+                   (base=="max-active-goals"||base=="max-actions"||base=="max-native-clients"||
+                    base=="max-publishers"||base=="max-subscribers"||base=="max-services"||base=="max-binding-history"))
+                    throw std::runtime_error("wait unsupported: entity/history capacity requires a later release on this same serial session: "+k);
+                continue;
+            }
             if(!allowed.count(k)||value.empty()) { throw std::runtime_error("unknown/inapplicable field: "+k); }
             if(k=="search-parent-namespaces"&&value!="true"&&value!="false") { throw std::runtime_error("parent parameter search must explicitly be true or false"); }
             if(k=="service-source-alias"&&(!ipc::valid_token(value)||value=="."||value==".."||value==c.alias)) { throw std::runtime_error("availability needs a distinct explicit source alias"); }
             if(k=="event-source-alias"&&(!ipc::valid_token(value)||value==c.alias)) { throw std::runtime_error("observer requires a distinct explicit source alias"); }
             if(k=="event-kinds") { std::uint32_t mask{};if(!ipc::parse_event_kinds(value,mask)) { throw std::runtime_error("event kinds require an explicit ordered nonempty CSV"); } }
-            if(k=="overflow-policy"&&value!="drop-oldest"&&value!="drop-newest"&&value!="reject"&&value!="backpressure")
+            if(k=="overflow-policy"&&value!="reject"&&value!="wait")
             { throw std::runtime_error("invalid explicit overflow policy"); }
-            if(k=="max-rate-hz"||k=="audit-max-rate-hz"||k=="tf.max-translation-abs"||k=="tf.quaternion-norm-tolerance") { (void)positive(value); }
-            else if(c.operation=="service.available"&&k=="max-wait-ns") { if(!integer(value,ipc::client_availability::maximum_wait_ns)) { throw std::runtime_error("positive availability wait ceiling required"); } }
-            else if(k.rfind("max-",0)==0||k=="burst"||k=="queue-depth"||k=="qos.depth"||(k.rfind("qos.",0)==0&&k.size()>6&&k.compare(k.size()-6,6,".depth")==0)||k=="timeout-ms"||k=="audit-burst"||k=="audit-max-records"||k=="audit-max-bytes"||k=="buffer-cache-ms")
-            { auto n{integer(value,1073741824)}; if(!n||((k.find("bytes")==std::string::npos)&&n>1048576)) { throw std::runtime_error("invalid limit "+k); } }
-        }
-        if(c.operation=="service.available")
-        {
-            auto wait{limit(c,"max-wait-ns")},history{limit(c,"max-binding-history")},clients{limit(c,"max-native-clients")};
-            if(limit(c,"timeout-ms")>60000||(wait+999999)/1000000+1>limit(c,"timeout-ms")||history>65536||clients>1024||clients>history||
-               limit(c,"max-inflight")!=1||limit(c,"max-request-bytes")!=ipc::client_availability::bytes||
-               limit(c,"max-response-bytes")!=ipc::client_availability::bytes||limit(c,"max-bytes-per-second")<ipc::client_availability::bytes)
-            { throw std::runtime_error("availability finite wait/headroom, exact envelope or history/client bounds differ"); }
+            if(k=="max-rate-hz"||k=="audit-max-rate-hz") { (void)quota_rate(c,k); }
+            else if(k=="tf.max-translation-abs"||k=="tf.quaternion-norm-tolerance") { (void)positive(value); }
+            else if(ros::resource_quota_field(k))
+            {
+                (void)limit(c,k);
+                if(k=="timeout-ms") { (void)timeout_limit(c,k); }
+                if(k=="queue-depth"&&limit(c,k)) { (void)native_queue_depth(c,k); }
+            }
+            else if(k=="buffer-cache-ms") { if(!integer(value,60000)) { throw std::runtime_error("invalid buffer cache duration"); } }
         }
         auto validator{c.limits.count("validator")?field(c,"validator"):"none"};
         if(validator!="none"&&validator!="finite"&&validator!="twist-bounds"&&validator!="transform-bounds") { throw std::runtime_error("unsupported validator"); }
@@ -236,23 +341,23 @@ namespace uwvm2::ros_gateway
         auto audit{field(c,"audit")}; if(audit!="allow-and-deny"&&audit!="deny-only") { throw std::runtime_error("invalid audit"); }
         if(c.operation.rfind("topic.",0)==0||c.operation.rfind("tf.",0)==0||c.operation=="param.subscribe-events")
         {
-            auto overflow{field(c,"overflow-policy")}; if(overflow!="drop-oldest"&&overflow!="drop-newest"&&overflow!="reject"&&overflow!="backpressure") { throw std::runtime_error("unsupported overflow"); }
+            auto overflow{field(c,"overflow-policy")}; if(overflow!="reject"&&overflow!="wait") { throw std::runtime_error("unsupported overflow"); }
             auto depth{limit(c,v==ros::version::ros1?"queue-depth":"qos.depth")};
             auto message{limit(c,c.operation=="param.subscribe-events"?"max-parameter-bytes":"max-message-bytes")};
-            if(message>ipc::max_payload_bytes-518||message>limit(c,c.operation=="param.subscribe-events"?"max-event-queue-bytes":"max-queue-bytes")||message>limit(c,"max-bytes-per-second")||limit(c,"burst")>depth) { throw std::runtime_error("conflicting limits"); }
+            (void)message;(void)depth;
             if(v==ros::version::ros1)
             {
                 if(field(c,"transport")!="tcpros") { throw std::runtime_error("unsupported transport"); }
                 if((c.operation=="topic.publish"||c.operation=="tf.broadcast")&&field(c,"latch")!="true"&&field(c,"latch")!="false") { throw std::runtime_error("invalid latch"); }
             }
         }
-        else if(c.operation.rfind("service.",0)==0&&(limit(c,"max-request-bytes")>ipc::max_payload_bytes-518||limit(c,"max-response-bytes")>ipc::max_payload_bytes-518||limit(c,"timeout-ms")>ipc::max_timeout_ms))
-        { throw std::runtime_error("service limits exceed bounded IPC"); }
         else if(c.operation=="log.write"&&field(c,"severity")!="debug"&&field(c,"severity")!="info"&&field(c,"severity")!="warn"&&field(c,"severity")!="error"&&field(c,"severity")!="fatal") { throw std::runtime_error("invalid explicit logging severity"); }
         if(v==ros::version::ros2&&c.limits.count("qos.reliability"))
         {
             auto reliability{field(c,"qos.reliability")},durability{field(c,"qos.durability")},liveliness{field(c,"qos.liveliness")};
-            if((reliability!="reliable"&&reliability!="best-effort")||(durability!="volatile"&&durability!="transient-local")||(liveliness!="automatic"&&liveliness!="manual-by-topic")||field(c,"qos.history")!="keep-last") { throw std::runtime_error("invalid explicit QoS"); }
+            if((reliability!="reliable"&&reliability!="best-effort")||(durability!="volatile"&&durability!="transient-local")||(liveliness!="automatic"&&liveliness!="manual-by-topic")||(field(c,"qos.history")!="keep-last"&&field(c,"qos.history")!="keep-all")) { throw std::runtime_error("invalid explicit QoS"); }
+            if(field(c,"qos.history")=="keep-last"&&(!c.limits.count("qos.depth")||!limit(c,"qos.depth")||limit(c,"qos.depth")==ros::unlimited_quota))
+            { throw std::runtime_error("keep-last requires explicit positive finite depth"); }
             for(auto key:{"qos.deadline","qos.lifespan","qos.liveliness-lease-duration"})
             { auto value{field(c,key)};if(value!="infinite"&&!integer(value,86400000000000ULL)) { throw std::runtime_error("invalid explicit QoS duration"); } }
         }
@@ -264,30 +369,33 @@ namespace uwvm2::ros_gateway
             auto goal_min{custom_action?component_min(custom_action->goal):4u};
             auto feedback_min{custom_action?8u+component_min(custom_action->feedback):12u};
             auto result_min{custom_action?9u+component_min(custom_action->result):13u};
-            if((!custom_action&&limit(c,"fibonacci.max-order")>46)||limit(c,"max-goal-bytes")<goal_min||limit(c,"max-feedback-bytes")<feedback_min||limit(c,"max-result-bytes")<result_min||limit(c,"max-event-queue-bytes")<std::max(limit(c,"max-feedback-bytes"),limit(c,"max-result-bytes"))||limit(c,"max-feedback-bytes")>ipc::max_payload_bytes-518||limit(c,"max-result-bytes")>ipc::max_payload_bytes-518) { throw std::runtime_error("invalid explicit Action bounds"); }
+            (void)goal_min;(void)feedback_min;(void)result_min;
+            if(!custom_action&&limit(c,"fibonacci.max-order")>46) { throw std::runtime_error("invalid explicit Action order"); }
             if(v==ros::version::ros2)
             {
                 for(auto channel:{"goal-service","cancel-service","result-service","feedback","status"})
                 {
                     auto prefix{std::string{"qos."}+channel+"."};auto reliability{field(c,prefix+"reliability")},durability{field(c,prefix+"durability")},liveliness{field(c,prefix+"liveliness")};
-                    if((reliability!="reliable"&&reliability!="best-effort")||(durability!="volatile"&&durability!="transient-local")||(liveliness!="automatic"&&liveliness!="manual-by-topic")||field(c,prefix+"history")!="keep-last") { throw std::runtime_error("invalid explicit Action QoS"); }
+                    if((reliability!="reliable"&&reliability!="best-effort")||(durability!="volatile"&&durability!="transient-local")||(liveliness!="automatic"&&liveliness!="manual-by-topic")||(field(c,prefix+"history")!="keep-last"&&field(c,prefix+"history")!="keep-all")) { throw std::runtime_error("invalid explicit Action QoS"); }
+                    if(field(c,prefix+"history")=="keep-last"&&(!c.limits.count(prefix+"depth")||!limit(c,prefix+"depth")||limit(c,prefix+"depth")==ros::unlimited_quota))
+                    { throw std::runtime_error("keep-last requires explicit positive finite depth"); }
                     for(auto key:{"deadline","lifespan","liveliness-lease-duration"}){auto value{field(c,prefix+key)};if(value!="infinite"&&!integer(value,86400000000000ULL)){throw std::runtime_error("invalid Action QoS duration");}}
                 }
             }
-            if(field(c,"validator")!="none"||(field(c,"overflow-policy")!="drop-oldest"&&field(c,"overflow-policy")!="drop-newest"&&field(c,"overflow-policy")!="reject"&&field(c,"overflow-policy")!="backpressure")||field(c,"cancel-scope")!=(c.operation=="action.cancel-any-goal"?"any":c.operation=="action.cancel-own-goal"?"own":"not-applicable")) { throw std::runtime_error("invalid Action validator/overflow/cancel scope"); }
+            if(field(c,"validator")!="none"||(field(c,"overflow-policy")!="reject"&&field(c,"overflow-policy")!="wait")||field(c,"cancel-scope")!=(c.operation=="action.cancel-any-goal"?"any":c.operation=="action.cancel-own-goal"?"own":"not-applicable")) { throw std::runtime_error("invalid Action validator/overflow/cancel scope"); }
         }
         if(c.operation=="event.observe")
         {
             auto record{limit(c,"max-event-bytes")},depth{limit(c,"max-event-queue-depth")},queue{limit(c,"max-event-queue-bytes")};
             auto overflow{field(c,"overflow-policy")};
-            if(c.type!=ipc::event_type||c.type_identity!=ipc::event_type_identity||record<ipc::event_header_bytes||record>ipc::max_payload_bytes-518||
-               depth<3||queue<record+2*ipc::event_header_bytes||record>limit(c,"max-bytes-per-second")||limit(c,"burst")>depth||
-               (overflow!="drop-oldest"&&overflow!="drop-newest"&&overflow!="reject"&&overflow!="backpressure"))
+            (void)record;(void)depth;(void)queue;
+            if(c.type!=ipc::event_type||c.type_identity!=ipc::event_type_identity||
+               (overflow!="reject"&&overflow!="wait"))
             { throw std::runtime_error("invalid explicit observer type/queue/control-record bounds"); }
         }
         if(c.limits.count("allowed-transition")&&field(c,"allowed-transition")!="configure"&&field(c,"allowed-transition")!="cleanup"&&field(c,"allowed-transition")!="activate"&&field(c,"allowed-transition")!="deactivate"&&field(c,"allowed-transition")!="shutdown") { throw std::runtime_error("invalid explicit lifecycle transition"); }
         if(c.limits.count("allowed-name-prefix")&&!canonical(field(c,"allowed-name-prefix"),true)) { throw std::runtime_error("invalid canonical result prefix"); }
-        if(c.limits.count("timeout-ms")&&limit(c,"timeout-ms")>ipc::max_timeout_ms) { throw std::runtime_error("timeout exceeds wire deadline"); }
+        if(c.limits.count("timeout-ms")) { (void)timeout_limit(c); }
         if(c.limits.count("list-depth")&&(limit(c,"list-depth")==0||limit(c,"list-depth")>32)) { throw std::runtime_error("parameter list depth"); }
     }
     inline void validate_service_qos_contract(ros::target_policy const& policy)
@@ -336,6 +444,15 @@ namespace uwvm2::ros_gateway
             ipc::event_kind kind{};std::uint8_t flags{};
             if(ipc::event_source_kind(source->second.operation,kind,flags)) { allowed|=ipc::event_bit(kind); }
             if(kinds&~allowed) { throw std::runtime_error("observer event kinds exceed the independent source operation"); }
+            if(source->second.operation=="service.call"||source->second.operation=="action.receive-feedback"||source->second.operation=="action.receive-result")
+            {
+                for(auto key:{"max-event-queue-depth","max-event-queue-bytes"})
+                {
+                    auto action=cap.limits.find(std::string{key}+".on-exhausted");
+                    auto mode=action==cap.limits.end()?field(cap,"overflow-policy"):action->second;
+                    if(mode=="wait")throw std::runtime_error("wait unsupported: reservation capacity requires a later consume request on this same serial session");
+                }
+            }
         }
     }
     inline void validate_availability_sources(ros::target_policy const& policy)
@@ -390,11 +507,23 @@ namespace uwvm2::ros_gateway
                 else if(key=="worker-uid") { c.worker_uid=static_cast<std::uint32_t>(integer(t[1])); }
                 else if(key=="worker-pid") { c.worker_pid=static_cast<std::uint32_t>(integer(t[1])); }
                 else if(key=="socket") { c.socket=t[1]; }
-                else if(key=="timeout-ms") { c.timeout_ms=static_cast<std::uint32_t>(integer(t[1],ipc::max_timeout_ms)); }
-                else if(key=="max-sessions") { c.max_sessions=static_cast<std::uint32_t>(integer(t[1],256)); }
-                else if(key=="audit-max-records-per-second") { c.audit_records_per_second=static_cast<std::uint32_t>(integer(t[1],1000000)); }
-                else if(key=="audit-max-records") { c.audit_max_records=integer(t[1],1048576); }
-                else if(key=="audit-max-bytes") { c.audit_max_bytes=integer(t[1],67108864); }
+                else if(key=="timeout-ms") {std::uint64_t value{};if(!ros::quota_integer(t[1],value))throw std::runtime_error("invalid timeout");c.timeout_unlimited=value==UINT64_MAX;c.timeout_ms=c.timeout_unlimited?0:static_cast<std::uint32_t>(integer(t[1]));}
+                else if(key=="max-sessions") { if(!ros::quota_integer(t[1],c.max_sessions)) { throw std::runtime_error("invalid explicit quota"); } }
+                else if(key=="audit-max-records-per-second") { if(!ros::quota_integer(t[1],c.audit_records_per_second)) { throw std::runtime_error("invalid explicit quota"); } }
+                else if(key=="audit-max-records") { if(!ros::quota_integer(t[1],c.audit_max_records)) { throw std::runtime_error("invalid explicit quota"); } }
+                else if(key=="audit-max-bytes") { if(!ros::quota_integer(t[1],c.audit_max_bytes)) { throw std::runtime_error("invalid explicit quota"); } }
+                else if(auto suffix=key.rfind(".on-");suffix!=std::string_view::npos)
+                {
+                    auto base=key.substr(0,suffix),action=key.substr(suffix);
+                    bool recovering=base=="max-sessions"||base=="audit-max-records-per-second";
+                    bool known=recovering||base=="audit-max-records"||base=="audit-max-bytes"||base=="timeout-ms";
+                    bool exhaustion=action==".on-exhausted",exit=action==".on-proc-exit";
+                    if(!known||(!exhaustion&&!exit)||(exhaustion&&t[1]!="reject"&&t[1]!="wait")||
+                       (exit&&t[1]!="cancel"&&t[1]!="wait")||(t[1]=="wait"&&!recovering&&!(exit&&base=="timeout-ms")))
+                        throw std::runtime_error("invalid global quota action");
+                    if(exit&&t[1]=="wait")throw std::runtime_error("unsupported gateway on-proc-exit wait: configure the VM target connection/capability wait owner; a dead peer must be cancelled");
+                    c.quota_actions.emplace(key,t[1]);
+                }
                 else { throw std::runtime_error("unknown config field "+std::string{key}); }
             }
             else
@@ -405,8 +534,8 @@ namespace uwvm2::ros_gateway
                 throw std::runtime_error(std::string{message.view()});
             }
         }
-        for(auto k:{"backend","worker-uid","worker-pid","socket","timeout-ms","max-sessions","audit-max-records-per-second","audit-max-records","audit-max-bytes"}) { if(!singleton.count(k)) { throw std::runtime_error(std::string{"missing explicit config "}+k); } }
-        if(!c.worker_pid||!c.timeout_ms||!c.max_sessions||!c.audit_records_per_second||!c.audit_max_records||!c.audit_max_bytes||c.socket.empty()||c.socket[0]!='/') { throw std::runtime_error("invalid explicit session binding"); }
+        for(auto k:{"backend","worker-uid","worker-pid","socket"}) { if(!singleton.count(k)) { throw std::runtime_error(std::string{"missing explicit config "}+k); } }
+        if(!c.worker_pid||c.socket.empty()||c.socket[0]!='/') { throw std::runtime_error("invalid explicit session binding"); }
         for(auto const& p:c.policy.capabilities) { validate(c.policy.ros_version,p.second); }
         validate_service_qos_contract(c.policy);
         validate_action_qos_contract(c.policy);

@@ -125,6 +125,9 @@
       },
       "file_count": 14674,
       "payload_copied": false
+    },
+    "native-objectc": {
+      "manifest_sha256": "d93961ab93edcc02e223133902b987512002af5956524d09571a0a33bac777a1"
     }
   }
 }

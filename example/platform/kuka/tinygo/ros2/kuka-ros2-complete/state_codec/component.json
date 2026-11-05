@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-3240",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "94d2d093e05df27ac97efe7773ea27ae3a5596d91891a15f8948e74860f31559"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "b4cc4c6c3505d9c8c0f31dc168468de58df0976316bfa7b135fe0773e389ef4c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/bindings/tinygo/kuka-ros2-complete.json",
+      "sha256": "0f0d2bddd42da07b6ec33ea19039fd99360d8a0cbcf07b7d9968e6e13435c0b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/kuka/domains/kuka-ros2-complete.ir.json",
+      "sha256": "3e6ccb5e70ec5e75137b5fc91b76778a7c450246ceab2416695a2e58e58d0954"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "1d8ec472d3a81ed8893f4f39d6d403357fb0ee5416e3749861695c94bedd8a52"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "kuka_driver_interfaces/msg/KssStatus",
+        "bytes": 9,
+        "wire_hex": "000000000000000000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observer-505",
+  "ros_namespace": "ros1",
+  "test_scope": "Actual original observation: namespace without alias authority returns denial, with no acquired owner, no request or decoded response. Missing alias is rejected before acquisition. Positive ROS transport is a separate integration test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "138fe1a4f08d1cb58b27f77fc87d6cc5365373638d3cd247836466a46ed8786f"
+    },
+    {
+      "scope": "example",
+      "path": "main.odin",
+      "sha256": "ea2917c28e3e85ea299867d15c04b58513a983f30b5b1ff31cc13b29f1fb9b59"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros1/api/api.odin",
+      "sha256": "ade9a22ebd9cf6d2bc06273b373bdddb1c5012187895cbb1ee5a52ccd0276112"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros1/records.odin",
+      "sha256": "63dba18455ff1db71370efe0e2ad1944d92850fb18ee0c2304bc97b14b839ea5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/humble/api/api.odin",
+      "sha256": "953a99b0583ce9bea8cb6cb3f8c89bae938985e333fdbe387d24e8c47e7fc7d0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/humble/records.odin",
+      "sha256": "1ac72d457aa4bebbbdbc673ba9baed26a775f37105dddc0a82b1618376dd812b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/jazzy/api/api.odin",
+      "sha256": "c008135aa7e4d537faff38770a78042bab5f5096d1b4600208b384e2cf6dc05e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/jazzy/records.odin",
+      "sha256": "a8f41698f54da1953d525f64c5031054444caa53168d6ec48fa96323ae36aa95"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/main/api/api.odin",
+      "sha256": "9fc19b7993ab834f27730367203ef372c5ccc5e5d6bc37fd4f27eb57d0aca0b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/odin/ros2/main/records.odin",
+      "sha256": "39bdc67b50b096cf9ae61f616963622bcd447d23abc1687d046122bda830a80e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/provider.json",
+      "sha256": "95485b51a612381c00c65eb4075896217e86650a3b0898b5061082d9f44a462b"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/observation/observation.odin",
+      "sha256": "ab9769ad04e9523e9c6fd5366c029e9ce52b7131440ba70aa25551ac4c7c8dac"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/wire/wire.odin",
+      "sha256": "e7fde30bdcb0109b05068362085761ff354f698de483a59f745917070088884a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/clearpath/provider.lua",
+      "sha256": "7395e51c70e8dd1fe5f59cc717279ce6afd6036a8e5ce80f9bd531905319da89"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

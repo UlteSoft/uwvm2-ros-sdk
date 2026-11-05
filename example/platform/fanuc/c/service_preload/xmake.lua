@@ -12,6 +12,7 @@ if not root or not path.is_absolute(root) or not os.isfile(path.join(root, "tool
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root,"tools/shared/xmake/wasi_component.lua"))
 set_policy("run.autobuild", false)
 
 -- @brief Select the same original native service and real width for every target.
@@ -53,4 +54,5 @@ target("main")
     add_files("main.c")
     add_deps("bridge_static", "io", "algorithm", "ros_comm")
     add_ldflags("-Wl,--allow-undefined", {force = true})
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

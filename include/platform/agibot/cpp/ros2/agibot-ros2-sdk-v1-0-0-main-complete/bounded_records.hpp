@@ -3153,7 +3153,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgQuaternion default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&value);
             return value;
         }
@@ -3259,7 +3259,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPose default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPose value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPose value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Pose_default(&value);
             return value;
         }
@@ -3365,7 +3365,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Aimdk_msgsMsgQRCode default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Aimdk_msgsMsgQRCode value = {0};
+            uwvm_custom::Ros2Aimdk_msgsMsgQRCode value = {};
             (void)roswasmc_bounded_2_aimdk_msgs_msg_QRCode_default(&value);
             return value;
         }
@@ -3471,7 +3471,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Aimdk_msgsMsgHRPoint default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Aimdk_msgsMsgHRPoint value = {0};
+            uwvm_custom::Ros2Aimdk_msgsMsgHRPoint value = {};
             (void)roswasmc_bounded_2_aimdk_msgs_msg_HRPoint_default(&value);
             return value;
         }
@@ -6247,7 +6247,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Aimdk_msgsMsgQRPoint default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Aimdk_msgsMsgQRPoint value = {0};
+            uwvm_custom::Ros2Aimdk_msgsMsgQRPoint value = {};
             (void)roswasmc_bounded_2_aimdk_msgs_msg_QRPoint_default(&value);
             return value;
         }
@@ -8856,7 +8856,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Nav_msgsMsgMapMetaData default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Nav_msgsMsgMapMetaData value = {0};
+            uwvm_custom::Ros2Nav_msgsMsgMapMetaData value = {};
             (void)roswasmc_bounded_2_nav_msgs_msg_MapMetaData_default(&value);
             return value;
         }
@@ -8964,7 +8964,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Aimdk_msgsSrvGetStoredMapByName_Response default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Aimdk_msgsSrvGetStoredMapByName_Response value = {0};
+            uwvm_custom::Ros2Aimdk_msgsSrvGetStoredMapByName_Response value = {};
             (void)roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Response_default(&value);
             return value;
         }

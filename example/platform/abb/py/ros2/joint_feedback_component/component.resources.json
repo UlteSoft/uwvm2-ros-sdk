@@ -31,7 +31,10 @@
     "arguments": [
       "--runtime-aot",
       "--runtime-llvm-jit-cache-path",
-      "disable"
+      "disable",
+      "--runtime-llvm-jit-policy",
+      "debug",
+      "--log-verbose"
     ],
     "maximum_application_wasm_bytes": 67108864,
     "regular_file_limit_bytes": 134217728,
@@ -39,7 +42,8 @@
     "maximum_seconds": 300,
     "persistent_native_object_cache": "explicitly disabled for codec component; cold AOT compilation remains in process and mandatory checked unwind stays unchanged",
     "persistent_cache_performance_qualification": "NOT_COVERED; original required off/on performance rows remain",
-    "actual_memory_or_storage_peak_measured": false
+    "actual_memory_or_storage_peak_measured": false,
+    "optimization_scope": "Explicit debug LLVM policy for finite correctness checks; not a performance qualification"
   },
   "hosted_CI_resources": "Record actual CI resources; manual64GiB/0swap enforcement comes from the live enclosing admitted job, never this historical JSON",
   "required_first_official_scene_groups": 15,

@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "java",
+  "profile": "ros2_humble_v2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/java/ros2/flexiv-ros2-humble-v2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/flexiv/java/ros2/flexiv-ros2-humble-v2-complete/org/uwvm/flexiv/ros2humblev2/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/flexiv/kotlin/ros2/flexiv-ros2-humble-v2-complete/Records.kt"
+    ]
+  }
+}

@@ -20,7 +20,7 @@ if not root or not os.isfile(path.join(root, "tools/xmake/ros.lua")) then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
-includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
+includes(path.join(root, "tools/platform/ros/xmake/python_transplate_tests.lua"))
 set_policy("run.autobuild", false)
 set_policy("test.return_zero_on_failure", false)
 target("rclpy-wasm-pubsub")
@@ -35,8 +35,5 @@ target("rclpy-wasm-pubsub")
     set_wasm_exceptions("noeh")
     set_values("ros.sdk.python.transplate", "rclpy-jazzy-pubsub-v1")
     add_files("main.py")
-    -- Existing SDK01 consumer: actual stopped-exec gate and genuine guest run.
-    -- Guest component PASS never supplies native ROS/no-effect or isolation PASS.
-    uwvm_wasi_component({api_version = 1, sdk_root = root,
-        manifest = "guest-cases.json"})
+    uwvm_python_transplate_native({api_version = 1, sdk_root = root, backend = "ros2"})
 target_end()

@@ -16,6 +16,13 @@
 #ifndef UWVM_VENDOR_RECORDS_HEADER
 # error "Select the exact vendor source domain with the public SDK provider"
 #endif
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include UWVM_VENDOR_RECORDS_HEADER
 #include <math.h>
 #include <stdint.h>
@@ -134,7 +141,7 @@ static inline uint32_t uwvm_doosan_validate_move_joint(roswasmc_bounded_2_dsr_ms
  */
 static inline uint32_t uwvm_doosan_make_move_stop(int32_t mode, roswasmc_bounded_2_dsr_msgs2_srv_MoveStop_Request* output)
 {
-    roswasmc_bounded_2_dsr_msgs2_srv_MoveStop_Request next = {0};
+    roswasmc_bounded_2_dsr_msgs2_srv_MoveStop_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!output || mode < 0 || mode > 3)
         return 22;
     next.stop_mode = mode;

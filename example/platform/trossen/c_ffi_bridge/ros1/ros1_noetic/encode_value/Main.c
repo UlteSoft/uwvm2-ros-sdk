@@ -20,8 +20,12 @@ typedef roswasmc_bounded_1_interbotix_xs_msgs_JointGroupCommand Value;
  * @return Zero only after complete success, otherwise the codec or I/O error.
  * @details Bad extents must preserve every destination byte; no failure is skipped.
  */
+#include "bounded_codec_test.h"
+
 int main(int argc, char** argv)
 {
+    if(argc == 3 && strcmp(argv[1], "--guest-test") == 0)
+        return uwvm_sdk_codec_test(argv[2]);
     (void)argv;
     if(argc != 1)
         return 22;

@@ -123,7 +123,7 @@ static void topics(std::shared_ptr<control::profile const>const&p,::uwvm2::ros_g
  wire::binding po{2,0x900000001,11,12,13},so{2,0x900000002,11,12,13};std::shared_ptr<native_rmw_publisher::endpoint>pub;std::shared_ptr<native_rmw_subscription::endpoint>sub;wire::packet a{},b{};
  REQUIRE(control::create_subscription(p,node,subcap,so,51,sub,b)==0);struct Guard{decltype(pub)*p;decltype(sub)*s;wire::binding po,so;~Guard(){if(*p)(void)(*p)->retire(po,50);if(*s)(void)(*s)->retire(so,51);}}guard{&pub,&sub,po,so};REQUIRE(control::create_publisher(p,node,pubcap,po,50,pub,a)==0);
  rcl_interfaces::msg::ParameterEvent event{};event.stamp.sec=-2;event.stamp.nanosec=300000000;event.node="/control_gateway_contract";rcl_interfaces::msg::Parameter v{};v.name="source_value";v.value=parameter();event.new_parameters={v};v.name="changed";event.changed_parameters={v};v.name="deleted";event.deleted_parameters={v};auto bytes=encode(detail::codec(*p,pubcap.type),&event);
- auto discovery=Clock::now()+std::chrono::seconds{3};while(!node->count_subscribers(pubcap.resource)||!node->count_publishers(pubcap.resource)){REQUIRE(Clock::now()<discovery);executor.spin_once(std::chrono::milliseconds{10});}
+ auto discovery=Clock::now()+std::chrono::seconds{3};while(!node->get_node_graph_interface()->count_subscribers(pubcap.resource)||!node->get_node_graph_interface()->count_publishers(pubcap.resource)){REQUIRE(Clock::now()<discovery);executor.spin_once(std::chrono::milliseconds{10});}
  // Graph visibility only schedules this Native test. It is not a transport
  // readiness/identity fact; the actual single publication must still arrive.
  REQUIRE(pub->publish(po,50,bytes.data(),bytes.size())==0);native_rmw_queue::snapshot peek{};auto until=Clock::now()+std::chrono::seconds{5};for(;;){REQUIRE(Clock::now()<until);auto error=sub->peek(so,51,sizeof(rmw_gid_t::data),peek,32768+info::header_bytes);if(!error)break;REQUIRE(error==11);executor.spin_once(std::chrono::milliseconds{1});}
@@ -137,7 +137,7 @@ int main(int argc,char**argv){try{
  if(mode=="bad-identity"){auto wrong=ids;wrong[0].rihs01[0]^=1;REQUIRE(control::prepare(wrong.data(),wrong.size(),p)==22&&!p);fast_io::println("PASS actual independent wrong-ID refusal");return 0;}
  REQUIRE(control::prepare(ids.data(),ids.size(),p)==0&&p);auto log=detail::codec(*p,"rcl_interfaces/msg/Log");REQUIRE(log&&log->validate(log,log->generated_support)==0);auto stolen=*log;REQUIRE(stolen.validate(&stolen,stolen.generated_support)==22);
  if(mode=="proof"){fast_io::println("PASS actual full C++ metadata/address proof");return 0;}
- REQUIRE(mode=="services"||mode=="topics");rclcpp::init(argc,argv);auto node=std::make_shared<::uwvm2::ros_gateway::ros2_compat::node_type>("control_gateway_contract");rclcpp::executors::SingleThreadedExecutor executor;executor.add_node(node);
- try{if(mode=="services")services(p,node,executor);else topics(p,node,executor);}catch(...){executor.remove_node(node);node.reset();rclcpp::shutdown();throw;}
- executor.remove_node(node);node.reset();rclcpp::shutdown();p.reset();fast_io::println("PASS actual full control endpoint contract");return 0;
- }catch(std::exception const&e){fast_io::perrln(e.what());return 1;}catch(...){return 1;}}
+ REQUIRE(mode=="services"||mode=="topics");rclcpp::init(argc,argv);auto node=std::make_shared<::uwvm2::ros_gateway::ros2_compat::node_type>("control_gateway_contract");rclcpp::executors::SingleThreadedExecutor executor;executor.add_node(node->get_node_base_interface());
+ try{if(mode=="services")services(p,node,executor);else topics(p,node,executor);}catch(...){executor.remove_node(node->get_node_base_interface());node.reset();rclcpp::shutdown();throw;}
+ executor.remove_node(node->get_node_base_interface());node.reset();rclcpp::shutdown();p.reset();fast_io::println("PASS actual full control endpoint contract");return 0;
+ }catch(std::exception const&e){fast_io::perrln(fast_io::mnp::os_c_str(e.what()));return 1;}catch(...){return 1;}}

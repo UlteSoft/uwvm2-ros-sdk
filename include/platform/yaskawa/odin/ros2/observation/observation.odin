@@ -9,7 +9,7 @@
 // @brief Observe complete original Yaskawa ROS 2 messages in genuine Odin.
 // @details All values own their bytes; successful acquisitions close exactly once.
 package yaskawa
-import core "ros:odin/observation"
+import core "native:odin/observation"
 import records "yaskawa:odin/ros2"
 
 // @brief Observe every original industrial_msgs/msg/RobotStatus field through one retained owner.

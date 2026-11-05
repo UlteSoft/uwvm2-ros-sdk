@@ -2,7 +2,7 @@
   "format": "robotis-humble-obstacle-whole-invocation-lifetime-v1",
   "bootstrap": {
     "path": "example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/main.py",
-    "sha256": "4716488dc1923224be765bd38289f40572208473424dcae61f334b9bb8657cbb"
+    "sha256": "bec03a7d97c60ecf52e901ba3aef5e92fdafb1cbe0d85c217f35716732df95e4"
   },
   "lifetime": "until_shutdown",
   "maximum_credits": 300001,

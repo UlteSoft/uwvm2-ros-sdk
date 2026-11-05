@@ -1,0 +1,112 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "canonical-3422",
+  "test_scope": "Actual guest full-field codec with independent little-endian seeded reference bytes, malformed inputs and destination preservation assertions. No native ROS or GPU qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "c5cc29bd277dc940c4a7b6be3467000d1672748aaee20dde62bfafd7bd339036"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "00b95ace1e306c390d054ea7f696776cafb03aeafdf7042db171a85da6e276a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-sim/schemas/ros2/builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-sim/schemas/ros2/sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-sim/schemas/ros2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-sim/schemas/ros2/uwvm_isaac_sim_bridge/msg/ClockEvent.msg",
+      "sha256": "99eda3910e799a005d270b23af4de6def19d6ae303100456afe4ba8b092255cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "seed-0",
+      "arguments": [
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=92 wire_hex=feffffff00000000040000006261736502000000020000006a30020000006a31020000000000000000000000000000000000f03f020000000000000000000000000000000000a03f0200000000000000000000000000000000000000\n"
+    },
+    {
+      "id": "seed-17",
+      "arguments": [
+        "17"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=92 wire_hex=feffffff11000000040000006261736502000000020000006a30020000006a3102000000000000000000f13f0000000000800040020000000000000000000000000000000000a03f0200000000000000000011400000000000001140\n"
+    },
+    {
+      "id": "seed-96",
+      "arguments": [
+        "96"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=92 wire_hex=feffffff60000000040000006261736502000000020000006a30020000006a3102000000000000000000ec3f000000000000fe3f020000000000000000000000000000000000a03f02000000000000000000f03f000000000000f03f\n"
+    },
+    {
+      "id": "seed-4294967295",
+      "arguments": [
+        "4294967295"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=92 wire_hex=feffffffffd79411040000006261736502000000020000006a30020000006a310200000000000000000002400000000000000a40020000000000000000000000000000000000a03f0200000000000000000006400000000000000640\n"
+    },
+    {
+      "id": "negative",
+      "arguments": [
+        "-1"
+      ],
+      "expected_exit": 22
+    },
+    {
+      "id": "overflow",
+      "arguments": [
+        "4294967296"
+      ],
+      "expected_exit": 22
+    },
+    {
+      "id": "nonnumeric",
+      "arguments": [
+        "bad"
+      ],
+      "expected_exit": 22
+    }
+  ]
+}

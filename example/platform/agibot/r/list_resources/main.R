@@ -13,7 +13,7 @@ if (length(args) != 1L) {
     facts <- UwvmRObservation$receive(args[1L], codec, request, FALSE)
     if (facts$response_present) {
         facts$rpc_status_present <- TRUE
-        facts$rpc_status <- UwvmRos$to_decimal(facts$value$header$header$code)
+        facts$rpc_status <- roswasm_wire()$to_decimal(facts$value$header$header$code)
     }
     .uwvm_exit <- UwvmRObservation$output(facts)
 }

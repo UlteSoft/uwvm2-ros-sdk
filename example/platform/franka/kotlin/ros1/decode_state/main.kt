@@ -1,7 +1,7 @@
 import org.uwvm.franka.ros1.BoundedRecords
 /** @brief Execute genuine Kotlin application logic over the full selected JVM type. */
 fun main() {
-    val bytes = System.`in`.readNBytes(2620)
+    val bytes = uwvm.ros.Wasi.readStdin(2620)
     val value = BoundedRecords.Ros1Franka_msgsFrankaState.CODEC.decode(bytes)
     val encoded = BoundedRecords.Ros1Franka_msgsFrankaState.CODEC.encode(value)
     val output = StringBuilder()

@@ -93,7 +93,21 @@ def tools(args):
                 selected.add(Path(token))
     selected.update(path for path in args.wasm_opt.parent.parent.rglob("*") if path.is_file())
     if getattr(args, "baseruby", None):
-        selected.update(path for path in args.baseruby.parent.parent.rglob("*") if path.is_file())
+        # A system Ruby lives in /usr/bin: scanning its grandparent would read
+        # unrelated files across /usr. Pin the interpreter's actual standard
+        # library and native-extension directories reported by that Ruby.
+        environment = dict(os.environ)
+        environment.pop("RUBYOPT", None)
+        environment.pop("RUBYLIB", None)
+        result = subprocess.run(
+            [str(args.baseruby), "--disable=gems", "-rrbconfig", "-e",
+             'print RbConfig::CONFIG.values_at("rubylibdir", "rubyarchdir").join("\\0")'],
+            env=environment, check=True, capture_output=True, text=True)
+        for name in result.stdout.split("\0"):
+            directory = Path(name).resolve(strict=True)
+            if not directory.is_dir() or not directory.is_absolute():
+                raise ValueError("Ruby must identify its concrete library directories")
+            selected.update(path for path in directory.rglob("*") if path.is_file())
     ruby = Path("/usr/lib/ruby")
     if ruby.is_dir():
         selected.update(path for path in ruby.rglob("*") if path.is_file())
@@ -163,21 +177,44 @@ def prepare(args, language):
     source.mkdir()
     expected = {row["path"]: row for row in lock["files"]}
     seen = set()
-    with tarfile.open(args.sdk_profile / lock["archive"]["path"], "r:xz") as archive:
-        for item in archive:
-            assert item.isfile() and item.name in expected and item.name not in seen, item.name
-            relative = Path(item.name)
+    reused = getattr(args, "source_tree", None)
+    if reused is not None:
+        reused = reused.resolve(strict=True)
+        if not reused.is_dir():
+            raise ValueError("Reuse requires an existing source directory")
+        # Copy only the exact declared source files into the isolated build
+        # workspace. No archive is unpacked and no compiler/runtime is installed.
+        # Undeclared neighbouring files cannot become compiler inputs.
+        for name, row in expected.items():
+            relative = Path(name)
             assert not relative.is_absolute() and ".." not in relative.parts
-            row = expected[item.name]
-            assert item.size == row["bytes"] and item.mode == row["mode"] and item.mtime == row["mtime"]
+            original = reused / relative
+            assert original.resolve(strict=True).is_relative_to(reused)
+            checked(original, row)
             destination = source / relative
             destination.parent.mkdir(parents=True, exist_ok=True)
-            with archive.extractfile(item) as original, destination.open("xb") as output:
-                shutil.copyfileobj(original, output)
+            with original.open("rb") as incoming, destination.open("xb") as output:
+                shutil.copyfileobj(incoming, output)
             checked(destination, row)
-            destination.chmod(item.mode & 0o777)
-            os.utime(destination, (item.mtime, item.mtime))
-            seen.add(item.name)
+            destination.chmod(row["mode"] & 0o777)
+            os.utime(destination, (row["mtime"], row["mtime"]))
+            seen.add(name)
+    else:
+        with tarfile.open(args.sdk_profile / lock["archive"]["path"], "r:xz") as archive:
+            for item in archive:
+                assert item.isfile() and item.name in expected and item.name not in seen, item.name
+                relative = Path(item.name)
+                assert not relative.is_absolute() and ".." not in relative.parts
+                row = expected[item.name]
+                assert item.size == row["bytes"] and item.mode == row["mode"] and item.mtime == row["mtime"]
+                destination = source / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                with archive.extractfile(item) as original, destination.open("xb") as output:
+                    shutil.copyfileobj(original, output)
+                checked(destination, row)
+                destination.chmod(item.mode & 0o777)
+                os.utime(destination, (item.mtime, item.mtime))
+                seen.add(item.name)
     assert seen == set(expected)
     tool_inputs = tools(args)
     locked = dict(
@@ -189,7 +226,9 @@ def prepare(args, language):
         original_artifact=lock["original_artifact"],
         empty_cache=True,
         cached_core_objects_used=0,
-        source_files_extracted=len(seen),
+        source_files_extracted=0 if reused is not None else len(seen),
+        source_files_reused=len(seen) if reused is not None else 0,
+        source_tree=str(reused) if reused is not None else None,
     )
     (args.evidence / "construction-inputs.json").write_text(json.dumps(locked, indent=2) + "\n")
     return cache, source, locked
@@ -204,7 +243,8 @@ def finish(args, language, locked, report):
     assert raw[:8] == b"\0asm\1\0\0\0"
     from embedded_wasm import validate
     descriptor = read(args.qualified_sdk / "share/abi/abi-v1.json")
-    imports, _ = validate(raw, descriptor, args.backend, expected_maximum_pages=16384)
+    imports, _ = validate(raw, descriptor, args.backend, expected_maximum_pages=16384,
+                          memory64=getattr(args, "target", "wasm32-wasip1")=="wasm64-wasip1")
     ros_imports = [entry for entry in imports if entry["module"] != "wasi_snapshot_preview1"]
     marker = b"UWVM-SRC-APP-v1!"
     assert raw.count(marker) == 1
@@ -216,6 +256,7 @@ def finish(args, language, locked, report):
         cold_source_build=True,
         cached_core_objects_used=0,
         source_files_extracted=locked["source_files_extracted"],
+        source_files_reused=locked.get("source_files_reused", 0),
         construction_inputs_sha256=sha(args.evidence / "construction-inputs.json"),
         producer_sha256=sha(args.sdk_profile / "tools/language" / language / "build.py"),
         source_helper_sha256=sha(Path(__file__)),
@@ -230,7 +271,7 @@ def finish(args, language, locked, report):
         published_engine_replaced=False,
         guest_executions=0,
         backend=args.backend,
-        abi_profile="complete-ros-v1",
+        abi_profile="wasip1-only-v1" if args.backend == "wasi" else "complete-ros-v1",
         canonical_abi_sha256=sha(args.qualified_sdk / "share/abi/abi-v1.json"),
         ros_import_count=len(ros_imports),
         ros_imports=ros_imports,

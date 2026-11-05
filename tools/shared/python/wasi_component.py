@@ -13,6 +13,7 @@ import sys
 import time
 from example_process import execution_guard
 from simulation_example import Context
+from wasi_policy import test_arguments as wasi_test_arguments
 
 
 def digest(path):
@@ -40,6 +41,9 @@ def main():
     parser = argparse.ArgumentParser()
     for option in ("sdk-root", "manifest", "wasm", "output"):
         parser.add_argument("--" + option, required=True)
+    parser.add_argument("--module-graph")
+    parser.add_argument("--architecture", choices=("wasm32", "wasm64"))
+    parser.add_argument("--exception-profile", choices=("noeh", "eh"))
     args = parser.parse_args()
     sdk, wasm, output = Path(args.sdk_root).resolve(), Path(args.wasm).resolve(), Path(args.output).resolve()
     manifest = read_json(args.manifest)
@@ -57,15 +61,32 @@ def main():
             raise RuntimeError("BLOCKED_COMPONENT_CASE_ID")
         if not isinstance(case.get("arguments", []), list) or not all(isinstance(x, str) and "\0" not in x for x in case.get("arguments", [])):
             raise RuntimeError("BLOCKED_COMPONENT_ARGUMENT_VECTOR")
+        for field in ("stdin_hex", "expected_stdout_hex"):
+            if field in case and (not isinstance(case[field], str) or len(case[field]) > 4 * 1024**2
+                                  or len(case[field]) % 2 or re.fullmatch("[0-9a-f]*", case[field]) is None):
+                raise RuntimeError("BLOCKED_COMPONENT_BINARY_STREAM_ENCODING")
+        if "expected_stdout_hex" in case and ("expected_stdout" in case or "expected_json" in case):
+            raise RuntimeError("BLOCKED_COMPONENT_AMBIGUOUS_OUTPUT_ASSERTION")
     supervisor = None
     try:
-        machine, guard = execution_guard()
-        report["execution"] = machine
-        if guard is None:
-            raise RuntimeError("BLOCKED_COMPONENT_REQUIRES_VM_OWNED_LIVE_BOUNDARY_AND_STOPPED_EXEC_GATE")
-        supervisor = Context(args, manifest)
-        supervisor.admission, supervisor.boundary = guard.admission, guard.boundary
-        supervisor.actor_output_limit = 2 * 1024 * 1024
+        selected = os.environ.get("UWVM_ROS_RUNTIME_TEST_DEPLOYMENT")
+        deployment = read_json(selected) if selected else None
+        local_finite = isinstance(deployment, dict) and deployment.get("format") in ("uwvm-sdk-local-finite-wasi-test-v1", "uwvm-sdk-local-finite-ros-test-v1")
+        if local_finite:
+            from local_wasi_test import LocalWasiTest
+            supervisor = LocalWasiTest(args, manifest, deployment)
+            report["input_files"] += supervisor.module_inputs
+            report["execution"] = supervisor.execution
+            report["execution_profile"] = "local_functional"
+            report["production_admission"] = False
+        else:
+            machine, guard = execution_guard()
+            report["execution"] = machine
+            if guard is None:
+                raise RuntimeError("BLOCKED_COMPONENT_REQUIRES_VM_OWNED_LIVE_BOUNDARY_AND_STOPPED_EXEC_GATE")
+            supervisor = Context(args, manifest)
+            supervisor.admission, supervisor.boundary = guard.admission, guard.boundary
+            supervisor.actor_output_limit = 2 * 1024 * 1024
         report["run_id"] = supervisor.run_id
         report["actual_actor_evidence_directory"] = str(supervisor.output)
         for item in manifest.get("public_inputs", []):
@@ -87,21 +108,24 @@ def main():
                     raise RuntimeError("BLOCKED_UPSTREAM_COMPONENT_SOURCE_PATH")
                 if digest(sdk / relative) != row["sha256"]:
                     raise RuntimeError("BLOCKED_UPSTREAM_COMPONENT_BYTES")
-        selected = os.environ.get("UWVM_ROS_RUNTIME_TEST_DEPLOYMENT")
         if not selected:
             raise RuntimeError("BLOCKED_INSTALLED_VM_RUNTIME_TEST_DEPLOYMENT_V1")
-        deployment = read_json(selected)
-        if deployment.get("format") != "uwvm-sdk-runtime-test-deployment-v1":
+        if not local_finite and deployment.get("format") != "uwvm-sdk-runtime-test-deployment-v1":
             raise RuntimeError("BLOCKED_VM_RUNTIME_TEST_DEPLOYMENT_FORMAT")
         runtime = deployment["runtime"]
         executable = Path(runtime["executable"])
         if not executable.is_absolute() or not runtime.get("source_identity") or digest(executable) != runtime["sha256"]:
             raise RuntimeError("BLOCKED_PINNED_RUNTIME_IDENTITY")
-        runtime_args = deployment["runtime_arguments"]
-        if (not isinstance(runtime_args, list) or not all(isinstance(x, str) and "\0" not in x for x in runtime_args)
-            or any(x in ("--run", "-r") or x.startswith(("--run=", "-r=")) or "unwind" in x for x in runtime_args)
-            or "-Raot" not in runtime_args):
-            raise RuntimeError("BLOCKED_EXPLICIT_NATIVE_RUNTIME_ARGUMENTS")
+        if local_finite:
+            runtime_args = supervisor.runtime_arguments
+        else:
+            runtime_args = deployment["runtime_arguments"]
+            if (not isinstance(runtime_args, list) or not all(isinstance(x, str) and "\0" not in x for x in runtime_args)
+                or any(x in ("--run", "-r") or x.startswith(("--run=", "-r=")) or "unwind" in x for x in runtime_args)
+                or "-Raot" not in runtime_args):
+                raise RuntimeError("BLOCKED_EXPLICIT_NATIVE_RUNTIME_ARGUMENTS")
+            runtime_args = wasi_test_arguments(runtime_args, deployment.get("wasi_policy"))
+        report["wasi_policy"] = deployment.get("wasi_policy")
         report["runtime"] = runtime
         report["deployment_sha256"] = digest(selected)
         for case in cases:
@@ -111,27 +135,51 @@ def main():
                      "pwd": os.environ.get("PWD"), "started_monotonic_ns": time.monotonic_ns()}
             report["cases"].append(entry)
             report["attempted"] += 1
-            actor = supervisor.spawn("vm", argv, expected_sha256=runtime["sha256"])
+            if "stdin_hex" in case:
+                if not local_finite:
+                    raise RuntimeError("BLOCKED_BINARY_INPUT_REQUIRES_LOCAL_STREAM_PROFILE")
+                actor = supervisor.spawn("vm", argv, expected_sha256=runtime["sha256"],
+                                         stdin_bytes=bytes.fromhex(case["stdin_hex"]))
+            else:
+                actor = supervisor.spawn("vm", argv, expected_sha256=runtime["sha256"])
             report["executed"] += 1
-            code = supervisor.wait(actor, 60)
+            code = supervisor.wait(actor, supervisor.timeout if local_finite else 60)
+            if local_finite:
+                supervisor.verify_module_artifacts()
             streams = []
             for path in (actor["stdout"], actor["stderr"]):
                 with path.open("rb") as stream:
                     raw = stream.read(supervisor.actor_output_limit + 1)
                 if len(raw) > supervisor.actor_output_limit:
                     raise RuntimeError("BLOCKED_COMPONENT_RAW_STREAM_EXTENT")
-                streams.append(raw.decode("utf-8", errors="strict"))
-            stdout, stderr = streams
+                streams.append(raw)
+            stdout_bytes, stderr_bytes = streams
+            stdout = stdout_bytes.decode("utf-8", errors="strict") if "expected_stdout_hex" not in case else None
+            stderr = stderr_bytes.decode("utf-8", errors="strict")
             entry.update(exit_code=code, finished_monotonic_ns=actor["finished_ns"],
                          stdout=str(actor["stdout"]), stderr=str(actor["stderr"]),
                          stdout_sha256=digest(actor["stdout"]), stderr_sha256=digest(actor["stderr"]),
-                         actual_vm_observed=True, actual_exec_receipt=actor["actual_exec_receipt"],
+                         actual_vm_observed=actor.get("actual_vm_observed", True), actual_exec_receipt=actor["actual_exec_receipt"],
                          actual_exec_receipt_sha256=actor["actual_exec_receipt_sha256"],
                          functional_instrumentation_not_performance=True)
-            if "[unwind-check] status=ok" not in stderr or "body-fallback=no" not in stderr:
+            if local_finite and code != case["expected_exit"]:
+                raise RuntimeError("Local WASI guest exit differs from expected: " + case["id"])
+            diagnostic = re.sub(r"\x1b\[[0-?]*[ -/]*[@-~]", "", stderr)
+            no_fallback = "body-fallback=no" in diagnostic
+            if local_finite:
+                # Ordinary AOT reports the actual compiler configuration;
+                # private debug/update publication markers need not be enabled.
+                no_fallback = no_fallback or (
+                    "Resolved runtime configuration: mode=full_compile, compiler=llvm_jit_only, "
+                    "uwvm-int-translation=disabled, llvm-jit-ir-translation=enabled." in diagnostic)
+            if "[unwind-check] status=ok" not in diagnostic or not no_fallback:
                 raise RuntimeError("BLOCKED_REQUIRED_NATIVE_CHECKED_UNWIND_OR_NO_FALLBACK")
+            entry["native_unwind_checked"] = True
+            entry["interpreter_fallback"] = False
             passed = code == case["expected_exit"]
-            if "expected_json" in case:
+            if "expected_stdout_hex" in case:
+                passed = passed and stdout_bytes == bytes.fromhex(case["expected_stdout_hex"])
+            elif "expected_json" in case:
                 passed = passed and json.loads(stdout) == case["expected_json"]
             elif "expected_stdout" in case:
                 passed = passed and stdout == case["expected_stdout"]

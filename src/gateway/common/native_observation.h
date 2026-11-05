@@ -1,5 +1,6 @@
 // Explicit native observation profile. APL-2.0. Requires real OpenSSL Crypto.
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "native_observation_types.h"
 #include "native_io.h"
 #include <openssl/sha.h>
@@ -227,7 +228,7 @@ namespace uwvm2::ros_gateway::native_observation
                 native_io::fixed_text<8192> out;
                 bool ok=out.append("{\"format\":\"uwvm-sdk-native-buffer-observation-v2\"")&&text(out,"run_id",config_.run_id)&&
                     text(out,"phase",name(value.event))&&number(out,"sequence",sequence_+1)&&number(out,"pid",::getpid())&&
-                    number(out,"monotonic_ns",std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count())&&
+                    number(out,"monotonic_ns",std::chrono::duration_cast<std::chrono::nanoseconds>(::uwvm2::utils::host_clock::now().time_since_epoch()).count())&&
                     number(out,"request_id",value.request_id)&&number(out,"capture_ordinal",value.capture_ordinal)&&number(out,"error",value.error)&&
                     boolean(out,"native_invoked",value.native_invoked)&&boolean(out,"native_accepted",value.native_accepted)&&
                     boolean(out,"effects_uncertain",value.effects_uncertain);

@@ -1,0 +1,575 @@
+{
+  "format": "uwvm-real-interpreter-v1",
+  "language": "php",
+  "version": "8.4.13",
+  "target": "wasm64-wasip1",
+  "ros_backend": "wasi",
+  "bytes": 10931792,
+  "sha256": "bc0b55ce3b982cd9a9cacbdd25c3536827716b0c729452a03b9000c45febd2bc",
+  "maximum_pages": 16384,
+  "memory64": true,
+  "table64": true,
+  "wasip1_abi": "uwvm-memory64-extension-v1",
+  "abi_profile": "wasip1-only-v1",
+  "ros_import_count": 0,
+  "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "construction_receipt_sha256": "6ba0bf38070ca6b613df13d39fbe2a20d353e970079daacd2b288c09206bde48",
+  "source_lock_sha256": "c67cfc2270adde766a7b35015a87fcb455bc2d2863498b1499508ef626c63732",
+  "memory64_source_manifest_sha256": "63faa83d9f16c3f171d2720afa8f8c5f5152d96c040d3b859b229ca80c107bf7",
+  "qualification": "SDK_WASI_ARGUMENT_AND_STREAM_TESTS_PASS",
+  "qualification_scope": "Fourteen actual Wasm64 SDK cases across copy_lines, stream_checksum and sum_arguments executed in uwvm2-ros with explicit WASIp1 authority. This is the SDK memory64 extension, not standard Preview1 or complete PHP/Core conformance.",
+  "guest_execution_receipt_sha256": "1a0cd8482e40a66aa24f2e2d535ce6dfb08075783ef7d2ca98de42e1f7b6478e",
+  "imports": [
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "args_get_wasm64",
+      "params": [
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2045,
+        2067
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "args_sizes_get_wasm64",
+      "params": [
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2086,
+        2108
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "environ_get_wasm64",
+      "params": [
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2133,
+        2155
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "environ_sizes_get_wasm64",
+      "params": [
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2177,
+        2199
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "clock_time_get_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2227,
+        2249
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_close_wasm64",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2274,
+        2296
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_datasync_wasm64",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2315,
+        2337
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_fdstat_get_wasm64",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2359,
+        2381
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_fdstat_set_flags_wasm64",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2405,
+        2427
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_filestat_get_wasm64",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2457,
+        2479
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_filestat_set_size_wasm64",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2505,
+        2527
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_pread_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2558,
+        2580
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_prestat_get_wasm64",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2599,
+        2621
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_prestat_dir_name_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2646,
+        2668
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_read_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2698,
+        2720
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_readdir_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2738,
+        2760
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_seek_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2781,
+        2803
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_sync_wasm64",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2821,
+        2843
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_tell_wasm64",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2861,
+        2883
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_write_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2901,
+        2923
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_create_directory_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2942,
+        2964
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_filestat_get_wasm64",
+      "params": [
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2996,
+        3018
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_filestat_set_times_wasm64",
+      "params": [
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i64",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3047,
+        3069
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_link_wasm64",
+      "params": [
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3104,
+        3126
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_open_wasm64",
+      "params": [
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i32",
+        "i64",
+        "i64",
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3147,
+        3169
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_readlink_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3190,
+        3212
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_remove_directory_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3236,
+        3258
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_rename_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3290,
+        3312
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_symlink_wasm64",
+      "params": [
+        "i64",
+        "i64",
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3335,
+        3357
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_unlink_file_wasm64",
+      "params": [
+        "i32",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3380,
+        3402
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "poll_oneoff_wasm64",
+      "params": [
+        "i64",
+        "i64",
+        "i64",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        3429,
+        3451
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "proc_exit_wasm64",
+      "params": [
+        "i32"
+      ],
+      "results": [],
+      "module_span": [
+        3473,
+        3495
+      ]
+    }
+  ],
+  "qualified_guest_cases": 14,
+  "qualified_projects": [
+    {
+      "project": "example/platform/wasi/php/copy_lines_memory64",
+      "cases": 4,
+      "suite_sha256": "cbf3703556ccc75f2dbe88e1e66305c40e4d6946cf3dd4aeef3ccf88b3790fdd",
+      "build_receipt_sha256": "67fd9612ba02583da0023c1191c0770d44869f9a130be63d948e3249af910994",
+      "application_sha256": "686afaec5215f7556dd31b78f18141aa5b99aba33206ad6084c497bb8f77af02",
+      "runtime_sha256": "9bc0103b7de90a9154252d0db366943c210c97a6bc1f9c14d36ce0a49818ee12"
+    },
+    {
+      "project": "example/platform/wasi/php/stream_checksum_memory64",
+      "cases": 4,
+      "suite_sha256": "2eb7062efe3483e92fcd2562dec44a0530e1f9e994a8d467ed198657f08affeb",
+      "build_receipt_sha256": "13b93706237045c97731451dcca0cc0aab13191f1ac86601f1607ddd83aded28",
+      "application_sha256": "d6f887ba9d111dc3a976581da76dc96e19a63b08a28ac5eef171bcdab0fbec1e",
+      "runtime_sha256": "9bc0103b7de90a9154252d0db366943c210c97a6bc1f9c14d36ce0a49818ee12"
+    },
+    {
+      "project": "example/platform/wasi/php/sum_arguments_memory64",
+      "cases": 6,
+      "suite_sha256": "0876b3938d9d0a96153eb10addef28ba9fd5a19277ed7f3b20b9d59378ffa626",
+      "build_receipt_sha256": "0c367aabdb38a7d8bd430fc4f5b4d8357860be4b4c39a0306418f9388f68ebee",
+      "application_sha256": "73b0cf60e6b67cadf4d70f1c60e7e15e650583485e212b18a5f24e409681f0fb",
+      "runtime_sha256": "9bc0103b7de90a9154252d0db366943c210c97a6bc1f9c14d36ce0a49818ee12"
+    }
+  ]
+}

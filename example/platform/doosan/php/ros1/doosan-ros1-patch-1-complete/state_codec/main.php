@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "doosan/php/ros1/doosan-ros1-patch-1-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\DoosanDoosanRos1Patch1Complete\Ros1Dsr_msgsRobotState();
 $bytes = $value->encode();
 $decoded = \Uwvm\DoosanDoosanRos1Patch1Complete\Ros1Dsr_msgsRobotState::decode($bytes);

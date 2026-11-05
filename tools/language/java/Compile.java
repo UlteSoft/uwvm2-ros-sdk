@@ -187,6 +187,16 @@ public final class Compile
             // them is a separate API in the exact pinned TeaVM 0.13.1 tooling.
             // Preserve every problem and its real call stack before rejecting
             // an emitted module; never replace it with a generic failure only.
+            // Render complete primary diagnostics directly as well as the call graph.
+            // The tool log can buffer an unterminated fragment on a failed build.
+            for(Problem problem: compiler.getProblemProvider().getProblems())
+            {
+                DefaultProblemTextConsumer detail = new DefaultProblemTextConsumer();
+                problem.render(detail);
+                System.err.println(problem.getSeverity() + ": " + detail.getText());
+                if(problem.getLocation() != null)
+                    System.err.println("    at " + problem.getLocation().getMethod());
+            }
             if(compiler.getDependencyInfo() != null)
             {
                 TeaVMProblemRenderer.describeProblems(compiler.getDependencyInfo().getCallGraph(),

@@ -80,6 +80,11 @@ playwright-report/
 # Raw local runtime evidence stays on disk rather than in the published tree.
 /share/platform/ros/runtime-evidence/
 
+# This pinned rcutils testing header is upstream source, not CTest output.
+# Keep it when core.ignorecase makes Testing/ match the lowercase source path.
+!include/platform/ros/transplate/dependencies/rcutils/**/upstream/rcutils/testing/
+!include/platform/ros/transplate/dependencies/rcutils/**/upstream/rcutils/testing/*.h
+
 # Date-stamped paths stay local, including versioned inputs (repository policy).
 # Match YYYYMMDD, YYYY-MM-DD, YYYY_MM_DD and YYYY.MM.DD anywhere in a name.
 # Kept last so the upstream/source-input exceptions above do not override it.

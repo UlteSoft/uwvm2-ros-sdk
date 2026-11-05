@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"os"
 	"time"
-	records "uwvm2.local/fanuc-records-tinygo"
+	records "uwvm2.local/fanuc-records"
 	ros "uwvm2.local/roswasm"
 )
 

@@ -60,7 +60,110 @@
           "response": "rosdemo_v3/GetPoseResponse",
           "request": "rosdemo_v3/GetPoseRequest"
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/dobot/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/dobot/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "dobot",
+                "source": "include/platform/dobot/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "dobot"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros1_demo_v3.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/dobot/bundles/lua/ros1_demo_v3.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/dobot/bundles/py/ros1_demo_v3.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "dobot/php/ros1/demo_v3/records",
+              "path": "include/platform/dobot/php/ros1/demo_v3/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "dobot/ruby/ros1/demo_v3/records",
+              "path": "include/platform/dobot/ruby/ros1/demo_v3/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_demo_v4",
@@ -120,7 +223,110 @@
           "response": "rosdemo_v4/GetPoseResponse",
           "request": "rosdemo_v4/GetPoseRequest"
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/dobot/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/dobot/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "dobot",
+                "source": "include/platform/dobot/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "dobot"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros1_demo_v4.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/dobot/bundles/lua/ros1_demo_v4.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/dobot/bundles/py/ros1_demo_v4.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "dobot/php/ros1/demo_v4/records",
+              "path": "include/platform/dobot/php/ros1/demo_v4/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "dobot/ruby/ros1/demo_v4/records",
+              "path": "include/platform/dobot/ruby/ros1/demo_v4/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_v3",
@@ -182,7 +388,110 @@
           "response": "dobot_bringup/RobotModeResponse",
           "request": "dobot_bringup/RobotModeRequest"
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/dobot/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/dobot/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "dobot",
+                "source": "include/platform/dobot/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "dobot"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros1_v3.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/dobot/bundles/lua/ros1_v3.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/dobot/bundles/py/ros1_v3.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "dobot/php/ros1/v3/records",
+              "path": "include/platform/dobot/php/ros1/v3/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "dobot/ruby/ros1/v3/records",
+              "path": "include/platform/dobot/ruby/ros1/v3/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros1_v4",
@@ -244,7 +553,110 @@
           "response": "dobot_v4_bringup/RobotModeResponse",
           "request": "dobot_v4_bringup/RobotModeRequest"
         }
-      ]
+      ],
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/dobot/go"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/dobot/tinygo"
+            ],
+            "tags": [
+              "ros1"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros1\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "dobot",
+                "source": "include/platform/dobot/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "dobot"
+            ]
+          }
+        }
+      },
+      "source_graph_v1": {
+        "js": {
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros1_v4.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/dobot/bundles/lua/ros1_v4.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/dobot/bundles/py/ros1_v4.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "dobot/php/ros1/v4/records",
+              "path": "include/platform/dobot/php/ros1/v4/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "dobot/ruby/ros1/v4/records",
+              "path": "include/platform/dobot/ruby/ros1/v4/records.rb"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ros2_v4",
@@ -320,11 +732,105 @@
           "main_class": "Main"
         },
         "js": {
-          "format": "uwvm-vendor-source-graph-v1",
-          "language": "js",
-          "bundle_manifest": "share/platform/dobot/bundles/js/ros2_v4.json",
-          "module_count": 13,
-          "native_definition_catalog": "share/platform/dobot/catalogs/ros2_v4/catalog.json"
+          "bundle_manifest": "share/platform/dobot/bundles/js/ros2_v4.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/dobot/bundles/lua/ros2_v4.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/dobot/bundles/py/ros2_v4.json"
+        },
+        "php": {
+          "modules": [
+            {
+              "name": "RosWasm/Word",
+              "path": "include/platform/ros/php/RosWasm/Word.php"
+            },
+            {
+              "name": "RosWasm/Wire",
+              "path": "include/platform/ros/php/RosWasm/Wire.php"
+            },
+            {
+              "name": "RosWasm/Transport",
+              "path": "include/platform/ros/php/RosWasm/Transport.php"
+            },
+            {
+              "name": "dobot/php/ros2/v4/records",
+              "path": "include/platform/dobot/php/ros2/v4/records.php"
+            }
+          ]
+        },
+        "ruby": {
+          "modules": [
+            {
+              "name": "roswasm/wire",
+              "path": "include/platform/ros/ruby/roswasm/wire.rb"
+            },
+            {
+              "name": "roswasm/transport",
+              "path": "include/platform/ros/ruby/roswasm/transport.rb"
+            },
+            {
+              "name": "dobot/ruby/ros2/v4/records",
+              "path": "include/platform/dobot/ruby/ros2/v4/records.rb"
+            }
+          ]
+        }
+      },
+      "native_actions": {
+        "go": {
+          "format": "uwvm-native-action-v1",
+          "language": "go",
+          "go": {
+            "modules": [
+              "include/platform/ros/go",
+              "include/platform/dobot/go"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "tinygo": {
+          "format": "uwvm-native-action-v1",
+          "language": "tinygo",
+          "go": {
+            "modules": [
+              "include/platform/ros/tinygo",
+              "include/platform/dobot/tinygo"
+            ],
+            "tags": [
+              "ros2"
+            ]
+          }
+        },
+        "rs": {
+          "format": "uwvm-native-action-v1",
+          "language": "rs",
+          "rust": {
+            "cfg": [
+              "feature=\"alloc\"",
+              "feature=\"ros2\""
+            ],
+            "crates": [
+              {
+                "name": "roswasm",
+                "source": "include/platform/ros/rs/src/lib.rs",
+                "dependencies": []
+              },
+              {
+                "name": "dobot",
+                "source": "include/platform/dobot/rs/lib.rs",
+                "dependencies": [
+                  "roswasm"
+                ]
+              }
+            ],
+            "imports": [
+              "roswasm",
+              "dobot"
+            ]
+          }
         }
       }
     }

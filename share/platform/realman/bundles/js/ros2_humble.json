@@ -24,7 +24,5 @@
       "sha256": "1ffbf92e18e7e215e1cb6da8633c216afab67b808a2615b7ee0ac4d2c74bcfb6"
     }
   ],
-  "default_authority": [],
-  "vendor_profile": "ros2_humble",
-  "complete_original_records_and_rpc_source": true
+  "default_authority": []
 }

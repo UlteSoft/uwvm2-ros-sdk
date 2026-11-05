@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "runtime": "PATH_TO_INSTALLED_UWVM2_ROS",
   "gateway": "PATH_TO_INSTALLED_UWVM_ROS2_GATEWAY",
   "backend": "ros2",
@@ -26,7 +26,8 @@
           "wasi_grants": [
             "monotonic-clock",
             "random"
-          ]
+          ],
+          "wasi_enabled": true
         }
       }
     }

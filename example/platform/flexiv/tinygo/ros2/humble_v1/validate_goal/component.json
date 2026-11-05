@@ -1,0 +1,315 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2783",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "1a15a3b4052a5eac936947d2fee5c5aa44c630f6d6ba595593356bce2dc2483f"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "375dea731e6d651863c6030619aaeb9ba256ab95ec5b7edad197b773f3c324b6"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "b4cb7d8b04e34c7327ceeb574d2f313029c06a255658cf98b04ee1bf308e8fcc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/tinygo/ros2/flexiv-ros2-humble-v1-complete/bounded_interfaces.go",
+      "sha256": "2ca951c8c410dc3315f1a9573836e8085807e0c31a09065b9f085863e44e304a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/tinygo/ros2/flexiv-ros2-humble-v1-complete/bounded_records.go",
+      "sha256": "39423a81eefb1141d748adccd297ccb0c8d50a3d0323c69baa6e94016f40dff8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/tinygo/ros2/flexiv-ros2-humble-v1-complete/go.mod",
+      "sha256": "d600df54207d71bdb7be34b94b6fef4a6ad591225b40581fcd4415c7914e9789"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/capability.go",
+      "sha256": "b4b04935b40b431358c4638f745fe3d53f3333b29be34cb6b2ff6b101ce45748"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/codec.go",
+      "sha256": "af670aae3a1cf5851d70866421e70929079c4ae62148a077c3f4f7d41b1bc9b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/construction.go",
+      "sha256": "b3e8e7892e03765af2e7d79091933781e02a4bc33d5ce766ffd26a88e9e84697"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/custom-types/generated-r3/fixed_records.go",
+      "sha256": "13f4aef4d324ed1df3d9c401dee20e306dcc5ae349f9709a3a0e5823a9f093a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_backend_ros1.go",
+      "sha256": "a5da2d961caed5b48fd11c164d4b2b8768a91245d7b7272222e1f043ccd71adf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_backend_ros2.go",
+      "sha256": "8c1353a925917c94d288ab6769992841bbdbff7552e30fd4dc3e2080d84b77c5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_client.go",
+      "sha256": "7ed592ef1acb9bd5498c6d2eeb2b236b73da163e20d1811189f7cbd6b3c0251f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_dispatch.go",
+      "sha256": "d07eb3fc3fa695212a0c90a6649c3da8dcfdde5a0166094167e54fa9d95b1686"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/event_stream.go",
+      "sha256": "0c592e957aada0b5abad17a119153d3da8f8a4fd2ae46240fb41fa05d78c7013"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/events.go",
+      "sha256": "3197dabadf0bab936186a2ab7c78ea68a69a250bdcdae3488245a4cddd55527c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/executor.go",
+      "sha256": "35a72dbecd861e145077ceda1f17bc93d6b3131bdcbbaac14f0439ca2bd33fd3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/go.mod",
+      "sha256": "3fccc99a756ef89435c8ba2500e710b57f60bff459147951a500e471233c0eea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/local.go",
+      "sha256": "30e4e61bda28f2b21692ba9bd325bc58e6f64f24fea1eb45358f268329c7f96e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/native_command/command.go",
+      "sha256": "76926f053d58f44e8d233e4754467d695bb5dd4f9cd16ca89f54e21c719cc635"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/node.go",
+      "sha256": "56e7390a7dff37d57e4b6c86a5267cdec97273998f19897560f4cc52444e72af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/owner_state.go",
+      "sha256": "c48b859d02101dd2079b4b3f300487fbed7bb4a0ef0f8247f9012d8b6b75a184"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/raw_ros1.go",
+      "sha256": "d749eb03c83833f3a6d417644be6cb53a69a7a26d05939757f47a6a30634ee37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/raw_ros2.go",
+      "sha256": "51be171768228f7a195f50e0cc9ca4a49d5ac01fc0a8a53a4c01350d304ad3d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/endpoint.go",
+      "sha256": "572d8ad476f1e434fb77d608b366c8c033381605e114cbe19316974bbfbf16af"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/group.go",
+      "sha256": "3e52bca84113dd2acee3928107adfff8e40e68ba09ceff9cb77209026c19048a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/raw_ros2.go",
+      "sha256": "285b7da8dba9ea055a0a5d9e4327ef0562d758d9e5401b68b031c7ff1678c4b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/recipe.json",
+      "sha256": "efb5b22dfb05dd2208c543e21803add7b8d6bcd79eceb817f0419e93274abfa2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/typed.go",
+      "sha256": "25e9776aab626338c44576cec6db7c2c3581a4640230fbd5e01c48f4b464696a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/rmwservice/wire.go",
+      "sha256": "5dc25fc533f3e4a9056964a1c19f7d7aa00ab4b22f1eca7ea53fa02a3079568d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/selection_error.go",
+      "sha256": "f35d54391dbc59cb5fde72df130f6969c88eb835ad577eb0eac6c78196560ea0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/server_callbacks.go",
+      "sha256": "fd6f5d2071a9cf77aa6b7b486a90ceecbb1a08e6d121b75aa4d9da708553ac5c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/session.go",
+      "sha256": "356c874f3af38ecfcaeb89e8ad9ad25b4660e20cf170e42a16a8f930b49ef9d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/typed.go",
+      "sha256": "4b31de91a800aecaa76d3188296aa6b89703465729423058616e49e962faa560"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/tinygo/types.go",
+      "sha256": "c9ca83e1594cc1626af93f50121a5e9436ae2710808e4df71f2d200e9cffa733"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/tinygo/ros2_humble_v1.json",
+      "sha256": "52ab238a246e92b1abfb4b29760085d355d927f48f2fbc1efeeb450f2e207f11"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/SOURCES.json",
+      "sha256": "4d305b8c8c066cdb554e85828bc6f89a2dc31b15b3fa8035af2c234e59d53a5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/additional_record_emitters.py",
+      "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/generate_records.py",
+      "sha256": "8647d2f5b178e30457e4948159060a7beda8ad4a6f9709f079a1fec48fff37bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_records.py",
+      "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_documentation.py",
+      "sha256": "5c5fb155cb868913895f81fc43b47d1fd3c94dea9600845fe0868fa8929c28db"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_emitters.py",
+      "sha256": "a764f7c1958f7d89eda7a38deb688843b9e0dc98e186b82592b56172d22b1719"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/source_layout.py",
+      "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30300a",
+      "stdin_hex": "00"
+    },
+    {
+      "id": "truncated-value",
+      "arguments": [],
+      "stdin_hex": "",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing-byte",
+      "arguments": [],
+      "stdin_hex": "0000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

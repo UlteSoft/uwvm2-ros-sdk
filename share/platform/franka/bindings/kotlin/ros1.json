@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "kotlin",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/kotlin/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/franka/java/ros1/franka-ros1-complete/org/uwvm/franka/ros1/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/franka/kotlin/ros1/franka-ros1-complete/Records.kt"
+    ]
+  }
+}

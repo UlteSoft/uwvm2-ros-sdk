@@ -1,0 +1,170 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-nvidia-c-client-3362",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-ros/language-bindings.json",
+      "sha256": "a861e14572e124638f6fe2a0a537ba2d72ec7f11907815747835095297c4db22"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.en.md",
+      "sha256": "929dd9609716eeffc4805406628e1e021e77a741cccf45d2276a3529e9d5e7bc"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "1843542a9cc3499e481104a257374c90f2b0f37dd62f67479da192ce4186b53a"
+    },
+    {
+      "scope": "example",
+      "path": "DEPLOYMENT.zh_CN.md",
+      "sha256": "99086230712bf63e9a031b9c5f4e81dc0cf8a84557e99939d5b3e9994fade84c"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "74f5a2556ea70884bb1eea53c28a8886094a6b1b79fe69907eed7f43fabfa2bd"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9f9f1eff6f5015eab4599637c41864feaf9c31788b13891d993498a05086b27b"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "44b8b3e9ffb24935cff268ca71a275f6e128a4a9addf753378d54e952943cc5c"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "7576c65628fffe51b0d153b59b475bc9968144d0172cf73d8a681508e0f8e147"
+    }
+  ],
+  "cases": [
+    {
+      "id": "ungranted-lifecycle-mode-0",
+      "arguments": [
+        "sdk-test-denied",
+        "0"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 0,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0
+      }
+    },
+    {
+      "id": "ungranted-lifecycle-mode-1",
+      "arguments": [
+        "sdk-test-denied",
+        "1"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 1,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0
+      }
+    },
+    {
+      "id": "ungranted-lifecycle-mode-2",
+      "arguments": [
+        "sdk-test-denied",
+        "2"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "encoding": 0,
+        "wire_hex": "",
+        "mode": 2,
+        "retired": 0,
+        "stale": 0,
+        "close_again": 0,
+        "reopen": 0,
+        "old_again": 0,
+        "fresh_close": 0,
+        "fresh_close_attempted": 0
+      }
+    },
+    {
+      "id": "missing-mode",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "invalid-mode",
+      "arguments": [
+        "sdk-test-denied",
+        "3"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

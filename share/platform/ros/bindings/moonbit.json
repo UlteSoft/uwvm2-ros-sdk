@@ -40,5 +40,757 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "publish_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    },
+    "subscribe_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    },
+    "call_trigger": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    },
+    "publish_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    },
+    "subscribe_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    },
+    "call_trigger_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros1",
+              "sources": [
+                "include/platform/ros/moonbit/ros1/client.mbt",
+                "include/platform/ros/moonbit/ros1/coverage.mbt",
+                "include/platform/ros/moonbit/ros1/image.mbt",
+                "include/platform/ros/moonbit/ros1/raw.mbt",
+                "include/platform/ros/moonbit/ros1/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "moonbit",
+        "moonbit": {
+          "packages": [
+            {
+              "alias": "linear",
+              "name": "uwvm/ros/linear",
+              "sources": [
+                "include/platform/ros/moonbit/linear/linear.mbt",
+                "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+              ],
+              "dependencies": []
+            },
+            {
+              "alias": "wire",
+              "name": "uwvm/ros/wire",
+              "sources": [
+                "include/platform/ros/moonbit/wire/image.mbt",
+                "include/platform/ros/moonbit/wire/transform.mbt",
+                "include/platform/ros/moonbit/wire/wire.mbt"
+              ],
+              "dependencies": [
+                "utf8"
+              ]
+            },
+            {
+              "alias": "ros",
+              "name": "uwvm/ros/ros2",
+              "sources": [
+                "include/platform/ros/moonbit/ros2/client.mbt",
+                "include/platform/ros/moonbit/ros2/coverage.mbt",
+                "include/platform/ros/moonbit/ros2/image.mbt",
+                "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+                "include/platform/ros/moonbit/ros2/raw.mbt",
+                "include/platform/ros/moonbit/ros2/transform.mbt"
+              ],
+              "dependencies": [
+                "linear",
+                "wire",
+                "utf8"
+              ]
+            },
+            {
+              "alias": "native_ros",
+              "name": "uwvm/ros/native_command",
+              "sources": [
+                "include/platform/ros/moonbit/native_command/native_command.mbt"
+              ],
+              "dependencies": [
+                "ros",
+                "wire",
+                "utf8"
+              ]
+            }
+          ],
+          "entry_dependencies": [
+            "native_ros"
+          ],
+          "main_package": "native/command"
+        }
+      }
+    }
+  }
 }

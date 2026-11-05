@@ -3,5 +3,5 @@
  * @details The ordinary shared Java library retains native ROS ownership.
  */
 import uwvm.ros.NativeCommand
-import kotlin.system.exitProcess
-fun main() { exitProcess(NativeCommand.run(1)) }
+import uwvm.ros.Wasi
+fun main() { Wasi.exit(NativeCommand.run(1)) }

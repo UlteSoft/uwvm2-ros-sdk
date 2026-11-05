@@ -8,6 +8,7 @@
  */
 package abb.examples;
 import uwvm.ros.Client;
+import uwvm.ros.Wasi;
 import uwvm.abb.ros1.Ros1Abb_rapid_sm_addin_msgsRuntimeState;
 
 /** @brief Observe the whole abb_rapid_sm_addin_msgs/RuntimeState record through genuine JVM AOT. */
@@ -21,7 +22,7 @@ public final class Main
     {
         if(args.length != 1)
         {
-            System.exit(22);
+            Wasi.exit(22);
             return;
         }
         Client.Exchange facts = Client.waitSample(args[0], 8372, 250);
@@ -30,7 +31,7 @@ public final class Main
         {
             try
             {
-                wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.decode(facts.wire).encode();
+                wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.encode(Ros1Abb_rapid_sm_addin_msgsRuntimeState.decode(facts.wire));
             }
             catch(IllegalArgumentException failure)
             {
@@ -44,6 +45,9 @@ public final class Main
             hex.append(Character.forDigit(value & 15, 16));
         }
         System.out.println("{\"primary\":" + facts.primary + ",\"cleanup\":" + facts.cleanup + ",\"wire_hex\":\"" + hex + "\"}");
-        System.exit(Math.min(facts.status(), 125));
+        int status = facts.status();
+        System.out.flush();
+        if (status == 0 && System.out.checkError()) status = 5;
+        Wasi.exit(Integer.compareUnsigned(status, 125) > 0 ? 125 : status);
     }
 }

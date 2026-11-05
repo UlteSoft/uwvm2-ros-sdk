@@ -17,5 +17,20 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "haskell",
+    "haskell": {
+      "import_dirs": [
+        "include/platform/ros/haskell/src"
+      ],
+      "source_modules": [
+        {
+          "name": "UniversalRobots.Records.UniversalRobotsRos1Complete",
+          "source": "include/platform/universal_robots/haskell/ros1/universal-robots-ros1-complete/Records.hs"
+        }
+      ]
+    }
+  }
 }

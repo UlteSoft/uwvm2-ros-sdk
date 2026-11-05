@@ -297,7 +297,7 @@ def record_source(language: str, record, records, namespace: str) -> str:
     lines = (
         [f"package {namespace};", "", "import uwvm.ros.Wire;", ""]
         if java
-        else ["using System;", "using Uwvm.Ros;", "", f"namespace {namespace}", "{"]
+        else ["using System;", "using Uwvm.RosWasm.Catalog;", "", f"namespace {namespace}", "{"]
     )
     body = [
         "/**",
@@ -450,5 +450,5 @@ def record_source(language: str, record, records, namespace: str) -> str:
     ]
     if not java:
         body = ["    " + line if line else "" for line in body] + ["}"]
-    return "\n".join(lines + body) + "\n"
+    return "\n".join(lines + body).replace("Wire.", "CatalogWire.") + "\n" if not java else "\n".join(lines + body) + "\n"
 

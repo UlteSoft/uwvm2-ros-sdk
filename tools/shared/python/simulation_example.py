@@ -458,6 +458,9 @@ class Context:
         """@brief Recheck the lease, current actors and bounded output during waits."""
         self.guard()
         for actor in self.actors:
+            capture = actor.get("_output_capture")
+            if capture is not None:
+                capture.drain()
             if actor["stdout"].stat().st_size + actor["stderr"].stat().st_size > self.actor_output_limit:
                 raise RuntimeError("Actor output bound exceeded")
             if actor["process"].poll() is None:
@@ -560,7 +563,9 @@ class Context:
         variables = {"session_dir": str(self.output), "adapter": str(adapter),
                      "policy": str(policy), "run_id": self.run_id,
                      "adapter_sha256": adapter_sha256, "policy_sha256": policy_sha256}
+        from wasi_policy import test_arguments as wasi_test_arguments
         arguments = [value.format_map(variables) for value in mode["runtime_arguments"]]
+        arguments = wasi_test_arguments(arguments, mode.get("wasi_policy"))
         allow = [i for i, value in enumerate(arguments) if value == "--portable-robot"]
         observe = [i for i, value in enumerate(arguments) if value == "--portable-robot-audit-inputs"]
         if allow:
@@ -741,14 +746,26 @@ class Context:
             self.retirement = {"status": "NO_ACTORS_STARTED", "recorded_actors": 0,
                                "same_birth_remaining": [], "monotonic_ns": time.monotonic_ns()}
             return
-        self.retirement = self.lifecycle.retire(self.actors)
+        try:
+            self.retirement = self.lifecycle.retire(self.actors)
+        finally:
+            captures = [actor.pop("_output_capture", None) for actor in self.actors]
+            failure = None
+            for capture in captures:
+                if capture is not None:
+                    try:
+                        capture.close()
+                    except BaseException as error:
+                        failure = failure or error
+            if failure is not None:
+                raise failure
         if self.retirement["status"] != "RETIRED":
             raise RuntimeError("Owned actor/descendant retirement incomplete; original cleanup receipt retained")
 
     def actor_summary(self):
         """@brief Return bounded actual execution facts without subprocess objects."""
         return ([{**{key: value for key, value in actor.items()
-                  if key not in ("process", "stdout", "stderr")},
+                  if key not in ("process", "stdout", "stderr", "_output_capture")},
                   "stdout": str(actor["stdout"]), "stderr": str(actor["stderr"]),
                   "stdout_sha256": digest(actor["stdout"]), "stderr_sha256": digest(actor["stderr"]),
                   "exit_code": actor["process"].returncode} for actor in self.actors]

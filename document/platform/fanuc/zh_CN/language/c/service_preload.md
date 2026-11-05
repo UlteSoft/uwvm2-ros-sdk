@@ -1,6 +1,6 @@
 # 通过 C/C++ Wasm 模块图调用原始 FANUC 服务
 
-C main 链接一个真实 C++ 静态 archive，并调用三个单独构建的 Core Wasm shared 模块。`io` 使用 C++ 和自身的 WASI stdout。`algorithm` 拥有独立 canonical-byte 缓冲区，检查全部七个浮点字段和原始 result。只有 `ros_comm` 获得手动选择的原始 GetPayloadValue 服务授权。main、io 和 algorithm 各自尝试打开未授权别名并要求返回13。默认 WASI 基础标准流保留；这些模块没有额外环境、目录、时钟或 ROS 资源授权。
+C main 链接一个真实 C++ 静态 archive，并调用三个单独构建的 Core Wasm shared 模块。`io` 使用 C++ 和自身的 WASI stdout。`algorithm` 拥有独立 canonical-byte 缓冲区，检查全部七个浮点字段和原始 result。只有 `ros_comm` 获得手动选择的原始 GetPayloadValue 服务授权。main、io 和 algorithm 各自尝试打开未授权别名并要求返回13。基础 WASI 不授予标准流操作权限；环境、目录、时钟或 ROS 资源也必须逐项显式授权。
 
 C++ archive 根据输入2计算 schedule7；公开头文件和 FANUC_REQUEST_SCALE 宏通过普通 add_deps/public include 传播到 C main。另一个未使用的 archive object 单独核验。libbridge_static.a 仅为构建输入，不加载、不部署。部署只有 main.wasm、io.wasm、algorithm.wasm、ros_comm.wasm，以及操作者手动审阅的原生配置。构建不需要原生 ROS。
 

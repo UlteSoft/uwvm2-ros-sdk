@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4895",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9ae5dfb5ea83d29364b9329e7d63700641dcb98140908a314b98b9a059f9b17d"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "22395c0cb7f50bc028ee95a7feeb20797a6b801922da87909b59e7b4a9fc3630"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/go/universal-robots-ros2-complete.json",
+      "sha256": "ab4a7a7e778231d53fc340dd862c2c7c8621ac3a9ccac119bbdfc9ea479ceaad"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-complete.ir.json",
+      "sha256": "2f15027c9e89635ac60d730630402b5f7da90172e1284c43d678e7a4cb1c3123"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "93d957fe4a096dcba87b12853787f9bd6fca1bdead85890687a3a53974ad4800"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/action/FollowJointTrajectoryUntil_Feedback",
+        "bytes": 88,
+        "wire_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ]
+}

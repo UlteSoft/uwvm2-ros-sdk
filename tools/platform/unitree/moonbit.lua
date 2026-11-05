@@ -19,7 +19,9 @@ function configure(target, root, triple)
     target:set("values", "ros.sdk.backend", backend)
     target:set("values", "ros.sdk.triple", triple)
     target:set("values", "ros.sdk.producer", "genuine-moonbit-compiler")
-    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+    if not target:get("targetdir") then
+        target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build/artifacts"))
+    end
     target:set("objectdir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/objects"))
     target:set("dependir", path.join(path.absolute(target:scriptdir()), ".uwvm-ros/dependencies"))
     target:set("toolchains", "ros.wasm.command")

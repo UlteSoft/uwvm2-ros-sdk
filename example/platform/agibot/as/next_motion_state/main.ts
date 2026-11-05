@@ -33,3 +33,6 @@ export function _start(): void
     const outputError = write(stateJson(response) + '\n');
     exit(outputError);
 }
+
+/** @brief Bind the genuine compiler abort to the explicit trapping SDK implementation. */
+export {abortGuest} from "ros/as/api";

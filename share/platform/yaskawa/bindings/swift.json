@@ -16,5 +16,28 @@
     "ros2": "share/platform/yaskawa/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/yaskawa/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "swift",
+    "swift": {
+      "module_name": "YaskawaCommand",
+      "bridging_header": "include/language/native/abi.h",
+      "sources": [
+        "src/language/native/swift/Wire.swift",
+        "src/language/native/swift/CoreObservation.swift",
+        "include/platform/yaskawa/swift/ros2/Records.swift",
+        "include/platform/yaskawa/swift/ros2/Observation.swift"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/abi.c",
+        "defines": [
+          "UWVM_NATIVE_POINTER_BITS=32",
+          "UWVM_NATIVE_ROS2"
+        ]
+      }
+    ]
+  }
 }

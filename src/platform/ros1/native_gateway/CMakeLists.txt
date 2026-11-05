@@ -3,7 +3,7 @@
 # @details The caller can select the matching VM checkout explicitly. A sibling
 # checkout is the default; repository separation must not require copying VM
 # implementation headers into the SDK or restoring the removed VM/sdk tree.
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12)
 project(uwvm_ros1_gateway LANGUAGES CXX)
 set(_uwvm_sdk_candidate "${CMAKE_CURRENT_LIST_DIR}")
 while(NOT EXISTS "${_uwvm_sdk_candidate}/src/gateway/common/server.h")
@@ -19,7 +19,7 @@ set(UWVM_ROS_SOURCE_ROOT "${UWVM_ROS_SDK_ROOT}/../uwvm2-ros" CACHE PATH
 if(NOT EXISTS "${UWVM_ROS_SOURCE_ROOT}/src/uwvm2/imported/ros/common/types.h")
     message(FATAL_ERROR "Set UWVM_ROS_SOURCE_ROOT to the matching uwvm2-ros VM checkout")
 endif()
-set(UWVM_ROS1_CXX_STANDARD "17" CACHE STRING "Target C++ standard, at least the adapter's C++17 contract: 17, 20 or 23")
+set(UWVM_ROS1_CXX_STANDARD "17" CACHE STRING "Target C++ standard: 17 with a C++20 clock bridge, 20 or 23")
 set_property(CACHE UWVM_ROS1_CXX_STANDARD PROPERTY STRINGS 17 20 23)
 if(NOT UWVM_ROS1_CXX_STANDARD MATCHES "^(17|20|23)$")
     message(FATAL_ERROR "UWVM_ROS1_CXX_STANDARD must be 17, 20 or 23")
@@ -102,8 +102,17 @@ else()
     message(FATAL_ERROR "UWVM_ROS1_DISCOVERY must be CATKIN or EXPLICIT")
 endif()
 add_library(uwvm-ros1-sdk INTERFACE)
-target_include_directories(uwvm-ros1-sdk INTERFACE ${UWVM_ROS_SOURCE_ROOT}/src ${UWVM_ROS_SDK_ROOT}/src ${catkin_INCLUDE_DIRS})
+target_include_directories(uwvm-ros1-sdk INTERFACE ${UWVM_ROS_SOURCE_ROOT}/src ${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include ${UWVM_ROS_SDK_ROOT}/src ${catkin_INCLUDE_DIRS})
 target_link_libraries(uwvm-ros1-sdk INTERFACE ${catkin_LIBRARIES} pthread)
+# Noetic's older Boost can require C++17. Its host clock still uses the single
+# fast_io implementation, isolated in a C++20 TU without including ROS headers.
+if(UWVM_ROS1_CXX_STANDARD STREQUAL "17")
+    add_library(uwvm-ros1-clock-bridge STATIC ${UWVM_ROS_SDK_ROOT}/src/gateway/common/host_clock_bridge.cc)
+    set_target_properties(uwvm-ros1-clock-bridge PROPERTIES CXX_STANDARD 20 CXX_STANDARD_REQUIRED ON CXX_EXTENSIONS OFF)
+    target_include_directories(uwvm-ros1-clock-bridge PRIVATE ${UWVM_ROS_SOURCE_ROOT}/src ${UWVM_ROS_SOURCE_ROOT}/third-parties/fast_io/include)
+    target_compile_definitions(uwvm-ros1-sdk INTERFACE UWVM_HOST_CLOCK_CXX17_BRIDGE=1)
+    target_link_libraries(uwvm-ros1-sdk INTERFACE uwvm-ros1-clock-bridge)
+endif()
 include(cmake/Compatibility.cmake)
 add_executable(uwvm-ros1-gateway main.cc)
 if(UWVM_ROS_CUSTOM_REGISTRY_HEADER)

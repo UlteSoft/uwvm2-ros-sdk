@@ -15,6 +15,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_BOUNDED_INTERFACES_H
 #define UWVM_BOUNDED_INTERFACES_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <platform/fourier/c/ros1/fourier-ros1-aurora-bridge-v1-complete/bounded_records.h>
 #include <platform/ros/c/roswasm/action_bundle.h>
 
@@ -36,7 +43,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMove
     unsigned char input[9372], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest_encode(request, input, 9372, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -59,7 +66,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMove
 {
     unsigned char output[9380];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_ExecuteMoveRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -104,7 +111,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseData
     unsigned char input[140], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest_encode(request, input, 140, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -127,7 +134,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseData
 {
     unsigned char output[148];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetBaseDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -173,7 +180,7 @@ static inline roswasmc_result
     unsigned char input[272], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest_encode(request, input, 272, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -197,7 +204,7 @@ static inline roswasmc_result
 {
     unsigned char output[280];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetCartesianStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -243,7 +250,7 @@ static inline roswasmc_result
     unsigned char input[140], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest_encode(request, input, 140, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -266,7 +273,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetContactD
 {
     unsigned char output[148];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetContactDataRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -311,7 +318,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmName_
     unsigned char input[8], output[268];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -334,7 +341,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmName_
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -379,7 +386,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmState
     unsigned char input[8], output[140];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -402,7 +409,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmState
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -448,7 +455,7 @@ static inline roswasmc_result
     unsigned char input[140], output[140];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest_encode(request, input, 140, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -472,7 +479,7 @@ static inline roswasmc_result
 {
     unsigned char output[148];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotionStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -518,7 +525,7 @@ static inline roswasmc_result
     unsigned char input[272], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest_encode(request, input, 272, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -542,7 +549,7 @@ static inline roswasmc_result
 {
     unsigned char output[280];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupMotorCfgRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -588,7 +595,7 @@ static inline roswasmc_result
     unsigned char input[272], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest_encode(request, input, 272, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -611,7 +618,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupSta
 {
     unsigned char output[280];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetGroupStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -656,7 +663,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshot
     unsigned char input[8], output[14536];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -679,7 +686,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshot
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetSnapshotRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -725,7 +732,7 @@ static inline roswasmc_result
     unsigned char input[8], output[652];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -748,7 +755,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPos
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetStandPoseRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -794,7 +801,7 @@ static inline roswasmc_result
     unsigned char input[8], output[268];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -818,7 +825,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -864,7 +871,7 @@ static inline roswasmc_result
     unsigned char input[8], output[140];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -888,7 +895,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetUpperFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -934,7 +941,7 @@ static inline roswasmc_result
     unsigned char input[8], output[140];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -958,7 +965,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1004,7 +1011,7 @@ static inline roswasmc_result
     unsigned char input[8], output[268];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1028,7 +1035,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_GetVelocitySourceNameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1073,7 +1080,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmState
     unsigned char input[12], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest_encode(request, input, 12, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1096,7 +1103,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmState
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1142,7 +1149,7 @@ static inline roswasmc_result
     unsigned char input[15572], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest_encode(request, input, 15572, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1166,7 +1173,7 @@ static inline roswasmc_result
 {
     unsigned char output[15580];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetGroupCommandRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1212,7 +1219,7 @@ static inline roswasmc_result
     unsigned char input[10384], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest_encode(request, input, 10384, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1235,7 +1242,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfg
 {
     unsigned char output[10392];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetMotorCfgPdRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1281,7 +1288,7 @@ static inline roswasmc_result
     unsigned char input[32], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest_encode(request, input, 32, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1304,7 +1311,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPos
 {
     unsigned char output[40];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetStandPoseRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1350,7 +1357,7 @@ static inline roswasmc_result
     unsigned char input[12], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest_encode(request, input, 12, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1374,7 +1381,7 @@ static inline roswasmc_result
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetUpperFsmStateRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1419,7 +1426,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocity
     unsigned char input[40], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest_encode(request, input, 40, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1442,7 +1449,7 @@ static inline roswasmc_result roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocity
 {
     unsigned char output[48];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocityRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1488,7 +1495,7 @@ static inline roswasmc_result
     unsigned char input[12], output[136];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest_encode(request, input, 12, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1512,7 +1519,7 @@ static inline roswasmc_result
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_SetVelocitySourceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1558,7 +1565,7 @@ static inline roswasmc_result
     unsigned char input[1084], output[137];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteResponse next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest_encode(request, input, 1084, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1582,7 +1589,7 @@ static inline roswasmc_result
 {
     unsigned char output[1092];
     roswasmc_result r;
-    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest next = {0};
+    roswasmc_bounded_1_uwvm_fourier_bridge_WaitGroupsMotionCompleteRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

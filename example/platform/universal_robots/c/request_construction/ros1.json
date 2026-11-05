@@ -49,7 +49,7 @@
     {
       "path": "include/platform/universal_robots/c/io.h",
       "scope": "sdk",
-      "sha256": "6c88d022e32e8b60b00f16f83a08838f339ccefbf87b6839c20b3f3aac97eae2"
+      "sha256": "1ffc420f45466f746101158545b96771b1ff4ce5882ef52668be59b144d89384"
     },
     {
       "path": "include/platform/universal_robots/c/ros1/universal-robots-ros1-complete/bounded_records.h",

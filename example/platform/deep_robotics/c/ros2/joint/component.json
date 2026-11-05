@@ -1,0 +1,81 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observer-564",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original observation: namespace without alias authority returns denial, with no acquired owner, no request or decoded response. Missing alias is rejected before acquisition. Positive ROS transport is a separate integration test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "acb75cd41d5dfe030b8fa0c25f3a753a5200854e23086585374984b55a38af6d"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "530dd39429da69a881fdda159a804a411effd8867f5959e7b1e976b96c0379b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/deep_robotics/support/command.h",
+      "sha256": "515eed264f64f88d7651f0d2f7f4e4f1cdb171f2fb3ae3a11abf8b820be8b11b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/deep_robotics/provider.json",
+      "sha256": "5abf366977b042dea751a83da083a703e03bcbc26ab6cc92718a71d81bcc55a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/deep_robotics/provider.lua",
+      "sha256": "41d483fcdd90a2cad2e0828e3387b8d96f02c1bebe4126ba8c453f3371c7b7a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

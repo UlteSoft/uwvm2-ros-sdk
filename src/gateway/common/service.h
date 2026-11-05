@@ -1,4 +1,5 @@
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "server.h"
 #include "nonreusing_ids.h"
 #include <condition_variable>
@@ -28,6 +29,8 @@ namespace uwvm2::ros_gateway
         std::mutex mutex;
         std::map<std::uint64_t,std::shared_ptr<pending_service>> pending;
         bool active{true};
+        bucket progress;
+        std::shared_ptr<quota_connection> connection{quota_owner()};
         service_state(ros::capability_spec c,std::shared_ptr<event_queue> q):capability{std::move(c)},events{std::move(q)} {}
         std::shared_ptr<pending_service> begin(std::vector<std::uint8_t> body,std::function<std::uint32_t(std::vector<std::uint8_t> const&,ipc::deadline)> deliver={})
         {
@@ -40,15 +43,27 @@ namespace uwvm2::ros_gateway
                 field(capability,"adapter-codec-identity")==descriptor->codec_identity&&
                 ipc::validate_custom_topic(*descriptor->request,body.data(),body.size()) : validate_payload(capability,body)};
             if(body.size()>limit(capability,"max-request-bytes")||!valid) { return {}; }
-            std::unique_lock<std::mutex> lock{mutex}; auto now{std::chrono::steady_clock::now()};
+            quota_scope scope{connection,quota_deadline(capability)};
+            std::unique_lock<std::mutex> lock{mutex}; auto now{::uwvm2::utils::host_clock::now()};
             for(auto i=pending.begin();i!=pending.end();)
             { if(i->second->deadline<=now) { i->second->cancelled=true;i->second->ready.notify_all();i=pending.erase(i); } else { ++i; } }
-            if(!active||pending.size()>=limit(capability,"max-inflight")) { return {}; }
+            ros::synchronous_quota_wait capacity;
+            while(active&&pending.size()>=limit(capability,"max-inflight"))
+            {
+                if(!limit(capability,"max-inflight")||!ros::quota_wait_enabled(capability,"max-inflight"))return {};
+                auto deadline=scope.deadline;for(auto const& item:pending)deadline=std::min(deadline,item.second->deadline);
+                auto error=progress.wait_locked(capacity,deadline,lock,[&]{return active;},ros::quota_wait_on_exit(capability,"max-inflight"));
+                now=::uwvm2::utils::host_clock::now();
+                for(auto i=pending.begin();i!=pending.end();)
+                {if(i->second->deadline<=now){i->second->cancelled=true;i->second->ready.notify_all();i=pending.erase(i);progress.notify_waiters();}else ++i;}
+                if(error&&!(error==110&&now<scope.deadline))return {};
+            }
+            if(!active)return {};
             auto id{new_service_id()};if(!id){return {};}
-            auto p{std::make_shared<pending_service>()}; p->id=id; p->deadline=now+std::chrono::milliseconds(limit(capability,"timeout-ms"));p->deliver=std::move(deliver);
+            auto p{std::make_shared<pending_service>()}; p->id=id; p->deadline=quota_deadline(capability,now);p->deliver=std::move(deliver);
             pending.emplace(p->id,p);lock.unlock();
             std::vector<std::uint8_t> event;event.reserve(8+body.size());ipc::put(event,p->id,8);event.insert(event.end(),body.begin(),body.end());
-            if(!events->enqueue(std::move(event))) { std::lock_guard<std::mutex> guard{mutex};pending.erase(p->id);return {}; }
+            if(!events->enqueue(std::move(event))) { std::lock_guard<std::mutex> guard{mutex};pending.erase(p->id);progress.notify_waiters();return {}; }
             return p;
         }
         ipc::call_result answer(ros::capability_spec const& cap,std::vector<std::uint8_t> const& data,ipc::deadline until)
@@ -67,10 +82,10 @@ namespace uwvm2::ros_gateway
             if(data.size()-8>limit(cap,"max-response-bytes")||data.size()-8>limit(capability,"max-response-bytes")) { return {90,{}}; }
             std::unique_lock<std::mutex> lock{mutex};auto i{pending.find(ipc::get(data.data(),8))};
             if(!active||i==pending.end()) { return {9,{}}; }auto p{i->second};
-            auto expire=[&] { p->cancelled=true;p->ready.notify_all();pending.erase(i); };
+            auto expire=[&] { p->cancelled=true;p->ready.notify_all();pending.erase(i);progress.notify_waiters(); };
             if(p->answered) { pending.erase(i);return {110,{}}; }
-            if(p->cancelled||p->deadline<=std::chrono::steady_clock::now()) { expire();return {110,{}}; }
-            if(std::chrono::steady_clock::now()>=until) { return {110,{}}; }
+            if(p->cancelled||p->deadline<=::uwvm2::utils::host_clock::now()) { expire();return {110,{}}; }
+            if(::uwvm2::utils::host_clock::now()>=until) { return {110,{}}; }
             // Preparing a wire response consumes the call budget. Do not
             // publish an answered state while a copy can still cross either
             // deadline, and allow close/expiry to retire the request meanwhile.
@@ -78,9 +93,9 @@ namespace uwvm2::ros_gateway
             i=pending.find(p->id);
             if(!active||i==pending.end()||i->second!=p) { return {9,{}}; }
             if(p->answered) { pending.erase(i);return {110,{}}; }
-            if(p->cancelled||p->deadline<=std::chrono::steady_clock::now()) { expire();return {110,{}}; }
+            if(p->cancelled||p->deadline<=::uwvm2::utils::host_clock::now()) { expire();return {110,{}}; }
             auto delivery_until{std::min(until,p->deadline)};
-            if(std::chrono::steady_clock::now()>=delivery_until) { return {110,{}}; }
+            if(::uwvm2::utils::host_clock::now()>=delivery_until) { return {110,{}}; }
             if(p->deliver)
             {
                 // Native preparation rechecks this absolute deadline before
@@ -88,18 +103,25 @@ namespace uwvm2::ros_gateway
                 // second response; a short call expiry leaves a live request
                 // available for retry rather than consuming its identifier.
                 auto error{p->deliver(response,delivery_until)};
-                if(error) { if(p->deadline<=std::chrono::steady_clock::now()) { expire(); }return {error,{}}; }
-                p->answer_deadline=delivery_until;p->answered=true;pending.erase(i);
+                if(error) { if(p->deadline<=::uwvm2::utils::host_clock::now()) { expire(); }return {error,{}}; }
+                p->answer_deadline=delivery_until;p->answered=true;pending.erase(i);progress.notify_waiters();
             }
-            else { p->response.swap(response);p->answer_deadline=delivery_until;p->answered=true;p->ready.notify_all(); }
-            return std::chrono::steady_clock::now()>=until?ipc::call_result{110,{}}:ipc::call_result{};
+            else { p->response.swap(response);p->answer_deadline=delivery_until;p->answered=true;p->ready.notify_all();progress.notify_waiters(); }
+            return ::uwvm2::utils::host_clock::now()>=until?ipc::call_result{110,{}}:ipc::call_result{};
         }
         bool wait(std::shared_ptr<pending_service> const& p,std::vector<std::uint8_t>& output)
         {
-            std::unique_lock<std::mutex> lock{mutex};p->ready.wait_until(lock,p->deadline,[&]{return p->answered||p->cancelled||!active;});pending.erase(p->id);
-            if(p->cancelled||!p->answered||std::chrono::steady_clock::now()>=std::min(p->deadline,p->answer_deadline)) { return false; }output=std::move(p->response);return true;
+            quota_scope scope{connection,p->deadline};
+            std::unique_lock<std::mutex> lock{mutex};ros::synchronous_quota_wait response;
+            while(active&&!p->answered&&!p->cancelled)
+            {
+                auto error=progress.wait_locked(response,p->deadline,lock,[&]{return active;},ros::native_wait_on_exit(capability));
+                if(error){p->cancelled=true;break;}
+            }
+            pending.erase(p->id);progress.notify_waiters();
+            if(p->cancelled||!p->answered||::uwvm2::utils::host_clock::now()>=std::min(p->deadline,p->answer_deadline)) { return false; }output=std::move(p->response);return true;
         }
         void deactivate()
-        { std::lock_guard<std::mutex> lock{mutex};active=false;for(auto const& p:pending){if(!p.second->answered) { p.second->cancelled=true; }p.second->ready.notify_all();}pending.clear();events->deactivate(); }
+        { std::lock_guard<std::mutex> lock{mutex};active=false;for(auto const& p:pending){if(!p.second->answered) { p.second->cancelled=true; }p.second->ready.notify_all();}pending.clear();progress.notify_waiters();events->deactivate(); }
     };
 }

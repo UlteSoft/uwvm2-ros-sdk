@@ -51,7 +51,7 @@
     "include/platform/ros2/py/compat/rclpy/rclpy/context.py": "d7b9190b1adaae4bc5ba0b03ed874cdb82bb4e511f58bcd2979fa77a11cc7451",
     "include/platform/ros2/py/compat/rclpy/rclpy/__init__.py": "012f0cfaee5f279a03a676de49808c85ee77443df196f262fe98d6a7d1a42437"
   },
-  "bootstrap_sha256": "4716488dc1923224be765bd38289f40572208473424dcae61f334b9bb8657cbb",
+  "bootstrap_sha256": "bec03a7d97c60ecf52e901ba3aef5e92fdafb1cbe0d85c217f35716732df95e4",
   "bundle": {
     "path": "share/platform/robotis/py/ros2/humble/upstream_obstacle_detection/bundle.json",
     "sha256": "219f1a5684b3066efacd88d017e835a48103b9058741f1402cedf0b5216f4513",

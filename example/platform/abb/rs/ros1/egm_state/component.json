@@ -1,0 +1,229 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-authority-153",
+  "ros_namespace": "ros1",
+  "test_scope": "Actual complete original guest with the interface enabled and no resource grants; exact denial facts and argument rejection. No positive native or simulator qualification is inferred.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/Cargo.toml",
+      "sha256": "ee0019310eb87a7a9ee581e8396b75be6443b92158952f18b4802cf97198d566"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/observation.rs",
+      "sha256": "ddac30238d04dc2e5ac786709b2f5db173144e34fa18968be0acf187b8672956"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/ros1/abb-ros1-complete/bounded_interfaces.rs",
+      "sha256": "b7be409373f31fab60d000baf9193b9f8b840f3bfad6127b933bb9f265506af7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/ros1/abb-ros1-complete/bounded_records.rs",
+      "sha256": "b5f42c58c34a94bfd6bd85dfb7e46996eb1c5e3518989752211a9bc846955823"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/ros2/abb-ros2-complete/bounded_interfaces.rs",
+      "sha256": "d0d21958fd8e538eb0524b71158fba91d2e14bcbe632f015dd81ada2ac9fd1ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/rs/ros2/abb-ros2-complete/bounded_records.rs",
+      "sha256": "7783128af3ce7db7414e93e63587edb5df2ce3c04186ffb034092d80f5ff6aad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/Cargo.lock",
+      "sha256": "9ae53ccdcee712d523f5b21ee86a3a4214f3cc373fac3eb137ca6c457ec52527"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/Cargo.toml",
+      "sha256": "42967fe91d5ecfec2ab11381cb55a2fbf44c67a1e59440a6264cba05f7a11ec2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/LICENSE",
+      "sha256": "b86209cd440e06f748c1c79db03da604384b2cc586370c6f98d2f457bacaba04"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/custom-types/generated-r3/fixed_records.rs",
+      "sha256": "1f0d6e1f420c1426b3aae8ad38f6260aa2cb21b22c3339bf3d85086509d06228"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/native_command/lib.rs",
+      "sha256": "a9f709c544006ae1ec078c6648df2e2c98b50d0893e9589222c157bb786b66a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/Cargo.lock",
+      "sha256": "f636a75a98a948272ebe007a5b29b9b1aec6241f86845ba61d7bb5e4edec6396"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/Cargo.toml",
+      "sha256": "0268583dce7115c7650153296787a7623adef0fbf98f1dcac1d85f255f37e2fa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/recipe.json",
+      "sha256": "196eca6b54d8164e35c7126e8e5a1e83678cff03e486ac7a4e01010e0ee05149"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/lib.rs",
+      "sha256": "39bd38ea169c5669acc214c02ba7d9d2d925cdcc367911504f54ddf7f6457541"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/raw.rs",
+      "sha256": "c0263483715fd1c462f04451d6af001ce00559bc26aedd6be7b20e72cdf8f22f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/records.rs",
+      "sha256": "80e679a01f7e43a28c7d0b6339093a23be2c0ba9e025b036855e914062a7308e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/owned_service/src/wire.rs",
+      "sha256": "ea8070b280111fe3e5b40575f911471b0977ff55d4615d4c303a23d960675408"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/callback.rs",
+      "sha256": "e15c2710bf624690156386100621c6dc7f8352276df34f14e2c9257bc4e6941c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/capability.rs",
+      "sha256": "4bb9261d132ed7365d0de72abc422e2b5f9e450915b453b8e75a2fd77607dc1f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/codec.rs",
+      "sha256": "dbe6504380f1b96984baee3014c615d2bec639ea579cb4f24e52a62e34b80831"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/events.rs",
+      "sha256": "8c406c331eab8773417eee506db3dd7f54e5fb373cdc8cdd1c6f052662b4d0bc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/lib.rs",
+      "sha256": "bf6f533f6d39a4d99b8a46e41fb1359f8b285664e2ea5f1790390687896777b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/local.rs",
+      "sha256": "23e5006be987adc3f2890bd9d923fceead77344236f1c0ba1de2355846a06d78"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/node.rs",
+      "sha256": "a185afe70ab35ff752593ffd19baac2fd6a6d71acae69df51c36d171224e3522"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/mod.rs",
+      "sha256": "fde2b3d8b13dbf3f6705242acf3ebee44378cef4c64981f72c8ada5d42ad0fb4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/ros1.rs",
+      "sha256": "ea162a6848711b7e080a8b237a9f9c3c6f11964c61e46f9d9bcfe1e5a54c53b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/raw/ros2.rs",
+      "sha256": "858b0abcd5529e5f5685ecca4f5f441f7a46ce09b50da87e77e961ec677d019b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/session.rs",
+      "sha256": "8186f1cc8f2c427d9fb3f0861a6f4b8d574097567afd1f292a071886397f9e70"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/rs/src/typed.rs",
+      "sha256": "e6451057c13827d96700eaa9afc02cbf14fb61ac96c40647146847468bd24a5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/rs.json",
+      "sha256": "19455e3c72c9c375dcf06a2cfb84f21914a01e25c7cf5e1020cf389297e65daa"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.rs",
+      "sha256": "c00832675d79a8e516d4b9d157e1f3be2bfceb9af25aa73b73a71d413490deec"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4e2c8f1c25a554fac6e5b00f1a4123ff94eab54f692276dbdfa0b4b89422ef9e"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "wire_hex": "",
+        "response_present": 0
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

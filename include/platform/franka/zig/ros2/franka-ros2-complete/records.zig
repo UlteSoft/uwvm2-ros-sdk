@@ -3479,16 +3479,16 @@ pub const Ros2Sensor_msgsMsgJointState=struct {
  /// @thread Synchronous caller-thread operation; independent values/cursors may be used independently.
  /// @see Ros2Sensor_msgsMsgJointState; share/platform/ros/zig/API-CONTRACT.md
  pub fn writeFields(self: *const @This(), w: *wire.Writer) wire.Error!void {
-  if(self.field_name.len != 0 && self.field_position.len != 0 && self.field_name.len != self.field_position.len) return
+  if(self.field_name.len != 0 and self.field_position.len != 0 and self.field_name.len != self.field_position.len) return
           error.Invalid;
-  if(self.field_name.len != 0 && self.field_velocity.len != 0 && self.field_name.len != self.field_velocity.len) return
+  if(self.field_name.len != 0 and self.field_velocity.len != 0 and self.field_name.len != self.field_velocity.len) return
           error.Invalid;
-  if(self.field_name.len != 0 && self.field_effort.len != 0 && self.field_name.len != self.field_effort.len) return error.Invalid;
-  if(self.field_position.len != 0 && self.field_velocity.len != 0 && self.field_position.len != self.field_velocity.len) return
+  if(self.field_name.len != 0 and self.field_effort.len != 0 and self.field_name.len != self.field_effort.len) return error.Invalid;
+  if(self.field_position.len != 0 and self.field_velocity.len != 0 and self.field_position.len != self.field_velocity.len) return
           error.Invalid;
-  if(self.field_position.len != 0 && self.field_effort.len != 0 && self.field_position.len != self.field_effort.len) return
+  if(self.field_position.len != 0 and self.field_effort.len != 0 and self.field_position.len != self.field_effort.len) return
           error.Invalid;
-  if(self.field_velocity.len != 0 && self.field_effort.len != 0 && self.field_velocity.len != self.field_effort.len) return
+  if(self.field_velocity.len != 0 and self.field_effort.len != 0 and self.field_velocity.len != self.field_effort.len) return
           error.Invalid;
   try self.field_header.writeFields(w);
   if(self.field_name.len>7) return error.Invalid;
@@ -3549,17 +3549,17 @@ pub const Ros2Sensor_msgsMsgJointState=struct {
   for(value.field_effort) |*e| {
   e.*=try r.float64();
   }
-  if(value.field_name.len != 0 && value.field_position.len != 0 && value.field_name.len != value.field_position.len) return
+  if(value.field_name.len != 0 and value.field_position.len != 0 and value.field_name.len != value.field_position.len) return
           error.Invalid;
-  if(value.field_name.len != 0 && value.field_velocity.len != 0 && value.field_name.len != value.field_velocity.len) return
+  if(value.field_name.len != 0 and value.field_velocity.len != 0 and value.field_name.len != value.field_velocity.len) return
           error.Invalid;
-  if(value.field_name.len != 0 && value.field_effort.len != 0 && value.field_name.len != value.field_effort.len) return
+  if(value.field_name.len != 0 and value.field_effort.len != 0 and value.field_name.len != value.field_effort.len) return
           error.Invalid;
-  if(value.field_position.len != 0 && value.field_velocity.len != 0 && value.field_position.len != value.field_velocity.len) return
+  if(value.field_position.len != 0 and value.field_velocity.len != 0 and value.field_position.len != value.field_velocity.len) return
           error.Invalid;
-  if(value.field_position.len != 0 && value.field_effort.len != 0 && value.field_position.len != value.field_effort.len) return
+  if(value.field_position.len != 0 and value.field_effort.len != 0 and value.field_position.len != value.field_effort.len) return
           error.Invalid;
-  if(value.field_velocity.len != 0 && value.field_effort.len != 0 && value.field_velocity.len != value.field_effort.len) return
+  if(value.field_velocity.len != 0 and value.field_effort.len != 0 and value.field_velocity.len != value.field_effort.len) return
           error.Invalid;
   return value;
  }

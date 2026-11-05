@@ -1,4 +1,4 @@
-/** Checked finite WASIp1 binary/text I/O. Exact real imports, no host stub. */
+/** Checked synchronous WASIp1 binary/text I/O. Exact real imports, no host stub. */
 #pragma once
 #include <cstddef>
 #include <cstdint>
@@ -34,7 +34,7 @@ namespace humanoid_io
      * @see input
      */
     extern "C" __attribute__((import_module("wasi_snapshot_preview1"), import_name("fd_read"))) std::uint32_t
-        read(std::uint32_t descriptor, Vec const* vectors, std::uint32_t count, std::uint32_t* actual);
+        uwvm_nvidia_wasip1_fd_read(std::uint32_t descriptor, Vec const* vectors, std::uint32_t count, std::uint32_t* actual);
     /**
      * @brief Invoke genuine WASIp1 fd_write on an admitted descriptor.
      * @details Source vectors/bytes and output count remain valid until synchronous
@@ -47,31 +47,27 @@ namespace humanoid_io
      * @see output
      */
     extern "C" __attribute__((import_module("wasi_snapshot_preview1"), import_name("fd_write"))) std::uint32_t
-        write(std::uint32_t descriptor, Vec const* vectors, std::uint32_t count, std::uint32_t* actual);
+        uwvm_nvidia_wasip1_fd_write(std::uint32_t descriptor, Vec const* vectors, std::uint32_t count, std::uint32_t* actual);
 
     /**
-     * @brief Read an entire bounded stdin extent without silent EOF.
-     * @details Allows at most 32772 bytes and 4096 actual attempts, retrying only
-     * EINTR (27). EOF/invalid progress cannot produce partial successful input.
+     * @brief Read an entire caller-provided stdin extent without silent EOF.
+     * @details Retries only EINTR (27), with no SDK-imposed byte or retry quota. EOF/invalid progress cannot produce partial successful input.
      * Destination may already contain partial data when an error is returned.
      * @param[out] data Proven writable size-byte extent retained until return;
      * concurrent access is forbidden during the synchronous import.
      * @param[in] size Exact required byte count, including zero.
-     * @return 0 for complete input, 90 quota, 22 invalid/EOF progress, 110 attempt
-     * exhaustion, or actual errno. Requires ordinary stdin read rights; no ROS or
+     * @return 0 for complete input, 22 invalid/EOF progress, or actual errno. Requires ordinary stdin read rights; no ROS or
      * device right or preemptive I/O cancellation is implied.
      * @see read
      */
     inline std::uint32_t input(void* data, std::size_t size)
     {
-        if(size > 32772)
-            return 90;
         std::size_t at{};
-        for(unsigned attempts{}; at < size && attempts < 4096; ++attempts)
+        while(at < size)
         {
             std::uint32_t n = UINT32_MAX;
             Vec v{static_cast<unsigned char*>(data) + at, size - at};
-            auto e = read(0, &v, 1, &n);
+            auto e = uwvm_nvidia_wasip1_fd_read(0, &v, 1, &n);
             if(e == 27)
                 continue;
             if(e)
@@ -80,30 +76,27 @@ namespace humanoid_io
                 return 22;
             at += n;
         }
-        return at == size ? 0 : 110;
+        return 0;
     }
 
     /**
-     * @brief Write every byte of one bounded stdout record with checked progress.
-     * @details Allows 4096 bytes and 4096 actual attempts, retrying only EINTR (27).
+     * @brief Write every requested stdout byte with checked progress.
+     * @details Retries only EINTR (27), with no SDK-imposed byte or retry quota.
      * Partial external output cannot be rolled back on failure. Requires ordinary
      * stdout access and outer finite ownership for a blocking native import.
      * @param[in] data Proven immutable readable size-byte extent through return.
      * @param[in] size Exact complete length, including zero.
-     * @return 0 for full output, 90 quota, 107 invalid/zero progress, 110 attempt
-     * exhaustion, otherwise actual WASIp1 errno. No ROS/device permissions change.
+     * @return 0 for full output, 107 invalid/zero progress, otherwise actual WASIp1 errno. No ROS/device permissions change.
      * @see write
      */
     inline std::uint32_t output(char const* data, std::size_t size)
     {
-        if(size > 4096)
-            return 90;
         std::size_t at{};
-        for(unsigned attempts{}; at < size && attempts < 4096; ++attempts)
+        while(at < size)
         {
             std::uint32_t n = UINT32_MAX;
             Vec v{const_cast<char*>(data + at), size - at};
-            auto e = write(1, &v, 1, &n);
+            auto e = uwvm_nvidia_wasip1_fd_write(1, &v, 1, &n);
             if(e == 27)
                 continue;
             if(e)
@@ -112,7 +105,7 @@ namespace humanoid_io
                 return 107;
             at += n;
         }
-        return at == size ? 0 : 110;
+        return 0;
     }
 
     /**

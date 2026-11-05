@@ -18,7 +18,7 @@
     {
       "name": "ros.py.wire",
       "file": "include/platform/ros/py/ros/py/wire.py",
-      "sha256": "cdb6f413887128915cd635b7d776f94848748d866dbe98936cfda7941a809d6f"
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
     },
     {
       "name": "ros.py.transport",
@@ -41,7 +41,13 @@
       "name": "uwvm.py.observation",
       "file": "src/language/python/modules/observation.py",
       "sha256": "239bb6f3404deffc18aad68b8e3155f0fa6dd5f701b1e9d900be2eab170dddfc"
+    },
+    {
+      "name": "ros.py.native_command",
+      "file": "include/platform/ros/py/ros/py/native_command.py",
+      "sha256": "a997296e715f1aab492e50fe0888945ada5ca4d0efa721156a700fc38b0d96e3"
     }
   ],
-  "default_authority": []
+  "default_authority": [],
+  "module_loading": "lazy"
 }

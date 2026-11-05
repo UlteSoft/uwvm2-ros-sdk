@@ -3,6 +3,6 @@
 # @details Runs real Ruby objects and codecs; fixture defaults are not observations.
 require "doosan/ruby/ros1/doosan-ros1-song-ms-patch-1-complete/records"
 codec = Uwvm::DoosanDoosanRos1SongMsPatch1Complete::Ros1Dsr_msgsAlterMotionStream
-bytes = codec.new.encode
-raise "complete canonical record changed" unless codec.decode(bytes).encode == bytes
+bytes = codec.encode(codec.new)
+raise "complete canonical record changed" unless codec.encode(codec.decode(bytes)) == bytes
 puts "{\"type\":\"dsr_msgs/AlterMotionStream\",\"bytes\":#{bytes.bytesize},\"wire_hex\":\"#{bytes.unpack1('H*')}\"}"

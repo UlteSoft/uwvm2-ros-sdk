@@ -98,7 +98,7 @@ fn BoundedReader::signed16(self : BoundedReader) -> Int {
 fn BoundedReader::float32(self : BoundedReader) -> Float {
   let bits = self.unsigned(4)
   if (bits & 2139095040UL) == 2139095040UL { self.error = 22 }
-  bits.to_uint().reinterpret_as_float()
+  Float::reinterpret_from_uint(bits.to_uint())
 }
 
 fn BoundedReader::float64(self : BoundedReader) -> Double {
@@ -1411,7 +1411,7 @@ pub fn Ros2Fanuc_msgsMsgAnalogIO::new() -> Ros2Fanuc_msgsMsgAnalogIO {
   {
     field_io_type: Ros2Fanuc_msgsMsgIOType::new(),
     field_index: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsMsgAnalogIOCodec {
@@ -1745,12 +1745,12 @@ pub(all) struct Ros2Fanuc_msgsMsgForceSensor {
 }
 pub fn Ros2Fanuc_msgsMsgForceSensor::new() -> Ros2Fanuc_msgsMsgForceSensor {
   {
-    field_force_x: (0U).reinterpret_as_float(),
-    field_force_y: (0U).reinterpret_as_float(),
-    field_force_z: (0U).reinterpret_as_float(),
-    field_moment_x: (0U).reinterpret_as_float(),
-    field_moment_y: (0U).reinterpret_as_float(),
-    field_moment_z: (0U).reinterpret_as_float(),
+    field_force_x: Float::reinterpret_from_uint(0U),
+    field_force_y: Float::reinterpret_from_uint(0U),
+    field_force_z: Float::reinterpret_from_uint(0U),
+    field_moment_x: Float::reinterpret_from_uint(0U),
+    field_moment_y: Float::reinterpret_from_uint(0U),
+    field_moment_z: Float::reinterpret_from_uint(0U),
     field_fs_type: 0U,
   }
 }
@@ -1830,12 +1830,12 @@ pub(all) struct Ros2Fanuc_msgsMsgFrame {
 }
 pub fn Ros2Fanuc_msgsMsgFrame::new() -> Ros2Fanuc_msgsMsgFrame {
   {
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
-    field_w: (0U).reinterpret_as_float(),
-    field_p: (0U).reinterpret_as_float(),
-    field_r: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
+    field_w: Float::reinterpret_from_uint(0U),
+    field_p: Float::reinterpret_from_uint(0U),
+    field_r: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsMsgFrameCodec {
@@ -2016,7 +2016,7 @@ pub(all) struct Ros2Fanuc_msgsMsgNumReg {
 pub fn Ros2Fanuc_msgsMsgNumReg::new() -> Ros2Fanuc_msgsMsgNumReg {
   {
     field_index: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsMsgNumRegCodec {
@@ -2348,7 +2348,7 @@ pub fn Ros2Fanuc_msgsMsgRobotStatusExt::new() -> Ros2Fanuc_msgsMsgRobotStatusExt
     field_in_motion: false,
     field_drives_powered: false,
     field_gen_override: 0,
-    field_speed_clamp_limit: (0U).reinterpret_as_float(),
+    field_speed_clamp_limit: Float::reinterpret_from_uint(0U),
     field_control_mode: "",
   }
 }
@@ -2579,7 +2579,7 @@ pub(all) struct Ros2Fanuc_msgsSrvGetAnalogIO_Response {
 pub fn Ros2Fanuc_msgsSrvGetAnalogIO_Response::new() -> Ros2Fanuc_msgsSrvGetAnalogIO_Response {
   {
     field_result: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvGetAnalogIO_ResponseCodec {
@@ -2824,15 +2824,15 @@ pub fn Ros2Fanuc_msgsSrvGetCartesianPosition_Response::new() -> Ros2Fanuc_msgsSr
     field_turn4: 0,
     field_turn5: 0,
     field_turn6: 0,
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
-    field_w: (0U).reinterpret_as_float(),
-    field_p: (0U).reinterpret_as_float(),
-    field_r: (0U).reinterpret_as_float(),
-    field_ext1: (0U).reinterpret_as_float(),
-    field_ext2: (0U).reinterpret_as_float(),
-    field_ext3: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
+    field_w: Float::reinterpret_from_uint(0U),
+    field_p: Float::reinterpret_from_uint(0U),
+    field_r: Float::reinterpret_from_uint(0U),
+    field_ext1: Float::reinterpret_from_uint(0U),
+    field_ext2: Float::reinterpret_from_uint(0U),
+    field_ext3: Float::reinterpret_from_uint(0U),
     field_group: 0,
   }
 }
@@ -3140,7 +3140,7 @@ pub(all) struct Ros2Fanuc_msgsSrvGetNumReg_Response {
 pub fn Ros2Fanuc_msgsSrvGetNumReg_Response::new() -> Ros2Fanuc_msgsSrvGetNumReg_Response {
   {
     field_result: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvGetNumReg_ResponseCodec {
@@ -3249,13 +3249,13 @@ pub(all) struct Ros2Fanuc_msgsSrvGetPayloadComp_Response {
 }
 pub fn Ros2Fanuc_msgsSrvGetPayloadComp_Response::new() -> Ros2Fanuc_msgsSrvGetPayloadComp_Response {
   {
-    field_mass: (0U).reinterpret_as_float(),
-    field_cg_x: (0U).reinterpret_as_float(),
-    field_cg_y: (0U).reinterpret_as_float(),
-    field_cg_z: (0U).reinterpret_as_float(),
-    field_in_x: (0U).reinterpret_as_float(),
-    field_in_y: (0U).reinterpret_as_float(),
-    field_in_z: (0U).reinterpret_as_float(),
+    field_mass: Float::reinterpret_from_uint(0U),
+    field_cg_x: Float::reinterpret_from_uint(0U),
+    field_cg_y: Float::reinterpret_from_uint(0U),
+    field_cg_z: Float::reinterpret_from_uint(0U),
+    field_in_x: Float::reinterpret_from_uint(0U),
+    field_in_y: Float::reinterpret_from_uint(0U),
+    field_in_z: Float::reinterpret_from_uint(0U),
     field_result: 0,
   }
 }
@@ -3488,13 +3488,13 @@ pub(all) struct Ros2Fanuc_msgsSrvGetPayloadValue_Response {
 }
 pub fn Ros2Fanuc_msgsSrvGetPayloadValue_Response::new() -> Ros2Fanuc_msgsSrvGetPayloadValue_Response {
   {
-    field_mass: (0U).reinterpret_as_float(),
-    field_cg_x: (0U).reinterpret_as_float(),
-    field_cg_y: (0U).reinterpret_as_float(),
-    field_cg_z: (0U).reinterpret_as_float(),
-    field_in_x: (0U).reinterpret_as_float(),
-    field_in_y: (0U).reinterpret_as_float(),
-    field_in_z: (0U).reinterpret_as_float(),
+    field_mass: Float::reinterpret_from_uint(0U),
+    field_cg_x: Float::reinterpret_from_uint(0U),
+    field_cg_y: Float::reinterpret_from_uint(0U),
+    field_cg_z: Float::reinterpret_from_uint(0U),
+    field_in_x: Float::reinterpret_from_uint(0U),
+    field_in_y: Float::reinterpret_from_uint(0U),
+    field_in_z: Float::reinterpret_from_uint(0U),
     field_result: 0,
   }
 }
@@ -3663,24 +3663,24 @@ pub fn Ros2Fanuc_msgsSrvGetPosReg_Response::new() -> Ros2Fanuc_msgsSrvGetPosReg_
     field_turn4: 0,
     field_turn5: 0,
     field_turn6: 0,
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
-    field_w: (0U).reinterpret_as_float(),
-    field_p: (0U).reinterpret_as_float(),
-    field_r: (0U).reinterpret_as_float(),
-    field_ext1: (0U).reinterpret_as_float(),
-    field_ext2: (0U).reinterpret_as_float(),
-    field_ext3: (0U).reinterpret_as_float(),
-    field_j1: (0U).reinterpret_as_float(),
-    field_j2: (0U).reinterpret_as_float(),
-    field_j3: (0U).reinterpret_as_float(),
-    field_j4: (0U).reinterpret_as_float(),
-    field_j5: (0U).reinterpret_as_float(),
-    field_j6: (0U).reinterpret_as_float(),
-    field_j7: (0U).reinterpret_as_float(),
-    field_j8: (0U).reinterpret_as_float(),
-    field_j9: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
+    field_w: Float::reinterpret_from_uint(0U),
+    field_p: Float::reinterpret_from_uint(0U),
+    field_r: Float::reinterpret_from_uint(0U),
+    field_ext1: Float::reinterpret_from_uint(0U),
+    field_ext2: Float::reinterpret_from_uint(0U),
+    field_ext3: Float::reinterpret_from_uint(0U),
+    field_j1: Float::reinterpret_from_uint(0U),
+    field_j2: Float::reinterpret_from_uint(0U),
+    field_j3: Float::reinterpret_from_uint(0U),
+    field_j4: Float::reinterpret_from_uint(0U),
+    field_j5: Float::reinterpret_from_uint(0U),
+    field_j6: Float::reinterpret_from_uint(0U),
+    field_j7: Float::reinterpret_from_uint(0U),
+    field_j8: Float::reinterpret_from_uint(0U),
+    field_j9: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvGetPosReg_ResponseCodec {
@@ -3907,7 +3907,7 @@ pub fn Ros2Fanuc_msgsSrvGetTCPSpeed_Response::new() -> Ros2Fanuc_msgsSrvGetTCPSp
   {
     field_result: 0,
     field_timetag: 0,
-    field_speed: (0U).reinterpret_as_float(),
+    field_speed: Float::reinterpret_from_uint(0U),
     field_group: 0,
   }
 }
@@ -4538,7 +4538,7 @@ pub fn Ros2Fanuc_msgsSrvSetAnalogIO_Request::new() -> Ros2Fanuc_msgsSrvSetAnalog
   {
     field_io_type: Ros2Fanuc_msgsMsgIOType::new(),
     field_index: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvSetAnalogIO_RequestCodec {
@@ -4963,7 +4963,7 @@ pub(all) struct Ros2Fanuc_msgsSrvSetNumReg_Request {
 pub fn Ros2Fanuc_msgsSrvSetNumReg_Request::new() -> Ros2Fanuc_msgsSrvSetNumReg_Request {
   {
     field_index: 0,
-    field_value: (0U).reinterpret_as_float(),
+    field_value: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvSetNumReg_RequestCodec {
@@ -5073,13 +5073,13 @@ pub(all) struct Ros2Fanuc_msgsSrvSetPayloadComp_Request {
 pub fn Ros2Fanuc_msgsSrvSetPayloadComp_Request::new() -> Ros2Fanuc_msgsSrvSetPayloadComp_Request {
   {
     field_payload_schedule_id: 0,
-    field_mass: (0U).reinterpret_as_float(),
-    field_cg_x: (0U).reinterpret_as_float(),
-    field_cg_y: (0U).reinterpret_as_float(),
-    field_cg_z: (0U).reinterpret_as_float(),
-    field_in_x: (0U).reinterpret_as_float(),
-    field_in_y: (0U).reinterpret_as_float(),
-    field_in_z: (0U).reinterpret_as_float(),
+    field_mass: Float::reinterpret_from_uint(0U),
+    field_cg_x: Float::reinterpret_from_uint(0U),
+    field_cg_y: Float::reinterpret_from_uint(0U),
+    field_cg_z: Float::reinterpret_from_uint(0U),
+    field_in_x: Float::reinterpret_from_uint(0U),
+    field_in_y: Float::reinterpret_from_uint(0U),
+    field_in_z: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvSetPayloadComp_RequestCodec {
@@ -5316,14 +5316,14 @@ pub(all) struct Ros2Fanuc_msgsSrvSetPayloadValue_Request {
 pub fn Ros2Fanuc_msgsSrvSetPayloadValue_Request::new() -> Ros2Fanuc_msgsSrvSetPayloadValue_Request {
   {
     field_payload_schedule_id: 0,
-    field_mass: (0U).reinterpret_as_float(),
-    field_cg_x: (0U).reinterpret_as_float(),
-    field_cg_y: (0U).reinterpret_as_float(),
-    field_cg_z: (0U).reinterpret_as_float(),
+    field_mass: Float::reinterpret_from_uint(0U),
+    field_cg_x: Float::reinterpret_from_uint(0U),
+    field_cg_y: Float::reinterpret_from_uint(0U),
+    field_cg_z: Float::reinterpret_from_uint(0U),
     field_use_in: false,
-    field_in_x: (0U).reinterpret_as_float(),
-    field_in_y: (0U).reinterpret_as_float(),
-    field_in_z: (0U).reinterpret_as_float(),
+    field_in_x: Float::reinterpret_from_uint(0U),
+    field_in_y: Float::reinterpret_from_uint(0U),
+    field_in_z: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvSetPayloadValue_RequestCodec {
@@ -5495,24 +5495,24 @@ pub fn Ros2Fanuc_msgsSrvSetPosReg_Request::new() -> Ros2Fanuc_msgsSrvSetPosReg_R
     field_turn4: 0,
     field_turn5: 0,
     field_turn6: 0,
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
-    field_w: (0U).reinterpret_as_float(),
-    field_p: (0U).reinterpret_as_float(),
-    field_r: (0U).reinterpret_as_float(),
-    field_ext1: (0U).reinterpret_as_float(),
-    field_ext2: (0U).reinterpret_as_float(),
-    field_ext3: (0U).reinterpret_as_float(),
-    field_j1: (0U).reinterpret_as_float(),
-    field_j2: (0U).reinterpret_as_float(),
-    field_j3: (0U).reinterpret_as_float(),
-    field_j4: (0U).reinterpret_as_float(),
-    field_j5: (0U).reinterpret_as_float(),
-    field_j6: (0U).reinterpret_as_float(),
-    field_j7: (0U).reinterpret_as_float(),
-    field_j8: (0U).reinterpret_as_float(),
-    field_j9: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
+    field_w: Float::reinterpret_from_uint(0U),
+    field_p: Float::reinterpret_from_uint(0U),
+    field_r: Float::reinterpret_from_uint(0U),
+    field_ext1: Float::reinterpret_from_uint(0U),
+    field_ext2: Float::reinterpret_from_uint(0U),
+    field_ext3: Float::reinterpret_from_uint(0U),
+    field_j1: Float::reinterpret_from_uint(0U),
+    field_j2: Float::reinterpret_from_uint(0U),
+    field_j3: Float::reinterpret_from_uint(0U),
+    field_j4: Float::reinterpret_from_uint(0U),
+    field_j5: Float::reinterpret_from_uint(0U),
+    field_j6: Float::reinterpret_from_uint(0U),
+    field_j7: Float::reinterpret_from_uint(0U),
+    field_j8: Float::reinterpret_from_uint(0U),
+    field_j9: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Fanuc_msgsSrvSetPosReg_RequestCodec {
@@ -6192,7 +6192,7 @@ pub fn Ros2Rmi_msgsMsgCallParam::new() -> Ros2Rmi_msgsMsgCallParam {
   {
     field_type: "",
     field_int_value: 0,
-    field_float_value: (0U).reinterpret_as_float(),
+    field_float_value: Float::reinterpret_from_uint(0U),
     field_string_value: "",
   }
 }
@@ -6276,15 +6276,15 @@ pub fn Ros2Rmi_msgsMsgCartesian::new() -> Ros2Rmi_msgsMsgCartesian {
     field_turn4: 0,
     field_turn5: 0,
     field_turn6: 0,
-    field_x: (0U).reinterpret_as_float(),
-    field_y: (0U).reinterpret_as_float(),
-    field_z: (0U).reinterpret_as_float(),
-    field_w: (0U).reinterpret_as_float(),
-    field_p: (0U).reinterpret_as_float(),
-    field_r: (0U).reinterpret_as_float(),
-    field_ext1: (0U).reinterpret_as_float(),
-    field_ext2: (0U).reinterpret_as_float(),
-    field_ext3: (0U).reinterpret_as_float(),
+    field_x: Float::reinterpret_from_uint(0U),
+    field_y: Float::reinterpret_from_uint(0U),
+    field_z: Float::reinterpret_from_uint(0U),
+    field_w: Float::reinterpret_from_uint(0U),
+    field_p: Float::reinterpret_from_uint(0U),
+    field_r: Float::reinterpret_from_uint(0U),
+    field_ext1: Float::reinterpret_from_uint(0U),
+    field_ext2: Float::reinterpret_from_uint(0U),
+    field_ext3: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Rmi_msgsMsgCartesianCodec {
@@ -6540,7 +6540,7 @@ pub(all) struct Ros2Rmi_msgsMsgJoint {
 }
 pub fn Ros2Rmi_msgsMsgJoint::new() -> Ros2Rmi_msgsMsgJoint {
   {
-    field_positions: Array::makei(9, fn(_) { (0U).reinterpret_as_float() }),
+    field_positions: Array::makei(9, fn(_) { Float::reinterpret_from_uint(0U) }),
   }
 }
 pub(all) struct Ros2Rmi_msgsMsgJointCodec {
@@ -7731,7 +7731,7 @@ pub(all) struct Ros2Rmi_msgsSrvAddWaitTime_Request {
 }
 pub fn Ros2Rmi_msgsSrvAddWaitTime_Request::new() -> Ros2Rmi_msgsSrvAddWaitTime_Request {
   {
-    field_time: (0U).reinterpret_as_float(),
+    field_time: Float::reinterpret_from_uint(0U),
   }
 }
 pub(all) struct Ros2Rmi_msgsSrvAddWaitTime_RequestCodec {

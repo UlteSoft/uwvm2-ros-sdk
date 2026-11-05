@@ -48,11 +48,18 @@ def strict(raw):
     return json.loads(raw, object_pairs_hook=pairs, parse_constant=lambda _: (_ for _ in ()).throw(ValueError('nonfinite DATA')))
 
 def run(required, actual, actual_sha, output, maximum_entries=None, history_per_endpoint=None):
-    # Storage is an explicit caller selection, never a generated permission.
-    if (maximum_entries is None) != (history_per_endpoint is None):
-        raise ValueError('both explicit storage arguments are required together')
-    if maximum_entries is not None and (type(maximum_entries) is not int or type(history_per_endpoint) is not int or not 1 <= maximum_entries <= 65536 or not 1 <= history_per_endpoint <= 256):
-        raise ValueError('storage selection exceeds actual finite registry/history limits')
+    # Storage quotas are independent and optional. They never select a codec,
+    # native identity, endpoint, or capability.
+    def quota(value):
+        if value is None:
+            return None
+        if value == 'unlimited':
+            return value
+        text = str(value)
+        if type(value) is bool or not re.fullmatch(r'0|[1-9][0-9]*', text) or int(text) > 2**64-1:
+            raise ValueError('storage quota requires a canonical uint64 or unlimited')
+        return text
+    maximum_entries, history_per_endpoint = quota(maximum_entries), quota(history_per_endpoint)
     if not all(p.is_absolute() for p in (required, actual, output)):
         raise ValueError('explicit absolute DATA paths required')
     required_raw, actual_raw = read(required), read(actual)
@@ -86,24 +93,25 @@ def run(required, actual, actual_sha, output, maximum_entries=None, history_per_
     output.mkdir(parents=True)
     path = output / 'default_control_gateway_identity_input.hpp'
     path.write_text(body, encoding='utf-8')
-    if maximum_entries is not None:
-        # Exact Root loader syntax. These values allocate storage only; original
-        # capabilities/aliases/type/QoS/quotas still require independent grants.
-        (output / 'profile.template.txt').write_text(
-            f'maximum-entries {maximum_entries}\nhistory-per-endpoint {history_per_endpoint}\nexport-packet-sha256 {actual_sha}\n', encoding='ascii')
+    storage = {}
+    for key, value in [('maximum-entries', maximum_entries), ('history-per-endpoint', history_per_endpoint)]:
+        if value is not None:
+            storage[key] = value
+    (output / 'profile.template.txt').write_text(
+        ''.join(f'{key} {value}\n' for key, value in storage.items()) + f'export-packet-sha256 {actual_sha}\n', encoding='ascii')
     (output / 'identity-input.json').write_text(json.dumps(dict(status='FROZEN_ACTUAL_EXPORT_DATA_NOT_QUALIFICATION',
         required=dict(path=str(required), bytes=len(required_raw), sha256=hashlib.sha256(required_raw).hexdigest()),
         actual=dict(path=str(actual), bytes=len(actual_raw), sha256=actual_sha),
         output=dict(bytes=len(body.encode()), sha256=hashlib.sha256(body.encode()).hexdigest()),
-        explicit_storage_selection=(dict(maximum_entries=maximum_entries, history_per_endpoint=history_per_endpoint) if maximum_entries is not None else None)), indent=2) + '\n')
+        explicit_storage_selection=storage), indent=2) + '\n')
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('required', 'actual', 'out'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--actual-sha256', required=True)
-    parser.add_argument('--maximum-entries', type=int, help='explicit storage only, 1..65536; must pair with history')
-    parser.add_argument('--history-per-endpoint', type=int, help='explicit storage only, 1..256; must pair with entries')
+    parser.add_argument('--maximum-entries', help='optional canonical uint64 or unlimited; omitted means unlimited')
+    parser.add_argument('--history-per-endpoint', help='optional canonical uint64 or unlimited; omitted means unlimited')
     args = parser.parse_args()
     try:
         run(args.required, args.actual, args.actual_sha256, args.out, args.maximum_entries, args.history_per_endpoint)

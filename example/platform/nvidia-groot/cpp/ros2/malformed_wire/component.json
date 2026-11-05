@@ -1,0 +1,112 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "canonical-3336",
+  "test_scope": "Actual guest full-field codec with independent little-endian seeded reference bytes, malformed inputs and destination preservation assertions. No native ROS or GPU qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "47c4726e61d9c8b2ad58c093da492cb17dde147cc43573a816581d5aa6678cf3"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "9fec97bcfa5dc0c14ed2fb0e50eec7828dc6325724787fcc596736b525130387"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-groot/schemas/ros2/uwvm_groot_bridge/msg/FloatTensor.msg",
+      "sha256": "fe2b168bdd595d440f711147e3a060f109360677ac09e6fb9a023eb53b0da296"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-groot/schemas/ros2/uwvm_groot_bridge/msg/RGBDescriptor.msg",
+      "sha256": "d5f49f5133cb1295eb46088febecd7516e67db3f4f21b48a0cfd9e3e38b122a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-groot/schemas/ros2/uwvm_groot_bridge/msg/RGBFrame.msg",
+      "sha256": "8295b36559444c8028049c8e4e07388b66db4493074beffa2469929241337f7a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-groot/schemas/ros2/uwvm_groot_bridge/msg/TextSequence.msg",
+      "sha256": "34b9bfd6d7992a250b8346b9be395e03f356e1ee12ac5fdb2a66a2a90e555a4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "seed-0",
+      "arguments": [
+        "0"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "truncation=refused trailing=refused destination=preserved\n"
+    },
+    {
+      "id": "seed-17",
+      "arguments": [
+        "17"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "truncation=refused trailing=refused destination=preserved\n"
+    },
+    {
+      "id": "seed-96",
+      "arguments": [
+        "96"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "truncation=refused trailing=refused destination=preserved\n"
+    },
+    {
+      "id": "seed-4294967295",
+      "arguments": [
+        "4294967295"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "truncation=refused trailing=refused destination=preserved\n"
+    },
+    {
+      "id": "negative",
+      "arguments": [
+        "-1"
+      ],
+      "expected_exit": 22
+    },
+    {
+      "id": "overflow",
+      "arguments": [
+        "4294967296"
+      ],
+      "expected_exit": 22
+    },
+    {
+      "id": "nonnumeric",
+      "arguments": [
+        "bad"
+      ],
+      "expected_exit": 22
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-dynamic-observer-3260",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/leju/php/ros1/main_platform/records.php",
+      "sha256": "5bac35b36a0b00f651dfbba1b14280cf0e416a610ca2e211499f59f3acc11b1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "sha256": "09b46a3f454cb73bce620f7a12b87a45c3295986a43baab4299e38f872d2c349"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "sha256": "a98012e8de8a46996b45267f41e77043de1ad9d69cfc5d7462875a37580f9b2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "sha256": "4c8a9e723fbc057a8a2da63f3b1c2609608954600af407169dde5f2e0df30bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/leju/provider.json",
+      "sha256": "221deaed8aeda29e55303ce78a877882e01c9ed7d03158082752243a1c0bb154"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/php/Observation.php",
+      "sha256": "c699a449c9154ab6f8aa56780eecaf44f1cf23f6cbcec00726a49b112885e9ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/leju/provider.lua",
+      "sha256": "f0668b0e39b4f99566c07db4a056b7476947b1fc5bd13743caff7023ed89275a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.php",
+      "sha256": "13277bf1098d2c73938fa6c1d246a2c24bba75707549f09735f31a96f40f8415"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "8d3cadaf29aab06d0cecfe527ab06258bfd05aeba8a215b2545505ee2bca5f5b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-only-no-resource",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "required": null,
+        "rpc_status_present": false,
+        "rpc_status": null,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

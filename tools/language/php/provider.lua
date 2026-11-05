@@ -9,7 +9,7 @@ function describe()
 	return {
 		api_version = 1,
 		languages = { "php" },
-		targets = { "wasm32-wasip1" },
+		targets = { "wasm32-wasip1", "wasm64-wasip1" },
 		exception_profiles = { "noeh" },
 		features = {},
 		artifact_kinds = {

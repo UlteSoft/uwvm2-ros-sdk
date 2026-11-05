@@ -16,5 +16,82 @@
     "ros2": "share/platform/fanuc/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/fanuc/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "packages": [
+        {
+          "name": "uwvm/ros/linear",
+          "alias": "linear",
+          "sources": [
+            "include/platform/ros/moonbit/linear/linear.mbt",
+            "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+          ],
+          "dependencies": []
+        },
+        {
+          "name": "uwvm/ros/wire",
+          "alias": "wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ],
+          "dependencies": [
+            "utf8"
+          ]
+        },
+        {
+          "name": "uwvm/ros/ros2",
+          "alias": "ros",
+          "sources": [
+            "include/platform/ros/moonbit/ros2/client.mbt",
+            "include/platform/ros/moonbit/ros2/coverage.mbt",
+            "include/platform/ros/moonbit/ros2/image.mbt",
+            "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+            "include/platform/ros/moonbit/ros2/raw.mbt",
+            "include/platform/ros/moonbit/ros2/transform.mbt"
+          ],
+          "dependencies": [
+            "linear",
+            "wire",
+            "utf8"
+          ]
+        },
+        {
+          "name": "uwvm/fanuc/ros2",
+          "alias": "records",
+          "sources": [
+            "include/platform/fanuc/moonbit/ros2/bounded_records.mbt"
+          ],
+          "dependencies": [
+            "ros",
+            "linear",
+            "wire",
+            "utf8",
+            "float"
+          ]
+        },
+        {
+          "name": "uwvm/ros/observation",
+          "alias": "observation",
+          "sources": [
+            "include/platform/unitree/moonbit/command/command_io.mbt",
+            "include/platform/unitree/moonbit/command/observation.mbt"
+          ],
+          "dependencies": [
+            "ros",
+            "wire",
+            "utf8"
+          ]
+        }
+      ],
+      "entry_dependencies": [
+        "observation",
+        "records"
+      ]
+    }
+  }
 }

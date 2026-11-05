@@ -23,6 +23,12 @@ CASES = ("positive", "denied", "stale", "timeout")
 LOG_LIMIT = 8 * 1024**2
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def need(condition, message):
     if not condition:
         raise RuntimeError(message)
@@ -205,7 +211,7 @@ def run_case(config, wasm, output, name, seed):
     need(type(template) is str and len(template.encode()) <= 1024**2, "Supply the complete explicit gateway policy")
     need(all(marker in template for marker in ("@SDK02_WORKER_PID@", "@SDK02_UID@", "@SDK02_GATEWAY_SOCKET@")),
          "Gateway policy must bind this exact observed worker and owned socket")
-    argv = [str(Path(config["runtime"]).resolve()), *arguments(selected["runtime_arguments"], socket),
+    argv = [str(Path(config["runtime"]).resolve()), *wasi_test_arguments(arguments(selected["runtime_arguments"], socket), selected.get("wasi_policy")),
             "--run", str(wasm), name, str(seed)]
     row = {"id": name, "challenge": seed, "status": "BLOCKED", "guest_started": False,
            "guest_finished": False, "argv": argv, "started_ns": time.monotonic_ns()}
@@ -218,7 +224,7 @@ def run_case(config, wasm, output, name, seed):
     initial = read_log(peer_log)
     try:
         with (root / "vm.stdout").open("xb") as out, (root / "vm.stderr").open("xb") as err:
-            vm = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)
+            vm = PipeLoggedProcess(argv, stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)
             owner = process(vm.pid)
             owned.append((vm, {vm.pid: owner["birth"]}))
             deadline = time.monotonic() + 60

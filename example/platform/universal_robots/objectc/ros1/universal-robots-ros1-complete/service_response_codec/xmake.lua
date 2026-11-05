@@ -41,6 +41,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -58,4 +59,5 @@ target("universal_robots_ros1_service_response_codec")
     set_ros_scenario("service_response_codec")
     add_files("main.m")
     add_files(path.join(sdk, "src/platform/universal_robots/objectc/ros1/universal-robots-ros1-complete/Records.m"))
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

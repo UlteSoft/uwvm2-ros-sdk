@@ -145,12 +145,17 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/simulation_example.py",
-      "sha256": "ba25a19a15d2ee5a12787518c8dae650d77dc3eafc0007fe5fa23dd4c56f04f2"
+      "sha256": "91af18496de4a6d34ade3a608d342db8c7dd1ea4d6384626d85d62c21bb9b91b"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/simulation_example.lua",
-      "sha256": "c55968e054ca45a1b93cca117147a3b09752aa142a34cbce584bec88126a0ccd"
+      "sha256": "4132b8a41debef52d8166e70d5c9e637adf55a2ade9b322e1b7abe18ece01299"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "41fcbeb000a9765a1223f71f3b5de583719e0cc13e2b915bc2eb4b6f507327a3"
     }
   ],
   "native_bypass_audit": {

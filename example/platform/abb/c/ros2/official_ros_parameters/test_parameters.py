@@ -18,6 +18,12 @@ need, digest, read_log = base.need, base.digest, base.read_log
 CASES = ('positive','denied','stale','timeout')
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def exec_runtime_gate(arguments):
     """Keep one PID alive until its gateway has pinned that process lifetime."""
     need(len(arguments) >= 3, 'Complete runtime executable, identity and arguments required')
@@ -27,6 +33,7 @@ def exec_runtime_gate(arguments):
     need(os.read(0, 1) == b'E', 'Runtime execution was not released by the supervisor')
     need(digest(executable) == expected and os.access(executable, os.X_OK),
          'Runtime executable changed before exec')
+    os.set_blocking(0, False)
     os.execv(executable, [executable, *tail])
 
 
@@ -153,7 +160,9 @@ def run_case(config, wasm, root, case):
         out = (root/(name+'.stdout')).open('xb')
         err = (root/(name+'.stderr')).open('xb')
         handles.extend((out,err))
-        child = subprocess.Popen(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL,
+        launch = PipeLoggedProcess if name == "vm" else subprocess.Popen
+        pipe_options = {"nonblocking_stdin": False} if name == "vm" else {}
+        child = launch(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL, **pipe_options,
                  stdout=out,stderr=err,start_new_session=True,
                  env=dict(os.environ,**config['ROS_environment'],PYTHONDONTWRITEBYTECODE='1'))
         children.append(child)
@@ -183,6 +192,7 @@ def run_case(config, wasm, root, case):
         values = {'@SDK02_GATEWAY_SOCKET@':socket,'@SDK02_PEER_NODE@':peer_node,
                   '@SDK02_ABSENT_NODE@':absent_node,'@SDK02_UID@':os.getuid()}
         arguments = [expand(value,values) for value in selected['runtime_arguments']]
+        arguments = wasi_test_arguments(arguments, selected.get('wasi_policy'))
         # The VM checks the gateway before it enters Wasm. Hold a supervisor
         # child at an exec gate so the gateway can first pin the eventual VM's
         # exact PID and lifetime; exec preserves both PID and process birth.

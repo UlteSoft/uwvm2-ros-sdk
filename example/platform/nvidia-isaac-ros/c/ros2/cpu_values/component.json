@@ -1,0 +1,74 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-command-contract-3359",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/cpu_sensor_contract.h",
+      "sha256": "3fc6505ace9dcb99d2a5cabbd37bce626e1994963aaab0cb719d01c77a1a443e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/interfaces.h",
+      "sha256": "99a4df581f0e936f497029ea47deb49b003f4c29eec07a6f31818e721253f3f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/complete/records.h",
+      "sha256": "66ea149b81e9b2693bd6ddfa2c212207a77e20e4619ae5a2c3422b7182081cbb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_interfaces.h",
+      "sha256": "936f9d73dac106ba4e98c1feaddf20bb9c94fed16a14b7fd5cfdca1c98cbed9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/c/ros2/isaac-ros-complete/bounded_records.h",
+      "sha256": "61038bd330e7dd3857f40a161a4baef3100e1ad6d318a084a1f7adb66ae96272"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "d7786b273f380e88b54435fed0ad362455fe6126dd388209efff177ede977d1e"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "44491865418d5346738aeeecd2f56c49ecbdb41778c2258c804295b7f376ffe5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "all-fields-and-padding",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "sec=-1 nanosec=999999999 frame_id=cpu_optical height=2 width=3 encoding=rgb8 bigendian=0 step=12 bytes=24\n0:255\n1:0\n2:0\n3:0\n4:255\n5:0\n6:0\n7:0\n8:255\n9:91\n10:92\n11:93\n12:255\n13:255\n14:255\n15:127\n16:127\n17:127\n18:0\n19:0\n20:0\n21:94\n22:95\n23:96\n"
+    }
+  ]
+}

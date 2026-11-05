@@ -1,14 +1,11 @@
 <?php
 declare(strict_types=1);
+// Public modules are loaded by the declared ordered SDK source graph.
 /**
  * @file main.php
  * @brief Read every original dobot_msgs_v4/msg/RobotStatus field in the genuine shared PHP VM.
  * @details All public modules are packed into the application's single Wasm.
  */
-require_once 'ros/php/RosWasm/Word.php';
-require_once 'ros/php/RosWasm/Wire.php';
-require_once 'ros/php/RosWasm/Transport.php';
-require_once 'dobot/php/ros2/v4/records.php';
 use Uwvm\RosWasm\Capability;
 use Uwvm\Dobot\ros2_v4\Ros2Dobot_msgs_v4MsgRobotStatus;
 
@@ -56,8 +53,8 @@ function main(array $arguments): int
     }
     $text = json_encode(['primary' => $primary, 'cleanup' => $cleanup,
         'cleanup_present' => $owner !== null, 'response_present' => $present,
-        'wire_hex' => $present ? bin2hex($bytes) : ''], JSON_THROW_ON_ERROR) . "\n";
-    $output = fwrite(STDOUT, $text) === strlen($text) ? 0 : 5;
+        'wire_hex' => $present ? bin2hex($bytes) : ''], JSON_THROW_ON_ERROR);
+    $output = \Uwvm\Native\output($text);
     return min(125, $primary ?: ($cleanup ?: $output));
 }
-exit(main($argv));
+$uwvm_exit = main(\Uwvm\Native\argv());

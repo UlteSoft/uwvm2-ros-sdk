@@ -22,4 +22,4 @@ C 使用 `*_valid`、`*_wire_size`、`*_encode`、`*_decode`，遵守声明的 M
 
 统一 Xmake 目标接口要求使用 `set_kind("binary")`、`set_kind("shared")` 和 `set_kind("static")`，配合标准 `add_deps`、`add_links`、`add_linkdirs` 与 public include 传播。当前平台应用示例尚未证明 shared/static 的生产者或消费者支持。动态部署需要各个真实 Wasm 库及明确的 preload 名称；静态 `.a` 必须包含可重定位 Wasm 对象，并实际验证归档符号提取。每种语言、内存宽度及生产者/消费者组合均须单独执行验收。
 
-要求的模块示例包含 `main`、`io`、`algorithm`、`ros_comm`，仅 `ros_comm` 获得绑定实际加载模块身份的手工 ROS Single 权限。默认 WASI 保留基本标准流权限；algorithm 不增加资源或 ROS 授权。统一加载器、目标类型及跨模块调用方契约通过验证后才可声明此流程可用；必须具备原生正向见证及未授权模块的拒绝结果。`xmake run` 保持提交的原始配置。
+要求的模块示例包含 `main`、`io`、`algorithm`、`ros_comm`，仅 `ros_comm` 获得绑定实际加载模块身份的手工 ROS Single 权限。基础 WASI 不提供标准流操作权限；algorithm 不自动获得资源或 ROS 操作授权。统一加载器、目标类型及跨模块调用方契约通过验证后才可声明此流程可用；必须具备原生正向见证及未授权模块的拒绝结果。`xmake run` 保持提交的原始配置。

@@ -1,15 +1,16 @@
 # Fourier ruby guest safety component
 
-This application runs five required assertions inside the genuine CRuby 3.4.7 Wasm engine: interpreter identity, raw ROS ABI v1, empty-alias rejection, invalid UTF-8 rejection and an ungranted raw capability denial. The guest returns nonzero on any failure and emits bounded per-case records plus a summary.
+The original application executes all five assertions inside its genuine ruby Wasm engine: runtime identity, the ROS ABI, empty-alias rejection, invalid UTF-8 rejection and an actual ungranted capability denial. The test checks every output record and the summary; any missing assertion fails.
 
-Install an uwvm2-ros runtime that supports this engine and configure its explicit deployment. The supplied `deployment-deny.example.json` selects disabled ROS authority, bounded denial auditing and a cache inside this example. It grants no ROS capability or guest filesystem access. It selects LLVM AOT’s `fast-compile` policy and four compilation workers. From this directory:
+Fill in the pinned executable and source identities in deployment-deny.example.json. Its policy explicitly enables WASIp1 for main and grants only argument/environment access, stdout/stderr, stdio metadata and process exit. ROS2 imports are exposed with zero resource grants so the raw capability call reaches the real denial boundary. No guest quota is implicit.
+
+Run in the required 64 GiB, zero-swap cgroup:
 
 ```sh
-export UWVM_ROS_RUN_CONFIG="$PWD/deployment-deny.example.json"
+export UWVM_ROS_RUNTIME_TEST_DEPLOYMENT="$PWD/deployment-deny.example.json"
+export UWVM_ROS_TEST_EVIDENCE_ROOT="/absolute/writable/test-evidence"
 xmake
 xmake test
 ```
 
-`xmake` packages the original source graph in the pinned interpreter Wasm. `xmake test` invokes that application through the existing SDK runtime launcher; a missing runtime/configuration or failed assertion returns non-success. Build, VM execution and actual case counts require independent Linux evidence.
-
-This component covers guest validation and VM refusal. The mandatory Fourier official-provider control/query/callback and fresh-feedback scenarios remain incomplete and must also execute through uwvm2-ros. A passing component suite cannot qualify the platform, legacy client migration or a standalone runtime release.
+The common finite runner records the actual VM, Wasm identity, explicit policy, output, exit and owned process retirement. Host tools package and supervise the test; the assertions never execute through host PHP or Ruby. This component does not qualify native vendor traffic or the mandatory official simulation scenarios.

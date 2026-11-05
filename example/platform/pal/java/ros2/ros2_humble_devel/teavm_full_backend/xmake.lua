@@ -13,7 +13,8 @@ target("full-backend-contract")
     set_ros_config({vendor_profile = "ros2_humble_devel"})
     set_values("ros.sdk.main_class", "uwvm.compiler.tests.FullBackendChecks")
     add_files("FullBackendChecks.java")
-    add_tests("full-backend")
+    uwvm_register_required_test("full-backend", "required-wasm-guest")
+    add_tests("full-backend", {group = "required-wasm-guest"})
     on_test(function(current, opt)
         import("core.base.json")
         local file = assert(os.getenv("UWVM_ROS_JAVA_GUEST_TEST_CONFIG"),
@@ -26,9 +27,11 @@ target("full-backend-contract")
         local output = path.join(current:scriptdir(), ".uwvm-ros/compiler-tests/full-backend")
         assert(not os.exists(output), "Preserve each original compiler test result")
         os.mkdir(output)
-        local argv = {"--runtime-aot", "--ros2-global-disable", "--run", current:targetfile()}
+        local argv = {"--runtime-aot", "--ros2-global-disable", "--wasm-set-main-module-name", "main"}
+        argv = import("wasi_policy", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).test_arguments(argv, config.wasi_policy)
+        table.join2(argv, {"--run", current:targetfile()})
         local stdout, stderr = path.join(output, "VM.stdout"), path.join(output, "VM.stderr")
-        local code = os.execv(config.runtime, argv, {try = true, timeout = 60000,
+        local code = import("pipe_run", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).execute(config.runtime, argv, {try = true, timeout = 60000,
             envs = config.environment, stdout = stdout, stderr = stderr})
         local text = io.readfile(stdout) or ""
         local passed = code == 0 and text:find('"sdk09_HEAD_compiler_checks":1284', 1, true) ~= nil

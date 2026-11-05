@@ -5,11 +5,11 @@
 import agibot.d.client : observe;
 import agibot.d.ros2.sdk_v1_1_0_main.records : Ros2Aimdk_msgsSrvGetRobotResources_Response;
 import roswasm.wire : Arena;
-import core.stdc.stdio : printf, putchar, fflush, stdout;
+import native.d.wasi_stdio : printf, putchar, fflush, stdout;
 import core.stdc.stdlib : malloc, free;
 
 // @brief Read one explicit alias and output only after the C owner was closed.
-extern(C) int main(int argc, char** argv) @nogc nothrow
+extern(C) int agibot_language_main(int argc, char** argv) @nogc nothrow
 {
     if (argc != 2) return 22;
     ubyte[10236] bytes = void;

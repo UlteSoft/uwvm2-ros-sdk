@@ -184,7 +184,9 @@ def _record_documentation(record, semantics):
         "--- @field decode fun(bytes: string): " + symbol,
         "local " + symbol + " = classes[" + literal(symbol) + "]",
     ]
-    return "\n".join(lines) + "\n"
+    # Each documentation alias needs only one short lexical scope; large
+    # catalogs must not exceed Lua\'s per-function local-variable limit.
+    return "do\n" + "\n".join(lines) + "\nend\n"
 
 
 def render(parent, bounded, records, ordered, semantics):

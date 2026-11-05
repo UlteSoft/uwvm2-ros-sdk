@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "universal_robots/lua/ros1/universal-robots-ros1-complete/records",
+      "file": "include/platform/universal_robots/lua/ros1/universal-robots-ros1-complete/records.lua",
+      "sha256": "7bda433b64c1ae55a39f5633a8f6ae500c3c66e4832bf51d03273a99271ab793"
+    }
+  ],
+  "default_authority": []
+}

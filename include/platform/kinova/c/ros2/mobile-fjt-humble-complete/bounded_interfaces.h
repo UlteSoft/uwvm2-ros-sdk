@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_E3A1B1B8F670BCB695361119FDB94D074971E19BE4AB0BB3A7FFC89372AFEFD6
 #define UWVM_ROS_BOUNDED_INTERFACES_E3A1B1B8F670BCB695361119FDB94D074971E19BE4AB0BB3A7FFC89372AFEFD6
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <kinova/c/ros2/mobile-fjt-humble-complete/bounded_records.h>
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -92,7 +99,7 @@ inline static roswasmc_result
                                                                           roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback* feedback)
 {
     unsigned char input[8], output[4716];
-    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback next = {0};
+    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -131,7 +138,7 @@ inline static roswasmc_result
                                                                         roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result* result)
 {
     unsigned char input[8], output[273];
-    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result next = {0};
+    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -182,7 +189,7 @@ inline static roswasmc_result
                                                                       roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal* goal)
 {
     unsigned char output[8588];
-    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal next = {0};
+    roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||

@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros1Franka_msgsFrankaState, Ros1Franka_msgsFrankaStateCodec} from "franka/as/ros1/franka-ros1-complete/bounded_records";
 import {write, exit} from "ros/as/command";

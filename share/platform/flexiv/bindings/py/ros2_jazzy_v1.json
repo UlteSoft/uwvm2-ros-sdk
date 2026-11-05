@@ -1,0 +1,11 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "py",
+  "profile": "ros2_jazzy_v1",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/py/ros2/flexiv_ros2_jazzy_v1_complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "bundle_manifest": "share/platform/flexiv/bundles/py/ros2_jazzy_v1.json"
+}

@@ -1,11 +1,12 @@
 /**
  * @file native_protocol.h
- * @brief Provide bounded C++17 native metadata output and a finite control gate.
+ * @brief Provide bounded C++20 native metadata output and a finite control gate.
  * @details This maintenance helper creates no ROS entity, robot connection,
  * Guest import, callback, or authority. The owner supplies genuine inherited
  * file descriptors, retains the reader process, and checks its complete result.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include <array>
 #include <charconv>
 #include <chrono>
@@ -142,10 +143,14 @@ namespace bounded_native_io
     {
         pollfd input{STDIN_FILENO, POLLIN, 0};
         int ready = 0;
-        auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds{30};
+        auto deadline = ::uwvm2::utils::host_clock::now() + std::chrono::seconds{30};
         while(true)
         {
-            auto remaining = std::chrono::duration_cast<std::chrono::milliseconds>(deadline - std::chrono::steady_clock::now()).count();
+            auto remaining = std::chrono::duration_cast<std::chrono::milliseconds>(deadline - ::uwvm2::utils::host_clock::now()).count();
+            if(!::uwvm2::utils::host_clock::available())
+            {
+                throw std::runtime_error{"Native monotonic clock unavailable"};
+            }
             if(remaining <= 0)
             {
                 break;

@@ -58,12 +58,13 @@ namespace uwvm2::ros_gateway::owned_service_profile
             auto found=std::find(identity_names.begin(),identity_names.end(),fields[0]);
             if(found!=identity_names.end())
             {if(!hash(fields[1],result.identities.hashes[static_cast<std::size_t>(found-identity_names.begin())]))throw std::runtime_error("Actual independently exported lowercase native RIHS hash required");}
-            else if(fields[0]=="maximum-entries")result.storage.maximum_entries=static_cast<std::size_t>(integer(fields[1],ros::rmw_service_bindings::maximum_entries));
-            else if(fields[0]=="history-per-endpoint")result.storage.history_per_endpoint=static_cast<std::size_t>(integer(fields[1],256));
+            else if(fields[0]=="maximum-entries")result.storage.maximum_entries=storage_count(fields[1]);
+            else if(fields[0]=="history-per-endpoint")result.storage.history_per_endpoint=storage_count(fields[1]);
             else if(fields[0]=="maximum-string-wire-bytes")result.maximum_string_wire=static_cast<std::size_t>(integer(fields[1],ipc::max_payload_bytes-518));
             else throw std::runtime_error("Unknown owned service profile field");
         }
-        if(seen.size()!=14||!result.storage.valid()||result.maximum_string_wire<4)throw std::runtime_error("All14 exact owned service profile fields are mandatory");
+        for(auto name:identity_names)if(!seen.count(std::string{name}))throw std::runtime_error("Every actual native identity is mandatory");
+        if(!seen.count("maximum-string-wire-bytes")||!result.storage.valid()||result.maximum_string_wire<4)throw std::runtime_error("Exact native identities and canonical string extent are mandatory");
         return result;
 #endif
     }

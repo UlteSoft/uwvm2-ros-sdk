@@ -87,13 +87,14 @@ def literal(language, t, value):
         width = 32 if t == "float32" else 64
         raw = struct.pack("<f" if width == 32 else "<d", float(value))
         bits = int.from_bytes(raw, "little")
+        rounded = struct.unpack("<f" if width == 32 else "<d", raw)[0]
         return {
             "swift": f'{"Float" if width==32 else "Double"}(bitPattern: 0x{bits:x})',
             "nim": f"cast[float{width}](0x{bits:x}'u{width})",
             "haskell": f'castWord{width}To{"Float" if width==32 else "Double"} 0x{bits:x}',
             "zig": f"@as(f{width},@bitCast(@as(u{width},0x{bits:x})))",
             "d": struct.unpack("<f" if width == 32 else "<d", raw)[0].hex() + ("F" if width == 32 else ""),
-            "odin": f"transmute(f{width})u{width}(0x{bits:x})",
+            "odin": f"f{width}({rounded!r})",
         }[language]
     if not re.fullmatch(r"-?(0|[1-9][0-9]*)", value):
         raise ValueError("normalized integer required")

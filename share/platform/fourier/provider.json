@@ -108,6 +108,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -264,6 +268,10 @@
             "path": "include/platform/ros/r/roswasm/wire.R"
           },
           {
+            "name": "uwvm/r/bootstrap",
+            "path": "src/language/r/bootstrap.R"
+          },
+          {
             "name": "uwvm/r/native",
             "path": "src/language/r/native.R"
           },
@@ -285,14 +293,40 @@
           "root": "include/platform/fourier/go/ros2/fourier-ros2-aurora-bridge-v1-complete",
           "shared_module": "uwvm2.local/roswasmgo",
           "backend_tag": "ros2",
-          "complete_original_records": 51
+          "complete_original_records": 51,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "go",
+            "go": {
+              "modules": [
+                "include/platform/ros/go",
+                "include/platform/fourier/go/ros2/fourier-ros2-aurora-bridge-v1-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "tinygo": {
           "module": "fourier/tinygo/ros2/aurora_bridge_v1",
           "root": "include/platform/fourier/tinygo/ros2/fourier-ros2-aurora-bridge-v1-complete",
           "shared_module": "uwvm2.local/roswasm",
           "backend_tag": "ros2",
-          "complete_original_records": 51
+          "complete_original_records": 51,
+          "native_action": {
+            "format": "uwvm-native-action-v1",
+            "language": "tinygo",
+            "go": {
+              "modules": [
+                "include/platform/ros/tinygo",
+                "include/platform/fourier/tinygo/ros2/fourier-ros2-aurora-bridge-v1-complete"
+              ],
+              "tags": [
+                "ros2"
+              ]
+            }
+          }
         },
         "d": {
           "module": "fourier.d.ros2.aurora_bridge_v1.records",
@@ -303,6 +337,15 @@
           ],
           "producer": "one shared genuine D/BetterC compiler; consumer integration pending",
           "extra_sources": []
+        },
+        "js": {
+          "bundle_manifest": "share/platform/fourier/bundles/js/ros2_aurora_bridge_v1.json"
+        },
+        "lua": {
+          "bundle_manifest": "share/platform/fourier/bundles/lua/ros2_aurora_bridge_v1.json"
+        },
+        "py": {
+          "bundle_manifest": "share/platform/fourier/bundles/py/ros2_aurora_bridge_v1.json"
         }
       }
     }

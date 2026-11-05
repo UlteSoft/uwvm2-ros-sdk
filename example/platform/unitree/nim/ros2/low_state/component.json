@@ -1,0 +1,145 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4712",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with base WASI and ROS namespace but no resource authority. Assert denied acquisition and complete empty result facts; reject missing alias before acquisition. Native positive transport requires a separate explicit integration deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "3d1ebb71499aa0ad4d17f0bee037104cd7416dfd89d2e5a6293ff6c548ef83a6"
+    },
+    {
+      "scope": "example",
+      "path": "main.nim",
+      "sha256": "ac2dea79919374dcf1e7e9c483b895746a3f96fff180f78668178439c4e1ae7e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/native_command.nim",
+      "sha256": "b4cb642447c51909f5929baaa1a06d5bf8b0550b9c170c42c300217cdadaffd5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/roswasm.nimble",
+      "sha256": "30807b0f9511f69ceb028a2423147f5a6d1c136b431832f68c3918a7087088b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm.nim",
+      "sha256": "054898269c7c5e014d7a79e7a39463c8ab872586517aa719384bffc902a764c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/raw.nim",
+      "sha256": "76c6ab87e59b9f20d022fd2a1704b2e72ef78dd20dcff458f8d80bef21edc1e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/typed.nim",
+      "sha256": "b2aa484851d0493a2e8fec25cdc23f54ec913d08bfa1bb5d3b75b7c34888159e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/wire.nim",
+      "sha256": "a7b978c7dfa97de71eaaaebba121ca82ed1e2529e27f13ab0577b64b9780c069"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/wire.nim",
+      "sha256": "60250ea34464fd330ed09307470f8908d79d0817992d596aab89b2ed48d8bfd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/observation.nim",
+      "sha256": "a4613e2fdba98cd316b6898d7c5448edc26afb91f92ffd2e66c257736e2895cc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/ros1/observation.nim",
+      "sha256": "a9ca5a8c3869248b326196a1ba099ac8546262b9684941f9c433b7611c84e6ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/ros1/records.nim",
+      "sha256": "eb33fd08976532f153fb2866110f864bf2e27da06210aa0690c852b6ee1fd9c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/ros2/observation.nim",
+      "sha256": "082f60e299f7bb3ef0f5ad97669d5c477419b576ba9a6a03ad34c225a3795aeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/ros2/records.nim",
+      "sha256": "21c646c1788bb41f8b62192e2956d18e9c55b7d5e29f1f579a984f7d22f6f92e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/nim/wire.nim",
+      "sha256": "136f2555917eac385fe40e80e31fd0618fa8761fc7ca0e9d01647fb399157e94"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/native_languages.lua",
+      "sha256": "433f0fb750e5496d2463eb430fd069c9b417693d83b7baeced706c598011a5d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "agibot-native-refusal-206",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/client.d",
+      "sha256": "7ddcaba39bb05c97feb1d857ba94452c50bb431b5d5d889ea34c2200377ee2ab"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-8-1-main-complete/interfaces.d",
+      "sha256": "2fede83e02d64e24566686385ee6f39341a823651b14e1e25734aeb9adc547f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-8-1-main-complete/records.d",
+      "sha256": "3c604fae31184651b86194bf742c3f334482508d24685d9b2f0a9ff11ace2987"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-8-2-main-complete/interfaces.d",
+      "sha256": "40e042e0460ef8577b286b547627936db42397e83fb8c6d08e6d7f53068c7f99"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-8-2-main-complete/records.d",
+      "sha256": "c3f4869ed9e938170cb2e01bdf841db609cbed6f4f5223c88053755b453b0bfd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-9-0-main-complete/interfaces.d",
+      "sha256": "afb60de5787d03ff9065db92fab194f6488ba2665806b45c349d73e7bb0dc576"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v0-9-0-main-complete/records.d",
+      "sha256": "8e353c96b368b24d8a4a5b6a4b52e0ca5c43f06f5406d091754772cd794bfdd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-0-0-main-complete/interfaces.d",
+      "sha256": "cb0e31de874147363e269291772bbfed4797fe22f0aeba90f4c840654714abdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-0-0-main-complete/records.d",
+      "sha256": "fca98d04f4ca95faaea747811c3c6e066eee1f1dfb69daee12c05639fef3b6cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/interfaces.d",
+      "sha256": "0d2218f0e6dd0e6dd05dacdf305ba3e1d404e6e2d279b0c06a68ced3202ecc8d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-0-0-rl-complete/records.d",
+      "sha256": "27643dbe68d6c74601a3d65239e3974deebce2e49ffc6e0fafbcb964e7462c71"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-main-complete/interfaces.d",
+      "sha256": "2a8b145689f6f35ae81f7ee21be8b80e412471db330db8a2534485af633a7856"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-main-complete/records.d",
+      "sha256": "700486f99316ae94cce5b451bc2798397b4900da01615d14f0686026b493a554"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/interfaces.d",
+      "sha256": "ef9c299e0715d83dab38c83ffe41bbdd1bdef3ae5bbca61e65c9de5779cb4b66"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/agibot-ros2-sdk-v1-1-0-rl-complete/records.d",
+      "sha256": "fffb0a55dcebe515d27b5c4473638e22230a3c6d1231074a6dacfb116f8fe604"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v0_8_1_main/records.d",
+      "sha256": "e329f63449f06ee55e2195dedac6e1aa058ed90107711b193e9ff3ea629ec389"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v0_8_2_main/records.d",
+      "sha256": "d22e522f30470ddb368b6b09d568de5b024aef149eecd463c7ca5bc298f1d18a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v0_9_0_main/records.d",
+      "sha256": "3995f98369af529cf0b88a4ee4dc4170e4c11b2e76e82b2c48ca7cf82d51b1b0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v1_0_0_main/records.d",
+      "sha256": "c4ecf9dfcfcd90f0750ee790d34381b1442bf04ea7c80adcde23466e6dfe4fdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v1_0_0_rl/records.d",
+      "sha256": "795ba591b7503c59b3b92b5f02ad5f7b5fed2d5c39721b97b25a1bc3db49fa0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v1_1_0_main/records.d",
+      "sha256": "5fccb5c6724c3d32e03f4f0da2ecc0d9dee76bab4360a93b14aff3aa45c0ac6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/d/ros2/sdk_v1_1_0_rl/records.d",
+      "sha256": "839dfc2cfbbb95ecf4af390f573797372b6bdb93fa58468d05522725898f05b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/as/wasi.ts",
+      "sha256": "307b12e3ca99ec0361fb84671ffe093690e135883b9a6eaaba3789341cd33362"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/client.h",
+      "sha256": "2bc506b36b480328170cc8bb4672b81b9a58c51387c5452cf85a72b1485c529a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/command_io.h",
+      "sha256": "f4e82373a34e897becee683b97f832ff23b09a35137bb7a92bfc63e2220d76fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/dotnet/Transport.cs",
+      "sha256": "f328604cb92c12c57a5b248ece31d2e15757e780b19626a8e2548c4d187c7148"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/go/aimdk_v1_1_0/records.go",
+      "sha256": "2fbdeb5c3d1da4fd437289e1eb1008af449b2ee12a0820a3e5a82ff410f9249b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Core.java",
+      "sha256": "3ae4fcd5ee86002fa448065426d70e8dd147bf461f077a316aee71530867153e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/jvm/Records.java",
+      "sha256": "2359a8ad7b6e227c96d6d545bf721449fbdd4b2d31ad11694c9a312ccbf843b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/observation_json.h",
+      "sha256": "8cc5a02f29ab0bbe4e1ce5d4a97f592aeb318215d503404618829992b811aef3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/output.h",
+      "sha256": "5bcccffe16c559898888b0ae6aabebc6afb941904ca93090e806b76146240f87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.js",
+      "sha256": "8fcfa583dc92d43fb3ae38c93c469aaa72ad59464d60fdbe6bfda2d1674da9dd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.json",
+      "sha256": "f29309e03422d038a4cf7206aafeebf978654e7a1f4a440bd04a91342b907d60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.lua",
+      "sha256": "b283aa633a73772fb8fe5c513b354e0ce66a84297c4fbb6bb0e5d9055d9f402f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.php",
+      "sha256": "953da8dbea4e96cb022f98b4b2e2ef076fc48514cb40ff0e5f4f6ff332a58fc8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.py",
+      "sha256": "164ee7e75af9761cd7cef8423309dd9b9daf608d8fe7403eda9b9789a000d3e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/agibot/shared/schema/aimdk_v1_1_0_main.rb",
+      "sha256": "0ae98b296275097a2e2a02b87c1d12deb503d55328732524231e438f60d46701"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/.gitignore",
+      "sha256": "a8b0c3df4bdc42985e5ec2ac61ad10e263c3b02c9d63c8683dc0d65ef1b096b4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/dub.json",
+      "sha256": "a557ae11b49d725331432e2af4af6d5efe70ffc5730b6dbc17b30f5e5b3e939c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/native_command.d",
+      "sha256": "e9e03df1146dcaa1ee54c4b3bca771f49b6d712e07f185c5753d8f8dd6234ffd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/package.d",
+      "sha256": "20ef2bc37f354d54ae6df0e34902ef41b69bdc5ddd80fc83733db3ab2572e2fd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/raw.d",
+      "sha256": "a8d59877978bc6abca1109ebe2e52ce9f2d603997c64f5cccd386ed364841992"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/typed.d",
+      "sha256": "953f6ae1a896f1a1801ce026633f471876310921aeee980a6c9c996dfd774c73"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/source/roswasm/wire.d",
+      "sha256": "7809b9ddeab64afaf06d50a758319ea8692c4153baf8b32526a94d6166b2219c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/d/wire.d",
+      "sha256": "9883d18de0f236d6fad8c68b75bd4a633a1d1e30452170b71672281265e0e6e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agibot/provider.json",
+      "sha256": "c42e2f8f25cc45823af00cf44685f337d4723fff5c5273207649128cf42d8ade"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/d/wasi_stdio.d",
+      "sha256": "7ce2a88283fbbc94ad26a64c804f183bf136618a27c9c8e4d5b5d80a93c78279"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/command_io.c",
+      "sha256": "5f1397ed8b672966ba20df20de9063db38fa84b678771a98e978b89d78cc5f68"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/json_records.inc",
+      "sha256": "de4aeb006c4085d0307b180866fb81ec4597d0c5c19d537e4445814c193a8a8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation.c",
+      "sha256": "dd305d33ce99ac9d14186c4b94fd51abd27af2c8c479eb17d09300783ffdbbdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/observation_json.c",
+      "sha256": "49a79c3cbf9b28d730f1e39124f47821818bb67f616db4ff4ff8c77f73ead065"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/agibot/shared/wasip1_main.c",
+      "sha256": "6c1f5353b8c58056868f661481a5f96b60ab964f738f41c34a942dc29202324d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/agibot/provider.lua",
+      "sha256": "40610d8482fb4368a16b5664c1cf542e6f5f373764db009e7e85fc8d5f69b24e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.d",
+      "sha256": "3c398b10eda5a3265bf62c4c1109ee61cee079716da2305af5d02f9cf19fbaef"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "922c0df3b8242bc2448dc4d3b72016b2655ca7e85a5dd825f12178a196d1288b"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "0d688216ccbf365fe2a3f45c33a8f11bd9fd7b3ccd1d0e7688e27621b9f9eade"
+    }
+  ],
+  "cases": [
+    {
+      "id": "no-resource-grant",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "response_present": false,
+        "has_required": false,
+        "required": "0",
+        "rpc_status_present": false,
+        "rpc_status": "0",
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

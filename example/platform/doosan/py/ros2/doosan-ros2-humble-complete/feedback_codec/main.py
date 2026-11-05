@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("doosan.py.ros2.doosan-ros2-humble-complete.bounded_records")
+records = import_module("doosan.py.ros2.doosan_ros2_humble_complete.bounded_records")
 value = records.Ros2Dsr_msgs2ActionJogH2r_Feedback()
 wire = value.encode()
 decoded = records.Ros2Dsr_msgs2ActionJogH2r_Feedback.decode(wire)

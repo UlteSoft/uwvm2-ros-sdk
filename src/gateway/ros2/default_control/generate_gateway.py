@@ -147,9 +147,15 @@ def build(parent, bounded, catalog):
         "native_default",
         "native_scalar",
         "string_encoding",
+        "float_policy",
     }:
         raise ValueError("unreviewed IR field/domain extension requires a source successor")
     records, ordered, interfaces, pins = bounded.load_catalog(parent, catalog, False)
+    # Current shared IR also describes vendor nonfinite policies. This control
+    # emitter retains its complete finite floating-point conversion contract;
+    # it must reject another domain instead of silently dropping that metadata.
+    if any(member.float_policy != "finite" for record in ordered for member in record.members):
+        raise ValueError("control adapters require the finite floating-point domain")
     if not ordered or any(r.profile != PROFILE for r in ordered):
         raise ValueError("actual reviewed control profile required")
     roots = {i.name: i for i in interfaces}
@@ -606,10 +612,20 @@ def converter(parent, bounded, node, ordinal, records):
             + "(record,next)))return e;static_assert(std::is_trivially_copyable_v<T>);auto old=*static_cast<T*>(value);*static_cast<T*>(value)=next;next=old;return 0;}",
         ]
     else:
+        # Some genuine generated fields (e.g. BoundedVector) declare move
+        # construction noexcept but not assignment. The caller exclusively owns
+        # this initialized complete object. Fully validate/fill its private
+        # replacement first, then require a compiler-proved nonthrowing commit.
+        # Transparent same-type placement replacement preserves the destination
+        # identity; no allocation or fallible member write occurs after destroy.
         lines += [
             "if((e=fill_"
             + tag
-            + '(record,next)))return e;static_assert(std::is_nothrow_move_assignable_v<T>,"atomic whole native commit required");*static_cast<T*>(value)=std::move(next);return 0;}'
+            + '(record,next)))return e;'
+            + 'if constexpr(std::is_nothrow_move_assignable_v<T>){*static_cast<T*>(value)=std::move(next);}'
+            + 'else {static_assert(std::is_nothrow_move_constructible_v<T>&&std::is_nothrow_destructible_v<T>,"nonthrowing complete native replacement required");'
+            + 'auto*destination=static_cast<T*>(value);destination->~T();::new(static_cast<void*>(destination))T(std::move(next));}'
+            + 'return 0;}'
         ]
     lines += ["catch(std::bad_alloc const&){return 12;}catch(...){return 22;}}"]
     lines += [
@@ -853,8 +869,8 @@ def endpoint_products(parent, nodes, codecs):
     if len(selected) != 9 or any(n["language"] != "cpp" for n in selected):
         raise ValueError("exact complete nine-root all-C++ family required")
     result = {}
-    service_args = "std::shared_ptr<profile const> const&p,std::shared_ptr<rclcpp::Node> const&node,std::shared_ptr<uwvm_rmw_cpp::Registry const> const&old,ros::capability_spec const&cap,wire::binding const&o,std::uint64_t id,std::size_t history,std::shared_ptr<native_rcl_service::report> const&report,std::shared_ptr<native_rcl_service_registry::endpoint>&out,wire::packet&packet"
-    pub_args = "std::shared_ptr<profile const> const&p,std::shared_ptr<rclcpp::Node> const&node,ros::capability_spec const&cap,wire::binding const&o,std::uint64_t id,std::shared_ptr<native_rmw_publisher::endpoint>&out,wire::packet&packet"
+    service_args = "std::shared_ptr<profile const> const&p,std::shared_ptr<::uwvm2::ros_gateway::ros2_compat::node_type> const&node,std::shared_ptr<uwvm_rmw_cpp::Registry const> const&old,ros::capability_spec const&cap,wire::binding const&o,std::uint64_t id,std::size_t history,std::shared_ptr<native_rcl_service::report> const&report,std::shared_ptr<native_rcl_service_registry::endpoint>&out,wire::packet&packet"
+    pub_args = "std::shared_ptr<profile const> const&p,std::shared_ptr<::uwvm2::ros_gateway::ros2_compat::node_type> const&node,ros::capability_spec const&cap,wire::binding const&o,std::uint64_t id,std::shared_ptr<native_rmw_publisher::endpoint>&out,wire::packet&packet"
     sub_args = pub_args.replace("native_rmw_publisher", "native_rmw_subscription")
     pre = [
         "// Light addresses/routing only; no typed Native messages or old full-table templates.",
@@ -950,9 +966,13 @@ def endpoint_products(parent, nodes, codecs):
 def run(source_root, catalog, canonical, output, parent_sha, bounded_sha):
     if not all(p.is_absolute() for p in (source_root, catalog, canonical, output)):
         raise ValueError("explicit absolute paths required")
+    # The standalone SDK owns tools/ directly. Retain the combined-checkout
+    # spelling for explicitly selected older source closures; both paths still
+    # undergo the same retained-file reads and independent SHA verification.
+    sdk_root = source_root if (source_root / "tools/custom_types.py").is_file() else source_root / "sdk"
     parent_path, bounded_path = (
-        source_root / "sdk/tools/custom_types.py",
-        source_root / "sdk/tools/custom_types/bounded_profile.py",
+        sdk_root / "tools/custom_types.py",
+        sdk_root / "tools/custom_types/bounded_profile.py",
     )
     parent_raw, bounded_raw = read(parent_path), read(bounded_path)
     if (

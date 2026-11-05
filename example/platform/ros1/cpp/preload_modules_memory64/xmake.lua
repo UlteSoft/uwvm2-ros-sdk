@@ -39,6 +39,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run uses existing Wasm; compiler restoration belongs to an explicit build.
 set_policy("run.autobuild", false)
@@ -106,4 +107,5 @@ target("main")
     if has_config("denial-probe") then
         add_defines("PRELOAD_DENIAL_PROBE")
     end
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest=(has_config("denial-probe") and "isolation-component.json" or "component.json")})
 target_end()

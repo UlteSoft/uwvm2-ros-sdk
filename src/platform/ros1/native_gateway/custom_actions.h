@@ -10,6 +10,7 @@
  * UWVM2 concrete bounded ROS1 Actions. APL-2.0.             *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "custom_topics.h"
 #include <gateway/common/bounded_feedback.h>
 #include <gateway/common/nonreusing_ids.h>
@@ -251,7 +252,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                 }
                 auto e{std::make_shared<endpoint>()};
                 e->capability = c;
-                auto depth{static_cast<std::uint32_t>(limit(c, "max-event-queue-depth"))};
+                auto depth{native_queue_depth(c, "max-event-queue-depth")};
                 e->goal = node.advertise<ActionGoal>(c.resource + "/goal", depth, false);
                 e->cancel = node.advertise<actionlib_msgs::GoalID>(c.resource + "/cancel", depth, false);
                 std::weak_ptr<state> weak{this->shared_from_this()};
@@ -269,7 +270,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                         }
                         std::lock_guard<std::mutex> lock{s->mutex};
                         auto g{s->find_native(resource, message->status.goal_id.id)};
-                        if(!s->active || !g || g->server || !feedback_callback_live(true, g->error, std::chrono::steady_clock::now() < g->deadline) ||
+                        if(!s->active || !g || g->server || !feedback_callback_live(true, g->error, ::uwvm2::utils::host_clock::now() < g->deadline) ||
                            !FeedbackCodec::valid(message->feedback))
                         {
                             return;
@@ -373,7 +374,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                                                     {
                                                         return;
                                                     }
-                                                    auto now{std::chrono::steady_clock::now()};
+                                                    auto now{::uwvm2::utils::host_clock::now()};
                                                     for(auto const& pair: s->goals)
                                                     {
                                                         auto const& g{pair.second};
@@ -416,7 +417,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                 e->server = true;
                 e->capability = c;
                 e->events = std::move(events);
-                auto depth{static_cast<std::uint32_t>(limit(c, "max-event-queue-depth"))};
+                auto depth{native_queue_depth(c, "max-event-queue-depth")};
                 e->feedback = node.advertise<ActionFeedback>(c.resource + "/feedback", depth, false);
                 e->result = node.advertise<ActionResult>(c.resource + "/result", depth, false);
                 e->status = node.advertise<actionlib_msgs::GoalStatusArray>(c.resource + "/status", depth, false);
@@ -467,7 +468,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                         g->native_id = message->goal_id.id;
                         g->server = true;
                         g->capability = e->capability;
-                        g->deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(limit(g->capability, "timeout-ms"));
+                        g->deadline = quota_deadline(g->capability);
                         g->status.goal_id = message->goal_id;
                         g->status.status = 1;
                         g->cancel = [weak, weak_e, id]() -> std::uint32_t
@@ -577,7 +578,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                                                         return;
                                                     }
                                                     std::vector<std::uint64_t> expired;
-                                                    auto now{std::chrono::steady_clock::now()};
+                                                    auto now{::uwvm2::utils::host_clock::now()};
                                                     for(auto const& pair: s->goals)
                                                     {
                                                         auto const& g{pair.second};
@@ -633,10 +634,10 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     }
                     auto e{client(c)};
                     lock.unlock();
-                    auto until{ipc::after(static_cast<uint32_t>(std::min<std::uint64_t>(timeout, limit(c, "timeout-ms"))))};
+                    auto until{request_deadline(c,timeout)};
                     while(!e->goal.getNumSubscribers() || !e->feedback_sub.getNumPublishers() || !e->result_sub.getNumPublishers())
                     {
-                        if(std::chrono::steady_clock::now() >= until)
+                        if(::uwvm2::utils::host_clock::now() >= until)
                         {
                             return {110, {}};
                         }
@@ -648,7 +649,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     {
                         return {9, {}};
                     }
-                    if(std::chrono::steady_clock::now() >= until)
+                    if(::uwvm2::utils::host_clock::now() >= until)
                     {
                         return {110, {}};
                     }
@@ -664,7 +665,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     g->type_identity = c.type_identity;
                     g->capability = c;
                     g->native_id = native_io::goal_identity(process_nonce, id);
-                    g->deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(limit(c, "timeout-ms"));
+                    g->deadline = quota_deadline(c);
                     auto publisher{e->cancel};
                     auto native{g->native_id};
                     g->cancel_publish = [publisher, native]
@@ -731,15 +732,15 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                             auto e{std::make_shared<endpoint>()};
                             e->capability = c;
                             e->cancel = node.advertise<actionlib_msgs::GoalID>(c.resource + "/cancel",
-                                                                               static_cast<std::uint32_t>(limit(c, "max-event-queue-depth")),
+                                                                               native_queue_depth(c, "max-event-queue-depth"),
                                                                                false);
                             entry = endpoints.emplace(c.alias, e).first;
                         }
                         auto publisher{entry->second->cancel};
-                        auto until{ipc::after(static_cast<uint32_t>(std::min<std::uint64_t>(timeout, limit(c, "timeout-ms"))))};
+                        auto until{request_deadline(c,timeout)};
                         while(!publisher.getNumSubscribers())
                         {
-                            if(std::chrono::steady_clock::now() >= until)
+                            if(::uwvm2::utils::host_clock::now() >= until)
                             {
                                 return {110, {}};
                             }
@@ -779,7 +780,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                 }
                 if(c.operation == "action.respond")
                 {
-                    auto until{ipc::after(static_cast<uint32_t>(std::min<std::uint64_t>(timeout, limit(c, "timeout-ms"))))};
+                    auto until{request_deadline(c,timeout)};
                     auto descriptor{ipc::find_custom_action(1, c.type)};
                     if(!descriptor || !ipc::validate_custom_action_request(*descriptor, "action.respond", data.data(), data.size()))
                     {
@@ -797,7 +798,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     {
                         return {13, {}};
                     }
-                    if(g->terminal || g->deadline <= std::chrono::steady_clock::now())
+                    if(g->terminal || g->deadline <= ::uwvm2::utils::host_clock::now())
                     {
                         return {110, {}};
                     }
@@ -827,7 +828,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     {
                         return {9, {}};
                     }
-                    if(std::chrono::steady_clock::now() >= until)
+                    if(::uwvm2::utils::host_clock::now() >= until)
                     {
                         return {110, {}};
                     }
@@ -852,7 +853,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                         emit_result(e, g, kind == 2 ? 3 : kind == 3 ? 4 : 2, value);
                         erase(id);
                     }
-                    return std::chrono::steady_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{};
+                    return ::uwvm2::utils::host_clock::now() >= until ? ipc::call_result{110, {}} : ipc::call_result{};
                 }
                 if((c.operation == "action.receive-feedback" || c.operation == "action.receive-result") && data.size() == 8)
                 {
@@ -873,7 +874,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     }
                     if(c.operation == "action.receive-feedback")
                     {
-                        if(!g->terminal && std::chrono::steady_clock::now() >= g->deadline)
+                        if(!g->terminal && ::uwvm2::utils::host_clock::now() >= g->deadline)
                         {
                             g->terminal = true;
                             g->error = 110;
@@ -902,7 +903,7 @@ namespace uwvm2::ros_gateway::ros1_custom_actions
                     }
                     if(g->result.empty())
                     {
-                        if(g->deadline <= std::chrono::steady_clock::now())
+                        if(g->deadline <= ::uwvm2::utils::host_clock::now())
                         {
                             if(g->cancel_publish)
                             {

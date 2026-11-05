@@ -1,0 +1,75 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-286",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "32fc435000770f7cb4ad2f6cd872792803cab4beff6a005a644fdc3a20ea6e2a"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "f8cda62b538cffcbf5c9177ca8be4cc68c8b2569bf946247cd770a8ce3f68efd"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/catalog.json",
+      "sha256": "7f9213517f2625489b7194e0dacfde24e1085fe570acfa72f2c6788fcbceed5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/scout_msgs/msg/ScoutActuatorState.msg",
+      "sha256": "9cf3fd50d46433647dd02e8e0f012ea1f5b3fe8e04aec43fe914fca2f5e4332b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/scout_msgs/msg/ScoutLightState.msg",
+      "sha256": "f5fc087bf0be8333c6e57baa633152667a60d3167819cef79c7e505a32c68d5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/scout_msgs/msg/ScoutStatus.msg",
+      "sha256": "d3ad630a13178396c8f29c0a86a838cc8d5310246b1f4eee52e1ee1e7d51f923"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros2/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "121\n"
+    }
+  ]
+}

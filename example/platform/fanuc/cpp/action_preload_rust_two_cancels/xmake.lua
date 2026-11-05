@@ -12,6 +12,7 @@ if not root or not path.is_absolute(root) or not os.isfile(path.join(root, "tool
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root,"tools/shared/xmake/wasi_component.lua"))
 set_policy("run.autobuild", false)
 
 -- @brief Preserve the complete original FANUC binding for each actual C++ source.
@@ -81,4 +82,5 @@ target("main")
     add_files("main.cpp")
     add_deps("io", "algorithm", "ros_comm")
     add_ldflags("-Wl,--allow-undefined", {force = true})
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

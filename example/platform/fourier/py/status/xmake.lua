@@ -42,6 +42,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 set_plat(get_config("plat") or "wasm-wasip1")
@@ -54,4 +55,5 @@ target("fourier-py-status")
     set_values("ros.sdk.profile", "ros2_aurora_bridge_v1")
     set_ros_scenario("status")
     add_files("main.py", {rule = "ros.wasm.source"})
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

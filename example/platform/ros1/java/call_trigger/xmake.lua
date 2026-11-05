@@ -45,11 +45,13 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 -- Run uses existing Wasm; compiler restoration belongs to an explicit build.
 set_policy("run.autobuild", false)
 
 target("ros1-java-call_trigger")
     set_language("java")
+    set_values("ros.sdk.main_class", "Main")
     set_ros_platform("ros1")
     set_ros1_version("noetic")
     set_ros_scenario("call_trigger")
@@ -57,4 +59,5 @@ target("ros1-java-call_trigger")
     set_plat("wasm-wasip1")
     set_arch("wasm32")
     add_files("Main.java")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

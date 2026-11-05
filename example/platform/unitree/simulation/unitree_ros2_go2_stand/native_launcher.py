@@ -16,7 +16,7 @@ def pin(row):
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  for name in ['sdk-root','input-bundle','output','ready-file']:parser.add_argument('--'+name,type=Path,required=True)
- parser.add_argument('--stop-file',type=Path);parser.add_argument('--duration-seconds',type=float,default=60);args=parser.parse_args();assert 1<=args.duration_seconds<=300 and not args.ready_file.exists();sdk=args.sdk_root.resolve();bundle=json.loads(args.input_bundle.read_text());assert bundle['format']=='uwvm-native-go2-inputs-v1';assert sha(sdk/'tools/language/python/relink_stdlib.py')==bundle['budget_source_sha256'];sys.path.insert(0,str(sdk/'tools/language/python'));from relink_stdlib import cgroup_budget
+ parser.add_argument('--stop-file',type=Path);parser.add_argument('--duration-seconds',type=float,default=60);args=parser.parse_args();assert 1<=args.duration_seconds<=300 and not args.ready_file.exists();sdk=args.sdk_root.resolve();bundle=json.loads(args.input_bundle.read_text());assert bundle['format']=='uwvm-native-go2-inputs-v2';assert sha(sdk/'tools/shared/python/kernel_budget.py')==bundle['budget_source_sha256'];sys.path.insert(0,str(sdk/'tools/shared/python'));from kernel_budget import cgroup_budget
  budget=cgroup_budget();group=Path('/sys/fs/cgroup')/Path('/proc/self/cgroup').read_text().strip().split(':',2)[-1].lstrip('/');assert int((group/'memory.max').read_text())<=2147483648 and(group/'memory.swap.max').read_text().strip()=='0';quota,period=(group/'cpu.max').read_text().split();assert quota!='max'and int(quota)<=2*int(period)
  closure_path=pin(bundle['closure']);closure=json.loads(closure_path.read_text())
  for row in closure['files']:pin(row)

@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-objectc-frontend-source-v1",
+  "llvm_commit": "7a941dfb2877a0b8cf30323fefa85ad019e0b0f5",
+  "llvm_version": "23.1.4",
+  "source": "https://github.com/llvm/llvm-project",
+  "nil_call_fix": "https://github.com/llvm/llvm-project/commit/a976856deff93f6e41b0b55e464a2f94da09a30c",
+  "patches": [
+    {
+      "path": "share/uwvm/objc-CGObjCGNU.cpp.patch",
+      "sha256": "15bae521e401be1c9dba468ffd2cdf8e8efb2f971fc40aa600c7e96c7d493b85"
+    },
+    {
+      "path": "share/uwvm/objc-Clang.cpp.patch",
+      "sha256": "2e0cfc76b534984af0548e3a685c1519f7259baf0cbb7ab98dee576a6d035058"
+    }
+  ],
+  "build": "Incremental Ninja clang target from the retained LLVM build, with the two source overlays recorded above. Original LLVM tools were not replaced.",
+  "compiler_sha256": "4a4d7ad4fef76128ecbaa2a56e568245fcced7f3a5c940bf268c9564b8cebb7e",
+  "scope": "Host compiler only; every Objective-C application and libobjc executes as Core WebAssembly inside the selected VM."
+}

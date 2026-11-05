@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "r",
+  "profile": "controller_core_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/r/ros2/flexiv-controller-core-foxy-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "modules": [
+    {
+      "name": "ros/r/roswasm/wire",
+      "path": "include/platform/ros/r/roswasm/wire.R"
+    },
+    {
+      "name": "flexiv/r/controller_core_foxy/records",
+      "path": "include/platform/flexiv/r/ros2/flexiv-controller-core-foxy-complete/records.R"
+    }
+  ]
+}

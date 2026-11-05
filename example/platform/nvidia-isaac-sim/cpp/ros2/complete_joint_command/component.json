@@ -1,0 +1,100 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-archive-or-denial-3416",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/cpp/support/basic_io.hpp",
+      "sha256": "7a276af05188c9e9528179e627e6ba85f2bde71e7473f1c48e0598727f21ef8f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/complete/interfaces.h",
+      "sha256": "9824a5180a7f00c90d30bd866236f841a775fadc925eb5382d107d9f77488996"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/complete/records.h",
+      "sha256": "1a4afa41cb1820c1ca10a9178163b894d8e00e2f6022fcc926d46fa4fd938cdc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/isaac-sim-complete/bounded_interfaces.h",
+      "sha256": "1e76fec976e1a66624d6411c6146e00976bc315d4bc3c59576f4ee476cc27897"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/c/ros2/isaac-sim-complete/bounded_records.h",
+      "sha256": "76027dfa9b456308aebf03644b7a64796846b0949410f0557e0e01ce3d8599be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/complete/interfaces.hpp",
+      "sha256": "9ace681b6ee34c0b16b616493fe6480174f423a3ced2256de2bee2e57ebf2eeb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/complete/records.hpp",
+      "sha256": "8dedbd31ce8bfa7d5088debf2bb9f269e586a78ad2b1b7f85405f5f77e97a80a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/isaac-sim-complete/bounded_interfaces.hpp",
+      "sha256": "2372cd9695ce426bac718ea37682eedd2488fe50bcff2dfe5154bbf9d49e80fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/cpp/ros2/isaac-sim-complete/bounded_records.hpp",
+      "sha256": "2618f2aa167d7e72fa209e2364e630a6bf5baa53811f13201c0657d82e4834ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "60f02b7a830f2515748190095ed4e8f160c06acf4a43e420d5be7730d1b0edf3"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "2bf86e196df54739a30aae5e153b5c56b0b72099a380f494d1f711ee269d1de1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "no-resource-grants-preserve-unopened-owner",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": ""
+    }
+  ]
+}

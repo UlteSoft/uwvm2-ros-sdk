@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-540",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "31f27272e1900502c7df45ca7705bfe6e19cf45a8a1ba85fe931db80e9d4c619"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "5ff8e3bdfc88f14e0725f1ef20f11d09022876620feb6672e2de36ac91d4ef8d"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "3dfb9d59b27e8cf141029e01b1e4e755b3c8f3b912cb9d63e0a4e84f5b658e17"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros1/catalog.json",
+      "sha256": "6d34bb6b6321412fbedfb2eb3e8f9075bfb0590ccf111b1af7208a1fd68f15ec"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros1/clearpath_platform_msgs/msg/RGB.msg",
+      "sha256": "bc66b218bd99dd786fe9a821abe9262b4ebe7e7943d62fe57470415995119547"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "3\n"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 // @brief Observe one complete original ROS 2 robot_status native message.
 // @details One explicit alias is required; the real Odin observer closes before stdout.
 package main
-import core "ros:odin/observation"
+import core "native:odin/observation"
 import yaskawa "yaskawa:odin/ros2/observation"
 // @brief Enter the genuine compiled Odin command with its original numeric status.
 // @details Read exactly one strict UTF-8 alias from the original WASI argument vector.

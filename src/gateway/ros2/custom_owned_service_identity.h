@@ -323,9 +323,7 @@ namespace uwvm2::ros_gateway::custom_owned_services::detail
             auto p=cap.limits.find("adapter-codec-identity");
             return p!=cap.limits.end()&&p->second==row_.canonical&&cap.type==row_.type&&cap.type_identity==row_.native&&
                 native::explicit_qos(cap)&&field(cap,"validator")=="none"&&!cap.alias.empty()&&!cap.resource.empty()&&cap.resource.front()=='/'&&
-                (cap.operation=="service.call"||cap.operation=="service.advertise"||cap.operation=="service.respond")&&
-                limit(cap,"max-request-bytes")>=RequestCodec::wire_bytes&&limit(cap,"max-response-bytes")>=ResponseCodec::wire_bytes&&
-                limit(cap,"max-inflight")&&limit(cap,"max-inflight")<=256&&limit(cap,"timeout-ms")&&limit(cap,"timeout-ms")<=3600000;
+                (cap.operation=="service.call"||cap.operation=="service.advertise"||cap.operation=="service.respond");
         }
         static std::uint32_t qualify(row_identity row,std::shared_ptr<CompiledCanonicalIdentity const>& output)noexcept
         {
@@ -341,7 +339,7 @@ namespace uwvm2::ros_gateway::custom_owned_services::detail
                     d->request->native_identity!=RequestCodec::native_identity||d->response->native_identity!=ResponseCodec::native_identity||
                     d->request->codec_identity!=RequestCodec::codec_identity||d->response->codec_identity!=ResponseCodec::codec_identity||
                     d->request->wire_bytes!=RequestCodec::wire_bytes||d->response->wire_bytes!=ResponseCodec::wire_bytes||
-                    RequestCodec::wire_bytes>32768||ResponseCodec::wire_bytes>32768)return 13;
+                    RequestCodec::wire_bytes>ipc::max_payload_bytes||ResponseCodec::wire_bytes>ipc::max_payload_bytes)return 13;
                 Support const* support{};if(!full_native(row,exports,support))return 13;
                 auto value=std::shared_ptr<CompiledCanonicalIdentity>{new CompiledCanonicalIdentity{row,d,exports}};
                 auto req=rosidl_typesupport_cpp::get_message_type_support_handle<typename Service::Request>();

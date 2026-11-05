@@ -1,0 +1,130 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "observation-denied-3755",
+  "test_scope": "Actual application must return permission-denied when its ROS namespace is enabled without resource grants. This checks refusal handling; it does not qualify successful native transport.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4a116bf69aaf476af9655f9adef1be980953f1a079bc749305243f43f10a107e"
+    },
+    {
+      "scope": "example",
+      "path": "main.ts",
+      "sha256": "d3bf7a3e1838aedbad510ffab68f51406b8923dc8cb3b5590bc6cda1615dcc21"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/api.ts",
+      "sha256": "fe15a451e36c7c4b67b83f1af14f95ac62d1c99b20efdcd80779800ff63a392c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/command.ts",
+      "sha256": "3636af7f90aa2bfc976d79b2fa44bc57c6d1cc78046daf025bf8286b0d2222cb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/roswasm.ts",
+      "sha256": "e7337276ea366379c351ff2baa02f9a09eed220716a1dc80b54e6721180be40a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/codecs.ts",
+      "sha256": "7c38acbbb930d20a2d874ef000d1de6eed47e63a3e5ecdbf4145cec1aca98d35"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/package.json",
+      "sha256": "a6f7eb14b66268b4aa7ff7404159c04f9574dc3db82ffc33c43621d5163b9dea"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/events.ts",
+      "sha256": "c70a1b6e19b4209e5e47d4e9b25e529a4b7b2b771f08c496a5281fd77ab8c9e9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/local.ts",
+      "sha256": "54a66cc498a1022ea52870619479104c2a0216acd5a09fb77fa09cd942fa824c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros1/roswasm.ts",
+      "sha256": "69047a4b6f13e8ced919236dcf381da99306a1319a168686714b204091b9cf37"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros1/raw.ts",
+      "sha256": "7d46af1d4b03ba2674913977f6ecd2618f05ecaeb03dcf4fcdf3d048b58e6e69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/roswasm.ts",
+      "sha256": "59cc2fd1eaae52800d7064b9bfaff8f43828a9d299d204633d44599c03f81296"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/raw.ts",
+      "sha256": "9a89352857d0d77e20e5e994203a0ffceea4056b53bf930fe0321d4e8f58ad1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/owned.ts",
+      "sha256": "2d1439f04c68434045c818b40227b1abc9b606b92b432e6eb2ce847041d28f46"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/wire.ts",
+      "sha256": "1bda923f824cc9ca49e8e4444a401c30702956ae18ccc121b92bb6c33359e8bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/raw.ts",
+      "sha256": "b32f7a8b9da72d9f1d10af2e170d1d444db901e71c49f8922be3cf8cd957f641"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/imports.ts",
+      "sha256": "53bca3a547feed701d6f69f9ca2ae587f22476ec1d2426ba3413100294af2aba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/ros2/rmw_service/checked.ts",
+      "sha256": "25ded41ef5862ba7b664cc256e7990f9a40d3bbeb9c0bddea8d26143a3585d09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/as/custom-types/generated-r3/fixed_records.ts",
+      "sha256": "3e7c63a6769f75be9d27bcdfd6c75c5067bfe3d39335e40a8b05f941ae22e264"
+    }
+  ],
+  "cases": [
+    {
+      "id": "resource-authority-denied",
+      "arguments": [],
+      "expected_exit": 13
+    }
+  ]
+}

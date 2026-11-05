@@ -41,9 +41,9 @@ Use this fragment after the example loads the common SDK entry. Version and vari
 | `next_motion_state` | 有界等待一个原始 `McCommonState`，检查时间戳，并关闭订阅。 / Wait within the stated bound for an original `McCommonState`, inspect timestamps and close the subscription. |
 | `list_resources` | 调用原始 `GetRobotResources`，保留资源、版本和文件元数据；不启动播放。 / Call the original `GetRobotResources` and preserve resource, version and file metadata without initiating playback. |
 
-`xmake run` 使用已经构建的模块和已安装的 uwvm2-ros。操作者通过 `set_ros_run_config`、`--ros-run-config` 或 `UWVM_ROS_RUN_CONFIG` 提供公共 `uwvm-native-ros-run-v2` 部署文件。该文件明确声明 runtime、gateway、原生接口身份、资源 alias、限额、参数以及每个模块的 WASI/ROS 权限。编译不创建授权，运行器也不补授缺失权限。
+`xmake run` 使用已经构建的模块和已安装的 uwvm2-ros。操作者通过 `set_ros_run_config`、`--ros-run-config` 或 `UWVM_ROS_RUN_CONFIG` 提供公共 `uwvm-native-ros-run-v3` 部署文件。该文件明确声明 runtime、gateway、原生接口身份、资源 alias、限额、参数以及每个模块的 WASI/ROS 权限。编译不创建授权，运行器也不补授缺失权限。
 
-`xmake run` uses the already built module and an installed uwvm2-ros. The operator supplies a common `uwvm-native-ros-run-v2` deployment through `set_ros_run_config`, `--ros-run-config` or `UWVM_ROS_RUN_CONFIG`. It explicitly declares runtime and gateway paths, original native interface identities, resource aliases, limits, arguments and each module's WASI/ROS permissions. Compilation grants no authority, and the launcher does not add missing grants.
+`xmake run` uses the already built module and an installed uwvm2-ros. The operator supplies a common `uwvm-native-ros-run-v3` deployment through `set_ros_run_config`, `--ros-run-config` or `UWVM_ROS_RUN_CONFIG`. It explicitly declares runtime and gateway paths, original native interface identities, resource aliases, limits, arguments and each module's WASI/ROS permissions. Compilation grants no authority, and the launcher does not add missing grants.
 
 Preload 的 I/O、算法和 ROS 通信模块分别配置权限。ROS 通信模块若接受其他 Wasm 模块调用，必须明确选择 `module-exports` 调用边界；默认 `same-module` 拒绝跨模块调用。原生接口身份须来自所选发行版实际安装的定义和 typesupport，源码文件摘要不能代替它。旧工具链、旧协议的历史回执不构成当前合入源码的测试结果。
 

@@ -16,5 +16,18 @@
     "ros2": "share/platform/fanuc/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/fanuc/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "tinygo",
+    "go": {
+      "modules": [
+        "include/platform/ros/tinygo",
+        "include/platform/fanuc/tinygo/ros2/fanuc-ros2-complete"
+      ],
+      "tags": [
+        "ros2"
+      ]
+    }
+  }
 }

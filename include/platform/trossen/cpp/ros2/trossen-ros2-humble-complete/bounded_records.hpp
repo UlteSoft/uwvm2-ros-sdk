@@ -684,7 +684,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Interbotix_slate_msgsSrvSetLightState_Request default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Interbotix_slate_msgsSrvSetLightState_Request value = {0};
+            uwvm_custom::Ros2Interbotix_slate_msgsSrvSetLightState_Request value = {};
             (void)roswasmc_bounded_2_interbotix_slate_msgs_srv_SetLightState_Request_default(&value);
             return value;
         }

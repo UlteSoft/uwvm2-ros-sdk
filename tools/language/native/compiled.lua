@@ -15,6 +15,27 @@ local function identifier(name)
 	return name
 end
 
+-- @brief Map explicitly declared public modules into the compiler import tree.
+-- @details Only validated SDK sources are copied; no source text is rewritten.
+local function module_tree(context, core, modules, extension)
+ local directory = path.join(context.cache, "source-modules-" .. extension)
+ os.tryrm(directory)
+ os.mkdir(directory)
+ local names = {}
+ for _, module in ipairs(modules or {}) do
+  assert(type(module.name) == "string" and module.name:match("^[A-Za-z_][A-Za-z0-9_%.]*$")
+   and not module.name:find("..", 1, true) and module.name:sub(-1) ~= ".", "Invalid source module name")
+  assert(not names[module.name], "Duplicate source module name")
+  names[module.name] = true
+  local source = core.installed(context.root, module.source)
+  assert(os.isfile(source), "Module source must be a file")
+  local destination = path.join(directory, module.name:gsub("%.", "/") .. "." .. extension)
+  os.mkdir(path.directory(destination))
+  os.cp(source, destination)
+ end
+ return directory
+end
+
 -- @brief Compile a Zig import graph to one actual source-language object.
 -- @param context Exact frontend/target build context.
 -- @param core Shared path/tool helper.
@@ -22,8 +43,8 @@ end
 -- @param object Private output object filename.
 local function zig(context, core, compiler, object)
 	local options = context.action.zig or {}
-	local target = context.triple:startswith("wasm64-") and "wasm64-freestanding"
-		or "wasm32-freestanding"
+	local system = options.wasi and "-wasi" or "-freestanding"
+	local target = (context.triple:startswith("wasm64-") and "wasm64" or "wasm32") .. system
 	local arguments = { "build-obj", "-O", "ReleaseSafe", "-target", target, "-fno-stack-check" }
 	for _, dependency in ipairs(options.imports or {}) do
 		table.join2(arguments, { "--dep", identifier(dependency) })
@@ -85,6 +106,11 @@ local function dlang(context, core, compiler, bundle, object)
 	}
 	local options = context.action.d or {}
 	local roots = { path.join(context.root, "include/platform") }
+	if options.source_modules then
+		local mapped = module_tree(context, core, options.source_modules, "d")
+		table.insert(roots, mapped)
+		table.insert(arguments, "-I=" .. mapped)
+	end
 	for _, relative in ipairs(options.import_dirs or {}) do
 		local directory = core.installed(context.root, relative)
 		table.insert(roots, directory)
@@ -102,6 +128,9 @@ local function dlang(context, core, compiler, bundle, object)
 			local found
 			for _, directory in ipairs(roots) do
 				local source = path.join(directory, module:gsub("%.", "/") .. ".d")
+				if not os.isfile(source) then
+					source = path.join(directory, module:gsub("%.", "/"), "package.d")
+				end
 				if os.isfile(source) then
 					assert(not found or found == source, "Ambiguous declared D module: " .. module)
 					found = source
@@ -208,13 +237,40 @@ local function odin(context, core, compiler, object)
 	}
 	table.insert(arguments, "-collection:support=" .. context.cache)
 	local names = { support = true }
+    -- Stage explicitly selected source files into complete Odin packages. The
+    -- compiler sees the original sources; no import or application is rewritten.
+    local staged = path.join(context.cache, "odin-source-packages")
+    os.tryrm(staged)
+    os.mkdir(staged)
+    for _, package in ipairs((context.action.odin or {}).packages or {}) do
+        local collection = identifier(package.collection)
+        assert(collection ~= "support", "Reserved Odin collection name")
+        assert(type(package.directory) == "string" and #package.directory > 0
+            and not path.is_absolute(package.directory), "Invalid Odin package directory")
+        for component in package.directory:gmatch("[^/\\]+") do
+            assert(component ~= "." and component ~= "..", "Invalid Odin package component")
+        end
+        if not names[collection] then
+            names[collection] = true
+            table.insert(arguments, "-collection:" .. collection .. "=" .. path.join(staged, collection))
+        end
+        local directory = path.join(staged, collection, package.directory)
+        os.mkdir(directory)
+        for _, relative in ipairs(package.sources or {}) do
+            local source = core.installed(context.root, relative)
+            assert(path.extension(source) == ".odin" and os.isfile(source), "Expected an Odin source file")
+            local destination = path.join(directory, path.filename(source))
+            assert(not os.exists(destination), "Duplicate Odin package source filename")
+            os.cp(source, destination)
+        end
+    end
 	for _, collection in ipairs((context.action.odin or {}).collections or {}) do
 		local name = identifier(collection.name)
 		assert(not names[name], "Duplicate Odin collection: " .. name)
 		names[name] = true
 		table.insert(
 			arguments,
-			"-collection:" .. name .. "=" .. core.installed(context.root, collection.directory)
+			"-collection:" .. name .. "=" .. (collection.directory == "{cache}" and context.cache or core.installed(context.root, collection.directory))
 		)
 	end
 	os.vrunv(compiler, arguments)
@@ -228,6 +284,10 @@ end
 -- @param object Actual source-language object output.
 local function swift(context, core, compiler, bundle, object)
 	local options = context.action.swift or {}
+    if options.modules then
+        return import("swift_modules", {rootdir=path.join(context.root, "tools/language/native"), anonymous=true})
+            .compile(context, core, compiler, bundle, object)
+    end
 	local arguments = {
 		"-target",
 		"wasm32-unknown-none-wasm",
@@ -246,6 +306,9 @@ local function swift(context, core, compiler, bundle, object)
 		"-Xcc",
 		"-resource-dir=" .. path.join(bundle, "original/lib/clang/21"),
 	}
+	for _, relative in ipairs(options.import_dirs or {}) do
+        table.join2(arguments, { "-I", core.installed(context.root, relative) })
+    end
 	if options.bridging_header then
 		table.join2(
 			arguments,
@@ -305,6 +368,10 @@ local function haskell(context, core, compiler, bundle, objects)
 		"-opta-resource-dir=" .. core.installed(context.root, context.selected.resource_dir),
 		"-j2",
 	}
+	local options = context.action.haskell or {}
+	if options.source_modules then
+		table.insert(arguments, "-i" .. module_tree(context, core, options.source_modules, "hs"))
+	end
 	for _, relative in ipairs((context.action.haskell or {}).import_dirs or {}) do
 		table.insert(arguments, "-i" .. core.installed(context.root, relative))
 	end

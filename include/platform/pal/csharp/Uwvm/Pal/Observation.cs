@@ -51,6 +51,8 @@ namespace Uwvm.Pal
                 {
                     Uwvm.RosWasm.Result received = owner.Invoke("event_poll", capacity: capacity);
                     facts.Primary = received.Error;
+                    facts.RpcPresent = true;
+                    facts.RpcStatus = received.Error;
                     facts.RequiredPresent = received.Required.HasValue;
                     facts.Required = received.Required ?? 0;
                     if (received.Error == 0)

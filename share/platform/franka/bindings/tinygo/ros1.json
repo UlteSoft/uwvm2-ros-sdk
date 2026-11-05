@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "tinygo",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/tinygo/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "tinygo",
+    "go": {
+      "modules": [
+        "include/platform/ros/tinygo",
+        "include/platform/franka/tinygo/ros1/franka-ros1-complete"
+      ],
+      "tags": [
+        "ros1"
+      ]
+    }
+  }
+}

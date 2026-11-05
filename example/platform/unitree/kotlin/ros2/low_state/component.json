@@ -1,0 +1,940 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4694",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original guest with base WASI and ROS namespace but no resource authority. Assert denied acquisition and complete empty result facts; reject missing alias before acquisition. Native positive transport requires a separate explicit integration deployment.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "dba9ea836ce3b3844af463b81a6e527b921d3fa6578fde7b48e802cff9817cf5"
+    },
+    {
+      "scope": "example",
+      "path": "Main.kt",
+      "sha256": "4e9fada0d3f312b61c5066be6daec4348af4065566c1d732032bdcc54100fa49"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/ActionSet.java",
+      "sha256": "f4af878069ad57683074dc563e9170df5e84a9f684009b46d90c963c620a4a2d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Client.java",
+      "sha256": "6fe2da6ecbd82f5091b0fa54660bcdf6df203e233c3f0b7cd20c49afe113097e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/NativeCommand.java",
+      "sha256": "064652fd622f0de7d2b57951144d9dd5b46022579953d416d9d4df75f7142c60"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Owner.java",
+      "sha256": "51efe1ad3a8b1884e53e04e81e766083714ac40b59f0ca3db125cef8141cb52a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Standard.java",
+      "sha256": "61714df3f193e9dab04d36c8c1a7ded037e245394f0605b7c20212ea412104d5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wasi.java",
+      "sha256": "ef6db43d090dfa95b51652d9e6d398df1335147513b23a76a4542e0edbcb7547"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/java/uwvm/ros/Wire.java",
+      "sha256": "dcedef34c7cef226a91a91d7aa23fe7e2f6cb12d3e50e28efabc0ba885bdfd83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/pom.xml",
+      "sha256": "7781b7639026a2e11a33045dd2911f1b850d69deadf11a19d19310806ded82ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Capability.java",
+      "sha256": "ccb1c5ffb3c7464711342ca6aa04db5fd3005bd4e3a5c1c4a83d17462fb59e09"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codec.java",
+      "sha256": "e3c4d5ab33f65248f6fd14bae2fcd36b415c6dcc55544d48a2dc5b87dc6fd706"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Codecs.java",
+      "sha256": "37f37ecf7db85d9d766cf0077215f06d63c5881d22f1ca66adad360486c38b98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/LinearMemory.java",
+      "sha256": "7734a68e3f4e379be511093b1c1cd1121b99bbb00c479479c0eb4c305f834489"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Node.java",
+      "sha256": "135f4146914f9d20bec21341876ced008db1c12565235445bbb841ccb5f977fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OpenCleanup.java",
+      "sha256": "d6cbb42cb889111dced5b388a677d387791188ae792116bfc09640c4911a62be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedApplicationFailure.java",
+      "sha256": "a9ea5ae08a2381a83c5ff9e1a5a6c2532b258b17852aed87a4a429e0ab5b0c69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedService.java",
+      "sha256": "3bcc645698cc1278a0f9e306a660a06897afaec5bdf3cd9917ec4dda4e23da3c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/OwnedServiceWire.java",
+      "sha256": "b49737157f5610883e3599d55e493ff9deca9152073797d201ea564e946ff0e3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Result.java",
+      "sha256": "0af63620c074e76d56f0d1a7d5d6974bc68c076c6159151f9556f371de4721f6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementAttempt.java",
+      "sha256": "0f3236dc42065b0674537cf006c6a7cf0173220f89ac302aa7650c7c556fe828"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RetirementTransport.java",
+      "sha256": "3a74bd767c797777654c0050afc13f8450896dc6df319da9817ac1fc0b4014ad"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Raw.java",
+      "sha256": "bc7db6bab0d74680febc57f0b77e3c02c02379d19f7a272b81feda563c2dd8db"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros1Transport.java",
+      "sha256": "33ef5ce7332cfd85e73c7d41706e45fd3920877cf2881ef1f5284858cbc6917a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceRaw.java",
+      "sha256": "6af08834d45b272649ecc0cab221e5ed4099d76ff3044e3320afb46ef670b1ca"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2OwnedServiceTransport.java",
+      "sha256": "40466958f3485abb823977088b9921002d07a637d8c5da3a7aa848211c7ece87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Raw.java",
+      "sha256": "182a374fc6e7d906a226c0e496592b2e69402e240aa1f0aed68f77d4c4de3f27"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientRaw.java",
+      "sha256": "aee127404c3ae40f19d211694bc6dffb858f5cab597d3c6eccb50354d6f0dae4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2ServiceClientTransport.java",
+      "sha256": "969f24c03d7e6c10f4b716f8e9575b1c95456e1df67de531065c79ffc230a4a8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Ros2Transport.java",
+      "sha256": "19d0dc66ed18e53e860617693da3d6a08a402cc41a4cb05d305e2f87a0f6af5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/RosException.java",
+      "sha256": "86a777ae793ecb1cc40252cfdbcab5376ec032c640e468d7a8816c0e171f4f23"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClient.java",
+      "sha256": "9b36612b4082036c2a876c054a7849b01de46f6be73e2e3c78b0d95f5d25c4ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/ServiceClientTransport.java",
+      "sha256": "37bd34f1ae591f28677d3bd226b99e92b720838112b15c706c409a74d3e7c107"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Session.java",
+      "sha256": "87be05fa7c63f273b4c067d65f2052cecac09a6a64c4cb450b279113d756ce87"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/kotlin/src/main/java/org/uwvm/roswasm/Transport.java",
+      "sha256": "ad2880f42a551bc253159e3eb008803ad842ef6ae34e23bb7ee180cc7cf53966"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Observations.java",
+      "sha256": "44cf629aef34e595df7b53e689c4875e694d7cdc449b5ffba6628d207dee51a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsBmsCmd.java",
+      "sha256": "b630304ceaba2f89ecd91836725c413413c1ae36b598487d8603da0b66e549ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsBmsState.java",
+      "sha256": "0cebde42ab2643e1966c2e6a1a1cbe577b4c51aff8f0410754990246edbbcf07"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsCartesian.java",
+      "sha256": "cd7ad1ea3a84daa9673e6b92e809624ad1c07778eecc9581c95c7454a37beb5a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsHighCmd.java",
+      "sha256": "99b6e76899a01031611d1d2ad899187497aefb7efd73eb8adb08546a9aa4e9e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsHighState.java",
+      "sha256": "2208b94b80b88e69c19c078e726c2da44a5140f17cbfeff38251ca8941e265c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsIMU.java",
+      "sha256": "3b9d79ffd63e234a4f76e5bfd730cc4badc3f7fbab9d58ce497111938daac205"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsLED.java",
+      "sha256": "5ab92b61c8cd59f2498ddd9516efb38f0ce0e9f0190c8e69012fa683ac5ca54e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsLowCmd.java",
+      "sha256": "45bd59eaf64a8fcdc24d44d068b53c124b8854df7661cb50270eb199d22a47e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsLowState.java",
+      "sha256": "20b1a2aa785663f2118682d26c7ddf22524475a4d87b09fba93ce8628bce0a7c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsMotorCmd.java",
+      "sha256": "b1637cdc51e801dcb18327b144f1572de3a86efcf5a27387032ce7cfc1cadf71"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1ApiUnitree_legged_msgsMotorState.java",
+      "sha256": "a0aa809be50acdef81289261cb0570266855b821b512eb5c5b811d68b0902bdf"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsBmsCmd.java",
+      "sha256": "ad4c3a470767fdf59f9ef414fc3d02f699d70b7902bcfb0f69c306567532f9e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsBmsState.java",
+      "sha256": "58255d0f77cc0b18e97c30e6d3f764624238ffa573cdfe8f9581f5a46e19ba0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsCartesian.java",
+      "sha256": "fff1a8c34eddcb00c8f157745801d070150dfcfdc9aef2e9df6fe5a2ffa9d096"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsHighCmd.java",
+      "sha256": "149fb7d4567ba32fd48491175e7fc779abd50dc5e25d78091c818638e55ec5ff"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsHighState.java",
+      "sha256": "e8634494ea249d6aee94e327ea50e5ab286f506285602a782d2d764d723879b6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsIMU.java",
+      "sha256": "98a1c0da1acf366557027aecfc7ed4fabfe1d0ab7614f0dd9fc00b2cbcaaa0d1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsLED.java",
+      "sha256": "5046f5ee0354cdcedf1f1e7476d49655016f4a6ecee19a6081bcf15ff82e95e0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsLowCmd.java",
+      "sha256": "8f993c1bb2ee31ae20d3f20f7ab7b8eedd240472c877d51b6d2800fb26bd985d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsLowState.java",
+      "sha256": "ba0f28a8622f5ccf3d568a23e742a2aec5df843e4f9a01cf18c6579af2901677"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsMotorCmd.java",
+      "sha256": "c8b6c2f3160fcfbf00fe0f90f66fc3114bb41814b2965a49dea9c4fc32a10b82"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros1/uwvm/unitree/ros1/Ros1Unitree_legged_msgsMotorState.java",
+      "sha256": "0aba2d152200a913e4988d35ce58560c52b602ed1b93c40a16da2291b656338e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Observations.java",
+      "sha256": "ec8a087199f406701a12e3d56035b4c5f2c66fde2028a7a842958cbc98f991a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgRequest.java",
+      "sha256": "3c7659844a4c31525eaf8e15ccd1df9961110d72caaa737156dff8085c81690d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgRequestHeader.java",
+      "sha256": "440483e4fdb449650ef79b3bbedff438e01a28364c28005d946ec2d36f907576"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgRequestIdentity.java",
+      "sha256": "14a606ba7a6659ebc4630524b5bddb8c8ae4f41a8c2c2b5f8987fb2accfc7d98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgRequestLease.java",
+      "sha256": "c77927b684f9b6e10285a03063d2592811e94fcfde27d574a144dffec7eb8473"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgRequestPolicy.java",
+      "sha256": "be3579214b51d6cdf904f9e47d5b1d32db49a33bc84f781eb3413e5c367f7fd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgResponse.java",
+      "sha256": "068019e013d1ebbffb28734bcea17b0a3baca56db39f3df58332453fe758906e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgResponseHeader.java",
+      "sha256": "05c3eae408d33d298baa2a0b09bde9c3c9b468798601ad49722408ef1f863917"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_apiMsgResponseStatus.java",
+      "sha256": "da5ce0f74d76ab5d7984369edb5b300ea335b11cc88324ae985ef77537d4c939"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgAudioData.java",
+      "sha256": "d07770fca8d1be50357827f5b65e7d55dd108d017bdfd4d0c99efdbd92e4f771"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgBmsCmd.java",
+      "sha256": "717e61dc3876f4ca0234e0192f4dcbde3f0aa72fd4490cea3e0d1f2792c5f62d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgBmsState.java",
+      "sha256": "597a5d51f20f76a60b821b6a68ab03cc342ec90270dfe4ebefadd4949a731a8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgError.java",
+      "sha256": "7f53f8deb04d50182c52e14bf508b1d8e5a9509b46f33c4d26eba664788a712b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgGo2FrontVideoData.java",
+      "sha256": "e44934d18332b98635d5347b521c18e64a226c6a250caa71b1a417bb83b71987"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgHeightMap.java",
+      "sha256": "e18b42ae67c6315fd071cf424a40bfb79f38d9ed1dc539cf3f0168e2ec1f0339"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgIMUState.java",
+      "sha256": "52bee56f98a7792fb41f4f293332e1c92f403a75e2c1bed7ee08ca7dc87bb3ba"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgInterfaceConfig.java",
+      "sha256": "7c953819d0b90b73c4b792fe8b9240102421ccb83ae59550e52bfa7f248f7aa3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgLidarState.java",
+      "sha256": "b6a0408899aed1b99b56cbce9aaafe00fa1d4b59cc6a0a432b7fa732d1b30bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgLowCmd.java",
+      "sha256": "1a260a1302742ee9998ba7fee141945424eae01a8bfde4a3357bd9535f59a387"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgLowState.java",
+      "sha256": "dcf48a03f44b680d95efbd0061296f7e39878f33a8916bbc3d2087c44eddcfab"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgMotorCmd.java",
+      "sha256": "3de151c293411ae5c423038c9191f3a4800677dc522474bad549c8dbf1a9bf7c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgMotorCmds.java",
+      "sha256": "f509406c33c951b51b06f8f8d72cdb8c1db1dcfbf6910f37f10c423c2e406640"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgMotorState.java",
+      "sha256": "d048e02867028a38cc10c732afdd9af6a40d1e2b3f3827d51481037e2e7b860d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgMotorStates.java",
+      "sha256": "cd9781a68f934abe158858fd4d19c529b4452c0f07c1c79829e9cd061e09e971"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgPathPoint.java",
+      "sha256": "25500a19d99e22d14428394447bacdde5e7fce217060d0f72f468f89db25e937"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgReq.java",
+      "sha256": "b58d65e3884e1245aa39452af5ecdbb959a19ce3af039944fb1a860d1169bdf7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgRes.java",
+      "sha256": "3ea6be3eb8ab6e7be4ccb217856f80c8c50ca403dfd7beda38f947c4cb57e062"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgSportModeCmd.java",
+      "sha256": "2ec71bb5d6c841d80b5c729ae4ad6bfec4f8a544d16a5ef773a56085af00b073"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgSportModeState.java",
+      "sha256": "e014ef595e8a688d5bfe58125bf7ee34746f9a127c4c2532df2b08ac455455b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgTimeSpec.java",
+      "sha256": "150912d08a87941450c89925ad0012ca058c214ce876bcf895c17bb608ffd1de"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgUwbState.java",
+      "sha256": "aac5c5c40bf4aec4577768a224a8494318b2070e0a1b11367c94a1620bf311fb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgUwbSwitch.java",
+      "sha256": "3159346555dddb1ecd4c45fffcfcfab9bab59953cc899ec29b3951c21f11b5e1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_goMsgWirelessController.java",
+      "sha256": "37f35595937a15b7eea59efb50e938db99df968ebc629294554f1523879ff6ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgBmsCmd.java",
+      "sha256": "3037502a5e548b0a23ca206ba68a673b429b0e50798232ae3c859f0b13a72f30"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgBmsState.java",
+      "sha256": "84be88557eccc27f2f017d4535f008acb5df75860e8c9525c9cd75c6cb1e8088"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgHandCmd.java",
+      "sha256": "0a9c1aa189fe2c6cc3bcee697e58b73ba17359c359e1c8693f306a1ffafc9cc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgHandState.java",
+      "sha256": "280f7db6d82b0b62037c780da72eeaf71cbe2e7ac90a599220278295550fcfbe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgIMUState.java",
+      "sha256": "e7f81f9852f58a86126913344b62c3bd357d4a89af2aec9b21cfe5b058a818c8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgLowCmd.java",
+      "sha256": "0548546d38d84b4daf58401c9ff837110158b739a2c9dd0c8628705cf2ce07fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgLowState.java",
+      "sha256": "55e2e5f45d3a15110d483165311ecb83d7c008bc7ba4d6807727224079c680ab"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgMainBoardState.java",
+      "sha256": "d266608442c9545c3271311bcea3d8d1582abba7cd1754c7d9b44c29b96ae2be"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgMotorCmd.java",
+      "sha256": "82e2f2e5993c680cd4a339341d39e66ce52fdc691506c67174b24975c40a7efd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgMotorState.java",
+      "sha256": "06abbd5f3b64082d017f2775a3b2c1fe7b26a474e6cfb9e76e87c78812f4145a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2ApiUnitree_hgMsgPressSensorState.java",
+      "sha256": "df1b2513ba92f61ffa849e292378fe402cd66eef73531e6079ba0541ebfbb97b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgRequest.java",
+      "sha256": "b90a4cc373ded9c90d9e40103711d1337b600379aa8a20b2fc417e689ebb4fd9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgRequestHeader.java",
+      "sha256": "877efc78f5b89e2423ce045e6c524ad46b3b661e624734b56bd937cc7ba2ef4e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgRequestIdentity.java",
+      "sha256": "3b38d3b1a90a8a92a227678235ec580ef4ad8459f6cb7681a8af4aac2e979906"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgRequestLease.java",
+      "sha256": "7c38d883cf0b3be98d56091e6f83913e5398e4cb8210fcf251366de44acb88b3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgRequestPolicy.java",
+      "sha256": "b3aba91e94a972d7db1dd9886384af59099fc78aa5e2334ce0d0bbfae267921e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgResponse.java",
+      "sha256": "d47e589369d237b7638852f6aa7df7b892d363a68b6a4e81a6f5f3a15787aac9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgResponseHeader.java",
+      "sha256": "d292761c43675d2e6d999c3a4275610b807ef1fd0db99cc2563b45d6387bbd31"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_apiMsgResponseStatus.java",
+      "sha256": "175ce3550fc9bcd91693a78c563acd4d7a8b86a433c23b080dd639f580bc3fd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgAudioData.java",
+      "sha256": "902666d4a17efe333a0c49ab0d17c5dba9dd240502f7806c7889cb72af328ced"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgBmsCmd.java",
+      "sha256": "6ca35991a4375aa8aef973d26872d4a6ad7d9760d33ac9875b066b8f5a329ba5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgBmsState.java",
+      "sha256": "35fee5fe9f5155eebf97448970943ae7ebf5593661a22f58067e69ce6f3da360"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgError.java",
+      "sha256": "04e3fb31c905b19dac126662f72ede802e76728f5ffcb46a513b11c03d80c18c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgGo2FrontVideoData.java",
+      "sha256": "cc17bf69019777a846d2f70980ee3c8992f36cc6e410bdceaf7ae14561e4f93e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgHeightMap.java",
+      "sha256": "5e3249383c40563a15baced45628105410f4efd351843ac369b6412aaaa162f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgIMUState.java",
+      "sha256": "e8bd515c2b47cb23bbab3d3101ff3c9a5c01c0b7a40871505c415def0419ab26"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgInterfaceConfig.java",
+      "sha256": "f1edb55745599d96185033ee8c5c72aa513750205551e1e259603b35b803631c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgLidarState.java",
+      "sha256": "03197696099fa1329e1e4188415b15a88d30c6cdba98a19a56abaaac060fe9d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgLowCmd.java",
+      "sha256": "ba35a0427fe93b110e799f831895f6440251afef3b8ac3c52f3325b5fdff2b4b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgLowState.java",
+      "sha256": "fc9f2257633488a2123a998343c36a1e5a10ab26eb9653476bf144d5eca9507c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgMotorCmd.java",
+      "sha256": "e7516795a65c9405e1fd51fdab0d7e35024545fac399067cff7a92dd24a34c07"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgMotorCmds.java",
+      "sha256": "b1465978589182e75dde316517944753e7092bbe7c4e16bf7916380183bcff98"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgMotorState.java",
+      "sha256": "e88a1d9856da3c460b9e2a5ca8bd9bc9a2f416244041931e28b76c2b0f4dc6cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgMotorStates.java",
+      "sha256": "277ed5ea2a01cc73e92a5dcb86f97a3cedcb4a81402c3b8f44ff348dc6df1df5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgPathPoint.java",
+      "sha256": "4171f78222e31207e6a305f3c5528f06c34df237e3dda999def5dc27d47531de"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgReq.java",
+      "sha256": "616f2be260d1b6c379885b266bac34124f8da4ddc62bc1d26610bab2d6f21dbc"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgRes.java",
+      "sha256": "d9dc3d423005e5ef5afad8a9715a50b9497f3e4e35b29aa75d5f33f8e3fb46c6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgSportModeCmd.java",
+      "sha256": "1ee841f25775c125c79b033dc335f78997d4b7f3f40ccd299bf4ec2257c63fd6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgSportModeState.java",
+      "sha256": "0520b45ea6624d8076be4ea7366e4e75cda2b9eb47668816c1cb155a12f293e4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgTimeSpec.java",
+      "sha256": "f41852317cb099ece84a21d079d1941f4d0ebcdeff3a7ab6db3ed851e953aecd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgUwbState.java",
+      "sha256": "ab36e549f48783474436d4c9e0157b4dca229029f45aa5124a2ed66bbee08caa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgUwbSwitch.java",
+      "sha256": "86df9531d73c75c7a90756827a15cf862a366a82d48bf4227f9905679afa879e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_goMsgWirelessController.java",
+      "sha256": "13597f34df4f20d3c4d1c9ee4827c9ebed06915cce6c249abc7f276a93e54e9a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgBmsCmd.java",
+      "sha256": "3fe3d29e70e5117e1b1899dbcc971217ec67866331b00c277b3f9c67c49525eb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgBmsState.java",
+      "sha256": "0138711a45c0a5951dfde582dee39be050c505c490bbbf30b330845169c0c2f3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgHandCmd.java",
+      "sha256": "4832957fa4417516d21b9227069dd2215facd0d1d5c96a44496f6a2901aa9382"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgHandState.java",
+      "sha256": "0519e148455f9245800f95db16ba06925664f699cfe12be607bae741d280280e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgIMUState.java",
+      "sha256": "03da51df2da8a1671194f06488cf84e8d7cd34a6d971fbeb1abd9ed7ac9c67a5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgLowCmd.java",
+      "sha256": "2cad45146fe9bdce650ebe4c5babbafc492740bcaf9b64274950a68a7c458ea6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgLowState.java",
+      "sha256": "93820ff9af19608306f631decc31e6f6e0c68d067bad89d08247f9ee6bf9c14f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgMainBoardState.java",
+      "sha256": "d4c26e6abf28875a4729cd63929916eeb0f5b778f131dbb95c547c6a88c5d2d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgMotorCmd.java",
+      "sha256": "32b07aa85bb73fed7b8fa5ae8a6dc14083ff26cd698c3cabe5a93b56504d8244"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgMotorState.java",
+      "sha256": "6ffc388489754ef836526c065f7f2327b31a40d7440ad639d3f3a60468640f18"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/ros2/uwvm/unitree/ros2/Ros2Unitree_hgMsgPressSensorState.java",
+      "sha256": "c530abb231aed4e564f9b4066d755e88360726ba0c3d33f01d7db30aaeec47cd"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/java/uwvm/unitree/Observation.java",
+      "sha256": "2d1ccaf78dd4500d814c421ab21e3d62303a10701087cc6f715bdbe7b3109249"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/kotlin/ros1/uwvm/unitree/kotlin/ros1/Observers.kt",
+      "sha256": "8bdb8df9d12be1847e3f1cda4f3bc638ff0b335f8cdf10a3ca39909382dc4160"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/kotlin/ros2/uwvm/unitree/kotlin/ros2/Observers.kt",
+      "sha256": "f686b1c2fab85b4c508929bdfef6c96c1e945da9a92fe6747b26c7e96ed4c820"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/native_languages.lua",
+      "sha256": "433f0fb750e5496d2463eb430fd069c9b417693d83b7baeced706c598011a5d4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

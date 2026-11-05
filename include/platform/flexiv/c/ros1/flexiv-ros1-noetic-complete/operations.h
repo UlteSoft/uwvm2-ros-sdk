@@ -6,6 +6,13 @@
  */
 #ifndef UWVM_FLEXIV_ROS1_NOETIC_COMPLETE_OPERATIONS_H
 #define UWVM_FLEXIV_ROS1_NOETIC_COMPLETE_OPERATIONS_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include "bounded_interfaces.h"
 #include <platform/ros1/c/roswasm/ros1.h>
 
@@ -37,7 +44,7 @@ inline static uint32_t uwvm_flexiv_flexiv_msgs_JointPosVel_poll(roswasmc_capabil
                                                                 unsigned char* scratch,
                                                                 size_t capacity)
 {
-    roswasmc_bounded_1_flexiv_msgs_JointPosVel next = {0};
+    roswasmc_bounded_1_flexiv_msgs_JointPosVel next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result result;
     uint32_t code;
     if(!uwvm_flexiv_operation_cap(cap) || !value || !scratch || !uwvm_bounded_cap_destination(cap, value, sizeof *value) ||
@@ -88,7 +95,7 @@ inline static uint32_t uwvm_flexiv_flexiv_msgs_Mode_publish(roswasmc_capability 
 inline static uint32_t
     uwvm_flexiv_flexiv_msgs_Mode_poll(roswasmc_capability const* cap, roswasmc_bounded_1_flexiv_msgs_Mode* value, unsigned char* scratch, size_t capacity)
 {
-    roswasmc_bounded_1_flexiv_msgs_Mode next = {0};
+    roswasmc_bounded_1_flexiv_msgs_Mode next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result result;
     uint32_t code;
     if(!uwvm_flexiv_operation_cap(cap) || !value || !scratch || !uwvm_bounded_cap_destination(cap, value, sizeof *value) ||
@@ -141,7 +148,7 @@ inline static uint32_t uwvm_flexiv_flexiv_msgs_RobotStates_poll(roswasmc_capabil
                                                                 unsigned char* scratch,
                                                                 size_t capacity)
 {
-    roswasmc_bounded_1_flexiv_msgs_RobotStates next = {0};
+    roswasmc_bounded_1_flexiv_msgs_RobotStates next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result result;
     uint32_t code;
     if(!uwvm_flexiv_operation_cap(cap) || !value || !scratch || !uwvm_bounded_cap_destination(cap, value, sizeof *value) ||

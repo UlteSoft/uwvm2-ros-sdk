@@ -1,0 +1,180 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "nvidia-complete-codec-3314",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual CPU canonical codec guest: independent complete byte oracle, input-dependent values and malformed input/transactional destination checks. No ROS resource or GPU/simulator execution is claimed.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/go/go.mod",
+      "sha256": "8230e1e4e51886f102036bb36eab3ae2f1d4e24d9323e752a967bcd6cec3d4d7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/go/ros2/complete/records.go",
+      "sha256": "26140324d34d2ab06d139839357c370b710a9d532e2156b222dcd459a05fb563"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/builtin_codec.go",
+      "sha256": "23a95fb330de121052f30e0b79c3e4cdb56e2180157ca1bf3ecc8b6fe9a7e986"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/client.go",
+      "sha256": "78855ebc74fe7fe705c8cb7262dc638185cc2f6863dd57d8926cdb9b74283a03"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/codec.go",
+      "sha256": "a81b000812fc30197db7fe18f18bac73041e4abb530788475a9a32e45dc0294a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/go.mod",
+      "sha256": "dad02148dfc7550b14721ff91915f6cf3bbd8d5c060b6248dfb1c211664e85df"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/native_command/command.go",
+      "sha256": "375e9f9562d5177a8ea39c4cdd31dea61539e98cf8f222f7d0b70a670e292b9d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation.go",
+      "sha256": "21170e363e678d935a32b3c731bc124ee8e8fc3870a540aed76250ed91d15a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros1.go",
+      "sha256": "4b7b2bb8b6261f055eb18a8aa86ffd7d66047d8d0c8e235457c5332133b4244e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/operation_ros2.go",
+      "sha256": "2dbd550c6dc47de4fcefbaef50633c423fdd0aa7f4d946b3c708983c83ba58f8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros1.go",
+      "sha256": "4e0bf1b61c90163bf03403524daaf672345d3b77ed9dbf3314efbf7075c90fa7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/raw_ros2.go",
+      "sha256": "06d86038b4ae4373419db737839606676393163fd622be3acc4ff002f02e7000"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/selection_error.go",
+      "sha256": "7815c65a49918d2db230a2b5940670ae829157bcc2cb5eb14521c85f4fd6c927"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/session.go",
+      "sha256": "3411bbc25486200f4d7f4512356b22447dc9209098d06e1fc1eb5dff730bd884"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/typed.go",
+      "sha256": "cd2cec63b5721e900ce37c7645943ea2119d550c3d916f30b72370c766965e4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/value_helpers.go",
+      "sha256": "05ea589f722e821d4003ece92a31b8a548b6d567294b43854b99293b5c7d7ee8"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/go/values.go",
+      "sha256": "4b076f0ac087a2ea643390c7a3ad061daf1f42f79a17d01cf85a0c58116ebd38"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/nvidia-isaac-sim/language-bindings.json",
+      "sha256": "3512ae3f888a590b32603ac686ad98b36eeb436ed744a3440b0830f2edae9f6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "a38cf2da56220e369c58c1fe656251fb545361176a1d47b9e2722841177eb8e4"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "2d0f62d668b7a417724bb50f03a3be25ab630ddb539e26f7d6dab002e433024d"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "6650a267c2453afb358b1ba3e6baa4d3e4d85d050b8e0490062b7ad8b5ac6ccd"
+    }
+  ],
+  "cases": [
+    {
+      "id": "full-original-fields",
+      "arguments": [
+        "feffffffb168de3a08000000626173655fe4b8ad02000000020000006a30070000006a315ff09f998202000000000000000000c03f000000000000d0bf020000000000000000000000000000000000a03f0200000000000000000000400000000000000840"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "wire_bytes=101 wire_hex=feffffffb168de3a08000000626173655fe4b8ad02000000020000006a30070000006a315ff09f998202000000000000000000c03f000000000000d0bf020000000000000000000000000000000000a03f0200000000000000000000400000000000000840\n"
+    },
+    {
+      "id": "truncated",
+      "arguments": [
+        "feffffffb168de3a08000000626173655fe4b8ad02000000020000006a30070000006a315ff09f998202000000000000000000c03f000000000000d0bf020000000000000000000000000000000000a03f02000000000000000000004000000000000008"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing-byte",
+      "arguments": [
+        "feffffffb168de3a08000000626173655fe4b8ad02000000020000006a30070000006a315ff09f998202000000000000000000c03f000000000000d0bf020000000000000000000000000000000000a03f020000000000000000000040000000000000084000"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "empty-body",
+      "arguments": [
+        ""
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "non-hex-input",
+      "arguments": [
+        "zz"
+      ],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

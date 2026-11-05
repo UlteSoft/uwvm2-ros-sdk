@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "fsharp",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/fsharp/ros2/mobile-fjt-humble-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "csharp": [
+      "include/platform/kinova/csharp/ros2/mobile-fjt-humble-complete/BoundedRecords.cs"
+    ],
+    "fsharp": [
+      "include/platform/kinova/fsharp/ros2/mobile-fjt-humble-complete/Records.fs"
+    ],
+    "vbnet": [
+      "include/platform/kinova/vbnet/ros2/mobile-fjt-humble-complete/Records.vb"
+    ]
+  }
+}

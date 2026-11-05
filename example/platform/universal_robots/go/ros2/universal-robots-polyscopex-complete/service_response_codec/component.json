@@ -1,0 +1,64 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-4893",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "62ad2498aecf3d6951a45bad0848e7f79fc2f1960146c2595464a384df34430e"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "208a82a2770507fa5c3a5a17eda39f79028b932858c090746266cfebc8cede1e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/go/universal-robots-polyscopex-complete.json",
+      "sha256": "1446f349b97b3f03127ca7ff2d38522d0a8ad6d88f8ae7191daf47514167198a"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-polyscopex-complete.ir.json",
+      "sha256": "771063b49dcab70ca9a96497c8d6b1a0a7156d2a029653fd4a5614becae144b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "f5247f6bae1534559ffd9cac8363a3276881c355ed2d8ec4a0160bb5776f5677"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "urinterfaces/srv/SetAnalogOutput_Response",
+        "bytes": 1,
+        "wire_hex": "00"
+      }
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 // @brief Observe complete original Fanuc ROS 2 messages in genuine Odin.
 // @details All values own their bytes; successful acquisitions close exactly once.
 package fanuc
-import core "ros:odin/observation"
+import core "native:odin/observation"
 import records "fanuc:odin/ros2"
 
 // @brief Observe every original fanuc_msgs/msg/ConnectionStatus field through one retained owner.

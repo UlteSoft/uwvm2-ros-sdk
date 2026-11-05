@@ -1,0 +1,116 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "unitree-authority-4717",
+  "ros_namespace": "ros1",
+  "test_scope": "Execute the original Unitree observation guest with base WASI and ROS namespace, but no resource authority. Denial preserves complete empty response/owner facts; missing alias fails before acquisition. Positive native transport is a separate test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "726923cb43a2f6530db1d7d41e3a53e963583ff38a12d44e03277dd29fb92e36"
+    },
+    {
+      "scope": "example",
+      "path": "main.m",
+      "sha256": "efbb78479c00fabcf099c9dfa50e126531d2d89779e2a8c037694285edb593c0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/unitree/objectc/observation.h",
+      "sha256": "4e714cb46a1534ca197c7dab44de8bc780772f96983b036500f3842d4d37028f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/unitree/provider.lua",
+      "sha256": "a44b615ee0a2d4b4191f2bc7455ee4f4b3291212912547af49e5375f1c200328"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/objectc.lua",
+      "sha256": "8668ec7b6be117825b0dbb9382181f622228b3483ee6e906963c9187213821a2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "789cca696eb094c051aa6c8161f45fbd3dba34569281789f9a837810eb7e1ca2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "42345a5ef409e9d1bc64a2858145c4fcf8790ff84e73ad8f69ed95ff8decac0e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/toolchains/host/linux-x86_64/native-objectc.json",
+      "sha256": "d93961ab93edcc02e223133902b987512002af5956524d09571a0a33bac777a1"
+    },
+    {
+      "scope": "sdk",
+      "path": "lib/language/objectc/runtime.json",
+      "sha256": "cfe9d3bf20d0a81d8985f5bfc9b01eda095331a0c0beb08ac29ae87d1358c56d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/objectc/base_object.m",
+      "sha256": "752103cfb3866b6ab2a28ebc1da09a0855fd33dd4702824f3b1cabd9e175f097"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": 0,
+        "response_present": 0,
+        "rpc_present": 0,
+        "rpc_status": 0,
+        "polls": 0,
+        "required_present": 0,
+        "required": 0,
+        "encoding": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

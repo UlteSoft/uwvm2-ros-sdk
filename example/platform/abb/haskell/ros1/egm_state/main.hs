@@ -2,7 +2,7 @@
 -- @brief Observe one complete original ROS 1 egm_state native message.
 -- @details One explicit alias is required; the real Haskell observer closes before stdout.
 module Main where
-import Ros.Observation (command)
+import Native.Observation (command)
 import qualified ABB.Ros1.Observation as Abb
 -- | @brief Enter the genuine Haskell Wasm command with the complete typed observer.
 -- @details Read exactly one strict UTF-8 alias from the original WASI argument vector.
@@ -10,4 +10,4 @@ import qualified ABB.Ros1.Observation as Abb
 -- @return Normal unit completion exits zero; primary, close or stdout errors exit with their original
 -- status clamped to 125 only at the process boundary. Fatal runtime failures cannot promise cleanup.
 main :: IO ()
-main = command ABB.waitEgmState
+main = command Abb.waitEgmState

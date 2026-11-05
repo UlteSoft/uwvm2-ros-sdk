@@ -8240,6 +8240,7 @@ local schemas = {
 }
 local classes, by_name = wire.records(schemas)
 
+do
 --- @class Ros2Dobot_msgs_v4MsgRobotStatus
 --- @brief Complete ROS2 dobot_msgs_v4/msg/RobotStatus value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8297,7 +8298,9 @@ local classes, by_name = wire.records(schemas)
 --- @see Ros2Dobot_msgs_v4MsgRobotStatus.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4MsgRobotStatus
 local Ros2Dobot_msgs_v4MsgRobotStatus = classes["Ros2Dobot_msgs_v4MsgRobotStatus"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4MsgToolVectorActual
 --- @brief Complete ROS2 dobot_msgs_v4/msg/ToolVectorActual value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8359,7 +8362,9 @@ local Ros2Dobot_msgs_v4MsgRobotStatus = classes["Ros2Dobot_msgs_v4MsgRobotStatus
 --- @see Ros2Dobot_msgs_v4MsgToolVectorActual.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4MsgToolVectorActual
 local Ros2Dobot_msgs_v4MsgToolVectorActual = classes["Ros2Dobot_msgs_v4MsgToolVectorActual"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAI_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AI_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8416,7 +8421,9 @@ local Ros2Dobot_msgs_v4MsgToolVectorActual = classes["Ros2Dobot_msgs_v4MsgToolVe
 --- @see Ros2Dobot_msgs_v4SrvAI_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAI_Request
 local Ros2Dobot_msgs_v4SrvAI_Request = classes["Ros2Dobot_msgs_v4SrvAI_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAI_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AI_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8473,7 +8480,9 @@ local Ros2Dobot_msgs_v4SrvAI_Request = classes["Ros2Dobot_msgs_v4SrvAI_Request"]
 --- @see Ros2Dobot_msgs_v4SrvAI_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAI_Response
 local Ros2Dobot_msgs_v4SrvAI_Response = classes["Ros2Dobot_msgs_v4SrvAI_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8531,7 +8540,9 @@ local Ros2Dobot_msgs_v4SrvAI_Response = classes["Ros2Dobot_msgs_v4SrvAI_Response
 --- @see Ros2Dobot_msgs_v4SrvAO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAO_Request
 local Ros2Dobot_msgs_v4SrvAO_Request = classes["Ros2Dobot_msgs_v4SrvAO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8588,7 +8599,9 @@ local Ros2Dobot_msgs_v4SrvAO_Request = classes["Ros2Dobot_msgs_v4SrvAO_Request"]
 --- @see Ros2Dobot_msgs_v4SrvAO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAO_Response
 local Ros2Dobot_msgs_v4SrvAO_Response = classes["Ros2Dobot_msgs_v4SrvAO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAOInstant_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AOInstant_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8646,7 +8659,9 @@ local Ros2Dobot_msgs_v4SrvAO_Response = classes["Ros2Dobot_msgs_v4SrvAO_Response
 --- @see Ros2Dobot_msgs_v4SrvAOInstant_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAOInstant_Request
 local Ros2Dobot_msgs_v4SrvAOInstant_Request = classes["Ros2Dobot_msgs_v4SrvAOInstant_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAOInstant_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AOInstant_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8703,7 +8718,9 @@ local Ros2Dobot_msgs_v4SrvAOInstant_Request = classes["Ros2Dobot_msgs_v4SrvAOIns
 --- @see Ros2Dobot_msgs_v4SrvAOInstant_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAOInstant_Response
 local Ros2Dobot_msgs_v4SrvAOInstant_Response = classes["Ros2Dobot_msgs_v4SrvAOInstant_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAccJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AccJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8760,7 +8777,9 @@ local Ros2Dobot_msgs_v4SrvAOInstant_Response = classes["Ros2Dobot_msgs_v4SrvAOIn
 --- @see Ros2Dobot_msgs_v4SrvAccJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAccJ_Request
 local Ros2Dobot_msgs_v4SrvAccJ_Request = classes["Ros2Dobot_msgs_v4SrvAccJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAccJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AccJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8817,7 +8836,9 @@ local Ros2Dobot_msgs_v4SrvAccJ_Request = classes["Ros2Dobot_msgs_v4SrvAccJ_Reque
 --- @see Ros2Dobot_msgs_v4SrvAccJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAccJ_Response
 local Ros2Dobot_msgs_v4SrvAccJ_Response = classes["Ros2Dobot_msgs_v4SrvAccJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAccL_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AccL_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8874,7 +8895,9 @@ local Ros2Dobot_msgs_v4SrvAccJ_Response = classes["Ros2Dobot_msgs_v4SrvAccJ_Resp
 --- @see Ros2Dobot_msgs_v4SrvAccL_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAccL_Request
 local Ros2Dobot_msgs_v4SrvAccL_Request = classes["Ros2Dobot_msgs_v4SrvAccL_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvAccL_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/AccL_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -8931,7 +8954,9 @@ local Ros2Dobot_msgs_v4SrvAccL_Request = classes["Ros2Dobot_msgs_v4SrvAccL_Reque
 --- @see Ros2Dobot_msgs_v4SrvAccL_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvAccL_Response
 local Ros2Dobot_msgs_v4SrvAccL_Response = classes["Ros2Dobot_msgs_v4SrvAccL_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvArc_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Arc_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9001,7 +9026,9 @@ local Ros2Dobot_msgs_v4SrvAccL_Response = classes["Ros2Dobot_msgs_v4SrvAccL_Resp
 --- @see Ros2Dobot_msgs_v4SrvArc_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvArc_Request
 local Ros2Dobot_msgs_v4SrvArc_Request = classes["Ros2Dobot_msgs_v4SrvArc_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvArc_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Arc_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9058,7 +9085,9 @@ local Ros2Dobot_msgs_v4SrvArc_Request = classes["Ros2Dobot_msgs_v4SrvArc_Request
 --- @see Ros2Dobot_msgs_v4SrvArc_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvArc_Response
 local Ros2Dobot_msgs_v4SrvArc_Response = classes["Ros2Dobot_msgs_v4SrvArc_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvBrakeControl_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/BrakeControl_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9116,7 +9145,9 @@ local Ros2Dobot_msgs_v4SrvArc_Response = classes["Ros2Dobot_msgs_v4SrvArc_Respon
 --- @see Ros2Dobot_msgs_v4SrvBrakeControl_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvBrakeControl_Request
 local Ros2Dobot_msgs_v4SrvBrakeControl_Request = classes["Ros2Dobot_msgs_v4SrvBrakeControl_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvBrakeControl_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/BrakeControl_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9173,7 +9204,9 @@ local Ros2Dobot_msgs_v4SrvBrakeControl_Request = classes["Ros2Dobot_msgs_v4SrvBr
 --- @see Ros2Dobot_msgs_v4SrvBrakeControl_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvBrakeControl_Response
 local Ros2Dobot_msgs_v4SrvBrakeControl_Response = classes["Ros2Dobot_msgs_v4SrvBrakeControl_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCP_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CP_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9230,7 +9263,9 @@ local Ros2Dobot_msgs_v4SrvBrakeControl_Response = classes["Ros2Dobot_msgs_v4SrvB
 --- @see Ros2Dobot_msgs_v4SrvCP_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCP_Request
 local Ros2Dobot_msgs_v4SrvCP_Request = classes["Ros2Dobot_msgs_v4SrvCP_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCP_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CP_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9287,7 +9322,9 @@ local Ros2Dobot_msgs_v4SrvCP_Request = classes["Ros2Dobot_msgs_v4SrvCP_Request"]
 --- @see Ros2Dobot_msgs_v4SrvCP_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCP_Response
 local Ros2Dobot_msgs_v4SrvCP_Response = classes["Ros2Dobot_msgs_v4SrvCP_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCalcTool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CalcTool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9346,7 +9383,9 @@ local Ros2Dobot_msgs_v4SrvCP_Response = classes["Ros2Dobot_msgs_v4SrvCP_Response
 --- @see Ros2Dobot_msgs_v4SrvCalcTool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCalcTool_Request
 local Ros2Dobot_msgs_v4SrvCalcTool_Request = classes["Ros2Dobot_msgs_v4SrvCalcTool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCalcTool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CalcTool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9403,7 +9442,9 @@ local Ros2Dobot_msgs_v4SrvCalcTool_Request = classes["Ros2Dobot_msgs_v4SrvCalcTo
 --- @see Ros2Dobot_msgs_v4SrvCalcTool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCalcTool_Response
 local Ros2Dobot_msgs_v4SrvCalcTool_Response = classes["Ros2Dobot_msgs_v4SrvCalcTool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCalcUser_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CalcUser_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9462,7 +9503,9 @@ local Ros2Dobot_msgs_v4SrvCalcTool_Response = classes["Ros2Dobot_msgs_v4SrvCalcT
 --- @see Ros2Dobot_msgs_v4SrvCalcUser_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCalcUser_Request
 local Ros2Dobot_msgs_v4SrvCalcUser_Request = classes["Ros2Dobot_msgs_v4SrvCalcUser_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCalcUser_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CalcUser_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9519,7 +9562,9 @@ local Ros2Dobot_msgs_v4SrvCalcUser_Request = classes["Ros2Dobot_msgs_v4SrvCalcUs
 --- @see Ros2Dobot_msgs_v4SrvCalcUser_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCalcUser_Response
 local Ros2Dobot_msgs_v4SrvCalcUser_Response = classes["Ros2Dobot_msgs_v4SrvCalcUser_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovC_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovC_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9594,7 +9639,9 @@ local Ros2Dobot_msgs_v4SrvCalcUser_Response = classes["Ros2Dobot_msgs_v4SrvCalcU
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovC_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovC_Request
 local Ros2Dobot_msgs_v4SrvCheckOddMovC_Request = classes["Ros2Dobot_msgs_v4SrvCheckOddMovC_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovC_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovC_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9652,7 +9699,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovC_Request = classes["Ros2Dobot_msgs_v4SrvCh
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovC_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovC_Response
 local Ros2Dobot_msgs_v4SrvCheckOddMovC_Response = classes["Ros2Dobot_msgs_v4SrvCheckOddMovC_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9721,7 +9770,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovC_Response = classes["Ros2Dobot_msgs_v4SrvC
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request
 local Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request = classes["Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9779,7 +9830,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovJ_Request = classes["Ros2Dobot_msgs_v4SrvCh
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response
 local Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response = classes["Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovL_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovL_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9848,7 +9901,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovJ_Response = classes["Ros2Dobot_msgs_v4SrvC
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovL_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovL_Request
 local Ros2Dobot_msgs_v4SrvCheckOddMovL_Request = classes["Ros2Dobot_msgs_v4SrvCheckOddMovL_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCheckOddMovL_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/CheckOddMovL_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9906,7 +9961,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovL_Request = classes["Ros2Dobot_msgs_v4SrvCh
 --- @see Ros2Dobot_msgs_v4SrvCheckOddMovL_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCheckOddMovL_Response
 local Ros2Dobot_msgs_v4SrvCheckOddMovL_Response = classes["Ros2Dobot_msgs_v4SrvCheckOddMovL_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCircle_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Circle_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -9977,7 +10034,9 @@ local Ros2Dobot_msgs_v4SrvCheckOddMovL_Response = classes["Ros2Dobot_msgs_v4SrvC
 --- @see Ros2Dobot_msgs_v4SrvCircle_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCircle_Request
 local Ros2Dobot_msgs_v4SrvCircle_Request = classes["Ros2Dobot_msgs_v4SrvCircle_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvCircle_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Circle_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10034,7 +10093,9 @@ local Ros2Dobot_msgs_v4SrvCircle_Request = classes["Ros2Dobot_msgs_v4SrvCircle_R
 --- @see Ros2Dobot_msgs_v4SrvCircle_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvCircle_Response
 local Ros2Dobot_msgs_v4SrvCircle_Response = classes["Ros2Dobot_msgs_v4SrvCircle_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvClearError_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ClearError_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10090,7 +10151,9 @@ local Ros2Dobot_msgs_v4SrvCircle_Response = classes["Ros2Dobot_msgs_v4SrvCircle_
 --- @see Ros2Dobot_msgs_v4SrvClearError_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvClearError_Request
 local Ros2Dobot_msgs_v4SrvClearError_Request = classes["Ros2Dobot_msgs_v4SrvClearError_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvClearError_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ClearError_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10147,7 +10210,9 @@ local Ros2Dobot_msgs_v4SrvClearError_Request = classes["Ros2Dobot_msgs_v4SrvClea
 --- @see Ros2Dobot_msgs_v4SrvClearError_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvClearError_Response
 local Ros2Dobot_msgs_v4SrvClearError_Response = classes["Ros2Dobot_msgs_v4SrvClearError_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvContinue_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Continue_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10203,7 +10268,9 @@ local Ros2Dobot_msgs_v4SrvClearError_Response = classes["Ros2Dobot_msgs_v4SrvCle
 --- @see Ros2Dobot_msgs_v4SrvContinue_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvContinue_Request
 local Ros2Dobot_msgs_v4SrvContinue_Request = classes["Ros2Dobot_msgs_v4SrvContinue_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvContinue_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Continue_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10260,7 +10327,9 @@ local Ros2Dobot_msgs_v4SrvContinue_Request = classes["Ros2Dobot_msgs_v4SrvContin
 --- @see Ros2Dobot_msgs_v4SrvContinue_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvContinue_Response
 local Ros2Dobot_msgs_v4SrvContinue_Response = classes["Ros2Dobot_msgs_v4SrvContinue_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDI_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DI_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10317,7 +10386,9 @@ local Ros2Dobot_msgs_v4SrvContinue_Response = classes["Ros2Dobot_msgs_v4SrvConti
 --- @see Ros2Dobot_msgs_v4SrvDI_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDI_Request
 local Ros2Dobot_msgs_v4SrvDI_Request = classes["Ros2Dobot_msgs_v4SrvDI_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDI_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DI_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10375,7 +10446,9 @@ local Ros2Dobot_msgs_v4SrvDI_Request = classes["Ros2Dobot_msgs_v4SrvDI_Request"]
 --- @see Ros2Dobot_msgs_v4SrvDI_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDI_Response
 local Ros2Dobot_msgs_v4SrvDI_Response = classes["Ros2Dobot_msgs_v4SrvDI_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDIGroup_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DIGroup_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10432,7 +10505,9 @@ local Ros2Dobot_msgs_v4SrvDI_Response = classes["Ros2Dobot_msgs_v4SrvDI_Response
 --- @see Ros2Dobot_msgs_v4SrvDIGroup_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDIGroup_Request
 local Ros2Dobot_msgs_v4SrvDIGroup_Request = classes["Ros2Dobot_msgs_v4SrvDIGroup_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDIGroup_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DIGroup_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10490,7 +10565,9 @@ local Ros2Dobot_msgs_v4SrvDIGroup_Request = classes["Ros2Dobot_msgs_v4SrvDIGroup
 --- @see Ros2Dobot_msgs_v4SrvDIGroup_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDIGroup_Response
 local Ros2Dobot_msgs_v4SrvDIGroup_Response = classes["Ros2Dobot_msgs_v4SrvDIGroup_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDIGroupDEC_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DIGroupDEC_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10548,7 +10625,9 @@ local Ros2Dobot_msgs_v4SrvDIGroup_Response = classes["Ros2Dobot_msgs_v4SrvDIGrou
 --- @see Ros2Dobot_msgs_v4SrvDIGroupDEC_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDIGroupDEC_Request
 local Ros2Dobot_msgs_v4SrvDIGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvDIGroupDEC_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDIGroupDEC_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DIGroupDEC_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10606,7 +10685,9 @@ local Ros2Dobot_msgs_v4SrvDIGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvDIGr
 --- @see Ros2Dobot_msgs_v4SrvDIGroupDEC_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDIGroupDEC_Response
 local Ros2Dobot_msgs_v4SrvDIGroupDEC_Response = classes["Ros2Dobot_msgs_v4SrvDIGroupDEC_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10665,7 +10746,9 @@ local Ros2Dobot_msgs_v4SrvDIGroupDEC_Response = classes["Ros2Dobot_msgs_v4SrvDIG
 --- @see Ros2Dobot_msgs_v4SrvDO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDO_Request
 local Ros2Dobot_msgs_v4SrvDO_Request = classes["Ros2Dobot_msgs_v4SrvDO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10722,7 +10805,9 @@ local Ros2Dobot_msgs_v4SrvDO_Request = classes["Ros2Dobot_msgs_v4SrvDO_Request"]
 --- @see Ros2Dobot_msgs_v4SrvDO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDO_Response
 local Ros2Dobot_msgs_v4SrvDO_Response = classes["Ros2Dobot_msgs_v4SrvDO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOGroup_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOGroup_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10779,7 +10864,9 @@ local Ros2Dobot_msgs_v4SrvDO_Response = classes["Ros2Dobot_msgs_v4SrvDO_Response
 --- @see Ros2Dobot_msgs_v4SrvDOGroup_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOGroup_Request
 local Ros2Dobot_msgs_v4SrvDOGroup_Request = classes["Ros2Dobot_msgs_v4SrvDOGroup_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOGroup_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOGroup_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10836,7 +10923,9 @@ local Ros2Dobot_msgs_v4SrvDOGroup_Request = classes["Ros2Dobot_msgs_v4SrvDOGroup
 --- @see Ros2Dobot_msgs_v4SrvDOGroup_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOGroup_Response
 local Ros2Dobot_msgs_v4SrvDOGroup_Response = classes["Ros2Dobot_msgs_v4SrvDOGroup_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOGroupDEC_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOGroupDEC_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10894,7 +10983,9 @@ local Ros2Dobot_msgs_v4SrvDOGroup_Response = classes["Ros2Dobot_msgs_v4SrvDOGrou
 --- @see Ros2Dobot_msgs_v4SrvDOGroupDEC_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOGroupDEC_Request
 local Ros2Dobot_msgs_v4SrvDOGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvDOGroupDEC_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOGroupDEC_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOGroupDEC_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -10951,7 +11042,9 @@ local Ros2Dobot_msgs_v4SrvDOGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvDOGr
 --- @see Ros2Dobot_msgs_v4SrvDOGroupDEC_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOGroupDEC_Response
 local Ros2Dobot_msgs_v4SrvDOGroupDEC_Response = classes["Ros2Dobot_msgs_v4SrvDOGroupDEC_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOInstant_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOInstant_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11009,7 +11102,9 @@ local Ros2Dobot_msgs_v4SrvDOGroupDEC_Response = classes["Ros2Dobot_msgs_v4SrvDOG
 --- @see Ros2Dobot_msgs_v4SrvDOInstant_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOInstant_Request
 local Ros2Dobot_msgs_v4SrvDOInstant_Request = classes["Ros2Dobot_msgs_v4SrvDOInstant_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDOInstant_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DOInstant_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11066,7 +11161,9 @@ local Ros2Dobot_msgs_v4SrvDOInstant_Request = classes["Ros2Dobot_msgs_v4SrvDOIns
 --- @see Ros2Dobot_msgs_v4SrvDOInstant_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDOInstant_Response
 local Ros2Dobot_msgs_v4SrvDOInstant_Response = classes["Ros2Dobot_msgs_v4SrvDOInstant_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDisableRobot_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DisableRobot_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11122,7 +11219,9 @@ local Ros2Dobot_msgs_v4SrvDOInstant_Response = classes["Ros2Dobot_msgs_v4SrvDOIn
 --- @see Ros2Dobot_msgs_v4SrvDisableRobot_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDisableRobot_Request
 local Ros2Dobot_msgs_v4SrvDisableRobot_Request = classes["Ros2Dobot_msgs_v4SrvDisableRobot_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDisableRobot_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DisableRobot_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11180,7 +11279,9 @@ local Ros2Dobot_msgs_v4SrvDisableRobot_Request = classes["Ros2Dobot_msgs_v4SrvDi
 --- @see Ros2Dobot_msgs_v4SrvDisableRobot_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDisableRobot_Response
 local Ros2Dobot_msgs_v4SrvDisableRobot_Response = classes["Ros2Dobot_msgs_v4SrvDisableRobot_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDragSensivity_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DragSensivity_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11238,7 +11339,9 @@ local Ros2Dobot_msgs_v4SrvDisableRobot_Response = classes["Ros2Dobot_msgs_v4SrvD
 --- @see Ros2Dobot_msgs_v4SrvDragSensivity_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDragSensivity_Request
 local Ros2Dobot_msgs_v4SrvDragSensivity_Request = classes["Ros2Dobot_msgs_v4SrvDragSensivity_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvDragSensivity_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/DragSensivity_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11295,7 +11398,9 @@ local Ros2Dobot_msgs_v4SrvDragSensivity_Request = classes["Ros2Dobot_msgs_v4SrvD
 --- @see Ros2Dobot_msgs_v4SrvDragSensivity_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvDragSensivity_Response
 local Ros2Dobot_msgs_v4SrvDragSensivity_Response = classes["Ros2Dobot_msgs_v4SrvDragSensivity_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEmergencyStop_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EmergencyStop_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11352,7 +11457,9 @@ local Ros2Dobot_msgs_v4SrvDragSensivity_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvEmergencyStop_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEmergencyStop_Request
 local Ros2Dobot_msgs_v4SrvEmergencyStop_Request = classes["Ros2Dobot_msgs_v4SrvEmergencyStop_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEmergencyStop_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EmergencyStop_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11409,7 +11516,9 @@ local Ros2Dobot_msgs_v4SrvEmergencyStop_Request = classes["Ros2Dobot_msgs_v4SrvE
 --- @see Ros2Dobot_msgs_v4SrvEmergencyStop_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEmergencyStop_Response
 local Ros2Dobot_msgs_v4SrvEmergencyStop_Response = classes["Ros2Dobot_msgs_v4SrvEmergencyStop_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableFTSensor_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableFTSensor_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11466,7 +11575,9 @@ local Ros2Dobot_msgs_v4SrvEmergencyStop_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvEnableFTSensor_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableFTSensor_Request
 local Ros2Dobot_msgs_v4SrvEnableFTSensor_Request = classes["Ros2Dobot_msgs_v4SrvEnableFTSensor_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableFTSensor_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableFTSensor_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11523,7 +11634,9 @@ local Ros2Dobot_msgs_v4SrvEnableFTSensor_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvEnableFTSensor_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableFTSensor_Response
 local Ros2Dobot_msgs_v4SrvEnableFTSensor_Response = classes["Ros2Dobot_msgs_v4SrvEnableFTSensor_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableRobot_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableRobot_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11579,7 +11692,9 @@ local Ros2Dobot_msgs_v4SrvEnableFTSensor_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvEnableRobot_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableRobot_Request
 local Ros2Dobot_msgs_v4SrvEnableRobot_Request = classes["Ros2Dobot_msgs_v4SrvEnableRobot_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableRobot_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableRobot_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11636,7 +11751,9 @@ local Ros2Dobot_msgs_v4SrvEnableRobot_Request = classes["Ros2Dobot_msgs_v4SrvEna
 --- @see Ros2Dobot_msgs_v4SrvEnableRobot_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableRobot_Response
 local Ros2Dobot_msgs_v4SrvEnableRobot_Response = classes["Ros2Dobot_msgs_v4SrvEnableRobot_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableSafeSkin_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11693,7 +11810,9 @@ local Ros2Dobot_msgs_v4SrvEnableRobot_Response = classes["Ros2Dobot_msgs_v4SrvEn
 --- @see Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request
 local Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request = classes["Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EnableSafeSkin_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11750,7 +11869,9 @@ local Ros2Dobot_msgs_v4SrvEnableSafeSkin_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response
 local Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response = classes["Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEndRTOffset_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EndRTOffset_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11806,7 +11927,9 @@ local Ros2Dobot_msgs_v4SrvEnableSafeSkin_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvEndRTOffset_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEndRTOffset_Request
 local Ros2Dobot_msgs_v4SrvEndRTOffset_Request = classes["Ros2Dobot_msgs_v4SrvEndRTOffset_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvEndRTOffset_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/EndRTOffset_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11863,7 +11986,9 @@ local Ros2Dobot_msgs_v4SrvEndRTOffset_Request = classes["Ros2Dobot_msgs_v4SrvEnd
 --- @see Ros2Dobot_msgs_v4SrvEndRTOffset_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvEndRTOffset_Response
 local Ros2Dobot_msgs_v4SrvEndRTOffset_Response = classes["Ros2Dobot_msgs_v4SrvEndRTOffset_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCCollisionSwitch_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11920,7 +12045,9 @@ local Ros2Dobot_msgs_v4SrvEndRTOffset_Response = classes["Ros2Dobot_msgs_v4SrvEn
 --- @see Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request
 local Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request = classes["Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCCollisionSwitch_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -11977,7 +12104,9 @@ local Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Request = classes["Ros2Dobot_msgs_v4
 --- @see Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response
 local Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response = classes["Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCForceMode_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCForceMode_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12048,7 +12177,9 @@ local Ros2Dobot_msgs_v4SrvFCCollisionSwitch_Response = classes["Ros2Dobot_msgs_v
 --- @see Ros2Dobot_msgs_v4SrvFCForceMode_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCForceMode_Request
 local Ros2Dobot_msgs_v4SrvFCForceMode_Request = classes["Ros2Dobot_msgs_v4SrvFCForceMode_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCForceMode_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCForceMode_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12105,7 +12236,9 @@ local Ros2Dobot_msgs_v4SrvFCForceMode_Request = classes["Ros2Dobot_msgs_v4SrvFCF
 --- @see Ros2Dobot_msgs_v4SrvFCForceMode_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCForceMode_Response
 local Ros2Dobot_msgs_v4SrvFCForceMode_Response = classes["Ros2Dobot_msgs_v4SrvFCForceMode_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCOff_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCOff_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12161,7 +12294,9 @@ local Ros2Dobot_msgs_v4SrvFCForceMode_Response = classes["Ros2Dobot_msgs_v4SrvFC
 --- @see Ros2Dobot_msgs_v4SrvFCOff_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCOff_Request
 local Ros2Dobot_msgs_v4SrvFCOff_Request = classes["Ros2Dobot_msgs_v4SrvFCOff_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCOff_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCOff_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12218,7 +12353,9 @@ local Ros2Dobot_msgs_v4SrvFCOff_Request = classes["Ros2Dobot_msgs_v4SrvFCOff_Req
 --- @see Ros2Dobot_msgs_v4SrvFCOff_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCOff_Response
 local Ros2Dobot_msgs_v4SrvFCOff_Response = classes["Ros2Dobot_msgs_v4SrvFCOff_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetDamping_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetDamping_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12280,7 +12417,9 @@ local Ros2Dobot_msgs_v4SrvFCOff_Response = classes["Ros2Dobot_msgs_v4SrvFCOff_Re
 --- @see Ros2Dobot_msgs_v4SrvFCSetDamping_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetDamping_Request
 local Ros2Dobot_msgs_v4SrvFCSetDamping_Request = classes["Ros2Dobot_msgs_v4SrvFCSetDamping_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetDamping_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetDamping_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12337,7 +12476,9 @@ local Ros2Dobot_msgs_v4SrvFCSetDamping_Request = classes["Ros2Dobot_msgs_v4SrvFC
 --- @see Ros2Dobot_msgs_v4SrvFCSetDamping_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetDamping_Response
 local Ros2Dobot_msgs_v4SrvFCSetDamping_Response = classes["Ros2Dobot_msgs_v4SrvFCSetDamping_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetDeviation_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetDeviation_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12400,7 +12541,9 @@ local Ros2Dobot_msgs_v4SrvFCSetDamping_Response = classes["Ros2Dobot_msgs_v4SrvF
 --- @see Ros2Dobot_msgs_v4SrvFCSetDeviation_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetDeviation_Request
 local Ros2Dobot_msgs_v4SrvFCSetDeviation_Request = classes["Ros2Dobot_msgs_v4SrvFCSetDeviation_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetDeviation_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetDeviation_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12457,7 +12600,9 @@ local Ros2Dobot_msgs_v4SrvFCSetDeviation_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvFCSetDeviation_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetDeviation_Response
 local Ros2Dobot_msgs_v4SrvFCSetDeviation_Response = classes["Ros2Dobot_msgs_v4SrvFCSetDeviation_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForce_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForce_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12519,7 +12664,9 @@ local Ros2Dobot_msgs_v4SrvFCSetDeviation_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvFCSetForce_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForce_Request
 local Ros2Dobot_msgs_v4SrvFCSetForce_Request = classes["Ros2Dobot_msgs_v4SrvFCSetForce_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForce_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForce_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12576,7 +12723,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForce_Request = classes["Ros2Dobot_msgs_v4SrvFCSe
 --- @see Ros2Dobot_msgs_v4SrvFCSetForce_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForce_Response
 local Ros2Dobot_msgs_v4SrvFCSetForce_Response = classes["Ros2Dobot_msgs_v4SrvFCSetForce_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForceLimit_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12638,7 +12787,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForce_Response = classes["Ros2Dobot_msgs_v4SrvFCS
 --- @see Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request
 local Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request = classes["Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForceLimit_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12695,7 +12846,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForceLimit_Request = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response
 local Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response = classes["Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForceSpeedLimit_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12757,7 +12910,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForceLimit_Response = classes["Ros2Dobot_msgs_v4S
 --- @see Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request
 local Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request = classes["Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetForceSpeedLimit_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12814,7 +12969,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Request = classes["Ros2Dobot_msgs
 --- @see Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response
 local Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response = classes["Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetMass_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetMass_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12876,7 +13033,9 @@ local Ros2Dobot_msgs_v4SrvFCSetForceSpeedLimit_Response = classes["Ros2Dobot_msg
 --- @see Ros2Dobot_msgs_v4SrvFCSetMass_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetMass_Request
 local Ros2Dobot_msgs_v4SrvFCSetMass_Request = classes["Ros2Dobot_msgs_v4SrvFCSetMass_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetMass_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetMass_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12933,7 +13092,9 @@ local Ros2Dobot_msgs_v4SrvFCSetMass_Request = classes["Ros2Dobot_msgs_v4SrvFCSet
 --- @see Ros2Dobot_msgs_v4SrvFCSetMass_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetMass_Response
 local Ros2Dobot_msgs_v4SrvFCSetMass_Response = classes["Ros2Dobot_msgs_v4SrvFCSetMass_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetStiffness_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetStiffness_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -12995,7 +13156,9 @@ local Ros2Dobot_msgs_v4SrvFCSetMass_Response = classes["Ros2Dobot_msgs_v4SrvFCSe
 --- @see Ros2Dobot_msgs_v4SrvFCSetStiffness_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetStiffness_Request
 local Ros2Dobot_msgs_v4SrvFCSetStiffness_Request = classes["Ros2Dobot_msgs_v4SrvFCSetStiffness_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvFCSetStiffness_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/FCSetStiffness_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13052,7 +13215,9 @@ local Ros2Dobot_msgs_v4SrvFCSetStiffness_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvFCSetStiffness_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvFCSetStiffness_Response
 local Ros2Dobot_msgs_v4SrvFCSetStiffness_Response = classes["Ros2Dobot_msgs_v4SrvFCSetStiffness_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvForceDriveMode_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ForceDriveMode_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13115,7 +13280,9 @@ local Ros2Dobot_msgs_v4SrvFCSetStiffness_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvForceDriveMode_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvForceDriveMode_Request
 local Ros2Dobot_msgs_v4SrvForceDriveMode_Request = classes["Ros2Dobot_msgs_v4SrvForceDriveMode_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvForceDriveMode_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ForceDriveMode_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13172,7 +13339,9 @@ local Ros2Dobot_msgs_v4SrvForceDriveMode_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvForceDriveMode_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvForceDriveMode_Response
 local Ros2Dobot_msgs_v4SrvForceDriveMode_Response = classes["Ros2Dobot_msgs_v4SrvForceDriveMode_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ForceDriveSpeed_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13229,7 +13398,9 @@ local Ros2Dobot_msgs_v4SrvForceDriveMode_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request
 local Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request = classes["Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ForceDriveSpeed_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13286,7 +13457,9 @@ local Ros2Dobot_msgs_v4SrvForceDriveSpeed_Request = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response
 local Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response = classes["Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetAO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetAO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13343,7 +13516,9 @@ local Ros2Dobot_msgs_v4SrvForceDriveSpeed_Response = classes["Ros2Dobot_msgs_v4S
 --- @see Ros2Dobot_msgs_v4SrvGetAO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetAO_Request
 local Ros2Dobot_msgs_v4SrvGetAO_Request = classes["Ros2Dobot_msgs_v4SrvGetAO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetAO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetAO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13401,7 +13576,9 @@ local Ros2Dobot_msgs_v4SrvGetAO_Request = classes["Ros2Dobot_msgs_v4SrvGetAO_Req
 --- @see Ros2Dobot_msgs_v4SrvGetAO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetAO_Response
 local Ros2Dobot_msgs_v4SrvGetAO_Response = classes["Ros2Dobot_msgs_v4SrvGetAO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetAngle_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetAngle_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13457,7 +13634,9 @@ local Ros2Dobot_msgs_v4SrvGetAO_Response = classes["Ros2Dobot_msgs_v4SrvGetAO_Re
 --- @see Ros2Dobot_msgs_v4SrvGetAngle_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetAngle_Request
 local Ros2Dobot_msgs_v4SrvGetAngle_Request = classes["Ros2Dobot_msgs_v4SrvGetAngle_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetAngle_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetAngle_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13515,7 +13694,9 @@ local Ros2Dobot_msgs_v4SrvGetAngle_Request = classes["Ros2Dobot_msgs_v4SrvGetAng
 --- @see Ros2Dobot_msgs_v4SrvGetAngle_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetAngle_Response
 local Ros2Dobot_msgs_v4SrvGetAngle_Response = classes["Ros2Dobot_msgs_v4SrvGetAngle_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetCoils_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetCoils_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13574,7 +13755,9 @@ local Ros2Dobot_msgs_v4SrvGetAngle_Response = classes["Ros2Dobot_msgs_v4SrvGetAn
 --- @see Ros2Dobot_msgs_v4SrvGetCoils_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetCoils_Request
 local Ros2Dobot_msgs_v4SrvGetCoils_Request = classes["Ros2Dobot_msgs_v4SrvGetCoils_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetCoils_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetCoils_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13632,7 +13815,9 @@ local Ros2Dobot_msgs_v4SrvGetCoils_Request = classes["Ros2Dobot_msgs_v4SrvGetCoi
 --- @see Ros2Dobot_msgs_v4SrvGetCoils_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetCoils_Response
 local Ros2Dobot_msgs_v4SrvGetCoils_Response = classes["Ros2Dobot_msgs_v4SrvGetCoils_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetCurrentCommandId_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13688,7 +13873,9 @@ local Ros2Dobot_msgs_v4SrvGetCoils_Response = classes["Ros2Dobot_msgs_v4SrvGetCo
 --- @see Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request
 local Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request = classes["Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetCurrentCommandId_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13746,7 +13933,9 @@ local Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Request = classes["Ros2Dobot_msgs_
 --- @see Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response
 local Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response = classes["Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13803,7 +13992,9 @@ local Ros2Dobot_msgs_v4SrvGetCurrentCommandId_Response = classes["Ros2Dobot_msgs
 --- @see Ros2Dobot_msgs_v4SrvGetDO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDO_Request
 local Ros2Dobot_msgs_v4SrvGetDO_Request = classes["Ros2Dobot_msgs_v4SrvGetDO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13861,7 +14052,9 @@ local Ros2Dobot_msgs_v4SrvGetDO_Request = classes["Ros2Dobot_msgs_v4SrvGetDO_Req
 --- @see Ros2Dobot_msgs_v4SrvGetDO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDO_Response
 local Ros2Dobot_msgs_v4SrvGetDO_Response = classes["Ros2Dobot_msgs_v4SrvGetDO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDOGroup_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDOGroup_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13918,7 +14111,9 @@ local Ros2Dobot_msgs_v4SrvGetDO_Response = classes["Ros2Dobot_msgs_v4SrvGetDO_Re
 --- @see Ros2Dobot_msgs_v4SrvGetDOGroup_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDOGroup_Request
 local Ros2Dobot_msgs_v4SrvGetDOGroup_Request = classes["Ros2Dobot_msgs_v4SrvGetDOGroup_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDOGroup_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDOGroup_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -13976,7 +14171,9 @@ local Ros2Dobot_msgs_v4SrvGetDOGroup_Request = classes["Ros2Dobot_msgs_v4SrvGetD
 --- @see Ros2Dobot_msgs_v4SrvGetDOGroup_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDOGroup_Response
 local Ros2Dobot_msgs_v4SrvGetDOGroup_Response = classes["Ros2Dobot_msgs_v4SrvGetDOGroup_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDOGroupDEC_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14034,7 +14231,9 @@ local Ros2Dobot_msgs_v4SrvGetDOGroup_Response = classes["Ros2Dobot_msgs_v4SrvGet
 --- @see Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request
 local Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetDOGroupDEC_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14092,7 +14291,9 @@ local Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Request = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response
 local Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response = classes["Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetError_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetError_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14149,7 +14350,9 @@ local Ros2Dobot_msgs_v4SrvGetDOGroupDEC_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvGetError_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetError_Request
 local Ros2Dobot_msgs_v4SrvGetError_Request = classes["Ros2Dobot_msgs_v4SrvGetError_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetError_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetError_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14207,7 +14410,9 @@ local Ros2Dobot_msgs_v4SrvGetError_Request = classes["Ros2Dobot_msgs_v4SrvGetErr
 --- @see Ros2Dobot_msgs_v4SrvGetError_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetError_Response
 local Ros2Dobot_msgs_v4SrvGetError_Response = classes["Ros2Dobot_msgs_v4SrvGetError_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetErrorID_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetErrorID_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14263,7 +14468,9 @@ local Ros2Dobot_msgs_v4SrvGetError_Response = classes["Ros2Dobot_msgs_v4SrvGetEr
 --- @see Ros2Dobot_msgs_v4SrvGetErrorID_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetErrorID_Request
 local Ros2Dobot_msgs_v4SrvGetErrorID_Request = classes["Ros2Dobot_msgs_v4SrvGetErrorID_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetErrorID_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetErrorID_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14321,7 +14528,9 @@ local Ros2Dobot_msgs_v4SrvGetErrorID_Request = classes["Ros2Dobot_msgs_v4SrvGetE
 --- @see Ros2Dobot_msgs_v4SrvGetErrorID_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetErrorID_Response
 local Ros2Dobot_msgs_v4SrvGetErrorID_Response = classes["Ros2Dobot_msgs_v4SrvGetErrorID_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetForce_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetForce_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14378,7 +14587,9 @@ local Ros2Dobot_msgs_v4SrvGetErrorID_Response = classes["Ros2Dobot_msgs_v4SrvGet
 --- @see Ros2Dobot_msgs_v4SrvGetForce_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetForce_Request
 local Ros2Dobot_msgs_v4SrvGetForce_Request = classes["Ros2Dobot_msgs_v4SrvGetForce_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetForce_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetForce_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14436,7 +14647,9 @@ local Ros2Dobot_msgs_v4SrvGetForce_Request = classes["Ros2Dobot_msgs_v4SrvGetFor
 --- @see Ros2Dobot_msgs_v4SrvGetForce_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetForce_Response
 local Ros2Dobot_msgs_v4SrvGetForce_Response = classes["Ros2Dobot_msgs_v4SrvGetForce_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetHoldRegs_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetHoldRegs_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14496,7 +14709,9 @@ local Ros2Dobot_msgs_v4SrvGetForce_Response = classes["Ros2Dobot_msgs_v4SrvGetFo
 --- @see Ros2Dobot_msgs_v4SrvGetHoldRegs_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetHoldRegs_Request
 local Ros2Dobot_msgs_v4SrvGetHoldRegs_Request = classes["Ros2Dobot_msgs_v4SrvGetHoldRegs_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetHoldRegs_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetHoldRegs_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14554,7 +14769,9 @@ local Ros2Dobot_msgs_v4SrvGetHoldRegs_Request = classes["Ros2Dobot_msgs_v4SrvGet
 --- @see Ros2Dobot_msgs_v4SrvGetHoldRegs_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetHoldRegs_Response
 local Ros2Dobot_msgs_v4SrvGetHoldRegs_Response = classes["Ros2Dobot_msgs_v4SrvGetHoldRegs_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInBits_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInBits_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14613,7 +14830,9 @@ local Ros2Dobot_msgs_v4SrvGetHoldRegs_Response = classes["Ros2Dobot_msgs_v4SrvGe
 --- @see Ros2Dobot_msgs_v4SrvGetInBits_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInBits_Request
 local Ros2Dobot_msgs_v4SrvGetInBits_Request = classes["Ros2Dobot_msgs_v4SrvGetInBits_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInBits_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInBits_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14671,7 +14890,9 @@ local Ros2Dobot_msgs_v4SrvGetInBits_Request = classes["Ros2Dobot_msgs_v4SrvGetIn
 --- @see Ros2Dobot_msgs_v4SrvGetInBits_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInBits_Response
 local Ros2Dobot_msgs_v4SrvGetInBits_Response = classes["Ros2Dobot_msgs_v4SrvGetInBits_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInRegs_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInRegs_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14731,7 +14952,9 @@ local Ros2Dobot_msgs_v4SrvGetInBits_Response = classes["Ros2Dobot_msgs_v4SrvGetI
 --- @see Ros2Dobot_msgs_v4SrvGetInRegs_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInRegs_Request
 local Ros2Dobot_msgs_v4SrvGetInRegs_Request = classes["Ros2Dobot_msgs_v4SrvGetInRegs_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInRegs_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInRegs_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14789,7 +15012,9 @@ local Ros2Dobot_msgs_v4SrvGetInRegs_Request = classes["Ros2Dobot_msgs_v4SrvGetIn
 --- @see Ros2Dobot_msgs_v4SrvGetInRegs_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInRegs_Response
 local Ros2Dobot_msgs_v4SrvGetInRegs_Response = classes["Ros2Dobot_msgs_v4SrvGetInRegs_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputBool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputBool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14846,7 +15071,9 @@ local Ros2Dobot_msgs_v4SrvGetInRegs_Response = classes["Ros2Dobot_msgs_v4SrvGetI
 --- @see Ros2Dobot_msgs_v4SrvGetInputBool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputBool_Request
 local Ros2Dobot_msgs_v4SrvGetInputBool_Request = classes["Ros2Dobot_msgs_v4SrvGetInputBool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputBool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputBool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14904,7 +15131,9 @@ local Ros2Dobot_msgs_v4SrvGetInputBool_Request = classes["Ros2Dobot_msgs_v4SrvGe
 --- @see Ros2Dobot_msgs_v4SrvGetInputBool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputBool_Response
 local Ros2Dobot_msgs_v4SrvGetInputBool_Response = classes["Ros2Dobot_msgs_v4SrvGetInputBool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputFloat_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputFloat_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -14961,7 +15190,9 @@ local Ros2Dobot_msgs_v4SrvGetInputBool_Response = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetInputFloat_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputFloat_Request
 local Ros2Dobot_msgs_v4SrvGetInputFloat_Request = classes["Ros2Dobot_msgs_v4SrvGetInputFloat_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputFloat_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputFloat_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15019,7 +15250,9 @@ local Ros2Dobot_msgs_v4SrvGetInputFloat_Request = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetInputFloat_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputFloat_Response
 local Ros2Dobot_msgs_v4SrvGetInputFloat_Response = classes["Ros2Dobot_msgs_v4SrvGetInputFloat_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputInt_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputInt_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15076,7 +15309,9 @@ local Ros2Dobot_msgs_v4SrvGetInputFloat_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvGetInputInt_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputInt_Request
 local Ros2Dobot_msgs_v4SrvGetInputInt_Request = classes["Ros2Dobot_msgs_v4SrvGetInputInt_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetInputInt_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetInputInt_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15134,7 +15369,9 @@ local Ros2Dobot_msgs_v4SrvGetInputInt_Request = classes["Ros2Dobot_msgs_v4SrvGet
 --- @see Ros2Dobot_msgs_v4SrvGetInputInt_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetInputInt_Response
 local Ros2Dobot_msgs_v4SrvGetInputInt_Response = classes["Ros2Dobot_msgs_v4SrvGetInputInt_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputBool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputBool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15191,7 +15428,9 @@ local Ros2Dobot_msgs_v4SrvGetInputInt_Response = classes["Ros2Dobot_msgs_v4SrvGe
 --- @see Ros2Dobot_msgs_v4SrvGetOutputBool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputBool_Request
 local Ros2Dobot_msgs_v4SrvGetOutputBool_Request = classes["Ros2Dobot_msgs_v4SrvGetOutputBool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputBool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputBool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15249,7 +15488,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputBool_Request = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetOutputBool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputBool_Response
 local Ros2Dobot_msgs_v4SrvGetOutputBool_Response = classes["Ros2Dobot_msgs_v4SrvGetOutputBool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputFloat_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputFloat_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15306,7 +15547,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputBool_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvGetOutputFloat_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputFloat_Request
 local Ros2Dobot_msgs_v4SrvGetOutputFloat_Request = classes["Ros2Dobot_msgs_v4SrvGetOutputFloat_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputFloat_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputFloat_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15364,7 +15607,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputFloat_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvGetOutputFloat_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputFloat_Response
 local Ros2Dobot_msgs_v4SrvGetOutputFloat_Response = classes["Ros2Dobot_msgs_v4SrvGetOutputFloat_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputInt_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputInt_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15421,7 +15666,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputFloat_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvGetOutputInt_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputInt_Request
 local Ros2Dobot_msgs_v4SrvGetOutputInt_Request = classes["Ros2Dobot_msgs_v4SrvGetOutputInt_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetOutputInt_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetOutputInt_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15479,7 +15726,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputInt_Request = classes["Ros2Dobot_msgs_v4SrvGe
 --- @see Ros2Dobot_msgs_v4SrvGetOutputInt_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetOutputInt_Response
 local Ros2Dobot_msgs_v4SrvGetOutputInt_Response = classes["Ros2Dobot_msgs_v4SrvGetOutputInt_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetPose_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetPose_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15537,7 +15786,9 @@ local Ros2Dobot_msgs_v4SrvGetOutputInt_Response = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetPose_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetPose_Request
 local Ros2Dobot_msgs_v4SrvGetPose_Request = classes["Ros2Dobot_msgs_v4SrvGetPose_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetPose_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetPose_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15595,7 +15846,9 @@ local Ros2Dobot_msgs_v4SrvGetPose_Request = classes["Ros2Dobot_msgs_v4SrvGetPose
 --- @see Ros2Dobot_msgs_v4SrvGetPose_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetPose_Response
 local Ros2Dobot_msgs_v4SrvGetPose_Response = classes["Ros2Dobot_msgs_v4SrvGetPose_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetStartPose_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetStartPose_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15652,7 +15905,9 @@ local Ros2Dobot_msgs_v4SrvGetPose_Response = classes["Ros2Dobot_msgs_v4SrvGetPos
 --- @see Ros2Dobot_msgs_v4SrvGetStartPose_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetStartPose_Request
 local Ros2Dobot_msgs_v4SrvGetStartPose_Request = classes["Ros2Dobot_msgs_v4SrvGetStartPose_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetStartPose_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetStartPose_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15710,7 +15965,9 @@ local Ros2Dobot_msgs_v4SrvGetStartPose_Request = classes["Ros2Dobot_msgs_v4SrvGe
 --- @see Ros2Dobot_msgs_v4SrvGetStartPose_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetStartPose_Response
 local Ros2Dobot_msgs_v4SrvGetStartPose_Response = classes["Ros2Dobot_msgs_v4SrvGetStartPose_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetToolDO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetToolDO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15767,7 +16024,9 @@ local Ros2Dobot_msgs_v4SrvGetStartPose_Response = classes["Ros2Dobot_msgs_v4SrvG
 --- @see Ros2Dobot_msgs_v4SrvGetToolDO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetToolDO_Request
 local Ros2Dobot_msgs_v4SrvGetToolDO_Request = classes["Ros2Dobot_msgs_v4SrvGetToolDO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvGetToolDO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/GetToolDO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15825,7 +16084,9 @@ local Ros2Dobot_msgs_v4SrvGetToolDO_Request = classes["Ros2Dobot_msgs_v4SrvGetTo
 --- @see Ros2Dobot_msgs_v4SrvGetToolDO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvGetToolDO_Response
 local Ros2Dobot_msgs_v4SrvGetToolDO_Response = classes["Ros2Dobot_msgs_v4SrvGetToolDO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvInverseKin_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/InverseKin_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15891,7 +16152,9 @@ local Ros2Dobot_msgs_v4SrvGetToolDO_Response = classes["Ros2Dobot_msgs_v4SrvGetT
 --- @see Ros2Dobot_msgs_v4SrvInverseKin_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvInverseKin_Request
 local Ros2Dobot_msgs_v4SrvInverseKin_Request = classes["Ros2Dobot_msgs_v4SrvInverseKin_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvInverseKin_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/InverseKin_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -15949,7 +16212,9 @@ local Ros2Dobot_msgs_v4SrvInverseKin_Request = classes["Ros2Dobot_msgs_v4SrvInve
 --- @see Ros2Dobot_msgs_v4SrvInverseKin_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvInverseKin_Response
 local Ros2Dobot_msgs_v4SrvInverseKin_Response = classes["Ros2Dobot_msgs_v4SrvInverseKin_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvInverseSolution_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/InverseSolution_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16006,7 +16271,9 @@ local Ros2Dobot_msgs_v4SrvInverseKin_Response = classes["Ros2Dobot_msgs_v4SrvInv
 --- @see Ros2Dobot_msgs_v4SrvInverseSolution_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvInverseSolution_Request
 local Ros2Dobot_msgs_v4SrvInverseSolution_Request = classes["Ros2Dobot_msgs_v4SrvInverseSolution_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvInverseSolution_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/InverseSolution_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16063,7 +16330,9 @@ local Ros2Dobot_msgs_v4SrvInverseSolution_Request = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvInverseSolution_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvInverseSolution_Response
 local Ros2Dobot_msgs_v4SrvInverseSolution_Response = classes["Ros2Dobot_msgs_v4SrvInverseSolution_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusClose_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusClose_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16120,7 +16389,9 @@ local Ros2Dobot_msgs_v4SrvInverseSolution_Response = classes["Ros2Dobot_msgs_v4S
 --- @see Ros2Dobot_msgs_v4SrvModbusClose_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusClose_Request
 local Ros2Dobot_msgs_v4SrvModbusClose_Request = classes["Ros2Dobot_msgs_v4SrvModbusClose_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusClose_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusClose_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16177,7 +16448,9 @@ local Ros2Dobot_msgs_v4SrvModbusClose_Request = classes["Ros2Dobot_msgs_v4SrvMod
 --- @see Ros2Dobot_msgs_v4SrvModbusClose_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusClose_Response
 local Ros2Dobot_msgs_v4SrvModbusClose_Response = classes["Ros2Dobot_msgs_v4SrvModbusClose_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusCreate_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusCreate_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16237,7 +16510,9 @@ local Ros2Dobot_msgs_v4SrvModbusClose_Response = classes["Ros2Dobot_msgs_v4SrvMo
 --- @see Ros2Dobot_msgs_v4SrvModbusCreate_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusCreate_Request
 local Ros2Dobot_msgs_v4SrvModbusCreate_Request = classes["Ros2Dobot_msgs_v4SrvModbusCreate_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusCreate_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusCreate_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16295,7 +16570,9 @@ local Ros2Dobot_msgs_v4SrvModbusCreate_Request = classes["Ros2Dobot_msgs_v4SrvMo
 --- @see Ros2Dobot_msgs_v4SrvModbusCreate_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusCreate_Response
 local Ros2Dobot_msgs_v4SrvModbusCreate_Response = classes["Ros2Dobot_msgs_v4SrvModbusCreate_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusRTUCreate_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16356,7 +16633,9 @@ local Ros2Dobot_msgs_v4SrvModbusCreate_Response = classes["Ros2Dobot_msgs_v4SrvM
 --- @see Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request
 local Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request = classes["Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ModbusRTUCreate_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16414,7 +16693,9 @@ local Ros2Dobot_msgs_v4SrvModbusRTUCreate_Request = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response
 local Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response = classes["Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16478,7 +16759,9 @@ local Ros2Dobot_msgs_v4SrvModbusRTUCreate_Response = classes["Ros2Dobot_msgs_v4S
 --- @see Ros2Dobot_msgs_v4SrvMovJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovJ_Request
 local Ros2Dobot_msgs_v4SrvMovJ_Request = classes["Ros2Dobot_msgs_v4SrvMovJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16536,7 +16819,9 @@ local Ros2Dobot_msgs_v4SrvMovJ_Request = classes["Ros2Dobot_msgs_v4SrvMovJ_Reque
 --- @see Ros2Dobot_msgs_v4SrvMovJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovJ_Response
 local Ros2Dobot_msgs_v4SrvMovJ_Response = classes["Ros2Dobot_msgs_v4SrvMovJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovJIO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovJIO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16601,7 +16886,9 @@ local Ros2Dobot_msgs_v4SrvMovJ_Response = classes["Ros2Dobot_msgs_v4SrvMovJ_Resp
 --- @see Ros2Dobot_msgs_v4SrvMovJIO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovJIO_Request
 local Ros2Dobot_msgs_v4SrvMovJIO_Request = classes["Ros2Dobot_msgs_v4SrvMovJIO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovJIO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovJIO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16658,7 +16945,9 @@ local Ros2Dobot_msgs_v4SrvMovJIO_Request = classes["Ros2Dobot_msgs_v4SrvMovJIO_R
 --- @see Ros2Dobot_msgs_v4SrvMovJIO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovJIO_Response
 local Ros2Dobot_msgs_v4SrvMovJIO_Response = classes["Ros2Dobot_msgs_v4SrvMovJIO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovL_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovL_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16722,7 +17011,9 @@ local Ros2Dobot_msgs_v4SrvMovJIO_Response = classes["Ros2Dobot_msgs_v4SrvMovJIO_
 --- @see Ros2Dobot_msgs_v4SrvMovL_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovL_Request
 local Ros2Dobot_msgs_v4SrvMovL_Request = classes["Ros2Dobot_msgs_v4SrvMovL_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovL_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovL_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16780,7 +17071,9 @@ local Ros2Dobot_msgs_v4SrvMovL_Request = classes["Ros2Dobot_msgs_v4SrvMovL_Reque
 --- @see Ros2Dobot_msgs_v4SrvMovL_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovL_Response
 local Ros2Dobot_msgs_v4SrvMovL_Response = classes["Ros2Dobot_msgs_v4SrvMovL_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovLIO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovLIO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16845,7 +17138,9 @@ local Ros2Dobot_msgs_v4SrvMovL_Response = classes["Ros2Dobot_msgs_v4SrvMovL_Resp
 --- @see Ros2Dobot_msgs_v4SrvMovLIO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovLIO_Request
 local Ros2Dobot_msgs_v4SrvMovLIO_Request = classes["Ros2Dobot_msgs_v4SrvMovLIO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMovLIO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MovLIO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16902,7 +17197,9 @@ local Ros2Dobot_msgs_v4SrvMovLIO_Request = classes["Ros2Dobot_msgs_v4SrvMovLIO_R
 --- @see Ros2Dobot_msgs_v4SrvMovLIO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMovLIO_Response
 local Ros2Dobot_msgs_v4SrvMovLIO_Response = classes["Ros2Dobot_msgs_v4SrvMovLIO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMoveJog_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MoveJog_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -16960,7 +17257,9 @@ local Ros2Dobot_msgs_v4SrvMovLIO_Response = classes["Ros2Dobot_msgs_v4SrvMovLIO_
 --- @see Ros2Dobot_msgs_v4SrvMoveJog_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMoveJog_Request
 local Ros2Dobot_msgs_v4SrvMoveJog_Request = classes["Ros2Dobot_msgs_v4SrvMoveJog_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvMoveJog_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/MoveJog_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17017,7 +17316,9 @@ local Ros2Dobot_msgs_v4SrvMoveJog_Request = classes["Ros2Dobot_msgs_v4SrvMoveJog
 --- @see Ros2Dobot_msgs_v4SrvMoveJog_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvMoveJog_Response
 local Ros2Dobot_msgs_v4SrvMoveJog_Response = classes["Ros2Dobot_msgs_v4SrvMoveJog_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPause_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Pause_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17073,7 +17374,9 @@ local Ros2Dobot_msgs_v4SrvMoveJog_Response = classes["Ros2Dobot_msgs_v4SrvMoveJo
 --- @see Ros2Dobot_msgs_v4SrvPause_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPause_Request
 local Ros2Dobot_msgs_v4SrvPause_Request = classes["Ros2Dobot_msgs_v4SrvPause_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPause_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Pause_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17130,7 +17433,9 @@ local Ros2Dobot_msgs_v4SrvPause_Request = classes["Ros2Dobot_msgs_v4SrvPause_Req
 --- @see Ros2Dobot_msgs_v4SrvPause_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPause_Response
 local Ros2Dobot_msgs_v4SrvPause_Response = classes["Ros2Dobot_msgs_v4SrvPause_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPositiveKin_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/PositiveKin_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17194,7 +17499,9 @@ local Ros2Dobot_msgs_v4SrvPause_Response = classes["Ros2Dobot_msgs_v4SrvPause_Re
 --- @see Ros2Dobot_msgs_v4SrvPositiveKin_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPositiveKin_Request
 local Ros2Dobot_msgs_v4SrvPositiveKin_Request = classes["Ros2Dobot_msgs_v4SrvPositiveKin_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPositiveKin_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/PositiveKin_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17252,7 +17559,9 @@ local Ros2Dobot_msgs_v4SrvPositiveKin_Request = classes["Ros2Dobot_msgs_v4SrvPos
 --- @see Ros2Dobot_msgs_v4SrvPositiveKin_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPositiveKin_Response
 local Ros2Dobot_msgs_v4SrvPositiveKin_Response = classes["Ros2Dobot_msgs_v4SrvPositiveKin_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPowerOn_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/PowerOn_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17308,7 +17617,9 @@ local Ros2Dobot_msgs_v4SrvPositiveKin_Response = classes["Ros2Dobot_msgs_v4SrvPo
 --- @see Ros2Dobot_msgs_v4SrvPowerOn_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPowerOn_Request
 local Ros2Dobot_msgs_v4SrvPowerOn_Request = classes["Ros2Dobot_msgs_v4SrvPowerOn_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvPowerOn_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/PowerOn_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17365,7 +17676,9 @@ local Ros2Dobot_msgs_v4SrvPowerOn_Request = classes["Ros2Dobot_msgs_v4SrvPowerOn
 --- @see Ros2Dobot_msgs_v4SrvPowerOn_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvPowerOn_Response
 local Ros2Dobot_msgs_v4SrvPowerOn_Response = classes["Ros2Dobot_msgs_v4SrvPowerOn_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelJointMovJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelJointMovJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17428,7 +17741,9 @@ local Ros2Dobot_msgs_v4SrvPowerOn_Response = classes["Ros2Dobot_msgs_v4SrvPowerO
 --- @see Ros2Dobot_msgs_v4SrvRelJointMovJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelJointMovJ_Request
 local Ros2Dobot_msgs_v4SrvRelJointMovJ_Request = classes["Ros2Dobot_msgs_v4SrvRelJointMovJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelJointMovJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelJointMovJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17485,7 +17800,9 @@ local Ros2Dobot_msgs_v4SrvRelJointMovJ_Request = classes["Ros2Dobot_msgs_v4SrvRe
 --- @see Ros2Dobot_msgs_v4SrvRelJointMovJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelJointMovJ_Response
 local Ros2Dobot_msgs_v4SrvRelJointMovJ_Response = classes["Ros2Dobot_msgs_v4SrvRelJointMovJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovJTool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovJTool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17548,7 +17865,9 @@ local Ros2Dobot_msgs_v4SrvRelJointMovJ_Response = classes["Ros2Dobot_msgs_v4SrvR
 --- @see Ros2Dobot_msgs_v4SrvRelMovJTool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovJTool_Request
 local Ros2Dobot_msgs_v4SrvRelMovJTool_Request = classes["Ros2Dobot_msgs_v4SrvRelMovJTool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovJTool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovJTool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17605,7 +17924,9 @@ local Ros2Dobot_msgs_v4SrvRelMovJTool_Request = classes["Ros2Dobot_msgs_v4SrvRel
 --- @see Ros2Dobot_msgs_v4SrvRelMovJTool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovJTool_Response
 local Ros2Dobot_msgs_v4SrvRelMovJTool_Response = classes["Ros2Dobot_msgs_v4SrvRelMovJTool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovJUser_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovJUser_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17668,7 +17989,9 @@ local Ros2Dobot_msgs_v4SrvRelMovJTool_Response = classes["Ros2Dobot_msgs_v4SrvRe
 --- @see Ros2Dobot_msgs_v4SrvRelMovJUser_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovJUser_Request
 local Ros2Dobot_msgs_v4SrvRelMovJUser_Request = classes["Ros2Dobot_msgs_v4SrvRelMovJUser_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovJUser_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovJUser_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17725,7 +18048,9 @@ local Ros2Dobot_msgs_v4SrvRelMovJUser_Request = classes["Ros2Dobot_msgs_v4SrvRel
 --- @see Ros2Dobot_msgs_v4SrvRelMovJUser_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovJUser_Response
 local Ros2Dobot_msgs_v4SrvRelMovJUser_Response = classes["Ros2Dobot_msgs_v4SrvRelMovJUser_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovLTool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovLTool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17788,7 +18113,9 @@ local Ros2Dobot_msgs_v4SrvRelMovJUser_Response = classes["Ros2Dobot_msgs_v4SrvRe
 --- @see Ros2Dobot_msgs_v4SrvRelMovLTool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovLTool_Request
 local Ros2Dobot_msgs_v4SrvRelMovLTool_Request = classes["Ros2Dobot_msgs_v4SrvRelMovLTool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovLTool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovLTool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17845,7 +18172,9 @@ local Ros2Dobot_msgs_v4SrvRelMovLTool_Request = classes["Ros2Dobot_msgs_v4SrvRel
 --- @see Ros2Dobot_msgs_v4SrvRelMovLTool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovLTool_Response
 local Ros2Dobot_msgs_v4SrvRelMovLTool_Response = classes["Ros2Dobot_msgs_v4SrvRelMovLTool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovLUser_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovLUser_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17908,7 +18237,9 @@ local Ros2Dobot_msgs_v4SrvRelMovLTool_Response = classes["Ros2Dobot_msgs_v4SrvRe
 --- @see Ros2Dobot_msgs_v4SrvRelMovLUser_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovLUser_Request
 local Ros2Dobot_msgs_v4SrvRelMovLUser_Request = classes["Ros2Dobot_msgs_v4SrvRelMovLUser_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRelMovLUser_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RelMovLUser_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -17965,7 +18296,9 @@ local Ros2Dobot_msgs_v4SrvRelMovLUser_Request = classes["Ros2Dobot_msgs_v4SrvRel
 --- @see Ros2Dobot_msgs_v4SrvRelMovLUser_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRelMovLUser_Response
 local Ros2Dobot_msgs_v4SrvRelMovLUser_Response = classes["Ros2Dobot_msgs_v4SrvRelMovLUser_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRequestControl_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RequestControl_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18021,7 +18354,9 @@ local Ros2Dobot_msgs_v4SrvRelMovLUser_Response = classes["Ros2Dobot_msgs_v4SrvRe
 --- @see Ros2Dobot_msgs_v4SrvRequestControl_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRequestControl_Request
 local Ros2Dobot_msgs_v4SrvRequestControl_Request = classes["Ros2Dobot_msgs_v4SrvRequestControl_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRequestControl_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RequestControl_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18078,7 +18413,9 @@ local Ros2Dobot_msgs_v4SrvRequestControl_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvRequestControl_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRequestControl_Response
 local Ros2Dobot_msgs_v4SrvRequestControl_Response = classes["Ros2Dobot_msgs_v4SrvRequestControl_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvResetRobot_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ResetRobot_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18134,7 +18471,9 @@ local Ros2Dobot_msgs_v4SrvRequestControl_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvResetRobot_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvResetRobot_Request
 local Ros2Dobot_msgs_v4SrvResetRobot_Request = classes["Ros2Dobot_msgs_v4SrvResetRobot_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvResetRobot_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ResetRobot_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18191,7 +18530,9 @@ local Ros2Dobot_msgs_v4SrvResetRobot_Request = classes["Ros2Dobot_msgs_v4SrvRese
 --- @see Ros2Dobot_msgs_v4SrvResetRobot_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvResetRobot_Response
 local Ros2Dobot_msgs_v4SrvResetRobot_Response = classes["Ros2Dobot_msgs_v4SrvResetRobot_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRobotMode_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RobotMode_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18247,7 +18588,9 @@ local Ros2Dobot_msgs_v4SrvResetRobot_Response = classes["Ros2Dobot_msgs_v4SrvRes
 --- @see Ros2Dobot_msgs_v4SrvRobotMode_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRobotMode_Request
 local Ros2Dobot_msgs_v4SrvRobotMode_Request = classes["Ros2Dobot_msgs_v4SrvRobotMode_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRobotMode_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RobotMode_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18305,7 +18648,9 @@ local Ros2Dobot_msgs_v4SrvRobotMode_Request = classes["Ros2Dobot_msgs_v4SrvRobot
 --- @see Ros2Dobot_msgs_v4SrvRobotMode_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRobotMode_Response
 local Ros2Dobot_msgs_v4SrvRobotMode_Response = classes["Ros2Dobot_msgs_v4SrvRobotMode_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRunScript_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RunScript_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18362,7 +18707,9 @@ local Ros2Dobot_msgs_v4SrvRobotMode_Response = classes["Ros2Dobot_msgs_v4SrvRobo
 --- @see Ros2Dobot_msgs_v4SrvRunScript_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRunScript_Request
 local Ros2Dobot_msgs_v4SrvRunScript_Request = classes["Ros2Dobot_msgs_v4SrvRunScript_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRunScript_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RunScript_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18419,7 +18766,9 @@ local Ros2Dobot_msgs_v4SrvRunScript_Request = classes["Ros2Dobot_msgs_v4SrvRunSc
 --- @see Ros2Dobot_msgs_v4SrvRunScript_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRunScript_Response
 local Ros2Dobot_msgs_v4SrvRunScript_Response = classes["Ros2Dobot_msgs_v4SrvRunScript_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRunTo_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RunTo_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18486,7 +18835,9 @@ local Ros2Dobot_msgs_v4SrvRunScript_Response = classes["Ros2Dobot_msgs_v4SrvRunS
 --- @see Ros2Dobot_msgs_v4SrvRunTo_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRunTo_Request
 local Ros2Dobot_msgs_v4SrvRunTo_Request = classes["Ros2Dobot_msgs_v4SrvRunTo_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvRunTo_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/RunTo_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18543,7 +18894,9 @@ local Ros2Dobot_msgs_v4SrvRunTo_Request = classes["Ros2Dobot_msgs_v4SrvRunTo_Req
 --- @see Ros2Dobot_msgs_v4SrvRunTo_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvRunTo_Response
 local Ros2Dobot_msgs_v4SrvRunTo_Response = classes["Ros2Dobot_msgs_v4SrvRunTo_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvServoJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ServoJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18606,7 +18959,9 @@ local Ros2Dobot_msgs_v4SrvRunTo_Response = classes["Ros2Dobot_msgs_v4SrvRunTo_Re
 --- @see Ros2Dobot_msgs_v4SrvServoJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvServoJ_Request
 local Ros2Dobot_msgs_v4SrvServoJ_Request = classes["Ros2Dobot_msgs_v4SrvServoJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvServoJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ServoJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18663,7 +19018,9 @@ local Ros2Dobot_msgs_v4SrvServoJ_Request = classes["Ros2Dobot_msgs_v4SrvServoJ_R
 --- @see Ros2Dobot_msgs_v4SrvServoJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvServoJ_Response
 local Ros2Dobot_msgs_v4SrvServoJ_Response = classes["Ros2Dobot_msgs_v4SrvServoJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvServoP_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ServoP_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18726,7 +19083,9 @@ local Ros2Dobot_msgs_v4SrvServoJ_Response = classes["Ros2Dobot_msgs_v4SrvServoJ_
 --- @see Ros2Dobot_msgs_v4SrvServoP_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvServoP_Request
 local Ros2Dobot_msgs_v4SrvServoP_Request = classes["Ros2Dobot_msgs_v4SrvServoP_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvServoP_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ServoP_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18783,7 +19142,9 @@ local Ros2Dobot_msgs_v4SrvServoP_Request = classes["Ros2Dobot_msgs_v4SrvServoP_R
 --- @see Ros2Dobot_msgs_v4SrvServoP_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvServoP_Response
 local Ros2Dobot_msgs_v4SrvServoP_Response = classes["Ros2Dobot_msgs_v4SrvServoP_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetBackDistance_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetBackDistance_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18840,7 +19201,9 @@ local Ros2Dobot_msgs_v4SrvServoP_Response = classes["Ros2Dobot_msgs_v4SrvServoP_
 --- @see Ros2Dobot_msgs_v4SrvSetBackDistance_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetBackDistance_Request
 local Ros2Dobot_msgs_v4SrvSetBackDistance_Request = classes["Ros2Dobot_msgs_v4SrvSetBackDistance_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetBackDistance_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetBackDistance_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18897,7 +19260,9 @@ local Ros2Dobot_msgs_v4SrvSetBackDistance_Request = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvSetBackDistance_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetBackDistance_Response
 local Ros2Dobot_msgs_v4SrvSetBackDistance_Response = classes["Ros2Dobot_msgs_v4SrvSetBackDistance_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetCoils_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetCoils_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -18957,7 +19322,9 @@ local Ros2Dobot_msgs_v4SrvSetBackDistance_Response = classes["Ros2Dobot_msgs_v4S
 --- @see Ros2Dobot_msgs_v4SrvSetCoils_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetCoils_Request
 local Ros2Dobot_msgs_v4SrvSetCoils_Request = classes["Ros2Dobot_msgs_v4SrvSetCoils_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetCoils_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetCoils_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19014,7 +19381,9 @@ local Ros2Dobot_msgs_v4SrvSetCoils_Request = classes["Ros2Dobot_msgs_v4SrvSetCoi
 --- @see Ros2Dobot_msgs_v4SrvSetCoils_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetCoils_Response
 local Ros2Dobot_msgs_v4SrvSetCoils_Response = classes["Ros2Dobot_msgs_v4SrvSetCoils_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetCollisionLevel_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19071,7 +19440,9 @@ local Ros2Dobot_msgs_v4SrvSetCoils_Response = classes["Ros2Dobot_msgs_v4SrvSetCo
 --- @see Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request
 local Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request = classes["Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetCollisionLevel_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19128,7 +19499,9 @@ local Ros2Dobot_msgs_v4SrvSetCollisionLevel_Request = classes["Ros2Dobot_msgs_v4
 --- @see Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response
 local Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response = classes["Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetFCCollision_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetFCCollision_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19186,7 +19559,9 @@ local Ros2Dobot_msgs_v4SrvSetCollisionLevel_Response = classes["Ros2Dobot_msgs_v
 --- @see Ros2Dobot_msgs_v4SrvSetFCCollision_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetFCCollision_Request
 local Ros2Dobot_msgs_v4SrvSetFCCollision_Request = classes["Ros2Dobot_msgs_v4SrvSetFCCollision_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetFCCollision_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetFCCollision_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19243,7 +19618,9 @@ local Ros2Dobot_msgs_v4SrvSetFCCollision_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvSetFCCollision_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetFCCollision_Response
 local Ros2Dobot_msgs_v4SrvSetFCCollision_Response = classes["Ros2Dobot_msgs_v4SrvSetFCCollision_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetHoldRegs_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetHoldRegs_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19304,7 +19681,9 @@ local Ros2Dobot_msgs_v4SrvSetFCCollision_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvSetHoldRegs_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetHoldRegs_Request
 local Ros2Dobot_msgs_v4SrvSetHoldRegs_Request = classes["Ros2Dobot_msgs_v4SrvSetHoldRegs_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetHoldRegs_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetHoldRegs_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19361,7 +19740,9 @@ local Ros2Dobot_msgs_v4SrvSetHoldRegs_Request = classes["Ros2Dobot_msgs_v4SrvSet
 --- @see Ros2Dobot_msgs_v4SrvSetHoldRegs_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetHoldRegs_Response
 local Ros2Dobot_msgs_v4SrvSetHoldRegs_Response = classes["Ros2Dobot_msgs_v4SrvSetHoldRegs_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputBool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputBool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19419,7 +19800,9 @@ local Ros2Dobot_msgs_v4SrvSetHoldRegs_Response = classes["Ros2Dobot_msgs_v4SrvSe
 --- @see Ros2Dobot_msgs_v4SrvSetOutputBool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputBool_Request
 local Ros2Dobot_msgs_v4SrvSetOutputBool_Request = classes["Ros2Dobot_msgs_v4SrvSetOutputBool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputBool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputBool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19476,7 +19859,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputBool_Request = classes["Ros2Dobot_msgs_v4SrvS
 --- @see Ros2Dobot_msgs_v4SrvSetOutputBool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputBool_Response
 local Ros2Dobot_msgs_v4SrvSetOutputBool_Response = classes["Ros2Dobot_msgs_v4SrvSetOutputBool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputFloat_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputFloat_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19534,7 +19919,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputBool_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvSetOutputFloat_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputFloat_Request
 local Ros2Dobot_msgs_v4SrvSetOutputFloat_Request = classes["Ros2Dobot_msgs_v4SrvSetOutputFloat_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputFloat_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputFloat_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19591,7 +19978,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputFloat_Request = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvSetOutputFloat_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputFloat_Response
 local Ros2Dobot_msgs_v4SrvSetOutputFloat_Response = classes["Ros2Dobot_msgs_v4SrvSetOutputFloat_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputInt_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputInt_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19649,7 +20038,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputFloat_Response = classes["Ros2Dobot_msgs_v4Sr
 --- @see Ros2Dobot_msgs_v4SrvSetOutputInt_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputInt_Request
 local Ros2Dobot_msgs_v4SrvSetOutputInt_Request = classes["Ros2Dobot_msgs_v4SrvSetOutputInt_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetOutputInt_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetOutputInt_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19706,7 +20097,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputInt_Request = classes["Ros2Dobot_msgs_v4SrvSe
 --- @see Ros2Dobot_msgs_v4SrvSetOutputInt_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetOutputInt_Response
 local Ros2Dobot_msgs_v4SrvSetOutputInt_Response = classes["Ros2Dobot_msgs_v4SrvSetOutputInt_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetPayload_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetPayload_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19766,7 +20159,9 @@ local Ros2Dobot_msgs_v4SrvSetOutputInt_Response = classes["Ros2Dobot_msgs_v4SrvS
 --- @see Ros2Dobot_msgs_v4SrvSetPayload_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetPayload_Request
 local Ros2Dobot_msgs_v4SrvSetPayload_Request = classes["Ros2Dobot_msgs_v4SrvSetPayload_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetPayload_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetPayload_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19823,7 +20218,9 @@ local Ros2Dobot_msgs_v4SrvSetPayload_Request = classes["Ros2Dobot_msgs_v4SrvSetP
 --- @see Ros2Dobot_msgs_v4SrvSetPayload_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetPayload_Response
 local Ros2Dobot_msgs_v4SrvSetPayload_Response = classes["Ros2Dobot_msgs_v4SrvSetPayload_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetPostCollisionMode_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19880,7 +20277,9 @@ local Ros2Dobot_msgs_v4SrvSetPayload_Response = classes["Ros2Dobot_msgs_v4SrvSet
 --- @see Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request
 local Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request = classes["Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetPostCollisionMode_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19937,7 +20336,9 @@ local Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Request = classes["Ros2Dobot_msgs
 --- @see Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response
 local Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response = classes["Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetSafeSkin_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetSafeSkin_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -19995,7 +20396,9 @@ local Ros2Dobot_msgs_v4SrvSetPostCollisionMode_Response = classes["Ros2Dobot_msg
 --- @see Ros2Dobot_msgs_v4SrvSetSafeSkin_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetSafeSkin_Request
 local Ros2Dobot_msgs_v4SrvSetSafeSkin_Request = classes["Ros2Dobot_msgs_v4SrvSetSafeSkin_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetSafeSkin_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetSafeSkin_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20052,7 +20455,9 @@ local Ros2Dobot_msgs_v4SrvSetSafeSkin_Request = classes["Ros2Dobot_msgs_v4SrvSet
 --- @see Ros2Dobot_msgs_v4SrvSetSafeSkin_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetSafeSkin_Response
 local Ros2Dobot_msgs_v4SrvSetSafeSkin_Response = classes["Ros2Dobot_msgs_v4SrvSetSafeSkin_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetSafeWallEnable_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20110,7 +20515,9 @@ local Ros2Dobot_msgs_v4SrvSetSafeSkin_Response = classes["Ros2Dobot_msgs_v4SrvSe
 --- @see Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request
 local Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request = classes["Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetSafeWallEnable_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20167,7 +20574,9 @@ local Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Request = classes["Ros2Dobot_msgs_v4
 --- @see Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response
 local Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response = classes["Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetTool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetTool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20225,7 +20634,9 @@ local Ros2Dobot_msgs_v4SrvSetSafeWallEnable_Response = classes["Ros2Dobot_msgs_v
 --- @see Ros2Dobot_msgs_v4SrvSetTool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetTool_Request
 local Ros2Dobot_msgs_v4SrvSetTool_Request = classes["Ros2Dobot_msgs_v4SrvSetTool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetTool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetTool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20282,7 +20693,9 @@ local Ros2Dobot_msgs_v4SrvSetTool_Request = classes["Ros2Dobot_msgs_v4SrvSetTool
 --- @see Ros2Dobot_msgs_v4SrvSetTool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetTool_Response
 local Ros2Dobot_msgs_v4SrvSetTool_Response = classes["Ros2Dobot_msgs_v4SrvSetTool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetTool485_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetTool485_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20342,7 +20755,9 @@ local Ros2Dobot_msgs_v4SrvSetTool_Response = classes["Ros2Dobot_msgs_v4SrvSetToo
 --- @see Ros2Dobot_msgs_v4SrvSetTool485_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetTool485_Request
 local Ros2Dobot_msgs_v4SrvSetTool485_Request = classes["Ros2Dobot_msgs_v4SrvSetTool485_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetTool485_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetTool485_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20399,7 +20814,9 @@ local Ros2Dobot_msgs_v4SrvSetTool485_Request = classes["Ros2Dobot_msgs_v4SrvSetT
 --- @see Ros2Dobot_msgs_v4SrvSetTool485_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetTool485_Response
 local Ros2Dobot_msgs_v4SrvSetTool485_Response = classes["Ros2Dobot_msgs_v4SrvSetTool485_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetToolMode_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetToolMode_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20457,7 +20874,9 @@ local Ros2Dobot_msgs_v4SrvSetTool485_Response = classes["Ros2Dobot_msgs_v4SrvSet
 --- @see Ros2Dobot_msgs_v4SrvSetToolMode_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetToolMode_Request
 local Ros2Dobot_msgs_v4SrvSetToolMode_Request = classes["Ros2Dobot_msgs_v4SrvSetToolMode_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetToolMode_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetToolMode_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20514,7 +20933,9 @@ local Ros2Dobot_msgs_v4SrvSetToolMode_Request = classes["Ros2Dobot_msgs_v4SrvSet
 --- @see Ros2Dobot_msgs_v4SrvSetToolMode_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetToolMode_Response
 local Ros2Dobot_msgs_v4SrvSetToolMode_Response = classes["Ros2Dobot_msgs_v4SrvSetToolMode_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetToolPower_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetToolPower_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20571,7 +20992,9 @@ local Ros2Dobot_msgs_v4SrvSetToolMode_Response = classes["Ros2Dobot_msgs_v4SrvSe
 --- @see Ros2Dobot_msgs_v4SrvSetToolPower_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetToolPower_Request
 local Ros2Dobot_msgs_v4SrvSetToolPower_Request = classes["Ros2Dobot_msgs_v4SrvSetToolPower_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetToolPower_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetToolPower_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20628,7 +21051,9 @@ local Ros2Dobot_msgs_v4SrvSetToolPower_Request = classes["Ros2Dobot_msgs_v4SrvSe
 --- @see Ros2Dobot_msgs_v4SrvSetToolPower_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetToolPower_Response
 local Ros2Dobot_msgs_v4SrvSetToolPower_Response = classes["Ros2Dobot_msgs_v4SrvSetToolPower_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetUser_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetUser_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20686,7 +21111,9 @@ local Ros2Dobot_msgs_v4SrvSetToolPower_Response = classes["Ros2Dobot_msgs_v4SrvS
 --- @see Ros2Dobot_msgs_v4SrvSetUser_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetUser_Request
 local Ros2Dobot_msgs_v4SrvSetUser_Request = classes["Ros2Dobot_msgs_v4SrvSetUser_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetUser_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetUser_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20743,7 +21170,9 @@ local Ros2Dobot_msgs_v4SrvSetUser_Request = classes["Ros2Dobot_msgs_v4SrvSetUser
 --- @see Ros2Dobot_msgs_v4SrvSetUser_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetUser_Response
 local Ros2Dobot_msgs_v4SrvSetUser_Response = classes["Ros2Dobot_msgs_v4SrvSetUser_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetWorkZoneEnable_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20801,7 +21230,9 @@ local Ros2Dobot_msgs_v4SrvSetUser_Response = classes["Ros2Dobot_msgs_v4SrvSetUse
 --- @see Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request
 local Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request = classes["Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SetWorkZoneEnable_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20858,7 +21289,9 @@ local Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Request = classes["Ros2Dobot_msgs_v4
 --- @see Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response
 local Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response = classes["Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSixForceHome_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SixForceHome_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20914,7 +21347,9 @@ local Ros2Dobot_msgs_v4SrvSetWorkZoneEnable_Response = classes["Ros2Dobot_msgs_v
 --- @see Ros2Dobot_msgs_v4SrvSixForceHome_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSixForceHome_Request
 local Ros2Dobot_msgs_v4SrvSixForceHome_Request = classes["Ros2Dobot_msgs_v4SrvSixForceHome_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSixForceHome_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SixForceHome_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -20971,7 +21406,9 @@ local Ros2Dobot_msgs_v4SrvSixForceHome_Request = classes["Ros2Dobot_msgs_v4SrvSi
 --- @see Ros2Dobot_msgs_v4SrvSixForceHome_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSixForceHome_Response
 local Ros2Dobot_msgs_v4SrvSixForceHome_Response = classes["Ros2Dobot_msgs_v4SrvSixForceHome_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSpeedFactor_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SpeedFactor_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21028,7 +21465,9 @@ local Ros2Dobot_msgs_v4SrvSixForceHome_Response = classes["Ros2Dobot_msgs_v4SrvS
 --- @see Ros2Dobot_msgs_v4SrvSpeedFactor_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSpeedFactor_Request
 local Ros2Dobot_msgs_v4SrvSpeedFactor_Request = classes["Ros2Dobot_msgs_v4SrvSpeedFactor_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvSpeedFactor_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/SpeedFactor_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21085,7 +21524,9 @@ local Ros2Dobot_msgs_v4SrvSpeedFactor_Request = classes["Ros2Dobot_msgs_v4SrvSpe
 --- @see Ros2Dobot_msgs_v4SrvSpeedFactor_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvSpeedFactor_Response
 local Ros2Dobot_msgs_v4SrvSpeedFactor_Response = classes["Ros2Dobot_msgs_v4SrvSpeedFactor_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartDrag_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartDrag_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21141,7 +21582,9 @@ local Ros2Dobot_msgs_v4SrvSpeedFactor_Response = classes["Ros2Dobot_msgs_v4SrvSp
 --- @see Ros2Dobot_msgs_v4SrvStartDrag_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartDrag_Request
 local Ros2Dobot_msgs_v4SrvStartDrag_Request = classes["Ros2Dobot_msgs_v4SrvStartDrag_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartDrag_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartDrag_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21198,7 +21641,9 @@ local Ros2Dobot_msgs_v4SrvStartDrag_Request = classes["Ros2Dobot_msgs_v4SrvStart
 --- @see Ros2Dobot_msgs_v4SrvStartDrag_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartDrag_Response
 local Ros2Dobot_msgs_v4SrvStartDrag_Response = classes["Ros2Dobot_msgs_v4SrvStartDrag_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartPath_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartPath_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21256,7 +21701,9 @@ local Ros2Dobot_msgs_v4SrvStartDrag_Response = classes["Ros2Dobot_msgs_v4SrvStar
 --- @see Ros2Dobot_msgs_v4SrvStartPath_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartPath_Request
 local Ros2Dobot_msgs_v4SrvStartPath_Request = classes["Ros2Dobot_msgs_v4SrvStartPath_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartPath_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartPath_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21313,7 +21760,9 @@ local Ros2Dobot_msgs_v4SrvStartPath_Request = classes["Ros2Dobot_msgs_v4SrvStart
 --- @see Ros2Dobot_msgs_v4SrvStartPath_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartPath_Response
 local Ros2Dobot_msgs_v4SrvStartPath_Response = classes["Ros2Dobot_msgs_v4SrvStartPath_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartRTOffset_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartRTOffset_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21369,7 +21818,9 @@ local Ros2Dobot_msgs_v4SrvStartPath_Response = classes["Ros2Dobot_msgs_v4SrvStar
 --- @see Ros2Dobot_msgs_v4SrvStartRTOffset_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartRTOffset_Request
 local Ros2Dobot_msgs_v4SrvStartRTOffset_Request = classes["Ros2Dobot_msgs_v4SrvStartRTOffset_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStartRTOffset_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StartRTOffset_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21426,7 +21877,9 @@ local Ros2Dobot_msgs_v4SrvStartRTOffset_Request = classes["Ros2Dobot_msgs_v4SrvS
 --- @see Ros2Dobot_msgs_v4SrvStartRTOffset_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStartRTOffset_Response
 local Ros2Dobot_msgs_v4SrvStartRTOffset_Response = classes["Ros2Dobot_msgs_v4SrvStartRTOffset_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStop_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Stop_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21482,7 +21935,9 @@ local Ros2Dobot_msgs_v4SrvStartRTOffset_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvStop_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStop_Request
 local Ros2Dobot_msgs_v4SrvStop_Request = classes["Ros2Dobot_msgs_v4SrvStop_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStop_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Stop_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21539,7 +21994,9 @@ local Ros2Dobot_msgs_v4SrvStop_Request = classes["Ros2Dobot_msgs_v4SrvStop_Reque
 --- @see Ros2Dobot_msgs_v4SrvStop_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStop_Response
 local Ros2Dobot_msgs_v4SrvStop_Response = classes["Ros2Dobot_msgs_v4SrvStop_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStopDrag_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StopDrag_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21595,7 +22052,9 @@ local Ros2Dobot_msgs_v4SrvStop_Response = classes["Ros2Dobot_msgs_v4SrvStop_Resp
 --- @see Ros2Dobot_msgs_v4SrvStopDrag_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStopDrag_Request
 local Ros2Dobot_msgs_v4SrvStopDrag_Request = classes["Ros2Dobot_msgs_v4SrvStopDrag_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStopDrag_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StopDrag_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21652,7 +22111,9 @@ local Ros2Dobot_msgs_v4SrvStopDrag_Request = classes["Ros2Dobot_msgs_v4SrvStopDr
 --- @see Ros2Dobot_msgs_v4SrvStopDrag_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStopDrag_Response
 local Ros2Dobot_msgs_v4SrvStopDrag_Response = classes["Ros2Dobot_msgs_v4SrvStopDrag_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStopMoveJog_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StopMoveJog_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21708,7 +22169,9 @@ local Ros2Dobot_msgs_v4SrvStopDrag_Response = classes["Ros2Dobot_msgs_v4SrvStopD
 --- @see Ros2Dobot_msgs_v4SrvStopMoveJog_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStopMoveJog_Request
 local Ros2Dobot_msgs_v4SrvStopMoveJog_Request = classes["Ros2Dobot_msgs_v4SrvStopMoveJog_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvStopMoveJog_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/StopMoveJog_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21765,7 +22228,9 @@ local Ros2Dobot_msgs_v4SrvStopMoveJog_Request = classes["Ros2Dobot_msgs_v4SrvSto
 --- @see Ros2Dobot_msgs_v4SrvStopMoveJog_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvStopMoveJog_Response
 local Ros2Dobot_msgs_v4SrvStopMoveJog_Response = classes["Ros2Dobot_msgs_v4SrvStopMoveJog_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvTcpDashboard_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/TcpDashboard_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21822,7 +22287,9 @@ local Ros2Dobot_msgs_v4SrvStopMoveJog_Response = classes["Ros2Dobot_msgs_v4SrvSt
 --- @see Ros2Dobot_msgs_v4SrvTcpDashboard_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvTcpDashboard_Request
 local Ros2Dobot_msgs_v4SrvTcpDashboard_Request = classes["Ros2Dobot_msgs_v4SrvTcpDashboard_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvTcpDashboard_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/TcpDashboard_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21879,7 +22346,9 @@ local Ros2Dobot_msgs_v4SrvTcpDashboard_Request = classes["Ros2Dobot_msgs_v4SrvTc
 --- @see Ros2Dobot_msgs_v4SrvTcpDashboard_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvTcpDashboard_Response
 local Ros2Dobot_msgs_v4SrvTcpDashboard_Response = classes["Ros2Dobot_msgs_v4SrvTcpDashboard_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvTool_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Tool_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21936,7 +22405,9 @@ local Ros2Dobot_msgs_v4SrvTcpDashboard_Response = classes["Ros2Dobot_msgs_v4SrvT
 --- @see Ros2Dobot_msgs_v4SrvTool_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvTool_Request
 local Ros2Dobot_msgs_v4SrvTool_Request = classes["Ros2Dobot_msgs_v4SrvTool_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvTool_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/Tool_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -21993,7 +22464,9 @@ local Ros2Dobot_msgs_v4SrvTool_Request = classes["Ros2Dobot_msgs_v4SrvTool_Reque
 --- @see Ros2Dobot_msgs_v4SrvTool_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvTool_Response
 local Ros2Dobot_msgs_v4SrvTool_Response = classes["Ros2Dobot_msgs_v4SrvTool_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolAI_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolAI_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22050,7 +22523,9 @@ local Ros2Dobot_msgs_v4SrvTool_Response = classes["Ros2Dobot_msgs_v4SrvTool_Resp
 --- @see Ros2Dobot_msgs_v4SrvToolAI_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolAI_Request
 local Ros2Dobot_msgs_v4SrvToolAI_Request = classes["Ros2Dobot_msgs_v4SrvToolAI_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolAI_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolAI_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22107,7 +22582,9 @@ local Ros2Dobot_msgs_v4SrvToolAI_Request = classes["Ros2Dobot_msgs_v4SrvToolAI_R
 --- @see Ros2Dobot_msgs_v4SrvToolAI_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolAI_Response
 local Ros2Dobot_msgs_v4SrvToolAI_Response = classes["Ros2Dobot_msgs_v4SrvToolAI_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDI_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDI_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22164,7 +22641,9 @@ local Ros2Dobot_msgs_v4SrvToolAI_Response = classes["Ros2Dobot_msgs_v4SrvToolAI_
 --- @see Ros2Dobot_msgs_v4SrvToolDI_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDI_Request
 local Ros2Dobot_msgs_v4SrvToolDI_Request = classes["Ros2Dobot_msgs_v4SrvToolDI_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDI_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDI_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22221,7 +22700,9 @@ local Ros2Dobot_msgs_v4SrvToolDI_Request = classes["Ros2Dobot_msgs_v4SrvToolDI_R
 --- @see Ros2Dobot_msgs_v4SrvToolDI_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDI_Response
 local Ros2Dobot_msgs_v4SrvToolDI_Response = classes["Ros2Dobot_msgs_v4SrvToolDI_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDO_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDO_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22279,7 +22760,9 @@ local Ros2Dobot_msgs_v4SrvToolDI_Response = classes["Ros2Dobot_msgs_v4SrvToolDI_
 --- @see Ros2Dobot_msgs_v4SrvToolDO_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDO_Request
 local Ros2Dobot_msgs_v4SrvToolDO_Request = classes["Ros2Dobot_msgs_v4SrvToolDO_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDO_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDO_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22336,7 +22819,9 @@ local Ros2Dobot_msgs_v4SrvToolDO_Request = classes["Ros2Dobot_msgs_v4SrvToolDO_R
 --- @see Ros2Dobot_msgs_v4SrvToolDO_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDO_Response
 local Ros2Dobot_msgs_v4SrvToolDO_Response = classes["Ros2Dobot_msgs_v4SrvToolDO_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDOInstant_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDOInstant_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22394,7 +22879,9 @@ local Ros2Dobot_msgs_v4SrvToolDO_Response = classes["Ros2Dobot_msgs_v4SrvToolDO_
 --- @see Ros2Dobot_msgs_v4SrvToolDOInstant_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDOInstant_Request
 local Ros2Dobot_msgs_v4SrvToolDOInstant_Request = classes["Ros2Dobot_msgs_v4SrvToolDOInstant_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvToolDOInstant_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/ToolDOInstant_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22451,7 +22938,9 @@ local Ros2Dobot_msgs_v4SrvToolDOInstant_Request = classes["Ros2Dobot_msgs_v4SrvT
 --- @see Ros2Dobot_msgs_v4SrvToolDOInstant_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvToolDOInstant_Response
 local Ros2Dobot_msgs_v4SrvToolDOInstant_Response = classes["Ros2Dobot_msgs_v4SrvToolDOInstant_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvUser_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/User_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22508,7 +22997,9 @@ local Ros2Dobot_msgs_v4SrvToolDOInstant_Response = classes["Ros2Dobot_msgs_v4Srv
 --- @see Ros2Dobot_msgs_v4SrvUser_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvUser_Request
 local Ros2Dobot_msgs_v4SrvUser_Request = classes["Ros2Dobot_msgs_v4SrvUser_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvUser_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/User_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22565,7 +23056,9 @@ local Ros2Dobot_msgs_v4SrvUser_Request = classes["Ros2Dobot_msgs_v4SrvUser_Reque
 --- @see Ros2Dobot_msgs_v4SrvUser_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvUser_Response
 local Ros2Dobot_msgs_v4SrvUser_Response = classes["Ros2Dobot_msgs_v4SrvUser_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvVelJ_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/VelJ_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22622,7 +23115,9 @@ local Ros2Dobot_msgs_v4SrvUser_Response = classes["Ros2Dobot_msgs_v4SrvUser_Resp
 --- @see Ros2Dobot_msgs_v4SrvVelJ_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvVelJ_Request
 local Ros2Dobot_msgs_v4SrvVelJ_Request = classes["Ros2Dobot_msgs_v4SrvVelJ_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvVelJ_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/VelJ_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22679,7 +23174,9 @@ local Ros2Dobot_msgs_v4SrvVelJ_Request = classes["Ros2Dobot_msgs_v4SrvVelJ_Reque
 --- @see Ros2Dobot_msgs_v4SrvVelJ_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvVelJ_Response
 local Ros2Dobot_msgs_v4SrvVelJ_Response = classes["Ros2Dobot_msgs_v4SrvVelJ_Response"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvVelL_Request
 --- @brief Complete ROS2 dobot_msgs_v4/srv/VelL_Request value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22736,7 +23233,9 @@ local Ros2Dobot_msgs_v4SrvVelJ_Response = classes["Ros2Dobot_msgs_v4SrvVelJ_Resp
 --- @see Ros2Dobot_msgs_v4SrvVelL_Request.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvVelL_Request
 local Ros2Dobot_msgs_v4SrvVelL_Request = classes["Ros2Dobot_msgs_v4SrvVelL_Request"]
+end
 
+do
 --- @class Ros2Dobot_msgs_v4SrvVelL_Response
 --- @brief Complete ROS2 dobot_msgs_v4/srv/VelL_Response value and codec.
 --- @details Preserves every declared native field and the finite canonical bounds.
@@ -22793,5 +23292,6 @@ local Ros2Dobot_msgs_v4SrvVelL_Request = classes["Ros2Dobot_msgs_v4SrvVelL_Reque
 --- @see Ros2Dobot_msgs_v4SrvVelL_Response.encode
 --- @field decode fun(bytes: string): Ros2Dobot_msgs_v4SrvVelL_Response
 local Ros2Dobot_msgs_v4SrvVelL_Response = classes["Ros2Dobot_msgs_v4SrvVelL_Response"]
+end
 
 return classes, by_name

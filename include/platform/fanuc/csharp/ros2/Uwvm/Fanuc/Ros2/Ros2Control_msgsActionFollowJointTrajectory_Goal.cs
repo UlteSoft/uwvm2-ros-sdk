@@ -7,7 +7,7 @@
  * native ROS objects; importing them grants no transport alias.
  */
 using System;
-using Uwvm.Ros;
+using Uwvm.RosWasm.Catalog;
 
 namespace Uwvm.Fanuc.Ros2
 {
@@ -62,7 +62,7 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static byte[] Encode(Ros2Control_msgsActionFollowJointTrajectory_Goal value)
         {
-            Wire.Writer wire = new Wire.Writer(MAX_WIRE_BYTES);
+            CatalogWire.Writer wire = new CatalogWire.Writer(MAX_WIRE_BYTES);
             WriteFields(wire, value);
             return wire.Finish();
         }
@@ -75,11 +75,11 @@ namespace Uwvm.Fanuc.Ros2
          */
         public static Ros2Control_msgsActionFollowJointTrajectory_Goal Decode(byte[] bytes)
         {
-            if(bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
+            if (bytes == null || bytes.Length < MIN_WIRE_BYTES || bytes.Length > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Invalid complete canonical extent");
             }
-            Wire.Reader wire = new Wire.Reader(bytes);
+            CatalogWire.Reader wire = new CatalogWire.Reader(bytes);
             Ros2Control_msgsActionFollowJointTrajectory_Goal value = ReadFields(wire);
             wire.Finish();
             return value;
@@ -91,53 +91,34 @@ namespace Uwvm.Fanuc.Ros2
          * @param value Borrowed stable complete value.
          * @return No value; invalid fields or aggregate bounds throw before publication.
          */
-        internal static void WriteFields(Wire.Writer wire, Ros2Control_msgsActionFollowJointTrajectory_Goal value)
+        internal static void WriteFields(CatalogWire.Writer wire, Ros2Control_msgsActionFollowJointTrajectory_Goal value)
         {
-            if(value == null)
-            {
-                throw new ArgumentException("Null canonical record");
-            }
+            if (value == null) { throw new ArgumentException("Null canonical record"); }
             int start = wire.Position;
             Ros2Trajectory_msgsMsgJointTrajectory.WriteFields(wire, value.field_trajectory);
             Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.WriteFields(wire, value.field_multi_dof_trajectory);
-            if(value.field_path_tolerance == null || value.field_path_tolerance.Length > 12)
-            {
-                throw new ArgumentException("Invalid path_tolerance extent");
-            }
+            if (value.field_path_tolerance == null || value.field_path_tolerance.Length > 12) { throw new ArgumentException("Invalid path_tolerance extent"); }
             wire.U32((uint)value.field_path_tolerance.Length);
-            for(int index = 0; index < value.field_path_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_path_tolerance.Length; ++index) {
                 Ros2Control_msgsMsgJointTolerance.WriteFields(wire, value.field_path_tolerance[index]);
             }
-            if(value.field_component_path_tolerance == null || value.field_component_path_tolerance.Length > 12)
-            {
-                throw new ArgumentException("Invalid component_path_tolerance extent");
-            }
+            if (value.field_component_path_tolerance == null || value.field_component_path_tolerance.Length > 12) { throw new ArgumentException("Invalid component_path_tolerance extent"); }
             wire.U32((uint)value.field_component_path_tolerance.Length);
-            for(int index = 0; index < value.field_component_path_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_component_path_tolerance.Length; ++index) {
                 Ros2Control_msgsMsgJointComponentTolerance.WriteFields(wire, value.field_component_path_tolerance[index]);
             }
-            if(value.field_goal_tolerance == null || value.field_goal_tolerance.Length > 12)
-            {
-                throw new ArgumentException("Invalid goal_tolerance extent");
-            }
+            if (value.field_goal_tolerance == null || value.field_goal_tolerance.Length > 12) { throw new ArgumentException("Invalid goal_tolerance extent"); }
             wire.U32((uint)value.field_goal_tolerance.Length);
-            for(int index = 0; index < value.field_goal_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_goal_tolerance.Length; ++index) {
                 Ros2Control_msgsMsgJointTolerance.WriteFields(wire, value.field_goal_tolerance[index]);
             }
-            if(value.field_component_goal_tolerance == null || value.field_component_goal_tolerance.Length > 12)
-            {
-                throw new ArgumentException("Invalid component_goal_tolerance extent");
-            }
+            if (value.field_component_goal_tolerance == null || value.field_component_goal_tolerance.Length > 12) { throw new ArgumentException("Invalid component_goal_tolerance extent"); }
             wire.U32((uint)value.field_component_goal_tolerance.Length);
-            for(int index = 0; index < value.field_component_goal_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_component_goal_tolerance.Length; ++index) {
                 Ros2Control_msgsMsgJointComponentTolerance.WriteFields(wire, value.field_component_goal_tolerance[index]);
             }
             Ros2Builtin_interfacesMsgDuration.WriteFields(wire, value.field_goal_time_tolerance);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }
@@ -149,34 +130,30 @@ namespace Uwvm.Fanuc.Ros2
          * @return Newly owned complete record; malformed nested input throws.
          * @details The caller separately requires complete top-level consumption.
          */
-        internal static Ros2Control_msgsActionFollowJointTrajectory_Goal ReadFields(Wire.Reader wire)
+        internal static Ros2Control_msgsActionFollowJointTrajectory_Goal ReadFields(CatalogWire.Reader wire)
         {
             int start = wire.Position;
             Ros2Control_msgsActionFollowJointTrajectory_Goal value = new Ros2Control_msgsActionFollowJointTrajectory_Goal();
             value.field_trajectory = Ros2Trajectory_msgsMsgJointTrajectory.ReadFields(wire);
             value.field_multi_dof_trajectory = Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.ReadFields(wire);
             value.field_path_tolerance = new Ros2Control_msgsMsgJointTolerance[wire.Count(12)];
-            for(int index = 0; index < value.field_path_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_path_tolerance.Length; ++index) {
                 value.field_path_tolerance[index] = Ros2Control_msgsMsgJointTolerance.ReadFields(wire);
             }
             value.field_component_path_tolerance = new Ros2Control_msgsMsgJointComponentTolerance[wire.Count(12)];
-            for(int index = 0; index < value.field_component_path_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_component_path_tolerance.Length; ++index) {
                 value.field_component_path_tolerance[index] = Ros2Control_msgsMsgJointComponentTolerance.ReadFields(wire);
             }
             value.field_goal_tolerance = new Ros2Control_msgsMsgJointTolerance[wire.Count(12)];
-            for(int index = 0; index < value.field_goal_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_goal_tolerance.Length; ++index) {
                 value.field_goal_tolerance[index] = Ros2Control_msgsMsgJointTolerance.ReadFields(wire);
             }
             value.field_component_goal_tolerance = new Ros2Control_msgsMsgJointComponentTolerance[wire.Count(12)];
-            for(int index = 0; index < value.field_component_goal_tolerance.Length; ++index)
-            {
+            for (int index = 0; index < value.field_component_goal_tolerance.Length; ++index) {
                 value.field_component_goal_tolerance[index] = Ros2Control_msgsMsgJointComponentTolerance.ReadFields(wire);
             }
             value.field_goal_time_tolerance = Ros2Builtin_interfacesMsgDuration.ReadFields(wire);
-            if(wire.Position - start > MAX_WIRE_BYTES)
+            if (wire.Position - start > MAX_WIRE_BYTES)
             {
                 throw new ArgumentException("Nested aggregate exceeds registered wire bound");
             }

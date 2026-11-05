@@ -6,7 +6,7 @@
     {
       "name": "ros/js/wire",
       "file": "include/platform/ros/js/wire.mjs",
-      "sha256": "11b7da720d46b35047e233c8ce96b8b8c9abd95d51a822cfd8c0258b512fea1c"
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
     },
     {
       "name": "ros/js/transport",
@@ -21,7 +21,7 @@
     {
       "name": "booster/js/ros2/records",
       "file": "include/platform/booster/js/ros2/records.mjs",
-      "sha256": "be2dc8039a084b0d462ca60bed7716e7f34f5b08a7491ac2262abd3c2f9ab851"
+      "sha256": "9f2a82acd1ffc11f99310d59f3d2a39af55272d1dd6af39ca780628985229cfe"
     },
     {
       "name": "booster/js/ros2/observation",

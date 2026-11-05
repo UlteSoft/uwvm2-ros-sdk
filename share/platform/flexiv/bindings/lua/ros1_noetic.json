@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "lua",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/lua/ros1/flexiv_ros1_noetic_complete",
+  "bundle_manifest": "share/platform/flexiv/bindings/lua/ros1_noetic-bundle.json"
+}

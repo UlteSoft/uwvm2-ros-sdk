@@ -1,0 +1,21 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "fsharp",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/fsharp/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "csharp": [
+      "include/platform/franka/csharp/ros1/franka-ros1-complete/BoundedRecords.cs"
+    ],
+    "fsharp": [
+      "include/platform/franka/fsharp/ros1/franka-ros1-complete/Records.fs"
+    ],
+    "vbnet": [
+      "include/platform/franka/vbnet/ros1/franka-ros1-complete/Records.vb"
+    ]
+  }
+}

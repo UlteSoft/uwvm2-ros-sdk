@@ -17,5 +17,6 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "bundle_manifest": "share/platform/doosan/bundles/py/doosan-ros1-melodic-devel-complete.json"
 }

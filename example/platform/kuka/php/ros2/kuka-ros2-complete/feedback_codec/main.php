@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "kuka/php/ros2/kuka-ros2-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\KukaKukaRos2Complete\Ros2Control_msgsActionFollowJointTrajectory_Feedback();
 $bytes = $value->encode();
 $decoded = \Uwvm\KukaKukaRos2Complete\Ros2Control_msgsActionFollowJointTrajectory_Feedback::decode($bytes);

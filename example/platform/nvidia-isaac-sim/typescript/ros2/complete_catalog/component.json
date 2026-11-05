@@ -1,0 +1,136 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "nvidia-original-contract-3433",
+  "ros_namespace": "ros2",
+  "test_scope": "Genuine guest complete original canonical records with independently encoded whole-field input/output and malformed input rejection. No native ROS or simulator claim.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/typescript/codec.mts",
+      "sha256": "b037c6e8193e6ef37794b76fa3844e4f4728c9df1e939e370a300e51cbded755"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/typescript/index.mts",
+      "sha256": "39d02a2239308db604b04335d780d54246dcf5433a88dc61456939050b3434b2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/typescript/stdio.mts",
+      "sha256": "ae8d08191b6bc66f246993193ce4cbd8c86a694ce41fae5470e14e86b345ae7f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia/typescript/transport.mts",
+      "sha256": "4912d3a7bbb98bcb3831c5168e3d09e50cfb74790c652cd6c613b1a920c1b8aa"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-groot/typescript/ros2/complete/records.mts",
+      "sha256": "a48465df0348d464e064a1cc2d55f92f5c4a7815ae1c1d6ad6520a113f4b46d2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-groot/typescript/ros2/example_values.mts",
+      "sha256": "ecd5e1d73c67b4d6c3964c66cdac8d4e54e25cbb9322b4308e594c5a4141a0ee"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/typescript/ros2/complete/original_array.mts",
+      "sha256": "e67216853449ea070d8cfd7cbd87c2d8ff421606a7e874addf1032e93cd37f69"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/typescript/ros2/complete/records.mts",
+      "sha256": "306e93b19819ace9ccb6077f32906f648ac5c6115f93e644ab9488f74127b63e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-ros/typescript/ros2/example_values.mts",
+      "sha256": "ef19c6368d1753c398fce12228bc540785a0c9e781a1481c723e5c19fe99d739"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/typescript/ros2/complete/records.mts",
+      "sha256": "1104316e96830e51c365b7c264276e263157ebaefc95026e97f8e370464d6c01"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/nvidia-isaac-sim/typescript/ros2/example_values.mts",
+      "sha256": "90c9c2657478a679dff7397ec9154563e1ba2d32fb99115be5cd7e5c2f464253"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/pack.lua",
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/typescript/compile.cjs",
+      "sha256": "403c7abcb7c6f5166ea34860e7f46c0581a6d462a544ee33771b30b42f83a9ed"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/typescript/provider.lua",
+      "sha256": "8912062ec66503412cc5a577314d52e15d8777618c6cea32175e1c320800f6ce"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/nvidia/provider.lua",
+      "sha256": "9dd7747f8e130e9e9fd378d1d3f42e68156a61e0fdda2a7bbd3c6398a4ab110e"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "53a7cc9906b6bd0ee1a848ed5ed7a118ae210e08221d1d641de7adcf6e5ea1ea"
+    },
+    {
+      "scope": "example",
+      "path": "main-typescript-CPU-clock.deployment.template.json",
+      "sha256": "707a3f0108118faac7da0ca84fd866a98fce794b4f4e586b9e4b00bc79bf53e2"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "5ec33ac091089e2e71d76bd6c6cd4930bce6575c294c7a03ffb08e2686165b95"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "b1e921a64a0b34aed0b2f84c6880aedf8dee2f7ea39a1a46ce36b5a7804310ed"
+    },
+    {
+      "scope": "example",
+      "path": "main.mts",
+      "sha256": "46af7bb5611aa9ed357754c5753438286ee8484f3abb8c5aab392a2f3f5d6a06"
+    }
+  ],
+  "cases": [
+    {
+      "id": "every-original-catalog-record",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "complete_original_records=6\n"
+    }
+  ]
+}

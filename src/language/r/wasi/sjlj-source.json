@@ -1,0 +1,10 @@
+{
+  "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/4.0.21/system/lib/compiler-rt/emscripten_setjmp.c",
+  "revision": "4.0.21",
+  "sha256": "c0eaf2323f5b577667a94caaafede2267e0a8f9d1a9317ed51aa824ad6693ca9",
+  "license": {
+    "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/4.0.21/LICENSE",
+    "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+    "file": "LICENSE.emscripten"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5033",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "be951c96c6409e8ec9a04eb4e02faf20fd0c9a78945ab709994e6d1b578d6d2a"
+    },
+    {
+      "scope": "example",
+      "path": "main.odin",
+      "sha256": "40b45e5c88f5f98f917a2479d0a6f5613d7535766c56866198b1c4e32edff785"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/odin/universal-robots-ros2-trajectory-complete.json",
+      "sha256": "57571cc803fb8518bf0306ee6b3b0d8f8dcfdca83535d2d19f90ffa4ce96f95e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-trajectory-complete.ir.json",
+      "sha256": "b07460b64ac1367c17e4f2ad56016cbb592fd2c058ce94aeaa689b8fbf76a498"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/action/FollowJointTrajectoryUntil_Feedback",
+        "bytes": 88
+      }
+    }
+  ]
+}

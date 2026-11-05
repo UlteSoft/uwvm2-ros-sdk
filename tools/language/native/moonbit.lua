@@ -16,6 +16,10 @@ function build(target, root, action)
 		target:arch() == "wasm32" and target:plat() == "wasm-wasip1",
 		"Select exact MoonBit memory32 Preview1"
 	)
+	if action.backend == "c" then
+		return import("moonbit_c", {rootdir=path.join(root,"tools/language/native"),anonymous=true}).build(target,root,action)
+	end
+	assert(action.backend == nil or action.backend == "wasm", "Select an implemented MoonBit compiler backend")
 	local core =
 		import("core", { rootdir = path.join(root, "tools/language/native"), anonymous = true })
 	local closure, programs = core.frontend(root, "moonbit")
@@ -26,6 +30,7 @@ function build(target, root, action)
 	local interfaces = {
 		utf8 = path.join(standard, "encoding/utf8/utf8.mi"),
 		float = path.join(standard, "float/float.mi"),
+		hex = path.join(standard, "encoding/hex/hex.mi"),
 	}
 	local cores = { path.join(standard, "abort/abort.core"), path.join(standard, "core.core") }
 	local names = {}

@@ -7,9 +7,11 @@
  * source binding and a nonreusing native incarnation on every operation.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "compat/node.h"
 #include "native_rmw_builtin.h"
 #include "native_rmw_queue.h"
+#include "../common/quota_wait.h"
 #if __has_include(<rclcpp/message_info.hpp>)
 #include <rclcpp/message_info.hpp>
 #define UWVM_NATIVE_SUBSCRIPTION_MESSAGE_INFO 1
@@ -74,17 +76,26 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
     }
     inline std::uint32_t queue_options(ros::capability_spec const& cap,queue::options& output)
     {
-        queue::options next{};next.records=static_cast<std::size_t>(limit(cap,"qos.depth"));
-        next.bytes=static_cast<std::size_t>(limit(cap,"max-queue-bytes"));
-        next.body_bytes=static_cast<std::size_t>(limit(cap,"max-message-bytes"));
-        auto const& policy{field(cap,"overflow-policy")};
-        if(policy=="backpressure"){return 95;} // No native pause/ack protocol exists here.
-        if(policy=="drop-oldest"){next.policy=queue::overflow::drop_oldest;}
-        else if(policy=="drop-newest"){next.policy=queue::overflow::drop_newest;}
+        // These limits need a later serialized control operation to release,
+        // or retain lifetime history. A callback must never wait on them.
+        for(auto key:{"max-subscribers","max-inflight","max-binding-history"})
+        {if(ros::quota_wait_enabled(cap,key))return 95;}
+        queue::options next{};
+        auto represent=[](std::uint64_t value,std::size_t& output) noexcept {
+            if(value==ros::unlimited_quota){output=SIZE_MAX;return true;}
+            if(value>SIZE_MAX)return false;output=static_cast<std::size_t>(value);return true;
+        };
+        if(!represent(queue_capacity(cap,"qos.depth"),next.records)||
+           !represent(limit(cap,"max-queue-bytes"),next.bytes))return 90;
+        // The original URMI frame extent is representation, not a configured
+        // quota or an allocation size. The actual body is encoded only once.
+        next.body_bytes=static_cast<std::size_t>(wire_limit(cap,"max-message-bytes",info::header_bytes));
+        auto const configured_policy{cap.limits.find("overflow-policy")};
+        std::string_view const policy{configured_policy==cap.limits.end()?std::string_view{"reject"}:std::string_view{configured_policy->second}};
+        if(policy=="wait"){next.policy=queue::overflow::wait;}
         else if(policy=="reject"){next.policy=queue::overflow::reject;}
         else{return 22;}
-        if(!queue::valid(next)||!limit(cap,"burst")||limit(cap,"burst")>next.records||
-            limit(cap,"max-bytes-per-second")<next.body_bytes){return 90;}
+        if(!queue::valid(next)){return 90;}
         output=next;return 0;
     }
     template<class Native,class Codec,class Contract=native_rmw_publisher::custom_contract<Native,Codec>>
@@ -97,24 +108,29 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
             std::uint64_t incarnation{};
             std::size_t maximum{};
             std::shared_ptr<queue::bounded_queue> records;
+            std::shared_ptr<quota_connection> connection;
             bucket quota;
             std::mutex serial;
             callback_state(ros::capability_spec cap,wire::binding binding,std::uint64_t id,
                 std::size_t max,std::shared_ptr<queue::bounded_queue> q):
-                capability{std::move(cap)},owner{binding},incarnation{id},maximum{max},records{std::move(q)}
+                capability{std::move(cap)},owner{binding},incarnation{id},maximum{max},records{std::move(q)},connection{quota_owner()}
             {quota.refresh(capability);}
+            void notify_capacity() noexcept
+            {std::lock_guard<std::mutex> lock{serial};quota.notify_waiters();}
             void capture(std::shared_ptr<Native const> const& value,rmw_message_info_t const& native) noexcept
             {
                 // An actual executor may dispatch callbacks concurrently. One
                 // serialization lock bounds canonical encoding to one local
                 // temporary at a time; it never calls an upper Guest callback.
-                std::lock_guard<std::mutex> lock{serial};
-                if(records->ingress()){return;}
+                std::unique_lock<std::mutex> lock{serial};
+                if(auto refusal=records->ingress()){if(refusal==90)records->callback_error(refusal);return;}
                 if(!value){records->callback_error(22);return;}
                 try
                 {
+                    quota_scope operation{connection,quota_deadline(capability)};
+                    auto active=[&]() noexcept{return records->ingress()==0;};
                     std::size_t n{};if(!size_of<Codec>(*value,maximum,n)){records->callback_error(90);return;}
-                    if(!quota.take(capability,n)){records->callback_error(11);return;}
+                    if(!quota.take_locked(capability,n,lock,active)){records->callback_error(quota_failure());return;}
                     std::vector<std::uint8_t> canonical;
                     if(!Codec::encode(*value,canonical)||canonical.size()!=n||!Contract::validate(capability,canonical.data(),canonical.size()))
                     {records->callback_error(22);return;}
@@ -128,7 +144,49 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
                     // On95 topic() leaves h unchanged: absent native bits and
                     // its capture error stay in this same owned queue record.
                     // On old SDKs code may be0 but times absent; peek still95.
-                    (void)records->enqueue(h,canonical,code);
+                    // A queue wait retains this exact owned body and metadata;
+                    // it never retakes a native message or repeats encoding.
+                    auto wait_selected=[&](std::string_view key) {
+                        auto selected{ros::quota_setting(capability,key,".on-exhausted")};
+                        if(!selected.empty())return selected=="wait";
+                        auto configured{capability.limits.find("overflow-policy")};
+                        return configured!=capability.limits.end()&&configured->second=="wait";
+                    };
+                    bool const wait_records{wait_selected("qos.depth")};
+                    bool const wait_bytes{wait_selected("max-queue-bytes")};
+                    std::optional<ros::synchronous_quota_wait> waiting;
+                    for(;;)
+                    {
+                        auto admitted{records->enqueue(h,canonical,code)};
+                        if(admitted!=90||(!wait_records&&!wait_bytes))return;
+                        // The finite sequence identity never replenishes. A
+                        // capacity wait cannot repair sequence exhaustion.
+                        if(records->observe().last_sequence==UINT64_MAX)return;
+                        // Registration and consumer notifications use serial.
+                        // Recheck under that lock before sleeping: consumption
+                        // between enqueue refusal and registration cannot vanish.
+                        lock.unlock();
+                        auto space{records->wait_for_space(canonical.capacity(),::uwvm2::utils::host_clock::now(),wait_records,wait_bytes)};
+                        lock.lock();
+                        if(space==0)continue;
+                        if(space!=110){records->callback_error(space);return;}
+                        auto current{records->observe()};
+                        auto records_limit{queue_capacity(capability,"qos.depth")};
+                        auto bytes_limit{limit(capability,"max-queue-bytes")};
+                        bool const records_full{static_cast<std::uint64_t>(current.records)>=records_limit};
+                        bool const bytes_full{bytes_limit<info::header_bytes||current.bytes>bytes_limit-info::header_bytes||
+                            canonical.capacity()>bytes_limit-info::header_bytes-current.bytes};
+                        if(!records_full&&!bytes_full)continue;
+                        if((records_full&&!wait_records)||(bytes_full&&!wait_bytes)){records->callback_error(90);return;}
+                        bool const wait_exit{(records_full&&ros::quota_wait_on_exit(capability,"qos.depth"))||
+                            (bytes_full&&ros::quota_wait_on_exit(capability,"max-queue-bytes"))};
+                        if(!waiting)waiting.emplace();
+                        // wait_locked releases serial before kernel waiting and
+                        // watches retirement notifications and the exact peer,
+                        // worker-process and Gateway-stop cancellation handles.
+                        auto error{quota.wait_locked(*waiting,operation.deadline,lock,active,wait_exit)};
+                        if(error){records->callback_error(error);return;}
+                    }
                 }
                 catch(std::bad_alloc const&){records->callback_error(12);}
                 catch(...){records->callback_error(5);}
@@ -145,7 +203,7 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
         {return wire::same(owner,association_.owner)&&incarnation==association_.incarnation;}
         void notify() noexcept {try{ros2_compat::notify(node_);}catch(...) {}}
         void close() noexcept
-        {callback_->records->retire();subscription_.reset();notify();}
+        {callback_->records->retire();callback_->notify_capacity();subscription_.reset();notify();}
     public:
         /** No caller output changes until all real native association/QoS
          * checks pass. The future registry reserves its slot before calling.
@@ -214,12 +272,12 @@ namespace uwvm2::ros_gateway::native_rmw_subscription
         std::uint32_t commit(wire::binding const& owner,std::uint64_t incarnation,std::uint64_t sequence,std::uint64_t reservation) override
         {
             std::lock_guard<std::mutex> lock{mutex_};if(!owns(owner,incarnation)){return 13;}
-            if(retired_){return 125;}return callback_->records->commit(owner,incarnation,sequence,reservation);
+            if(retired_){return 125;}auto result=callback_->records->commit(owner,incarnation,sequence,reservation);if(!result)callback_->notify_capacity();return result;
         }
         std::uint32_t cancel(wire::binding const& owner,std::uint64_t incarnation,std::uint64_t sequence,std::uint64_t reservation) override
         {
             std::lock_guard<std::mutex> lock{mutex_};if(!owns(owner,incarnation)){return 13;}
-            if(retired_){return 125;}return callback_->records->cancel(owner,incarnation,sequence,reservation);
+            if(retired_){return 125;}auto result=callback_->records->cancel(owner,incarnation,sequence,reservation);if(!result)callback_->notify_capacity();return result;
         }
         std::uint32_t observe(wire::binding const& owner,std::uint64_t incarnation,queue::statistics& output) override
         {

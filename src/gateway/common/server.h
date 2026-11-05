@@ -4,7 +4,9 @@
  * Licensed under the APL-2.0 License (see LICENSE file).    *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "config.h"
+#include "quota_wait.h"
 #include "native_observation_types.h"
 #include "owned_rmw_service.h"
 #include <uwvm2/imported/ros/ipc/rmw_publish.h>
@@ -29,31 +31,30 @@
 
 namespace uwvm2::ros_gateway
 {
-    struct bucket
+    using bucket=gateway_bucket;
+    inline std::uint32_t wait_event_capacity(event_stream& stream,ros::capability_spec const& cap,std::uint64_t bytes)
     {
-        double tokens{}, bytes{};
-        std::chrono::steady_clock::time_point last{std::chrono::steady_clock::now()};
-        bool initialized{};
-        double rate{},burst{},bandwidth{};
-        void refresh(ros::capability_spec const& c)
+        native_exit_restore restore;
+        auto* scope=current_quota_scope;
+        if(!scope||!scope->connection||scope->connection->cancellation<0)return 95;
+        auto records=ros::quota_setting(cap,"max-event-queue-depth",".on-exhausted");
+        auto storage=ros::quota_setting(cap,"max-event-queue-bytes",".on-exhausted");
+        if(records.empty())records=field(cap,"overflow-policy");
+        if(storage.empty())storage=field(cap,"overflow-policy");
+        if(!ros::synchronous_wait_context::select_native_exit(ros::quota_wait_on_exit(cap,"max-event-queue-depth")||ros::quota_wait_on_exit(cap,"max-event-queue-bytes")))return 125;
+        return stream.wait_for_space(bytes,scope->deadline,records=="wait",storage=="wait",nullptr,nullptr,scope->connection->cancellation);
+    }
+    inline std::uint32_t reserve_event(event_stream& stream,ros::capability_spec const& cap,std::uint64_t id,std::uint64_t response,std::uint64_t request)
+    {
+        if(request>UINT64_MAX-response)return 90;
+        for(;;)
         {
-            if(!initialized)
-            {
-                rate=positive(field(c,"max-rate-hz"));burst=static_cast<double>(limit(c,"burst"));bandwidth=static_cast<double>(limit(c,"max-bytes-per-second"));
-                if(c.limits.count("max-log-bytes-per-second")) { bandwidth=std::min(bandwidth,static_cast<double>(limit(c,"max-log-bytes-per-second"))); }
-                tokens=burst;bytes=bandwidth;initialized=true;
-            }
-            auto now{std::chrono::steady_clock::now()};
-            double elapsed{std::chrono::duration<double>(now-last).count()}; last=now;
-            tokens=std::min(burst,tokens+elapsed*rate); bytes=std::min(bandwidth,bytes+elapsed*bandwidth);
+            auto error=stream.reserve(id,response,request);
+            if(error!=11)return error;
+            error=wait_event_capacity(stream,cap,response+request);
+            if(error)return error;
         }
-        bool available(ros::capability_spec const& c,std::size_t count) {refresh(c);return tokens>=1&&bytes>=static_cast<double>(count);}
-        bool available_bytes(ros::capability_spec const& c,std::size_t count) {refresh(c);return bytes>=static_cast<double>(count);}
-        bool take(ros::capability_spec const& c,std::size_t count)
-        { refresh(c);if(tokens<1||bytes<static_cast<double>(count)){return false;}tokens-=1;bytes-=static_cast<double>(count);return true; }
-        bool take_bytes(ros::capability_spec const& c,std::size_t count)
-        { refresh(c);if(bytes<static_cast<double>(count)){return false;}bytes-=static_cast<double>(count);return true; }
-    };
+    }
     inline bool validate_payload(ros::capability_spec const& c,std::vector<std::uint8_t> const& data)
     {
         for(unsigned version:{1u,2u})
@@ -97,7 +98,7 @@ namespace uwvm2::ros_gateway
     }
     // Legacy consumers retain their raw body ABI. A separately granted observer
     // selects the versioned destination before native activation; the two paths
-    // never race to consume a shared message. Callback admission is nonblocking.
+    // never race to consume a shared message. A configured synchronous wait releases the queue lock.
     struct event_queue
     {
         ros::capability_spec capability;
@@ -114,25 +115,47 @@ namespace uwvm2::ros_gateway
         std::uint64_t dropped{};
         bool active{true};
         bucket quota;
+        std::shared_ptr<quota_connection> waiting{quota_owner()};
         event_queue_statistics totals{};
         std::shared_ptr<event_stream> observer;
+        ros::capability_spec observer_capability;
         std::shared_ptr<native_observation::writer> capture_writer;
         std::shared_ptr<native_observation::endpoint const> capture_binding;
         explicit event_queue(ros::capability_spec c):capability{std::move(c)} {}
         ~event_queue(){deactivate();}
         static void bump(std::uint64_t& value) noexcept { if(value!=UINT64_MAX) { ++value; } }
         std::uint64_t depth_limit() const
-        { return limit(capability,(capability.operation=="topic.subscribe")?(capability.type.find("/msg/")==std::string::npos?"queue-depth":"qos.depth"):"max-event-queue-depth"); }
+        { return queue_capacity(capability,(capability.operation=="topic.subscribe")?(capability.type.find("/msg/")==std::string::npos?"queue-depth":"qos.depth"):"max-event-queue-depth"); }
         std::uint64_t byte_limit() const
         { return limit(capability,capability.operation=="topic.subscribe"?"max-queue-bytes":"max-event-queue-bytes"); }
         bool fits(std::size_t size) const { auto maximum{byte_limit()};return events.size()<depth_limit()&&bytes<=maximum&&size<=maximum-bytes; }
         void high_water() noexcept
         { totals.high_water_depth=std::max(totals.high_water_depth,std::uint64_t(events.size()+(pending?1:0)));totals.high_water_bytes=std::max(totals.high_water_bytes,std::uint64_t(bytes+(pending?pending->capacity():0))); }
         void promote()
-        { if(pending&&fits(pending->capacity())) { auto size{pending->capacity()};native_observation::lifecycle(pending->capture,native_observation::phase::promoted);events.push_back(std::move(*pending));pending.reset();bytes+=size; } }
+        {
+            if(pending&&fits(pending->capacity()))
+            {
+                auto size=pending->capacity();
+                try { events.emplace_back(); }
+                catch(std::bad_alloc const&) { return; }
+                events.back()=std::move(*pending);
+                native_observation::lifecycle(events.back().capture,native_observation::phase::promoted);
+                pending.reset();bytes+=size;
+            }
+        }
+        bool append(std::vector<std::uint8_t>& data,std::shared_ptr<native_observation::capture_ref>& capture)
+        {
+            auto size=data.capacity();
+            try { events.emplace_back(); }
+            catch(std::bad_alloc const&) {native_observation::lifecycle(capture,native_observation::phase::rejected,12);bump(dropped);bump(totals.rejected);return false;}
+            events.back()=entry{std::move(data),std::move(capture)};
+            bytes+=size;native_observation::lifecycle(events.back().capture,native_observation::phase::enqueued);
+            bump(totals.enqueued);high_water();return true;
+        }
         bool enqueue(std::vector<std::uint8_t> data,std::shared_ptr<native_observation::capture_ref> capture={})
         {
-            std::lock_guard<std::mutex> guard{mutex};
+            quota_scope callback_scope{waiting,quota_deadline(capability)};
+            std::unique_lock<std::mutex> guard{mutex};
             // A source/capture association can never be redirected to another
             // queue. Missing evidence poisons quality without changing the
             // original canonical-message authorization or queue admission.
@@ -163,7 +186,7 @@ namespace uwvm2::ros_gateway
                 else { ipc::parameter_event event;valid=data.size()<=limit(capability,"max-parameter-bytes")&&ipc::decode_parameter_event(data,event)&&event.node==field(capability,"parameter-node")&&event.name==field(capability,"parameter-name"); }
             }
             else { valid=data.size()<=limit(capability,"max-message-bytes")&&validate_payload(capability,data); }
-            if(!active||!valid||!quota.take(capability,data.size())) { native_observation::lifecycle(capture,native_observation::phase::rejected,!active?125:!valid?22:11);bump(dropped);bump(totals.rejected);return false; }
+            if(!active||!valid||!quota.take_locked(capability,data.size(),guard,[&]{return active;})) { native_observation::lifecycle(capture,native_observation::phase::rejected,!active?125:!valid?22:quota_failure());bump(dropped);bump(totals.rejected);return false; }
             if(observer)
             {
                 // This observed serialized profile currently supports the
@@ -172,20 +195,38 @@ namespace uwvm2::ros_gateway
                 if(capture_binding&&capture_writer){capture_writer->lost();native_observation::lifecycle(capture,native_observation::phase::rejected,95);return false;}
                 ipc::event_kind kind{};std::uint8_t flags{};if(!ipc::event_source_kind(capability.operation,kind,flags)) { bump(dropped);return false; }
                 auto id{service||action?ipc::get(data.data(),8):std::uint64_t{0}};
-                auto error{observer->enqueue({kind,flags,0,id,std::move(data)})};if(error) { bump(dropped); }return !error;
+                ipc::event_record record{kind,flags,0,id,std::move(data)};
+                for(;;)
+                {
+                    auto error=observer->enqueue_owned(record);
+                    if(error!=11){if(error)bump(dropped);return !error;}
+                    auto stream=observer;guard.unlock();
+                    error=wait_event_capacity(*stream,observer_capability,record.owned_bytes());
+                    guard.lock();
+                    if(error||!active){bump(dropped);return false;}
+                }
             }
             promote();auto size{data.capacity()};
-            if(!pending&&fits(size)) { bytes+=size;native_observation::lifecycle(capture,native_observation::phase::enqueued);events.push_back(entry{std::move(data),std::move(capture)});bump(totals.enqueued);high_water();return true; }
-            auto overflow{field(capability,"overflow-policy")};
-            if(overflow=="backpressure")
+            auto depth_key=capability.operation=="topic.subscribe"?(capability.type.find("/msg/")==std::string::npos?"queue-depth":"qos.depth"):"max-event-queue-depth";
+            auto byte_key=capability.operation=="topic.subscribe"?"max-queue-bytes":"max-event-queue-bytes";
+            auto depth_action=ros::quota_setting(capability,depth_key,".on-exhausted"),byte_action=ros::quota_setting(capability,byte_key,".on-exhausted");
+            if(depth_action.empty())depth_action=field(capability,"overflow-policy");
+            if(byte_action.empty())byte_action=field(capability,"overflow-policy");
+            std::optional<ros::synchronous_quota_wait> space_wait;
+            while(pending||!fits(size))
             {
-                bump(totals.backpressured);
-                if(!pending&&size<=limit(capability,"max-pending-event-bytes")) { native_observation::lifecycle(capture,native_observation::phase::pending);pending=entry{std::move(data),std::move(capture)};bump(totals.enqueued);high_water();return true; }
-                native_observation::lifecycle(capture,native_observation::phase::rejected,11);bump(totals.admission_refused);bump(dropped);return false;
+                bool depth_blocked=pending||events.size()>=depth_limit();
+                bool bytes_blocked=bytes>byte_limit()||size>byte_limit()-std::min<std::uint64_t>(bytes,byte_limit());
+                if(!depth_limit()||size>byte_limit()||(depth_blocked&&depth_action!="wait")||(bytes_blocked&&byte_action!="wait"))
+                { native_observation::lifecycle(capture,native_observation::phase::rejected,90);bump(totals.admission_refused);bump(dropped);return false; }
+                if(!space_wait)space_wait.emplace();
+                bool wait_exit=(depth_blocked&&ros::quota_wait_on_exit(capability,depth_key))||(bytes_blocked&&ros::quota_wait_on_exit(capability,byte_key));
+                auto error=quota.wait_locked(*space_wait,callback_scope.deadline,guard,[&]{return active;},wait_exit);
+                if(error){native_observation::lifecycle(capture,native_observation::phase::rejected,error);bump(totals.admission_refused);bump(dropped);return false;}
+                promote();
             }
-            while(!fits(size)&&overflow=="drop-oldest"&&!events.empty()) { bytes-=events.front().capacity();native_observation::lifecycle(events.front().capture,native_observation::phase::dropped,11);events.pop_front();bump(dropped);bump(totals.dropped_oldest); }
-            if(!fits(size)) { native_observation::lifecycle(capture,native_observation::phase::rejected,11);bump(dropped);bump(totals.admission_refused);if(overflow=="drop-newest") { bump(totals.dropped_newest); }else { bump(totals.rejected); }return false; }
-            bytes+=size;native_observation::lifecycle(capture,native_observation::phase::enqueued);events.push_back(entry{std::move(data),std::move(capture)});bump(totals.enqueued);high_water();return true;
+            if(!pending&&fits(size)) { return append(data,capture); }
+            return append(data,capture);
         }
         ipc::call_result poll(native_observation::call const* request=nullptr,
             std::shared_ptr<native_observation::capture_ref>* receipt=nullptr)
@@ -196,12 +237,12 @@ namespace uwvm2::ros_gateway
             native_observation::lifecycle(value.capture,native_observation::phase::dequeued,0,request);
             if(receipt)*receipt=value.capture;
             else if(capture_binding&&capture_writer)capture_writer->lost();
-            bump(totals.dequeued);promote();return {0,std::move(value.payload)};
+            bump(totals.dequeued);promote();quota.notify_waiters();return {0,std::move(value.payload)};
         }
         event_queue_statistics statistics() const noexcept
         { std::lock_guard<std::mutex> guard{mutex};auto value{totals};value.depth=events.size();value.bytes=bytes;value.pending_depth=pending?1:0;value.pending_bytes=pending?pending->capacity():0;return value; }
         void deactivate(std::uint32_t reason=125)
-        { std::lock_guard<std::mutex> guard{mutex};active=false;
+        { std::lock_guard<std::mutex> guard{mutex};active=false;quota.notify_waiters();
           for(auto const& value:events)native_observation::lifecycle(value.capture,native_observation::phase::queue_closed,reason);
           if(pending)native_observation::lifecycle(pending->capture,native_observation::phase::queue_closed,reason);
           events.clear();pending.reset();bytes=0;bump(totals.closed);if(observer) { observer->seal(reason); } }
@@ -292,17 +333,13 @@ namespace uwvm2::ros_gateway
         ~owned_subscription_delivery(){fail(std::uncaught_exceptions()?5u:107u);}
     };
     // The same signal-safe flag is read by independent connection workers.
-    // Volatile sig_atomic_t alone is NOT C++ inter-thread synchronization.
-    static_assert(std::atomic<std::sig_atomic_t>::is_always_lock_free,
-        "Gateway signal and worker cancellation require actual lock-free atomics");
-    inline std::atomic<std::sig_atomic_t> stopping{0};
-    inline void stop(int) noexcept { stopping.store(1,std::memory_order_relaxed); }
     struct audit_limiter
     {
-        std::chrono::steady_clock::time_point window{std::chrono::steady_clock::now()},updated{window};
+        std::chrono::steady_clock::time_point window{::uwvm2::utils::host_clock::now()},updated{window};
         std::uint64_t suppressed{},total_records{},total_bytes{};
-        std::uint32_t written{};
-        double tokens{};
+        std::uint64_t written{};
+        bucket rate_budget;
+        ros::capability_spec rate_contract;
         bool initialized{};
         // Each grant limiter belongs to one serve_connection request thread.
         // Its settings come only from the validated immutable configuration
@@ -310,13 +347,14 @@ namespace uwvm2::ros_gateway
         // Keep these borrowed identities within that configuration/session.
         configuration const* configured_owner{};
         ros::capability_spec const* configured_grant{};
-        double audit_burst{},audit_rate{};
         std::uint64_t audit_record_limit{},audit_byte_limit{};
     };
     inline void audit(std::uint64_t session,ipc::request const& r,ros::capability_spec const* c,std::uint32_t error,audit_limiter& global,audit_limiter& grant,configuration const& cfg)
     {
+        native_exit_restore restore;
         if(!error&&c&&field(*c,"audit")!="allow-and-deny") { return; }
-        auto now{std::chrono::steady_clock::now()};
+        auto now{::uwvm2::utils::host_clock::now()};
+        if(!::uwvm2::utils::host_clock::available()){if(global.suppressed!=UINT64_MAX)++global.suppressed;return;}
         if(now-global.window>=std::chrono::seconds(1)) { global.window=now;global.written=0; }
         native_io::fixed_text<1024> record;
         bool formatted{record.append("ros_audit timestamp_ns=")&&record.number(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count())&&
@@ -338,7 +376,17 @@ namespace uwvm2::ros_gateway
         formatted=formatted&&record.append(" error=")&&record.number(error)&&record.append("\n");
         auto text{record.view()};
         auto suppress=[&] { if(global.suppressed!=std::numeric_limits<std::uint64_t>::max()) { ++global.suppressed; } };
-        if(!formatted||global.written>=cfg.audit_records_per_second||global.total_records>=cfg.audit_max_records||text.size()>cfg.audit_max_bytes-std::min(global.total_bytes,cfg.audit_max_bytes)) { suppress();return; }
+        if(!formatted||(cfg.audit_max_records!=UINT64_MAX&&global.total_records>=cfg.audit_max_records)||
+           (cfg.audit_max_bytes!=UINT64_MAX&&text.size()>cfg.audit_max_bytes-std::min(global.total_bytes,cfg.audit_max_bytes))) { suppress();return; }
+        while(cfg.audit_records_per_second!=UINT64_MAX&&global.written>=cfg.audit_records_per_second)
+        {
+            if(!cfg.audit_records_per_second||!global_quota_wait(cfg,"audit-max-records-per-second")){suppress();return;}
+            auto* scope=current_quota_scope;auto* waiter=ros::synchronous_wait_context::waiter();
+            if(!scope||!waiter||!waiter->select_exit(global_quota_wait(cfg,"audit-max-records-per-second",".on-proc-exit"))){suppress();return;}
+            auto wake=std::min(scope->deadline,global.window+std::chrono::seconds(1));
+            if(waiter->until(wake)!=ros::quota_wait_result::ready||::uwvm2::utils::host_clock::now()>=scope->deadline){suppress();return;}
+            now=::uwvm2::utils::host_clock::now();if(!::uwvm2::utils::host_clock::available()){suppress();return;}if(now-global.window>=std::chrono::seconds(1)){global.window=now;global.written=0;}
+        }
         if(c)
         {
             if(!grant.initialized)
@@ -346,20 +394,25 @@ namespace uwvm2::ros_gateway
                 auto configured{cfg.policy.capabilities.find(r.alias)};
                 if(configured==cfg.policy.capabilities.end()||&configured->second!=c||c->alias!=r.alias)
                 { throw std::runtime_error("audit limiter requires its configured grant"); }
-                grant.audit_burst=static_cast<double>(limit(*c,"audit-burst"));
-                grant.audit_rate=positive(field(*c,"audit-max-rate-hz"));
+                for(auto pair:{std::pair{"audit-max-rate-hz","max-rate-hz"},std::pair{"audit-burst","burst"},
+                    std::pair{"audit-max-rate-hz.on-exhausted","max-rate-hz.on-exhausted"},
+                    std::pair{"audit-max-rate-hz.on-proc-exit","max-rate-hz.on-proc-exit"}})
+                {auto item=c->limits.find(pair.first);if(item!=c->limits.end())grant.rate_contract.limits.emplace(pair.second,item->second);}
                 grant.audit_record_limit=limit(*c,"audit-max-records");
                 grant.audit_byte_limit=limit(*c,"audit-max-bytes");
                 grant.configured_owner=&cfg;grant.configured_grant=c;
-                grant.tokens=grant.audit_burst;grant.initialized=true;
+                grant.initialized=true;
             }
             else if(grant.configured_owner!=&cfg||grant.configured_grant!=c||c->alias!=r.alias)
             { throw std::runtime_error("audit limiter configured grant changed"); }
-            grant.tokens=std::min(grant.audit_burst,grant.tokens+std::chrono::duration<double>(now-grant.updated).count()*grant.audit_rate);grant.updated=now;
-            if(grant.tokens<1||grant.total_records>=grant.audit_record_limit||text.size()>grant.audit_byte_limit-std::min(grant.total_bytes,grant.audit_byte_limit)) { suppress();return; }
-            grant.tokens-=1;++grant.total_records;grant.total_bytes+=text.size();
+            if((grant.audit_record_limit!=UINT64_MAX&&grant.total_records>=grant.audit_record_limit)||(grant.audit_byte_limit!=UINT64_MAX&&text.size()>grant.audit_byte_limit-std::min(grant.total_bytes,grant.audit_byte_limit))||
+               !grant.rate_budget.take(grant.rate_contract,0)) { suppress();return; }
+            if(grant.total_records!=UINT64_MAX)++grant.total_records;
+            grant.total_bytes+=std::min<std::uint64_t>(text.size(),UINT64_MAX-grant.total_bytes);
         }
-        ++global.written;++global.total_records;global.total_bytes+=text.size();
+        if(global.written!=UINT64_MAX)++global.written;
+        if(global.total_records!=UINT64_MAX)++global.total_records;
+        global.total_bytes+=std::min<std::uint64_t>(text.size(),UINT64_MAX-global.total_bytes);
         // No message content is logged. A stalled supervisor pipe cannot block IPC.
         if(!native_io::write_audit_text(text)) { suppress(); }
     }
@@ -378,14 +431,18 @@ namespace uwvm2::ros_gateway
     inline void serve_connection(int fd,configuration const& cfg,std::function<std::unique_ptr<adapter>()> const& factory,int worker_pidfd)
     {
         struct fd_guard { int value; ~fd_guard() { ::close(value); } } guard{fd};
+        auto configured_deadline=[&] { return cfg.timeout_unlimited?std::chrono::steady_clock::time_point::max():
+            ::uwvm2::utils::host_clock::now()+std::chrono::milliseconds(cfg.timeout_ms); };
+        auto waiting=std::make_shared<quota_connection>(fd,worker_pidfd);
+        quota_scope session_wait{waiting,configured_deadline()};
         std::uint32_t uid{},pid{};
         pollfd worker_lifetime{worker_pidfd,POLLIN,0};
         if(::poll(&worker_lifetime,1,0)!=0||!ipc::peer_credentials(fd,uid,pid)||uid!=cfg.worker_uid||pid!=cfg.worker_pid) { return; }
         ipc::frame f;
-        if(!ipc::read_frame(fd,f,ipc::after(cfg.timeout_ms),worker_pidfd)||f.type!=ipc::kind::hello||f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.request_id!=1||f.response_id||f.session_id||f.error||!f.payload.empty()) { return; }
+        if(!ipc::read_frame(fd,f,configured_deadline(),worker_pidfd)||f.type!=ipc::kind::hello||f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.request_id!=1||f.response_id||f.session_id||f.error||!f.payload.empty()) { return; }
         auto session{ipc::random_session()}; if(!session) { return; }
         ipc::frame answer; answer.type=ipc::kind::response; answer.backend=f.backend; answer.response_id=f.request_id; answer.session_id=session; answer.timeout_ms=cfg.timeout_ms;
-        if(!ipc::write_frame(fd,answer,ipc::after(cfg.timeout_ms),worker_pidfd)) { return; }
+        if(!ipc::write_frame(fd,answer,configured_deadline(),worker_pidfd)) { return; }
         std::shared_ptr<native_observation::session const> native_session;
         struct native_session_completion
         {
@@ -456,20 +513,20 @@ namespace uwvm2::ros_gateway
         std::map<std::string,audit_limiter,std::less<>> grant_logs;
         while(!stopping.load(std::memory_order_relaxed))
         {
-            if(!ipc::read_frame(fd,f,ipc::after(cfg.timeout_ms),worker_pidfd)) { break; }
+            if(!ipc::read_frame(fd,f,configured_deadline(),worker_pidfd)) { break; }
             if(f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.session_id!=session||f.request_id<=last||f.response_id||f.error) { break; }
             last=f.request_id;
             if(f.type==ipc::kind::close||f.type==ipc::kind::cancel) { break; }
             if(f.type!=ipc::kind::request) { break; }
             ipc::request r; if(!ipc::decode_request(f.payload,r)) { break; }
-            auto started{std::chrono::steady_clock::now()};
-            auto wire_until{started+std::chrono::milliseconds(std::min(f.timeout_ms,cfg.timeout_ms))};
+            auto started{::uwvm2::utils::host_clock::now()};
+            auto wire_until{std::min(ipc::after(f.timeout_ms),configured_deadline())};
             auto until{wire_until};
-            auto remaining_budget=[&](std::uint32_t maximum)
+            auto remaining_budget=[&](std::uint32_t maximum) -> std::optional<std::uint32_t>
             {
-                auto now{std::chrono::steady_clock::now()};if(now>=until) { return std::uint32_t{}; }
-                auto milliseconds{std::chrono::duration_cast<std::chrono::milliseconds>(until-now).count()};
-                return static_cast<std::uint32_t>(std::min<std::uint64_t>(maximum,static_cast<std::uint64_t>(milliseconds)));
+                auto remaining{ipc::remaining_ms(until)};
+                if(!remaining) { return std::nullopt; }
+                return ipc::min_timeout(maximum,*remaining);
             };
             ipc::call_result result;bool native_invoked{};
             native_observation::call native_request{cfg.native_observer,native_session,f.request_id};
@@ -478,8 +535,11 @@ namespace uwvm2::ros_gateway
             owned_subscription_delivery subscription_delivery{backend};
             bool subscription_ack_attempted{},subscription_endpoint_reply{};
             auto cap{cfg.policy.capabilities.find(r.alias)}; ros::capability_spec const* c{cap==cfg.policy.capabilities.end()?nullptr:&cap->second};
-            if(c&&c->limits.count("timeout-ms")) { until=std::min(until,started+std::chrono::milliseconds(limit(*c,"timeout-ms"))); }
-            if(r.operation=="session.bind")
+            if(c&&c->limits.count("timeout-ms")) { until=std::min(until,quota_deadline(*c,started)); }
+            quota_scope quota_current{waiting,until};
+            bool native_exit_selected=!c||ros::synchronous_wait_context::select_native_exit(ros::native_wait_on_exit(*c));
+            if(!::uwvm2::utils::host_clock::available()){result.error=95;}
+            else if(r.operation=="session.bind")
             {
                 if(bound||r.alias!="target"||r.data!=ros::serialize_manifest(cfg.policy)) { result.error=13; }
                 else { backend=factory(); if(!backend)throw std::runtime_error("Adapter factory returned no owner");
@@ -489,6 +549,20 @@ namespace uwvm2::ros_gateway
             }
             else if(!bound) { result.error=13; }
             else if(!c) { result.error=13; }
+            else if(!native_exit_selected) {result.error=125;}
+            else if(r.operation.rfind("rmw.",0)==0&&
+                (ros::quota_wait_enabled(*c,"max-inflight")||ros::quota_wait_enabled(*c,"max-binding-history")||
+                 ros::quota_wait_enabled(*c,"max-publishers")||ros::quota_wait_enabled(*c,"max-subscribers")||ros::quota_wait_enabled(*c,"max-services")))
+            {result.error=95;} // Retirement/commit must arrive through this same serialized route.
+            else if(r.operation==c->operation&&
+                (limit(*c,"max-inflight")==0||
+                 ((c->operation=="topic.publish")&&limit(*c,"max-publishers")==0)||
+                 ((c->operation=="topic.subscribe"||c->operation=="param.subscribe-events")&&limit(*c,"max-subscribers")==0)||
+                 (c->operation=="service.advertise"&&limit(*c,"max-services")==0)||
+                 (c->operation=="action.advertise"&&limit(*c,"max-actions")==0))) {result.error=90;}
+            else if(cfg.policy.ros_version==ros::version::ros1&&r.operation==c->operation&&
+                ((c->operation.rfind("topic.",0)==0||c->operation.rfind("tf.",0)==0)?limit(*c,"queue-depth")==0:
+                 c->operation.rfind("action.",0)==0&&limit(*c,"max-event-queue-depth")==0)) {result.error=90;}
             // New direct-RCL route uses saved full pair history and the actual
             // immutable grants; neither aliases nor authority come from UMRC.
             else if(owned_service_operation(r.operation))
@@ -565,7 +639,7 @@ namespace uwvm2::ros_gateway
                 if(f.backend!=2||c->operation!="topic.subscribe"||!wire::decode(r.data.data(),r.data.size(),false,request)||
                     request.kind!=wire::role::subscription||request.owner.session!=session){result.error=22;}
                 else if(request.operation==wire::command::activate&&!activation_quotas[r.alias].take(*c,0)){result.error=11;}
-                else if(std::chrono::steady_clock::now()>=until){result.error=110;}
+                else if(::uwvm2::utils::host_clock::now()>=until){result.error=110;}
                 else
                 {
                     native_invoked=request.operation==wire::command::activate;
@@ -578,7 +652,7 @@ namespace uwvm2::ros_gateway
             {
                 namespace stream=ipc::rmw_subscription;stream::control request{};
                 if(f.backend!=2||c->operation!="topic.subscribe"||!stream::decode(r.data.data(),r.data.size(),false,request)||request.owner.session!=session){result.error=22;}
-                else if(std::chrono::steady_clock::now()>=until){result.error=110;}
+                else if(::uwvm2::utils::host_clock::now()>=until){result.error=110;}
                 else
                 {
                     // The request is always96 bytes. A reply can legitimately
@@ -608,7 +682,7 @@ namespace uwvm2::ros_gateway
                 if(f.backend!=2||c->operation!="topic.publish"||!ipc::rmw_endpoint::decode(r.data.data(),r.data.size(),false,request)||
                    request.kind!=ipc::rmw_endpoint::role::publisher||request.owner.session!=session){result.error=22;}
                 else if(request.operation==ipc::rmw_endpoint::command::activate&&!activation_quotas[r.alias].take(*c,0)){result.error=11;}
-                else if(std::chrono::steady_clock::now()>=until){result.error=110;}
+                else if(::uwvm2::utils::host_clock::now()>=until){result.error=110;}
                 else{native_invoked=request.operation==ipc::rmw_endpoint::command::activate;result=backend->owned_rmw_publisher(*c,request,until);}
             }
             else if(r.operation=="rmw.publish-v1")
@@ -617,7 +691,7 @@ namespace uwvm2::ros_gateway
                 if(f.backend!=2||c->operation!="topic.publish"||!ipc::rmw_publish::decode(r.data.data(),r.data.size(),request)||request.owner.session!=session){result.error=22;}
                 else if(request.payload_bytes>limit(*c,"max-message-bytes")){result.error=90;}
                 else if(!quotas[r.alias].take(*c,static_cast<std::size_t>(request.payload_bytes))){result.error=11;}
-                else if(std::chrono::steady_clock::now()>=until){result.error=110;}
+                else if(::uwvm2::utils::host_clock::now()>=until){result.error=110;}
                 else{native_invoked=true;result=backend->owned_rmw_publish(*c,request,r.data.data()+ipc::rmw_publish::header_bytes,static_cast<std::size_t>(request.payload_bytes),until);}
             }
             else if(r.operation=="service.available-v1")
@@ -637,12 +711,12 @@ namespace uwvm2::ros_gateway
                         result.error=availability_history.bind(request.binding,r.alias,source->first,session,static_cast<std::size_t>(limit(*c,"max-binding-history")),row);
                         if(!result.error)
                         {
-                            auto budget{remaining_budget(static_cast<std::uint32_t>(limit(*c,"timeout-ms")))};
+                            auto budget{remaining_budget(timeout_limit(*c))};
                             if(!budget) { result.error=110; }
                             else
                             {
                                 native_invoked=request.operation==wire::command::query;
-                                result=backend->service_availability(*c,source->second,request,budget);
+                                result=backend->service_availability(*c,source->second,request,*budget);
                                 wire::packet response{};
                                 if(!result.error&&!wire::decode_response(result.payload.data(),result.payload.size(),request,response)) { result={13,{}}; }
                             }
@@ -698,7 +772,8 @@ namespace uwvm2::ros_gateway
                         ipc::event_kind kind{};std::uint8_t flags{};std::uint32_t mask{};ipc::event_overflow overflow{};
                         bool outgoing{cap.operation=="action.receive-feedback"||cap.operation=="action.receive-result"};
                         bool duplicate{};for(auto const& item:observations) { duplicate=duplicate||item.second.source.alias==cap.alias; }
-                        if(duplicate) { result.error=17; }
+                        if(cfg.policy.ros_version==ros::version::ros1&&cap.operation=="topic.subscribe"&&!limit(cap,"queue-depth")) {result.error=90;}
+                        else if(duplicate) { result.error=17; }
                         else if(cap.operation=="event.observe"||!ipc::parse_event_kinds(field(*c,"event-kinds"),mask)||!ipc::parse_event_overflow(field(*c,"overflow-policy"),overflow)) { result.error=22; }
                         else
                         {
@@ -709,7 +784,7 @@ namespace uwvm2::ros_gateway
                             else if((outgoing&&payload_selected)!=bool(correlation)) {result.error=22;}
                             else if(outgoing&&payload_selected&&action_consumer_claimed(cap,correlation)) {result.error=17;}
                             else if(payload_selected&&queues.count(cap.alias)) {result.error=17;}
-                            event_stream_settings settings{limit(*c,"max-event-queue-depth"),limit(*c,"max-event-queue-bytes"),limit(*c,"max-event-bytes"),overflow==ipc::event_overflow::backpressure?limit(*c,"max-pending-events"):0,overflow==ipc::event_overflow::backpressure?limit(*c,"max-pending-event-bytes"):0,overflow};
+                            event_stream_settings settings{limit(*c,"max-event-queue-depth"),limit(*c,"max-event-queue-bytes"),limit(*c,"max-event-bytes"),0,0,overflow};
                             ipc::event_header binding{};binding.backend=f.backend;binding.source_handle=ipc::get(r.data.data(),8);binding.instance=ipc::get(r.data.data()+8,8);binding.session=session;
                             if(!result.error&&!quotas[r.alias].take(*c,0)) {result.error=11;}
                             if(!result.error)
@@ -725,7 +800,7 @@ namespace uwvm2::ros_gateway
                                     if(!activation_quotas[cap.alias].take(cap,0)) {result.error=11;}
                                     else
                                     {
-                                        auto queue{std::make_shared<event_queue>(cap)};queue->observer=stream;
+                                        auto queue{std::make_shared<event_queue>(cap)};queue->observer=stream;queue->observer_capability=*c;
                                         result=cap.operation=="action.advertise"?backend->advertise_action(cap,queue):cap.operation=="service.advertise"?backend->advertise(cap,queue):backend->subscribe(cap,queue);
                                         if(!result.error) { selected.queue=queue;queues.emplace(cap.alias,std::move(queue)); }
                                     }
@@ -805,15 +880,16 @@ namespace uwvm2::ros_gateway
                     bool selected_action{observer.correlation&&ipc::event_source_kind(observer.source.operation,payload_kind,payload_flags)&&bool(observer.stream->allowed_kinds()&ipc::event_bit(payload_kind))};
                     if(r.operation!="event.commit"&&selected_action&&observer.stream->active())
                     {
-                        auto response_bytes{ipc::event_header_bytes+limit(observer.source,observer.source.operation=="action.receive-feedback"?"max-feedback-bytes":"max-result-bytes")};
+                        auto response_bytes{ipc::event_header_bytes+wire_limit(observer.source,observer.source.operation=="action.receive-feedback"?"max-feedback-bytes":"max-result-bytes",ipc::event_header_bytes)};
                         auto readiness{observer.stream->readiness()};
                         if(readiness.admission_slots&&readiness.admission_bytes>=response_bytes&&response_bytes<=limit(*c,"max-event-bytes"))
                         {
-                            auto id{observer.correlation};auto reserved{observer.stream->reserve(id,response_bytes,0)};
+                            auto id{observer.correlation};auto reserved{reserve_event(*observer.stream,*c,id,response_bytes,0)};
                             if(!reserved)
                             {
                                 std::vector<std::uint8_t> argument;ipc::put(argument,id,8);
-                                auto answer{backend->operation(observer.source,argument,remaining_budget(cfg.timeout_ms))};
+                                auto budget{remaining_budget(cfg.timeout_ms)};
+                                auto answer{budget?backend->operation(observer.source,argument,*budget):ipc::call_result{110,{}}};
                                 if(answer.error==11) { observer.stream->cancel_reservation(id); }
                                 else
                                 {
@@ -858,7 +934,7 @@ namespace uwvm2::ros_gateway
                     else
                     {
                         auto id{ipc::get(r.data.data(),8)};
-                        auto maximum{ipc::event_header_bytes+limit(source,"max-response-bytes")};
+                        auto maximum{ipc::event_header_bytes+wire_limit(source,"max-response-bytes",ipc::event_header_bytes)};
                         if(r.data.size()-8>limit(source,"max-request-bytes")||maximum>limit(*c,"max-event-bytes")) { result.error=90; }
                         else
                         {
@@ -867,10 +943,10 @@ namespace uwvm2::ros_gateway
                             else if(!quotas[source.alias].take(source,input.size())) {result.error=11;}
                             else
                             {
-                            result.error=observer.stream->reserve(id,maximum,input.capacity()+async_service_pool::accounting_bytes);
+                            result.error=reserve_event(*observer.stream,*c,id,maximum,input.capacity()+async_service_pool::accounting_bytes);
                             if(!result.error)
                             {
-                                auto deadline{started+std::chrono::milliseconds(limit(source,"timeout-ms"))};
+                                auto deadline{quota_deadline(source,started)};
                                 auto native{backend};auto contract{observer.source_contract};
                                 async_service_pool::task work{observer.async,observer.stream,id,deadline,std::move(input),[native,contract](auto const& bytes,std::uint32_t timeout)
                                 {
@@ -912,6 +988,7 @@ namespace uwvm2::ros_gateway
                 else if(!queues.count(r.alias))
                 {
                     if(!activation_quotas[r.alias].take(*c,0)) {result.error=11;}
+                    else if(::uwvm2::utils::host_clock::now()>=until) {result.error=110;}
                     else {auto q{std::make_shared<event_queue>(*c)};
                     if(c->operation=="topic.subscribe"&&cfg.native_observer&&!cfg.native_observer->type_support_path(c->type).empty())
                     {q->capture_writer=cfg.native_observer;q->capture_binding=capture_endpoint(native_request,*c);native_request.source=q->capture_binding;}
@@ -928,9 +1005,9 @@ namespace uwvm2::ros_gateway
                 if(r.data.size()>max) { result.error=90; }
                 else if(!validate_payload(*c,r.data)) { result.error=22; }
                 else if(!quotas[r.alias].take(*c,r.data.size())) { result.error=11; }
-                else if(std::chrono::steady_clock::now()>=until) { result.error=110; }
+                else if(::uwvm2::utils::host_clock::now()>=until) { result.error=110; }
                 else if(r.operation=="topic.publish") {native_invoked=true; result=backend->publish(*c,r.data); }
-                else { auto budget{remaining_budget(static_cast<std::uint32_t>(limit(*c,"timeout-ms")))};if(budget) {native_invoked=true;result=backend->service(*c,r.data,budget);}else {result={110,{}};} }
+                else { auto budget{remaining_budget(timeout_limit(*c))};if(budget) {native_invoked=true;result=backend->service(*c,r.data,*budget);}else {result={110,{}};} }
             }
             else
             {
@@ -950,7 +1027,7 @@ namespace uwvm2::ros_gateway
                 }
                 else if(r.operation=="service.respond")
                 {
-                    maximum=limit(*c,"max-response-bytes")+8;
+                    maximum=wire_limit(*c,"max-response-bytes",8)+8;
                     if(auto item=ipc::find_custom_service(static_cast<unsigned>(cfg.policy.ros_version),c->type)) { valid=ipc::validate_custom_service_request(*item,c->operation,r.data.data(),r.data.size()); }
                     else { valid=r.data.size()>=13&&ipc::get(r.data.data(),8)!=0&&r.data[8]<=1&&ipc::get(r.data.data()+9,4)==r.data.size()-13&&valid_utf8(r.data.data()+13,r.data.size()-13); }
                 }
@@ -967,18 +1044,19 @@ namespace uwvm2::ros_gateway
                 else if(typed_error) { result.error=typed_error; }
                 else if(!valid) { result.error=22; }
                 else if(!quotas[r.alias].take(*c,r.data.size())) { result.error=11; }
-                else if(std::chrono::steady_clock::now()>=until) { result.error=110; }
-                else { auto maximum{std::min(f.timeout_ms,cfg.timeout_ms)};if(c->limits.count("timeout-ms")) { maximum=std::min(maximum,static_cast<std::uint32_t>(limit(*c,"timeout-ms"))); }auto budget{remaining_budget(maximum)};if(budget) {native_invoked=true;result=backend->operation(*c,r.data,budget);}else {result={110,{}};} }
+                else if(::uwvm2::utils::host_clock::now()>=until) { result.error=110; }
+                else { auto maximum{ipc::min_timeout(f.timeout_ms,cfg.timeout_ms)};if(c->limits.count("timeout-ms")) { maximum=ipc::min_timeout(maximum,timeout_limit(*c)); }auto budget{remaining_budget(maximum)};if(budget) {native_invoked=true;result=backend->operation(*c,r.data,*budget);}else {result={110,{}};} }
                 if(!result.error)
                 {
-                    auto response_max{c->operation.rfind("action.",0)==0?(c->operation=="action.send-goal"?8:c->operation=="action.receive-feedback"?limit(*c,"max-feedback-bytes"):c->operation=="action.receive-result"?limit(*c,"max-result-bytes"):c->operation.rfind("action.cancel-",0)==0?1:0):c->limits.count("max-response-bytes")?limit(*c,"max-response-bytes"):c->limits.count("max-parameter-bytes")?limit(*c,"max-parameter-bytes"):c->limits.count("max-graph-result-bytes")?limit(*c,"max-graph-result-bytes"):c->operation=="tf.lookup"?limit(*c,"max-message-bytes"):std::uint64_t{0}};
+                    auto response_max{c->operation.rfind("action.",0)==0?(c->operation=="action.send-goal"?8:c->operation=="action.receive-feedback"?limit(*c,"max-feedback-bytes"):c->operation=="action.receive-result"?limit(*c,"max-result-bytes"):c->operation.rfind("action.cancel-",0)==0?1:0):(c->operation.rfind("time.",0)==0||c->operation.rfind("lifecycle.",0)==0||c->operation.rfind("service.",0)==0)?limit(*c,"max-response-bytes"):c->operation.rfind("param.",0)==0?limit(*c,"max-parameter-bytes"):c->operation.rfind("graph.",0)==0?limit(*c,"max-graph-result-bytes"):c->operation=="tf.lookup"?limit(*c,"max-message-bytes"):std::uint64_t{0}};
                     if(result.payload.size()>response_max) { result={90,{}}; }
                     else if(r.operation=="param.get")
                     { auto error{ipc::validate_parameter_value(cfg.policy.ros_version,*c,result.payload.data(),result.payload.size())};if(error) { result={error,{}}; } }
                 }
             }
-            if(std::chrono::steady_clock::now()>=until) { result={110,{}}; }
+            if(::uwvm2::utils::host_clock::now()>=until) { result={110,{}}; }
             if(c&&!result.error&&!result.payload.empty()&&r.operation!="event.poll"&&r.operation!="event.poll-v1"&&r.operation!="event.peek-v1"&&r.operation!="service.available-retire-v1"&&r.operation!="rmw.endpoint-v1"&&r.operation!="rmw.endpoint-retire-v1"&&r.operation!="rmw.subscription-endpoint-v1"&&r.operation!="rmw.subscription-endpoint-retire-v1"&&r.operation!="rmw.subscription-transfer-v1"&&!owned_service_operation(r.operation)&&!quotas[r.alias].take_bytes(*c,result.payload.size())) { result={11,{}}; }
+            if(result.error==11&&quota_current.error!=11) { result.error=quota_current.error; }
             // Quota/validation/deadline failure after peek explicitly cancels
             // THIS borrow before returning. Preserve the primary error even if
             // cancel fails; registry then tombstones/retires and records both.
@@ -1023,7 +1101,7 @@ namespace uwvm2::ros_gateway
             native_result.event=native_observation::phase::wire_reply;
             native_result.canonical=answer.payload.data();native_result.canonical_bytes=answer.payload.size();
             if(cfg.native_observer)(void)cfg.native_observer->emit(native_result);
-            auto late_subscription_reply{std::chrono::steady_clock::now()>=until};
+            auto late_subscription_reply{::uwvm2::utils::host_clock::now()>=until};
             if(late_subscription_reply){subscription_delivery.fail(110);}
             else{subscription_delivery.delivered();}
             // An ACK may already have committed/cancelled. A failed/late ACK
@@ -1068,23 +1146,48 @@ int worker_pidfd{-1};
         if(fd<0) { throw std::runtime_error("socket"); }
         struct listener_guard { int fd; std::string path; ~listener_guard() { ::close(fd); ::unlink(path.c_str()); } } guard{fd,cfg.socket};
         mode_t old{::umask(0077)}; int bound{::bind(fd,reinterpret_cast<sockaddr*>(&a),sizeof a)}; ::umask(old);
-        if(bound<0||::chmod(cfg.socket.c_str(),0600)<0||::listen(fd,static_cast<int>(cfg.max_sessions))<0) { throw std::runtime_error("bind/listen"); }
+        if(bound<0||::chmod(cfg.socket.c_str(),0600)<0||::listen(fd,SOMAXCONN)<0) { throw std::runtime_error("bind/listen"); }
         std::signal(SIGINT,stop); std::signal(SIGTERM,stop);
         struct worker { std::thread thread; std::shared_ptr<std::atomic<bool>> done; };
         std::vector<worker> workers;
-        // Allocate the finite configured table BEFORE any session thread can
-        // start. push_back cannot allocate after constructing a joinable thread.
-        workers.reserve(cfg.max_sessions);
+        int completed=::eventfd(0,EFD_NONBLOCK|EFD_CLOEXEC);if(completed<0)throw std::runtime_error("session notification unavailable");
+        struct completed_guard{int fd;~completed_guard(){::close(fd);}} completed_lifetime{completed};
+        auto reap=[&] {for(auto i=workers.begin();i!=workers.end();) {if(i->done->load()){i->thread.join();i=workers.erase(i);}else ++i;}};
+        // Allocate only a newly admitted session slot, before constructing its
+        // joinable thread. Kernel backlog is independent of the active quota.
         while(!stopping.load(std::memory_order_relaxed))
         {
-            for(auto i=workers.begin();i!=workers.end();) { if(i->done->load()) { i->thread.join(); i=workers.erase(i); } else { ++i; } }
-            pollfd p[2]{{fd,POLLIN,0},{worker_pidfd,POLLIN,0}}; int ready{::poll(p,2,100)}; if(ready<=0) { continue; }
+            (void)::uwvm2::utils::host_clock::now();
+            if(!::uwvm2::utils::host_clock::available()){native_io::diagnostic("session refused","monotonic clock unavailable");break;}
+            reap();
+            pollfd p[4]{{fd,POLLIN,0},{worker_pidfd,POLLIN,0},{completed,POLLIN,0},{quota_stop_event,POLLIN,0}};
+            int ready{::poll(p,4,-1)};if(ready<=0)continue;
+            if(p[2].revents){std::uint64_t count{};(void)::read(completed,&count,sizeof(count));reap();}
+            if(p[3].revents)break;
             if(p[1].revents) { stopping.store(1,std::memory_order_relaxed);break; }
             if(!(p[0].revents&POLLIN)) { continue; }
             int peer{::accept4(fd,nullptr,nullptr,SOCK_CLOEXEC|SOCK_NONBLOCK)}; if(peer<0) { continue; }
-            if(workers.size()>=cfg.max_sessions) { ::close(peer); continue; }
-            auto done{std::make_shared<std::atomic<bool>>(false)};
-            workers.push_back({std::thread{[peer,&cfg,&factory,done,worker_pidfd] { try { serve_connection(peer,cfg,factory,worker_pidfd); } catch(std::exception const& e) { native_io::diagnostic("session closed",e.what()); } done->store(true); }},done});
+            if(workers.size()>=cfg.max_sessions)
+            {
+                if(!cfg.max_sessions||!global_quota_wait(cfg,"max-sessions")){::close(peer);continue;}
+                bool cancelled{};
+                while(workers.size()>=cfg.max_sessions)
+                {
+                    pollfd capacity[4]{{completed,POLLIN,0},{worker_pidfd,POLLIN,0},{quota_stop_event,POLLIN,0},{peer,POLLRDHUP,0}};
+                    int result;do{result=::poll(capacity,4,-1);}while(result<0&&errno==EINTR);
+                    if(result<0||capacity[1].revents||capacity[2].revents||capacity[3].revents){cancelled=true;break;}
+                    if(capacity[0].revents){std::uint64_t count{};(void)::read(completed,&count,sizeof(count));reap();}
+                }
+                if(cancelled){::close(peer);continue;}
+            }
+            try
+            {
+                auto done=std::make_shared<std::atomic<bool>>(false);
+                workers.emplace_back();
+                try {workers.back().done=done;workers.back().thread=std::thread{[peer,&cfg,&factory,done,worker_pidfd,completed] { try { serve_connection(peer,cfg,factory,worker_pidfd); } catch(std::exception const& e) { native_io::diagnostic("session closed",e.what()); }catch(...){native_io::diagnostic("session closed","unexpected native failure");} done->store(true);std::uint64_t one{1};(void)::write(completed,&one,sizeof(one)); }};}
+                catch(...){workers.pop_back();throw;}
+            }
+            catch(...){::close(peer);native_io::diagnostic("session refused","native resource unavailable");}
         }
         for(auto& w:workers) { w.thread.join(); } return 0;
     }

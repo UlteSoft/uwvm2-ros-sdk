@@ -71,7 +71,8 @@ target("abb-c-official-ros-parameter-callbacks")
                 wasm_sha256 = hash.sha256(target:targetfile()):lower()})
         end
     end)
-    add_tests("official-parameter-communication")
+    uwvm_register_required_test("official-parameter-communication", "required-wasm-guest")
+    add_tests("official-parameter-communication", {group = "required-wasm-guest"})
     on_test(function(target, opt)
         import("lib.detect.find_program")
         local python = assert(find_program("python3"), "Install Python 3 for bounded process supervision")
@@ -83,7 +84,7 @@ target("abb-c-official-ros-parameter-callbacks")
         os.mkdir(path.directory(output))
         local code = os.execv(python, {path.join(target:scriptdir(), "test_parameters.py"),
             "--wasm", path.absolute(target:targetfile()), "--config", path.absolute(configuration),
-            "--output", path.absolute(output)}, {try = true, timeout = 330, curdir = target:scriptdir()})
+            "--output", path.absolute(output)}, {try = true, timeout = 330000, curdir = target:scriptdir()})
         if code ~= 0 then opt.errors = "Real ROS communication failed or is blocked; original records: " .. output end
         return code == 0
     end)

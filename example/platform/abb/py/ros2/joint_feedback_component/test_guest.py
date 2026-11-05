@@ -27,6 +27,12 @@ CASE_IDS = (
 )
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
+from wasi_policy import test_arguments as wasi_test_arguments
+from pipe_capture import PipeLoggedProcess
+
+
 def need(value, message):
     if not value:
         raise RuntimeError(message)
@@ -100,7 +106,10 @@ def process(pid):
     need(membership.startswith("0::/") and "\n" not in membership, "unified actual cgroup required")
     group = Path("/sys/fs/cgroup") / membership[3:].lstrip("/")
     limits = {name: (group / name).read_text().strip()
-              for name in ("memory.max", "memory.swap.max", "cpuset.cpus.effective")}
+              for name in ("memory.max", "memory.swap.max")}
+    cpuset = group / "cpuset.cpus.effective"
+    limits["cpuset.cpus.effective"] = cpuset.read_text().strip() if cpuset.exists() else None
+    limits["cpu_affinity"] = sorted(os.sched_getaffinity(pid))
     executable = root / "exe"
     before = executable.stat()
     sha = digest(executable)
@@ -233,19 +242,26 @@ def main():
         need(isinstance(runtime_args, list) and all(isinstance(x, str) and "\0" not in x for x in runtime_args),
              "explicit runtime argument array required")
         need(runtime_args == runtime_limits["arguments"]
-             == ["--runtime-aot", "--runtime-llvm-jit-cache-path", "disable"],
+             == ["--runtime-aot", "--runtime-llvm-jit-cache-path", "disable", "--runtime-llvm-jit-policy", "debug", "--log-verbose"],
              "BLOCKED_COMPONENT_REQUIRES_AOT_AND_EXPLICITLY_DISABLED_PERSISTENT_CACHE")
         wasm = Path(args.wasm)
         need(wasm.is_file() and not wasm.is_symlink(), "BLOCKED_BUILD_REQUIRED")
         need(0 < wasm.stat().st_size <= runtime_limits["maximum_application_wasm_bytes"],
              "BLOCKED_COMPONENT_WASM_FILE_BOUND")
         before = digest(wasm)
-        argv = [str(runtime), *runtime_args, "--run", str(wasm.resolve()), "--codec-selftest"]
+        need(config.get("ros_namespace_enabled") is True,
+             "explicit ROS2 import namespace permission is required; no resources are granted")
+        argv = [str(runtime), *wasi_test_arguments(runtime_args, config.get("wasi_policy")),
+                "--ros2-single-create", "main", "--ros2-single-enable", "main",
+                "--run", str(wasm.resolve()), "--codec-selftest"]
         report.update(command={"argv": argv, "cwd": str(Path.cwd()), "config_sha256": config_sha256},
                       wasm_sha256_before=before, runtime_sha256=wanted, fixture_actor=process(os.getpid()))
+        need(report["fixture_actor"]["memory.max"] == "68719476736"
+             and report["fixture_actor"]["memory.swap.max"] == "0",
+             "keep the actual 64 GiB, zero-swap test cgroup")
         stdout, stderr = output / "vm.stdout", output / "vm.stderr"
         with stdout.open("wb") as out, stderr.open("wb") as err:
-            child = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=out, stderr=err,
+            child = PipeLoggedProcess(argv, stdin=subprocess.DEVNULL, stdout=out, stderr=err,
                                      start_new_session=True,
                                      preexec_fn=lambda: limits(runtime_limits["regular_file_limit_bytes"]))
             fields = (Path("/proc") / str(child.pid) / "stat").read_text().rsplit(") ", 1)[1].split()
@@ -260,10 +276,15 @@ def main():
                 if time.monotonic() >= sample_at:
                     try:
                         actor = process(child.pid)
-                    except (FileNotFoundError, ProcessLookupError):
-                        if child.poll() is not None:
-                            break
-                        raise
+                    except (FileNotFoundError, ProcessLookupError) as observation_error:
+                        # /proc/exe disappears during exit before waitpid necessarily
+                        # reports completion. Require a verified bounded exit; a
+                        # still-running or unobserved actor remains a failure.
+                        try:
+                            child.wait(timeout=min(1.0, max(0.0, deadline - time.monotonic())))
+                        except subprocess.TimeoutExpired:
+                            raise observation_error
+                        break
                     parent = report["fixture_actor"]
                     need(actor["membership"] == parent["membership"]
                          and actor["cgroup_inode"] == parent["cgroup_inode"]
@@ -288,8 +309,17 @@ def main():
         need(child.returncode == 0 and report["actors"], "actual Wasm command failed or actor evidence absent")
         need(not session_members(child.pid), "runtime command left a live session member")
         text = captured_stdout + bounded_stdout(stderr, runtime_limits["maximum_log_stream_bytes"])
-        need("[unwind-check] status=ok" in text and "body-fallback=no" in text,
+        diagnostic = re.sub(r"\x1b\[[0-?]*[ -/]*[@-~]", "", text)
+        ordinary_aot = ("Resolved runtime configuration: mode=full_compile, compiler=llvm_jit_only, "
+                        "uwvm-int-translation=disabled, llvm-jit-ir-translation=enabled." in diagnostic)
+        # Ordinary AOT and debug/update publications expose different evidence.
+        # Require the actual compiler configuration when the private publication
+        # marker is absent; neither path may report a body fallback.
+        need("[unwind-check] status=ok" in diagnostic
+             and ("body-fallback=no" in diagnostic or ordinary_aot)
+             and "body-fallback=yes" not in diagnostic,
              "actual mandatory checked unwind/no-fallback evidence absent")
+        report.update(native_unwind_checked=True, interpreter_fallback=False)
         need(guest is not None, "exactly one fresh executing-guest final result required")
         need(guest.get("format") == "sdk02-joint-feedback-guest-cases-v1"
              and guest.get("status") == "PASS" and guest.get("selected") == len(CASE_IDS)
@@ -306,7 +336,7 @@ def main():
                       stdout_sha256=digest(stdout), stderr_sha256=digest(stderr))
     except BaseException as error:
         blocked = child is None or "BLOCKED_" in str(error)
-        report.update(status="BLOCKED" if blocked else "FAIL", diagnostic=repr(error),
+        report.update(status="BLOCKED" if blocked else "FAIL", diagnostic=repr(error), traceback=__import__("traceback").format_exc(),
                       fixture_or_command_failed=True)
     finally:
         if child is not None:

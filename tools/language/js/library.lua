@@ -135,7 +135,7 @@ end
 -- @brief Write exact source bytes as a data initializer; evaluate nothing here.
 local function source_header(raw)
 	assert(
-		not raw:find("\0", 1, true) and #raw <= 4194304,
+		not raw:find("\0", 1, true) and #raw <= 16777216,
 		"Source must be a bounded ordinary text entry without NUL"
 	)
 	local rows = { "static unsigned char const module_source[] = {" }
@@ -272,10 +272,19 @@ function build(target, root, request)
 		"-Duwvm_module_execute=" .. own_prefix .. "_execute",
 	})
 	local entry = path.absolute(request.sources[1])
-	io.writefile(
-		path.join(work, "module_source.h"),
-		source_header(assert(io.readfile(entry, { encoding = "binary" })))
-	)
+	local source = assert(io.readfile(entry, { encoding = "binary" }))
+	local source_inputs = {}
+	if language == "py" then
+		-- Each real subinterpreter receives the same source-backed lazy standard
+		-- library loader. Importing it creates no host path or ROS permission.
+		source, source_inputs = import("pack", {
+			rootdir = path.join(root, "tools/language/js"), anonymous = true
+		}).bundle(root, "py", entry, {
+			format = "uwvm-language-bundle-v1", language = "py",
+			module_loading = "lazy", modules = {}
+		})
+	end
+	io.writefile(path.join(work, "module_source.h"), source_header(source))
 	local dependency = foreign(target, root)
 	if dependency then
 		local other = prefix(dependency:fullname())
@@ -312,6 +321,7 @@ function build(target, root, request)
 	end
 	local source =
 		path.join(root, "src/language", family, "library", cxx and "module.cpp" or "module.c")
+	if target:kind() == "binary" then table.insert(compiling, "-DUWVM_COMMAND_EMBEDDING=1") end
 	local object = path.join(work, "module.o")
 	run(programs[cxx and "cxx" or "cc"], table.join(compiling, { "-c", source, "-o", object }))
 	local objects = { object }
@@ -437,6 +447,7 @@ function build(target, root, request)
 		triple = request.triple,
 		exception_profile = request.exception_profile,
 		source_sha256 = hash.sha256(entry):lower(),
+		bundled_source_inputs = source_inputs,
 		artifact_sha256 = hash.sha256(output):lower(),
 		exports = { apply = own_prefix .. "_apply", close = own_prefix .. "_close" },
 		dependency = dependency and dependency:fullname(),

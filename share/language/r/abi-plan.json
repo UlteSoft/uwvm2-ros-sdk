@@ -1,6 +1,6 @@
 {
   "format": "uwvm-r-abi-port-plan-v1",
-  "status": "UNQUALIFIED_PORT_SOURCE",
+  "status": "GENUINE_NATIVE_EH_RUNTIME_BUILT_EXECUTION_MATRIX_IN_PROGRESS",
   "entry": "src/language/r/command.c",
   "raw_adapter": "src/language/r/native.c",
   "r_namespace": "src/language/r/native.R",
@@ -102,41 +102,50 @@
   "data_representation": "owned raw vectors; full canonical schemas stay in genuine R",
   "maximum_call_bytes": 4194304,
   "nonlocal_control": {
-    "source": "src/language/common/asyncify/asyncify",
-    "integration": "Compile all original setjmp callers with the shared header and process the complete linked module with Binaryen Asyncify",
-    "status": "R condition/restart/on.exit/GC stress not yet executed"
+    "source": "src/language/r/wasi/wasm_sjlj.c",
+    "integration": "Compile original setjmp callers and the standalone command with LLVM 23 Wasm EH/SjLj; preserve R condition/restart/on.exit semantics through native WebAssembly exceptions.",
+    "status": "Finite condition and standard-stream checks executed in genuine Wasm; exhaustive condition/restart/on.exit/GC stress remains pending.",
+    "asyncify": false
   },
   "targets": {
     "wasm32-wasip1": {
       "pointer_bits": 32,
       "abi_offsets": "zero-extend uintptr_t into uint64_t",
       "required": [
-        "original R config/Rconfig headers",
-        "all original Fortran numerical sources",
-        "WASI zlib/bzip2/xz/pcre2 and original base dependencies",
-        "embedded R_HOME base-package filesystem",
-        "whole-program Asyncify and static .Call registry",
-        "single .wasm semantic/codec/native ROS tests"
-      ]
+        "original R config/Rconfig headers and original C/Fortran numerical sources",
+        "same-target WASI zlib/bzip2/xz/pcre2 dependencies",
+        "embedded original base package and read-only timezone data",
+        "native WebAssembly EH/SjLj and static .Call registry",
+        "complete public xmake and native ROS acceptance matrix"
+      ],
+      "status": "Genuine standalone runtimes built for WASI, ROS1 and ROS2; finite Wasmtime/uwvm2-ros standard-stream checks; full matrix pending."
     },
     "wasm64-wasip1": {
       "pointer_bits": 64,
       "abi_offsets": "preserve uintptr_t in uint64_t",
-      "status": "Separate runtime build required; memory32 is never substituted",
+      "status": "Separate genuine memory64 runtimes built for all three backends; finite uwvm2-ros numerical/condition/filesystem test passed; full matrix pending.",
       "required": [
-        "qualified LLVM23 memory64 WASIp1 sysroot, crt and compiler runtime",
-        "Fortran memory64 codegen/runtime and exact C calling conventions",
-        "R SIZEOF_SIZE_T=8 configuration and long-vector/GC/protection tests",
-        "memory64-compatible common Asyncify pointer/spill layout",
-        "fresh memory64 source-slot, native ABI and AArch64-host execution tests"
-      ]
+        "LLVM 23 memory64 WASIp1 sysroot and real Flang target runtime",
+        "SIZEOF_SIZE_T=8 and exact C/Fortran calling conventions",
+        "complete long-vector/GC/protection and raw ROS ABI tests",
+        "public memory64 source-slot xmake tests",
+        "AArch64-host execution tests"
+      ],
+      "reference_boundary": "SDK _wasm64 WASI imports are extensions. Wasmtime Core validation does not imply standard Preview 1 memory64 host-ABI execution."
     }
   },
   "additional_shared_operations": {
-    "status": "complete canonical dispatcher written; genuine R engine and all operations unexecuted",
+    "status": "Canonical dispatcher built into genuine R runtimes; full operation-by-operation ROS acceptance remains pending.",
     "required": [
       "matching native registry",
       "same-width typed event/action/parameter facades and cancellation/ownership tests"
     ]
+  },
+  "abi_header_note": "The common directory name is historical; this build uses the raw ABI declarations only and does not link or transform with Asyncify.",
+  "standard_streams": {
+    "source": "src/language/r/stdio.c",
+    "entry": ".Call(\"uwvm_wasi_stdio\", \"stdin\" or \"stdout\")",
+    "ownership": "Borrowed WASI descriptors; closing an R connection never closes the borrowed descriptor.",
+    "permissions": "All reads/writes remain subject to the executing module WASI policy."
   }
 }

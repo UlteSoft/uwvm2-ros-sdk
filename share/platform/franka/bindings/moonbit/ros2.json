@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "moonbit",
+  "profile": "ros2",
+  "backend": "ros2",
+  "source_root": "include/platform/franka/moonbit/ros2/franka-ros2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "moonbit",
+    "moonbit": {
+      "main_package": "franka/command",
+      "packages": [
+        {
+          "name": "uwvm/ros/wasi_arguments",
+          "alias": "wasi_args",
+          "sources": [
+            "include/platform/ros/moonbit/wasi_arguments/arguments.mbt"
+          ],
+          "dependencies": [
+            "utf8"
+          ]
+        },
+        {
+          "name": "uwvm/ros/wire",
+          "alias": "wire",
+          "sources": [
+            "include/platform/ros/moonbit/wire/image.mbt",
+            "include/platform/ros/moonbit/wire/transform.mbt",
+            "include/platform/ros/moonbit/wire/wire.mbt"
+          ],
+          "dependencies": [
+            "utf8"
+          ]
+        },
+        {
+          "name": "franka/ros2",
+          "alias": "records",
+          "sources": [
+            "include/platform/franka/moonbit/ros2/franka-ros2-complete/bounded_records.mbt"
+          ],
+          "dependencies": [
+            "wire",
+            "float",
+            "utf8"
+          ]
+        }
+      ],
+      "entry_dependencies": [
+        "records",
+        "float",
+        "wasi_args",
+        "hex"
+      ]
+    }
+  }
+}

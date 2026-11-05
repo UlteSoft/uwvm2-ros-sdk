@@ -763,7 +763,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgQuaternion default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&value);
             return value;
         }
@@ -870,7 +870,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgTransform default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgTransform value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgTransform value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Transform_default(&value);
             return value;
         }
@@ -1069,7 +1069,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint value = {0};
+            uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint value = {};
             (void)roswasmc_bounded_2_trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_default(&value);
             return value;
         }
@@ -1178,7 +1178,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectory default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectory value = {0};
+            uwvm_custom::Ros2Trajectory_msgsMsgMultiDOFJointTrajectory value = {};
             (void)roswasmc_bounded_2_trajectory_msgs_msg_MultiDOFJointTrajectory_default(&value);
             return value;
         }
@@ -1472,7 +1472,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Goal default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Goal value = {0};
+            uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Goal value = {};
             (void)roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal_default(&value);
             return value;
         }
@@ -1675,7 +1675,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Feedback default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Feedback value = {0};
+            uwvm_custom::Ros2Control_msgsActionFollowJointTrajectory_Feedback value = {};
             (void)roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Feedback_default(&value);
             return value;
         }

@@ -14,6 +14,7 @@ import roswasm.wire;
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Flexiv_msgsJointPosVel {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/JointPosVel in bytes.
  /// @details The inclusive bound is 112 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -153,6 +154,7 @@ struct Ros1Flexiv_msgsJointPosVel {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Flexiv_msgsMode {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/Mode in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -328,6 +330,7 @@ struct Ros1Flexiv_msgsMode {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsPoint {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Point in bytes.
  /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -470,6 +473,7 @@ struct Ros1Geometry_msgsPoint {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsQuaternion {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Quaternion in bytes.
  /// @details The inclusive bound is 32 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -623,6 +627,7 @@ struct Ros1Geometry_msgsQuaternion {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsPose {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Pose in bytes.
  /// @details The inclusive bound is 56 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -754,6 +759,7 @@ struct Ros1Geometry_msgsPose {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsVector3 {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Vector3 in bytes.
  /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -896,6 +902,7 @@ struct Ros1Geometry_msgsVector3 {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsAccel {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Accel in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1027,6 +1034,7 @@ struct Ros1Geometry_msgsAccel {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Geometry_msgsWrench {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/Wrench in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1158,6 +1166,7 @@ struct Ros1Geometry_msgsWrench {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Flexiv_msgsRobotStates {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/RobotStates in bytes.
  /// @details The inclusive bound is 864 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.

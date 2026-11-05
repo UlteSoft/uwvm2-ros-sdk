@@ -57,13 +57,15 @@ target("kinova-c-ros2_humble-validate_goal")
 
 
     -- Each assertion executes inside the compiled Wasm, never in a host client.
-    add_tests("guest-bounds", {runargs = {"--guest-test", "bounds"}})
-    add_tests("guest-sequence", {runargs = {"--guest-test", "sequence"}})
-    add_tests("guest-codec", {runargs = {"--guest-test", "codec"}})
+    uwvm_register_required_test("guest-bounds", "required-wasm-guest")
+    add_tests("guest-bounds", {group = "required-wasm-guest", runargs = {"--guest-test", "bounds"}})
+    uwvm_register_required_test("guest-sequence", "required-wasm-guest")
+    add_tests("guest-sequence", {group = "required-wasm-guest", runargs = {"--guest-test", "sequence"}})
+    uwvm_register_required_test("guest-codec", "required-wasm-guest")
+    add_tests("guest-codec", {group = "required-wasm-guest", runargs = {"--guest-test", "codec"}})
     on_test(function(target, opt)
         import("core.base.json")
         import("lib.detect.find_program")
-        local launch = import("run", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
         local configfile = os.getenv("UWVM_ROS_KINOVA_GUEST_TEST_CONFIG")
         assert(configfile and os.isfile(configfile), "BLOCKED_REQUIRED_KINOVA_GUEST_TEST_CONFIG")
         local deployment = json.loadfile(configfile)
@@ -76,7 +78,8 @@ target("kinova-c-ros2_humble-validate_goal")
         assert(type(expected) == "string" and #expected == 64
             and expected:match("^[0-9a-f]+$") and hash.sha256(runtime):lower() == expected,
             "BLOCKED_EXACT_UWVM2_ROS_RUNTIME_SHA256")
-        local arguments = launch.arguments(deployment.runtime_arguments)
+        local arguments = import("wasi_policy", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).test_arguments(
+            deployment.runtime_arguments, deployment.wasi_policy)
         local aot = false
         for _, argument in ipairs(arguments) do
             assert(argument ~= "--run" and argument ~= "-r"
@@ -100,18 +103,22 @@ target("kinova-c-ros2_humble-validate_goal")
         os.mkdir(attempt)
         local stdout, stderr = path.join(attempt, "stdout.log"), path.join(attempt, "stderr.log")
         table.join2(arguments, {"--run", wasm, "--guest-test", group})
-        local code, errors = os.execv(runtime, arguments, {try = true, timeout = 30000,
+        local code, errors = import("pipe_run", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).execute(runtime, arguments, {try = true, timeout = 30000,
             stdout = stdout, stderr = stderr, curdir = target:scriptdir(), envs = {TMPDIR = attempt}})
         opt.stdout = os.isfile(stdout) and io.readfile(stdout) or ""
         opt.stderr = os.isfile(stderr) and io.readfile(stderr) or ""
         local actual_group, assertions, failures =
             opt.stdout:match("kinova_guest_contract_v1 group=(%w+) assertions=(%d+) failures=(%d+)")
         local native_unwind = opt.stderr .. opt.stdout
+        native_unwind = native_unwind:gsub("\27%[[0-?]*[ -/]*[@-~]", "")
         local passed = code == 0 and actual_group == group and tonumber(assertions)
             and tonumber(assertions) >= ({bounds = 70, sequence = 11, codec = 64})[group]
             and tonumber(failures) == 0 and hash.sha256(wasm):lower() == before
             and native_unwind:find("[unwind-check] status=ok", 1, true)
-            and native_unwind:find("body-fallback=no", 1, true)
+            and not native_unwind:find("body-fallback=yes", 1, true)
+            and (native_unwind:find("body-fallback=no", 1, true)
+                or native_unwind:find("Resolved runtime configuration: mode=full_compile, compiler=llvm_jit_only, "
+                    .. "uwvm-int-translation=disabled, llvm-jit-ir-translation=enabled.", 1, true))
         json.savefile(path.join(attempt, "result.json"), {
             format = "kinova-guest-contract-test-v1", category = "GUEST_COMPONENT_NOT_OFFICIAL_SIMULATION",
             group = group, assertions = tonumber(assertions), failures = tonumber(failures),

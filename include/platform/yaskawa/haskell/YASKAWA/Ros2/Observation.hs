@@ -8,7 +8,7 @@
 -- @details All values own their bytes; successful acquisitions close exactly once.
 module YASKAWA.Ros2.Observation where
 import Data.Word
-import Ros.Observation
+import Native.Observation
 import qualified YASKAWA.Ros2.Records as R
 
 -- | @brief Observe every original industrial_msgs/msg/RobotStatus field through one retained owner.

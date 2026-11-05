@@ -1,0 +1,47 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "observation-denied-4284",
+  "test_scope": "Actual application must return permission-denied when its ROS namespace is enabled without resource grants. This checks refusal handling; it does not qualify successful native transport.",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "0cddeba73ec999b767d9b6ecbcddbebde9e9a04493cd9f0c77a87fecd301a50a"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "3a06ac5a25c4b344da04400846e6770692ae76e1619826f1c49d18aee662e786"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "resource-authority-denied",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13
+    }
+  ]
+}

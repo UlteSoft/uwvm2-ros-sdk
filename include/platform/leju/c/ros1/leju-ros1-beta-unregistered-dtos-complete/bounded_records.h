@@ -17,6 +17,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -252,7 +259,7 @@ static inline uint32_t roswasmc_bounded_1_kuavo_sdk_qv_encode(roswasmc_bounded_1
 /** Decode exact bytes into a temporary; refused/truncated/trailing input leaves value unchanged. */
 static inline uint32_t roswasmc_bounded_1_kuavo_sdk_qv_decode(void const* input, size_t length, roswasmc_bounded_1_kuavo_sdk_qv* value)
 {
-    roswasmc_bounded_1_kuavo_sdk_qv next = {0};
+    roswasmc_bounded_1_kuavo_sdk_qv next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 4u || length > 132u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;
@@ -575,7 +582,7 @@ static inline uint32_t roswasmc_bounded_1_kuavo_sdk_fullBodyTargetTrajectories_d
                                                                                       size_t length,
                                                                                       roswasmc_bounded_1_kuavo_sdk_fullBodyTargetTrajectories* value)
 {
-    roswasmc_bounded_1_kuavo_sdk_fullBodyTargetTrajectories next = {0};
+    roswasmc_bounded_1_kuavo_sdk_fullBodyTargetTrajectories next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 16u || length > 2320u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "universal_robots/php/ros1/universal-robots-ros1-trajectory-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\UniversalRobotsUniversalRobotsRos1TrajectoryComplete\Ros1Ur_dashboard_msgsAddToLogResponse();
 $bytes = $value->encode();
 $decoded = \Uwvm\UniversalRobotsUniversalRobotsRos1TrajectoryComplete\Ros1Ur_dashboard_msgsAddToLogResponse::decode($bytes);

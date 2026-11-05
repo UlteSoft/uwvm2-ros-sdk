@@ -45,7 +45,7 @@ hashes from Xmake's build records. The required graph is:
 | `independent-two` | `memory-channel` | `private-copy` |
 | `independent-three` | `memory-channel` | `left`, `right`, both with identical `private-copy` SHA |
 
-Select native AOT, `-WFE-multi-memory`, and `--wasip1-global-noinherit-system-environment` in runtime
+Select native AOT, `-WFE-multi-memory`, in runtime
 arguments. The supervisor constructs only the explicitly pinned graph using
 `--wasm-preload-library`; it adds no ROS grants. Run under the independently
 qualified Linux cgroup, canonical lease and guardian lifecycle. Each real guest
@@ -66,3 +66,16 @@ records pass. They require serial execution and unshared memories. Full backing
 identity receipts, real per-caller ROS grants, revocation, callbacks, hot updates,
 concurrent malicious-peer snapshots, official ROS Stage A and full simulator
 Stage B remain separate required qualifications.
+
+The deployment selects an explicit nonempty cpu_affinity list; the supervisor
+applies it and verifies the real VM process, together with the 64 GiB/zero-swap
+cgroup. The startup fd_read uses a blocking pipe until that observation completes.
+
+Relocatable WAT object linking currently requires code to initialize its literal
+memory bytes explicitly. WABT's object output does not provide the LLVM data
+relocations required to preserve ordinary active or passive data segments.
+The SDK rejects such relocatable inputs before publishing an artifact; complete
+standalone WAT modules retain normal data-segment support. The static consumer
+in this example initializes its protocol strings with guest memory stores.
+All five graphs check the current LLVM-only compilation and per-module native
+materialization records; no host interpreter supplies their results.

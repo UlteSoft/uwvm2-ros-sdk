@@ -14,6 +14,7 @@ import roswasm.wire;
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Flexiv_msgsMsgJointPosVel {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/msg/JointPosVel in bytes.
  /// @details The inclusive bound is 112 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -153,6 +154,7 @@ struct Ros2Flexiv_msgsMsgJointPosVel {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Flexiv_msgsMsgMode {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/msg/Mode in bytes.
  /// @details The inclusive bound is 1 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -328,6 +330,7 @@ struct Ros2Flexiv_msgsMsgMode {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgPoint {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Point in bytes.
  /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -470,6 +473,7 @@ struct Ros2Geometry_msgsMsgPoint {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgQuaternion {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Quaternion in bytes.
  /// @details The inclusive bound is 32 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -623,6 +627,7 @@ struct Ros2Geometry_msgsMsgQuaternion {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgPose {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Pose in bytes.
  /// @details The inclusive bound is 56 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -754,6 +759,7 @@ struct Ros2Geometry_msgsMsgPose {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgVector3 {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Vector3 in bytes.
  /// @details The inclusive bound is 24 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -896,6 +902,7 @@ struct Ros2Geometry_msgsMsgVector3 {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgAccel {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Accel in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1027,6 +1034,7 @@ struct Ros2Geometry_msgsMsgAccel {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Geometry_msgsMsgWrench {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of geometry_msgs/msg/Wrench in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1158,6 +1166,7 @@ struct Ros2Geometry_msgsMsgWrench {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros2Flexiv_msgsMsgRobotStates {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of flexiv_msgs/msg/RobotStates in bytes.
  /// @details The inclusive bound is 864 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.

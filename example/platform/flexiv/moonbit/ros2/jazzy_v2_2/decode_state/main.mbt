@@ -1,6 +1,9 @@
 /// @brief Validate bounded runtime hexadecimal input with genuine MoonBit code.
 fn main {
-  let args = @env.args()
+  let args = match @wasi_args.args() {
+    Ok(value) => value
+    Err(code) => { @wasi_args.exit(code); return }
+  }
   if args.length() != 2 { abort("supply exactly one canonical hexadecimal argument") }
   let text = args[1]
   if text.length() > 10322 || text.length() % 2 != 0 { abort("input extent") }

@@ -1,0 +1,626 @@
+{
+  "format": "uwvm-real-interpreter-v1",
+  "language": "ruby",
+  "version": "3.4.7",
+  "target": "wasm32-wasip1",
+  "ros_backend": "wasi",
+  "bytes": 14165938,
+  "sha256": "1224be3a9bae0f5f5979f239106831ae2f758f7ad8f0e8cd854362efb349f3b7",
+  "maximum_pages": 16384,
+  "abi_profile": "wasip1-only-v1",
+  "ros_import_count": 0,
+  "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
+  "construction_receipt_sha256": "811a464887fda79abf539cc5a0c99748378fa2a139bc36751c3120695a26291d",
+  "qualification": "REQUIRES_ACTUAL_WASI_GUEST_EXECUTION",
+  "qualification_scope": "Actual standard stream and argument examples must execute before any passing claim",
+  "imports": [
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "args_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        798,
+        820
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "args_sizes_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        832,
+        854
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "environ_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        872,
+        894
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "environ_sizes_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        909,
+        931
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "clock_res_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        952,
+        974
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "clock_time_get",
+      "params": [
+        "i32",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        991,
+        1013
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_advise",
+      "params": [
+        "i32",
+        "i64",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1031,
+        1053
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_close",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1066,
+        1088
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_datasync",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1100,
+        1122
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_fdstat_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1137,
+        1159
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_fdstat_set_flags",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1176,
+        1198
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_filestat_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1221,
+        1243
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_filestat_set_size",
+      "params": [
+        "i32",
+        "i64"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1262,
+        1284
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_pread",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1308,
+        1330
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_prestat_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1342,
+        1364
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_prestat_dir_name",
+      "params": [
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1382,
+        1404
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_pwrite",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1427,
+        1449
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_read",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1462,
+        1484
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_readdir",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1495,
+        1517
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_renumber",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1531,
+        1553
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_seek",
+      "params": [
+        "i32",
+        "i64",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1568,
+        1590
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_sync",
+      "params": [
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1601,
+        1623
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_tell",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1634,
+        1656
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "fd_write",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1667,
+        1689
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_create_directory",
+      "params": [
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1701,
+        1723
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_filestat_get",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1748,
+        1770
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_filestat_set_times",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1791,
+        1813
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_link",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1840,
+        1862
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_open",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i64",
+        "i64",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1875,
+        1897
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_readlink",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1910,
+        1932
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_remove_directory",
+      "params": [
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1949,
+        1971
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_rename",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        1996,
+        2018
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_symlink",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2033,
+        2055
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "path_unlink_file",
+      "params": [
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2071,
+        2093
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "poll_oneoff",
+      "params": [
+        "i32",
+        "i32",
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2113,
+        2135
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "proc_exit",
+      "params": [
+        "i32"
+      ],
+      "results": [],
+      "module_span": [
+        2150,
+        2172
+      ]
+    },
+    {
+      "module": "wasi_snapshot_preview1",
+      "name": "random_get",
+      "params": [
+        "i32",
+        "i32"
+      ],
+      "results": [
+        "i32"
+      ],
+      "module_span": [
+        2185,
+        2207
+      ]
+    }
+  ],
+  "command_state_relink": {
+    "receipt": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/ruby-wasi-command-state/relink-receipt.json",
+    "sha256": "811a464887fda79abf539cc5a0c99748378fa2a139bc36751c3120695a26291d"
+  }
+}

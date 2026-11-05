@@ -13,7 +13,7 @@ set_policy("run.autobuild", false)
 target("portable-joint-step-v0-1-0")
     set_kind("binary")
     -- Ancestor SDK project selection must not relocate this example's output.
-    set_targetdir(path.join(os.scriptdir(), "build"))
+    set_targetdir(path.join(os.scriptdir(), "build", "artifacts"))
     set_language("c")
     set_ros_platform("wasi")
     set_plat("wasm-wasip1")

@@ -13,7 +13,7 @@
 from importlib import import_module
 import json
 
-records = import_module("doosan.py.ros1.doosan-ros1-melodic-devel-complete.bounded_records")
+records = import_module("doosan.py.ros1.doosan_ros1_melodic_devel_complete.bounded_records")
 value = records.Ros1Dsr_msgsRobotState()
 wire = value.encode()
 decoded = records.Ros1Dsr_msgsRobotState.decode(wire)

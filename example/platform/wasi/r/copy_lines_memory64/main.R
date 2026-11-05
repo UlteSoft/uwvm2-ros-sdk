@@ -5,9 +5,9 @@
 main <- function() {
     #' @brief Read bounded raw chunks from the inherited binary stdin connection.
     #' @details Connection handles remain local and are closed once on return.
-    input <- file("stdin", open = "rb")
+    input <- .Call("uwvm_wasi_stdio", "stdin")
     on.exit(close(input), add = TRUE)
-    output <- file("stdout", open = "wb")
+    output <- .Call("uwvm_wasi_stdio", "stdout")
     on.exit(close(output), add = TRUE)
     repeat {
         bytes <- readBin(input, what = "raw", n = 256L)

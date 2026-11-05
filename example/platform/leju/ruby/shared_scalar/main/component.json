@@ -1,0 +1,97 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "leju-genuine-ruby-shared-state",
+  "preload_modules": [
+    "algorithm"
+  ],
+  "ros_namespace": "ros1",
+  "ros_modules": [
+    "main",
+    "algorithm"
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/guest_aggregate.lua",
+      "sha256": "bd98496ba8915f4396016ef2108e43b21069b1ea9a9f1e4fe65223e927c5e381"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/leju/provider.lua",
+      "sha256": "f0668b0e39b4f99566c07db4a056b7476947b1fc5bd13743caff7023ed89275a"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/deployment.example.json",
+      "sha256": "72043701127c7df4a2ba4bf6ee96f78224041f5ee0445551ee959c92ae4bb829"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/README.md",
+      "sha256": "7d28b44d91ee76e2ab308f76c8d31559899d674e87b5a90ddf8e215d2b072c49"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/xmake.lua",
+      "sha256": "fda6f40531d44f25f3dc539810627dbb568ab3e9f9c8d395ac358d4fc0977888"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/algorithm/xmake.lua",
+      "sha256": "ea75a393620f58c5351f016ef3a0bfd99a23e164720a553920fc597f1d8531ea"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/algorithm/algorithm.rb",
+      "sha256": "0425776de4d00b17d01b8d6cd5b4da2e6631153b6debb807662f82dd16112dc0"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/main/xmake.lua",
+      "sha256": "837f4700f78f71c529aa0a7e5cc5a055d0080b07216b07e3ab7a527e90b32940"
+    },
+    {
+      "scope": "sdk",
+      "path": "example/platform/leju/ruby/shared_scalar/main/main.c",
+      "sha256": "e197bb40d39b07f75ec0cee9119424452f7484bf22e5f58185b2648ae8693fc3"
+    }
+  ],
+  "cases": [
+    {
+      "id": "state-gc-fiber-exception-denial-retirement",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "status": "PASS",
+        "xmake_shared_consumer": true,
+        "first_result": 56,
+        "denied": 13
+      }
+    }
+  ]
+}

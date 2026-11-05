@@ -1,0 +1,65 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-436",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "13b9ded94dccecf716ff72112de13479375085f49633cd2dc5cb2e128d558d55"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "f2a1c723737a61f8687ee1d63f8c1ddac0857a98fc0f34c75753d17f07c06121"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros2_humble/builtin_interfaces/msg/Time.msg",
+      "sha256": "0e6f429967a29ba34b224c5c0236c938084e82ee1279deeaf0666768cba220ae"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros2_humble/catalog.json",
+      "sha256": "b1e2ee77e79a3671fe52790b1cfe451ffc4fd7c2bfdea2edf8d42fb2c76be848"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros2_humble/clearpath_platform_msgs/msg/StopStatus.msg",
+      "sha256": "b11814c36f5b46a9b91b71db02a56674686a80d628a42643f17656dce7d64979"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/clearpath/catalogs/ros2_humble/std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "15\n"
+    }
+  ]
+}

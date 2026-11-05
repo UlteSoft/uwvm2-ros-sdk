@@ -2,8 +2,9 @@
 // @brief Exercise complete original ur_dashboard_msgs/srv/AddToLog_Response values with genuine Odin compilation.
 package main
 import "core:fmt"
+import "base:runtime"
 import records "sdk:universal_robots/odin/ros2/universal-robots-ros2-trajectory-complete"
-main :: proc() {
+run :: proc() {
     value := records.init_Ros2Ur_dashboard_msgsSrvAddToLog_Response()
     buffer: [261]u8
     wire, status := records.encode_Ros2Ur_dashboard_msgsSrvAddToLog_Response(&value, buffer[:])
@@ -14,5 +15,13 @@ main :: proc() {
     again, code2 := records.encode_Ros2Ur_dashboard_msgsSrvAddToLog_Response(&decoded, again_buffer[:])
     assert(code2 == 0 && len(again) == len(wire))
     for byte, i in wire { assert(byte == again[i]) }
-    fmt.printf("{\"type\":\"ur_dashboard_msgs/srv/AddToLog_Response\",\"bytes\":%d}\n", len(wire))
+    fmt.printf("%s%d%s\n", "{\"type\":\"ur_dashboard_msgs/srv/AddToLog_Response\",\"bytes\":", len(wire), "}")
+}
+
+// Enter the real Odin command after WASI C startup.
+@(export, link_name="nl_entry")
+nl_entry :: proc "c"() -> u32 {
+    context = runtime.default_context()
+    run()
+    return 0
 }

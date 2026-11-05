@@ -5,8 +5,11 @@
  * parameter and lifecycle services without changing request authorization.
  */
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
+#include "native_serialization.h"
 
 #include "../common/service_client_pool.h"
+#include "../common/quota_wait.h"
 #include "compat/node.h"
 #include "qos.h"
 #include <future>
@@ -32,6 +35,48 @@ namespace uwvm2::ros_gateway::ros2_service_client
                                                     if(!client || !ros2_qos::client(*client, configured)) { return {}; }
                                                     return client;
                                                 });
+        }
+    }
+
+    // Graph Event has no pollable descriptor. Native graph notifications wake
+    // each slice immediately; the slice only bounds peer/stop cancellation
+    // latency and never imposes a total service-discovery deadline.
+    template<class Node,class Ready>
+    std::uint32_t wait_graph(Node const& node,std::chrono::steady_clock::time_point deadline,Ready ready)
+    {
+        auto event{node->get_graph_event()};
+        for(;;)
+        {
+            if(ros::synchronous_wait_context::stop_requested() || ros::synchronous_wait_context::process_cancelled()) return 125;
+            auto now{::uwvm2::utils::host_clock::now()};
+            if(now>=deadline) return 110;
+            if(ready()) return 0;
+            event->check_and_clear();
+            // Register the event before the second observation to avoid losing
+            // a discovery notification between observation and native wait.
+            if(ready()) continue;
+            auto slice{std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::milliseconds(100))};
+            if(deadline!=std::chrono::steady_clock::time_point::max())
+                slice=std::min(slice,std::chrono::duration_cast<std::chrono::nanoseconds>(deadline-now));
+            node->wait_for_graph_change(event,slice);
+        }
+    }
+    template<class Node,class Client>
+    std::uint32_t wait_ready(Node const& node,std::shared_ptr<Client> const& client,
+                             std::chrono::steady_clock::time_point deadline)
+    {return wait_graph(node,deadline,[&]{return client->service_is_ready();});}
+    template<class Pending>
+    std::uint32_t wait_response(Pending& pending,ros::synchronous_quota_wait& completed,
+                                std::chrono::steady_clock::time_point deadline)
+    {
+        for(;;)
+        {
+            if(completed.cancelled()) return 125;
+            if(::uwvm2::utils::host_clock::now()>=deadline) return 110;
+            if(pending.wait_for(std::chrono::seconds(0))==std::future_status::ready) return 0;
+            auto status{completed.until(deadline)};
+            if(status!=ros::quota_wait_result::ready)
+                return status==ros::quota_wait_result::cancelled?125:95;
         }
     }
 

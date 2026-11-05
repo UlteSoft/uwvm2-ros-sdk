@@ -14,9 +14,9 @@ public enum FanucRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitConnectionStatus(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Fanuc_msgsMsgConnectionStatus>
+    -> NativeObservation<Ros2Fanuc_msgsMsgConnectionStatus>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 1, attempts, Ros2Fanuc_msgsMsgConnectionStatus.decode, { $0.encode() })
   }
 
@@ -26,9 +26,9 @@ public enum FanucRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitForceSensor(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Fanuc_msgsMsgForceSensor>
+    -> NativeObservation<Ros2Fanuc_msgsMsgForceSensor>
   {
-    return rosReceive(
+    return nativeReceive(
       aliasBytes, 28, attempts, Ros2Fanuc_msgsMsgForceSensor.decode, { $0.encode() })
   }
 
@@ -38,9 +38,9 @@ public enum FanucRos2 {
   /// @return Complete owned original record and independent operation/close facts.
   /// @details Only idle 11 is retried; fatal traps cannot promise ordinary cleanup.
   public static func waitFrame(_ aliasBytes: [UInt8], _ attempts: UInt32)
-    -> RosObservation<Ros2Fanuc_msgsMsgFrame>
+    -> NativeObservation<Ros2Fanuc_msgsMsgFrame>
   {
-    return rosReceive(aliasBytes, 24, attempts, Ros2Fanuc_msgsMsgFrame.decode, { $0.encode() })
+    return nativeReceive(aliasBytes, 24, attempts, Ros2Fanuc_msgsMsgFrame.decode, { $0.encode() })
   }
 
 }

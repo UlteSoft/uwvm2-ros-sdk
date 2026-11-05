@@ -11,7 +11,7 @@ xmake
 # Repeat in a separate build directory with -a wasm64.
 ```
 
-Copy `native.json` to an operator-owned location and replace only the runtime/gateway placeholders with the matching complete vendor pair. Preserve its explicit resource, native RIHS, codec identity, QoS and two-owner max-inflight2. Default WASI basic streams remain; there are no extra WASI grants. Native ROS is selected only at execution time.
+Copy `native.json` to an operator-owned location and replace only the runtime/gateway placeholders with the matching complete vendor pair. Preserve its explicit resource, native RIHS, codec identity, QoS and two-owner max-inflight2. Base WASI exposes interfaces only; required standard-stream operations need explicit per-module grants. Native ROS is selected only at execution time.
 
 ```sh
 python3 "$UWVM_ROS_SDK_ROOT/tools/platform/ros/run.py" \

@@ -1,0 +1,82 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "ros",
+      "file": "include/platform/ros/py/ros/__init__.py",
+      "package": true,
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "name": "ros.py",
+      "file": "include/platform/ros/py/ros/py/__init__.py",
+      "package": true,
+      "sha256": "389a3b29b8d9cae4d51c2358670fd452398c39518e5924563f2c7c1e95ae26e5"
+    },
+    {
+      "name": "ros.py.wire",
+      "file": "include/platform/ros/py/ros/py/wire.py",
+      "sha256": "7e0076ef30c9b2cbddb3b8483c479d629ed3762adef676fb78b3e3cae270c030"
+    },
+    {
+      "name": "ros.py.transport",
+      "file": "include/platform/ros/py/ros/py/transport.py",
+      "sha256": "f4dac7ca14ceb9462ada69936ad0e2798d26593ec2b17be0a110b26bc0c42a6f"
+    },
+    {
+      "name": "uwvm",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py",
+      "file": "src/language/python/modules/package.py",
+      "sha256": "72cc4d0fd1f61f6a98cd7b75eecf2466342315e9388b05affe3db25f6a76d36e",
+      "package": true
+    },
+    {
+      "name": "uwvm.py.observation",
+      "file": "src/language/python/modules/observation.py",
+      "sha256": "239bb6f3404deffc18aad68b8e3155f0fa6dd5f701b1e9d900be2eab170dddfc"
+    },
+    {
+      "name": "ros.py.native_command",
+      "file": "include/platform/ros/py/ros/py/native_command.py",
+      "sha256": "a997296e715f1aab492e50fe0888945ada5ca4d0efa721156a700fc38b0d96e3"
+    },
+    {
+      "name": "agibot",
+      "file": "include/platform/agibot/__init__.py",
+      "package": true,
+      "sha256": "817a72914ace95de4c36bd0e5cee14db5774fa70bced4b8b7b13f6554298c521"
+    },
+    {
+      "name": "agibot.py",
+      "file": "include/platform/agibot/py/__init__.py",
+      "package": true,
+      "sha256": "dda64f4d5757b333cab29abb4cb9d627593204d5ea78732e7194af65412edf5c"
+    },
+    {
+      "name": "agibot.py.ros2",
+      "file": "include/platform/agibot/py/ros2/__init__.py",
+      "package": true,
+      "sha256": "7d505a329340f43ea6b7e7a2e79f7be77178352c64882524ae2be900ce0e5dd6"
+    },
+    {
+      "name": "agibot.py.ros2.sdk_v1_1_0_main",
+      "file": "include/platform/agibot/py/ros2/sdk_v1_1_0_main/__init__.py",
+      "package": true,
+      "sha256": "908902b020d3b5ceac485c6f53350423dd315b980cc2300a62307d33137560f4"
+    },
+    {
+      "name": "agibot.py.ros2.sdk_v1_1_0_main.records",
+      "file": "include/platform/agibot/py/ros2/sdk_v1_1_0_main/records.py",
+      "sha256": "464cb722bae1521dd462cba9bda94acc4d7cb5a96477563cc34f942ea287dbc2"
+    }
+  ],
+  "default_authority": [],
+  "module_loading": "lazy"
+}

@@ -68,7 +68,6 @@ socket=/tmp/uwvm-preload-$$.sock
 sh -c 'kill -STOP "$$"; exec "$@"' worker "$UWVM" \
   --runtime-aot \
   --wasm-set-main-module-name main \
-  --wasip1-global-noinherit-system-environment \
   --wasm-preload-library "build/io/io.wasm" io \
   --wasm-set-preload-module-attribute io none \
   --wasm-preload-library "build/algorithm/algorithm.wasm" algorithm \

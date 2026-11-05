@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "kinova",
+  "language": "lua",
+  "profile": "ros2_humble",
+  "backend": "ros2",
+  "source_root": "include/platform/kinova/lua/ros2/mobile_fjt_humble_complete",
+  "bundle_manifest": "share/platform/kinova/bindings/lua/ros2_humble-bundle.json"
+}

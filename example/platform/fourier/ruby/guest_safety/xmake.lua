@@ -42,6 +42,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 set_policy("run.autobuild", false)
 set_plat(get_config("plat") or "wasm-wasip1")
@@ -56,39 +57,5 @@ target("fourier-ruby-guest-safety")
     set_values("ros.sdk.profile", "ros2_aurora_bridge_v1")
     set_ros_scenario("status")
     add_files("main.rb", {rule = "ros.wasm.source"})
-    add_tests("guest-safety")
-    on_test(function(target, opt)
-        import("core.project.config")
-        local deployment = target:values("ros.sdk.run_config") or config.get("ros-run-config")
-                           or os.getenv("UWVM_ROS_RUN_CONFIG")
-        if not deployment or not os.isfile(deployment) then
-            opt.errors = "BLOCKED_GUEST_RUNTIME_CONFIGURATION_REQUIRED: select an explicit installed uwvm2-ros deployment for these five required guest assertions"
-            return false
-        end
-        local previous = os.curdir()
-        os.cd(path.absolute(target:scriptdir()))
-        local failed, failure = false, nil
-        try {
-            function()
-                import("dispatch", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).run(target)
-            end,
-            catch {
-                function(errors)
-                    failed = true
-                    failure = tostring(errors or "Guest runtime failed")
-                end
-            },
-            finally {
-                function()
-                    os.cd(previous)
-                end
-            }
-        }
-        if failed then
-            print(failure)
-            opt.errors = failure
-            return false
-        end
-        return true
-    end)
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

@@ -52,7 +52,9 @@ function configure(target)
     assert(#sources == 1 and path.extension(sources[1]) == extension, "Declare one actual native source entry")
     target:set("kind", "binary")
     target:set("extension", ".wasm")
-    target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build"))
+    if not target:get("targetdir") then
+        target:set("targetdir", path.join(path.absolute(target:scriptdir()), "build/artifacts"))
+    end
     target:set("toolchains", "ros.wasm.command")
     target:set("values", "ros.sdk.root", root)
     target:set("values", "ros.sdk.triple", "wasm32-wasip1")

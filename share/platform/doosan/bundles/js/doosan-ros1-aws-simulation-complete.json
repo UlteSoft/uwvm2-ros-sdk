@@ -1,0 +1,33 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "js",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "ros/js/wire",
+      "file": "include/platform/ros/js/wire.mjs",
+      "sha256": "2a141d22a7f65fbc0a9ec742e68b7e67ed13d7127aeac360677a35423c73a6db"
+    },
+    {
+      "name": "ros/js/transport",
+      "file": "include/platform/ros/js/transport.mjs",
+      "sha256": "1675709e95bd7ec2d8573be4d908cdeb80d25d4daa33ee71b9d10eb063bfaf93"
+    },
+    {
+      "name": "uwvm/js/observation",
+      "file": "src/language/js/modules/observation.mjs",
+      "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "name": "doosan/js/ros1/doosan-ros1-aws-simulation-complete/bounded_interfaces.mjs",
+      "file": "include/platform/doosan/js/ros1/doosan-ros1-aws-simulation-complete/bounded_interfaces.mjs",
+      "sha256": "39496813fffabce28e8b88e9e31d76ec02cf65493fdb0aab43fbc268190a60ab"
+    },
+    {
+      "name": "doosan/js/ros1/doosan-ros1-aws-simulation-complete/bounded_records.mjs",
+      "file": "include/platform/doosan/js/ros1/doosan-ros1-aws-simulation-complete/bounded_records.mjs",
+      "sha256": "822373f4c5e73257e7d4df0abd3620d4d10de3d41a173e50d2275b6d9e8c5d67"
+    }
+  ],
+  "default_authority": []
+}

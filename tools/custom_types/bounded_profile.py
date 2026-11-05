@@ -2132,6 +2132,7 @@ def emit_c_extended_functions(parent, record, records):
         f"static inline size_t {cs}_wire_size({cs} const* value) {{size_t n=0;return {cs}_measure(value,&n)?0:n;}}",
         f"/** Internal no-fail writer, entered only after complete measure/overlap proof. */",
         f"static inline void {cs}_write_fields({cs} const* value,unsigned char* p,size_t* offset) {{",
+            "  (void)value; (void)p; (void)offset;",
     ]
     for member in record.members:
         if member.array == "sequence":
@@ -2436,6 +2437,7 @@ def emit_c(parent, records, ordered):
             "}",
             f"/** Internal writer enters only after full validation, capacity and overlap checks. */",
             f"static inline void {cs}_write_fields({cs} const* value,unsigned char* p,size_t* offset) {{",
+            "  (void)value; (void)p; (void)offset;",
         ]
         for member in record.members:
             if member.array == "sequence":
@@ -2469,6 +2471,7 @@ def emit_c(parent, records, ordered):
             "}",
             f"/** Internal reader fills only the public decoder temporary and checks every cursor move. */",
             f"static inline int {cs}_read_fields(unsigned char const* p,size_t n,size_t* offset,{cs}* value) {{",
+            "  (void)p; (void)n; (void)offset;",
         ]
         for member in record.members:
             if member.array == "sequence":
@@ -5823,7 +5826,7 @@ def emit_control_service_facts(services):
 
 
 CPP_PROFILE_EMITTER_SHA256 = (
-    "e3fded09942c32997ceac7a9d2fcdee1911230b22b45d6b52717d3bf4b88ef89"
+    "9a4c82e5b97e08db2c8ef14f9a3b329adbb2e758857221a71557fa321470b906"
 )
 _CPP_PROFILE_EMITTER = None
 

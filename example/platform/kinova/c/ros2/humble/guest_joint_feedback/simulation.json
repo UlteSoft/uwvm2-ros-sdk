@@ -62,7 +62,7 @@
     {
       "scope": "sdk",
       "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/main.c",
-      "sha256": "e47531caa45940b402caea7cfc23ad1c062ada2db4c0300865821f6a5a9e427f"
+      "sha256": "4bda16be7023ee2b87b8bcfa03d382cfdcad60825e6417b487205435e16cf23e"
     },
     {
       "scope": "sdk",
@@ -92,12 +92,12 @@
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/simulation_example.lua",
-      "sha256": "08b77da04cf295b23083a25bb497cd72abf3d15f4b3823fd08b3fe40257f14dc"
+      "sha256": "4132b8a41debef52d8166e70d5c9e637adf55a2ade9b322e1b7abe18ece01299"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/simulation_example.py",
-      "sha256": "4837843d0f785eea85d620ea6e95ac193cdb5d3f0e1d85f3bac260ddeff8fbee"
+      "sha256": "91af18496de4a6d34ade3a608d342db8c7dd1ea4d6384626d85d62c21bb9b91b"
     },
     {
       "scope": "sdk",
@@ -107,12 +107,17 @@
     {
       "scope": "sdk",
       "path": "tools/xmake/repository.lua",
-      "sha256": "3476d13327d21ce2b54165de11ce5b242f393030a64b2ae4c5ae83c03616d34a"
+      "sha256": "4c5eaac900b3cbef23fcf1390fa130dacdf369db9e4f7e0c9b03455d688d8b61"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/language_entry.lua",
       "sha256": "c1f9d6a02a2dcc16f4e6a3b3e30716f8292a743eb6bfba1d7491944d9ddc6062"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "41fcbeb000a9765a1223f71f3b5de583719e0cc13e2b915bc2eb4b6f507327a3"
     }
   ]
 }

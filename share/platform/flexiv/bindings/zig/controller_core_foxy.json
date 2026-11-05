@@ -1,0 +1,36 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "zig",
+  "profile": "controller_core_foxy",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/zig/ros2/flexiv-controller-core-foxy-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "zig",
+    "zig": {
+      "wasi": true,
+      "imports": [
+        "flexiv_records"
+      ],
+      "modules": [
+        {
+          "name": "roswire",
+          "source": "include/platform/ros/zig/wire.zig"
+        },
+        {
+          "name": "flexiv_records",
+          "source": "include/platform/flexiv/zig/ros2/flexiv-controller-core-foxy-complete/records.zig",
+          "imports": [
+            "roswire"
+          ]
+        }
+      ]
+    },
+    "c_sources": [
+      "src/language/native/startup.c"
+    ]
+  }
+}

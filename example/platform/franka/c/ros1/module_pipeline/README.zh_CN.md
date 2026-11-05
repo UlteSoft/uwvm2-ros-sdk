@@ -9,7 +9,7 @@ io、algorithm、ros_comm；algorithm 再链接真实的 algorithm_core 静态�
 编译器、打包器或 kind DSL。
 
 io 使用自己的 WASI 标准流。algorithm 对实际收到的原生字符串摘要计算结果，
-保留默认 WASI，不得到额外资源或 ROS 授权。默认 WASI 仍有基本标准流权限，
+保留默认 WASI，不得到额外资源或 ROS 授权。基础 WASI 不提供标准流操作权限，
 不能称为字面上的“零权限”。只有 ros_comm 得到主题订阅及单调时钟授权。
 main、io、algorithm 分别通过各自的真实 ROS 导入检查拒绝结果 13，清理结果也
 必须为零；不能把成功 open 后的 close 错误当成拒绝。
@@ -29,7 +29,7 @@ algorithm 的 201 优先级构造函数必须先读到归档状态 101 才记录
 在调用任何导出前输出并 flush main-enter。验收逐一断言初始化标记只出现一次，
 都先于 main-enter，且 archive-init 先于 algorithm-init；静态消费者也检查归档
 标记先于自身入口。这能识别链接器自动加入的懒初始化导出包装，不能只看状态值。
-algorithm 的标记只使用默认基本 WASI 标准流。实际 Core start section 的检查仍是
+algorithm 输出标记需要显式授予 stdout.write；基础 WASI 接口本身不授予写权限。实际 Core start section 的检查仍是
 另一个独立断言。
 ros_comm 验证完整 std_msgs/String，逐字节计算 FNV-1a，只复制长度与摘要给 main。
 本例容量为 252 个 UTF-8 字节，拒绝嵌入 NUL，允许空字符串。容量是示例的接纳

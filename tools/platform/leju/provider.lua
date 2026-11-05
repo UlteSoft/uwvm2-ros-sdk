@@ -30,6 +30,12 @@ function configure(target, root, context)
 	local triple = assert(context.triple, "The common dispatcher must resolve the exact target")
 	target:set("values", "ros.sdk.triple", triple)
 	local language = target:values("ros.sdk.language")
+	context.binding = table.clone((selected.bindings or {})[language] or {})
+	context.native_action = context.binding.native_action
+	if context.binding.bundle_manifest then
+		target:set("values", "ros.sdk.bundle_manifest", context.binding.bundle_manifest)
+	end
+
 	if selected.bindings and selected.bindings[language] then
 		target:set("values", "ros.sdk.binding", selected.bindings[language])
 	end

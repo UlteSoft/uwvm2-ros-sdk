@@ -1,0 +1,210 @@
+--- a/configure
++++ b/configure
+@@ -24705,7 +24705,7 @@
+     Rshlibpath_var=PATH
+     ;;
+   *)
+-    Rshlibpath_var=${shlibpath_var}
++    Rshlibpath_var=${shlibpath_var:-LD_LIBRARY_PATH}
+ esac
+ 
+ ## Export LD_LIBRARY_PATH or equivalent.
+@@ -56834,6 +56834,13 @@
+ 
+ 
+ ## libcurl
++# WASI_PREVIEW1_NO_OUTBOUND_NETWORK: the upstream no-libcurl error paths remain.
++if test x"${host_os}" = xwasi; then
++ have_libcurl=no
++ CURL_CPPFLAGS=
++ CURL_LIBS=
++else
++## libcurl
+ 
+ # Extract the first word of "curl-config", so it can be a program name with args.
+ set dummy curl-config; ac_word=$2
+@@ -57031,6 +57038,8 @@
+ fi
+ 
+ 
++
++fi
+ 
+ ## Bitmap headers and libraries.
+ if test -n "${PKG_CONFIG}"; then
+--- a/src/main/connections.c
++++ b/src/main/connections.c
+@@ -1658,6 +1658,7 @@
+ 
+ #endif // WIN32
+ 
++#if (defined(HAVE_MKFIFO) && defined(HAVE_FCNTL_H)) || defined(_WIN32)
+ static Rconnection newfifo(const char* description, const char* mode)
+ {
+     Rconnection new;
+@@ -1702,6 +1703,8 @@
+     }
+     return new;
+ }
++
++#endif
+ 
+ static void cend_con_destroy(void* data)
+ {
+--- a/src/main/platform.c
++++ b/src/main/platform.c
+@@ -2255,6 +2255,10 @@
+                 hasspecial = 1;
+                 break;
+             }
++#if defined(__wasi__)
++        /* Preview 1 provides directory/file operations, not a host shell. */
++        hasspecial = 1;
++#endif
+         if (!hasspecial)
+         {
+             /* rm -Rf may be optimized for specific file-systems.
+--- a/src/main/sysutils.c
++++ b/src/main/sysutils.c
+@@ -151,6 +151,14 @@
+ 
+ FILE* R_fopen(const char* filename, const char* mode)
+ {
++#if defined(__wasi__)
++    extern int uwvm_r_builtin_file(const char *, FILE **);
++    if (filename && (!strcmp(mode, "r") || !strcmp(mode, "rb"))) {
++        FILE *builtin = NULL;
++        if (uwvm_r_builtin_file(filename, &builtin)) return builtin;
++    }
++#endif
++
+     return (filename ? fopen(filename, fixmode(mode)) : NULL);
+ }
+ 
+--- a/src/extra/tzone/localtime.c
++++ b/src/extra/tzone/localtime.c
+@@ -482,6 +482,13 @@
+                 doaccess = TRUE;
+             name = fullname;
+         }
++#if defined(__wasi__)
++        extern int uwvm_r_builtin_zoneinfo(const char *, char *, size_t, ssize_t *);
++        if (uwvm_r_builtin_zoneinfo(name, up->buf, sizeof up->buf, &nread)) {
++            if (nread <= 0) { Rf_warning("unknown timezone '%s'", sname); return -1; }
++            goto embedded_zone_loaded;
++        }
++#endif
+         if (doaccess && access(name, R_OK) != 0)
+         {
+             Rf_warning("unknown timezone '%s'", sname);
+@@ -505,6 +512,9 @@
+     nread = read(fid, up->buf, sizeof up->buf);
+     if (close(fid) < 0 || nread <= 0)
+         return -1;
++#if defined(__wasi__)
++embedded_zone_loaded:
++#endif
+     for (int stored = 4; stored <= 8; stored *= 2)
+     {
+         int ttisstdcnt, ttisgmtcnt, timecnt;
+--- a/src/unix/sys-unix.c
++++ b/src/unix/sys-unix.c
+@@ -295,6 +295,20 @@
+ #include <sys/wait.h>
+ #endif
+ 
++#if defined(__wasi__)
++/* Preview 1 cannot spawn processes. Preserve explicit failure in R itself;
++   never launch a native command or supply synthetic process output. */
++static FILE* R_popen_timeout(const char* cmd, const char* mode, int timeout)
++{ (void)cmd; (void)mode; (void)timeout; errno=ENOSYS; return NULL; }
++static int R_pclose_timeout(FILE* fp)
++{ (void)fp; errno=ENOSYS; return -1; }
++static int R_system_timeout(const char* cmd, int timeout)
++{ (void)cmd; (void)timeout; errno=ENOSYS; return -1; }
++attribute_hidden FILE* R_popen_pg(const char* cmd, const char* mode)
++{ (void)cmd; (void)mode; errno=ENOSYS; return NULL; }
++attribute_hidden int R_pclose_pg(FILE* fp)
++{ (void)fp; errno=ENOSYS; return -1; }
++#else
+ /* The timeout support is inspired by timeout utility from coreutils.
+    However, here the child process creates a new process group rather than
+    the parent (R) process, because changing the group leader for the whole
+@@ -923,6 +937,8 @@
+     return -1;
+ }
+ 
++#endif
++
+ static void warn_status(const char* cmd, int res)
+ {
+     if (!res)
+@@ -1100,7 +1116,11 @@
+                 cmdError(cmd, _("error in running command"));
+         }
+ 
++        #if defined(__wasi__)
++        if (0)
++#else
+         if (timeout && tost.timedout)
++#endif
+         {
+             res = 124;
+             warning(_("command '%s' timed out after %ds"), cmd, timeout);
+@@ -1164,7 +1184,11 @@
+             res = R_system_timeout(cmd, timeout);
+         if (res == 127)
+             warning(_("error in running command"));
++        #if defined(__wasi__)
++        if (0)
++#else
+         if (timeout && tost.timedout)
++#endif
+         {
+             res = 124;
+             warning(_("command '%s' timed out after %ds"), cmd, timeout);
+--- a/src/main/Makefile.in
++++ b/src/main/Makefile.in
+@@ -252,3 +252,6 @@
+ 
+ ## Automagically generated dependencies:
+ 
++
++# Compact genuine R bytecode evaluator for the standalone Wasm port.
++eval.o: CFLAGS = -Oz -g0 -DNO_THREADED_CODE
+--- a/src/extra/blas/Makefile.in
++++ b/src/extra/blas/Makefile.in
+@@ -22,7 +22,7 @@
+ SOURCES = blas00.c blas.f cmplxblas.f blas2.f90 cmplxblas2.f90\
+ lsame.f newAccelerate.c zdotc.f zdotu.f
+ 
+-Rblas_la = libRblas$(R_DYLIB_EXT)
++Rblas_la = libRblas.a
+ ## @RBLAS_LDFLAGS@ is used on macOS
+ ## first for internal BLAS
+ Rblas_la_LIBADD = @RBLAS_LDFLAGS@ $(FLIBS_IN_SO)
+@@ -57,7 +57,7 @@
+ 
+ @BUILD_NEW_ACCELERATE_FALSE@ blas_OBJS=blas.o blas2.o @COMPILE_FORTRAN_DOUBLE_COMPLEX_FALSE@ cmplxblas.o cmplxblas2.o
+ @USE_EXTERNAL_BLAS_FALSE@$(Rblas_la): $(blas_OBJS)
+-	@USE_EXTERNAL_BLAS_FALSE@$(DYLIB_LINK) -o $(Rblas_la) $(blas_OBJS) $(Rblas_la_LIBADD)
++	@USE_EXTERNAL_BLAS_FALSE@$(AR) rcs $(Rblas_la) $(blas_OBJS)
+ 
+ @USE_EXTERNAL_BLAS_TRUE@$(Rblas_la): blas00.o
+ @USE_EXTERNAL_BLAS_TRUE@	$(DYLIB_LINK) -o $(Rblas_la) $^ @BLAS_LIBS0@ $(Rblas_la_LIBADD0)
+--- a/src/include/Rmath.h0.in
++++ b/src/include/Rmath.h0.in
+@@ -69,9 +69,13 @@
+ 
+ #if !defined(HAVE_WORKING_LOG1P)
+ /* remap to avoid problems with getting the right entry point */
++#ifdef __cplusplus
+ extern "C" {
++#endif
+ double  Rlog1p(double);
++#ifdef __cplusplus
+ }
++#endif
+ #define log1p Rlog1p
+ #endif
+ 

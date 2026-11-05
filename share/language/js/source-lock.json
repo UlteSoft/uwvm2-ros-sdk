@@ -16,8 +16,8 @@
     },
     {
       "path": "src/language/js/command.c",
-      "bytes": 14454,
-      "sha256": "487e8858983ffb95b170208677e91b5b7700103030f7b1234cc08d44ee44aabe"
+      "bytes": 17082,
+      "sha256": "9a220dac7e442c86fe6688fe31d67426da68a0d626269a64fa76227767e0f7ca"
     },
     {
       "path": "src/language/js/modules/observation.mjs",
@@ -136,8 +136,8 @@
     },
     {
       "path": "tools/language/js/pack.lua",
-      "bytes": 17494,
-      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
+      "bytes": 17857,
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
     },
     {
       "path": "tools/language/js/records.py",
@@ -148,6 +148,11 @@
       "path": "tools/language/js/wasm.py",
       "bytes": 11035,
       "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
+    },
+    {
+      "path": "src/language/js/modules/stdio.mjs",
+      "bytes": 611,
+      "sha256": "eb32c30a9baa4489fcf6e65edad746abab32a9a1b2a613f6bd0a7a6a42ab5c1d"
     }
   ],
   "external_inputs": [

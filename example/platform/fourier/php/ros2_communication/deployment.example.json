@@ -1,7 +1,7 @@
 {
   "format": "uwvm-sdk07-php-official-relay-stage-a-v1",
   "deployment": {
-    "format": "uwvm-native-ros-run-v2",
+    "format": "uwvm-native-ros-run-v3",
     "runtime": "/opt/uwvm/bin/uwvm2-ros",
     "gateway": "/opt/uwvm-host/bin/uwvm-ros2-gateway",
     "backend": "ros2",
@@ -28,8 +28,12 @@
           "main": {
             "ros_enabled": true,
             "wasi_grants": [
-              "stdio-full-rights",
-              "monotonic-clock"
+              "monotonic-clock",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "stdio.readiness"
             ],
             "grants": [
               {
@@ -158,7 +162,8 @@
               "audit-max-records-per-second": "500",
               "audit-max-records": "4096",
               "audit-max-bytes": "1048576"
-            }
+            },
+            "wasi_enabled": true
           }
         }
       }

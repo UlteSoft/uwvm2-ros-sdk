@@ -64,7 +64,7 @@
     {
       "path": "include/platform/ros/transplate/ros2/rclpy/v2/profile.json",
       "scope": "sdk",
-      "sha256": "d6d8166fde965b64715a35986548b84c4738c67dc213f8bfe3218f1b03f66c4f"
+      "sha256": "5d9d65ff8f66cb2c39eb31a5d7caa2da5f4470f27918b8c661e587f17d4c3741"
     },
     {
       "path": "src/platform/ros/py/_native.c",

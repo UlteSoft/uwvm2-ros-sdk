@@ -39,6 +39,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk_root = root
 -- @brief Running an existing Wasm must not invoke a language compiler.
@@ -47,9 +48,11 @@ set_policy("run.autobuild", false)
 -- @brief Build genuine tinygo source into the sole distributable Wasm command.
 target("unitree-tinygo-ros1-motion_state")
     set_language("tinygo")
+    set_targetdir("build/artifacts")
     set_ros_platform("unitree")
     set_ros1_version("noetic")
     set_plat(get_config("plat") or "wasm-wasip1")
     set_arch(get_config("arch") or "wasm32")
     add_files("main.go")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

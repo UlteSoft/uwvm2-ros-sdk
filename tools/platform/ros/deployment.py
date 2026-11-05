@@ -9,8 +9,11 @@ operation schemas, quotas and wire formats. This module creates no ROS peers.
 import hashlib
 from pathlib import Path
 import re
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared/python"))
+from wasi_policy import limit_arguments as wasi_limit_arguments, wait_exit_arguments as wasi_wait_exit_arguments
 
-FORMAT = "uwvm-native-ros-run-v2"
+FORMAT = "uwvm-native-ros-run-v3"
 FEATURES = {
     "multi-value",
     "reference-types",
@@ -33,15 +36,13 @@ FEATURES = {
     "exceptions",
 }
 WASI_PERMISSIONS = {
-    "realtime-clock",
-    "monotonic-clock",
-    "process-clock",
-    "thread-clock",
-    "random",
-    "proc-raise",
-    "sched-yield",
-    "stdio-full-rights",
+    "stdin.read", "stdout.write", "stderr.write", "stdio.metadata", "stdio.readiness",
+    "args", "environ", "proc-exit", "realtime-clock", "monotonic-clock",
+    "process-clock", "thread-clock", "random", "proc-raise", "sched-yield",
+    "realtime-resolution", "monotonic-resolution", "process-resolution", "thread-resolution",
+    "realtime-timer", "monotonic-timer", "process-timer", "thread-timer",
 }
+
 CONNECTION_KEYS = {
     "ros1": {"master-uri", "node-name", "namespace", "advertise-host", "transport"},
     "ros2": {
@@ -55,19 +56,13 @@ CONNECTION_KEYS = {
     },
 }
 WORKER_LIMITS = {
-    "connect-timeout-ms": "5000",
-    "audit-deny-max-rate-hz": "100",
-    "audit-deny-burst": "100",
-    "audit-deny-max-records": "10000",
-    "audit-deny-max-bytes": "1048576",
+    "connect-timeout-ms", "connect-timeout-ms.on-proc-exit", "audit-deny-max-rate-hz", "audit-deny-burst",
+    "audit-deny-max-records", "audit-deny-max-bytes",
 }
 GATEWAY_LIMITS = {
-    "timeout-ms": "10000",
-    "max-sessions": "16",
-    "audit-max-records-per-second": "100",
-    "audit-max-records": "10000",
-    "audit-max-bytes": "1048576",
-}
+    "timeout-ms", "max-sessions", "audit-max-records-per-second",
+    "audit-max-records", "audit-max-bytes",
+} | {f"{key}.{action}" for key in ("timeout-ms", "max-sessions", "audit-max-records-per-second", "audit-max-records", "audit-max-bytes") for action in ("on-exhausted", "on-proc-exit")}
 
 
 def token(value):
@@ -153,7 +148,10 @@ def permissions(module):
         if alias in aliases:
             raise ValueError("Repeated capability alias in one module: " + alias)
         aliases.add(alias)
-        result.append({"fields": values, "limits": fields(grant["limits"])})
+        limits = fields(grant["limits"])
+        if "overflow-policy" in limits and limits["overflow-policy"] not in {"reject", "wait"}:
+            raise ValueError("Local quota overflow-policy must be reject or wait")
+        result.append({"fields": values, "limits": limits})
     wasi = module.get("wasi_grants")
     if (
         not isinstance(wasi, list)
@@ -164,6 +162,15 @@ def permissions(module):
         or len(wasi) != len(set(wasi))
     ):
         raise ValueError("wasi_grants must explicitly list distinct known permissions")
+    enabled = module.get("wasi_enabled", False)
+    if "wasi_imports" in module or "ros_imports" in module:
+        raise ValueError("Per-function import exposure fields are no longer supported")
+    if type(enabled) is not bool:
+        raise ValueError("wasi_enabled must be Boolean")
+    if not enabled and wasi:
+        raise ValueError("WASI grants require explicit wasi_enabled; no compatibility defaults")
+    wasi_limit_arguments("main", module.get("wasi_limits", {}))
+    wasi_wait_exit_arguments("main", module.get("wasi_wait_exit_actions", {}))
     return result
 
 
@@ -249,7 +256,7 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
         ordered.append({"module": label, "attribute": preload["attribute"]})
     if set(loaded) != set(modules):
         raise ValueError("Explicit policies must match all loaded module names exactly")
-    connection = connection_fields(config["connection"], backend)
+    connection = connection_fields(config.get("connection", {}), backend)
     checked = {}
     for label, module in modules.items():
         name(label)
@@ -257,6 +264,9 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
             "ros_enabled",
             "grants",
             "wasi_grants",
+            "wasi_enabled",
+            "wasi_limits",
+            "wasi_wait_exit_actions",
             "connection",
             "worker_limits",
             "gateway_limits",
@@ -268,17 +278,14 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
             "grants": permissions(module),
             "ros_enabled": module["ros_enabled"],
             "wasi_grants": module["wasi_grants"],
+            "wasi_enabled": module.get("wasi_enabled", False),
+            "wasi_limits": module.get("wasi_limits", {}),
+            "wasi_wait_exit_actions": module.get("wasi_wait_exit_actions", {}),
             "connection": connection_fields(
                 module.get("connection", connection), backend
             ),
-            "worker_limits": {
-                **WORKER_LIMITS,
-                **fields(module.get("worker_limits", {}), WORKER_LIMITS),
-            },
-            "gateway_limits": {
-                **GATEWAY_LIMITS,
-                **fields(module.get("gateway_limits", {}), GATEWAY_LIMITS),
-            },
+            "worker_limits": fields(module.get("worker_limits", {}), WORKER_LIMITS),
+            "gateway_limits": fields(module.get("gateway_limits", {}), GATEWAY_LIMITS),
         }
         # The operator supplies an argv vector for this module's gateway only.
         # Keep the generated policy as argv[1]; no shell or permission expansion
@@ -289,9 +296,9 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
             or sum(len(value.encode("utf-8")) for value in gateway_arguments) > 8192
         ):
             raise ValueError("Gateway startup arguments exceed their finite bound")
-        if gateway_arguments and not module["ros_enabled"]:
+        if gateway_arguments and not module["grants"]:
             raise ValueError(
-                "Gateway startup arguments require an explicitly enabled ROS module"
+                "Gateway startup arguments require an explicit native operation grant"
             )
         checked[label]["gateway_arguments"] = gateway_arguments
         boundary = module.get("call_boundary", "same-module")
@@ -341,23 +348,24 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
     }
 
 
-def command(plan, runtime_prefix, sockets, uid):
+def command(plan, runtime_prefix, sockets, uid, *, test=False):
     """@brief Serialize an explicit module plan using the production CLI.
 
     @details Parser features precede immediate preload loading. Every module has
     an independent Single binding. The platform-bound VM uses LLVM AOT and
     live-checked native unwind; there is no interpreter or instrumentation
     fallback. Global ROS remains disabled; global WASI
-    receives no extra permissions. No environment, directory or socket preopens
+    is disabled. Each module separately selects function visibility and rights. No environment, directory or socket preopens
     are inherited by any module. Guest arguments follow the sole --run operand.
     """
+    if type(test) is not bool:
+        raise ValueError("test must be Boolean")
     backend = plan["backend"]
     argv = [
         *runtime_prefix,
         "--runtime-aot",
         "--wasm-set-main-module-name",
         plan["main_module"],
-        "--wasip1-global-noinherit-system-environment",
     ]
     argv += ["--wasm-feature-enable-" + feature for feature in plan["features"]]
     for preload in plan["preloads"]:
@@ -374,7 +382,7 @@ def command(plan, runtime_prefix, sockets, uid):
         argv += [
             "--wasip1-single-create",
             label,
-            "--wasip1-single-enable",
+            "--wasip1-single-" + ("enable" if test or module["wasi_enabled"] else "disable"),
             label,
             "--wasip1-single-noinherit-system-environment",
             label,
@@ -388,10 +396,14 @@ def command(plan, runtime_prefix, sockets, uid):
         ]
         for permission in module["wasi_grants"]:
             argv += ["--wasip1-single-grant", label, permission]
+        argv += wasi_limit_arguments(label, module.get("wasi_limits", {}))
+        argv += wasi_wait_exit_arguments(label, module.get("wasi_wait_exit_actions", {}))
         if not module["ros_enabled"]:
             continue
         if module["call_boundary"] == "module-exports":
             argv += ["--" + backend + "-single-call-boundary", label, "module-exports"]
+        if not module["grants"]:
+            continue
         connection = {
             **module["connection"],
             **module["worker_limits"],

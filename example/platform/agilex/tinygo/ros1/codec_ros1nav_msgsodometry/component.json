@@ -1,0 +1,100 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-335",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "40b14e11c7b6f4ee645019046e994c090e9b682d37d232c74c7e0df6c237d9fa"
+    },
+    {
+      "scope": "example",
+      "path": "go.mod",
+      "sha256": "506c4c1d81617fa6deb6965ab8cf756c6d55b23088c6eb64d9a29229fc0ee66b"
+    },
+    {
+      "scope": "example",
+      "path": "main.go",
+      "sha256": "ea550fcbd3748c731adc9a79e9052733e093f7f64f111b43834c465a83e0d0f5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/catalog.json",
+      "sha256": "1d06d2ad47ceb619980d41de45d072d1850c2b8c8a16974c7163a67b0eaa2420"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/Point.msg",
+      "sha256": "eb4c07e591cf0269ccb17245dcd4f998162feb09cc8add85fa082c8a30bfc91d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/Pose.msg",
+      "sha256": "8a700245088b5f3184699d8963e3c62f73bd92e46acc00cfaca491c1ceea35e5"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/PoseWithCovariance.msg",
+      "sha256": "a22f234e91b9fcd4ba0c5b533496b43c62d7f6ade39082212ac9835679d29f94"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/Quaternion.msg",
+      "sha256": "84f92e899c4d40fe49e7f823a8a73e5024bcf129d4aa97200a27ae4f9ff9ec6e"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/Twist.msg",
+      "sha256": "623b98db7d37911a50ef002a97973709c20441426c68d1134de352a2d022767b"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/TwistWithCovariance.msg",
+      "sha256": "5690a1f109d4962c73b5ca7f3673c48052d02f37b6a38fe2fb37c899cf555c45"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/geometry_msgs/msg/Vector3.msg",
+      "sha256": "fa1d5b56a10a940afcfd312936dde90864a398aa2a35598f36943c570d391296"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/nav_msgs/msg/Odometry.msg",
+      "sha256": "26f7566bb04ed1ad1e729679fc334a4deff1048b7b7198f38ddd0ec1df9ffef6"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/std_msgs/msg/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "700\n"
+    }
+  ]
+}

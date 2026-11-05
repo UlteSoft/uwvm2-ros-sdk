@@ -3,8 +3,9 @@
 module main;
 import kuka.ros2.kuka_ros2_complete.records;
 import roswasm.wire : Arena;
-import core.stdc.stdio : printf;
-extern(C) int main() @nogc nothrow {
+// WASI libc supplies this exact C variadic printf entry.
+extern(C) int printf(scope const(char)* format, ...) @nogc nothrow;
+extern(C) uint nl_entry() @nogc nothrow {
     Ros2Control_msgsActionFollowJointTrajectory_Feedback value;
     ubyte[4128] bytes, again;
     ubyte[1048576] arenaBytes;

@@ -6,9 +6,9 @@
   "target": "wasm32-wasip1",
   "ros_backend": "ros1",
   "filename": "quickjs.wasm",
-  "bytes": 5196590,
-  "sha256": "8aaa6301e06c027f47077e243cd09141727aeca8cad79b5253a09494a0e13702",
-  "source_lock_sha256": "0ed6b7740449c41ff717e03cd8782a040259c075e44fa7990027243e25e78c78",
+  "bytes": 5199069,
+  "sha256": "e4aa4851f7765c8bfc1b48ec2f375a46189b2cb9c61ed9f79961e45a82b16d8d",
+  "source_lock_sha256": "a2198fcdedeae54e96deceb572417a9b3d507ac7e197d5275dea9a75d3793b7a",
   "application_capacity": 4194304,
   "application_marker": "UWVM-SRC-APP-v1!",
   "compiler": "LLVM 23.1.4",
@@ -21,8 +21,8 @@
     "tables": [
       {
         "address_bits": 32,
-        "minimum": 466,
-        "maximum": 466
+        "minimum": 470,
+        "maximum": 470
       }
     ]
   },
@@ -31,5 +31,10 @@
   "exceptions": "none",
   "wasm_features": [],
   "native_ros_qualification": "separate platform acceptance required",
-  "source_lock_path": "share/language/js/construction-source-lock.json"
+  "source_lock_path": "share/language/js/construction-source-lock.json",
+  "construction_receipt_sha256": "23d1e4f16442c176b0e51f22ba89f9dbf6bdf4df90254a0b44af6be0edd8fa2f",
+  "stream_qualification": {
+    "scope": "Actual WASI streams and checked guest exit only; native ROS remains separately qualified",
+    "receipt_sha256": "f47c3ec6db3f25a105ae512e95414c5230dc9e78bfb0673bcc513cb132899507"
+  }
 }

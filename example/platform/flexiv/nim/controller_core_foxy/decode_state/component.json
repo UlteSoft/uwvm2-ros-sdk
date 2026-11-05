@@ -1,0 +1,195 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "stream-codec-2526",
+  "test_scope": "Actual application consumes independently encoded canonical input and returns exact output. Applicable errno-style commands also reject truncated values and trailing bytes. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4aaa8cad11d9ddfb86f5c56513100b31317314853184518492b62e650d99a356"
+    },
+    {
+      "scope": "example",
+      "path": "main.nim",
+      "sha256": "0f26b3c7a1512dcc7ba95fef3a3c8e78bd442169db46becc6f7ea5ed9ad54a32"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/nim/ros2/flexiv-controller-core-foxy-complete/records.nim",
+      "sha256": "faad2ce1ee471f37e8b6027fec70443605e4ea56b5b177316480414cf7aafd71"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/native_command.nim",
+      "sha256": "b4cb642447c51909f5929baaa1a06d5bf8b0550b9c170c42c300217cdadaffd5"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/roswasm.nimble",
+      "sha256": "30807b0f9511f69ceb028a2423147f5a6d1c136b431832f68c3918a7087088b7"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/raw.nim",
+      "sha256": "76c6ab87e59b9f20d022fd2a1704b2e72ef78dd20dcff458f8d80bef21edc1e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/typed.nim",
+      "sha256": "b2aa484851d0493a2e8fec25cdc23f54ec913d08bfa1bb5d3b75b7c34888159e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm/wire.nim",
+      "sha256": "a7b978c7dfa97de71eaaaebba121ca82ed1e2529e27f13ab0577b64b9780c069"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/src/roswasm.nim",
+      "sha256": "054898269c7c5e014d7a79e7a39463c8ab872586517aa719384bffc902a764c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/wire.nim",
+      "sha256": "60250ea34464fd330ed09307470f8908d79d0817992d596aab89b2ed48d8bfd2"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/nim/controller_core_foxy.json",
+      "sha256": "ac0548d9e46f2b7091419ee4f5a4c72d7fc305369f7758c05be0124cfeece2df"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/provider.json",
+      "sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/nim_toplevel.c",
+      "sha256": "5c5276f5497a62975ad96479185715912d9fef2815b05e9bab053a9948c023d3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/SOURCES.json",
+      "sha256": "4d305b8c8c066cdb554e85828bc6f89a2dc31b15b3fa8035af2c234e59d53a5f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/additional_record_emitters.py",
+      "sha256": "fe3d39feaa99e290619b88f3a7231cf42646cd80da962accb8efa76b13e1b38c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/core.lua",
+      "sha256": "faf1e6c733baa0ecd998db47bb44714a4af06fbedad51220a7bca624805832c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/frontends.json",
+      "sha256": "be380800a59d033f0fe3d4ab7534d87afbcdf536a5778f7f36f0169466052dba"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/generate_records.py",
+      "sha256": "8647d2f5b178e30457e4948159060a7beda8ad4a6f9709f079a1fec48fff37bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/go_rust.lua",
+      "sha256": "69d742e395ffdaf9a99dd3a501fe3ad2660eb5c7c8874f7800715fb8ccc87bc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/library.lua",
+      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit.lua",
+      "sha256": "b11a9b03d0b5ed30e33da78cc83e9b3a728836e753aac7894d2b1c783addd908"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/moonbit_records.py",
+      "sha256": "4b3908153030099c2a2b5450e9e2eb8b08c170bda4daff32feab76ebe8d92552"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/provider.lua",
+      "sha256": "d67ddfdffcf796b2d39185f7d28d4339ef547a8e25b21ec9d2f8cc7732509844"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_documentation.py",
+      "sha256": "5c5fb155cb868913895f81fc43b47d1fd3c94dea9600845fe0868fa8929c28db"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/record_emitters.py",
+      "sha256": "a764f7c1958f7d89eda7a38deb688843b9e0dc98e186b82592b56172d22b1719"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/source_layout.py",
+      "sha256": "c7424aef397248bc227a7a0c5e330bab60f685a8e55db8000fd532346380241a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/flexiv/provider.lua",
+      "sha256": "cb0bf9e127385f7894c353c0db7719480ac6d1adad0d2fd0a3f0be1f22832355"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/language_adapter.lua",
+      "sha256": "4ba0c136ba3ce3a51ad1ec5817f55a5fd9a02a70b7fa0a676f0ed1eea085e8e5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-value-from-stream",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout_hex": "30303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030300a",
+      "stdin_hex": "00000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "truncated-value",
+      "arguments": [],
+      "stdin_hex": "000000000000000000000000000000000000000000000000000000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    },
+    {
+      "id": "trailing-byte",
+      "arguments": [],
+      "stdin_hex": "0000000000000000000000000000000000000000000000000000000000",
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

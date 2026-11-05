@@ -577,7 +577,7 @@ namespace uwvm2::ros_gateway::ros1_custom
                 // entity; native alias reuse cannot silently change quotas.
                 auto grant_snapshot{capability};
                 auto native{store.node.advertise<Native>(capability.resource,
-                                                         static_cast<::std::uint32_t>(limit(capability, "queue-depth")),
+                                                         native_queue_depth(capability, "queue-depth"),
                                                          field(capability, "latch") == "true")};
                 if(!native)
                 {
@@ -695,7 +695,7 @@ namespace uwvm2::ros_gateway::ros1_custom
             auto native{ros1_custom_input::subscribe<Native>(
                 store.node,
                 capability.resource,
-                static_cast<::std::uint32_t>(limit(capability, "queue-depth")),
+                native_queue_depth(capability, "queue-depth"),
                 callback,
                 [input_descriptor, input_maximum](std::uint8_t const* bytes, std::size_t size)
                 { return input_descriptor && size <= input_maximum && ipc::validate_custom_topic(*input_descriptor, bytes, size); })};

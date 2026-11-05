@@ -14,6 +14,7 @@ import roswasm.wire;
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_example_controllersJointTorqueComparison {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_example_controllers/JointTorqueComparison in bytes.
  /// @details The inclusive bound is 176 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -179,6 +180,7 @@ struct Ros1Franka_example_controllersJointTorqueComparison {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperGraspEpsilon {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/GraspEpsilon in bytes.
  /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -310,6 +312,7 @@ struct Ros1Franka_gripperGraspEpsilon {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperGraspGoal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/GraspGoal in bytes.
  /// @details The inclusive bound is 40 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -463,6 +466,7 @@ struct Ros1Franka_gripperGraspGoal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperGraspResult {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/GraspResult in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -594,6 +598,7 @@ struct Ros1Franka_gripperGraspResult {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperGraspFeedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/GraspFeedback in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -703,6 +708,7 @@ struct Ros1Franka_gripperGraspFeedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperHomingGoal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/HomingGoal in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -812,6 +818,7 @@ struct Ros1Franka_gripperHomingGoal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperHomingResult {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/HomingResult in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -943,6 +950,7 @@ struct Ros1Franka_gripperHomingResult {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperHomingFeedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/HomingFeedback in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1052,6 +1060,7 @@ struct Ros1Franka_gripperHomingFeedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperMoveGoal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/MoveGoal in bytes.
  /// @details The inclusive bound is 16 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1183,6 +1192,7 @@ struct Ros1Franka_gripperMoveGoal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperMoveResult {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/MoveResult in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1314,6 +1324,7 @@ struct Ros1Franka_gripperMoveResult {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperMoveFeedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/MoveFeedback in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1423,6 +1434,7 @@ struct Ros1Franka_gripperMoveFeedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperStopGoal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/StopGoal in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1532,6 +1544,7 @@ struct Ros1Franka_gripperStopGoal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperStopResult {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/StopResult in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1663,6 +1676,7 @@ struct Ros1Franka_gripperStopResult {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_gripperStopFeedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_gripper/StopFeedback in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1772,6 +1786,7 @@ struct Ros1Franka_gripperStopFeedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsErrorRecoveryGoal {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/ErrorRecoveryGoal in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1881,6 +1896,7 @@ struct Ros1Franka_msgsErrorRecoveryGoal {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsErrorRecoveryResult {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/ErrorRecoveryResult in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -1990,6 +2006,7 @@ struct Ros1Franka_msgsErrorRecoveryResult {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsErrorRecoveryFeedback {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/ErrorRecoveryFeedback in bytes.
  /// @details The inclusive bound is 0 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -2099,6 +2116,7 @@ struct Ros1Franka_msgsErrorRecoveryFeedback {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsErrors {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/Errors in bytes.
  /// @details The inclusive bound is 41 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -2659,6 +2677,7 @@ struct Ros1Franka_msgsErrors {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Time {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of time in bytes.
  /// @details The inclusive bound is 8 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -2798,6 +2817,7 @@ struct Ros1Time {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Std_msgsHeader {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of std_msgs/Header in bytes.
  /// @details The inclusive bound is 144 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -2940,6 +2960,7 @@ struct Ros1Std_msgsHeader {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsFrankaState {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/FrankaState in bytes.
  /// @details The inclusive bound is 2619 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -3768,6 +3789,7 @@ struct Ros1Franka_msgsFrankaState {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetCartesianImpedanceRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetCartesianImpedanceRequest in bytes.
  /// @details The inclusive bound is 48 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -3892,6 +3914,7 @@ struct Ros1Franka_msgsSetCartesianImpedanceRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetCartesianImpedanceResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetCartesianImpedanceResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4024,6 +4047,7 @@ struct Ros1Franka_msgsSetCartesianImpedanceResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetEEFrameRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetEEFrameRequest in bytes.
  /// @details The inclusive bound is 128 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4148,6 +4172,7 @@ struct Ros1Franka_msgsSetEEFrameRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetEEFrameResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetEEFrameResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4280,6 +4305,7 @@ struct Ros1Franka_msgsSetEEFrameResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetForceTorqueCollisionBehaviorRequest in bytes.
  /// @details The inclusive bound is 208 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4453,6 +4479,7 @@ struct Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetForceTorqueCollisionBehaviorResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4585,6 +4612,7 @@ struct Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetFullCollisionBehaviorRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetFullCollisionBehaviorRequest in bytes.
  /// @details The inclusive bound is 416 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4818,6 +4846,7 @@ struct Ros1Franka_msgsSetFullCollisionBehaviorRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetFullCollisionBehaviorResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetFullCollisionBehaviorResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -4950,6 +4979,7 @@ struct Ros1Franka_msgsSetFullCollisionBehaviorResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetJointImpedanceRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetJointImpedanceRequest in bytes.
  /// @details The inclusive bound is 56 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -5074,6 +5104,7 @@ struct Ros1Franka_msgsSetJointImpedanceRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetJointImpedanceResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetJointImpedanceResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -5206,6 +5237,7 @@ struct Ros1Franka_msgsSetJointImpedanceResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetKFrameRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetKFrameRequest in bytes.
  /// @details The inclusive bound is 128 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -5330,6 +5362,7 @@ struct Ros1Franka_msgsSetKFrameRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetKFrameResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetKFrameResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -5461,6 +5494,7 @@ struct Ros1Franka_msgsSetKFrameResponse {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetLoadRequest {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetLoadRequest in bytes.
  /// @details The inclusive bound is 104 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.
@@ -5611,6 +5645,7 @@ struct Ros1Franka_msgsSetLoadRequest {
 /// @version The selected finite schema profile fixes field order, bounds and constants.
 /// @see share/platform/ros/d/API-CONTRACT.md
 struct Ros1Franka_msgsSetLoadResponse {
+    @nogc nothrow:
  /// @brief Maximum canonical extent of franka_msgs/SetLoadResponse in bytes.
  /// @details The inclusive bound is 261 bytes for this selected profile; it is not a native sizeof or a queue
  /// reservation.

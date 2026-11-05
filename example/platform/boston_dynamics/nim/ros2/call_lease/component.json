@@ -1,0 +1,105 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "native-observer-390",
+  "ros_namespace": "ros2",
+  "test_scope": "Actual original observation: namespace without alias authority returns denial, with no acquired owner, no request or decoded response. Missing alias is rejected before acquisition. Positive ROS transport is a separate integration test.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "0eb1f1e8f032c0f41deff61cc6030d30f5480ff1480b335cef76efe009236f09"
+    },
+    {
+      "scope": "example",
+      "path": "main.nim",
+      "sha256": "36281abc3983b0f51829823fc5eb81ed2caa342a9c3fc4858db67c9d668d339c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/boston_dynamics/nim/ros2/observation.nim",
+      "sha256": "3834ea293478c8b439267952f664e928e1c8156ced7d6cfd8c3add29590f2d92"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/boston_dynamics/nim/ros2/records.nim",
+      "sha256": "395392a49b1d1539760b797c7b682b7287b08032ef98d239872d6247405ad98f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/boston_dynamics/provider.json",
+      "sha256": "2d1c421ef756a48d65237fdd602c888473ffa3b4c9c46c03786f5dd45a46e179"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/nim/observation.nim",
+      "sha256": "36482dd2b31c76c9a88b63ba5e8a799e71ba2d82374083c5f7fcbd0a1fc174a0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/nim/wire.nim",
+      "sha256": "a6f26600cf002fca9e23e3928ee31ef313e379c2ece12203fa9019f783e3bea8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/boston_dynamics/provider.lua",
+      "sha256": "b64b575370da16ca12aab8c3bdd2668b6eb1e79d91b1cbaf757f8ad6cced4d84"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/nim/wire.nim",
+      "sha256": "60250ea34464fd330ed09307470f8908d79d0817992d596aab89b2ed48d8bfd2"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

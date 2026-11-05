@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /** @file Explicit Host selection of the complete original ROS2 control profile.
  * The independent actual Native export is compiled into this selected build;
- * a trusted runtime file selects its exact export digest and finite storage.
+ * a trusted runtime file selects its exact export digest and optional storage quotas.
  * Neither the file nor the compiled schema grants any Guest ROS authority.
  * Every original capability/identity/codec/QoS/quota/session check still applies.
  */
@@ -50,8 +50,8 @@ namespace uwvm2::ros_gateway::default_control_profile
             // fields remain mandatory, including when extra tokens are present.
             std::array<std::string_view,7> fields{};
             if(native_io::split(line,fields)!=2||!seen.emplace(fields[0]).second)throw std::runtime_error("Original control profile duplicate/malformed field");
-            if(fields[0]=="maximum-entries")result.storage.maximum_entries=static_cast<std::size_t>(integer(fields[1],ros::rmw_service_bindings::maximum_entries));
-            else if(fields[0]=="history-per-endpoint")result.storage.history_per_endpoint=static_cast<std::size_t>(integer(fields[1],owned_service_storage::maximum_history));
+            if(fields[0]=="maximum-entries")result.storage.maximum_entries=storage_count(fields[1]);
+            else if(fields[0]=="history-per-endpoint")result.storage.history_per_endpoint=storage_count(fields[1]);
             else if(fields[0]=="export-packet-sha256")
             {
                 // The literal is emitted only from an explicit independent
@@ -63,7 +63,7 @@ namespace uwvm2::ros_gateway::default_control_profile
             }
             else throw std::runtime_error("Unknown original control storage profile field");
         }
-        if(seen.size()!=3||!result.storage.valid())throw std::runtime_error("All three original control profile fields are mandatory");
+        if(!seen.count("export-packet-sha256")||!result.storage.valid())throw std::runtime_error("Exact original control export digest is mandatory");
         return result;
 #endif
     }

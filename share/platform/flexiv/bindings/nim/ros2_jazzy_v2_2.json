@@ -1,0 +1,25 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "nim",
+  "profile": "ros2_jazzy_v2_2",
+  "backend": "ros2",
+  "source_root": "include/platform/flexiv/nim/ros2/flexiv-ros2-jazzy-v2-2-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "nim",
+    "nim": {
+      "import_dirs": [
+        "include/platform/ros/nim/src"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/nim_toplevel.c",
+        "object": "nim-toplevel.o"
+      }
+    ]
+  }
+}

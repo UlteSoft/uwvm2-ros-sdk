@@ -1,0 +1,144 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-swift-observer-535",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/language/native/abi.h",
+      "sha256": "0c4d0a85a3c6fd930e101745bb7260d73e1dc0d54ffca0f36bcdf5a2dc1c2f41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros1/Observation.swift",
+      "sha256": "6d9767c01a27b9b3e8356bad1fd4dace5b761ef94463fae31a1f3c06311f7d6b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros1/Records.swift",
+      "sha256": "d44493be50666d25a69fea8912f6304d18c53be3ea8299f2e1419e6a63945ef0"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/humble/Observation.swift",
+      "sha256": "f6f241f549ec829778bb545dc71e22d313b4453ecc18469ac2e62b46bf0d4374"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/humble/Records.swift",
+      "sha256": "e7f57463d472f5ab761ce8a94e499e01251963faab082ce52b6b407164fa7fc3"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/jazzy/Observation.swift",
+      "sha256": "65f8fc9e9234fa9ee77dde8f15c25939c3e4f2df87978a9b7d0ff8834e2b607b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/jazzy/Records.swift",
+      "sha256": "7cc505433990319a65404913f10b4e8a6d5722529c26f3db815f95b93ef08ef2"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/main/Observation.swift",
+      "sha256": "031149af434361269cd7e55a80601a595359ac8267ac54c7dcc5788143fd2a83"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/clearpath/swift/ros2/main/Records.swift",
+      "sha256": "7dde1bd7aa053ff9366a64d02846c94567260c57b7e4a2746fb19a5c234354c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/swift/CoreObservation.swift",
+      "sha256": "5e615afbf087f024e8bf964c837b37709a0d6dfcbe86ec6987573712eb7081fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/swift/Wire.swift",
+      "sha256": "154ec13b3f41f72e07c50c1c2c63e7678c95bb48ccad2571734199793d06f2d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/clearpath/actions.lua",
+      "sha256": "5f4f2bd8d8070ecf87c481623726cd41b6c922090262014ac91c743c95e1c06c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/clearpath/provider.lua",
+      "sha256": "7395e51c70e8dd1fe5f59cc717279ce6afd6036a8e5ce80f9bd531905319da89"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "README.md",
+      "sha256": "6bd3aca0684d27e357e389796ef68ad03759cd777d1c2d5b8f06cf05c131d980"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "adb2b6fc39ea24951ec5d5c99669b0207ca0882f51afc42bd85629bfd195df91"
+    },
+    {
+      "scope": "example",
+      "path": "main.swift",
+      "sha256": "d18ceaf348f0223a8d6e60182b97124fad6d8720b96fbb9146664e00e18f733b"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-only-resource-denied",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

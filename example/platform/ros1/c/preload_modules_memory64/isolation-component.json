@@ -1,0 +1,122 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "explicit-ros-preloads-3946-isolation",
+  "preload_modules": [
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "ros_namespace": "ros1",
+  "ros_modules": [
+    "main",
+    "io",
+    "algorithm",
+    "ros_comm"
+  ],
+  "test_scope": "Real independent-memory preloads; explicit per-module base WASI/ROS interfaces, no ROS resource grants. The original guest verifies denied handles remain unchanged.",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "6311ded2a2bdee9514a5e75f4111d069d5e6d17dfbbcb8cff412ea2e786b59d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "41fcbeb000a9765a1223f71f3b5de583719e0cc13e2b915bc2eb4b6f507327a3"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/artifact_contract.lua",
+      "sha256": "8caeb481e4aaa9d45e6dcd0c1be97bb38b2a9f9a40b1a5c911ff6f51ad632e6c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/startup.c",
+      "sha256": "9c419b014c360c23bf49bf8caafe02efcf850952d15b31d3075d436233ce588a"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/language/native/abi.h",
+      "sha256": "0c4d0a85a3c6fd930e101745bb7260d73e1dc0d54ffca0f36bcdf5a2dc1c2f41"
+    },
+    {
+      "scope": "example",
+      "path": "README.zh_CN.md",
+      "sha256": "df2a53483fbf3f8228a4f0f30c9895f481b4f4afc2fc294211db24cdcb8a69e9"
+    },
+    {
+      "scope": "example",
+      "path": "gateway.conf.in",
+      "sha256": "f7aa2237ce5f7e2fd85f980e17f5f2f610b56c0f100580c20b1d188b6f52af95"
+    },
+    {
+      "scope": "example",
+      "path": "algorithm.cpp",
+      "sha256": "be5bf68444c8597074b39b120077366fe6498c4b3b7fe5dc1f15226f047ed339"
+    },
+    {
+      "scope": "example",
+      "path": "io.cpp",
+      "sha256": "79fc602781ac16ab1fb2c5c49f515acf51d904b0ee029fa0309ca5b7dd5a84ff"
+    },
+    {
+      "scope": "example",
+      "path": "README.en.md",
+      "sha256": "924ba294d1981df88f36e9da258484cb6bbde2772d3af6118837f8d2007dc1bd"
+    },
+    {
+      "scope": "example",
+      "path": "modules.json",
+      "sha256": "30010584a12296650434cff122027376316eb463374e4f2053b3193e4beb4a1c"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "cac281949e89e80910463dd7aff3894714aa3b24a42b0b48272d96f3ed79f342"
+    },
+    {
+      "scope": "example",
+      "path": "main.c",
+      "sha256": "e4ab90044978a5f041fea72a19d5286fb97b318e4df92517ca7bbe0f5777434f"
+    },
+    {
+      "scope": "example",
+      "path": "ros_comm.cpp",
+      "sha256": "8fd2a7f6b1da11d72bde1918b5cecf2598d66a0b6cbd23f04df5efbe0583d98f"
+    },
+    {
+      "scope": "example",
+      "path": "deployment.template.json",
+      "sha256": "5df787c5ffd1b278630acf5e537f3d9df3ca9728faa892e43e6b3220e2a11921"
+    },
+    {
+      "scope": "example",
+      "path": "include/preload_api.h",
+      "sha256": "fe6726a2bcdb295eea75c5292c172f8c5620d3ba44b67e316129dad4419cf5fa"
+    }
+  ],
+  "cases": [
+    {
+      "id": "algorithm-cannot-use-io-or-ros-authority",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "algorithm clock=76 random=76 ros=13\n"
+    }
+  ]
+}

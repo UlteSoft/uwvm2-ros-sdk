@@ -16,5 +16,29 @@
     "ros2": "share/platform/fanuc/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/fanuc/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "modules_by_backend": {
+    "ros2": [
+      {
+        "name": "roswasm/wire",
+        "path": "include/platform/ros/r/roswasm/wire.R"
+      },
+      {
+        "name": "uwvm/r/bootstrap",
+        "path": "src/language/r/bootstrap.R"
+      },
+      {
+        "name": "uwvm/r/native",
+        "path": "src/language/r/native.R"
+      },
+      {
+        "name": "fanuc/r/ros2/records",
+        "path": "include/platform/fanuc/r/ros2/records.R"
+      },
+      {
+        "name": "uwvm/r/observation",
+        "path": "src/language/r/observation.R"
+      }
+    ]
+  }
 }

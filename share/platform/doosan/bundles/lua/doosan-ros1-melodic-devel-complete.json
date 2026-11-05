@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros1",
+  "modules": [
+    {
+      "name": "uwvm/lua/observation",
+      "file": "src/language/lua/modules/observation.lua",
+      "sha256": "911e8161acdbe799c1b64d82e38c69fe22eb3b364f1b2659d1b99208afd28499"
+    },
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "doosan/lua/ros1/doosan-ros1-melodic-devel-complete/records",
+      "file": "include/platform/doosan/lua/ros1/doosan-ros1-melodic-devel-complete/records.lua",
+      "sha256": "ba74331bd1749598a1bcf1560b2162017e7953622708f50e9922555f70bf15a9"
+    }
+  ],
+  "default_authority": []
+}

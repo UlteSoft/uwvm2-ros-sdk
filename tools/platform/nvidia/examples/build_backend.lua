@@ -94,10 +94,10 @@ end
 
 --- @brief Run the actual built command Guest with no additional authority.
 -- @details Requires the exact empty-authority catalog entry and one real Wasm
--- artifact. The selected Runtime uses AOT with checked native unwind, hides
--- host APIs/environment and denies
--- extra clocks/random/signals/scheduler/stdio-full rights. Ordinary stdio is
--- retained. This does not admit ROS, model, network or device operations.
+-- artifact. The selected Runtime uses AOT with checked native unwind and exposes
+-- the complete base WASIp1 namespace for each test module. Command I/O must be explicitly listed
+-- in the selected backend configuration's wasi_policy. This does not admit
+-- ROS, model, network or device operations.
 -- @param[in] context Bound run context with explicit actual Runtime executable.
 -- @param[in] entry Exact default-denial or CPU catalog entry, retained unchanged.
 -- @param[in] receipt Dispatcher-validated successful artifact receipt.
@@ -112,23 +112,11 @@ function run_empty(context, entry, receipt)
     local argv = {
         "--runtime-aot",
         "-Rct", "0",
-        "--wasm-set-main-module-name", "main",
-        "--wasip1-global-disable",
-        "--wasip1-global-noinherit-system-environment",
-        "--wasip1-single-create", "main",
-        "--wasip1-single-enable", "main",
-        "--wasip1-single-hide-host-api", "main",
-        "--wasip1-single-noinherit-system-environment", "main"
+        "--wasm-set-main-module-name", "main"
     }
-    local denied_rights = {
-        "realtime-clock", "monotonic-clock", "process-clock", "thread-clock",
-        "random", "proc-raise", "sched-yield", "stdio-full-rights"
-    }
-    for _, right in ipairs(denied_rights) do
-        table.insert(argv, "--wasip1-single-deny")
-        table.insert(argv, "main")
-        table.insert(argv, right)
-    end
+    local json = import("core.base.json")
+    local selected = json.loadfile(configuration())
+    argv = import("wasi_policy", {rootdir = path.join(context.sdk_root, "tools/xmake"), anonymous = true}).test_arguments(argv, selected.wasi_policy)
     table.insert(argv, "--run")
     table.insert(argv, receipt.artifacts[1].path)
     os.execv(context.runtime, argv)

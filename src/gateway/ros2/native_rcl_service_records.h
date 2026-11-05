@@ -4,7 +4,8 @@
  *
  * This is not the topic queue: Service Request/Response and genuine control
  * records have their own explicit contract. The endpoint serializes this object.
- * All slots and payload storage are allocated BEFORE any native endpoint/effect.
+ * History and canonical bodies grow on demand, before their corresponding
+ * native effect or owned-record publication. Unlimited never means preallocation.
  * Native request identity, signed sequence, Gateway ticket, URMI stream sequence
  * and peek reservation are five separate concepts. None is bearer authority.
  */
@@ -17,6 +18,8 @@
 #include <cstring>
 #include <memory>
 #include <vector>
+#include <deque>
+#include <stdexcept>
 #include <limits>
 #include <chrono>
 
@@ -40,26 +43,25 @@ namespace uwvm2::ros_gateway::native_rcl_service
         std::vector<std::uint8_t> body;
         std::size_t length{};std::uint64_t sequence{};
     };
-    /** A fixed lifetime history is deliberate: terminal IDs are not evicted and
-     * native signed sequences are not assumed monotonic or globally unique.
-     * Exhaustion returns90 BEFORE send/take; a new native incarnation is needed.
-     * This first provider supports fixed Empty/AddTwoInts bodies (0/16/8 bytes).
-     * A future dynamic family must preserve preallocation and complete decoding.
+    /** Terminal identities remain in the lifetime history; slots are not reused.
+     * Unlimited history grows at each reservation rather than allocating its
+     * ceiling. A finite exhausted lifetime ceiling cannot replenish by waiting.
+     * This provider's schema remains fixed Empty/AddTwoInts (0/16/8 bytes).
      */
     class records
     {
-        std::vector<record> slots_;
+        std::deque<record> slots_;
         wire::binding owner_{};std::uint64_t incarnation_{},stream_{},nonce_{},reserved_{},reservation_{};
-        std::size_t used_{},maximum_{};bool retired_{};
+        std::size_t used_{},maximum_{},limit_{};bool retired_{};
         bool control_ready_{},terminal_error_issued_{};std::uint64_t control_sequence_{};
         std::array<std::uint8_t,info::header_bytes> control_{};
     public:
         static constexpr std::size_t no_slot=SIZE_MAX;
         records(std::size_t count,std::size_t maximum,wire::binding owner,std::uint64_t id):
-            slots_(count),owner_{owner},incarnation_{id},maximum_{maximum}
-        {for(auto& r:slots_)r.body.resize(maximum);}
-        static bool valid_options(std::size_t n,std::size_t maximum) noexcept
-        {return n&&n<=256&&maximum<=16;}
+            owner_{owner},incarnation_{id},maximum_{maximum},limit_{count}
+        {if(!valid_options(count,maximum))throw std::invalid_argument("native canonical history bounds");}
+        static bool valid_options(std::size_t,std::size_t maximum) noexcept
+        {return maximum<=16;}
         bool owns(wire::binding const& owner,std::uint64_t id)const noexcept
         {return wire::same(owner,owner_)&&id==incarnation_;}
         record& at(std::size_t n)noexcept{return slots_[n];}
@@ -69,12 +71,33 @@ namespace uwvm2::ros_gateway::native_rcl_service
          * headroom. Two sequence positions remain reserved for one endpoint failure and its
          * later actual retirement, even after the failure record was consumed.
          */
-        bool can_reserve()const noexcept{return !retired_&&used_<slots_.size()&&stream_<UINT64_MAX-2;}
+        bool can_reserve()const noexcept{return !retired_&&used_<limit_&&used_<slots_.max_size()&&stream_<UINT64_MAX-2;}
         bool can_take()const noexcept{return !retired_&&stream_<UINT64_MAX-2;}
+        /** Allocate one new control record before a native send/take. The
+         * output index is unchanged on failure; no ticket or identity is lost. */
+        std::uint32_t reserve(std::uint64_t ticket,std::size_t& output) noexcept
+        {
+            if(!ticket)return 22;if(retired_)return 125;if(!can_reserve())return 90;
+            try
+            {
+                slots_.emplace_back();auto& r=slots_.back();r.phase=state::reserved;r.ticket=ticket;
+                output=used_++;return 0;
+            }
+            catch(std::bad_alloc const&){return 12;}catch(std::length_error const&){return 90;}catch(...){return 5;}
+        }
         std::size_t reserve(std::uint64_t ticket) noexcept
-        {if(!ticket||!can_reserve())return no_slot;auto i=used_++;auto& r=slots_[i];r.phase=state::reserved;r.ticket=ticket;return i;}
+        {std::size_t index{no_slot};(void)reserve(ticket,index);return index;}
+        /** Resize only the actual canonical body before the caller writes it.
+         * A schema/policy maximum is a check, never an allocation request. */
+        std::uint32_t resize_body(std::size_t i,std::size_t n) noexcept
+        {
+            if(retired_)return 125;if(i>=used_)return 22;
+            if(n>maximum_||n>events::max_payload_bytes-info::header_bytes)return 90;
+            try{slots_[i].body.resize(n);return 0;}
+            catch(std::bad_alloc const&){return 12;}catch(std::length_error const&){return 90;}catch(...){return 5;}
+        }
         void release_unattempted(std::size_t i)noexcept
-        {if(i+1==used_&&slots_[i].phase==state::reserved&&!slots_[i].native_attempted){slots_[i].phase=state::free;slots_[i].ticket=0;--used_;}}
+        {if(i<used_&&i+1==used_&&slots_[i].phase==state::reserved&&!slots_[i].native_attempted){slots_.pop_back();--used_;}}
         static bool same(rmw_request_id_t const& a,rmw_request_id_t const& b)noexcept
         {return a.sequence_number==b.sequence_number&&!std::memcmp(a.writer_guid,b.writer_guid,sizeof(a.writer_guid));}
         std::size_t find(rmw_request_id_t const& id,std::size_t except=no_slot)const noexcept
@@ -89,7 +112,7 @@ namespace uwvm2::ros_gateway::native_rcl_service
          */
         std::uint32_t enqueue(std::size_t i,info::header h,std::size_t n)noexcept
         {
-            if(i>=used_||retired_||!can_take()||n>maximum_)return 90;
+            if(i>=used_||retired_||!can_take()||n>maximum_||n>slots_[i].body.size()||n>events::max_payload_bytes-info::header_bytes)return 90;
             auto& r=slots_[i];h.owner=owner_;h.incarnation=incarnation_;h.sequence=stream_+1;h.correlation=r.ticket;h.payload_bytes=n;
             if((h.kind!=events::event_kind::service_request&&h.kind!=events::event_kind::service_response)||!info::complete(h))return 95;
             // Recheck the actual stored same-take identity/times, not just the
@@ -127,6 +150,7 @@ namespace uwvm2::ros_gateway::native_rcl_service
             auto const* header=selected==no_slot?control_.data():slots_[selected].header.data();auto n=selected==no_slot?0:slots_[selected].length;
             info::header h{};if(!info::decode(header,info::header_bytes,n,h))return 5;
             if(!events::event_control(h.kind)&&(!info::complete(h)||writer_extent!=h.writer_size||!writer_extent||writer_extent>16))return 95;
+            if(selected!=no_slot&&n>slots_[selected].body.size())return 5;
             auto total=info::header_bytes+n;if(total>capacity)return 90;if(nonce_==UINT64_MAX)return 90;
             try{snapshot next{};next.bytes=std::make_unique<std::uint8_t[]>(total);next.size=total;next.sequence=sequence;next.reservation=nonce_+1;
                 std::copy(header,header+info::header_bytes,next.bytes.get());

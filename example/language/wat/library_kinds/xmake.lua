@@ -67,7 +67,7 @@ target("wat-library-kinds-tests")
     set_toolchains("ros.wasm.command")
     add_deps("wat-static-math", "wat-static-consumer", "memory-channel", "offset-dynamic", "private-copy",
              "wat-memory-consumer", "wat-dynamic-two", "wat-independent-two", "wat-independent-three")
-    add_tests("five-finite-serial-library-graphs")
+    add_tests("five-finite-serial-library-graphs", {group = "guest-component"})
     uwvm_register_required_test("five-finite-serial-library-graphs", "guest-component")
     on_test(function(target, opt)
         import("lib.detect.find_program")

@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "flexiv",
+  "language": "kotlin",
+  "profile": "ros1_noetic",
+  "backend": "ros1",
+  "source_root": "include/platform/flexiv/kotlin/ros1/flexiv-ros1-noetic-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "managed_sources": {
+    "java": [
+      "include/platform/flexiv/java/ros1/flexiv-ros1-noetic-complete/org/uwvm/flexiv/ros1noetic/BoundedRecords.java"
+    ],
+    "kotlin": [
+      "include/platform/flexiv/kotlin/ros1/flexiv-ros1-noetic-complete/Records.kt"
+    ]
+  }
+}

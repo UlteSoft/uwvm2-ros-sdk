@@ -284,6 +284,7 @@ task("test")
                     end, catch {function(error) failure = tostring(error) end}}
                     if returned then
                         row.executed, row.passed = 1, passed == true
+                        if passed ~= true then row.error = opt.errors or "Required test callback returned failure" end
                         accounting.executed = accounting.executed + 1
                     else
                         row.error = failure or "Test callback did not return"
@@ -309,7 +310,16 @@ task("test")
         accounting.status = returned and complete and "PASS" or "FAIL"
         accounting.diagnostic = failure
         save()
-        if not returned then raise(failure or "Required native tests failed") end
+        if not returned then
+            local reasons = {}
+            for name, row in pairs(selected) do
+                if row.error then table.insert(reasons, name .. ": " .. tostring(row.error)) end
+            end
+            if #reasons > 0 then
+                raise(table.concat(reasons, "\n") .. "; evidence=" .. output)
+            end
+            raise((failure and failure ~= "nil" and failure or "Required native tests failed") .. "; evidence=" .. output)
+        end
         assert(complete, "BLOCKED_REQUIRED_TEST_DISPATCH_INCOMPLETE; evidence=" .. output)
     end)
 task_end()

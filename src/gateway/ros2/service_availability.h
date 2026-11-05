@@ -2,6 +2,7 @@
  * UWVM2 owned native ROS2 client readiness. APL-2.0.         *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "qos.h"
 #include <uwvm2/imported/ros/common/service_availability_history.h>
 #include <algorithm>
@@ -83,10 +84,10 @@ namespace uwvm2::ros_gateway::ros2_service_availability
                 if(request.operation==wire::command::features)
                 {return {0,wire::typed_query|wire::finite_wait|wire::actual_qos_check};}
                 auto maximum{limit(availability,"max-wait-ns")};
-                if(request.value>maximum||!timeout_ms){return {22,0};}
-                auto started{std::chrono::steady_clock::now()};
-                auto until{started+std::chrono::milliseconds(std::min<std::uint64_t>(timeout_ms,limit(availability,"timeout-ms")))};
-                auto logical{started+std::chrono::nanoseconds(request.value)};
+                if(request.value>maximum){return {22,0};}
+                auto started{::uwvm2::utils::host_clock::now()};
+                auto until{request_deadline(availability,timeout_ms,started)};
+                auto logical_value=logical_deadline(started,request.value);if(!logical_value)return {22,0};auto logical=*logical_value;
                 client_base* active{};auto found{clients_.find(request.binding.availability)};
                 if(found!=clients_.end())
                 {
@@ -127,7 +128,7 @@ namespace uwvm2::ros_gateway::ros2_service_availability
                     auto configured{ros2_qos::configured(source)};
                     owned->native=ros2_compat::create_client<Service>(node,source.resource,configured);
                     if(!owned->native||!ros2_qos::client(*owned->native,configured)){return {95,0};}
-                    if(std::chrono::steady_clock::now()>=until){return {110,0};}
+                    if(::uwvm2::utils::host_clock::now()>=until){return {110,0};}
                     transaction.committed=true;active=owned;
                 }
                 // At least one real native query is required, including wait0.
@@ -140,13 +141,13 @@ namespace uwvm2::ros_gateway::ros2_service_availability
                 // call/finalizer and must preserve actual retirement evidence.
                 for(;;)
                 {
-                    if(std::chrono::steady_clock::now()>=until){return {110,0};}
-                    bool ready{active->ready()};auto now{std::chrono::steady_clock::now()};
+                    if(::uwvm2::utils::host_clock::now()>=until){return {110,0};}
+                    bool ready{active->ready()};auto now{::uwvm2::utils::host_clock::now()};
                     if(now>=until){return {110,0};}
                     if(ready){return {0,1};}
                     if(!request.value||now>=logical){return {0,0};}
                     auto next{std::min(logical,std::min(until,now+std::chrono::milliseconds(1)))};
-                    std::this_thread::sleep_until(next);
+                    auto* waiter=ros::synchronous_wait_context::waiter();if(!waiter)return {95,0};if(waiter->until(next)!=ros::quota_wait_result::ready)return {125,0};
                 }
             }
         }

@@ -419,7 +419,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgQuaternion default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgQuaternion value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Quaternion_default(&value);
             return value;
         }
@@ -525,7 +525,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPose default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPose value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPose value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_Pose_default(&value);
             return value;
         }
@@ -633,7 +633,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovariance value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovariance_default(&value);
             return value;
         }
@@ -741,7 +741,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovarianceStamped default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovarianceStamped value = {0};
+            uwvm_custom::Ros2Geometry_msgsMsgPoseWithCovarianceStamped value = {};
             (void)roswasmc_bounded_2_geometry_msgs_msg_PoseWithCovarianceStamped_default(&value);
             return value;
         }
@@ -849,7 +849,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetection default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetection value = {0};
+            uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetection value = {};
             (void)roswasmc_bounded_2_isaac_ros_apriltag_interfaces_msg_AprilTagDetection_default(&value);
             return value;
         }
@@ -961,7 +961,7 @@ namespace roswasmcpp
          */
         static uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetectionArray default_value() ROSWASM_CPP_NOEXCEPT
         {
-            uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetectionArray value = {0};
+            uwvm_custom::Ros2Isaac_ros_apriltag_interfacesMsgAprilTagDetectionArray value = {};
             (void)roswasmc_bounded_2_isaac_ros_apriltag_interfaces_msg_AprilTagDetectionArray_default(&value);
             return value;
         }

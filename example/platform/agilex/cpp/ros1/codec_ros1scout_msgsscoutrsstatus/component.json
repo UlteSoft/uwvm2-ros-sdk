@@ -1,0 +1,60 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-codec-282",
+  "test_scope": "Actual source-language roundtrip, truncation and trailing-data checks with independent byte extent computed from original .msg/.srv declarations; no native ROS qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4ad8a68711797a0f23f185bc0407fd42820f4901b34087700d926039db969f61"
+    },
+    {
+      "scope": "example",
+      "path": "main.cpp",
+      "sha256": "ac868644933dfd7791f1797d74e016a677dfa102d16316e45b8be713997b8c9c"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/catalog.json",
+      "sha256": "1d06d2ad47ceb619980d41de45d072d1850c2b8c8a16974c7163a67b0eaa2420"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/scout_msgs/msg/ScoutRsStatus.msg",
+      "sha256": "59a2e3c8cd10623b6fc851763adb1f907afd559bdef54988fc4be83e67d4132f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/agilex/catalogs/ros1/std_msgs/msg/Header.msg",
+      "sha256": "5e64e71bb8d9d47019367f6a621934aab7e6ffedc6cfdcc912486aa5576ed693"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "canonical-roundtrip-and-malformed-extents",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "25\n"
+    }
+  ]
+}

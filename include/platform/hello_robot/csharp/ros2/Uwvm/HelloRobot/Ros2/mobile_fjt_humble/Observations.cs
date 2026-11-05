@@ -1,5 +1,4 @@
 using System;
-using Uwvm.Ros;
 using Uwvm.HelloRobot;
 
 namespace Uwvm.HelloRobot.Ros2.mobile_fjt_humble
@@ -20,7 +19,7 @@ namespace Uwvm.HelloRobot.Ros2.mobile_fjt_humble
         public static Observation.Result<Ros2Trajectory_msgsMsgJointTrajectory> ReadJointTrajectory(string alias, int attempts)
         {
             Observation.Result<Ros2Trajectory_msgsMsgJointTrajectory> result = new Observation.Result<Ros2Trajectory_msgsMsgJointTrajectory>(
-                Client.WaitSample(alias, Ros2Trajectory_msgsMsgJointTrajectory.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros2Trajectory_msgsMsgJointTrajectory.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -48,7 +47,7 @@ namespace Uwvm.HelloRobot.Ros2.mobile_fjt_humble
         public static Observation.Result<Ros2Trajectory_msgsMsgMultiDOFJointTrajectory> ReadMultiDOFJointTrajectory(string alias, int attempts)
         {
             Observation.Result<Ros2Trajectory_msgsMsgMultiDOFJointTrajectory> result = new Observation.Result<Ros2Trajectory_msgsMsgMultiDOFJointTrajectory>(
-                Client.WaitSample(alias, Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.MAX_WIRE_BYTES, attempts));
+                Observation.WaitSample(alias, Ros2Trajectory_msgsMsgMultiDOFJointTrajectory.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try
@@ -76,7 +75,7 @@ namespace Uwvm.HelloRobot.Ros2.mobile_fjt_humble
         public static Observation.Result<Ros2Control_msgsMsgJointTolerance> ReadJointTolerance(string alias, int attempts)
         {
             Observation.Result<Ros2Control_msgsMsgJointTolerance> result =
-                new Observation.Result<Ros2Control_msgsMsgJointTolerance>(Client.WaitSample(alias, Ros2Control_msgsMsgJointTolerance.MAX_WIRE_BYTES, attempts));
+                new Observation.Result<Ros2Control_msgsMsgJointTolerance>(Observation.WaitSample(alias, Ros2Control_msgsMsgJointTolerance.MAX_WIRE_BYTES, attempts));
             if(result.Exchange.Primary != 0)
                 return result;
             try

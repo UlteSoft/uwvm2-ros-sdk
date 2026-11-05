@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v2",
+  "format": "uwvm-native-ros-run-v3",
   "runtime": "/opt/uwvm/bin/uwvm2-ros",
   "gateway": "/opt/uwvm/bin/uwvm-ros2-gateway",
   "backend": "ros2",
@@ -27,17 +27,20 @@
         "main": {
           "ros_enabled": false,
           "grants": [],
-          "wasi_grants": []
+          "wasi_grants": [],
+          "wasi_enabled": true
         },
         "math": {
           "ros_enabled": false,
           "grants": [],
-          "wasi_grants": []
+          "wasi_grants": [],
+          "wasi_enabled": true
         },
         "math_peer": {
           "ros_enabled": false,
           "grants": [],
-          "wasi_grants": []
+          "wasi_grants": [],
+          "wasi_enabled": true
         }
       }
     }

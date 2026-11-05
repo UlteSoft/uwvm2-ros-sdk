@@ -2,8 +2,9 @@
 // @brief Exercise complete original urinterfaces/msg/RobotMode values with genuine Odin compilation.
 package main
 import "core:fmt"
+import "base:runtime"
 import records "sdk:universal_robots/odin/ros2/universal-robots-polyscopex-complete"
-main :: proc() {
+run :: proc() {
     value := records.init_Ros2UrinterfacesMsgRobotMode()
     buffer: [141]u8
     wire, status := records.encode_Ros2UrinterfacesMsgRobotMode(&value, buffer[:])
@@ -14,5 +15,13 @@ main :: proc() {
     again, code2 := records.encode_Ros2UrinterfacesMsgRobotMode(&decoded, again_buffer[:])
     assert(code2 == 0 && len(again) == len(wire))
     for byte, i in wire { assert(byte == again[i]) }
-    fmt.printf("{\"type\":\"urinterfaces/msg/RobotMode\",\"bytes\":%d}\n", len(wire))
+    fmt.printf("%s%d%s\n", "{\"type\":\"urinterfaces/msg/RobotMode\",\"bytes\":", len(wire), "}")
+}
+
+// Enter the real Odin command after WASI C startup.
+@(export, link_name="nl_entry")
+nl_entry :: proc "c"() -> u32 {
+    context = runtime.default_context()
+    run()
+    return 0
 }

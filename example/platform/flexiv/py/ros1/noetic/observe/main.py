@@ -18,6 +18,8 @@ try:
         primary = reply[0]
         if not primary:
             value = Ros1Flexiv_msgsRobotStates.decode(reply[1])
+except ValueError:
+    primary = 22
 finally:
     if capability is not None: cleanup = capability.close()
 if value is not None:

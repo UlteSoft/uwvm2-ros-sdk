@@ -35,7 +35,9 @@ def main():
     parser.add_argument("--node", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--evidence", type=Path, required=True)
-    parser.add_argument("--backend", choices=("ros1", "ros2"), default="ros2")
+    parser.add_argument("--backend", choices=("wasi", "ros1", "ros2"), default="ros2")
+    parser.add_argument("--source-tree", type=Path, help="Reuse an existing exact locked source tree; do not unpack the archive")
+    parser.add_argument("--target", choices=("wasm32-wasip1","wasm64-wasip1"), default="wasm32-wasip1")
     args = parser.parse_args()
     if sys.platform != "linux":
         raise RuntimeError("Use the isolated Linux maintenance container")
@@ -44,22 +46,48 @@ def main():
     qualified = args.qualified_sdk.resolve(strict=True)
     port = sdk / "src/language/common/asyncify/asyncify"
     cache, source, locked = prepare(args, "php")
+    supplemental_sources=[]
+    if args.target=="wasm64-wasip1":
+        if args.backend!="wasi":
+            raise ValueError("The separately built memory64 profile currently supports pure WASI only")
+        catalog=json.loads((sdk/"share/language/php/memory64-source.json").read_text())
+        if catalog["format"]!="uwvm-php-memory64-source-v1" or catalog["version"]!="8.4.13":
+            raise ValueError("Exact maintained PHP memory64 source catalog required")
+        seen=set()
+        for item in catalog["files"]:
+            relative=Path(item["destination"])
+            if relative.is_absolute() or ".." in relative.parts or not str(relative).startswith("ext/hash/sha3/generic64lc/"):
+                raise ValueError("Invalid memory64 source destination")
+            if str(relative) in seen:raise ValueError("Duplicate memory64 source")
+            seen.add(str(relative))
+            original=sdk/item["source"]
+            if not original.resolve(strict=True).is_relative_to(sdk/"src/language/php/memory64-source"):
+                raise ValueError("Memory64 support source escapes its retained directory")
+            if original.stat().st_size!=item["bytes"] or digest(original)!=item["sha256"]:
+                raise ValueError("Retained memory64 source identity changed")
+            destination=source/relative
+            if destination.exists():raise ValueError("Memory64 support must not overwrite locked common source")
+            destination.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(original,destination)
+            supplemental_sources.append(dict(path=str(relative),sha256=item["sha256"]))
     temporary = cache / "tmp"
     temporary.mkdir(exist_ok=True)
     manifest = json.loads((qualified / "share/wasm/toolchains.json").read_text())
     profile = next(
-        item for item in manifest["targets"] if item["triple"] == "wasm32-wasip1" and item["profile"] == "noeh"
+        item for item in manifest["targets"] if item["triple"] == args.target and item["profile"] == "noeh"
     )
     # Exact target files/catalog are admitted by verify_profile(); actual cold
     # compilation/linking below supplies its own scoped construction evidence.
     # The public catalog intentionally carries no universal tested boolean.
-    if (profile["llvm_major"] != 23 or profile["triple"] != "wasm32-wasip1"
-            or profile["profile"] != "noeh" or profile["memory64"] or profile["threads"]):
-        raise RuntimeError("The exact LLVM 23 noeh wasm32-wasip1 closure is required")
+    if (profile["llvm_major"] != 23 or profile["triple"] != args.target
+            or profile["profile"] != "noeh" or profile["memory64"] != (args.target == "wasm64-wasip1")
+            or profile["table64"] != (args.target == "wasm64-wasip1") or profile["threads"]):
+        raise RuntimeError("The exact LLVM 23 noeh closure for the requested address width is required")
     common = [
-        "--target=wasm32-wasip1",
+        "--target=" + args.target,
         "-no-canonical-prefixes",
         "-fintegrated-cc1",
+        *(["-DUWVM_LANGUAGE_PURE_WASI=1"] if args.backend == "wasi" else []),
         "-DROSWASM_BACKEND=" + ("1" if args.backend == "ros1" else "2"),
         "-I" + str(qualified / "include"),
         "--sysroot=" + str(qualified / profile["sysroot"]),
@@ -101,11 +129,12 @@ def main():
     report = dict(
         status="FAIL",
         language="php",
-        target="wasm32-wasip1",
+        target=args.target,
         backend=args.backend,
         compiler="LLVM 23",
         exceptions="maintained Ruby-origin Asyncify; signals and native threads unavailable",
         commands=[],
+        supplemental_sources=supplemental_sources,
         target_manifest_sha256=digest(qualified / "share/wasm/toolchains.json"),
     )
     receipt = args.evidence / "build-receipt.json"
@@ -147,7 +176,7 @@ def main():
     configuration = [
         source / "configure",
         "--prefix=/usr",
-        "--host=wasm32-unknown-wasi",
+        "--host=" + args.target.removesuffix("-wasip1") + "-unknown-wasi",
         "--build=x86_64-pc-linux-gnu",
         "--disable-all",
         "--enable-embed=static",
@@ -197,9 +226,10 @@ def main():
     ):
         output = cache / (Path(name).name + ".o")
         selected_flags = [] if Path(name).suffix == ".S" else flags
+        assembly_source = port / ("wasm64/" + Path(name).name if args.target=="wasm64-wasip1" and Path(name).suffix==".S" else name)
         run(
             "compile-" + Path(name).name,
-            [llvm / "clang", *common, *selected_flags, "-I" + str(port), "-c", port / name, "-o", output],
+            [llvm / "clang", *common, *selected_flags, "-I" + str(port), "-c", assembly_source, "-o", output],
             env=env,
         )
         objects.append(output)

@@ -32,7 +32,7 @@ no unprefixed version setters or alternate scenario setters.
 
 ## Deployment contract
 
-`uwvm-native-ros-run-v2` requires `runtime`, `backend`, `distribution`,
+`uwvm-native-ros-run-v3` requires `runtime`, `backend`, `distribution`,
 `connection` and `examples`. The `gateway` executable is required when any main
 or preload module sets `ros_enabled: true`. Runtime and gateway paths are explicit
 executable paths, resolved relative to the JSON file. An optional `runtime_loader` and
@@ -110,7 +110,7 @@ before preload loading. `wasm64-wasip1` enables memory64 and table64, matching
 the selected LLVM 23 target closure. This pointer ABI is Uwvm's Preview 1 extension.
 Parser features do not grant native host permissions.
 Every module disables host environment inheritance and receives no directory or
-socket preopens. Default WASI stream access is not a claim of zero authority.
+socket preopens. Base WASI linkage grants no stream access; standard-stream operations require explicit per-module grants.
 
 ## ABB read-speed example
 

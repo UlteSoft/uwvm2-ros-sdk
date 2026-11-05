@@ -9,6 +9,6 @@ public final class Main
 {
     public static void main(String[] arguments)
     {
-        System.exit(NativeCommand.run(2));
+        uwvm.ros.Wasi.exit(NativeCommand.run(2));
     }
 }

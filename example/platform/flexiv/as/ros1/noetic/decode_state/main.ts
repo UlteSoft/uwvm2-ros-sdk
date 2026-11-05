@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /** @brief Validate the complete original value in genuine AssemblyScript. */
 import {Ros1Flexiv_msgsRobotStates, Ros1Flexiv_msgsRobotStatesCodec} from "flexiv/as/ros1/flexiv-ros1-noetic-complete/bounded_records";
 import {write, exit} from "ros/as/command";

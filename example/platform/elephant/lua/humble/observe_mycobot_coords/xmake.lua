@@ -42,12 +42,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
 
 target("elephant-humble-lua-observe_mycobot_coords")
     set_language("lua")
+    set_wasm_exceptions("eh")
     set_ros_platform("elephant")
     set_ros2_version("humble")
     set_arch(get_config("arch") or "wasm32")
@@ -60,4 +62,5 @@ target("elephant-humble-lua-observe_mycobot_coords")
         transport = "native-ros",
     })
     add_files("main.lua")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

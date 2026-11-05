@@ -4,7 +4,7 @@
  * @details Local fixture values only; genuine PHP and the shared codec are required.
  */
 declare(strict_types=1);
-require "doosan/php/ros2/doosan-ros2-jazzy-complete/records.php";
+// The declared public module graph initializes this exact record namespace.
 $value = new \Uwvm\DoosanDoosanRos2JazzyComplete\Ros2Dsr_msgs2SrvGetRobotState_Response();
 $bytes = $value->encode();
 $decoded = \Uwvm\DoosanDoosanRos2JazzyComplete\Ros2Dsr_msgs2SrvGetRobotState_Response::decode($bytes);

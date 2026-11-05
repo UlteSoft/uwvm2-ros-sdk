@@ -49,5 +49,163 @@
       }
     }
   },
-  "request_contract": "share/platform/ros/adapter-contract.json"
+  "request_contract": "share/platform/ros/adapter-contract.json",
+  "native_actions": {
+    "publish_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    },
+    "subscribe_string": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    },
+    "call_trigger": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    },
+    "publish_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    },
+    "subscribe_string_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    },
+    "call_trigger_memory64": {
+      "ros1": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros1"
+          ]
+        }
+      },
+      "ros2": {
+        "format": "uwvm-native-action-v1",
+        "language": "tinygo",
+        "go": {
+          "modules": [
+            "include/platform/ros/tinygo"
+          ],
+          "tags": [
+            "ros2"
+          ]
+        }
+      }
+    }
+  }
 }

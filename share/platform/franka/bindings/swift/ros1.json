@@ -1,0 +1,42 @@
+{
+  "format": "uwvm-vendor-release-binding-v1",
+  "platform": "franka",
+  "language": "swift",
+  "profile": "ros1",
+  "backend": "ros1",
+  "source_root": "include/platform/franka/swift/ros1/franka-ros1-complete",
+  "include_root": "include/platform",
+  "default_authority": [],
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "swift",
+    "swift": {
+      "module_name": "VendorCodecCommand",
+      "top_level": true,
+      "import_dirs": [
+        "include/platform/ros/swift/Sources/CRosWasm",
+        "include/language/swift/wasilibc"
+      ],
+      "c_defines": [
+        "ROSWASM_C_FFI_BACKEND=1"
+      ],
+      "modules": [
+        {
+          "name": "RosWasm",
+          "sources": [
+            "include/platform/ros/swift/Sources/RosWasm/Owner.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Raw.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Typed.swift",
+            "include/platform/ros/swift/Sources/RosWasm/Wire.swift"
+          ]
+        },
+        {
+          "name": "FrankaRecords",
+          "sources": [
+            "include/platform/franka/swift/ros1/franka-ros1-complete/Records.swift"
+          ]
+        }
+      ]
+    }
+  }
+}

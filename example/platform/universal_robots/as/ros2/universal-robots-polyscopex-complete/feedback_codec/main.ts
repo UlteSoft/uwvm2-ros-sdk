@@ -1,3 +1,4 @@
+export {abortGuest} from "ros/as/api";
 /**
  * @file main.ts
  * @brief Exercise the complete urinterfaces/action/SetMode_Feedback value with genuine AssemblyScript.

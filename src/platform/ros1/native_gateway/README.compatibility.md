@@ -25,7 +25,13 @@ integer `charconv`. Do not lower the language standard or copy an arbitrary
 new `libstdc++.so` into an old userspace: its libc and target dependencies must
 also match. A pinned rebuilt ROS SDK on a newer userspace is another supported
 selection mechanism, distinct from building against stock historical binaries.
-`UWVM_ROS1_CXX_STANDARD=17` is the default. A caller may select 20 or 23 only
+`UWVM_ROS1_CXX_STANDARD=17` is the default. In that mode, CMake compiles
+`gateway/common/host_clock_bridge.cc` as C++20 and propagates the explicit
+`UWVM_HOST_CLOCK_CXX17_BRIDGE` definition to every ROS1 host translation unit.
+The bridge reads through the same fast_io POSIX monotonic implementation as
+the VM and ROS2 gateway; it does not provide an alternate clock or reset quota
+state. A failed sample rejects the current operation, and a later valid sample
+can resume the existing ledger. A caller may select 20 or 23 only
 when both that SDK's generated headers and the target library pass the same
 contracts (CMake >=3.12 for C++20, >=3.20 for C++23). A higher language setting
 does not imply compatibility with an older generator's C++ output.

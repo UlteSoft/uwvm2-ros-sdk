@@ -69,7 +69,8 @@ local function guest(name, kind, role, sources, dependency)
             end
         end)
         if kind == "binary" then
-            add_tests("guest-local-business")
+            uwvm_register_required_test("guest-local-business", "required-wasm-guest")
+            add_tests("guest-local-business", {group = "required-wasm-guest"})
             on_test(function(target, opt)
                 import("lib.detect.find_program")
                 local python = assert(find_program("python3"), "Install Python 3 for process supervision")
@@ -102,7 +103,8 @@ target("abb-components-real-integration-required")
     -- Xmake still resolves a toolchain for a phony target in this Wasm project.
     set_toolchains("ros.wasm.command")
     add_deps("abb-component-reader-planner", "abb-component-actuator")
-    add_tests("private-memory-channel-real-ros-required")
+    uwvm_register_required_test("private-memory-channel-real-ros-required", "required-wasm-guest")
+    add_tests("private-memory-channel-real-ros-required", {group = "required-wasm-guest"})
     on_test(function(target, opt)
         opt.errors = "BLOCKED_REQUIRED_SDK01_COMPONENT_CHANNEL_ABI_AND_ACTUAL_PRIVATE_MEMORY_ROS_INTEGRATION; see component.integration.json"
         return false

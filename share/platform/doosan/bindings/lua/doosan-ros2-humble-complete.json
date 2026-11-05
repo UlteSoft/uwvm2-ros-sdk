@@ -17,5 +17,6 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/doosan/flows"
+  "retained_native_operation_flows": "src/platform/doosan/flows",
+  "bundle_manifest": "share/platform/doosan/bundles/lua/doosan-ros2-humble-complete.json"
 }

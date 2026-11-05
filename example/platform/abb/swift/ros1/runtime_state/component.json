@@ -1,0 +1,119 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "original-swift-observer-167",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/language/native/abi.h",
+      "sha256": "0c4d0a85a3c6fd930e101745bb7260d73e1dc0d54ffca0f36bcdf5a2dc1c2f41"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/swift/Observation.swift",
+      "sha256": "99b3877a039421ab438bca79a3edb263f7a3a3651596dee27ee3c411a9a2376b"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/swift/ros1/Observation.swift",
+      "sha256": "7abc335d691336e664da5802dffc62cf57e2d5b2bd892c8d7b2be69a7174623e"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/swift/ros1/Records.swift",
+      "sha256": "c4ab4db3333d0c8fcd1773e6365ae39059558207e5a6726012078d8de4169308"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/swift/ros2/Records.swift",
+      "sha256": "481595355641adac300cd78c5b85737df3c1d6007c3aeb2878a03ee7e01e85f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/swift.json",
+      "sha256": "3bb95cb03a5c6573fed5b9cb9444e1f89adce40c6f8440fbb31e493d66fc52db"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/swift/CoreObservation.swift",
+      "sha256": "5e615afbf087f024e8bf964c837b37709a0d6dfcbe86ec6987573712eb7081fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/swift/Wire.swift",
+      "sha256": "154ec13b3f41f72e07c50c1c2c63e7678c95bb48ccad2571734199793d06f2d9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/native/compiled.lua",
+      "sha256": "d3b1d25a748e535cf48bb69035e194a70e4b0654186556ef08b8ab324832cd13"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "4af2d01230d64d9b4fd9c34ffd57dfe5d03e599a631cf999f118f9571a0df471"
+    },
+    {
+      "scope": "example",
+      "path": "main.swift",
+      "sha256": "ba416acdcace4c557f6d20965a5ca102ff43554e9cfc3179d3b7577486c01863"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-only-resource-denied",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

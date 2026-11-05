@@ -77,7 +77,7 @@
       "alias": "robotis-obstacle-log-system-clock",
       "source_operation": "time_read_system",
       "source_resource": "/turtlebot3_obstacle_detection",
-      "resource": "/uwvmros/turtlebot3/obstacle/log-system-clock",
+      "resource": "/uwvmros/turtlebot3/obstacle/log_system_clock",
       "operation": "time.read-system",
       "type": "builtin/time-v1",
       "identity": "builtin:time-nanoseconds-v1",

@@ -74,7 +74,7 @@ wasm64、线程和异常闭包必须独立实现与验收，不允许用参数�
 ## 原生部署与配置
 
 先加载所选原生 ROS 安装环境，将 `UWVM_ROS_RUN_CONFIG` 指向可信部署 JSON，再执行
-`xmake run`。部署格式为 `uwvm-native-ros-run-v2`，明确填写匹配的 `backend`、
+`xmake run`。部署格式为 `uwvm-native-ros-run-v3`，明确填写匹配的 `backend`、
 `distribution`、实际 `runtime` 和 `gateway` 路径以及原生 `connection`。每个场景声明
 `arguments`、`main_module`、有序 `preloads`，并用 `modules` 为每个已加载模块提供策略。
 每个模块明确填写布尔 `ros_enabled`、`grants` 和 `wasi_grants`；每项 grant 完整填写 alias、

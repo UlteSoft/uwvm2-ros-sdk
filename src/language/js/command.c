@@ -270,6 +270,52 @@ static JSValue output_line(JSContext* context, JSValueConst self, int argc, JSVa
     return JS_NewUint32(context, failed ? 5 : 0);
 }
 
+/** @brief Read into the caller's live ArrayBuffer through granted WASI stdin. */
+static JSValue read_stdin(JSContext* context, JSValueConst self, int argc, JSValueConst* argv)
+{
+    (void)self;
+    size_t size = 0;
+    if(argc != 3) return JS_ThrowTypeError(context, "read requires buffer, offset and length");
+    unsigned char* bytes = JS_GetArrayBuffer(context, &size, argv[0]);
+    if(bytes == NULL) return JS_EXCEPTION;
+    double offset, length;
+    if(!JS_IsNumber(argv[1]) || !JS_IsNumber(argv[2])
+       || JS_ToFloat64(context, &offset, argv[1]) || JS_ToFloat64(context, &length, argv[2]))
+        return JS_ThrowTypeError(context, "read extents must be exact integers");
+    if(!(offset >= 0 && offset <= (double)size) || !(length >= 0 && length <= (double)size)
+       || offset != (double)(size_t)offset || length != (double)(size_t)length
+       || (size_t)length > size - (size_t)offset)
+        return JS_ThrowRangeError(context, "read exceeds caller buffer");
+    size_t received = fread(bytes + (size_t)offset, 1, (size_t)length, stdin);
+    if(ferror(stdin)) return JS_ThrowInternalError(context, "WASI stdin read failed");
+    return JS_NewInt64(context, (int64_t)received);
+}
+
+/** @brief Write exact UTF-8 diagnostics through granted WASI stderr. */
+static JSValue write_stderr(JSContext* context, JSValueConst self, int argc, JSValueConst* argv)
+{
+    (void)self;
+    if(argc != 1) return JS_ThrowTypeError(context, "one diagnostic string required");
+    size_t size;
+    const char* text = JS_ToCStringLen(context, &size, argv[0]);
+    if(text == NULL) return JS_EXCEPTION;
+    int failed = fwrite(text, 1, size, stderr) != size || fflush(stderr) != 0;
+    JS_FreeCString(context, text);
+    if(failed) return JS_ThrowInternalError(context, "WASI stderr write failed");
+    return JS_UNDEFINED;
+}
+
+/** @brief Honor an explicit synchronous guest process exit after caller cleanup. */
+static JSValue exit_command(JSContext* context, JSValueConst self, int argc, JSValueConst* argv)
+{
+    (void)self;
+    double code;
+    if(argc != 1 || !JS_IsNumber(argv[0]) || JS_ToFloat64(context, &code, argv[0])
+       || !(code >= 0 && code <= 125) || code != (double)(int)code)
+        return JS_ThrowRangeError(context, "command status must be an integer in 0..125");
+    exit((int)code);
+}
+
 /**
  * @brief Initialize the genuine VM and execute its complete application module.
  *
@@ -336,6 +382,9 @@ int main(int argc, char** argv)
     JS_SetPropertyStr(context, native, "invoke", JS_NewCFunction(context, invoke, "invoke", 4));
     JS_SetPropertyStr(context, native, "pause_ms", JS_NewCFunction(context, pause_ms, "pause_ms", 1));
     JS_SetPropertyStr(context, native, "output", JS_NewCFunction(context, output_line, "output", 1));
+    JS_SetPropertyStr(context, native, "read_stdin", JS_NewCFunction(context, read_stdin, "read_stdin", 3));
+    JS_SetPropertyStr(context, native, "write_stderr", JS_NewCFunction(context, write_stderr, "write_stderr", 1));
+    JS_SetPropertyStr(context, native, "exit", JS_NewCFunction(context, exit_command, "exit", 1));
     JSValue arguments = JS_NewArray(context);
     for (int index = 0; index < argc; ++index)
     {

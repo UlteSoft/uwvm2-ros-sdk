@@ -2,7 +2,9 @@
  * UWVM2 ROS Runtime Extension. APL-2.0.                     *
  *************************************************************/
 #pragma once
+#include <uwvm2/utils/thread/monotonic_clock.h>
 #include "event_stream.h"
+#include "quota_wait.h"
 #include <condition_variable>
 #include <deque>
 #include <functional>
@@ -28,10 +30,10 @@ namespace uwvm2::ros_gateway
     };
     // Exactly one owned worker per authenticated session. Every job first owns
     // a stream reservation, including its copied input and task accounting.
-    // Thus queue depth/bytes and source max-inflight are finite explicit grants,
-    // not an unbounded std::async/detached-thread facility. The adapter's native
-    // service call MUST honor the supplied deadline; both production adapters
-    // have bounded implementations. Session teardown joins this owned thread.
+    // Queue depth/bytes and source max-inflight follow the explicit contract;
+    // omitted quotas do not preallocate storage. The adapter's native call keeps
+    // its supplied deadline and authenticated connection cancellation context.
+    // Session teardown joins this owned thread; no detached thread is created.
     class async_service_pool
     {
     public:
@@ -43,6 +45,7 @@ namespace uwvm2::ros_gateway
             std::chrono::steady_clock::time_point deadline;
             std::vector<std::uint8_t> input;
             std::function<service_ipc::call_result(std::vector<std::uint8_t> const&,std::uint32_t)> invoke;
+            std::shared_ptr<quota_connection> connection{quota_owner()};
         };
         inline static constexpr std::size_t accounting_bytes{sizeof(task)+64};
     private:
@@ -62,13 +65,13 @@ namespace uwvm2::ros_gateway
                 bool admitted{};
                 { std::lock_guard<std::mutex> guard{work.source->mutex};admitted=work.source->active&&work.output->active(); }
                 if(!admitted) { work.output->cancel_reservation(work.request);finish_count(work.source);continue; }
+                quota_scope scope{work.connection,work.deadline};
                 service_ipc::call_result response;bool attempted{};
                 try
                 {
-                    auto now{std::chrono::steady_clock::now()};
-                    auto budget{std::chrono::duration_cast<std::chrono::milliseconds>(work.deadline-now).count()};
-                    if(budget<=0) {response={110,{}};}else {attempted=true;response=work.invoke(work.input,static_cast<std::uint32_t>(budget));}
-                    if(std::chrono::steady_clock::now()>=work.deadline) { response={110,{}}; }
+                    auto budget=service_ipc::remaining_ms(work.deadline);
+                    if(!budget) {response={110,{}};}else {attempted=true;response=work.invoke(work.input,*budget);}
+                    if(::uwvm2::utils::host_clock::now()>=work.deadline) { response={110,{}}; }
                 }
                 catch(...) { response={5,{}}; }
                 if(response.error) { (void)work.output->complete(work.request,{service_ipc::event_kind::resource_error,static_cast<std::uint8_t>(attempted?service_ipc::event_external_effects_may_remain:0),response.error,work.request,{}}); }

@@ -5,7 +5,7 @@
 ' supplies an existing alias and its matching native type binding. A source-backed compiler or VM is
 ' required; no grant, replay or controller admission is implicit.
 Imports System
-Imports Uwvm.Ros
+Imports Uwvm.Abb
 Imports Uwvm.Abb.Ros1
 Namespace Abb.Examples
 ''' <summary>@brief Observe the whole abb_rapid_sm_addin_msgs/RuntimeState record using genuine VB.NET full
@@ -18,11 +18,11 @@ Public Module MainProgram
     ''' <returns>First operation or independent cleanup status.</returns>
     Public Function Main(args As String()) As Integer
         If args.Length <> 1 Then Return 22
-        Dim facts = Client.WaitSample(args(0), 8372, 250)
+        Dim facts = Observation.ReadSample(args(0), 8372, 250)
         Dim wire = Array.Empty(Of Byte)()
         If facts.Primary = 0UI Then
             Try
-                wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.Decode(facts.Bytes).Encode()
+                wire = Ros1Abb_rapid_sm_addin_msgsRuntimeState.Encode(Ros1Abb_rapid_sm_addin_msgsRuntimeState.Decode(facts.Bytes))
             Catch failure As ArgumentException
                 facts.Primary = 22UI
             End Try

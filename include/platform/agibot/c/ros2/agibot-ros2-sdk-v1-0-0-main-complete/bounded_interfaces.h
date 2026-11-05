@@ -15,6 +15,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_BOUNDED_INTERFACES_H
 #define UWVM_BOUNDED_INTERFACES_H
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <platform/agibot/c/ros2/agibot-ros2-sdk-v1-0-0-main-complete/bounded_records.h>
 #include <platform/ros/c/roswasm/action_bundle.h>
 
@@ -37,7 +44,7 @@ inline static roswasmc_result
     unsigned char input[148], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocus_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocus_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocus_Request_encode(request, input, 148, &n))
     {
@@ -64,7 +71,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocu
 {
     unsigned char output[156];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocus_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_AbandonAudioFocus_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -118,7 +125,7 @@ inline static roswasmc_result
     unsigned char input[936], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_ExecuteActionResource_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_ExecuteActionResource_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_ExecuteActionResource_Request_encode(request, input, 936, &n))
     {
@@ -146,7 +153,7 @@ inline static roswasmc_result
 {
     unsigned char output[944];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_ExecuteActionResource_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_ExecuteActionResource_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -199,7 +206,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState
     unsigned char input[8], output[2696];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState_Request_encode(request, input, 8, &n))
     {
@@ -226,7 +233,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetAllJointState_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -280,7 +287,7 @@ inline static roswasmc_result
     unsigned char input[8], output[168];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetCurrentInputSource_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetCurrentInputSource_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetCurrentInputSource_Request_encode(request, input, 8, &n))
     {
@@ -308,7 +315,7 @@ inline static roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetCurrentInputSource_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetCurrentInputSource_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -361,7 +368,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_call
     unsigned char input[8], output[154];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_Request_encode(request, input, 8, &n))
     {
@@ -388,7 +395,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_poll
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetHandType_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -440,7 +447,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_call
     unsigned char input[8], output[156];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_Request_encode(request, input, 8, &n))
     {
@@ -467,7 +474,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_poll
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMcAction_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -520,7 +527,7 @@ inline static roswasmc_result
     unsigned char input[8], output[156];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequest_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequest_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequest_Request_encode(request, input, 8, &n))
     {
@@ -547,7 +554,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequ
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequest_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMicSourceRequest_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -600,7 +607,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetMute_call(ros
     unsigned char input[8], output[153];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMute_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMute_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetMute_Request_encode(request, input, 8, &n))
     {
@@ -626,7 +633,7 @@ inline static roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetMute_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetMute_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -679,7 +686,7 @@ inline static roswasmc_result
     unsigned char input[8], output[10236];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResources_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResources_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResources_Request_encode(request, input, 8, &n))
     {
@@ -706,7 +713,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResource
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResources_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetRobotResources_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -760,7 +767,7 @@ inline static roswasmc_result
     unsigned char input[272], output[3400];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Request_encode(request, input, 272, &n))
     {
@@ -787,7 +794,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByNa
 {
     unsigned char output[280];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetStoredMapByName_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -840,7 +847,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_c
     unsigned char input[8], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_Request_encode(request, input, 8, &n))
     {
@@ -867,7 +874,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_p
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetSystemState_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -920,7 +927,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_call(r
     unsigned char input[8], output[156];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_Request_encode(request, input, 8, &n))
     {
@@ -947,7 +954,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_poll(r
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_GetVolume_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1000,7 +1007,7 @@ inline static roswasmc_result
     unsigned char input[140], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemState_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemState_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemState_Request_encode(request, input, 140, &n))
     {
@@ -1027,7 +1034,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemSta
 {
     unsigned char output[148];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemState_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_MigrateSystemState_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1080,7 +1087,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_ca
     unsigned char input[693], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_Request_encode(request, input, 693, &n))
     {
@@ -1107,7 +1114,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_po
 {
     unsigned char output[701];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayAudioFile_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1159,7 +1166,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_call(r
     unsigned char input[14], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_Request_encode(request, input, 14, &n))
     {
@@ -1186,7 +1193,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_poll(r
 {
     unsigned char output[22];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayEmoji_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1238,7 +1245,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_call(ros
     unsigned char input[410], output[690];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_Request_encode(request, input, 410, &n))
     {
@@ -1264,7 +1271,7 @@ inline static roswasmc_result
 {
     unsigned char output[418];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayTts_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1316,7 +1323,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_call(r
     unsigned char input[145], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_Request_encode(request, input, 145, &n))
     {
@@ -1343,7 +1350,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_poll(r
 {
     unsigned char output[153];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideo_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1395,7 +1402,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_c
     unsigned char input[2129], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_Request_encode(request, input, 2129, &n))
     {
@@ -1422,7 +1429,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_p
 {
     unsigned char output[2137];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_PlayVideoGroup_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1476,7 +1483,7 @@ inline static roswasmc_result
     unsigned char input[148], output[285];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocus_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocus_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocus_Request_encode(request, input, 148, &n))
     {
@@ -1503,7 +1510,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocu
 {
     unsigned char output[156];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocus_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_RequestAudioFocus_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1557,7 +1564,7 @@ inline static roswasmc_result
     unsigned char input[544], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetAgentPropertiesRequest_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetAgentPropertiesRequest_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetAgentPropertiesRequest_Request_encode(request, input, 544, &n))
     {
@@ -1585,7 +1592,7 @@ inline static roswasmc_result
 {
     unsigned char output[552];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetAgentPropertiesRequest_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetAgentPropertiesRequest_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1638,7 +1645,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_call
     unsigned char input[276], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_Request_encode(request, input, 276, &n))
     {
@@ -1665,7 +1672,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_poll
 {
     unsigned char output[284];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcAction_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1717,7 +1724,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource
     unsigned char input[152], output[28];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource_Request_encode(request, input, 152, &n))
     {
@@ -1744,7 +1751,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource
 {
     unsigned char output[160];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcInputSource_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1798,7 +1805,7 @@ inline static roswasmc_result
     unsigned char input[157], output[28];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotion_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotion_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotion_Request_encode(request, input, 157, &n))
     {
@@ -1825,7 +1832,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotio
 {
     unsigned char output[165];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotion_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMcPresetMotion_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1879,7 +1886,7 @@ inline static roswasmc_result
     unsigned char input[12], output[152];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequest_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequest_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequest_Request_encode(request, input, 12, &n))
     {
@@ -1906,7 +1913,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequ
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequest_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMicSourceRequest_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1959,7 +1966,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetMute_call(ros
     unsigned char input[9], output[153];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMute_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMute_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetMute_Request_encode(request, input, 9, &n))
     {
@@ -1985,7 +1992,7 @@ inline static roswasmc_result
 {
     unsigned char output[17];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetMute_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetMute_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2037,7 +2044,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_call(r
     unsigned char input[149], output[18];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_Request_encode(request, input, 149, &n))
     {
@@ -2064,7 +2071,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_poll(r
 {
     unsigned char output[157];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetPmuLed_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2116,7 +2123,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_call(r
     unsigned char input[12], output[156];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_Response next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_Response next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_Request_encode(request, input, 12, &n))
     {
@@ -2143,7 +2150,7 @@ inline static roswasmc_result roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_poll(r
 {
     unsigned char output[20];
     roswasmc_result r;
-    roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_Request next = {0};
+    roswasmc_bounded_2_aimdk_msgs_srv_SetVolume_Request next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

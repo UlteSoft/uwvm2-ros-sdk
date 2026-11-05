@@ -9,9 +9,9 @@
 /// primary, independent close or stdout error. Fatal traps cannot promise ordinary cleanup.
 @_cdecl("nl_entry")
 public func fanucEntry() -> UInt32 {
-  if rosArgumentCount() != 2 {
+  if nativeArgumentCount() != 2 {
     return 22
   }
-  let value = FanucRos2.waitConnectionStatus(rosArgument(1), 250)
-  return rosReport(value)
+  let value = FanucRos2.waitConnectionStatus(nativeArgument(1), 250)
+  return nativeReport(value)
 }

@@ -112,7 +112,7 @@ local function python_stdlib(root, manifest)
         { path = stdlib.source_manifest, sha256 = stdlib.source_manifest_sha256 } }
 end
 
-function bundle(root, language, entry, manifest)
+function bundle(root, language, entry, manifest, sdk_root)
     assert(manifest.format == "uwvm-language-bundle-v1" and manifest.language == language,
         "The platform must supply the versioned genuine-language module manifest")
     assert(type(manifest.modules) == "table" and #manifest.modules <= (language == "js" and 63 or 512),
@@ -142,6 +142,12 @@ function bundle(root, language, entry, manifest)
             package = module.package == true }
     end
     local raw_entry = assert(io.readfile(entry, { encoding = "binary" }))
+    if language == "js" then
+        local helper = "src/language/js/modules/command_output.js"
+        local filename = member_path(sdk_root or root, helper)
+        inputs[#inputs + 1] = {path = helper, sha256 = hash.sha256(filename):lower()}
+        raw_entry = assert(io.readfile(filename, {encoding = "binary"})) .. "\n" .. raw_entry
+    end
     inputs[#inputs + 1] = { path = "application", sha256 = hash.sha256(entry):lower() }
     local parts = {}
     if language == "js" then
@@ -265,7 +271,7 @@ function build(target, root, compiled)
     local manifest = assert(json.loadfile(installed_manifest))
     assert(manifest.backend == backend, "The public source modules target a different native ROS family")
     local source, inputs = bundle(compiled and compiled.root or root, language,
-        path.absolute(target:sourcefiles()[1]), manifest)
+        path.absolute(target:sourcefiles()[1]), manifest, root)
     assert(#source <= capacity, "The complete genuine source closure exceeds the finite source slot")
     local packed = raw:sub(1, last) .. word(#source) .. source
         .. string.rep("\0", capacity - #source) .. raw:sub(guard)

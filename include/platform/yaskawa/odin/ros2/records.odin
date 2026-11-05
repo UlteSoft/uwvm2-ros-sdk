@@ -2,7 +2,7 @@
 // @brief Complete owned original YASKAWA ROS 2 records and codecs.
 // @details No generated record owns a native ROS object or grants a capability.
 package records
-import wire "ros:odin"
+import wire "native:odin/wire"
 
 /// @brief Complete original builtin_interfaces/msg/Duration value.
 /// @details Retain all 2 original fields and 0 constants. Wire extent 8..8 bytes.

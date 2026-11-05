@@ -62,7 +62,7 @@ end
 -- @return No value; compiler, ABI, runtime-mode or sole-output failures raise.
 -- @details The application owns all writable cache paths. Native ROS and uwvm2
 -- are run prerequisites and are never invoked during compilation.
-function build(target, root, language, backend, closure, programs, library_feed, library_receipt)
+function build(target, root, language, backend, closure, programs, library_feed, library_receipt, binding)
 	import("core.base.json")
 	-- Each target owns an isolated scratch tree, including when multiple
 	-- applications share one project and their builds execute concurrently.
@@ -191,6 +191,20 @@ function build(target, root, language, backend, closure, programs, library_feed,
 			.. "</packageSources></configuration>\n"
 	)
 	local task = _task(root, closure, programs, cache, environment)
+	binding = binding or {}
+	local managed_sources = binding.managed_sources
+	local function exact_sources(language, extension)
+		local result = {}
+		for _, relative in ipairs((managed_sources or {})[language] or {}) do
+			assert(type(relative) == "string" and not path.is_absolute(relative)
+				and not relative:find("..", 1, true) and relative:endswith(extension),
+				"Managed binding source must be an SDK-relative source file")
+			local source = path.join(root, relative)
+			assert(os.isfile(source), "Missing managed binding source: " .. relative)
+			table.insert(result, source)
+		end
+		return result
+	end
 	local objects = {}
 	local native_sources = {
 		managed_ros = "src/language/dotnet/managed_ros.c",
@@ -201,6 +215,17 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	if kind == "shared" then
 		native_sources.library_init = "tools/language/dotnet/library_init.c"
 	end
+	local extra_native = {}
+	for name, source in pairs(binding.managed_native_sources or {}) do
+		assert(type(name) == "string" and name:match("^[A-Za-z_][A-Za-z0-9_]*$") and not native_sources[name],
+			"Duplicate or invalid managed native object")
+		assert(type(source) == "string" and not path.is_absolute(source)
+			and not source:find("..", 1, true) and source:endswith(".c") and os.isfile(path.join(root, source)),
+			"Managed native source must be an installed C source")
+		native_sources[name] = source
+		table.insert(extra_native, name)
+	end
+	table.sort(extra_native)
 	for name, source in pairs(native_sources) do
 		local output = path.join(cache, name .. ".o")
 		os.vrunv(clang, {
@@ -214,6 +239,7 @@ function build(target, root, language, backend, closure, programs, library_feed,
 			"-DUWVM_ROS_BACKEND=" .. (backend == "ros1" and "1" or "2"),
 			"-DROSWASM_BACKEND=" .. (backend == "ros1" and "1" or "2"),
 			"-I" .. path.join(root, "include"),
+			"-I" .. path.join(root, "include/platform"),
 			"-I" .. path.join(root, "include/platform", backend, "c/roswasm/detail"),
 			"-O2",
 			"-c",
@@ -254,8 +280,12 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	-- omitting it makes all ordinary C#/F#/VB application mains fail to compile.
 	table.insert(sdk_sources, path.join(root, "include/platform/ros/dotnet/NativeCommand.cs"))
 	table.join2(sdk_sources, os.files(path.join(root, "src/language/dotnet/**.cs")))
+	if managed_sources then
+		table.join2(sdk_sources, exact_sources("csharp", ".cs"))
+	else
 	table.join2(sdk_sources, os.files(path.join(platform_root, "csharp/Uwvm/**.cs")))
-	table.join2(sdk_sources, os.files(path.join(platform_root, "csharp", backend, "**.cs")))
+		table.join2(sdk_sources, os.files(path.join(platform_root, "csharp", backend, "**.cs")))
+	end
 	table.sort(sdk_sources)
 	local sdk_xml = {
 		'<Project Sdk="Microsoft.NET.Sdk">',
@@ -308,13 +338,16 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	end
 	local application_sources = {}
 	if language == "fsharp" or language == "vbnet" then
-		table.join2(
-			application_sources,
-			os.files(path.join(platform_root, language, backend, "**.*"))
-		)
+		table.join2(application_sources, managed_sources
+			and exact_sources(language, language == "fsharp" and ".fs" or ".vb")
+			or table.join(os.files(path.join(platform_root, language, "Uwvm/**" .. (language == "fsharp" and ".fs" or ".vb"))),
+				os.files(path.join(platform_root, language, backend, "**" .. (language == "fsharp" and ".fs" or ".vb")))))
 	end
 	for _, source in ipairs(target:sourcefiles()) do
 		table.insert(application_sources, path.absolute(source))
+	end
+	for _, name in ipairs(extra_native) do
+		table.insert(application, '    <NativeFileReference Include="' .. _xml(objects[name]) .. '" />')
 	end
 	for _, source in ipairs(application_sources) do
 		table.insert(application, '    <Compile Include="' .. _xml(source) .. '" />')

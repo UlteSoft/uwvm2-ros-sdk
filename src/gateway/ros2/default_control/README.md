@@ -106,8 +106,9 @@ returns1000. Root's trusted bounds closure copies that into the actual common
 storage model; it is never a Guest/capability boolean or Native attestation.
 The old two-field bounds model remains zero/coupled. Genuine default
 ParametersQoS and ParameterEventsQoS preserve depth1000. Canonical transaction
-history stays1..256 and >=max-inflight, with its complete byte/observer budgets;
-it is not Native DDS depth. Actual DDS queue/deserialization memory has its own
+history grows on admission; omitted history and operation quotas are unlimited.
+An explicit history limit is independent of max-inflight and Native DDS depth.
+A lifetime history limit does not replenish, so exhaustion is a refusal. Actual DDS queue/deserialization memory has its own
 real owner/cgroup budget. No default QoS is quietly changed to256.
 
 `create_service(Profile,node,optional-old-registry,cap,binding,incarnation,
@@ -116,11 +117,14 @@ its first Profile argument. The old Registry can be borrowed for other compiled
 families but is not required for a complete independently proved control root.
 An unrelated String/Empty/Add identity set is not a prerequisite for this path.
 The factory validates the actual Service TypeSupport and complete root proof,
-allocates all canonical history and genuine private native objects before
-`rcl_client_init`/`rcl_service_init`, then queries actual SAME-object name/QoS/
+allocates its endpoint owner before `rcl_client_init`/`rcl_service_init`, then
+queries actual SAME-object name/QoS/
 client GID and commits outputs only after all checks succeed. Partial/throw
 paths keep outputs unchanged and perform one local real fini, preserving the
 original primary and independent report. It never creates a probe client.
+Request/response objects and history records are allocated only when needed,
+before the corresponding native send/take. Allocation failure returns12;
+unrepresentable extents or explicit exhausted storage return90.
 
 The dynamic RCL record methods retain signed actual request sequence, actual
 writer GUID (zero is legal), source/received timestamps and one full typed value
@@ -137,13 +141,18 @@ registry signatures after the Profile argument. They preserve genuine complete
 actual QoS/GID, original Native generated types, full source/incarnation/session
 association, and SAME-object inspect/publish/take/retire. Publisher decodes a
 private original value before its single actual publication. Subscription owns
-one preallocated canonical scratch before native creation and passes one full
+one scratch sized to the complete selected codec representation (never the
+unlimited-quota sentinel) before native creation and passes one full
 same-callback metadata/body record to the actual nonreusing queue. Retained body
 vectors are separately finite capacity-charged owned copies; middleware can
 still allocate on Native take. Missing metadata95 does not fabricate facts,
 borrow a nonce or consume a queued record. Tombstoning ingress precedes native
-subscription release. Existing queue/registry/transport deadline and delivery-
-failure ledgers remain Root's actual implementations.
+subscription release. Queue exhaustion has only reject or synchronous wait. A waiting callback releases
+its serialization lock, retains the same encoded body/metadata and wakes on
+actual consumption, retirement or connection cancellation. It never drops old
+records or retakes/re-encodes a message. Rate/byte quotas are charged once.
+Existing queue/registry/transport deadline and delivery-failure ledgers remain
+the shared gateway implementations.
 
 ## Explicit composition and source closure
 
@@ -182,9 +191,24 @@ depth1000 independent from finite canonical history. No graph count is called
 readiness/identity; the Native topic test uses visibility only to schedule its
 single actual send and still requires actual delivery. Underlying native source
 serialization must retain counted bytes; it is not normalized to make a PASS.
-No test was run and no Native/Host/Guest or complete unbounded API credit is
-claimed. Foreign middleware is not preempted by a post-call time check; actual
-finite process/group/cgroup ownership is independently mandatory.
+The original complete services contract is not certified on the tested Jazzy
+FastDDS provider: its response-take API does not populate the writer GUID, and
+its serializer cannot represent embedded NUL bytes in the counted type-source
+view. These limitations are not repaired by copying an identity or trimming a
+source. The gateway returns95 for unsupported native representation before
+sending, using the actual backend serializer with a private owned buffer; this
+avoids entering the native publisher/history pool with an unrepresentable value.
+A completed response whose native identity is unavailable remains private and
+produces a95 control record. Ordinary service.call is separate.
+
+Real native tests under the VM .tmp/implementation-20261103 directory cover
+independent identity proof, default-unlimited KEEP_ALL topics and service
+storage, zero quotas, safe representation refusal with zero sends, subsequent
+valid use of the same endpoint, and cleanup. The original failing contract and
+native crash reproduction remain evidence of the provider boundary; they are
+not relabeled as complete support. Foreign middleware is not preempted by a
+post-call time check; actual process/group/cgroup ownership is independently
+mandatory.
 
 ## Exact explicit Root loader input
 
@@ -194,22 +218,23 @@ The separately owned Root integration selects the opt-in option
 the exact generated `default_control_gateway_identity_input.hpp`; that input's
 `uwvm_default_control_gateway_input::export_packet_sha256` must equal the retained
 actual independent exporter packet SHA. A runtime file contains exactly these
-three whitespace-separated key/value rows, using independently selected finite
-storage values and the actual64-hex packet SHA:
+a required export-packet digest and optional independent storage limits, using
+the actual64-hex packet SHA. Omitted limits mean unlimited:
 
 ```text
-maximum-entries EXPLICIT_POSITIVE_STORAGE_ENTRIES
-history-per-endpoint EXPLICIT_POSITIVE_CANONICAL_HISTORY
+maximum-entries OPTIONAL_UINT64_OR_UNLIMITED
+history-per-endpoint OPTIONAL_UINT64_OR_UNLIMITED
 export-packet-sha256 ACTUAL_EXPORT_PACKET_SHA256
 ```
 
 The symbolic rows above are explanatory and are not a runnable profile. To write
-a concrete `profile.template.txt` beside the frozen identity header, supply both
-`--maximum-entries` (1..65536) and `--history-per-endpoint` (1..256) explicitly to
-`freeze_identities.py`. Giving only one refuses before output creation; giving
-neither creates no profile. The actual retained packet digest is copied exactly
-into the third row. This tool never writes aliases, policy grants or native
-identity guesses. These finite counts do not increase Native DDS quotas.
+a concrete `profile.template.txt` beside the frozen identity header, use
+`freeze_identities.py` with the actual separately exported packet and its digest.
+`--maximum-entries` and `--history-per-endpoint` are independently optional;
+explicit values are canonical uint64 decimals (including zero) or `unlimited`.
+The profile always retains the exact export-packet digest. It never writes
+aliases, policy grants or native identity guesses. Unlimited does not preallocate
+storage, and these quotas do not increase Native DDS authority.
 
 Root prepares this Profile only after explicit selection and before Node
 creation. Its captured proof must outlive all endpoint fini calls. The old owned

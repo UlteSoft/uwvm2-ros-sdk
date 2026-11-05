@@ -1,7 +1,7 @@
 /** @file algorithm.c
  * @brief Export genuine calculation and an explicit ungranted-module check.
- * @details Default WASI basic standard-stream rights remain; no additional
- * resource or ROS capability is granted to algorithm. No pointer escapes.
+ * @details Base WASI and ROS namespaces link the denial probe, with no
+ * operation or resource grants for algorithm. No pointer escapes.
  */
 #include <dobot/c/module_demo.h>
 #include <ros2/c/roswasm/ros2.h>

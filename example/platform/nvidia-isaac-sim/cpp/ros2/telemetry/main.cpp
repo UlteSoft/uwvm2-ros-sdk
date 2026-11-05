@@ -52,12 +52,12 @@ int main()
                                              " ns=",
                                              v.header.stamp.nanosec,
                                              " frame=",
-                                             std::string_view{v.header.frame_id.data, v.header.frame_id.size},
+                                             std::string_view{reinterpret_cast<char const*>(v.header.frame_id.data), v.header.frame_id.size},
                                              "\n");
                 primary = humanoid_io::output(h.data(), h.size());
                 for(std::size_t i{}; !primary && i < v.name.size; ++i)
                 {
-                    auto t = fast_io::concat_std("name=", std::string_view{v.name.data[i].data, v.name.data[i].size}, "\n");
+                    auto t = fast_io::concat_std("name=", std::string_view{reinterpret_cast<char const*>(v.name.data[i].data), v.name.data[i].size}, "\n");
                     primary = humanoid_io::output(t.data(), t.size());
                 }
                 auto values = [&](auto const& a)

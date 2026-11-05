@@ -45,6 +45,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -61,4 +62,5 @@ target("kuka_ros2_feedback_codec")
     set_values("ros.sdk.vendor_binding", "share/platform/kuka/bindings/moonbit/kuka-ros2-complete.json")
     set_ros_scenario("feedback_codec")
     add_files("main.mbt")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

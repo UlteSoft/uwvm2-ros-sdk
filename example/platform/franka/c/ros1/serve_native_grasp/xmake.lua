@@ -43,6 +43,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Keep native deployment independent of compiler installation and cache state.
 set_policy("run.autobuild", false)
@@ -61,5 +62,6 @@ target("main")
     -- Select the corresponding entry in the manually supplied deployment JSON.
     set_ros_scenario("serve_native_grasp")
     add_files("main.c")
-    set_targetdir("build")
+    set_targetdir("build/artifacts")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

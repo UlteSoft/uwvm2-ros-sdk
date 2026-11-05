@@ -67,8 +67,9 @@ foreign libc {
     // @param capacity Complete available response byte extent.
     // @param length Exclusive sentinel-initialized full-width original length slot.
     // @return Original unsigned transport status and unchanged original length facts.
-    @(link_name="nl_call")
-    nl_call :: proc "c"(
+    @(link_name="nl_request")
+    nl_request :: proc "c"(
+        operation: u32,
         handle: u64,
         input: rawptr,
         size: u32,
@@ -118,6 +119,7 @@ foreign libc {
         rpc_present: u32,
         length_value: u64,
         present: u32,
+        polls: u32,
         wire: rawptr,
         size: u32
     ) -> u32 ---
@@ -205,6 +207,8 @@ System_State :: struct {
 // @brief Complete owned records and independent operation, transport and close facts.
 // @details Every field is an ordinary owned value; construction grants no capability.
 Observation :: struct {
+    // @brief Actual event polls, including idle responses.
+    polls: u32,
     // @brief First original operation, canonical-codec or controller failure.
     primary: u32,
     // @brief Independent original close status for the once-retired acquired owner.
@@ -474,6 +478,7 @@ observe :: proc "contextless"(operation: u32, alias, signal: []u8, attempts: u32
         if result.primary == 0 {
             for index in 0..<attempts {
                 result.length = max(u64)
+                result.polls += 1
                 result.rpc = nl_poll(handle, raw_data(result.wire[:]), u32(len(result.wire)), &result.length)
                 result.rpc_present = true
                 result.primary = result.rpc
@@ -487,7 +492,7 @@ observe :: proc "contextless"(operation: u32, alias, signal: []u8, attempts: u32
             }
         }
     } else {
-        result.rpc = nl_call(handle, raw_data(request[:]), request_size, raw_data(result.wire[:]), u32(len(result.wire)), &result.length)
+        result.rpc = nl_request(1, handle, raw_data(request[:]), request_size, raw_data(result.wire[:]), u32(len(result.wire)), &result.length)
         result.rpc_present = true
         result.primary = result.rpc
     }
@@ -527,6 +532,7 @@ report :: proc "contextless"(value: ^Observation) -> u32 {
         u32(u8(value.rpc_present)),
         value.length,
         u32(u8(value.response_present)),
+        value.polls,
         raw_data(value.wire[:]),
         value.wire_size
     )

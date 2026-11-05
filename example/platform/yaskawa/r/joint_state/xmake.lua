@@ -41,12 +41,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk = root
 set_policy("run.autobuild", false)
 
 target("yaskawa-r-joint_state")
     set_language("r")
+    set_wasm_exceptions("eh")
     set_ros_platform("yaskawa")
     set_ros2_version("jazzy")
     set_plat("wasm-wasip1")
@@ -55,4 +57,5 @@ target("yaskawa-r-joint_state")
     -- @brief Select the immutable complete interface catalog, not robot firmware.
     set_ros_config({catalog = "complete", transport = "native-ros"})
     add_files("main.R")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

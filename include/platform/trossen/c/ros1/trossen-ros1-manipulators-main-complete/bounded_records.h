@@ -9,6 +9,13 @@
 #include <stddef.h>
 #include <float.h>
 #include <limits.h>
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #ifndef UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_ROS_BOUNDED_CODEC_HELPERS
 # define UWVM_BOUNDED_INVALID 22u
@@ -219,6 +226,7 @@ static inline int roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_valid(roswasmc_
 /** @brief Return exact active-prefix wire size; the full value must already be valid. */
 static inline size_t roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_wire_size(roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy const* value)
 {
+    (void)value;
     size_t n = 0;
     n += 1;
     n += 1;
@@ -239,6 +247,7 @@ static inline size_t roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_wire_size(ro
 static inline void
     roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_write_fields(roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy const* value, unsigned char* p, size_t* offset)
 {
+    (void)value; (void)p; (void)offset;
     uwvm_bounded_put(p + *offset, (uint64_t)value->ee_x_cmd, 1);
     *offset += 1;
     uwvm_bounded_put(p + *offset, (uint64_t)value->ee_y_cmd, 1);
@@ -271,6 +280,7 @@ static inline int roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_read_fields(uns
                                                                              size_t* offset,
                                                                              roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy* value)
 {
+    (void)p; (void)n; (void)offset;
     if(*offset > n || n - *offset < 1)
         return 0;
     {
@@ -382,7 +392,7 @@ static inline uint32_t roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_encode(ros
 static inline uint32_t
     roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy_decode(void const* input, size_t length, roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy* value)
 {
-    roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy next = {0};
+    roswasmc_bounded_1_interbotix_uxarm_joy_ArmJoy next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t offset = 0;
     if(!value || (length && !input) || length < 12u || length > 12u || uwvm_bounded_overlap(value, sizeof *value, input, length))
         return UWVM_BOUNDED_INVALID;

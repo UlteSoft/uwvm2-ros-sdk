@@ -40,6 +40,7 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
@@ -56,4 +57,5 @@ target("kinova-c_ffi_bridge-ros2_humble-observe")
     add_files("main.c")
     add_files(path.join(sdk, "src/platform/kinova/c_ffi_bridge/ros2/humble/records.c"))
 
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

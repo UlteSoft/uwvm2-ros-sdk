@@ -5,36 +5,53 @@
 ' supplies an existing alias and its matching native type binding. A source-backed compiler or VM is
 ' required; no grant, replay or controller admission is implicit.
 Imports System
-Imports Uwvm.Ros
+Imports System.Threading
+Imports Uwvm.RosWasm
 Imports Uwvm.Fanuc.Ros2
 Namespace Fanuc.Examples
-''' <summary>@brief Observe the whole fanuc_msgs/msg/ConnectionStatus record using genuine VB.NET full
-''' AOT.</summary>
-''' <remarks>@details Genuine VB.NET full AOT retains every native field and independent cleanup
-''' status.</remarks>
 Public Module MainProgram
-    ''' <summary>@brief Decode one whole sample after checked cleanup.</summary>
-    ''' <param name="args">Exactly one explicit policy alias.</param>
-    ''' <returns>First operation or independent cleanup status.</returns>
+    ''' <summary>Observe in the actual VB.NET Wasm guest and retain independent cleanup status.</summary>
     Public Function Main(args As String()) As Integer
         If args.Length <> 1 Then Return 22
-        Dim facts = Client.WaitSample(args(0), 1, 250)
+        Dim primary As UInteger = 0UI, cleanup As UInteger = 0UI
         Dim wire = Array.Empty(Of Byte)()
-        If facts.Primary = 0UI Then
-            Try
-                wire = Ros2Fanuc_msgsMsgConnectionStatus.Decode(facts.Bytes).Encode()
-            Catch failure As ArgumentException
-                facts.Primary = 22UI
-            End Try
-        End If
-        Console.WriteLine("{""primary"":" &
-            facts.Primary.ToString() &
-            ",""cleanup"":" &
-            facts.Cleanup.ToString() &
-            ",""wire_hex"":""" &
-            Convert.ToHexString(wire).ToLowerInvariant() &
-            """}")
-        Return CInt(Math.Min(125UI, If(facts.Primary <> 0UI, facts.Primary, facts.Cleanup)))
+        Dim owner As Capability = Nothing
+        Dim session = New Session(New NativeTransport(), 1)
+        Try
+            session.CheckAbi()
+            owner = session.Open(args(0))
+            primary = owner.Invoke("topic_subscribe").Error
+            If primary = 0UI Then
+                For attempt As Integer = 0 To 249
+                    Dim result = owner.Invoke("event_poll", capacity:=1)
+                    primary = result.Error
+                    If primary = 0UI Then
+                        wire = Ros2Fanuc_msgsMsgConnectionStatus.Encode(Ros2Fanuc_msgsMsgConnectionStatus.Decode(result.Data))
+                    End If
+                    If primary <> 11UI OrElse attempt = 249 Then Exit For
+                    Thread.Sleep(20)
+                Next
+            End If
+        Catch failure As RosException
+            primary = failure.Result.Error
+        Catch failure As ArgumentException
+            primary = 22UI
+        Catch failure As FormatException
+            primary = 22UI
+        Finally
+            If owner IsNot Nothing Then
+                Try
+                    cleanup = owner.CloseChecked().Error
+                Catch failure As RosException
+                    cleanup = failure.Result.Error
+                Catch failure As Exception
+                    cleanup = 5UI
+                End Try
+            End If
+        End Try
+        Console.WriteLine("{""primary"":" & primary.ToString() & ",""cleanup"":" &
+            cleanup.ToString() & ",""wire_hex"":""" & Convert.ToHexString(wire).ToLowerInvariant() & """}")
+        Return CInt(Math.Min(125UI, If(primary <> 0UI, primary, cleanup)))
     End Function
 End Module
 End Namespace

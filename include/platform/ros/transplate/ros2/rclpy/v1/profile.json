@@ -24,9 +24,9 @@
       "sha256": "e25a651450323243f7a06d167b2254d57eee97c57b37c58f136ae8730cb1ca3d"
     },
     {
-      "bytes": 3260,
+      "bytes": 3261,
       "path": "src/language/python/transplate/command.c",
-      "sha256": "41c4b6b1912fbe2387fc7c7e13dff52b14fa7c1d85b1622c7e1d4dfe82f13a11"
+      "sha256": "d0faf867197872d280d8fff3b8356f692b8a4913b171f302d76860625a5fe259"
     },
     {
       "bytes": 95726,

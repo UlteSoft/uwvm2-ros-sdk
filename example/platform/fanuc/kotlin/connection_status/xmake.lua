@@ -41,12 +41,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 local sdk = root
 set_policy("run.autobuild", false)
 
 target("fanuc-kotlin-connection_status")
     set_language("kotlin")
+    set_values("ros.sdk.main_class", "fanuc.examples.MainKt")
     set_ros_platform("fanuc")
     set_ros2_version("jazzy")
     set_plat("wasm-wasip1")
@@ -55,4 +57,5 @@ target("fanuc-kotlin-connection_status")
     -- @brief Select the immutable complete interface catalog, not robot firmware.
     set_ros_config({catalog = "complete", transport = "native-ros"})
     add_files("Main.kt")
+    uwvm_wasi_component({api_version=1,sdk_root=root,manifest="component.json"})
 target_end()

@@ -17,5 +17,20 @@
   "support_source_roots": [
     "src/platform"
   ],
-  "retained_native_operation_flows": "src/platform/universal_robots/flows"
+  "retained_native_operation_flows": "src/platform/universal_robots/flows",
+  "native_action": {
+    "format": "uwvm-native-action-v1",
+    "language": "nim",
+    "nim": {
+      "import_dirs": [
+        "include/platform/ros/nim/src"
+      ]
+    },
+    "c_sources": [
+      {
+        "source": "src/language/native/nim_toplevel.c",
+        "object": "nim-toplevel.o"
+      }
+    ]
+  }
 }

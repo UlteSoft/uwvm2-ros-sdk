@@ -57,7 +57,7 @@ int main()
         for(std::size_t i{}; i < value.name.size; ++i)
         {
             auto text = fast_io::concat_std("joint=",
-                                            std::string_view{value.name.data[i].data, value.name.data[i].size},
+                                            std::string_view{reinterpret_cast<char const*>(value.name.data[i].data), value.name.data[i].size},
                                             " q=",
                                             value.position.data[i],
                                             " v=",

@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_7444263A86449BB93988479B035F69CE43ABDFE9A2727A69865B9EBC6D8C285E
 #define UWVM_ROS_BOUNDED_INTERFACES_7444263A86449BB93988479B035F69CE43ABDFE9A2727A69865B9EBC6D8C285E
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include "bounded_records.h"
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -52,7 +59,7 @@ static inline roswasmc_result
     unsigned char input[1192], output[132];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEventResponse next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEventResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEventRequest_encode(request, input, 1192, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -75,7 +82,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEve
 {
     unsigned char output[1200];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEventRequest next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourEventRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -172,7 +179,7 @@ static inline roswasmc_result
                                                                  roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskFeedback next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -202,7 +209,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTas
                                                                                          roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskResult next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -242,7 +249,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTas
                                                                                        roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskGoal* goal)
 {
     unsigned char output[1200];
-    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskGoal next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_BehaviourTaskGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -360,7 +367,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_Presentation
                                                                                           roswasmc_bounded_1_pal_behaviour_msgs_PresentationFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_behaviour_msgs_PresentationFeedback next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_PresentationFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -390,7 +397,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_Presentation
                                                                                         roswasmc_bounded_1_pal_behaviour_msgs_PresentationResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_behaviour_msgs_PresentationResult next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_PresentationResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -430,7 +437,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_behaviour_msgs_Presentation
                                                                                       roswasmc_bounded_1_pal_behaviour_msgs_PresentationGoal* goal)
 {
     unsigned char output[140];
-    roswasmc_bounded_1_pal_behaviour_msgs_PresentationGoal next = {0};
+    roswasmc_bounded_1_pal_behaviour_msgs_PresentationGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -547,7 +554,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_Disable_feedbac
                                                                                   roswasmc_bounded_1_pal_common_msgs_DisableFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_common_msgs_DisableFeedback next = {0};
+    roswasmc_bounded_1_pal_common_msgs_DisableFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -577,7 +584,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_Disable_result(
                                                                                 roswasmc_bounded_1_pal_common_msgs_DisableResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_common_msgs_DisableResult next = {0};
+    roswasmc_bounded_1_pal_common_msgs_DisableResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -616,7 +623,7 @@ static inline roswasmc_result
     roswasmc_bounded_1_pal_common_msgs_Disable_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_pal_common_msgs_DisableGoal* goal)
 {
     unsigned char output[12];
-    roswasmc_bounded_1_pal_common_msgs_DisableGoal next = {0};
+    roswasmc_bounded_1_pal_common_msgs_DisableGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -731,7 +738,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_Empty_feedback(
                                                                                 roswasmc_bounded_1_pal_common_msgs_EmptyFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_common_msgs_EmptyFeedback next = {0};
+    roswasmc_bounded_1_pal_common_msgs_EmptyFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -761,7 +768,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_Empty_result(ro
                                                                               roswasmc_bounded_1_pal_common_msgs_EmptyResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_common_msgs_EmptyResult next = {0};
+    roswasmc_bounded_1_pal_common_msgs_EmptyResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -800,7 +807,7 @@ static inline roswasmc_result
     roswasmc_bounded_1_pal_common_msgs_Empty_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_pal_common_msgs_EmptyGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_pal_common_msgs_EmptyGoal next = {0};
+    roswasmc_bounded_1_pal_common_msgs_EmptyGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -887,7 +894,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_GetString_call(
     unsigned char input[1], output[133];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_common_msgs_GetStringResponse next = {0};
+    roswasmc_bounded_1_pal_common_msgs_GetStringResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_common_msgs_GetStringRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -910,7 +917,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_GetString_poll(
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_common_msgs_GetStringRequest next = {0};
+    roswasmc_bounded_1_pal_common_msgs_GetStringRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -976,7 +983,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_SetString_call(
     unsigned char input[132], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_common_msgs_SetStringResponse next = {0};
+    roswasmc_bounded_1_pal_common_msgs_SetStringResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_common_msgs_SetStringRequest_encode(request, input, 132, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -999,7 +1006,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_common_msgs_SetString_poll(
 {
     unsigned char output[140];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_common_msgs_SetStringRequest next = {0};
+    roswasmc_bounded_1_pal_common_msgs_SetStringRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1065,7 +1072,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_CurrentLimit_c
     unsigned char input[140], output[132];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_control_msgs_CurrentLimitResponse next = {0};
+    roswasmc_bounded_1_pal_control_msgs_CurrentLimitResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_control_msgs_CurrentLimitRequest_encode(request, input, 140, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1088,7 +1095,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_CurrentLimit_p
 {
     unsigned char output[148];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_control_msgs_CurrentLimitRequest next = {0};
+    roswasmc_bounded_1_pal_control_msgs_CurrentLimitRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1183,7 +1190,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_MotionManager_
                                                                                          roswasmc_bounded_1_pal_control_msgs_MotionManagerFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_control_msgs_MotionManagerFeedback next = {0};
+    roswasmc_bounded_1_pal_control_msgs_MotionManagerFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1213,7 +1220,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_MotionManager_
                                                                                        roswasmc_bounded_1_pal_control_msgs_MotionManagerResult* result)
 {
     unsigned char input[8], output[141];
-    roswasmc_bounded_1_pal_control_msgs_MotionManagerResult next = {0};
+    roswasmc_bounded_1_pal_control_msgs_MotionManagerResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1253,7 +1260,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_MotionManager_
                                                                                      roswasmc_bounded_1_pal_control_msgs_MotionManagerGoal* goal)
 {
     unsigned char output[148];
-    roswasmc_bounded_1_pal_control_msgs_MotionManagerGoal next = {0};
+    roswasmc_bounded_1_pal_control_msgs_MotionManagerGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1373,7 +1380,7 @@ static inline roswasmc_result
                                                                      roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryFeedback next = {0};
+    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1404,7 +1411,7 @@ static inline roswasmc_result
                                                                    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryResult* result)
 {
     unsigned char input[8], output[141];
-    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryResult next = {0};
+    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1444,7 +1451,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_control_msgs_RigidBodyTraje
                                                                                            roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryGoal* goal)
 {
     unsigned char output[797];
-    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryGoal next = {0};
+    roswasmc_bounded_1_pal_control_msgs_RigidBodyTrajectoryGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1534,7 +1541,7 @@ static inline roswasmc_result
     unsigned char input[4521], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_AddTexturedObjectResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_AddTexturedObjectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_AddTexturedObjectRequest_encode(request, input, 4521, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1558,7 +1565,7 @@ static inline roswasmc_result
 {
     unsigned char output[4529];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_AddTexturedObjectRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_AddTexturedObjectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1626,7 +1633,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_ChangeObject
     unsigned char input[133], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_ChangeObjectRecognizerModelResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_ChangeObjectRecognizerModelResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_ChangeObjectRecognizerModelRequest_encode(request, input, 133, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1650,7 +1657,7 @@ static inline roswasmc_result
 {
     unsigned char output[141];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_ChangeObjectRecognizerModelRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_ChangeObjectRecognizerModelRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1748,7 +1755,7 @@ static inline roswasmc_result
                                                                     roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsFeedback next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1779,7 +1786,7 @@ static inline roswasmc_result
                                                                   roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsResult* result)
 {
     unsigned char input[8], output[5147];
-    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsResult next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1819,7 +1826,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_RecognizeObj
                                                                                           roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsGoal* goal)
 {
     unsigned char output[4384];
-    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsGoal next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_RecognizeObjectsGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1908,7 +1915,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_Recognizer_c
     unsigned char input[5], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_RecognizerResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_RecognizerResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_RecognizerRequest_encode(request, input, 5, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -1931,7 +1938,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_Recognizer_p
 {
     unsigned char output[13];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_RecognizerRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_RecognizerRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1998,7 +2005,7 @@ static inline roswasmc_result
     unsigned char input[148], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_SelectTexturedObjectResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_SelectTexturedObjectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_SelectTexturedObjectRequest_encode(request, input, 148, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2022,7 +2029,7 @@ static inline roswasmc_result
 {
     unsigned char output[156];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_SelectTexturedObjectRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_SelectTexturedObjectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2089,7 +2096,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_SetDatabase_
     unsigned char input[133], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_SetDatabaseResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_SetDatabaseResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_SetDatabaseRequest_encode(request, input, 133, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2112,7 +2119,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_SetDatabase_
 {
     unsigned char output[141];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_SetDatabaseRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_SetDatabaseRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2180,7 +2187,7 @@ static inline roswasmc_result
     unsigned char input[132], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_StartEnrollmentResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_StartEnrollmentResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_StartEnrollmentRequest_encode(request, input, 132, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2203,7 +2210,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_StartEnrollm
 {
     unsigned char output[140];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_StartEnrollmentRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_StartEnrollmentRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2271,7 +2278,7 @@ static inline roswasmc_result
     unsigned char input[1], output[137];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_StopEnrollmentResponse next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_StopEnrollmentResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_detection_msgs_StopEnrollmentRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2294,7 +2301,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_detection_msgs_StopEnrollme
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_detection_msgs_StopEnrollmentRequest next = {0};
+    roswasmc_bounded_1_pal_detection_msgs_StopEnrollmentRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2361,7 +2368,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_CancelEffect_ca
     unsigned char input[4], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_CancelEffectResponse next = {0};
+    roswasmc_bounded_1_pal_device_msgs_CancelEffectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_device_msgs_CancelEffectRequest_encode(request, input, 4, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2384,7 +2391,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_CancelEffect_po
 {
     unsigned char output[12];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_CancelEffectRequest next = {0};
+    roswasmc_bounded_1_pal_device_msgs_CancelEffectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2480,7 +2487,7 @@ static inline roswasmc_result
                                                                  roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectFeedback next = {0};
+    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -2510,7 +2517,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffec
                                                                                          roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectResult next = {0};
+    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -2550,7 +2557,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffec
                                                                                        roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectGoal* goal)
 {
     unsigned char output[480];
-    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectGoal next = {0};
+    roswasmc_bounded_1_pal_device_msgs_DoTimedLedEffectGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -2640,7 +2647,7 @@ static inline roswasmc_result
     unsigned char input[8], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_ShutdownAndWakeUpRobotResponse next = {0};
+    roswasmc_bounded_1_pal_device_msgs_ShutdownAndWakeUpRobotResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_device_msgs_ShutdownAndWakeUpRobotRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2664,7 +2671,7 @@ static inline roswasmc_result
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_ShutdownAndWakeUpRobotRequest next = {0};
+    roswasmc_bounded_1_pal_device_msgs_ShutdownAndWakeUpRobotRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2732,7 +2739,7 @@ static inline roswasmc_result
     unsigned char input[61], output[4];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffectResponse next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffectRequest_encode(request, input, 61, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2755,7 +2762,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffec
 {
     unsigned char output[69];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffectRequest next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedBlinkEffectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2823,7 +2830,7 @@ static inline roswasmc_result
     unsigned char input[29], output[4];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedColourEffectResponse next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedColourEffectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_device_msgs_TimedColourEffectRequest_encode(request, input, 29, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2846,7 +2853,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_TimedColourEffe
 {
     unsigned char output[37];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedColourEffectRequest next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedColourEffectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -2913,7 +2920,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_TimedFadeEffect
     unsigned char input[54], output[4];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedFadeEffectResponse next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedFadeEffectResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_device_msgs_TimedFadeEffectRequest_encode(request, input, 54, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -2936,7 +2943,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_device_msgs_TimedFadeEffect
 {
     unsigned char output[62];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_device_msgs_TimedFadeEffectRequest next = {0};
+    roswasmc_bounded_1_pal_device_msgs_TimedFadeEffectRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3032,7 +3039,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_ASRFile_fe
                                                                                        roswasmc_bounded_1_pal_interaction_msgs_ASRFileFeedback* feedback)
 {
     unsigned char input[8], output[1217];
-    roswasmc_bounded_1_pal_interaction_msgs_ASRFileFeedback next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_ASRFileFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -3062,7 +3069,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_ASRFile_re
                                                                                      roswasmc_bounded_1_pal_interaction_msgs_ASRFileResult* result)
 {
     unsigned char input[8], output[5113];
-    roswasmc_bounded_1_pal_interaction_msgs_ASRFileResult next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_ASRFileResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -3102,7 +3109,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_ASRFile_po
                                                                                    roswasmc_bounded_1_pal_interaction_msgs_ASRFileGoal* goal)
 {
     unsigned char output[404];
-    roswasmc_bounded_1_pal_interaction_msgs_ASRFileGoal next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_ASRFileGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -3190,7 +3197,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_ASRService
     unsigned char input[526], output[802];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_ASRServiceResponse next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_ASRServiceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_interaction_msgs_ASRServiceRequest_encode(request, input, 526, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3213,7 +3220,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_ASRService
 {
     unsigned char output[534];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_ASRServiceRequest next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_ASRServiceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3309,7 +3316,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_AudioPlay_
                                                                                          roswasmc_bounded_1_pal_interaction_msgs_AudioPlayFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayFeedback next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -3339,7 +3346,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_AudioPlay_
                                                                                        roswasmc_bounded_1_pal_interaction_msgs_AudioPlayResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayResult next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -3379,7 +3386,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_AudioPlay_
                                                                                      roswasmc_bounded_1_pal_interaction_msgs_AudioPlayGoal* goal)
 {
     unsigned char output[141];
-    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayGoal next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_AudioPlayGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -3469,7 +3476,7 @@ static inline roswasmc_result
     unsigned char input[2248], output[2249];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_GetSpeechDurationResponse next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_GetSpeechDurationResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_interaction_msgs_GetSpeechDurationRequest_encode(request, input, 2248, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3493,7 +3500,7 @@ static inline roswasmc_result
 {
     unsigned char output[2256];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_GetSpeechDurationRequest next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_GetSpeechDurationRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3589,7 +3596,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_Sound_feed
                                                                                      roswasmc_bounded_1_pal_interaction_msgs_SoundFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_interaction_msgs_SoundFeedback next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_SoundFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -3619,7 +3626,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_Sound_resu
                                                                                    roswasmc_bounded_1_pal_interaction_msgs_SoundResult* result)
 {
     unsigned char input[8], output[141];
-    roswasmc_bounded_1_pal_interaction_msgs_SoundResult next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_SoundResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -3658,7 +3665,7 @@ static inline roswasmc_result
     roswasmc_bounded_1_pal_interaction_msgs_Sound_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_pal_interaction_msgs_SoundGoal* goal)
 {
     unsigned char output[280];
-    roswasmc_bounded_1_pal_interaction_msgs_SoundGoal next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_SoundGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -3746,7 +3753,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_SoundLocal
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_SoundLocalisationServiceResponse next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_SoundLocalisationServiceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_interaction_msgs_SoundLocalisationServiceRequest_encode(request, input, 1, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -3770,7 +3777,7 @@ static inline roswasmc_result
 {
     unsigned char output[9];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_SoundLocalisationServiceRequest next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_SoundLocalisationServiceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -3865,7 +3872,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_Tts_feedba
                                                                                    roswasmc_bounded_1_pal_interaction_msgs_TtsFeedback* feedback)
 {
     unsigned char input[8], output[4778];
-    roswasmc_bounded_1_pal_interaction_msgs_TtsFeedback next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_TtsFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -3895,7 +3902,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_interaction_msgs_Tts_result
                                                                                  roswasmc_bounded_1_pal_interaction_msgs_TtsResult* result)
 {
     unsigned char input[8], output[273];
-    roswasmc_bounded_1_pal_interaction_msgs_TtsResult next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_TtsResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -3934,7 +3941,7 @@ static inline roswasmc_result
     roswasmc_bounded_1_pal_interaction_msgs_Tts_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_pal_interaction_msgs_TtsGoal* goal)
 {
     unsigned char output[2396];
-    roswasmc_bounded_1_pal_interaction_msgs_TtsGoal next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_TtsGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -4022,7 +4029,7 @@ static inline roswasmc_result
     unsigned char input[529], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_recognizerServiceResponse next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_recognizerServiceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_interaction_msgs_recognizerServiceRequest_encode(request, input, 529, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4046,7 +4053,7 @@ static inline roswasmc_result
 {
     unsigned char output[537];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_interaction_msgs_recognizerServiceRequest next = {0};
+    roswasmc_bounded_1_pal_interaction_msgs_recognizerServiceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4114,7 +4121,7 @@ static inline roswasmc_result
     unsigned char input[1], output[624];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_motion_model_msgs_GetMotionMapResponse next = {0};
+    roswasmc_bounded_1_pal_motion_model_msgs_GetMotionMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_motion_model_msgs_GetMotionMapRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4137,7 +4144,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_motion_model_msgs_GetMotion
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_motion_model_msgs_GetMotionMapRequest next = {0};
+    roswasmc_bounded_1_pal_motion_model_msgs_GetMotionMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4205,7 +4212,7 @@ static inline roswasmc_result
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_video_recording_msgs_StartRecordingResponse next = {0};
+    roswasmc_bounded_1_pal_video_recording_msgs_StartRecordingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_video_recording_msgs_StartRecordingRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4229,7 +4236,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_video_recording_msgs_StartRecordingRequest next = {0};
+    roswasmc_bounded_1_pal_video_recording_msgs_StartRecordingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4297,7 +4304,7 @@ static inline roswasmc_result
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_video_recording_msgs_StopRecordingResponse next = {0};
+    roswasmc_bounded_1_pal_video_recording_msgs_StopRecordingResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_video_recording_msgs_StopRecordingRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4321,7 +4328,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_video_recording_msgs_StopRecordingRequest next = {0};
+    roswasmc_bounded_1_pal_video_recording_msgs_StopRecordingRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4417,7 +4424,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FaceRecognition
                                                                                           roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionFeedback* feedback)
 {
     unsigned char input[8], output[2193];
-    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionFeedback next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -4447,7 +4454,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FaceRecognition
                                                                                         roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionResult* result)
 {
     unsigned char input[8], output[2194];
-    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionResult next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -4487,7 +4494,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FaceRecognition
                                                                                       roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionGoal* goal)
 {
     unsigned char output[141];
-    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionGoal next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceRecognitionGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -4577,7 +4584,7 @@ static inline roswasmc_result
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStartResponse next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStartResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStartRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4600,7 +4607,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FaceTrackingSta
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStartRequest next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStartRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4668,7 +4675,7 @@ static inline roswasmc_result
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStopResponse next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStopResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStopRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4691,7 +4698,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FaceTrackingSto
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStopRequest next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FaceTrackingStopRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4758,7 +4765,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FollowMeStart_c
     unsigned char input[4], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FollowMeStartResponse next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FollowMeStartResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_vision_msgs_FollowMeStartRequest_encode(request, input, 4, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4781,7 +4788,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FollowMeStart_p
 {
     unsigned char output[12];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FollowMeStartRequest next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FollowMeStartRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4847,7 +4854,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FollowMeStop_ca
     unsigned char input[1], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FollowMeStopResponse next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FollowMeStopResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_vision_msgs_FollowMeStopRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4870,7 +4877,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_FollowMeStop_po
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_FollowMeStopRequest next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_FollowMeStopRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -4936,7 +4943,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_LookToPixel_cal
     unsigned char input[8], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_LookToPixelResponse next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_LookToPixelResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_vision_msgs_LookToPixelRequest_encode(request, input, 8, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -4959,7 +4966,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_vision_msgs_LookToPixel_pol
 {
     unsigned char output[16];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_vision_msgs_LookToPixelRequest next = {0};
+    roswasmc_bounded_1_pal_vision_msgs_LookToPixelRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5056,7 +5063,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_visual_localization_msgs_Vi
     roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceFeedback next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -5087,7 +5094,7 @@ static inline roswasmc_result
                                                                              roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceResult* result)
 {
     unsigned char input[8], output[10];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceResult next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -5128,7 +5135,7 @@ static inline roswasmc_result
                                                                            roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceGoal next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocAddPlaceGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -5248,7 +5255,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_visual_localization_msgs_Vi
     roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeFeedback next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -5279,7 +5286,7 @@ static inline roswasmc_result
                                                                               roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeResult* result)
 {
     unsigned char input[8], output[506];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeResult next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -5320,7 +5327,7 @@ static inline roswasmc_result
                                                                             roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeGoal next = {0};
+    roswasmc_bounded_1_pal_visual_localization_msgs_VisualLocRecognizeGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -5409,7 +5416,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_MoveHipFeet_ca
     unsigned char input[1248], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_MoveHipFeetResponse next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_MoveHipFeetResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_walking_msgs_MoveHipFeetRequest_encode(request, input, 1248, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5432,7 +5439,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_MoveHipFeet_po
 {
     unsigned char output[1256];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_MoveHipFeetRequest next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_MoveHipFeetRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5498,7 +5505,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_Sit_call(roswa
     unsigned char input[9], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_SitResponse next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_SitResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_walking_msgs_SitRequest_encode(request, input, 9, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5520,7 +5527,7 @@ static inline roswasmc_result
 {
     unsigned char output[17];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_SitRequest next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_SitRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5586,7 +5593,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_StepOver_call(
     unsigned char input[32], output[132];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_StepOverResponse next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_StepOverResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_walking_msgs_StepOverRequest_encode(request, input, 32, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5609,7 +5616,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_StepOver_poll(
 {
     unsigned char output[40];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_StepOverRequest next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_StepOverRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5675,7 +5682,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_WalkSteps_call
     unsigned char input[20], output[1];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_WalkStepsResponse next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_WalkStepsResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_walking_msgs_WalkStepsRequest_encode(request, input, 20, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5698,7 +5705,7 @@ static inline roswasmc_result roswasmc_bounded_1_pal_walking_msgs_WalkSteps_poll
 {
     unsigned char output[28];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_walking_msgs_WalkStepsRequest next = {0};
+    roswasmc_bounded_1_pal_walking_msgs_WalkStepsRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -5765,7 +5772,7 @@ static inline roswasmc_result
     unsigned char input[1], output[2548];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_pal_wifi_localization_msgs_GetWifiMapResponse next = {0};
+    roswasmc_bounded_1_pal_wifi_localization_msgs_GetWifiMapResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_pal_wifi_localization_msgs_GetWifiMapRequest_encode(request, input, 0, &n))
         return roswasmc_action_bundle_failure(UWVM_ROS_INVALID);
@@ -5789,7 +5796,7 @@ static inline roswasmc_result
 {
     unsigned char output[8];
     roswasmc_result r;
-    roswasmc_bounded_1_pal_wifi_localization_msgs_GetWifiMapRequest next = {0};
+    roswasmc_bounded_1_pal_wifi_localization_msgs_GetWifiMapRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

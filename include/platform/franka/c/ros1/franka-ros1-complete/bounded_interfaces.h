@@ -7,6 +7,13 @@
  * All outputs commit only after exact framing, matching IDs and component validation. */
 #ifndef UWVM_ROS_BOUNDED_INTERFACES_867B63250B3CA80B459357E5FA28382F68CAE39C0AD92CE6D538014AE919CFE9
 #define UWVM_ROS_BOUNDED_INTERFACES_867B63250B3CA80B459357E5FA28382F68CAE39C0AD92CE6D538014AE919CFE9
+#ifndef UWVM_BOUNDED_ZERO_INITIALIZER
+# if defined(__cplusplus) && __cplusplus >= 201103L
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {}
+# else
+#  define UWVM_BOUNDED_ZERO_INITIALIZER {0}
+# endif
+#endif
 #include <franka/c/ros1/franka-ros1-complete/bounded_records.h>
 #include <roswasm/action_bundle.h>
 #ifndef UWVM_ROS_BOUNDED_CAP_DESTINATION
@@ -89,7 +96,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Grasp_feedback(r
                                                                                roswasmc_bounded_1_franka_gripper_GraspFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_franka_gripper_GraspFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -127,7 +134,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Grasp_result(ros
                                                                              roswasmc_bounded_1_franka_gripper_GraspResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_franka_gripper_GraspResult next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -176,7 +183,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Grasp_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_franka_gripper_GraspGoal* goal)
 {
     unsigned char output[48];
-    roswasmc_bounded_1_franka_gripper_GraspGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_GraspGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -313,7 +320,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Homing_feedback(
                                                                                 roswasmc_bounded_1_franka_gripper_HomingFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_franka_gripper_HomingFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -351,7 +358,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Homing_result(ro
                                                                               roswasmc_bounded_1_franka_gripper_HomingResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_franka_gripper_HomingResult next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -400,7 +407,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Homing_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_franka_gripper_HomingGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_franka_gripper_HomingGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_HomingGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -536,7 +543,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Move_feedback(roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_1_franka_gripper_MoveFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_franka_gripper_MoveFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -574,7 +581,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Move_result(rosw
                                                                             roswasmc_bounded_1_franka_gripper_MoveResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_franka_gripper_MoveResult next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -623,7 +630,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Move_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_franka_gripper_MoveGoal* goal)
 {
     unsigned char output[24];
-    roswasmc_bounded_1_franka_gripper_MoveGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_MoveGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -759,7 +766,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Stop_feedback(roswasmc_action_bundle const* bundle, uint64_t id, roswasmc_bounded_1_franka_gripper_StopFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_franka_gripper_StopFeedback next = {0};
+    roswasmc_bounded_1_franka_gripper_StopFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -797,7 +804,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_gripper_Stop_result(rosw
                                                                             roswasmc_bounded_1_franka_gripper_StopResult* result)
 {
     unsigned char input[8], output[270];
-    roswasmc_bounded_1_franka_gripper_StopResult next = {0};
+    roswasmc_bounded_1_franka_gripper_StopResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -846,7 +853,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_gripper_Stop_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_franka_gripper_StopGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_franka_gripper_StopGoal next = {0};
+    roswasmc_bounded_1_franka_gripper_StopGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -984,7 +991,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_ErrorRecovery_feedb
                                                                                     roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback* feedback)
 {
     unsigned char input[8], output[8];
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryFeedback next = UWVM_BOUNDED_ZERO_INITIALIZER;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
     if(error)
@@ -1022,7 +1029,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_ErrorRecovery_resul
                                                                                   roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult* result)
 {
     unsigned char input[8], output[9];
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryResult next = UWVM_BOUNDED_ZERO_INITIALIZER;
     size_t i;
     roswasmc_result r;
     uint32_t error = roswasmc_action_bundle_check(bundle);
@@ -1071,7 +1078,7 @@ inline static roswasmc_result
     roswasmc_bounded_1_franka_msgs_ErrorRecovery_poll(roswasmc_capability const* cap, uint64_t* id, roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal* goal)
 {
     unsigned char output[8];
-    roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal next = {0};
+    roswasmc_bounded_1_franka_msgs_ErrorRecoveryGoal next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t selected;
     roswasmc_result r;
     if(!id || !goal || !uwvm_bounded_cap_destination(cap, id, sizeof *id) || !uwvm_bounded_cap_destination(cap, goal, sizeof *goal) ||
@@ -1171,7 +1178,7 @@ inline static roswasmc_result
     unsigned char input[48], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest_encode(request, input, 48, &n))
     {
@@ -1198,7 +1205,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetCartesianImpedan
 {
     unsigned char output[56];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetCartesianImpedanceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1273,7 +1280,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetEEFrame_call(ros
     unsigned char input[128], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetEEFrameResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetEEFrameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetEEFrameRequest_encode(request, input, 128, &n))
     {
@@ -1299,7 +1306,7 @@ inline static roswasmc_result
 {
     unsigned char output[136];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetEEFrameRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetEEFrameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1374,7 +1381,7 @@ inline static roswasmc_result
     unsigned char input[208], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest_encode(request, input, 208, &n))
     {
@@ -1402,7 +1409,7 @@ inline static roswasmc_result
 {
     unsigned char output[216];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetForceTorqueCollisionBehaviorRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1478,7 +1485,7 @@ inline static roswasmc_result
     unsigned char input[416], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest_encode(request, input, 416, &n))
     {
@@ -1506,7 +1513,7 @@ inline static roswasmc_result
 {
     unsigned char output[424];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetFullCollisionBehaviorRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1581,7 +1588,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetJointImpedance_c
     unsigned char input[56], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetJointImpedanceResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest_encode(request, input, 56, &n))
     {
@@ -1608,7 +1615,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetJointImpedance_p
 {
     unsigned char output[64];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetJointImpedanceRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1682,7 +1689,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetKFrame_call(rosw
     unsigned char input[128], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetKFrameResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetKFrameResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetKFrameRequest_encode(request, input, 128, &n))
     {
@@ -1708,7 +1715,7 @@ inline static roswasmc_result
 {
     unsigned char output[136];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetKFrameRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetKFrameRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))
@@ -1782,7 +1789,7 @@ inline static roswasmc_result roswasmc_bounded_1_franka_msgs_SetLoad_call(roswas
     unsigned char input[104], output[261];
     size_t n = 0;
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetLoadResponse next = {0};
+    roswasmc_bounded_1_franka_msgs_SetLoadResponse next = UWVM_BOUNDED_ZERO_INITIALIZER;
     if(!response || !uwvm_bounded_cap_destination(cap, response, sizeof *response) ||
        roswasmc_bounded_1_franka_msgs_SetLoadRequest_encode(request, input, 104, &n))
     {
@@ -1808,7 +1815,7 @@ inline static roswasmc_result
 {
     unsigned char output[112];
     roswasmc_result r;
-    roswasmc_bounded_1_franka_msgs_SetLoadRequest next = {0};
+    roswasmc_bounded_1_franka_msgs_SetLoadRequest next = UWVM_BOUNDED_ZERO_INITIALIZER;
     uint64_t id;
     if(!ticket || !request || !uwvm_bounded_cap_destination(cap, ticket, sizeof *ticket) || !uwvm_bounded_cap_destination(cap, request, sizeof *request) ||
        uwvm_bounded_overlap(ticket, sizeof *ticket, request, sizeof *request))

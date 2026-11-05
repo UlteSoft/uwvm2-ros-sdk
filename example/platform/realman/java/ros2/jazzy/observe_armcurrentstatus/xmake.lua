@@ -42,12 +42,14 @@ if installation_error then
     return
 end
 includes(path.join(root, "tools/xmake/ros.lua"))
+includes(path.join(root, "tools/shared/xmake/wasi_component.lua"))
 
 -- Run the existing artifact; compilation is a separate explicit action.
 set_policy("run.autobuild", false)
 
 target("realman-ros2_jazzy-java-observe_armcurrentstatus")
     set_language("java")
+    set_values("ros.sdk.main_class", "Main")
     set_ros_platform("realman")
     set_ros2_version("jazzy")
     set_arch(get_config("arch") or "wasm32")
@@ -60,4 +62,5 @@ target("realman-ros2_jazzy-java-observe_armcurrentstatus")
         transport = "native-ros",
     })
     add_files("Main.java")
+    uwvm_wasi_component({api_version = 1, sdk_root = root, manifest = "component.json"})
 target_end()

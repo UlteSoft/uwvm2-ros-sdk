@@ -1,0 +1,18 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "lua",
+  "backend": "ros2",
+  "modules": [
+    {
+      "name": "roswasm.wire",
+      "file": "include/platform/ros/lua/roswasm/wire.lua",
+      "sha256": "e1c0b9150a97f5f3e0b165cdfb30731e88251e2da31b884962c98d07130909cf"
+    },
+    {
+      "name": "flexiv.lua.ros2.flexiv_controller_core_humble_complete.records",
+      "file": "include/platform/flexiv/lua/ros2/flexiv_controller_core_humble_complete/records.lua",
+      "sha256": "6157b8fb62596a7545ee828a4bcb3f12d84170bae15f9a8398fb1b0dbebc84d8"
+    }
+  ],
+  "default_authority": []
+}

@@ -1,0 +1,109 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "abb-odin-native-contract-129",
+  "ros_namespace": "ros1",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/odin/observation.odin",
+      "sha256": "ed9071632c1d7db4e4fe20f420aa576c0099246cee6ae31976b338c521865677"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/odin/ros1/observation/observation.odin",
+      "sha256": "afd4e22452c089c595c53ece1f3e422622b8ce0db512ee971e618068e0f80ead"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/odin/ros1/records.odin",
+      "sha256": "e184beb866f655006c8d441694d3e0be5a275858db59757f68c86f0fa7b670b9"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/abb/odin/ros2/records.odin",
+      "sha256": "c1994e5502029589123ac2930dc65127720d11b1ea2f8ec1d2d132d00a97b96d"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/abb/bindings/odin.json",
+      "sha256": "06cb1e4f5b6d74c5590aba01903387dee760aaf04009828fa21679be3cb79d38"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/abi.c",
+      "sha256": "99b82535f6728096e1345aea0498b852c0a90a0aa296250735dbc089502c49a9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/observation/observation.odin",
+      "sha256": "ab9769ad04e9523e9c6fd5366c029e9ce52b7131440ba70aa25551ac4c7c8dac"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/native/odin/wire/wire.odin",
+      "sha256": "e7fde30bdcb0109b05068362085761ff354f698de483a59f745917070088884a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/abb/provider.lua",
+      "sha256": "40832980d1b2d1194c1707867e66f72df415a7e01d1267cdd3d7e069ecdb1705"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "512f39762175946f58ed4018da77b7b4be728429e63b832b65113e3ac7376d6d"
+    },
+    {
+      "scope": "example",
+      "path": "main.odin",
+      "sha256": "a8e12276af51897c7eaf9b156afb387f8e89958c981ab19dea615775589f33ee"
+    }
+  ],
+  "cases": [
+    {
+      "id": "namespace-without-resource-authority",
+      "arguments": [
+        "sdk-test-denied"
+      ],
+      "expected_exit": 13,
+      "expected_json": {
+        "primary": 13,
+        "cleanup": 0,
+        "cleanup_present": false,
+        "rpc_status": 0,
+        "rpc_present": false,
+        "length_present": false,
+        "length": "18446744073709551615",
+        "response_present": false,
+        "polls": 0,
+        "wire_hex": ""
+      }
+    },
+    {
+      "id": "missing-required-alias",
+      "arguments": [],
+      "expected_exit": 22,
+      "expected_stdout": ""
+    }
+  ]
+}

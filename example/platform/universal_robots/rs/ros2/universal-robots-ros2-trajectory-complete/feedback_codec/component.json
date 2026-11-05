@@ -1,0 +1,58 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "complete-codec-5093",
+  "test_scope": "Actual source-language canonical codec example, checked against an independent interface-catalog default-value extent/output oracle. No ROS transport qualification.",
+  "public_inputs": [
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "696d78ed81715d7142d489c96e8e4039b46b49a6723c7dd802769cd0bd9b08f8"
+    },
+    {
+      "scope": "example",
+      "path": "main.rs",
+      "sha256": "eba88aac3c31af57df184a2f7d7cc61656df21eb5dd586a1c32948b9522a509f"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/bindings/rs/universal-robots-ros2-trajectory-complete.json",
+      "sha256": "77206b7802d1753a52d7156f0d968c64cf18612b27f28969eb70499a06fac615"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/universal_robots/domains/universal-robots-ros2-trajectory-complete.ir.json",
+      "sha256": "b07460b64ac1367c17e4f2ad56016cbb592fd2c058ce94aeaa689b8fbf76a498"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "default-value-canonical-roundtrip",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_json": {
+        "type": "ur_msgs/action/FollowJointTrajectoryUntil_Feedback",
+        "bytes": 88
+      }
+    }
+  ]
+}

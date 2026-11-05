@@ -18,5 +18,161 @@
     "ros2": "share/platform/abb/catalogs/ros2/catalog.preparation.json"
   },
   "records_ir": "share/platform/abb/records-ir.json",
-  "original_complete_source_fields_retained": true
+  "original_complete_source_fields_retained": true,
+  "native_actions": {
+    "ros1": {
+      "format": "uwvm-native-action-v1",
+      "language": "moonbit",
+      "moonbit": {
+        "packages": [
+          {
+            "name": "uwvm/ros/linear",
+            "alias": "linear",
+            "sources": [
+              "include/platform/ros/moonbit/linear/linear.mbt",
+              "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+            ],
+            "dependencies": []
+          },
+          {
+            "name": "uwvm/ros/wire",
+            "alias": "wire",
+            "sources": [
+              "include/platform/ros/moonbit/wire/image.mbt",
+              "include/platform/ros/moonbit/wire/transform.mbt",
+              "include/platform/ros/moonbit/wire/wire.mbt"
+            ],
+            "dependencies": [
+              "utf8"
+            ]
+          },
+          {
+            "name": "uwvm/ros/ros1",
+            "alias": "ros",
+            "sources": [
+              "include/platform/ros/moonbit/ros1/client.mbt",
+              "include/platform/ros/moonbit/ros1/coverage.mbt",
+              "include/platform/ros/moonbit/ros1/image.mbt",
+              "include/platform/ros/moonbit/ros1/raw.mbt",
+              "include/platform/ros/moonbit/ros1/transform.mbt"
+            ],
+            "dependencies": [
+              "linear",
+              "wire",
+              "utf8"
+            ]
+          },
+          {
+            "name": "uwvm/abb/ros1",
+            "alias": "records",
+            "sources": [
+              "include/platform/abb/moonbit/ros1/bounded_records.mbt"
+            ],
+            "dependencies": [
+              "ros",
+              "linear",
+              "wire",
+              "utf8",
+              "float"
+            ]
+          },
+          {
+            "name": "uwvm/ros/observation",
+            "alias": "observation",
+            "sources": [
+              "include/platform/unitree/moonbit/command/command_io.mbt",
+              "include/platform/unitree/moonbit/command/observation.mbt"
+            ],
+            "dependencies": [
+              "ros",
+              "wire",
+              "utf8"
+            ]
+          }
+        ],
+        "entry_dependencies": [
+          "observation",
+          "records"
+        ]
+      }
+    },
+    "ros2": {
+      "format": "uwvm-native-action-v1",
+      "language": "moonbit",
+      "moonbit": {
+        "packages": [
+          {
+            "name": "uwvm/ros/linear",
+            "alias": "linear",
+            "sources": [
+              "include/platform/ros/moonbit/linear/linear.mbt",
+              "include/platform/ros/moonbit/linear/owned_reserved.mbt"
+            ],
+            "dependencies": []
+          },
+          {
+            "name": "uwvm/ros/wire",
+            "alias": "wire",
+            "sources": [
+              "include/platform/ros/moonbit/wire/image.mbt",
+              "include/platform/ros/moonbit/wire/transform.mbt",
+              "include/platform/ros/moonbit/wire/wire.mbt"
+            ],
+            "dependencies": [
+              "utf8"
+            ]
+          },
+          {
+            "name": "uwvm/ros/ros2",
+            "alias": "ros",
+            "sources": [
+              "include/platform/ros/moonbit/ros2/client.mbt",
+              "include/platform/ros/moonbit/ros2/coverage.mbt",
+              "include/platform/ros/moonbit/ros2/image.mbt",
+              "include/platform/ros/moonbit/ros2/owned_owners.mbt",
+              "include/platform/ros/moonbit/ros2/raw.mbt",
+              "include/platform/ros/moonbit/ros2/transform.mbt"
+            ],
+            "dependencies": [
+              "linear",
+              "wire",
+              "utf8"
+            ]
+          },
+          {
+            "name": "uwvm/abb/ros2",
+            "alias": "abb_ros2",
+            "sources": [
+              "include/platform/abb/moonbit/ros2/bounded_records.mbt"
+            ],
+            "dependencies": [
+              "ros",
+              "linear",
+              "wire",
+              "utf8",
+              "float"
+            ]
+          },
+          {
+            "name": "uwvm/abb/observation",
+            "alias": "abb",
+            "sources": [
+              "include/platform/abb/moonbit/observation/command_io.mbt",
+              "include/platform/abb/moonbit/observation/observation.mbt"
+            ],
+            "dependencies": [
+              "abb_ros2",
+              "ros",
+              "linear",
+              "wire",
+              "utf8"
+            ]
+          }
+        ],
+        "entry_dependencies": [
+          "abb"
+        ]
+      }
+    }
+  }
 }

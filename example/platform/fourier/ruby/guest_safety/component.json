@@ -1,0 +1,85 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "fourier-ruby-guest-safety",
+  "ros_namespace": "ros2",
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "include/platform/fourier/ruby/ros2/aurora_bridge_v1/records.rb",
+      "sha256": "2928c0b37900ad02686ac83d339e8a8abd18b23a10d587231d59c3d3a10d64bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb",
+      "sha256": "0e8a20b0d17a2cca28dd10ba516288dfa91ea8066ad5499a33a192e0ee52e83f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb",
+      "sha256": "b4c7a9e661f63b63055df4a8722bbe16b3e6b687f14c109401c2e43b60fdd3fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/fourier/provider.json",
+      "sha256": "fcc4ffe044b577dfc5a9a908aca7afb867bab2b586e66ff1d248af16e69f9aa3"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/language/ruby/observation.rb",
+      "sha256": "42cc1dc7a689ef9b16b4be0de8a9941eb270a4b6c2c1b12b02793f290346cb3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/platform/fourier/provider.lua",
+      "sha256": "26f2fe5fbb5154d148353d96865c3208f774f938c408356ac777a807b661accd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_policy.py",
+      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/xmake/wasi_component.lua",
+      "sha256": "9218db802fb42a6ab0e1275ce1c342c6142dbc5ff25cf7b2a6e445ce216944f9"
+    },
+    {
+      "scope": "example",
+      "path": "main.rb",
+      "sha256": "584fccc10dfc3a4e7a9c6770330794e60a96aab3776ad82889d7b10891f5a51c"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "672d83183edfd96a4a038493f57c55acbed2da998105826c0ea4339b0ee8aa64"
+    },
+    {
+      "scope": "example",
+      "path": "cases.json",
+      "sha256": "8448700d47c0ea373b679d04c37cbf692f325b1c1313e4181f1ebec2bc6669e6"
+    }
+  ],
+  "cases": [
+    {
+      "id": "five-actual-guest-assertions",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"ruby\",\"case\":\"genuine-runtime-version\",\"passed\":true,\"observed_code\":347}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"ruby\",\"case\":\"raw-ros-abi-v1\",\"passed\":true,\"observed_code\":0}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"ruby\",\"case\":\"guest-rejects-empty-alias\",\"passed\":true,\"observed_code\":22}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"ruby\",\"case\":\"guest-rejects-invalid-utf8\",\"passed\":true,\"observed_code\":22}\n{\"format\":\"uwvm-sdk-guest-safety-case-v1\",\"language\":\"ruby\",\"case\":\"raw-ungranted-alias-denied\",\"passed\":true,\"observed_code\":13}\n{\"format\":\"uwvm-sdk-guest-safety-summary-v1\",\"language\":\"ruby\",\"selected\":5,\"executed\":5,\"passed\":5,\"failed\":0,\"blocked\":0,\"skipped\":0}\n"
+    }
+  ]
+}
