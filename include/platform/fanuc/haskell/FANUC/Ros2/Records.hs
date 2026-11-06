@@ -3001,27 +3001,27 @@ encodeRos2Fanuc_msgsSrvGetCartesianPosition_Response value = do
     chunk19 <- finite4 (ros2Fanuc_msgsSrvGetCartesianPosition_Response_ext3 value) castFloatToWord32
     chunk20 <- Right (W.putNumber 1 (ros2Fanuc_msgsSrvGetCartesianPosition_Response_group value))
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12
-        , chunk13
-        , chunk14
-        , chunk15
-        , chunk16
-        , chunk17
-        , chunk18
-        , chunk19
-        , chunk20]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12
+            , chunk13
+            , chunk14
+            , chunk15
+            , chunk16
+            , chunk17
+            , chunk18
+            , chunk19
+            , chunk20]
     if length bytes > 54 then Left 22 else Right bytes
 -- | @brief Read every field of nested fanuc_msgs/srv/GetCartesianPosition_Response.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked
@@ -3951,35 +3951,35 @@ encodeRos2Fanuc_msgsSrvGetPosReg_Response value = do
     chunk27 <- finite4 (ros2Fanuc_msgsSrvGetPosReg_Response_j8 value) castFloatToWord32
     chunk28 <- finite4 (ros2Fanuc_msgsSrvGetPosReg_Response_j9 value) castFloatToWord32
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12
-        , chunk13
-        , chunk14
-        , chunk15
-        , chunk16
-        , chunk17
-        , chunk18
-        , chunk19
-        , chunk20
-        , chunk21
-        , chunk22
-        , chunk23
-        , chunk24
-        , chunk25
-        , chunk26
-        , chunk27
-        , chunk28]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12
+            , chunk13
+            , chunk14
+            , chunk15
+            , chunk16
+            , chunk17
+            , chunk18
+            , chunk19
+            , chunk20
+            , chunk21
+            , chunk22
+            , chunk23
+            , chunk24
+            , chunk25
+            , chunk26
+            , chunk27
+            , chunk28]
     if length bytes > 601 then Left 22 else Right bytes
 -- | @brief Read every field of nested fanuc_msgs/srv/GetPosReg_Response.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked
@@ -5898,35 +5898,35 @@ encodeRos2Fanuc_msgsSrvSetPosReg_Request value = do
     chunk27 <- finite4 (ros2Fanuc_msgsSrvSetPosReg_Request_j8 value) castFloatToWord32
     chunk28 <- finite4 (ros2Fanuc_msgsSrvSetPosReg_Request_j9 value) castFloatToWord32
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12
-        , chunk13
-        , chunk14
-        , chunk15
-        , chunk16
-        , chunk17
-        , chunk18
-        , chunk19
-        , chunk20
-        , chunk21
-        , chunk22
-        , chunk23
-        , chunk24
-        , chunk25
-        , chunk26
-        , chunk27
-        , chunk28]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12
+            , chunk13
+            , chunk14
+            , chunk15
+            , chunk16
+            , chunk17
+            , chunk18
+            , chunk19
+            , chunk20
+            , chunk21
+            , chunk22
+            , chunk23
+            , chunk24
+            , chunk25
+            , chunk26
+            , chunk27
+            , chunk28]
     if length bytes > 599 then Left 22 else Right bytes
 -- | @brief Read every field of nested fanuc_msgs/srv/SetPosReg_Request.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked
@@ -6749,24 +6749,24 @@ encodeRos2Rmi_msgsMsgCartesian value = do
     chunk16 <- finite4 (ros2Rmi_msgsMsgCartesian_ext2 value) castFloatToWord32
     chunk17 <- finite4 (ros2Rmi_msgsMsgCartesian_ext3 value) castFloatToWord32
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12
-        , chunk13
-        , chunk14
-        , chunk15
-        , chunk16
-        , chunk17]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12
+            , chunk13
+            , chunk14
+            , chunk15
+            , chunk16
+            , chunk17]
     if length bytes > 45 then Left 22 else Right bytes
 -- | @brief Read every field of nested rmi_msgs/msg/Cartesian.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked
@@ -7289,34 +7289,34 @@ encodeRos2Rmi_msgsMsgMotionInstructionOptions value = do
     chunk26 <- Right (W.putBool (ros2Rmi_msgsMsgMotionInstructionOptions_use_no_blend value))
     chunk27 <- W.putText 512 (ros2Rmi_msgsMsgMotionInstructionOptions_no_blend value)
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12
-        , chunk13
-        , chunk14
-        , chunk15
-        , chunk16
-        , chunk17
-        , chunk18
-        , chunk19
-        , chunk20
-        , chunk21
-        , chunk22
-        , chunk23
-        , chunk24
-        , chunk25
-        , chunk26
-        , chunk27]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12
+            , chunk13
+            , chunk14
+            , chunk15
+            , chunk16
+            , chunk17
+            , chunk18
+            , chunk19
+            , chunk20
+            , chunk21
+            , chunk22
+            , chunk23
+            , chunk24
+            , chunk25
+            , chunk26
+            , chunk27]
     if length bytes > 2612 then Left 22 else Right bytes
 -- | @brief Read every field of nested rmi_msgs/msg/MotionInstructionOptions.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked
@@ -7889,19 +7889,19 @@ encodeRos2Rmi_msgsSrvAddMotionInstruction_Request value = do
     chunk11 <- encodeRos2Rmi_msgsMsgCartesian (ros2Rmi_msgsSrvAddMotionInstruction_Request_via_cartesian value)
     chunk12 <- encodeRos2Rmi_msgsMsgMotionInstructionOptions (ros2Rmi_msgsSrvAddMotionInstruction_Request_options value)
     let bytes = concat
-        [ chunk0
-        , chunk1
-        , chunk2
-        , chunk3
-        , chunk4
-        , chunk5
-        , chunk6
-        , chunk7
-        , chunk8
-        , chunk9
-        , chunk10
-        , chunk11
-        , chunk12]
+            [ chunk0
+            , chunk1
+            , chunk2
+            , chunk3
+            , chunk4
+            , chunk5
+            , chunk6
+            , chunk7
+            , chunk8
+            , chunk9
+            , chunk10
+            , chunk11
+            , chunk12]
     if length bytes > 4014 then Left 22 else Right bytes
 -- | @brief Read every field of nested rmi_msgs/srv/AddMotionInstruction_Request.
 -- | @details The parser advances one exclusive immutable input cursor. Finite bounds are checked

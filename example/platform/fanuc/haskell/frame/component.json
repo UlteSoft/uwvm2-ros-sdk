@@ -12,7 +12,7 @@
     {
       "scope": "sdk",
       "path": "include/platform/fanuc/haskell/FANUC/Ros2/Records.hs",
-      "sha256": "4ddb2e71e65790d3b516a4e4ae721f17ef64d2f4c5e7117858e8fab84a6b5833"
+      "sha256": "374f42adb4dcb3089528735ee84083ec701cc3440a3fca0cdc9b3dad9eed11fd"
     },
     {
       "scope": "sdk",
