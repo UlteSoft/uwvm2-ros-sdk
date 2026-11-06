@@ -1,0 +1,169 @@
+{
+  "repository": "https://github.com/cyberbotics/webots",
+  "release": "R2025a",
+  "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+  "files": [
+    {
+      "path": "projects/default/worlds/sounds/bump.wav",
+      "bytes": 2060,
+      "sha256": "f119e721b86c7df23afb89bf06223290916476d71fda494c63a9a984013d0997",
+      "git_blob": "fa0443df4a344335f45f820111eb5119a7289615"
+    },
+    {
+      "path": "projects/default/worlds/sounds/linear_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/roll.wav",
+      "bytes": 114750,
+      "sha256": "f93028df78e0fe372c5ddae35faf9917a24841625080d7cc7211a65d54713def",
+      "git_blob": "b3ca03782192f84e31707d4dbd0cd5d93fde8e63"
+    },
+    {
+      "path": "projects/default/worlds/sounds/rotational_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/slide.wav",
+      "bytes": 216700,
+      "sha256": "ec0e7f6fe3a466aadf2c53e1c872cb83eb0248d35fdd31fb7ff469f9f7e46b3e",
+      "git_blob": "f5f61383d6401c9b29c75309e6fe2d4634126174"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm0Mesh.proto",
+      "bytes": 22696,
+      "sha256": "b97c3fe54ccf574fef1c45149d0a11b3d1ab5593694261576c1732953d59767e",
+      "git_blob": "7953c870f744330cb279f21b13d0a4077eccea20"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm1Mesh.proto",
+      "bytes": 43183,
+      "sha256": "db8c3da5bd352aef311e699bc968677e251c78907d60f431131b7a934b5ce240",
+      "git_blob": "6336e55f08e53a8be6afc490fd32a363b7fd9a9f"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm2Mesh.proto",
+      "bytes": 43892,
+      "sha256": "77e79d2e8656bb229bb605c67cee66cfbede546c6af96dc15473022a833635d4",
+      "git_blob": "f1c5ef629b88012818cc7639bdd5ddb0e7716000"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm3Mesh.proto",
+      "bytes": 73133,
+      "sha256": "0fa2076ad0f9383283115ca0e14fc989969d38ccf0b395c0261cede4f37971dc",
+      "git_blob": "71e13e53fc92b73d467c3c05c47dc2dbce8ea013"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm4Mesh.proto",
+      "bytes": 37053,
+      "sha256": "52cc5bb275bc1a2fb340ac604f6296a3cc628d97afbeeee897431d1baf395cec",
+      "git_blob": "47babd3b89f396bef5de7827c40d4e577b8f8530"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Arm5Mesh.proto",
+      "bytes": 25064,
+      "sha256": "52fefe477fdcf32f5740549998a74804204eea77483f8fc2e3ecd72bf1b52122",
+      "git_blob": "eefcfe8d687cda9e9bb90816ef1a08721e66b483"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/BlackAppearance.proto",
+      "bytes": 304,
+      "sha256": "d5651e35e866267078b30050235d95254b1bcfdc143aec19a5858f3b4454156e",
+      "git_blob": "aef25f695e29bf3e6533775164e0910c5e6961ed"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/BlackMetalAppearance.proto",
+      "bytes": 307,
+      "sha256": "79462b61e4d2fabdbc202557d58b4282690fe0b184c8e876bd3798a09a2fb828",
+      "git_blob": "5baddddc1c607aa221a328fa1442d65be0c16db7"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/BodyMesh.proto",
+      "bytes": 81645,
+      "sha256": "88c436910458f6a3134613c249749eff502c41e5501404764b94951ba27b11dd",
+      "git_blob": "e0ed5660b51ad6f44b8a8fe4aedbeaf4939264c8"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/ExteriorWheel.proto",
+      "bytes": 2292,
+      "sha256": "f59ae203042f1dc7f89fa05aed3d0457413d7033757715a8cabbf6ee737772af",
+      "git_blob": "6dacd52c59be41314d9884adde9b5e71552943e9"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/FingerMesh.proto",
+      "bytes": 6660,
+      "sha256": "c80979b8dd1f3befcaa86769e5339d5eff06dcdec9f53e24ee657f8e09c744b9",
+      "git_blob": "35c0ff084bbea934b78cecdd7f78c955b98abbd6"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/InteriorWheel.proto",
+      "bytes": 2287,
+      "sha256": "ce32f151eacc4c70e8d53c91e006a8fe5cf9ca9b6ead4f35af16b72d01c5acc6",
+      "git_blob": "ab4c96c6f134c3ce2839329e55c98df674cdbdf3"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/KukaAlphaAppearance.proto",
+      "bytes": 411,
+      "sha256": "24cf6057ab16adc2a1ecdc1eb77ccb845e2caea760f58a3e3823cf29586db989",
+      "git_blob": "753d7fcaeb4c5b909da77e2de15cd8b56bb4fc76"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/KukaBlackAppearance.proto",
+      "bytes": 411,
+      "sha256": "f6e96cef79e093704f3e60506d2d8b7cb6facd0a80d5828c86ca4154863d8a07",
+      "git_blob": "7ff25b30a690a58c1ab941c0ec1883286cf4fa0e"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/MetalAppearance.proto",
+      "bytes": 289,
+      "sha256": "b10830d886801f1a13924ba71558b0bd95dacfa00cf269a482557a7779a5a237",
+      "git_blob": "cf7fe687d0e79cf29e935996d84b0bcefb9ac9a9"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/OrangeAppearance.proto",
+      "bytes": 309,
+      "sha256": "9ccff195896e8404a6b8b1586c2ef46f7a4a7b362a4f703fbf25fcb976e7cb42",
+      "git_blob": "01d793e8c5ef44edc831f8d49abf5ce522b21290"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/PlateMesh.proto",
+      "bytes": 9184,
+      "sha256": "e4fdd0ee0f8a6d34ee7b3e5335e45a0e02362b7395192211e261b3e5071d601f",
+      "git_blob": "784c7c65b251b0ebac81cbbe786bf1e29dc50897"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/SubWheelMesh.proto",
+      "bytes": 9404,
+      "sha256": "855f801a90c18f7a2b40f2f88748f316a2266b3e061f38907c4ba5af0d82c4ef",
+      "git_blob": "ef88817bd290d3979e468b098ff187fdb497eebc"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/WheelMesh.proto",
+      "bytes": 49856,
+      "sha256": "e9d66516d5f4996b9a5ba3204f8ef4a51f14f4a3ba6df37857d47ceddb19c5e4",
+      "git_blob": "094880f5d82384b1d33d05b757d58e6b657dcc89"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/Youbot.proto",
+      "bytes": 33436,
+      "sha256": "e04de8e811275c11c6b1a9c055e72a3f92646207f8cc89d394a869aa70f7d1d5",
+      "git_blob": "f14eee7a46e33b1f814e65b388807e5b045b8fd9"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/textures/kuka_alpha.png",
+      "bytes": 16563,
+      "sha256": "335b0fc54dca64d026565e5da98892f578e80a17689eea6d5bf693dc935811f7",
+      "git_blob": "a262fa08d20cdd508c2da66819a3e6c3578830f0"
+    },
+    {
+      "path": "projects/robots/kuka/youbot/protos/textures/kuka_black.png",
+      "bytes": 25973,
+      "sha256": "bf5a61c6a115fd4c4c14d3c44ae02a82f3641dc76b13672c983f505aac4d9237",
+      "git_blob": "1a80fd4665c54acc904f55a8ca36eb9624d2fe45"
+    }
+  ]
+}

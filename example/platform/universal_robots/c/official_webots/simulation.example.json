@@ -1,0 +1,75 @@
+{
+  "format": "uwvm-sdk-ros2-joint-fixture-example-v1",
+  "profile": "universal_robots-ur5e-webots-r2025a-jazzy",
+  "public_build_target": "universal_robots-official-webots",
+  "public_test_suite": "universal_robots-official-webots/official-scenarios",
+  "source": "main.c",
+  "driver": {
+    "scope": "sdk",
+    "path": "tools/shared/ros_joint_fixture/test_fixture.py"
+  },
+  "deployment_environment": "UWVM_ROS_UNIVERSAL_ROBOTS_WEBOTS_TEST_CONFIG",
+  "engines": [
+    "jit",
+    "int"
+  ],
+  "selected": 16,
+  "scenarios": [
+    {
+      "id": "positive",
+      "assertion": "Wasm constructs the goal, decodes feedback/result and checks fresh native joint positions.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "denied",
+      "assertion": "The missing send capability returns DENIED; fresh native positions remain unchanged.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "boundaries",
+      "assertion": "Truncated goals, invalid memory/ranges, stale handles and cancel-any through cancel-own authority are refused with unchanged output canaries.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "cancel",
+      "assertion": "Wasm cancels its own active native goal and observes the canceled terminal result and stable stopped positions.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "timeout",
+      "assertion": "An explicitly authorized absent server times out using the guest monotonic clock without native movement.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "disconnect",
+      "assertion": "An actual gateway exit yields DISCONNECTED; close retires the handle without crashing the VM.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "owner",
+      "assertion": "A real handle remains usable after another VM attempts to use or close its numeric value.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "foreign",
+      "assertion": "A simultaneously executing VM rejects the other VM handle without altering its output.",
+      "expected_vm_exit": 0,
+      "required": true
+    }
+  ],
+  "production_admission": false,
+  "physical_robot_authorized": false,
+  "additional_unqualified_dimensions": [
+    "Other models and robot joints outside the explicitly listed scope",
+    "Physical hardware and production admission"
+  ],
+  "scope": "Official Webots R2025a UR5e physics; six arm joints",
+  "native_launch": "embedded_ros2_control"
+}

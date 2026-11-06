@@ -1,0 +1,445 @@
+{
+  "repository": "https://github.com/cyberbotics/webots",
+  "release": "R2025a",
+  "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+  "files": [
+    {
+      "path": "projects/appearances/protos/Asphalt.proto",
+      "bytes": 1404,
+      "sha256": "6259db827b95cd83090f3fc31a9348998febdc84a09ed956f87f1fdd207b5bbc",
+      "git_blob": "ac71a168def1733d15c27c123ead8b9670706689"
+    },
+    {
+      "path": "projects/appearances/protos/BrushedAluminium.proto",
+      "bytes": 1173,
+      "sha256": "d2a2cd1c15c69d62ae9add8ff79f413ae5177c12a981dcaeb8002a11cc04d4ad",
+      "git_blob": "96e90942af8f62a00ae3cbb364bcebcf9570d70d"
+    },
+    {
+      "path": "projects/appearances/protos/GlossyPaint.proto",
+      "bytes": 1320,
+      "sha256": "ffe28363cb674d9d3d10861e8df9304e78c25154b146a5902c46b7b7b7aa7b38",
+      "git_blob": "cf8d5b2a653f110314666eaad90fdc56a9b8a367"
+    },
+    {
+      "path": "projects/appearances/protos/MattePaint.proto",
+      "bytes": 1178,
+      "sha256": "65911291cb96c9dfd9e43cd216fd4622fc077333c980f1a742c55859f4b51000",
+      "git_blob": "c8ba018c9b20f9de38fc8b84289f57231f7c6b04"
+    },
+    {
+      "path": "projects/appearances/protos/OldSteel.proto",
+      "bytes": 1223,
+      "sha256": "1e1b15289f8c4171284074f4c48c4ed269b4961a4a09bb4d1b1c1b345c311be8",
+      "git_blob": "0078b7362c818aa26c54630c8a2e90784f8b646f"
+    },
+    {
+      "path": "projects/appearances/protos/ScrewThread.proto",
+      "bytes": 1301,
+      "sha256": "987e0d56e586f6ddc0b2f618b4698b56f44516238dd0cdeabd4a0347d3bf2505",
+      "git_blob": "5e45a4eac4087c939904ef47dc2e7510a6e4ec9b"
+    },
+    {
+      "path": "projects/appearances/protos/textures/asphalt/asphalt_base_color.jpg",
+      "bytes": 528854,
+      "sha256": "01dfc7abfaf79cd2e5483188b93727bb9c2aa5fc2e495bf5af4e45ba22f2ae6f",
+      "git_blob": "424d55caee3a3c69979625fe34aa9a462c25f09f"
+    },
+    {
+      "path": "projects/appearances/protos/textures/asphalt/asphalt_normal.jpg",
+      "bytes": 1850203,
+      "sha256": "5df8bea351f1991f7e08ef8ef94af47d357668fafaa376152f8de965479f5851",
+      "git_blob": "afff4658f58a9481a2c25b806178c7b22e57ad26"
+    },
+    {
+      "path": "projects/appearances/protos/textures/asphalt/asphalt_occlusion.jpg",
+      "bytes": 692657,
+      "sha256": "026eb64548fe3dff4b766ae95ead3d7ec4bdd615854f45451f32ea30f00fe53b",
+      "git_blob": "a9e92cf9b4582d900f887d17031aa0d007459f5b"
+    },
+    {
+      "path": "projects/appearances/protos/textures/asphalt/asphalt_roughness.jpg",
+      "bytes": 417892,
+      "sha256": "ef0142855fd98c550d90657a01f3cd47a7d740ee5fe1f0638fb73185d049c022",
+      "git_blob": "39373f3c7214ab15ccbb1bb3b84cbf8d88dd4d4d"
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_base_color.jpg",
+      "bytes": 70835,
+      "sha256": "02ac2298bf255e55b66e90f329fa3437b4460982bf14277640cbf17307c478f1",
+      "git_blob": "9c7aabe5e0145342c0bc226cacc688596c99ea3b"
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_normal.jpg",
+      "bytes": 246675,
+      "sha256": "e184e5b17cce514c5afa9efacd020d07f69da6caf20670220b2d46747e8c2e6d",
+      "git_blob": "59089111bccb89678cb81dd8a4d37d2db9979d6d"
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_roughness.jpg",
+      "bytes": 156559,
+      "sha256": "b5bc119049432c574651c0a90b3431fc7ab9abc5688e34d31a77ae89d53fdb16",
+      "git_blob": "d6d5ba1f84bb6e79d3157269268368651294b915"
+    },
+    {
+      "path": "projects/appearances/protos/textures/glossy_car_paint/glossy_car_paint_normal.jpg",
+      "bytes": 82612,
+      "sha256": "08034a3cd5a03e5532c2731ad2ccec87e30510a693156060471e6416f90d2f90",
+      "git_blob": "242a8ce1df57b5047a97007fea2829104d29168d"
+    },
+    {
+      "path": "projects/appearances/protos/textures/glossy_car_paint/glossy_car_paint_roughness.jpg",
+      "bytes": 1253127,
+      "sha256": "4a4eac37b077adf22ce3eebde87911c419bee99df20dbf668d465df35943b5a3",
+      "git_blob": "c8715fa79ddec1f3522f81204683022677f1f02f"
+    },
+    {
+      "path": "projects/appearances/protos/textures/matte_car_paint/matte_car_paint_base_color.jpg",
+      "bytes": 917859,
+      "sha256": "c2364d95b565f27664f09cd06878497e86d8a5a147c43ca1636fbf3a81f2c305",
+      "git_blob": "938e4dfb17d1fcc66d54c525959cf86314659cfe"
+    },
+    {
+      "path": "projects/appearances/protos/textures/matte_car_paint/matte_car_paint_roughness.jpg",
+      "bytes": 405812,
+      "sha256": "0369c04c58d217621de852dad09c5d6e0c0fc2e99797853e28632811eb4cf759",
+      "git_blob": "6d0e3663415f902bce852403d43ea21c8c539029"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg",
+      "bytes": 1651978,
+      "sha256": "9d8baefa0bbea8705d05647ef65b26b8f2f1ba07db9d39adc0d0cf8244b4d76a",
+      "git_blob": "b3b5e9355731ccec104aff34d6ee4a9e654647b7"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg",
+      "bytes": 1843958,
+      "sha256": "de80c5afea7a1f445f0d2bc7f83b3757f9eb616b0f6fcd59675d56882fc653c4",
+      "git_blob": "7f4e5b9348e42652a2864eabbcf51fa097e3c324"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_normal.jpg",
+      "bytes": 231404,
+      "sha256": "7b62dc4ae5bd2fc4c297157c463c2836fd1ea1611e743c680f33c725265ef435",
+      "git_blob": "0fb445e76ffa8f528d23c99c3c5bcaae3822fe47"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg",
+      "bytes": 1736013,
+      "sha256": "8397d0de9496e78ebcd7b218b4816d5d8fa383c9a9f1765d931fc0df5932b0b0",
+      "git_blob": "43c5e44bd10155725f4c71d4ec3cb556f526402c"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg",
+      "bytes": 158882,
+      "sha256": "a86765be53058e2364acf3196998865e702a0cdd059a2c478947ee28b374b4d4",
+      "git_blob": "503c245bd00b3156ec2355957983ba84f81852c6"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg",
+      "bytes": 148836,
+      "sha256": "d91fcfd1e2fa6f77784c72464b49e96d9b477e775861b5b694c4b2a2c4cf73af",
+      "git_blob": "3396135ac799e91fca0dba595be0ccb1859655c9"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg",
+      "bytes": 81049,
+      "sha256": "31d63b395bf4117e0e9b3e3233ccfb324f91f5e16b9f8a88fabbb022d2f80ef7",
+      "git_blob": "2782203f77c0264eaf464cfd4fb8466a828efeda"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg",
+      "bytes": 137124,
+      "sha256": "49865d4f1669335705a8ed2042bb6b46a3465d7af8ae9af8004b3e342dca4c21",
+      "git_blob": "7d89ae65c2a946b9868533e73431fddecf1fe248"
+    },
+    {
+      "path": "projects/default/worlds/sounds/bump.wav",
+      "bytes": 2060,
+      "sha256": "f119e721b86c7df23afb89bf06223290916476d71fda494c63a9a984013d0997",
+      "git_blob": "fa0443df4a344335f45f820111eb5119a7289615"
+    },
+    {
+      "path": "projects/default/worlds/sounds/linear_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/roll.wav",
+      "bytes": 114750,
+      "sha256": "f93028df78e0fe372c5ddae35faf9917a24841625080d7cc7211a65d54713def",
+      "git_blob": "b3ca03782192f84e31707d4dbd0cd5d93fde8e63"
+    },
+    {
+      "path": "projects/default/worlds/sounds/rotational_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/slide.wav",
+      "bytes": 216700,
+      "sha256": "ec0e7f6fe3a466aadf2c53e1c872cb83eb0248d35fdd31fb7ff469f9f7e46b3e",
+      "git_blob": "f5f61383d6401c9b29c75309e6fe2d4634126174"
+    },
+    {
+      "path": "projects/devices/hokuyo/protos/HokuyoUrg04lxug01.proto",
+      "bytes": 57779,
+      "sha256": "08ca8596e21a360165829923591e3dd0e084abf75e793d75c229a8f0f4d5e5df",
+      "git_blob": "e53ea50162195c2a68a5890cffbfc18250dca475"
+    },
+    {
+      "path": "projects/devices/hokuyo/protos/textures/urg-04lx-ug01.jpg",
+      "bytes": 37863,
+      "sha256": "e203c142389065dc81b8e62943de3871e9e0f5fed397aac5a94375002d421b63",
+      "git_blob": "15510953bd8f475328814eb54d479eea1ee48b4c"
+    },
+    {
+      "path": "projects/devices/orbbec/protos/Astra.proto",
+      "bytes": 2107,
+      "sha256": "ea27a88811ebcc97610775b64fe81ab92646deba1190d7dfab159472a6b334d1",
+      "git_blob": "56789b82f659550d984bda0100f645d034f5370f"
+    },
+    {
+      "path": "projects/devices/orbbec/protos/meshes/astra.obj",
+      "bytes": 185251,
+      "sha256": "3cc0e2dbc2aed66dba95edf1e032e059afb0c3a90079af87e8587b9eabe18e14",
+      "git_blob": "f915576a7d1756ff2de2b2e7e99bdded51456102"
+    },
+    {
+      "path": "projects/objects/factory/tools/protos/CapScrew.proto",
+      "bytes": 37195,
+      "sha256": "b397a19b82be55fb2cb375b9be2e4d22c1131e5f344305996e2fde2fa6438193",
+      "git_blob": "389454cdff880c79b93c350048e17c920942ef51"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago/protos/Tiago.proto",
+      "bytes": 2545,
+      "sha256": "123b4b182b693885390d7128200f80cd0939ff304089b1c51173122f400dbdc0",
+      "git_blob": "0fc1bf234e07fe1e0037e546ac6f644e32cecb1d"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/TiagoBase.proto",
+      "bytes": 22773,
+      "sha256": "a57a6df4497b9943e8997a951501b789df334bb55d1103f86b51ca96e305937f",
+      "git_blob": "03b000cb950b5f5778ee769376810ef9a4e8b874"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/antenna_shape.obj",
+      "bytes": 146651,
+      "sha256": "b8f424a67eef400978cfe19e64d40e603a45717282452be9643725cf08b133d2",
+      "git_blob": "138bb59ed4e1bbac42bd93165a7f8abe48bd0f95"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/base.obj",
+      "bytes": 323431,
+      "sha256": "e73e3b327a2a0244ca1cd0aba20eec3e191e6aba5898836f36edb8045aee88df",
+      "git_blob": "533eb442197bbad3920fb36136fe7a9b1b7ec65e"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/bumper_shape.obj",
+      "bytes": 56585,
+      "sha256": "a67ec93ef48c4f29bc8438df0fbbf3aebb24c1b60d8b9050f501a9c74d17d899",
+      "git_blob": "3b12d063eba9edd64a117acb7457ff1157fe21a7"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/caster_support.obj",
+      "bytes": 61142,
+      "sha256": "4d9b36e157b8cfe4f6a14dde851fea499124727de3623c756abef2c404dedf99",
+      "git_blob": "a1147c4753fb1db1a623a5765ddc4672f8687f0f"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/rim.obj",
+      "bytes": 169431,
+      "sha256": "552d2905090a80a6ff9369312f8a6427c8d8bde901d61241e2375732c56e55c8",
+      "git_blob": "4b73e8e1de7ffaa199113bc6eba0278f8342b0fc"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/small_wheel_shape.obj",
+      "bytes": 24274,
+      "sha256": "e7ed44d52ce77f0486467641be464acf8c0f58b73dcf7e5993318c6cf1f5a5a9",
+      "git_blob": "9449c24ffafaefbfa4370544162a310896f69c14"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/meshes/tire.obj",
+      "bytes": 108957,
+      "sha256": "dffedb35f7c38012c372dd42dd2ddea97ee1a4ca11d57a24bb634c77b952490c",
+      "git_blob": "329ef98de88ad2f8187a522191243bc0fbca2587"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/textures/metal_stainless_clean_base_color.jpg",
+      "bytes": 346578,
+      "sha256": "dcb8a49e37c0e6ebca71f26db51d135bf05816e49b14752d3af74354c667be16",
+      "git_blob": "1931a8895d299487ececad29ee4681abce8757c8"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_base/protos/textures/metal_stainless_clean_roughness.jpg",
+      "bytes": 406120,
+      "sha256": "2fb5180690ab8371e577a611c01da1bb86c8735c8472992b9a85b6bcb18b986e",
+      "git_blob": "f1bf8ad17660308c39da9df7e899e26b44c06557"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/TiagoBody.proto",
+      "bytes": 617467,
+      "sha256": "e03bdd6a3d087466d611b1f1d6be238a36373be68340bc9762ebec04beb8aeb5",
+      "git_blob": "87835bb3c07e19bfe777234322a5921184628f67"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/TiagoFrontArm.proto",
+      "bytes": 28621,
+      "sha256": "4087de4f900f2ddd60cd2dba3f68bedfa28d349659316b3073a65820b4c275a8",
+      "git_blob": "d4f0c20b9572fdb2e7040c0a1e5397ff4b251a9f"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/TiagoGripper.proto",
+      "bytes": 228064,
+      "sha256": "9a1edee60e807e4c4a7901cf59cc7a33f38dc36656bf97beb96bc7d7ff0c5bd3",
+      "git_blob": "ccba9e90eb51bbb3a3631edf4cacd64cc6f5bc4b"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_1_sh1.obj",
+      "bytes": 17410,
+      "sha256": "1a73a72ad421ffc503606c7e60fff7a2ea85a4d0530e9731740c7dd36ea21157",
+      "git_blob": "a4fcb2f9c5e855f033fd554bcc168ff3ce7f8cdd"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_1_sh2.obj",
+      "bytes": 38613,
+      "sha256": "7cdb57a94c8c51a343c0e96c95f9a2b511aca2709197b5182967feb70f80a102",
+      "git_blob": "4c9781536361541ad6bc8f552070849a37f3da61"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_1_sh3.obj",
+      "bytes": 71939,
+      "sha256": "2a40eb5f2246d596dd0606c03cdff852ec7abefac5a37266d412d39bc2282b61",
+      "git_blob": "12fda7ea8ce1a575a2007c3a359855af6f6fcadf"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_2_sh1.obj",
+      "bytes": 148039,
+      "sha256": "49fb233be0872fb5321c44815686f50d1ee29eeea82f1eaa3478c4710f7ed137",
+      "git_blob": "b37cee9c17f77d22d4d723c8f3543fa5538f2eae"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_3_sh1.obj",
+      "bytes": 36706,
+      "sha256": "37d26b169eb4564af7a3a91762293d78a3550401c10318e16cff98fc6358c306",
+      "git_blob": "12b7c0d176fa8655d4e233804d0a81be92c4f940"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_3_sh2.obj",
+      "bytes": 10504,
+      "sha256": "96abfbd67b247635a43e87f68c0995d769a238f73f3775981f1d47e99151e496",
+      "git_blob": "aef6da38d3961ac09afc4923b62307724f21ffc5"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_3_sh3.obj",
+      "bytes": 297895,
+      "sha256": "f9616bb4085848e6da6ff69fe993b9725831c042ccf21df25caf672456c1e2a4",
+      "git_blob": "c6c7f86b3b72e6e9d92e7b5f90d0cea753dc433a"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_4_sh1.obj",
+      "bytes": 152815,
+      "sha256": "ef13161f176732cbf315511b09a65c9b5f0f5c745a667bfdf816ed4b457a622e",
+      "git_blob": "62dbc37406e435c3992116c888e7bf916d8a94a6"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_4_sh2.obj",
+      "bytes": 33243,
+      "sha256": "dacf7f08174455ad48139dba67aa42adcd2d6b16364067d48537532a94097386",
+      "git_blob": "4e0800c25d82c83860aafb7cc96ee7c7a493436a"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_4_sh3.obj",
+      "bytes": 32992,
+      "sha256": "8f611d7a802d03d9e9b34bcb9cb734952f4ab1a670c6df7a1eed8f8aee0c3eba",
+      "git_blob": "a6056801c8b5a0d28c1048076d1ba2e25d32b23c"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_5_sh1.obj",
+      "bytes": 87356,
+      "sha256": "e4548ea2c04462ad7e41b1b420435e010acfcfc43c4deafcb82fa5ffb0d05fd0",
+      "git_blob": "eefc5f04a6b3de2cc433170588529d145a9532f2"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_6_sh1.obj",
+      "bytes": 23630,
+      "sha256": "bd7bb06e4143a95bf259e5ac9db77544215285dcfd356c426dcf5dee2fb38b9e",
+      "git_blob": "6df58fd10670c4f4396b74949f615b6613d152cf"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/arm_7_sh1.obj",
+      "bytes": 4287,
+      "sha256": "03145bd6df8e187230a0015fb2f6af036eaea2ee5faa56f093f4b93d9040884d",
+      "git_blob": "0c8014b4d323b37f0d88cb9020df1b8dff778c16"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/shoulder.obj",
+      "bytes": 105189,
+      "sha256": "97951f9169a326e787899afe39f04912c82d12b0c4ffd17288cb8153cd2372cc",
+      "git_blob": "193eb87afe3d5b9911e7e6d4d75297cb639b962d"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/meshes/wrist_connector.obj",
+      "bytes": 4311,
+      "sha256": "39eeaeab59ffcd6b417bc47dfc9717371c40306968e6e1e414a064becde2c8dd",
+      "git_blob": "6cfb4a22b5eb51d92739d3b0e0963a2f7a792bfa"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/acoustic_foam_base_color.jpg",
+      "bytes": 33316,
+      "sha256": "be1e592144a281e051071215af46adc197f18ece681c7cccb35249bad7dcf9a7",
+      "git_blob": "060e3a2021b2d8aec1ad0949debb36519f2bbd95"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/acoustic_foam_metalness.jpg",
+      "bytes": 49414,
+      "sha256": "4f08c0478eccf002e06aa2cdf73ffac7dd0ce765cde9d3866138c9d3c2e63e6a",
+      "git_blob": "7b392fa3694a61d206f7f295de119693bdfc5132"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/acoustic_foam_normal.jpg",
+      "bytes": 40900,
+      "sha256": "67c376891f3f10fe593765c12fcbeb097f4b80b680c9e113657f93e69b1ad1db",
+      "git_blob": "8199dca250cab7a0fae90477a61274cdc7c94f60"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/acoustic_foam_occlusion.jpg",
+      "bytes": 34207,
+      "sha256": "ceede5bf7bd96297d5ec27c00c8805242b49722d709a85d128e271c90af318ca",
+      "git_blob": "0719a2257a94e95482f9406d01b81568442c589b"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/acoustic_foam_roughness.jpg",
+      "bytes": 59834,
+      "sha256": "d840a53a25a2ee943d4ea00da215ee0e40e81ee324b10335b8436dc372cf7990",
+      "git_blob": "84f00717d51b2f6df1f27cdabbe47f66a988b7af"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/plastic_tarp_45_base_color.jpg",
+      "bytes": 110983,
+      "sha256": "4762518d915ddff79df61ccdebe1afc6216db585c99c3237ef5c5f02c04a340e",
+      "git_blob": "3a76aa0985bf990c4d8e3eaa0017e6b5fe258373"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/plastic_tarp_45_normal.jpg",
+      "bytes": 57672,
+      "sha256": "dee7b08779bff981d324b525d0280c636f4d6b3173980a19cf3ec3279f248bb2",
+      "git_blob": "d95a823e1874ae1c3b44bf282b0d105615b91cc7"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/plastic_tarp_45_roughness.jpg",
+      "bytes": 61514,
+      "sha256": "a48fda93a9736cb9f1bd6fabdddc8ada337edf5b6713060be35194ccafe99e64",
+      "git_blob": "d4a330094cf2099b23955dd0e4bc593e17e1e1d4"
+    },
+    {
+      "path": "projects/robots/pal_robotics/tiago_extensions/protos/textures/tiago_electronic_base_color.jpg",
+      "bytes": 396745,
+      "sha256": "a9f56534c41dcae2e40d6c2c853e22f88c7a95ff70cf6c832e0c25912222512a",
+      "git_blob": "ec2b1698d9e4a7ea818a06d277e46fb053f81657"
+    }
+  ]
+}

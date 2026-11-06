@@ -1,0 +1,109 @@
+{
+  "repository": "https://github.com/cyberbotics/webots",
+  "release": "R2025a",
+  "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+  "files": [
+    {
+      "path": "projects/default/worlds/sounds/bump.wav",
+      "bytes": 2060,
+      "sha256": "f119e721b86c7df23afb89bf06223290916476d71fda494c63a9a984013d0997",
+      "git_blob": "fa0443df4a344335f45f820111eb5119a7289615"
+    },
+    {
+      "path": "projects/default/worlds/sounds/linear_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/roll.wav",
+      "bytes": 114750,
+      "sha256": "f93028df78e0fe372c5ddae35faf9917a24841625080d7cc7211a65d54713def",
+      "git_blob": "b3ca03782192f84e31707d4dbd0cd5d93fde8e63"
+    },
+    {
+      "path": "projects/default/worlds/sounds/rotational_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/slide.wav",
+      "bytes": 216700,
+      "sha256": "ec0e7f6fe3a466aadf2c53e1c872cb83eb0248d35fdd31fb7ff469f9f7e46b3e",
+      "git_blob": "f5f61383d6401c9b29c75309e6fe2d4634126174"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/Panda.proto",
+      "bytes": 23002,
+      "sha256": "84737e50e224623aaf2cb2aa6ed37d4018f991413865d19f44ad881965ed7a00",
+      "git_blob": "c0e78d5f1b57e29c6c1b4e725a66917c50d239cc"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/PandaHand.proto",
+      "bytes": 6051,
+      "sha256": "47f801b38194b0513b3edac38a32aea1148ac76b00677a6a370625917f67ed70",
+      "git_blob": "30c459574f695247634909f86c17a91e7eeae7c7"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/finger.dae",
+      "bytes": 51239,
+      "sha256": "caefea762f2d18ca9412cf6c2e64e5007ad03571181d790a8e0c828b1b2035cf",
+      "git_blob": "8d249b9751ca2a5abf80fe1fcd1a1b951c481ba8"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/hand.dae",
+      "bytes": 549239,
+      "sha256": "fe5d445d509e44a9bd107ff78f0b03c49752c98e5e0a8ebafddf2b6cf5a8b380",
+      "git_blob": "454bfcddd36f81a720ba9793b1998bfd8561ff7a"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link0.dae",
+      "bytes": 1591592,
+      "sha256": "050fe608136d11913287eaea6906538ddc9112cdbf7337a3181d9ed03f55f619",
+      "git_blob": "9d65e4420b46c4498ca5c7d6390120e01443882b"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link1.dae",
+      "bytes": 978473,
+      "sha256": "b061af1bcfb57f32719a1ffda44290619549a41b33a37a49bfebe781b20039a4",
+      "git_blob": "47e5b4215f5c9d334b4ba741b571d4aabf2fc404"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link2.dae",
+      "bytes": 998544,
+      "sha256": "01ec435e7aee5812eb401489a83bf1717834eb5f21f8f6233e553b2da9be00bb",
+      "git_blob": "6d5788c831cfb7f6e0fa2ebe0df188673f980ce4"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link3.dae",
+      "bytes": 1099883,
+      "sha256": "ce28221fe968ee86787d594222b24d00aa0f47bb64f53eaacbaf6172e81c29b4",
+      "git_blob": "895e67be2d17a44d553a1290e9e5fcd89f4f82d1"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link4.dae",
+      "bytes": 1145723,
+      "sha256": "d3a4029d1396471ad78ea5fd06e440167cb46c3ed7ab57befb2bcdbf1360efbf",
+      "git_blob": "1d47af8e04af59e4420e5f59f0deaaa3feb4d72f"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link5.dae",
+      "bytes": 1438343,
+      "sha256": "07bab2ced87c546bfbc15ce8249038db0e0e582de1607b4243ebd3669dac1f21",
+      "git_blob": "b4370bb6401bc1c4b57b5bd2ab9ee89436757110"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link6.dae",
+      "bytes": 1728753,
+      "sha256": "4475cb620e2e7293eb0f317b5f968f6520f703a4e5d4f7b95f75249e4302fd21",
+      "git_blob": "74a80bff2151dbc161238b9e86ab0c1f7d59043c"
+    },
+    {
+      "path": "projects/robots/franka_emika/panda/protos/meshes/link7.dae",
+      "bytes": 936416,
+      "sha256": "463227bda9eb9901637107068f59e861fcb81ac89880706d41c26d18c4b46abe",
+      "git_blob": "e43db9037bafa660557ee193fef8c1d217acb01b"
+    }
+  ]
+}

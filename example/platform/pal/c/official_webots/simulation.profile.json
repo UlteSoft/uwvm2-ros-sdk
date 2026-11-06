@@ -1,0 +1,19 @@
+{
+  "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
+  "id": "pal-tiago-webots-r2025a-jazzy",
+  "execution_class": "software_simulation",
+  "scope": "Official Webots R2025a Tiago physics; seven arm joints; base, head, torso and gripper remain passive",
+  "ros_release": "jazzy",
+  "source": "main.c",
+  "test": "xmake test -P .",
+  "original_controller_type": "joint_trajectory_controller/JointTrajectoryController",
+  "same_wasm_for_both_engines": true,
+  "source_lock": "model-assets.json",
+  "official_source": {
+    "repository": "https://github.com/cyberbotics/webots",
+    "release": "R2025a",
+    "path": "projects/robots/pal_robotics/tiago/protos/Tiago.proto"
+  },
+  "production_admission": false,
+  "physical_robot_authorized": false
+}

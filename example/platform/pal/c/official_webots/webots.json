@@ -1,0 +1,17 @@
+{
+  "vendor": "pal",
+  "model": "Tiago",
+  "namespace": "/pal",
+  "robot_name": "official_pal",
+  "joint_names": [
+    "arm_1_joint",
+    "arm_2_joint",
+    "arm_3_joint",
+    "arm_4_joint",
+    "arm_5_joint",
+    "arm_6_joint",
+    "arm_7_joint"
+  ],
+  "primary_proto": "projects/robots/pal_robotics/tiago/protos/Tiago.proto",
+  "scope": "Official Webots R2025a Tiago physics; seven arm joints; base, head, torso and gripper remain passive"
+}

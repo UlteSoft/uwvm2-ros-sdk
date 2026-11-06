@@ -23,7 +23,10 @@ typedef roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Result Resu
 static unsigned assertions;
 static unsigned unknown_effort;
 static char const *scenario;
-static char const *names[6];
+/* Capacity comes from the explicitly selected message schema, not a fixed robot. */
+enum { JOINT_CAPACITY = sizeof(((Goal *)0)->trajectory.joint_names.data) / sizeof(((Goal *)0)->trajectory.joint_names.data[0]) };
+static char const *names[JOINT_CAPACITY];
+static unsigned joint_count;
 static void require(int ok, unsigned code) {
     ++assertions;
     if (!ok) {
@@ -44,7 +47,7 @@ static void pause_once(uint64_t deadline) {
 static int positions(JointState const *state, double *values) {
     unsigned i, j;
     if (state->name.size != state->position.size) return 0;
-    for (i = 0; i != 6; ++i) {
+    for (i = 0; i != joint_count; ++i) {
         unsigned found = 0;
         for (j = 0; j != state->name.size; ++j) {
             if (strlen(names[i]) == state->name.data[j].size &&
@@ -71,7 +74,7 @@ static int sample(roswasmc_capability *cap, JointState *state, double *values) {
 static double position_tolerance;
 static int same(double const *a, double const *b) {
     unsigned i;
-    for (i = 0; i != 6; ++i) {
+    for (i = 0; i != joint_count; ++i) {
         double d = a[i] - b[i];
         if (!(d >= -position_tolerance && d <= position_tolerance)) return 0;
     }
@@ -90,13 +93,16 @@ int main(int argc, char **argv) {
     Goal goal = {0};
     Result result = {0};
     Feedback feedback = {0};
-    double initial[6] = {0}, target[6] = {0}, actual[6] = {0};
+    double initial[JOINT_CAPACITY] = {0}, target[JOINT_CAPACITY] = {0}, actual[JOINT_CAPACITY] = {0};
     uint8_t kind = 0;
     unsigned i, error;
     char gate = 0;
     scenario = argc > 1 ? argv[1] : "missing";
-    require(argc == 10, 1);
-    for (i = 0; i != 6; ++i) names[i] = argv[i + 4];
+    require(argc > 4 && (unsigned)(argc - 4) <= JOINT_CAPACITY, 1);
+    joint_count = (unsigned)(argc - 4);
+    require(joint_count <= sizeof goal.goal_tolerance.data / sizeof goal.goal_tolerance.data[0] &&
+            joint_count <= sizeof goal.trajectory.points.data[0].positions.data / sizeof goal.trajectory.points.data[0].positions.data[0], 5);
+    for (i = 0; i != joint_count; ++i) names[i] = argv[i + 4];
     char *challenge_end = NULL, *tolerance_end = NULL;
     errno = 0;
     unsigned long parsed_challenge = strtoul(argv[2], &challenge_end, 10);
@@ -231,12 +237,12 @@ int main(int argc, char **argv) {
     } else {
         require(!error, 40 + error);
         require(!roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal_default(&goal), 41);
-        goal.trajectory.joint_names.size = 6;
-        goal.goal_tolerance.size = 6;
+        goal.trajectory.joint_names.size = joint_count;
+        goal.goal_tolerance.size = joint_count;
         goal.trajectory.points.size = 1;
-        goal.trajectory.points.data[0].positions.size = 6;
+        goal.trajectory.points.data[0].positions.size = joint_count;
         goal.trajectory.points.data[0].time_from_start.sec = !strcmp(scenario, "cancel") ? 5 : 1;
-        for (i = 0; i != 6; ++i) {
+        for (i = 0; i != joint_count; ++i) {
             size_t n = strlen(names[i]);
             require(n <= sizeof goal.trajectory.joint_names.data[i].data, 42);
             goal.trajectory.joint_names.data[i].size = (uint32_t)n;
@@ -295,7 +301,7 @@ int main(int argc, char **argv) {
             if (!matched) pause_once(deadline);
         }
         if (!strcmp(scenario, "cancel")) {
-            double stopped[6]; memcpy(stopped, actual, sizeof stopped);
+            double stopped[JOINT_CAPACITY]; memcpy(stopped, actual, sizeof stopped);
             require(!same(target, actual), 4006);
             uint64_t finish = monotonic() + 300000000;
             while (monotonic() < finish) {
@@ -309,11 +315,11 @@ finished:
     if (state_cap.handle) require(!roswasmc_close(&state_cap), 60);
     printf("{\"format\":\"uwvm-joint-guest-v1\",\"case\":\"%s\",\"status\":\"PASS\",\"assertions\":%u,\"challenge\":%u,\"goal\":%llu,\"feedbacks\":%llu,\"samples\":%llu,\"initial\":[",
            scenario, assertions, challenge, (unsigned long long)id, (unsigned long long)feedbacks, (unsigned long long)samples);
-    for (i = 0; i != 6; ++i) printf("%s%.12g", i ? "," : "", initial[i]);
+    for (i = 0; i != joint_count; ++i) printf("%s%.12g", i ? "," : "", initial[i]);
     printf("],\"target\":[");
-    for (i = 0; i != 6; ++i) printf("%s%.12g", i ? "," : "", target[i]);
+    for (i = 0; i != joint_count; ++i) printf("%s%.12g", i ? "," : "", target[i]);
     printf("],\"actual\":[");
-    for (i = 0; i != 6; ++i) printf("%s%.12g", i ? "," : "", actual[i]);
+    for (i = 0; i != joint_count; ++i) printf("%s%.12g", i ? "," : "", actual[i]);
     printf("],\"position_tolerance_radians\":%.17g,\"unknown_effort_samples\":%u,\"terminal_kind\":%u,\"result_error\":%d}\n", position_tolerance, unknown_effort, kind, result.error_code);
     return 0;
 }

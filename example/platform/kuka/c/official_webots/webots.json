@@ -1,0 +1,15 @@
+{
+  "vendor": "kuka",
+  "model": "Youbot",
+  "namespace": "/kuka",
+  "robot_name": "official_kuka",
+  "joint_names": [
+    "arm1",
+    "arm2",
+    "arm3",
+    "arm4",
+    "arm5"
+  ],
+  "primary_proto": "projects/robots/kuka/youbot/protos/Youbot.proto",
+  "scope": "Official Webots R2025a Youbot physics; five arm joints; base and gripper remain passive"
+}
