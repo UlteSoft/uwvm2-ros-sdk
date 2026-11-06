@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
   "backend": "ros1",
@@ -142,7 +142,23 @@
           "wasi_grants": [
             "monotonic-clock"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "fd_write": "allow",
+            "poll_oneoff": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.action_cancel_any_goal": "allow",
+            "uwvm_ros1_v1.action_cancel_own_goal": "allow",
+            "uwvm_ros1_v1.action_receive_feedback": "allow",
+            "uwvm_ros1_v1.action_receive_result": "allow",
+            "uwvm_ros1_v1.action_send_goal": "allow",
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow"
+          }
         }
       }
     }

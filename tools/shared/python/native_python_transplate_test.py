@@ -65,6 +65,8 @@ for grant in grants:
  alias=grant['alias'];opts+=['--'+args.backend+'-single-grant','main',alias,grant['operation'],grant['resource'],grant['type'],grant['identity']]
  for k,val in grant['fields'].items():opts+=['--'+args.backend+'-single-set','main',alias,k,val]
 argv=[str(vm),*wasi_policy.test_arguments(config['runtime_arguments'],policy),*opts,'--run',str(wasm)]
+from host_interfaces import authorize_test_imports
+argv = authorize_test_imports(argv)
 membership=Path('/proc/self/cgroup').read_text().strip()
 if not membership.startswith('0::/') or '\n' in membership:raise RuntimeError('Unified cgroup required')
 group=Path('/sys/fs/cgroup')/membership[3:].lstrip('/')

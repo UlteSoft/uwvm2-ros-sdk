@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm/bin/uwvm2-ros",
   "gateway": "/opt/uwvm/bin/uwvm-ros1-gateway",
   "backend": "ros1",
@@ -43,7 +43,20 @@
             "args",
             "proc-exit"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "fd_close": "allow",
+            "fd_fdstat_get": "allow",
+            "fd_seek": "allow",
+            "fd_write": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow"
+          }
         },
         "io": {
           "ros_enabled": true,
@@ -52,18 +65,39 @@
             "stdout.write",
             "stdio.metadata"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "fd_close": "allow",
+            "fd_fdstat_get": "allow",
+            "fd_seek": "allow",
+            "fd_write": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow"
+          }
         },
         "algorithm": {
           "ros_enabled": true,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "fd_close": "allow",
+            "fd_fdstat_get": "allow",
+            "fd_seek": "allow",
+            "fd_write": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow"
+          }
         },
         "ros_comm": {
           "ros_enabled": true,
           "wasi_grants": [
-            "realtime-timer"
+            "realtime-timer",
+            "environ"
           ],
           "call_boundary": "module-exports",
           "grants": [
@@ -93,7 +127,24 @@
               }
             }
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "clock_time_get": "allow",
+            "environ_get": "allow",
+            "environ_sizes_get": "allow",
+            "fd_close": "allow",
+            "fd_fdstat_get": "allow",
+            "fd_pread": "allow",
+            "fd_seek": "allow",
+            "fd_write": "allow",
+            "poll_oneoff": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow",
+            "uwvm_ros1_v1.topic_publish": "allow"
+          }
         }
       }
     }

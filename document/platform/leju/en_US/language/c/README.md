@@ -43,7 +43,7 @@ Three independently built and executed examples remain required for this route.
 ## Explicit native deployment
 
 Select the operator's file with `set_ros_run_config("deployment.json")`.
-The common `tools/platform/ros/run.py` consumes `uwvm-native-ros-run-v3`;
+The common `tools/platform/ros/run.py` consumes `uwvm-native-ros-run-v4`;
 backend and distribution must match the target exactly. Under
 `examples.<scenario>`, supply `arguments`, `main_module`, `preloads` and
 `modules` explicitly. `arguments` is the original UTF-8 argument array, including

@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm/bin/uwvm2-ros",
   "gateway": "/opt/uwvm/bin/uwvm-ros2-gateway",
   "backend": "ros2",
@@ -28,19 +28,42 @@
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "clock_time_get": "allow",
+            "fd_fdstat_set_rights": "allow",
+            "fd_write": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {}
         },
         "math": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "clock_time_get": "allow",
+            "fd_write": "allow"
+          },
+          "ros_interfaces": {}
         },
         "math_peer": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "clock_time_get": "allow",
+            "fd_write": "allow"
+          },
+          "ros_interfaces": {}
         }
       }
     }

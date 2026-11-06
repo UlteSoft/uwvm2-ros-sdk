@@ -49,7 +49,7 @@ function catalog(root)
                 local component = os.isfile(path.join(path.directory(file), "component.json"))
                 table.insert(rows, {path = relative, language = language or "UNRESOLVED_DECLARATION",
                     mode = relative:match("/([^/]+)$"), source_files = inputs,
-                    required_simulation_ids = required_projects[relative] or {},
+                    required_simulation_ids = required_projects[relative] or json.mark_as_array({}),
                     structured_guest_cases_required = component or heavy,
                     scheduling_lane = heavy and "SERIAL_OFFICIAL_ENVIRONMENT" or "BOUNDED_BUILD_AND_TEST",
                     configure = {argv = {"xmake", "f", "-y", "-P", "<public-project>", "-o", "<isolated-build>"}, status = "NOT_RUN"},

@@ -104,6 +104,8 @@ for grant in grants:
  options+=['--ros2-single-grant','ros_comm',*[grant[k] for k in ['alias','operation','resource','type','identity']]]
  for k,v in grant['fields'].items():options+=['--ros2-single-set','ros_comm',grant['alias'],k,v]
 argv=[str(vm),*test_arguments(runtime,policy),*options,'--run',modules['main']['artifact'],*(['--contract',mode] if mode!='normal' else [])]
+from host_interfaces import authorize_test_imports
+argv = authorize_test_imports(argv)
 env=dict(cfg['native_environment']);env.update(ROS_LOG_DIR=str(d/'ros-logs'),ROS_HOME=str(d/'ros-home'))
 row=dict(format='uwvm-sdk-pal-preload-native-result-v1',status='RUNNING',case=args.case,mode=mode,scope='Actual Java/Wasm modules and native ROS transport; no simulator qualification',
  cgroup=membership,private_wasm_memories=4,modules=modules,wasi_policy=policy,ros_grants=grants,call_boundaries=boundaries,topic=topic,argv=argv,socket_directory=str(work),

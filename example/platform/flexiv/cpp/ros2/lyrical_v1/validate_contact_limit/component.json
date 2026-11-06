@@ -307,12 +307,12 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_policy.py",
-      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+      "sha256": "be55f2a9cb0582ecbf56a633119f8e826417efb81790686352070745c291be77"
     },
     {
       "scope": "sdk",
@@ -338,6 +338,16 @@
       "scope": "example",
       "path": "xmake.lua",
       "sha256": "b3efbab3bab8544524cfb3ae5d28aa9ce45c0dd11126bed543b06f2bb10e538f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/host_interfaces.py",
+      "sha256": "27161c810cd4970ed90bfcd26c429add97dd6e58481ab15a835378468d0a0557"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/host-interfaces.json",
+      "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
     }
   ],
   "cases": [

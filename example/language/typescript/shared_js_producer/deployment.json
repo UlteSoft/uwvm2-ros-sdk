@@ -12,15 +12,32 @@
   ],
   "application_arguments": [],
   "wasi_policy": {
-    "format": "uwvm-sdk-wasip1-policy-v2",
+    "format": "uwvm-sdk-wasip1-policy-v3",
     "modules": {
       "main": {
         "enabled": true,
-        "grants": []
+        "grants": [],
+        "interfaces": {
+          "args_get": "allow",
+          "args_sizes_get": "allow",
+          "clock_time_get": "allow",
+          "fd_close": "allow",
+          "fd_fdstat_get": "allow",
+          "fd_read": "allow",
+          "fd_seek": "allow",
+          "fd_write": "allow",
+          "proc_exit": "allow"
+        }
       },
       "algorithm": {
         "enabled": true,
-        "grants": []
+        "grants": [],
+        "interfaces": {
+          "clock_time_get": "allow",
+          "fd_close": "allow",
+          "fd_seek": "allow",
+          "fd_write": "allow"
+        }
       }
     }
   }

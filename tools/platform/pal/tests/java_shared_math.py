@@ -162,6 +162,8 @@ def main():
                     "--wasm-preload-library", str(args.library.resolve()), "math_peer"]
             argv = [argv[0], *wasi_test_arguments(argv[1:], config.get("wasi_policy")),
                     "--run", str(args.main.resolve())]
+            from host_interfaces import authorize_test_imports
+            argv = authorize_test_imports(argv)
             expected_exit = 0
             if case == "guest-contract-denied":
                 argv.append("deny-stdout")

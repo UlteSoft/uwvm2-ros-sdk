@@ -131,6 +131,8 @@ def main():
         for case in cases:
             supervisor.guard()
             argv = [str(executable), *runtime_args, "--run", str(wasm), *case.get("arguments", [])]
+            from host_interfaces import authorize_test_imports
+            argv = authorize_test_imports(argv)
             entry = {"id": case["id"], "status": "FAIL", "argv": argv, "cwd": str(Path.cwd()),
                      "pwd": os.environ.get("PWD"), "started_monotonic_ns": time.monotonic_ns()}
             report["cases"].append(entry)

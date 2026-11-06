@@ -59,7 +59,7 @@
     {
       "path": "example/platform/ros/portable/v0_1_0/joint_step/xmake.lua",
       "scope": "sdk",
-      "sha256": "57da5ffa3fed362bcefaed7a36853636316a0816bf1a2f44ab7de14b084cd730"
+      "sha256": "43de3abf081f288202c7ee2eeb1a1df9bf03c22bcef4a4c37cf354bbe5e8f65d"
     }
   ],
   "qualification_scope": "Stage A official ROS communication only",

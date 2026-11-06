@@ -326,6 +326,8 @@ def main() -> None:
                             "--wasip1-single-grant", "main", "stdout.write",
                             "--wasip1-single-grant", "main", "stdio.metadata",
                             "--wasip1-single-grant", "main", "proc-exit",
+                            *[argument for item in wasi for argument in
+                              ("--wasip1-single-interface", "main", item["name"], "allow")],
                             "--run",
                             str(binary),
                         ],

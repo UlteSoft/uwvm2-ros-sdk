@@ -88,16 +88,18 @@ try:
   for k,v in values.items():options+=['--ros2-single-'+k,authority_module,v]
   options+=['--ros2-single-grant',authority_module,'sample',operation,topic,typ,identity]
   for k,v in limits.items():options+=['--ros2-single-set',authority_module,'sample',k,v]
-  policy={'format':'uwvm-sdk-wasip1-policy-v2','modules':{'main':{'enabled':True,'grants':['proc-exit','args','stdout.write','stderr.write','stdio.metadata','monotonic-clock','monotonic-timer']}}}
+  policy={'format':'uwvm-sdk-wasip1-policy-v3','modules':{'main':{'enabled':True,'interfaces':{},'grants':['proc-exit','args','stdout.write','stderr.write','stdio.metadata','monotonic-clock','monotonic-timer']}}}
   if preloading:
-   policy={'format':'uwvm-sdk-wasip1-policy-v2','modules':{
-    'main':{'enabled':True,'grants':['proc-exit','args']},
-    'io':{'enabled':True,'grants':['stdout.write','stdio.metadata','monotonic-clock','monotonic-timer']},
-    'algorithm':{'enabled':True,'grants':[]},
-    'ros_comm':{'enabled':True,'grants':[]}}}
+   policy={'format':'uwvm-sdk-wasip1-policy-v3','modules':{
+    'main':{'enabled':True,'interfaces':{},'grants':['proc-exit','args']},
+    'io':{'enabled':True,'interfaces':{},'grants':['stdout.write','stdio.metadata','monotonic-clock','monotonic-timer']},
+    'algorithm':{'enabled':True,'interfaces':{},'grants':[]},
+    'ros_comm':{'enabled':True,'interfaces':{},'grants':[]}}}
   item['wasi_policy']=policy
   item['ros_resource_module']=authority_module
   argv=[str(vm),*test_arguments([*(['--wasm-feature-enable-memory64','--wasm-feature-enable-table64'] if args.architecture=='wasm64' else []),*preloads,'-Raot','--log-verbose','--runtime-compile-threads','1','--runtime-llvm-jit-policy','debug'],policy),*options,'--run',str(wasm)]
+  from host_interfaces import authorize_test_imports
+  argv = authorize_test_imports(argv)
   def spawn(label,argv,**kw):
    aout=work/(label+'.stdout');aerr=work/(label+'.stderr')
    native_fd=None

@@ -86,8 +86,10 @@ try:
   options+=['--ros2-single-grant','main','sample',operation,topic,typ,identity]
   for k,v in limits.items():options+=['--ros2-single-set','main','sample',k,v]
   if args.case in ('guest-contract-denied','guest-contract-invalid-input'):options=options[:4]
-  policy={'format':'uwvm-sdk-wasip1-policy-v2','modules':{'main':{'enabled':True,'grants':['proc-exit','args','stdout.write','stderr.write','stdio.metadata','environ','monotonic-clock','monotonic-timer']}}}
+  policy={'format':'uwvm-sdk-wasip1-policy-v3','modules':{'main':{'enabled':True,'interfaces':{},'grants':['proc-exit','args','stdout.write','stderr.write','stdio.metadata','environ','monotonic-clock','monotonic-timer']}}}
   argv=[str(vm),*test_arguments(['-Raot','--log-verbose','--runtime-compile-threads','1','--runtime-llvm-jit-policy','debug'],policy),*options,*(['--wasm-feature-enable-memory64','--wasm-feature-enable-table64'] if args.architecture=='wasm64' else []), '--wasm-feature-enable-exceptions','--run',str(wasm),*(['sample'] if args.case!='guest-contract-invalid-input' else [])]
+  from host_interfaces import authorize_test_imports
+  argv = authorize_test_imports(argv)
   def spawn(label,argv,**kw):
    aout=work/(label+'.stdout');aerr=work/(label+'.stderr')
    native_fd=None

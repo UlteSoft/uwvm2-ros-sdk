@@ -63,7 +63,7 @@ target("abb-objectc-read_speed")
 target_end()
 ```
 
-构建阶段无需安装或启动 ROS、Gateway 或 uwvm2-ros。只有 `xmake run` 才读取部署文件并启动真正的 uwvm2-ros 和原生 Gateway。部署文件使用 `uwvm-native-ros-run-v3` 格式，提供 `runtime`、`gateway`、`backend`、`distribution` 和原生 `connection`。每个场景必须声明 `arguments`、`main_module`、`preloads` 及完整 `modules` 权限映射。每个模块明确选择 `ros_enabled`、`grants`、`wasi_grants`；每个能力保留别名、操作、资源、原始原生类型身份和配额。IO 参数包含别名与实际信号名，另外两个观察命令只接收别名。完整配置见[统一部署手册](../../../../../native-run.zh_CN.md)及 C/C++ 的 `read_speed/deployment.template.json`；类型身份占位符必须按实际编译的注册表填写。构建选项不会隐式授权。
+构建阶段无需安装或启动 ROS、Gateway 或 uwvm2-ros。只有 `xmake run` 才读取部署文件并启动真正的 uwvm2-ros 和原生 Gateway。部署文件使用 `uwvm-native-ros-run-v4` 格式，提供 `runtime`、`gateway`、`backend`、`distribution` 和原生 `connection`。每个场景必须声明 `arguments`、`main_module`、`preloads` 及完整 `modules` 权限映射。每个模块明确选择 `wasi_enabled`、`ros_enabled`、逐接口的 `wasi_interfaces`/`ros_interfaces` 状态映射、`grants`、`wasi_grants`；每个能力保留别名、操作、资源、原始原生类型身份和配额。IO 参数包含别名与实际信号名，另外两个观察命令只接收别名。完整配置见[统一部署手册](../../../../../native-run.zh_CN.md)及 C/C++ 的 `read_speed/deployment.template.json`；类型身份占位符必须按实际编译的注册表填写。构建选项不会隐式授权。
 
 ```sh
 xmake f -c -p wasm-wasip1 -a wasm32 --ros-run-config=/absolute/abb-deployment.json

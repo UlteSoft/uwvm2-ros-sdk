@@ -1,7 +1,7 @@
 {
   "external_vendor_bindings_are_not_compiled_inputs": true,
   "format": "sdk02-python-component-build-inputs-v1",
-  "input_count": 2716,
+  "input_count": 2719,
   "inputs": [
     {
       "bytes": 12477,
@@ -13429,9 +13429,9 @@
       "sha256": "da3dca53d3deca4e1e8932869829e24d5eb5a4230a52dd9d613be5e98d39b7c8"
     },
     {
-      "bytes": 18932,
+      "bytes": 19733,
       "path": "tools/platform/ros/deployment.py",
-      "sha256": "f72940993de46b2fdff6ca3079d738c66c3fc0cfe611c86ba4216e93612d5cbd"
+      "sha256": "436ed69236bfe6f320e0513b1b32a1927db1e8e56f21a07bfde9aed461777bd5"
     },
     {
       "bytes": 16368,
@@ -13456,7 +13456,7 @@
     {
       "bytes": 5790,
       "path": "tools/platform/ros/provider.lua",
-      "sha256": "2c5e19d620e2e43555d234b0c8cead9a872e6615a254ecd367a5ca618a967e51"
+      "sha256": "c6102e8ff4c34d56cea3f1eaaa30937368030c333d342198a2a0c0d439d90e88"
     },
     {
       "bytes": 12158,
@@ -13467,6 +13467,21 @@
       "bytes": 1884,
       "path": "tools/platform/wasi/provider.lua",
       "sha256": "3b70c0cbb075fd2bb1a63fb9f80040a74b9fc88dd164c17ed63cb5335ab09289"
+    },
+    {
+      "path": "tools/shared/host-interfaces.json",
+      "bytes": 33968,
+      "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
+    },
+    {
+      "path": "tools/shared/python/host_interfaces.py",
+      "bytes": 7647,
+      "sha256": "27161c810cd4970ed90bfcd26c429add97dd6e58481ab15a835378468d0a0557"
+    },
+    {
+      "path": "tools/shared/python/wasi_policy.py",
+      "bytes": 13923,
+      "sha256": "be55f2a9cb0582ecbf56a633119f8e826417efb81790686352070745c291be77"
     },
     {
       "bytes": 19342,

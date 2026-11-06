@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "gateway": "/opt/uwvm2-ros/bin/uwvm-ros1-gateway",
   "backend": "ros1",
@@ -49,7 +49,18 @@
             }
           ],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "fd_write": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros1_v1.capability_close": "allow",
+            "uwvm_ros1_v1.capability_open": "allow",
+            "uwvm_ros1_v1.service_call": "allow"
+          }
         }
       }
     }

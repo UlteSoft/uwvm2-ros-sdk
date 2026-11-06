@@ -340,7 +340,8 @@ function build(target, root, language, backend, closure, programs, library_feed,
 	if language == "fsharp" or language == "vbnet" then
 		table.join2(application_sources, managed_sources
 			and exact_sources(language, language == "fsharp" and ".fs" or ".vb")
-			or table.join(os.files(path.join(platform_root, language, "Uwvm/**" .. (language == "fsharp" and ".fs" or ".vb"))),
+			or table.join(os.files(path.join(platform_root, language, "*" .. (language == "fsharp" and ".fs" or ".vb"))),
+				os.files(path.join(platform_root, language, "Uwvm/**" .. (language == "fsharp" and ".fs" or ".vb"))),
 				os.files(path.join(platform_root, language, backend, "**" .. (language == "fsharp" and ".fs" or ".vb")))))
 	end
 	for _, source in ipairs(target:sourcefiles()) do

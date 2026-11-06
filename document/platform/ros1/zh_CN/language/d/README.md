@@ -57,7 +57,7 @@ memory64 变体使用独立声明和原来的操作场景。各目录仅使用�
 
 `xmake run` 使用另外安装的 `uwvm2-ros`。通过 `set_ros_run_config`、`--ros-run-config` 或 `UWVM_ROS_RUN_CONFIG` 指定手动准备的可信部署。通用 `uwvm-ros-command-run-v1` 原样传递显式运行时参数，仅追加实际 `.wasm` 的 `--run` 和显式应用参数，不增加权限或特性开关。
 
-原生部署采用 `uwvm-native-ros-run-v3`，明确填写匹配的 backend/distribution、runtime/gateway 路径和原生连接数据。每个场景声明完整 `arguments`、`main_module`、有序 `preloads`，以及每个已加载模块的 `modules` 策略。每个模块必须明确填写布尔 `ros_enabled`、`grants` 数组和 `wasi_grants`；空 ROS grants 数组拒绝全部 ROS 操作。每项 grant 保留准确 alias、operation、resource、type、identity 和完整限额，不根据厂商名、场景名或应用参数推断授权。公共运行器支持厂商自定义场景和原样应用参数，包括空字符串。每个启用 ROS 的模块使用独立网关与 Single 绑定，不生成全局 ROS grant。`call_boundary` 默认 `same-module`；明确的 ROS 库导出接口需要手动选择 `module-exports`，并使用实现 `--ros1/2-single-call-boundary` 的匹配运行时，该选项本身不增加 capability。基础 WASI 不提供标准流操作权限；所需操作必须逐模块显式授权。运行前载入匹配的原生 ROS 环境，保留受控原生观察、完整载荷和独立清理证据。
+原生部署采用 `uwvm-native-ros-run-v4`，明确填写匹配的 backend/distribution、runtime/gateway 路径和原生连接数据。每个场景声明完整 `arguments`、`main_module`、有序 `preloads`，以及每个已加载模块的 `modules` 策略。每个模块必须明确填写布尔 `ros_enabled`、`grants` 数组和 `wasi_grants`；空 ROS grants 数组拒绝全部 ROS 操作。每项 grant 保留准确 alias、operation、resource、type、identity 和完整限额，不根据厂商名、场景名或应用参数推断授权。公共运行器支持厂商自定义场景和原样应用参数，包括空字符串。每个启用 ROS 的模块使用独立网关与 Single 绑定，不生成全局 ROS grant。`call_boundary` 默认 `same-module`；明确的 ROS 库导出接口需要手动选择 `module-exports`，并使用实现 `--ros1/2-single-call-boundary` 的匹配运行时，该选项本身不增加 capability。基础 WASI 不提供标准流操作权限；所需操作必须逐模块显式授权。运行前载入匹配的原生 ROS 环境，保留受控原生观察、完整载荷和独立清理证据。
 
 ## 验证与当前范围
 

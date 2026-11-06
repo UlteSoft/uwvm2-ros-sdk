@@ -22,8 +22,8 @@ xmake
 xmake run main
 ```
 
-main, math and math_peer explicitly disable ROS and retain empty WASI grants.
-The public runner owns deployment. Deployable outputs are under build/targets;
+main, math and math_peer enable only their declared ROS interfaces and have no ROS resource grants. Each module separately lists its WASI interfaces and startup operations; stdout is granted only to main.
+The public runner owns deployment. Deployable outputs are under build/artifacts/targets;
 compiler intermediates remain in .uwvm-ros.
 
 The pinned Preview 6 glue resolves actual full CLR type names and binds its

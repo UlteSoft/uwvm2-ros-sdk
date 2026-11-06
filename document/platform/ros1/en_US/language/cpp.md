@@ -82,7 +82,7 @@ only after checked owner cleanup.
 
 Source the chosen native ROS installation. Supply a trusted JSON deployment in
 `UWVM_ROS_RUN_CONFIG`, then run the already built example with `xmake run`.
-The deployment format is `uwvm-native-ros-run-v3`. Declare matching
+The deployment format is `uwvm-native-ros-run-v4`. Declare matching
 `backend` and `distribution`, actual `runtime` and `gateway` executable paths,
 and native `connection` data. Each scenario supplies `arguments`, `main_module`,
 ordered `preloads` and a `modules` map matching every loaded module name. Each

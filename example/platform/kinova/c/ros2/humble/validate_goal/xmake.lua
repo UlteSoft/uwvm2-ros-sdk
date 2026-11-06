@@ -79,7 +79,7 @@ target("kinova-c-ros2_humble-validate_goal")
             and expected:match("^[0-9a-f]+$") and hash.sha256(runtime):lower() == expected,
             "BLOCKED_EXACT_UWVM2_ROS_RUNTIME_SHA256")
         local arguments = import("wasi_policy", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).test_arguments(
-            deployment.runtime_arguments, deployment.wasi_policy)
+            deployment.runtime_arguments, deployment.wasi_policy, {main=path.absolute(target:targetfile())})
         local aot = false
         for _, argument in ipairs(arguments) do
             assert(argument ~= "--run" and argument ~= "-r"

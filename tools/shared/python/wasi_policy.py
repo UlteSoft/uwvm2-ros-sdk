@@ -1,7 +1,7 @@
 """Serialize approved WASIp1 policy; discovery never grants guest authority.
 
 The same empty policy is used for every execution/debug/ROS backend. The
-operator enables a complete namespace independently from operation permissions.
+operator enables a namespace, selects each interface state and grants operations independently.
 """
 import re
 
@@ -139,8 +139,10 @@ def environment_arguments(module, environment):
 
 def module_policy(value):
     """Validate a concrete policy, including an explicitly empty policy."""
-    if not isinstance(value, dict) or not {"enabled", "grants"}.issubset(value) or set(value) - {"enabled", "grants", "limits", "wait_exit_actions", "preopens", "filesystem_rights", "environment"}:
-        raise ValueError("WASIp1 policy requires enabled and grants; per-function imports are no longer supported")
+    if not isinstance(value, dict) or not {"enabled", "grants", "interfaces"}.issubset(value) or set(value) - {"enabled", "grants", "interfaces", "limits", "wait_exit_actions", "preopens", "filesystem_rights", "environment"}:
+        raise ValueError("WASIp1 v3 requires enabled, exact interfaces, and operation grants")
+    from host_interfaces import interface_arguments
+    interface_arguments("wasip1", "single", "main", value["interfaces"])
     if type(value["enabled"]) is not bool:
         raise ValueError("WASIp1 enabled must be Boolean")
     for field in ("grants",):
@@ -169,8 +171,8 @@ def arguments(policy):
     """
     if policy is None:
         return []
-    if not isinstance(policy, dict) or set(policy) != {"format", "modules"} or policy["format"] != "uwvm-sdk-wasip1-policy-v2":
-        raise ValueError("Expected uwvm-sdk-wasip1-policy-v2")
+    if not isinstance(policy, dict) or set(policy) != {"format", "modules"} or policy["format"] != "uwvm-sdk-wasip1-policy-v3":
+        raise ValueError("Expected uwvm-sdk-wasip1-policy-v3")
     modules = policy["modules"]
     if not isinstance(modules, dict) or len(modules) > 256:
         raise ValueError("WASIp1 modules must be a bounded map")
@@ -184,6 +186,8 @@ def arguments(policy):
         module_policy(value)
         argv += ["--wasip1-single-create", name, "--wasip1-single-" + ("enable" if value["enabled"] else "disable"), name,
                  "--wasip1-single-noinherit-system-environment", name]
+        from host_interfaces import interface_arguments
+        argv += interface_arguments("wasip1", "single", name, value["interfaces"])
         for permission in value["grants"]:
             argv += ["--wasip1-single-grant", name, permission]
         argv += limit_arguments(name, value.get("limits", {}))
@@ -237,8 +241,8 @@ def test_arguments(values, policy=None):
         raise ValueError("Test WASIp1 policy names a module outside the loaded graph")
     modules = {}
     for name in names:
-        value = configured.get(name, {"enabled": True, "grants": []})
+        value = configured.get(name, {"enabled": True, "interfaces": {}, "grants": []})
         if not value["enabled"]:
             raise ValueError("Every SDK guest test module requires enabled WASIp1; deny operations through grants")
         modules[name] = value
-    return result + arguments({"format": "uwvm-sdk-wasip1-policy-v2", "modules": modules})
+    return result + arguments({"format": "uwvm-sdk-wasip1-policy-v3", "modules": modules})

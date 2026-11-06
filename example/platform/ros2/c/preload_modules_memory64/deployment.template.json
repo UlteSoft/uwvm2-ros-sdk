@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
   "backend": "ros2",
@@ -43,7 +43,11 @@
             "args",
             "proc-exit"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "proc_exit_wasm64": "allow"
+          },
+          "ros_interfaces": {}
         },
         "io": {
           "ros_enabled": false,
@@ -54,13 +58,20 @@
             "monotonic-clock",
             "monotonic-timer"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "fd_write_wasm64": "allow",
+            "poll_oneoff_wasm64": "allow"
+          },
+          "ros_interfaces": {}
         },
         "algorithm": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {},
+          "ros_interfaces": {}
         },
         "ros_comm": {
           "ros_enabled": true,
@@ -99,7 +110,13 @@
           ],
           "wasi_grants": [],
           "call_boundary": "module-exports",
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {},
+          "ros_interfaces": {
+            "uwvm_ros2_v1.capability_close": "allow",
+            "uwvm_ros2_v1.capability_open": "allow",
+            "uwvm_ros2_v1.topic_publish": "allow"
+          }
         }
       }
     }

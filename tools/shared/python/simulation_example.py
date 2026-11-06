@@ -584,7 +584,9 @@ class Context:
             raise RuntimeError("Run ownership, default checked unwind and AOT policy must be preserved")
         if not any(value in ("--runtime-aot", "-Raot") for value in arguments):
             raise Blocked("BLOCKED_EXPLICIT_NATIVE_AOT_RUNTIME")
-        actor = self.spawn("vm", [runtime["executable"], *arguments, "--run", str(self.wasm)],
+        from host_interfaces import authorize_test_imports
+        command = authorize_test_imports([runtime["executable"], *arguments, "--run", str(self.wasm)])
+        actor = self.spawn("vm", command,
                            expected_sha256=runtime["sha256"])
         actor["scenario_id"], actor["scenario_kind"] = scenario["id"], scenario["kind"]
         actor["portable_input_contract"] = input_contract

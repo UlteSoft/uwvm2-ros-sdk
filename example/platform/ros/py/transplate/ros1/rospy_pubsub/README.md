@@ -16,7 +16,7 @@ Run in a private loopback-only network namespace and the required 64 GiB, zero-s
 - backend (ros1), pinned absolute runtime, gateway and observer paths with SHA-256 identities; ROS1 additionally requires master and master_script pins.
 - native_inputs with exact path/SHA-256 pairs for the selected native dependency closure, and an explicit native_environment.
 - host_network_namespace (device/inode) captured outside the test namespace, and an absolute socket_directory in owned test storage. The runner creates a private short socket directory there, independently of the full evidence path.
-- runtime_arguments, an explicit uwvm-sdk-wasip1-policy-v2 wasi_policy, the exact connection fields, and three ROS grants: migration.string.publish, migration.string.subscribe and migration.graph.topics.
+- runtime_arguments, an explicit uwvm-sdk-wasip1-policy-v3 wasi_policy, the exact connection fields, and three ROS grants: migration.string.publish, migration.string.subscribe and migration.graph.topics.
 - limits.timeout_seconds and limits.output_bytes for test supervision.
 
 The policy must explicitly enable WASIp1 for main. Declare each required operation separately: args, environ, stdout.write, stderr.write, stdio.metadata, proc-exit, monotonic-clock and monotonic-timer. There are no implicit guest quotas or ROS resource grants. ROS2 preopen host paths select the owned fixture placeholders {readonly} and {workspace} with explicit per-root rights; no external directory is substituted.

@@ -182,10 +182,11 @@ def run(
         raise ValueError("Select an exact qualified Unitree WASI P1 target")
     raw = config_path.read_bytes()
     config = json.loads(raw)
-    if config.get("format") != "uwvm-unitree-run-v2":
-        raise ValueError("Expected deployment format uwvm-unitree-run-v2")
+    if config.get("format") != "uwvm-unitree-run-v3":
+        raise ValueError("Expected deployment format uwvm-unitree-run-v3")
+    from host_interfaces import interface_arguments
     if "wasi_imports" in config or "ros_imports" in config:
-        raise ValueError("Per-function import exposure fields are no longer supported")
+        raise ValueError("Removed import fields; use exact wasi_interfaces and ros_interfaces state maps")
     runtime_features = config.get("runtime_features", [])
     if (
         not isinstance(runtime_features, list)
@@ -344,6 +345,8 @@ def run(
                  "--wasip1-single-noinherit-system-environment", "main"]
         for value in wasi_grants:
             argv += ["--wasip1-single-grant", "main", token(value)]
+        argv += interface_arguments("wasip1","single","main",config.get("wasi_interfaces"))
+        argv += interface_arguments(backend,"single","main",config.get("ros_interfaces"))
         argv += wasi_limits
         argv += wasi_wait_exit_actions
         argv += ["--run", str(artifact), *guest_arguments]

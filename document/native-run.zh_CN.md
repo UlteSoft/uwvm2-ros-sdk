@@ -30,7 +30,7 @@ ROS1 使用 `set_ros1_version`。Agibot 另提供 `set_agibot_version` 和
 
 ## 部署协议
 
-`uwvm-native-ros-run-v3` 必须包含 `runtime`、`backend`、`distribution`、
+`uwvm-native-ros-run-v4` 必须包含 `runtime`、`backend`、`distribution`、
 `connection` 和 `examples`。主模块或任一预加载模块设置 `ros_enabled: true`
 时，必须提供 `gateway`。运行时和网关均为明确的可执行文件
 路径，相对路径以 JSON 所在目录为基准。可选的 `runtime_loader` 与
@@ -129,3 +129,15 @@ AArch64 运行必须分别取得真实测试记录。尤其是尚未包含新 ca
 配置文件应使用该网关可读取的绝对路径。各模块独立保有参数数组、策略、
 socket、worker 绑定和授权；启动参数不会增加 ROS 权限或改写用户策略。
 所选网关必须实现对应选项；不支持的参数仍按启动失败处理并保留日志。
+
+每个模块还必须提供精确的 `wasi_interfaces`、`ros_interfaces` 映射。
+值为 `hidden`（默认，校验时不可见）、`deny`（暴露接口但拒绝调用）或
+`allow`（允许进入调用，仍需操作、资源权限并受显式限额约束）。
+仅开启命名空间不会暴露任何接口。ROS 键必须包含完整的 `命名空间.函数名`。
+生产运行不会根据导入列表自动授权。`xmake test` 只为已启用的命名空间补齐
+当前模块的实际导入接口；显式配置的三个状态保持不变，不会补授底层权限。
+拒绝调用默认有 warning，限额 warning 默认关闭；通过 `--enable-warning`、
+`--disable-warning`、`--warning-as-error` 和 `all_host_calls`、
+`all_host_denied`、`all_host_limited`（可加 `_wasip1/_ros1/_ros2`）
+以及 `host_denied_FAMILY.API`、`host_limited_FAMILY.API` 精确控制。
+旧版配置不再接受。

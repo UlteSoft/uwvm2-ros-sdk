@@ -171,12 +171,12 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_policy.py",
-      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+      "sha256": "be55f2a9cb0582ecbf56a633119f8e826417efb81790686352070745c291be77"
     },
     {
       "scope": "sdk",
@@ -196,7 +196,7 @@
     {
       "scope": "example",
       "path": "main-typescript-clocks-ROS-denied.deployment.template.json",
-      "sha256": "fcb679830f53a2412881ea33b7ed87a7ecda1178046dc65d0088501b07ab2b5d"
+      "sha256": "7308c393ebdec2f0c5efb4a914641e7f04c2d25824c4cfab7f4aa93b9a8380a3"
     },
     {
       "scope": "example",
@@ -206,12 +206,22 @@
     {
       "scope": "example",
       "path": "main-typescript-clocks.deployment.template.json",
-      "sha256": "d2609eaf5f07e4ebe939a115d234928c82333b30801026f0dd4c757415772809"
+      "sha256": "72aa469e512da7ce2dfb0be792cb67c30d7de6570b0bdd4930bf468223541387"
     },
     {
       "scope": "example",
       "path": "main.mts",
       "sha256": "c56b1268ec7a861db425cb46f8802dc4f5bf763e8a69e04334f0e1bf2a0f2b0a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/host_interfaces.py",
+      "sha256": "27161c810cd4970ed90bfcd26c429add97dd6e58481ab15a835378468d0a0557"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/host-interfaces.json",
+      "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
     }
   ],
   "cases": [

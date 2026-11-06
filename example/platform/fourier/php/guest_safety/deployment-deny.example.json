@@ -14,7 +14,7 @@
     "output_bytes": 2097152
   },
   "wasi_policy": {
-    "format": "uwvm-sdk-wasip1-policy-v2",
+    "format": "uwvm-sdk-wasip1-policy-v3",
     "modules": {
       "main": {
         "enabled": true,
@@ -25,7 +25,41 @@
           "stdout.write",
           "stderr.write",
           "stdio.metadata"
-        ]
+        ],
+        "interfaces": {
+          "args_get": "allow",
+          "args_sizes_get": "allow",
+          "clock_time_get": "allow",
+          "environ_get": "allow",
+          "environ_sizes_get": "allow",
+          "fd_close": "allow",
+          "fd_datasync": "allow",
+          "fd_fdstat_get": "allow",
+          "fd_fdstat_set_flags": "allow",
+          "fd_filestat_get": "allow",
+          "fd_filestat_set_size": "allow",
+          "fd_pread": "allow",
+          "fd_prestat_dir_name": "allow",
+          "fd_prestat_get": "allow",
+          "fd_read": "allow",
+          "fd_readdir": "allow",
+          "fd_seek": "allow",
+          "fd_sync": "allow",
+          "fd_tell": "allow",
+          "fd_write": "allow",
+          "path_create_directory": "allow",
+          "path_filestat_get": "allow",
+          "path_filestat_set_times": "allow",
+          "path_link": "allow",
+          "path_open": "allow",
+          "path_readlink": "allow",
+          "path_remove_directory": "allow",
+          "path_rename": "allow",
+          "path_symlink": "allow",
+          "path_unlink_file": "allow",
+          "poll_oneoff": "allow",
+          "proc_exit": "allow"
+        }
       }
     }
   }

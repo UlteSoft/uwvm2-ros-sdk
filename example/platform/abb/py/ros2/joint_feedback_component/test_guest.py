@@ -30,6 +30,7 @@ CASE_IDS = (
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
 from wasi_policy import test_arguments as wasi_test_arguments
+from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
@@ -254,6 +255,7 @@ def main():
         argv = [str(runtime), *wasi_test_arguments(runtime_args, config.get("wasi_policy")),
                 "--ros2-single-create", "main", "--ros2-single-enable", "main",
                 "--run", str(wasm.resolve()), "--codec-selftest"]
+        argv = authorize_test_imports(argv)
         report.update(command={"argv": argv, "cwd": str(Path.cwd()), "config_sha256": config_sha256},
                       wasm_sha256_before=before, runtime_sha256=wanted, fixture_actor=process(os.getpid()))
         need(report["fixture_actor"]["memory.max"] == "68719476736"

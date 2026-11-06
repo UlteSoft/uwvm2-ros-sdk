@@ -54,6 +54,8 @@ for grant in grants:
  options+=['--ros2-single-grant','main',*[grant[k] for k in ['alias','operation','resource','type','identity']]]
  for k,v in grant['fields'].items():options+=['--ros2-single-set','main',grant['alias'],k,v]
 argv=[str(vm),*test_arguments(cfg['runtime_arguments'],policy),*options,'--run',str(wasm),nonce]
+from host_interfaces import authorize_test_imports
+argv = authorize_test_imports(argv)
 env=dict(cfg['native_environment']);env.update(ROS_LOG_DIR=str(d/'ros-logs'),ROS_HOME=str(d/'ros-home'))
 row=dict(format='uwvm-sdk-php-metadata-native-result-v1',status='RUNNING',scenario=scenario,cgroup=membership,argv=argv,wasi_policy=policy,ros_grants=grants,
  scope='Original genuine PHP/Wasm metadata/owner/callback assertions; no message peer, official vendor simulator, full ROS API or component-isolation qualification',

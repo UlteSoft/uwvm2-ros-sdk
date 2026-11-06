@@ -134,8 +134,8 @@ end
 
 function arguments(policy)
     if policy == nil or policy == json.null or policy == json.purenull then return {} end
-    assert(type(policy) == "table" and not json.is_marked_as_array(policy) and policy.format == "uwvm-sdk-wasip1-policy-v2"
-        and type(policy.modules) == "table" and not json.is_marked_as_array(policy.modules), "Expected uwvm-sdk-wasip1-policy-v2")
+    assert(type(policy) == "table" and not json.is_marked_as_array(policy) and policy.format == "uwvm-sdk-wasip1-policy-v3"
+        and type(policy.modules) == "table" and not json.is_marked_as_array(policy.modules), "Expected uwvm-sdk-wasip1-policy-v3")
     for key in pairs(policy) do assert(key == "format" or key == "modules", "Unknown WASIp1 policy field") end
     local rights = {}
     for _, right in ipairs({"stdin.read", "stdout.write", "stderr.write", "stdio.metadata", "stdio.readiness",
@@ -156,8 +156,9 @@ function arguments(policy)
         assert(count <= 256 and type(name) == "string" and #name <= 255
             and name:match("^[A-Za-z0-9_][A-Za-z0-9_.%-]*$"), "Use an exact host module binding")
         assert(type(module) == "table" and not json.is_marked_as_array(module) and type(module.enabled) == "boolean"
-            and type(module.grants) == "table", "Specify enabled and grants; per-function imports are no longer supported")
-        for key in pairs(module) do assert(key == "enabled" or key == "grants" or key == "limits" or key == "wait_exit_actions" or key == "preopens" or key == "filesystem_rights" or key == "environment", "Unknown WASIp1 module field") end
+            and type(module.grants) == "table" and type(module.interfaces) == "table",
+            "WASIp1 v3 requires enabled, exact interfaces, and operation grants")
+        for key in pairs(module) do assert(key == "enabled" or key == "grants" or key == "interfaces" or key == "limits" or key == "wait_exit_actions" or key == "preopens" or key == "filesystem_rights" or key == "environment", "Unknown WASIp1 module field") end
         assert(module.enabled or #module.grants == 0, "Disabled WASIp1 has no grants")
         for _, field in ipairs({"preopens", "filesystem_rights", "environment"}) do
             assert(module.enabled or module[field] == nil or (type(module[field]) == "table" and next(module[field]) == nil),
@@ -166,6 +167,7 @@ function arguments(policy)
         table.join2(argv, {"--wasip1-single-create", name,
             "--wasip1-single-" .. (module.enabled and "enable" or "disable"), name,
             "--wasip1-single-noinherit-system-environment", name})
+        table.join2(argv, interface_arguments("wasip1", "single", name, module.interfaces))
         local seen, values = {}, module.grants
         assert(#values <= 64, "WASIp1 policy array exceeds limit")
         for key, value in pairs(values) do
@@ -193,7 +195,7 @@ end
 
 -- SDK tests always link the base namespace, independently of operation grants.
 -- Production arguments() continues to serialize the exact reviewed policy.
-function test_arguments(values, policy)
+function test_arguments(values, policy, artifacts)
     if policy == json.null or policy == json.purenull then policy = nil end
     assert(type(values) == "table", "Test runtime arguments must be a dense string array")
     for key, value in pairs(values) do
@@ -238,10 +240,58 @@ function test_arguments(values, policy)
     end
     local modules = {}
     for _, name in ipairs(names) do
-        local value = configured[name] or {enabled = true, grants = {}}
+        local value = configured[name] or {enabled = true, interfaces = {}, grants = {}}
         assert(value.enabled, "Every SDK guest test module requires enabled WASIp1; deny operations through grants")
         modules[name] = value
     end
-    table.join2(result, arguments({format = "uwvm-sdk-wasip1-policy-v2", modules = modules}))
+    assert(type(artifacts) == "table", "SDK test must identify every built Wasm artifact for exact interface configuration")
+    for _, name in ipairs(names) do
+        assert(artifacts[name] and os.isfile(artifacts[name]), "Missing built artifact for test module " .. name)
+    end
+    table.join2(result, arguments({format = "uwvm-sdk-wasip1-policy-v3", modules = modules}))
+    -- Share the strict import-only reader and scope resolver with Python tests.
+    -- Full Wasm validation remains the VM's responsibility, including GC types.
+    local helper = path.join(os.scriptdir(), "../shared/python/host_interfaces.py")
+    local python = import("python_runtime", {rootdir=os.scriptdir(), anonymous=true}).resolve()
+    local filename = os.tmpfile({ramdisk=false})
+    local command = {"uwvm-sdk-test"}
+    table.join2(command, result)
+    table.join2(command, {"--run", artifacts[main]})
+    json.savefile(filename, command)
+    local output
+    try {function()
+        output = os.iorunv(python, {helper, "--test-command-json"}, {stdin=filename})
+    end, finally {function() os.tryrm(filename) end}}
+    local complete = json.decode(output)
+    assert(type(complete) == "table" and complete[1] == "uwvm-sdk-test"
+        and complete[#complete - 1] == "--run" and complete[#complete] == artifacts[main],
+        "Exact test command serialization failed")
+    result = {}
+    for index=2,#complete-2 do table.insert(result,complete[index]) end
     return result
+end
+
+
+-- Exact API state serialization; no namespace wildcard or implicit grants.
+function interface_arguments(family, scope, target, interfaces)
+    assert(type(interfaces) == "table" and not json.is_marked_as_array(interfaces),
+        "Interfaces must be an exact API-to-hidden/deny/allow map")
+    local registry = json.loadfile(path.join(os.scriptdir(), "../shared/host-interfaces.json"))
+    local known = {}
+    for _, entry in ipairs(registry.interfaces) do
+        if entry.family == family then known[entry.key] = true end
+    end
+    local keys, argv = {}, {}
+    for key, state in pairs(interfaces) do
+        assert(type(key) == "string" and known[key] and (state == "hidden" or state == "deny" or state == "allow"),
+            "Unknown interface or invalid hidden/deny/allow state")
+        table.insert(keys, key)
+    end
+    table.sort(keys)
+    for _, key in ipairs(keys) do
+        table.insert(argv, "--" .. family .. "-" .. scope .. "-interface")
+        if scope ~= "global" then table.insert(argv, target) end
+        table.join2(argv, {key, interfaces[key]})
+    end
+    return argv
 end

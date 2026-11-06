@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "backend": "ros2",
   "distribution": "jazzy",
   "runtime": "/absolute/native/uwvm2-ros-original-array",
@@ -87,7 +87,24 @@
             "audit-max-bytes": "1048576"
           },
           "call_boundary": "same-module",
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "fd_close": "allow",
+            "fd_fdstat_get": "allow",
+            "fd_seek": "allow",
+            "fd_write": "allow",
+            "poll_oneoff": "allow",
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {
+            "uwvm_ros2_v1.capability_close": "allow",
+            "uwvm_ros2_v1.capability_open": "allow",
+            "uwvm_ros2_v1.capability_revoke": "allow",
+            "uwvm_ros2_v1.event_poll": "allow",
+            "uwvm_ros2_v1.topic_subscribe": "allow"
+          }
         }
       }
     }

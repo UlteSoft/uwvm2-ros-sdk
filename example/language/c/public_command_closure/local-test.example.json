@@ -12,7 +12,7 @@
     "output_bytes": 2097152
   },
   "wasi_policy": {
-    "format": "uwvm-sdk-wasip1-policy-v2",
+    "format": "uwvm-sdk-wasip1-policy-v3",
     "modules": {
       "main": {
         "enabled": true,
@@ -20,7 +20,14 @@
           "stdout.write",
           "stdio.metadata",
           "proc-exit"
-        ]
+        ],
+        "interfaces": {
+          "fd_close": "allow",
+          "fd_fdstat_get": "allow",
+          "fd_seek": "allow",
+          "fd_write": "allow",
+          "proc_exit": "allow"
+        }
       }
     }
   }

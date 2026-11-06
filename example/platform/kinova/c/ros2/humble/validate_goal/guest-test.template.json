@@ -13,7 +13,7 @@
   "application_arguments": [],
   "state": "EXPLICITLY_FILL_EXACT_QUALIFIED_RUNTIME_IDENTITY",
   "wasi_policy": {
-    "format": "uwvm-sdk-wasip1-policy-v2",
+    "format": "uwvm-sdk-wasip1-policy-v3",
     "modules": {
       "main": {
         "enabled": true,
@@ -23,7 +23,17 @@
           "stdout.write",
           "stderr.write",
           "stdio.metadata"
-        ]
+        ],
+        "interfaces": {
+          "args_get": "allow",
+          "args_sizes_get": "allow",
+          "fd_close": "allow",
+          "fd_fdstat_get": "allow",
+          "fd_read": "allow",
+          "fd_seek": "allow",
+          "fd_write": "allow",
+          "proc_exit": "allow"
+        }
       }
     }
   }

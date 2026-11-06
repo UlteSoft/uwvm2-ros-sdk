@@ -48,7 +48,7 @@ function run(target, root, context)
         or os.getenv("UWVM_ROS_RUN_CONFIG")
     assert(filename and os.isfile(filename), "Supply the explicit Go2 deployment after actual runtime/gateway/domain admission")
     local deployment = json.loadfile(filename)
-    assert(deployment.format == "uwvm-native-ros-run-v3" and deployment.backend == "ros2"
+    assert(deployment.format == "uwvm-native-ros-run-v4" and deployment.backend == "ros2"
         and deployment.distribution == "humble", "Select the exact original Go2 Humble deployment")
     local connection = assert(deployment.connection)
     local domain = tonumber(connection["domain-id"])

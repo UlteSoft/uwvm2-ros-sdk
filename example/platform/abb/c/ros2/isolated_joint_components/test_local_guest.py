@@ -22,6 +22,7 @@ LOG_LIMIT = 8 * 1024**2
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
 from wasi_policy import test_arguments as wasi_test_arguments
+from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
@@ -216,6 +217,7 @@ def main():
         report.update(runtime_sha256=runtime_sha256, runtime_source_identity=source_identity,
                       wasm_sha256=digest(wasm), configuration_sha256=digest(args.config),
                       argv=[str(runtime), *wasi_test_arguments(values, configuration.get("wasi_policy")), "--run", str(wasm), "--local-business-checks"])
+        report["argv"] = authorize_test_imports(report["argv"])
         stdout, stderr = args.output / "vm.stdout", args.output / "vm.stderr"
         with stdout.open("xb") as out, stderr.open("xb") as err:
             child = PipeLoggedProcess(report["argv"], stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)

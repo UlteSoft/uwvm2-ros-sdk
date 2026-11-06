@@ -224,6 +224,8 @@ def main():
         if args.case == "independent-three":
             need(pins[1][1] == pins[2][1], "Both independent peers must use the identical complete Wasm SHA")
         argv = [argv[0], *wasi_test_arguments(argv[1:], selected.get("wasi_policy")), "--run", str(wasm)]
+        from host_interfaces import authorize_test_imports
+        argv = authorize_test_imports(argv)
         need(digest(args.config) == configuration_sha, "Explicit runtime configuration changed before launch")
         report.update(runtime_sha256=runtime_sha, runtime_source_identity=source_identity,
                       configuration_sha256=configuration_sha, argv=argv,

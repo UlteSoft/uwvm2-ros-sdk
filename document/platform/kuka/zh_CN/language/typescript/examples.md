@@ -27,7 +27,7 @@ uwvm2-ros 或原生 ROS。
 
 ```json
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "backend": "ros2",
   "distribution": "jazzy",
@@ -50,7 +50,11 @@ uwvm2-ros 或原生 ROS。
         "main": {
           "ros_enabled": false,
           "grants": [],
-          "wasi_grants": ["stdio-full-rights"]
+          "wasi_grants": [
+            "stdio-full-rights"
+          ],
+          "wasi_interfaces": {},
+          "ros_interfaces": {}
         }
       }
     }

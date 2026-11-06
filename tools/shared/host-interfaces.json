@@ -1,0 +1,1307 @@
+{
+  "format": "uwvm-sdk-host-interfaces-v1",
+  "interfaces": [
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "args_get",
+      "key": "args_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "args_sizes_get",
+      "key": "args_sizes_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "clock_res_get",
+      "key": "clock_res_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "clock_time_get",
+      "key": "clock_time_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "environ_get",
+      "key": "environ_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "environ_sizes_get",
+      "key": "environ_sizes_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_advise",
+      "key": "fd_advise"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_allocate",
+      "key": "fd_allocate"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_close",
+      "key": "fd_close"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_datasync",
+      "key": "fd_datasync"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_get",
+      "key": "fd_fdstat_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_set_flags",
+      "key": "fd_fdstat_set_flags"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_set_rights",
+      "key": "fd_fdstat_set_rights"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_get",
+      "key": "fd_filestat_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_set_size",
+      "key": "fd_filestat_set_size"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_set_times",
+      "key": "fd_filestat_set_times"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_pread",
+      "key": "fd_pread"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_prestat_dir_name",
+      "key": "fd_prestat_dir_name"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_prestat_get",
+      "key": "fd_prestat_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_pwrite",
+      "key": "fd_pwrite"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_read",
+      "key": "fd_read"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_readdir",
+      "key": "fd_readdir"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_renumber",
+      "key": "fd_renumber"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_seek",
+      "key": "fd_seek"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_sync",
+      "key": "fd_sync"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_tell",
+      "key": "fd_tell"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_write",
+      "key": "fd_write"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_create_directory",
+      "key": "path_create_directory"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_filestat_get",
+      "key": "path_filestat_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_filestat_set_times",
+      "key": "path_filestat_set_times"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_link",
+      "key": "path_link"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_open",
+      "key": "path_open"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_readlink",
+      "key": "path_readlink"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_remove_directory",
+      "key": "path_remove_directory"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_rename",
+      "key": "path_rename"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_symlink",
+      "key": "path_symlink"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_unlink_file",
+      "key": "path_unlink_file"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "poll_oneoff",
+      "key": "poll_oneoff"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "proc_raise",
+      "key": "proc_raise"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "random_get",
+      "key": "random_get"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sched_yield",
+      "key": "sched_yield"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_accept",
+      "key": "sock_accept"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_recv",
+      "key": "sock_recv"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_send",
+      "key": "sock_send"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_shutdown",
+      "key": "sock_shutdown"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "args_get_wasm64",
+      "key": "args_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "args_sizes_get_wasm64",
+      "key": "args_sizes_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "clock_res_get_wasm64",
+      "key": "clock_res_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "clock_time_get_wasm64",
+      "key": "clock_time_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "environ_get_wasm64",
+      "key": "environ_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "environ_sizes_get_wasm64",
+      "key": "environ_sizes_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_advise_wasm64",
+      "key": "fd_advise_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_allocate_wasm64",
+      "key": "fd_allocate_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_close_wasm64",
+      "key": "fd_close_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_datasync_wasm64",
+      "key": "fd_datasync_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_get_wasm64",
+      "key": "fd_fdstat_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_set_flags_wasm64",
+      "key": "fd_fdstat_set_flags_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_fdstat_set_rights_wasm64",
+      "key": "fd_fdstat_set_rights_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_get_wasm64",
+      "key": "fd_filestat_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_set_size_wasm64",
+      "key": "fd_filestat_set_size_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_filestat_set_times_wasm64",
+      "key": "fd_filestat_set_times_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_pread_wasm64",
+      "key": "fd_pread_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_prestat_dir_name_wasm64",
+      "key": "fd_prestat_dir_name_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_prestat_get_wasm64",
+      "key": "fd_prestat_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_pwrite_wasm64",
+      "key": "fd_pwrite_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_read_wasm64",
+      "key": "fd_read_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_readdir_wasm64",
+      "key": "fd_readdir_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_renumber_wasm64",
+      "key": "fd_renumber_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_seek_wasm64",
+      "key": "fd_seek_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_sync_wasm64",
+      "key": "fd_sync_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_tell_wasm64",
+      "key": "fd_tell_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "fd_write_wasm64",
+      "key": "fd_write_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_create_directory_wasm64",
+      "key": "path_create_directory_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_filestat_get_wasm64",
+      "key": "path_filestat_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_filestat_set_times_wasm64",
+      "key": "path_filestat_set_times_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_link_wasm64",
+      "key": "path_link_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_open_wasm64",
+      "key": "path_open_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_readlink_wasm64",
+      "key": "path_readlink_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_remove_directory_wasm64",
+      "key": "path_remove_directory_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_rename_wasm64",
+      "key": "path_rename_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_symlink_wasm64",
+      "key": "path_symlink_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "path_unlink_file_wasm64",
+      "key": "path_unlink_file_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "poll_oneoff_wasm64",
+      "key": "poll_oneoff_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "proc_raise_wasm64",
+      "key": "proc_raise_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "random_get_wasm64",
+      "key": "random_get_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sched_yield_wasm64",
+      "key": "sched_yield_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_accept_wasm64",
+      "key": "sock_accept_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_recv_wasm64",
+      "key": "sock_recv_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_send_wasm64",
+      "key": "sock_send_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "sock_shutdown_wasm64",
+      "key": "sock_shutdown_wasm64"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros1_v1.abi_version"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "capability_open",
+      "key": "uwvm_ros1_v1.capability_open"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "capability_close",
+      "key": "uwvm_ros1_v1.capability_close"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "capability_revoke",
+      "key": "uwvm_ros1_v1.capability_revoke"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "topic_publish",
+      "key": "uwvm_ros1_v1.topic_publish"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "topic_subscribe",
+      "key": "uwvm_ros1_v1.topic_subscribe"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "event_poll",
+      "key": "uwvm_ros1_v1.event_poll"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "event_watch",
+      "key": "uwvm_ros1_v1.event_watch"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "event_poll_v1",
+      "key": "uwvm_ros1_v1.event_poll_v1"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "event_ready",
+      "key": "uwvm_ros1_v1.event_ready"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "service_submit",
+      "key": "uwvm_ros1_v1.service_submit"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "service_call",
+      "key": "uwvm_ros1_v1.service_call"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "service_advertise",
+      "key": "uwvm_ros1_v1.service_advertise"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "service_respond",
+      "key": "uwvm_ros1_v1.service_respond"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_send_goal",
+      "key": "uwvm_ros1_v1.action_send_goal"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_cancel_own_goal",
+      "key": "uwvm_ros1_v1.action_cancel_own_goal"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_cancel_any_goal",
+      "key": "uwvm_ros1_v1.action_cancel_any_goal"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_receive_feedback",
+      "key": "uwvm_ros1_v1.action_receive_feedback"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_receive_result",
+      "key": "uwvm_ros1_v1.action_receive_result"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_advertise",
+      "key": "uwvm_ros1_v1.action_advertise"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "action_respond",
+      "key": "uwvm_ros1_v1.action_respond"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "tf_lookup",
+      "key": "uwvm_ros1_v1.tf_lookup"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "tf_broadcast",
+      "key": "uwvm_ros1_v1.tf_broadcast"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_get",
+      "key": "uwvm_ros1_v1.parameter_get"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_set",
+      "key": "uwvm_ros1_v1.parameter_set"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_delete",
+      "key": "uwvm_ros1_v1.parameter_delete"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_exists",
+      "key": "uwvm_ros1_v1.parameter_exists"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_list",
+      "key": "uwvm_ros1_v1.parameter_list"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "parameter_search",
+      "key": "uwvm_ros1_v1.parameter_search"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_inspect_topic",
+      "key": "uwvm_ros1_v1.graph_inspect_topic"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_inspect_node",
+      "key": "uwvm_ros1_v1.graph_inspect_node"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_inspect_service",
+      "key": "uwvm_ros1_v1.graph_inspect_service"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_list_topics",
+      "key": "uwvm_ros1_v1.graph_list_topics"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_list_nodes",
+      "key": "uwvm_ros1_v1.graph_list_nodes"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "graph_list_services",
+      "key": "uwvm_ros1_v1.graph_list_services"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "time_read_ros",
+      "key": "uwvm_ros1_v1.time_read_ros"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "time_read_wall",
+      "key": "uwvm_ros1_v1.time_read_wall"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_v1",
+      "function": "log_write",
+      "key": "uwvm_ros1_v1.log_write"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_client_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros1_client_v1.abi_version"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_client_v1",
+      "function": "features",
+      "key": "uwvm_ros1_client_v1.features"
+    },
+    {
+      "family": "ros1",
+      "namespace": "uwvm_ros1_client_v1",
+      "function": "service_available",
+      "key": "uwvm_ros1_client_v1.service_available"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros2_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "capability_open",
+      "key": "uwvm_ros2_v1.capability_open"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "capability_close",
+      "key": "uwvm_ros2_v1.capability_close"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "capability_revoke",
+      "key": "uwvm_ros2_v1.capability_revoke"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "topic_publish",
+      "key": "uwvm_ros2_v1.topic_publish"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "topic_subscribe",
+      "key": "uwvm_ros2_v1.topic_subscribe"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "event_poll",
+      "key": "uwvm_ros2_v1.event_poll"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "event_watch",
+      "key": "uwvm_ros2_v1.event_watch"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "event_poll_v1",
+      "key": "uwvm_ros2_v1.event_poll_v1"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "event_ready",
+      "key": "uwvm_ros2_v1.event_ready"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "service_submit",
+      "key": "uwvm_ros2_v1.service_submit"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "service_call",
+      "key": "uwvm_ros2_v1.service_call"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "service_advertise",
+      "key": "uwvm_ros2_v1.service_advertise"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "service_respond",
+      "key": "uwvm_ros2_v1.service_respond"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_send_goal",
+      "key": "uwvm_ros2_v1.action_send_goal"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_server_is_ready",
+      "key": "uwvm_ros2_v1.action_server_is_ready"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_send_begin",
+      "key": "uwvm_ros2_v1.action_send_begin"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_goal_response",
+      "key": "uwvm_ros2_v1.action_goal_response"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_goal_status",
+      "key": "uwvm_ros2_v1.action_goal_status"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_cancel_begin_own",
+      "key": "uwvm_ros2_v1.action_cancel_begin_own"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_cancel_response",
+      "key": "uwvm_ros2_v1.action_cancel_response"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_cancel_own_goal",
+      "key": "uwvm_ros2_v1.action_cancel_own_goal"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_cancel_any_goal",
+      "key": "uwvm_ros2_v1.action_cancel_any_goal"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_receive_feedback",
+      "key": "uwvm_ros2_v1.action_receive_feedback"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_receive_result",
+      "key": "uwvm_ros2_v1.action_receive_result"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_advertise",
+      "key": "uwvm_ros2_v1.action_advertise"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "action_respond",
+      "key": "uwvm_ros2_v1.action_respond"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "tf_lookup",
+      "key": "uwvm_ros2_v1.tf_lookup"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "tf_broadcast",
+      "key": "uwvm_ros2_v1.tf_broadcast"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_get",
+      "key": "uwvm_ros2_v1.parameter_get"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_set",
+      "key": "uwvm_ros2_v1.parameter_set"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_list",
+      "key": "uwvm_ros2_v1.parameter_list"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_describe",
+      "key": "uwvm_ros2_v1.parameter_describe"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_declare",
+      "key": "uwvm_ros2_v1.parameter_declare"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_undeclare",
+      "key": "uwvm_ros2_v1.parameter_undeclare"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_inspect_topic",
+      "key": "uwvm_ros2_v1.graph_inspect_topic"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_inspect_node",
+      "key": "uwvm_ros2_v1.graph_inspect_node"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_inspect_service",
+      "key": "uwvm_ros2_v1.graph_inspect_service"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_inspect_action",
+      "key": "uwvm_ros2_v1.graph_inspect_action"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "parameter_subscribe_events",
+      "key": "uwvm_ros2_v1.parameter_subscribe_events"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_list_topics",
+      "key": "uwvm_ros2_v1.graph_list_topics"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_list_nodes",
+      "key": "uwvm_ros2_v1.graph_list_nodes"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "graph_list_services",
+      "key": "uwvm_ros2_v1.graph_list_services"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "lifecycle_get_state",
+      "key": "uwvm_ros2_v1.lifecycle_get_state"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "lifecycle_change_state",
+      "key": "uwvm_ros2_v1.lifecycle_change_state"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "time_read_ros",
+      "key": "uwvm_ros2_v1.time_read_ros"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "time_read_system",
+      "key": "uwvm_ros2_v1.time_read_system"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "time_read_steady",
+      "key": "uwvm_ros2_v1.time_read_steady"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_v1",
+      "function": "log_write",
+      "key": "uwvm_ros2_v1.log_write"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_client_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros2_client_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_client_v1",
+      "function": "features",
+      "key": "uwvm_ros2_client_v1.features"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_client_v1",
+      "function": "service_available",
+      "key": "uwvm_ros2_client_v1.service_available"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros2_rmw_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_v1",
+      "function": "publisher_activate",
+      "key": "uwvm_ros2_rmw_v1.publisher_activate"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_v1",
+      "function": "publisher_inspect",
+      "key": "uwvm_ros2_rmw_v1.publisher_inspect"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_v1",
+      "function": "publisher_publish",
+      "key": "uwvm_ros2_rmw_v1.publisher_publish"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_v1",
+      "function": "publisher_retire",
+      "key": "uwvm_ros2_rmw_v1.publisher_retire"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros2_rmw_sub_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_activate",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_activate"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_inspect",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_inspect"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_peek",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_peek"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_commit",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_commit"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_cancel",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_cancel"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_sub_v1",
+      "function": "subscription_retire",
+      "key": "uwvm_ros2_rmw_sub_v1.subscription_retire"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "abi_version",
+      "key": "uwvm_ros2_rmw_srv_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "client_activate",
+      "key": "uwvm_ros2_rmw_srv_v1.client_activate"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "service_activate",
+      "key": "uwvm_ros2_rmw_srv_v1.service_activate"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "endpoint_inspect",
+      "key": "uwvm_ros2_rmw_srv_v1.endpoint_inspect"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "client_submit",
+      "key": "uwvm_ros2_rmw_srv_v1.client_submit"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "client_abandon",
+      "key": "uwvm_ros2_rmw_srv_v1.client_abandon"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "service_respond",
+      "key": "uwvm_ros2_rmw_srv_v1.service_respond"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "endpoint_peek",
+      "key": "uwvm_ros2_rmw_srv_v1.endpoint_peek"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "endpoint_commit",
+      "key": "uwvm_ros2_rmw_srv_v1.endpoint_commit"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "endpoint_cancel",
+      "key": "uwvm_ros2_rmw_srv_v1.endpoint_cancel"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "client_available",
+      "key": "uwvm_ros2_rmw_srv_v1.client_available"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_ros2_rmw_srv_v1",
+      "function": "endpoint_retire",
+      "key": "uwvm_ros2_rmw_srv_v1.endpoint_retire"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "abi_version",
+      "key": "uwvm_portable_robot_v1.abi_version"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "open",
+      "key": "uwvm_portable_robot_v1.open"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "describe",
+      "key": "uwvm_portable_robot_v1.describe"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "read_state",
+      "key": "uwvm_portable_robot_v1.read_state"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "submit",
+      "key": "uwvm_portable_robot_v1.submit"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "wait",
+      "key": "uwvm_portable_robot_v1.wait"
+    },
+    {
+      "family": "ros2",
+      "namespace": "uwvm_portable_robot_v1",
+      "function": "close",
+      "key": "uwvm_portable_robot_v1.close"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "proc_exit",
+      "key": "proc_exit"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi_snapshot_preview1",
+      "function": "proc_exit_wasm64",
+      "key": "proc_exit_wasm64"
+    },
+    {
+      "family": "wasip1",
+      "namespace": "wasi",
+      "function": "thread-spawn",
+      "key": "thread-spawn"
+    }
+  ]
+}

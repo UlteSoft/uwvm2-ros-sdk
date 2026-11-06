@@ -23,17 +23,17 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/local_wasi_test.py",
-      "sha256": "6311ded2a2bdee9514a5e75f4111d069d5e6d17dfbbcb8cff412ea2e786b59d6"
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_policy.py",
-      "sha256": "41fcbeb000a9765a1223f71f3b5de583719e0cc13e2b915bc2eb4b6f507327a3"
+      "sha256": "be55f2a9cb0582ecbf56a633119f8e826417efb81790686352070745c291be77"
     },
     {
       "scope": "sdk",
@@ -103,7 +103,7 @@
     {
       "scope": "example",
       "path": "deployment.template.json",
-      "sha256": "c20a6bf174fc9a779279a72e66935f5b5ac8cfe93216c7bd7a3a26dbe3a7ad31"
+      "sha256": "02b1e9338441c5189e1b17dfd78efd352e7d83a0626351583f00e35d3003d3c4"
     },
     {
       "scope": "example",
@@ -113,12 +113,22 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/native_ros_std_test.py",
-      "sha256": "2623161ac1bc1b4b7f7bdbc81373357eddea294eef439d0bc6943e2720cee54f"
+      "sha256": "5a0eb7afbadf10185b522cc47b1466181eb63dfc5521c6a7655332bc97f89c67"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/native_ros_std_component.lua",
       "sha256": "b2b4bb5076c48150dbc426d9cd57d2e40d9f41a4dd9026eaa75e4d2677426f40"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/host_interfaces.py",
+      "sha256": "27161c810cd4970ed90bfcd26c429add97dd6e58481ab15a835378468d0a0557"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/host-interfaces.json",
+      "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
     }
   ],
   "cases": [

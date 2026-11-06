@@ -13,7 +13,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/abb/c/official_webots/simulation.example.json",
-        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+        "sha256": "765b6fde4089bda600ccd064f6c12b01f933b584c43c9baa5f044c856417d38d"
       },
       "required_matrix_references": [
         {
@@ -50,7 +50,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/abb/c/official_webots/simulation.example.json",
-        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+        "sha256": "765b6fde4089bda600ccd064f6c12b01f933b584c43c9baa5f044c856417d38d"
       },
       "required_matrix_references": [
         {
@@ -87,7 +87,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/abb/c/official_webots/simulation.example.json",
-        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+        "sha256": "765b6fde4089bda600ccd064f6c12b01f933b584c43c9baa5f044c856417d38d"
       },
       "required_matrix_references": [
         {
@@ -124,7 +124,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/abb/c/official_webots/simulation.example.json",
-        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+        "sha256": "765b6fde4089bda600ccd064f6c12b01f933b584c43c9baa5f044c856417d38d"
       },
       "required_matrix_references": [
         {
@@ -161,7 +161,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/abb/c/official_webots/simulation.example.json",
-        "sha256": "46a0d1c831822220d147c25159f0b7f7ca0b8ce3e3acecf7413155b75d5339d0"
+        "sha256": "765b6fde4089bda600ccd064f6c12b01f933b584c43c9baa5f044c856417d38d"
       },
       "required_matrix_references": [
         {
@@ -221,7 +221,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
-        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+        "sha256": "ad28890cf92bb23452b94548db4d1ab331a883e2142351e1c50533c7cec71ec4"
       },
       "required_matrix_references": [
         {
@@ -258,7 +258,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
-        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+        "sha256": "ad28890cf92bb23452b94548db4d1ab331a883e2142351e1c50533c7cec71ec4"
       },
       "required_matrix_references": [
         {
@@ -295,7 +295,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
-        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+        "sha256": "ad28890cf92bb23452b94548db4d1ab331a883e2142351e1c50533c7cec71ec4"
       },
       "required_matrix_references": [
         {
@@ -332,7 +332,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
-        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+        "sha256": "ad28890cf92bb23452b94548db4d1ab331a883e2142351e1c50533c7cec71ec4"
       },
       "required_matrix_references": [
         {
@@ -369,7 +369,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fanuc/c/official_mock/simulation.example.json",
-        "sha256": "5d42d31e8117cbb9a652453adbff321ad7287ba6e6de2ed48f6078244526713a"
+        "sha256": "ad28890cf92bb23452b94548db4d1ab331a883e2142351e1c50533c7cec71ec4"
       },
       "required_matrix_references": [
         {
@@ -406,7 +406,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+        "sha256": "53c4b00824124d981035f84a4ea26d59d441fd2260b4381c0e56d5b8c3572195"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -426,7 +426,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+        "sha256": "53c4b00824124d981035f84a4ea26d59d441fd2260b4381c0e56d5b8c3572195"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -446,7 +446,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+        "sha256": "53c4b00824124d981035f84a4ea26d59d441fd2260b4381c0e56d5b8c3572195"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -466,7 +466,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/fourier/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "e93ad2d4975a11bef5dd2ad1710cc9358efa3a2474043fadd988fb4b6a250b63"
+        "sha256": "53c4b00824124d981035f84a4ea26d59d441fd2260b4381c0e56d5b8c3572195"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -486,7 +486,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -506,7 +506,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -526,7 +526,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -546,7 +546,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -566,7 +566,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -586,7 +586,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -606,7 +606,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -626,7 +626,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -646,7 +646,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/nvidia-isaac-sim/c/ros2/frozen_joint_simulation/scenarios.v1.json",
-        "sha256": "17933955ed40d0b43bdd18cb372a361912fe7ce3638f8a8f3a10eaf591d064ed"
+        "sha256": "71a4eed8fd8a67cb426eafcc20bb5a32fb0ff64e09b1a2cb13cea8aba118424e"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -666,7 +666,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -686,7 +686,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -706,7 +706,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -726,7 +726,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -746,7 +746,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -766,7 +766,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/kinova/c/ros2/humble/guest_joint_feedback/simulation.json",
-        "sha256": "eef7056662321a45a85b340699434c426c839187ab550ca404ec9763d6ff4512"
+        "sha256": "4c98d6618cdbe6ec1c0d9c84707877b7eb9fe65873af72d59a4e95c5ae3abae5"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -946,7 +946,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
-        "sha256": "ef6139b8f92dbb8fe372f532e675851f6e02a1beda5a768a4e372a222db2427d"
+        "sha256": "57dfd6d378bc34630c65b7099f8b707ab5f58956162827e3e32fce897afe564d"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -966,7 +966,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ros/simulation/v0_1_0/rrbot_jtc_mock/simulation.json",
-        "sha256": "ef6139b8f92dbb8fe372f532e675851f6e02a1beda5a768a4e372a222db2427d"
+        "sha256": "57dfd6d378bc34630c65b7099f8b707ab5f58956162827e3e32fce897afe564d"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -1008,7 +1008,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+        "sha256": "140b59045bc95728ae915d93cf2387d0607c3fd27977ebe973a4cec5907b5ce1"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -1028,7 +1028,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+        "sha256": "140b59045bc95728ae915d93cf2387d0607c3fd27977ebe973a4cec5907b5ce1"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -1048,7 +1048,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+        "sha256": "140b59045bc95728ae915d93cf2387d0607c3fd27977ebe973a4cec5907b5ce1"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -1068,7 +1068,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/ubtech/simulation/jazzy_joint_step/simulation.json",
-        "sha256": "1b623737f1c22865360200f1d41f541bedab615412ca4f20f0be2ca2925b9578"
+        "sha256": "140b59045bc95728ae915d93cf2387d0607c3fd27977ebe973a4cec5907b5ce1"
       },
       "required_matrix_references": [],
       "status": "NOT_RUN",
@@ -1345,7 +1345,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
-        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+        "sha256": "9a5bfa114bd42eacc3ac91c93b62a728ecba4534d813d40e537980905beb62ed"
       },
       "required_matrix_references": [
         {
@@ -1382,7 +1382,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
-        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+        "sha256": "9a5bfa114bd42eacc3ac91c93b62a728ecba4534d813d40e537980905beb62ed"
       },
       "required_matrix_references": [
         {
@@ -1419,7 +1419,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
-        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+        "sha256": "9a5bfa114bd42eacc3ac91c93b62a728ecba4534d813d40e537980905beb62ed"
       },
       "required_matrix_references": [
         {
@@ -1456,7 +1456,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
-        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+        "sha256": "9a5bfa114bd42eacc3ac91c93b62a728ecba4534d813d40e537980905beb62ed"
       },
       "required_matrix_references": [
         {
@@ -1493,7 +1493,7 @@
       "required": true,
       "manifest": {
         "path": "example/platform/yaskawa/c/official_mock/simulation.example.json",
-        "sha256": "61e32051027e701e68da30e474480355e37760ceb6ee66e56d72589675c89d3c"
+        "sha256": "9a5bfa114bd42eacc3ac91c93b62a728ecba4534d813d40e537980905beb62ed"
       },
       "required_matrix_references": [
         {

@@ -21,6 +21,7 @@ CASES = ('positive','denied','stale','timeout')
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
 from wasi_policy import test_arguments as wasi_test_arguments
+from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
@@ -160,6 +161,7 @@ def run_case(config, wasm, root, case):
         out = (root/(name+'.stdout')).open('xb')
         err = (root/(name+'.stderr')).open('xb')
         handles.extend((out,err))
+        if name == "vm": argv = authorize_test_imports(argv)
         launch = PipeLoggedProcess if name == "vm" else subprocess.Popen
         pipe_options = {"nonblocking_stdin": False} if name == "vm" else {}
         child = launch(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL, **pipe_options,

@@ -1252,7 +1252,7 @@
     {
       "scope": "sdk",
       "path": "tools/language/native/library.lua",
-      "sha256": "ef22e465f24e2b6433fafcb50076d7c2480c923e4c64f741027cd3d2a4029bad"
+      "sha256": "789cca696eb094c051aa6c8161f45fbd3dba34569281789f9a837810eb7e1ca2"
     },
     {
       "scope": "sdk",
@@ -1272,12 +1272,12 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
     },
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_policy.py",
-      "sha256": "889d6029948111e225471933cdd2e2390d723ffe36571b5291fe25a377ae46c1"
+      "sha256": "be55f2a9cb0582ecbf56a633119f8e826417efb81790686352070745c291be77"
     },
     {
       "scope": "sdk",
@@ -1327,12 +1327,22 @@
     {
       "scope": "example",
       "path": "native.json",
-      "sha256": "519e9c566397f76118236fad2f9005635ad2b08e93cd68647f9b89883e7fcbe7"
+      "sha256": "2bc3b5789d35c23e3d9bdad62ee8a0d572f980c9d11bf5f0cfe11e570932d6e2"
     },
     {
       "scope": "example",
       "path": "ros_comm.cpp",
       "sha256": "f90b7dacd9fb30ece4ad001f87d2af9f9d3fd1359963b93e6cad3beec3b647e7"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/host_interfaces.py",
+      "sha256": "27161c810cd4970ed90bfcd26c429add97dd6e58481ab15a835378468d0a0557"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/host-interfaces.json",
+      "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
     }
   ],
   "cases": [

@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "/opt/uwvm2-ros/bin/uwvm2-ros",
   "gateway": "/opt/uwvm2-ros/bin/uwvm-ros2-gateway",
   "backend": "ros2",
@@ -43,7 +43,11 @@
             "args",
             "proc-exit"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "proc_exit": "allow"
+          },
+          "ros_interfaces": {}
         },
         "io": {
           "ros_enabled": false,
@@ -54,13 +58,20 @@
             "monotonic-clock",
             "monotonic-timer"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "fd_write": "allow",
+            "poll_oneoff": "allow"
+          },
+          "ros_interfaces": {}
         },
         "algorithm": {
           "ros_enabled": false,
           "grants": [],
           "wasi_grants": [],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {},
+          "ros_interfaces": {}
         },
         "ros_comm": {
           "ros_enabled": true,
@@ -99,7 +110,49 @@
           ],
           "wasi_grants": [],
           "call_boundary": "module-exports",
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {},
+          "ros_interfaces": {
+            "uwvm_ros2_v1.abi_version": "allow",
+            "uwvm_ros2_v1.action_advertise": "allow",
+            "uwvm_ros2_v1.action_cancel_any_goal": "allow",
+            "uwvm_ros2_v1.action_cancel_own_goal": "allow",
+            "uwvm_ros2_v1.action_receive_feedback": "allow",
+            "uwvm_ros2_v1.action_receive_result": "allow",
+            "uwvm_ros2_v1.action_respond": "allow",
+            "uwvm_ros2_v1.action_send_goal": "allow",
+            "uwvm_ros2_v1.capability_close": "allow",
+            "uwvm_ros2_v1.capability_open": "allow",
+            "uwvm_ros2_v1.capability_revoke": "allow",
+            "uwvm_ros2_v1.event_poll": "allow",
+            "uwvm_ros2_v1.graph_inspect_action": "allow",
+            "uwvm_ros2_v1.graph_inspect_node": "allow",
+            "uwvm_ros2_v1.graph_inspect_service": "allow",
+            "uwvm_ros2_v1.graph_inspect_topic": "allow",
+            "uwvm_ros2_v1.graph_list_nodes": "allow",
+            "uwvm_ros2_v1.graph_list_services": "allow",
+            "uwvm_ros2_v1.graph_list_topics": "allow",
+            "uwvm_ros2_v1.lifecycle_change_state": "allow",
+            "uwvm_ros2_v1.lifecycle_get_state": "allow",
+            "uwvm_ros2_v1.log_write": "allow",
+            "uwvm_ros2_v1.parameter_declare": "allow",
+            "uwvm_ros2_v1.parameter_describe": "allow",
+            "uwvm_ros2_v1.parameter_get": "allow",
+            "uwvm_ros2_v1.parameter_list": "allow",
+            "uwvm_ros2_v1.parameter_set": "allow",
+            "uwvm_ros2_v1.parameter_subscribe_events": "allow",
+            "uwvm_ros2_v1.parameter_undeclare": "allow",
+            "uwvm_ros2_v1.service_advertise": "allow",
+            "uwvm_ros2_v1.service_call": "allow",
+            "uwvm_ros2_v1.service_respond": "allow",
+            "uwvm_ros2_v1.tf_broadcast": "allow",
+            "uwvm_ros2_v1.tf_lookup": "allow",
+            "uwvm_ros2_v1.time_read_ros": "allow",
+            "uwvm_ros2_v1.time_read_steady": "allow",
+            "uwvm_ros2_v1.time_read_system": "allow",
+            "uwvm_ros2_v1.topic_publish": "allow",
+            "uwvm_ros2_v1.topic_subscribe": "allow"
+          }
         }
       }
     }

@@ -26,6 +26,7 @@ LOG_LIMIT = 8 * 1024**2
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[6] / "tools/shared/python"))
 from wasi_policy import test_arguments as wasi_test_arguments
+from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
@@ -213,6 +214,7 @@ def run_case(config, wasm, output, name, seed):
          "Gateway policy must bind this exact observed worker and owned socket")
     argv = [str(Path(config["runtime"]).resolve()), *wasi_test_arguments(arguments(selected["runtime_arguments"], socket), selected.get("wasi_policy")),
             "--run", str(wasm), name, str(seed)]
+    argv = authorize_test_imports(argv)
     row = {"id": name, "challenge": seed, "status": "BLOCKED", "guest_started": False,
            "guest_finished": False, "argv": argv, "started_ns": time.monotonic_ns()}
     vm = gateway = None

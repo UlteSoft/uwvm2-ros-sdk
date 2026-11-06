@@ -12,8 +12,9 @@ import re
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared/python"))
 from wasi_policy import limit_arguments as wasi_limit_arguments, wait_exit_arguments as wasi_wait_exit_arguments
+from host_interfaces import interface_arguments, authorize_test_imports
 
-FORMAT = "uwvm-native-ros-run-v3"
+FORMAT = "uwvm-native-ros-run-v4"
 FEATURES = {
     "multi-value",
     "reference-types",
@@ -162,9 +163,12 @@ def permissions(module):
         or len(wasi) != len(set(wasi))
     ):
         raise ValueError("wasi_grants must explicitly list distinct known permissions")
+    interface_arguments("wasip1","single","main",module.get("wasi_interfaces"))
+    if not isinstance(module.get("ros_interfaces"),dict):
+        raise ValueError("Every module must supply an exact ros_interfaces map")
     enabled = module.get("wasi_enabled", False)
     if "wasi_imports" in module or "ros_imports" in module:
-        raise ValueError("Per-function import exposure fields are no longer supported")
+        raise ValueError("Removed import fields; use wasi_interfaces and ros_interfaces maps of hidden/deny/allow")
     if type(enabled) is not bool:
         raise ValueError("wasi_enabled must be Boolean")
     if not enabled and wasi:
@@ -262,6 +266,8 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
         name(label)
         if not isinstance(module, dict) or set(module) - {
             "ros_enabled",
+            "ros_interfaces",
+            "wasi_interfaces",
             "grants",
             "wasi_grants",
             "wasi_enabled",
@@ -274,9 +280,12 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
             "gateway_arguments",
         }:
             raise ValueError("Unknown module policy fields")
+        interface_arguments(backend,"single",label,module.get("ros_interfaces"))
         checked[label] = {
             "grants": permissions(module),
             "ros_enabled": module["ros_enabled"],
+            "ros_interfaces": dict(module["ros_interfaces"]),
+            "wasi_interfaces": dict(module["wasi_interfaces"]),
             "wasi_grants": module["wasi_grants"],
             "wasi_enabled": module.get("wasi_enabled", False),
             "wasi_limits": module.get("wasi_limits", {}),
@@ -394,6 +403,8 @@ def command(plan, runtime_prefix, sockets, uid, *, test=False):
             + ("enable" if module["ros_enabled"] else "disable"),
             label,
         ]
+        argv += interface_arguments("wasip1","single",label,module["wasi_interfaces"])
+        argv += interface_arguments(backend,"single",label,module["ros_interfaces"])
         for permission in module["wasi_grants"]:
             argv += ["--wasip1-single-grant", label, permission]
         argv += wasi_limit_arguments(label, module.get("wasi_limits", {}))
@@ -427,7 +438,7 @@ def command(plan, runtime_prefix, sockets, uid, *, test=False):
         plan["artifacts"][plan["main_module"]]["path"],
         *plan["arguments"],
     ]
-    return argv
+    return authorize_test_imports(argv) if test else argv
 
 
 def gateway_policy(backend, module, socket, uid, pid):

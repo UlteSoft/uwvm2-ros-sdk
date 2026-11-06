@@ -28,7 +28,7 @@ target("full-backend-contract")
         assert(not os.exists(output), "Preserve each original compiler test result")
         os.mkdir(output)
         local argv = {"--runtime-aot", "--ros2-global-disable", "--wasm-set-main-module-name", "main"}
-        argv = import("wasi_policy", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).test_arguments(argv, config.wasi_policy)
+        argv = import("wasi_policy", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).test_arguments(argv, config.wasi_policy, {main=path.absolute(current:targetfile())})
         table.join2(argv, {"--run", current:targetfile()})
         local stdout, stderr = path.join(output, "VM.stdout"), path.join(output, "VM.stderr")
         local code = import("pipe_run", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).execute(config.runtime, argv, {try = true, timeout = 60000,

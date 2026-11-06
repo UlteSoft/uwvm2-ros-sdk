@@ -87,6 +87,8 @@ def launch_guest(role,binary,rows,wasi):
   alias=row['alias'];cmd+=['--ros2-single-grant','main',alias,row['operation'],row['resource'],row['type'],row['identity']]
   for k,val in row['limits'].items():cmd+=['--ros2-single-set','main',alias,k,val]
  cmd+=['--run',str(binary)]
+ from host_interfaces import authorize_test_imports
+ cmd=authorize_test_imports(cmd)
  readfd,writefd=os.pipe2(os.O_CLOEXEC);gate_fds.append(writefd)
  image=os.open(vm,os.O_RDONLY|os.O_CLOEXEC|os.O_NOFOLLOW)
  with os.fdopen(os.dup(image),'rb') as f:assert hashlib.file_digest(f,'sha256').hexdigest()==report['pins'][str(vm)]

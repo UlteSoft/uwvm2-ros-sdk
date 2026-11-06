@@ -1,66 +1,78 @@
 # Explicit WASIp1 test and run contracts
 
-uwvm2-ros starts every guest with zero host authority. Enabling ROS, using AOT,
-selecting a debugger profile, or choosing an SDK language does not provide WASI.
-The SDK does not derive permissions from a module's import list.
+Every uwvm2-ros module starts without WASIp1, ROS1 or ROS2 host authority.
+Namespace enablement, API exposure, operation/resource grants and optional
+quotas are separate decisions.
 
-`xmake test` enables the complete base WASIp1 namespace independently for every
-loaded guest module, including preloaded libraries. A missing policy provides
-linkage only: no stdio, files, randomness, clock, environment or ROS operations.
-Test operation grants use `wasi_policy` in the selected deployment. Its format is:
+The current schema is `uwvm-sdk-wasip1-policy-v3`. Each module must provide
+`enabled`, an exact `interfaces` map, and `grants`:
 
-```json
+~~~json
 {
-  "format": "uwvm-sdk-wasip1-policy-v2",
+  "format": "uwvm-sdk-wasip1-policy-v3",
   "modules": {
     "main": {
       "enabled": true,
+      "interfaces": {
+        "fd_close": "allow",
+        "fd_fdstat_get": "allow",
+        "fd_seek": "allow",
+        "fd_write": "allow",
+        "proc_exit": "allow"
+      },
       "grants": ["stdout.write", "stdio.metadata", "proc-exit"]
     }
   }
 }
-```
+~~~
 
-This example is the reviewed command-I/O contract for the real
-`example/language/c/public_command_closure` build. Its deployable run example is
-`deployment.example.json` beside the source. Select the main module name
-explicitly with `--wasm-set-main-module-name main`. Enabling the namespace makes
-its complete standard interface available for linking. Every call still checks
-its independent operation and resource authority; for example, a linked
-`fd_seek` does not grant seek rights.
+This is the interface contract for `example/language/c/public_command_closure`.
+Each function defaults to `hidden`: it is unavailable for import validation.
+`deny` exposes the ABI but rejects calls. `allow` exposes and admits the call,
+which still needs its existing operation/resource rights. Memory32 and memory64
+function names are separate keys. Unknown APIs, wildcards, cross-family keys and
+old schema versions are rejected.
 
-The test launcher explicitly names the main module (`main` if unspecified),
-requires an exact name for every preload, and creates a separate Single policy
-for each. Missing module entries receive `enabled: true, grants: []`. Unknown
-module names, duplicate module names and explicit `enabled: false` are rejected
-before starting a test. Denial tests omit operation grants while retaining base
-linkage. Missing-namespace validation tests belong to the VM test suite.
+`xmake test` explicitly enables the base WASIp1 namespace for each loaded module.
+Its final test launcher reads each built Wasm file and emits `allow` only for
+that module's actual imported APIs in already enabled namespaces. Explicit
+`hidden`, `deny` and `allow` entries take precedence. It never derives stdio,
+filesystem, clock, random, network or ROS capability grants from imports.
+A missing test policy therefore means base linkage with zero operation grants.
+Preloads have independent policies; an importing caller's rights are not copied.
+Explicitly disabled WASI namespaces are rejected by the SDK test helper; VM
+validation tests cover the absent-namespace case.
 
-The serializer creates each named Single policy. WASI Global switches are not
-available in the robot product; unbound modules inherit no authority. It emits one enable switch per namespace and one
-`--wasip1-single-grant` per operation. `stdin.read`, `stdout.write`, and
-`stderr.write` are independent. Metadata and readiness are separate grants.
-Arguments, environment, exit, random and each clock require their own explicit
-right. No argument/environment grant imports the supervisor's host environment.
-Directory preopens and their rights require the explicit per-module configuration described below. Socket preopens are not part of this schema.
+Production `xmake run` never performs this test-only import authorization. Its
+exact interface maps must be reviewed with the operation/resource contract.
+A changed binary with new imports requires a corresponding reviewed deployment
+change. The shared inventory is `tools/shared/host-interfaces.json`.
 
-For native ROS deployment format `uwvm-native-ros-run-v3`, the equivalent fields
-are per-module `wasi_enabled`, `wasi_grants`, and optional `wasi_limits` and
-`wasi_wait_exit_actions`. Unitree v2 deployments use the same fields. Missing
-`wasi_enabled` is false; a nonempty grant list without explicit enablement is
-rejected before startup. Checked-in runnable SDK example deployments explicitly
-set `wasi_enabled: true` even for modules with no operation grants. Native ROS
-finite test drivers select `command(..., test=True)` to guarantee base linkage
-for every loaded module. `ros_enabled` exposes the complete selected ROS
-version's interface families while `grants` separately authorizes operations
-and resources. Enablement never synthesizes grants or limits. An enabled ROS namespace with
-zero operation grants does not require a gateway or native connection fields;
-the launcher starts a gateway only for modules with concrete native grants.
+Native ROS deployments use `uwvm-native-ros-run-v4` and require per-module
+`wasi_interfaces` and `ros_interfaces` maps, alongside `wasi_enabled`,
+`ros_enabled`, `wasi_grants` and ROS `grants`. Unitree deployments use
+`uwvm-unitree-run-v3` and the same maps. WASI keys are function names; ROS keys
+are `namespace.function`. Enablement alone exposes no API. A module with zero
+native ROS grants does not start a gateway. Old versions and the removed
+`imports`, `wasi_imports` and `ros_imports` fields have no compatibility fallback.
 
-The old WASI policy v1, ROS deployment v2, Unitree deployment v1, and the
-per-function `imports`, `wasi_imports`, and `ros_imports` fields are rejected.
-Remove those fields and review the independent operation grants before selecting
-the new formats. There is no compatibility fallback for removed expose flags.
+Denied calls emit `[warning]` by default; hidden imports fail with `[error]` and
+the exact enabling command. Limits are unlimited unless configured. Quota
+rejection/wait warnings default off. Select them with `--enable-warning`,
+suppress them with `--disable-warning`, or promote them using
+`--warning-as-error`:
+
+- `all_host_calls` selects denial and quota events.
+- `all_host_denied` and `all_host_limited` select one event class.
+- Append `_wasip1`, `_ros1` or `_ros2` to select a family.
+- `host_call_FAMILY.API`, `host_denied_FAMILY.API` and
+  `host_limited_FAMILY.API` select an exact API; ROS API names include namespace.
+
+The last matching selector wins. For example,
+`--enable-warning host_limited_wasip1.random_get` enables random quota warnings,
+while `--disable-warning all_host_denied_ros2` suppresses ROS2 denial warnings.
+Quota actions remain rejection or synchronous waiting; diagnostics do not add
+asynchronous behavior, quotas, permissions or an execution fallback.
 
 Test runtime options are passed through the shared Python/Lua
 `wasi_policy.test_arguments` helper. Put WASI operation grants, limits and exit
@@ -93,7 +105,7 @@ its own blocking input until it consumes the supervisor release byte, then
 sets the guest-facing descriptor nonblocking immediately before exec.
 
 For `example/platform/wasi/c/sum_arguments`, add only `args` to the reviewed
-grants. The enabled namespace already makes its argument interfaces linkable. Without that grant, the actual SDK command exits with a
+grants. The test launcher explicitly exposes its actual argument imports; production deployments must list those interfaces. Without that grant, the actual SDK command exits with a
 denial; granting output alone never grants its application arguments.
 
 Native ROS/Unitree workers, Fourier language scenarios and the Agilex standalone
@@ -120,9 +132,7 @@ verified. The local supervisor records its real cgroup and verified executable
 descriptor, uses bounded output pipes, applies a finite deadline, and owns child
 cleanup. The WASI-only profile rejects ROS/other host imports and exposes no raw
 VM argument field. The explicit local ROS profile selects ROS1 or ROS2 and
-names each authorized module. Its import inspection admits that version's
-complete registered function family (including ROS2 portable interfaces), while
-the VM still checks the module's base grant. This grants no ROS resources or
+names each authorized module. Its import inspection allows only the actual registered function imports for that version (including ROS2 portable interfaces), within explicitly enabled module bindings. The VM independently checks the namespace, exact interface and operation/resource grants. This grants no ROS resources or
 portable deployment: an example's denied open remains a permission test, not
 successful robot operation or simulator qualification.
 The reviewed `wasi_policy` is the only way this profile grants WASI operations;

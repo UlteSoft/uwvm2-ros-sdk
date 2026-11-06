@@ -33,7 +33,7 @@
 ## 显式原生部署
 
 用 `set_ros_run_config("deployment.json")` 选择操作员配置。唯一公共入口
-`tools/platform/ros/run.py` 使用 `uwvm-native-ros-run-v3`，后端及发行版须与目标
+`tools/platform/ros/run.py` 使用 `uwvm-native-ros-run-v4`，后端及发行版须与目标
 完全一致。`examples.<scenario>` 必须显式提供 `arguments`、`main_module`、
 `preloads`、`modules`。`arguments` 是原始 UTF-8 参数数组，含别名，以及示例要求时
 由调用方维护的序号；启动器不会根据平台或场景名字合成这些参数。

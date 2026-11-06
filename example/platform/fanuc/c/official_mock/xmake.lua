@@ -6,6 +6,8 @@ includes(path.join(root, "tools/shared/xmake/simulation_example.lua"))
 set_policy("run.autobuild", false)
 target("fanuc-official-joint-step")
     set_kind("binary")
+    -- The frozen name section includes the original linker output basename.
+    set_basename("portable-joint-step-v0-1-0")
     set_language("c")
     set_ros_platform("wasi")
     set_plat("wasm-wasip1")

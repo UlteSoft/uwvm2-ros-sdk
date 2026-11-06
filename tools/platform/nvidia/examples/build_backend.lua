@@ -116,7 +116,7 @@ function run_empty(context, entry, receipt)
     }
     local json = import("core.base.json")
     local selected = json.loadfile(configuration())
-    argv = import("wasi_policy", {rootdir = path.join(context.sdk_root, "tools/xmake"), anonymous = true}).test_arguments(argv, selected.wasi_policy)
+    argv = import("wasi_policy", {rootdir = path.join(context.sdk_root, "tools/xmake"), anonymous = true}).test_arguments(argv, selected.wasi_policy, {main=receipt.artifacts[1].path})
     table.insert(argv, "--run")
     table.insert(argv, receipt.artifacts[1].path)
     os.execv(context.runtime, argv)

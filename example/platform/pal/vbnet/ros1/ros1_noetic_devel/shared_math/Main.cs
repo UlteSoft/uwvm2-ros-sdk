@@ -27,17 +27,17 @@ namespace Uwvm.Pal.Preload.Consumer
          System.Runtime.InteropServices.WasmImportLinkage]
         private static extern int InitializationCount();
         /** @brief Call the independently instantiated peer scalar entry. */
-        [DllImport("math_peer", EntryPoint = "wasm_native_to_interp_math_Arithmetic_CheckedAdd", ExactSpelling = true),
+        [DllImport("math_peer", EntryPoint = "wasm_native_to_interp_math_peer_Arithmetic_CheckedAdd", ExactSpelling = true),
          System.Runtime.InteropServices.WasmImportLinkage]
         private static extern long PeerCheckedAdd(int left, int right);
         /** @brief Read the independent peer catch and finally counters. */
         [DllImport(
-             "math_peer", EntryPoint = "wasm_native_to_interp_math_Arithmetic_CleanupCounts", ExactSpelling = true),
+             "math_peer", EntryPoint = "wasm_native_to_interp_math_peer_Arithmetic_CleanupCounts", ExactSpelling = true),
          System.Runtime.InteropServices.WasmImportLinkage]
         private static extern long PeerCleanupCounts();
         /** @brief Read the independent peer managed initialization count. */
         [DllImport("math_peer",
-                   EntryPoint = "wasm_native_to_interp_math_Arithmetic_InitializationCount",
+                   EntryPoint = "wasm_native_to_interp_math_peer_Arithmetic_InitializationCount",
                    ExactSpelling = true),
          System.Runtime.InteropServices.WasmImportLinkage]
         private static extern int PeerInitializationCount();

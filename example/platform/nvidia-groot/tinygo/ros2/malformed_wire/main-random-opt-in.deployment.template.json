@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-native-ros-run-v3",
+  "format": "uwvm-native-ros-run-v4",
   "runtime": "PATH_TO_INSTALLED_UWVM2_ROS",
   "gateway": "PATH_TO_INSTALLED_UWVM_ROS2_GATEWAY",
   "backend": "ros2",
@@ -27,7 +27,16 @@
             "monotonic-clock",
             "random"
           ],
-          "wasi_enabled": true
+          "wasi_enabled": true,
+          "wasi_interfaces": {
+            "args_get": "allow",
+            "args_sizes_get": "allow",
+            "clock_time_get": "allow",
+            "fd_write": "allow",
+            "proc_exit": "allow",
+            "random_get": "allow"
+          },
+          "ros_interfaces": {}
         }
       }
     }

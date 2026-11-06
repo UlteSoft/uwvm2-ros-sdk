@@ -29,7 +29,7 @@
     {
       "scope": "sdk",
       "path": "example/language/typescript/static_same/deployment.json",
-      "sha256": "f2af4f049655c002cc1ecc1771bd2c1b0551fdd2325357753f9b19b9dff2464a"
+      "sha256": "fde9c825491385f49e8e31aa36721b509ed314c174c586450ab1c3ca77c62180"
     },
     {
       "scope": "sdk",
@@ -44,7 +44,7 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/wasi_component.py",
-      "sha256": "1ceaaa78f02fa7aac8676d6a06561d1a207877de0aff6e6a8445858991de4d8c"
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
     },
     {
       "scope": "sdk",

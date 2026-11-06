@@ -32,7 +32,7 @@ no unprefixed version setters or alternate scenario setters.
 
 ## Deployment contract
 
-`uwvm-native-ros-run-v3` requires `runtime`, `backend`, `distribution`,
+`uwvm-native-ros-run-v4` requires `runtime`, `backend`, `distribution`,
 `connection` and `examples`. The `gateway` executable is required when any main
 or preload module sets `ros_enabled: true`. Runtime and gateway paths are explicit
 executable paths, resolved relative to the JSON file. An optional `runtime_loader` and
@@ -150,3 +150,10 @@ module has its own argument array, policy, socket, worker binding, and grants.
 Startup arguments neither grant ROS operations nor change the submitted policy.
 The selected gateway must implement the requested option; unsupported arguments
 remain startup errors and are retained in its log.
+
+Each module also requires exact `wasi_interfaces` and `ros_interfaces` maps.
+Values are `hidden` (default and unavailable at validation), `deny` (exposed but
+calls rejected), or `allow` (exposed and still subject to grants/quotas). Namespace
+enablement alone exposes no API. ROS keys include the full namespace. Production
+launches never infer API permission from imports. See the [WASIp1 contract guide](shared/en_US/runtime_boundary/wasip1-zero-default.md)
+for test authorization and warning selectors. Older deployment versions are rejected.

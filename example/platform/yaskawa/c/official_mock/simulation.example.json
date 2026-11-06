@@ -546,7 +546,7 @@
     {
       "scope": "example",
       "path": "xmake.lua",
-      "sha256": "94ea422b83e0dec0cbc7217186e3a870f7760dc0a6d958dedec5bb55772fa62b"
+      "sha256": "0389dfb4e40d106d442f9fc67747996318ccdfece3eb1ff761cd6d1674ee9af5"
     }
   ],
   "migration_status": "BLOCKED_REQUIRED_FULL_WASM_ROS_LIBRARY_MIGRATION",
