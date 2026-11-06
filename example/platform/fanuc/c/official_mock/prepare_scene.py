@@ -52,7 +52,8 @@ def prepare(output):
     controllers.write_text(yaml)
     result = {'original_inputs': observed, 'original_render_sha256': hashlib.sha256(xml.encode()).hexdigest(),
               'render_sha256': hashlib.sha256(rendered.encode()).hexdigest(), 'software_initial_state': initial,
-              'hardware_plugin': 'mock_components/GenericSystem',
+              'hardware_plugin': 'mock_components/GenericSystem', 'controller_name': 'joint_trajectory_controller',
+              'joint_names': ['J' + str(i) for i in range(1, 7)],
               'controller_plugin': 'fanuc_controllers/ScaledJointTrajectoryController',
               'physical_robot_authorized': False, 'description': str(description), 'controllers': str(controllers)}
     (output / 'scene.json').write_text(json.dumps(result, indent=2) + '\n')

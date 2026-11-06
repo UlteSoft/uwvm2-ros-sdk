@@ -1,85 +1,50 @@
-# YASKAWA official software simulation
+# Yaskawa original-controller Wasm example
 
-Profile `yaskawa-gp8-official-mock-humble` is **BLOCKED: real Wasm ROS migration required**.
-The SDK-authored host ROS query implementation was physically removed from the
-public SDK. Its historical role was read-only subscriptions and controller/result
-queries; it did not submit goals. The public test declaration has no executable
-scenario driver while migration is missing. No archived implementation is used.
+This example compiles the complete shared joint client from
+`tools/shared/ros_joint_fixture` into Wasm and runs every operation through
+`uwvm2-ros`. The native side uses the original GP8 description and
+`mock_components/GenericSystem`, with the original
+`joint_trajectory_controller/JointTrajectoryController` implementation.
 
-The normal build target `yaskawa-official-joint-step` compiles the unchanged local `main.c`
-through the shared C/WASI producer. It must match the canonical 4,449-byte
-`lib/platform/ros/portable/v0.1.0/joint-step.wasm`, SHA256
-`c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043`.
-The shared source is `example/platform/ros/portable/v0_1_0/joint_step/main.c`.
-This portable C program does not establish upstream rcl/rclcpp/rclpy/rcljava or
-ROS1 client-library migration. Compatible vendor runs must retain the same whole
-application SHA; platform selection and reviewed grants remain external.
-
-From this directory, the public commands are:
+The selected upstream starter source at commit
+`b5a1e15a3a068f46e68d6b5ee90752c778c411b8` has three incomplete simulation settings.
+`prepare_scene.py` checks the original source hashes, then creates a separate
+composition: instantiate its disabled `moto_ros2_control` macro, align the YAML
+controller name with its `moto_controller` spawner, and select the position
+command and position/velocity state interfaces already declared by that macro.
+It records these repairs and rendered output hashes. Original source files and
+controller implementations are preserved.
 
 ```sh
-xmake
-xmake test
+xmake f -P . --ros-tool-cache=/absolute/existing/tool-cache
+xmake -P .
+UWVM_ROS_YASKAWA_TEST_CONFIG=/absolute/host/deployment.json xmake test -P .
 ```
 
-`xmake test` reuses the built exact artifact and refuses a missing or changed
-output. It does not compile, relink or rewrite the application. The manifest's
-`required_implementation` declares an explicit non-success result for all five
-required scenario groups: unchanged-Wasm joint step, denied permission with no
-native effect, bounds/stale/foreign references, cancel/timeout/disconnect, and
-pause/restart/update/rollback. These remain required CI rows. Missing migration,
-runtime, provider or tests cannot produce a passing or zero-test result. The
-updated declaration is source-only pending fresh Linux public-command evidence.
+Fill `deployment.template.json` with explicit installed executable hashes,
+matching native type/codec identities, WASI permissions, ROS resource aliases,
+QoS and a private 0700 socket directory. It grants no authority until selected
+by the host. The matching runtime/gateway catalog and native model packages must
+already be deployed. No toolchain or native environment is installed by the test.
+An optional pinned host `launcher` receives the Python test script and its
+arguments and executes them in the prepared software environment. The fixture
+requires an unprivileged UID, empty capabilities, no_new_privs, a syscall filter,
+an isolated ROS network and a 64 GiB, zero-swap cgroup.
 
-The SDK01 `uwvm_simulation_example` declaration and
-`uwvm.simulation-example.v1` rule own shared test registration and accounting.
-The local Xmake file consumes that API read-only. The original SDK root and
-ancestor project must remain in validation; private project-selection shortcuts
-cannot establish the public entry. Prior failed command transcripts retain
-their exact old source identity and scope.
+The eight scenarios run with the same Wasm in the JIT and interpreter: successful
+motion and fresh feedback, denied send with unchanged state, bounds/stale/cancel
+scope checks, cancellation, missing-server timeout, gateway disconnect, and two
+simultaneous VMs proving foreign-handle rejection and continued owner access.
+`xmake test` verifies the source/build record and exact image, writes all 16 case
+results and raw logs, and fails for missing tests or unretired actors.
+WASI namespace, exact interfaces and operation grants remain distinct. Explicit
+hidden/deny interface settings take precedence over test-only imported-interface
+exposure; no operation grant or rate quota is inferred. The original unknown
+JointState effort stays NaN under the explicit codec field policy.
 
-The selected GP8 profile requires a separately provisioned Ubuntu 22.04 /
-ROS 2 Humble provider and model closure. The pinned original source disables
-ros2_control, declares empty command/state interfaces, and spawns
-`moto_controller` while its YAML declares `yaskawa`. `scene.launch.py` verifies
-those unchanged inputs and refuses before starting nodes. Its three exact source
-gitlinks are acquired; source closure does not repair the configuration or prove
-a working binary/controller environment. No substitute YAML or model is used.
-
-Original provider source: [YaskawaEurope/ros2-starter-for-yaskawa-robots](https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots),
-commit `b5a1e15a3a068f46e68d6b5ee90752c778c411b8`. The controller type is `joint_trajectory_controller/JointTrajectoryController`.
-The declared native joint order is `joint_1`, `joint_2`, `joint_3`, `joint_4`, `joint_5`, `joint_6`.
-`provider.source.lock.json` and `provider.dependencies.json` retain original
-sources, licences and package requirements. `mapping.request.json` is an unbound
-request; its endpoint names, units and source identities grant no authority.
-
-Restoration requires an actual source-compatible guest ROS library/application
-build, a pinned runtime and compatible bounded ROS host, authenticated installed
-official models/plugins, and separately reviewed adapter, grants and native
-provenance. Required public runtime contracts include
-`uwvm-sdk-simulation-admission-v1`, `uwvm-sdk-simulation-deployment-v1` and
-`uwvm-sdk-simulation-command-binding-v1`. `deployment.template.json` is unbound
-and not runnable authority. Separately qualified audit-r1 component events are
-not a substitute for the public command-binding event.
-
-Prove causal operation/goal UUID and terminal result, fresh post-result state,
-and reverse JointState/sensor bytes consumed by the same executing Wasm through
-the permission/audit boundary. The canonical step is 0.001 rad with a stable
-independent initial state and 0.00025 rad post-result tolerance. Denied ROS/file
-operations must have no corresponding unauthorized native effect. Full callbacks,
-concurrency, stale/foreign ownership, lifecycle, rollback and permission
-preservation remain mandatory. Native finite references do not qualify these.
-
-`model.source.lock.json` records exact-byte model-description identities; included
-macros, meshes, textures, assets and actual provider execution require their own
-closure. `matrix.required.json` and `release.applicability.json` retain every
-currently inventoried model, language/form/width and all 26 ROS release
-obligations. This inventory remains non-exhaustive. Source hashes and package
-declarations do not prove installed binary, historical API, full simulation,
-performance or dev single-executable support.
-
-Manual qualification runs only on SSH Linux after complete source transfer,
-fresh lifecycle proofs and current immutable admission. All VM/ROS/simulator
-actors and their ancestor use the shared 64 GiB zero-swap budget, canonical lease
-and independent guardian through retirement. Keep space reserves and actual
-process/executable/library/cgroup identities. No physical robot is authorized.
+This fixture selects the installed Jazzy ABI and original software-only model.
+It does not establish Humble execution, other models/ABIs, physics, production
+guardian admission, ROS production updates or physical robot authority.
+Those dimensions remain separate in the source/model inventories.
+`run_scene.py` uses `UWVM_ROS_YASKAWA_SCENE_OUTPUT` for an explicit writable
+rendered-scene directory and starts the same checked software composition.

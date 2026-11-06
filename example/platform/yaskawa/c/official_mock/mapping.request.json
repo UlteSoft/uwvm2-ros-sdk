@@ -1,6 +1,7 @@
 {
-  "status": "UNBOUND_MAPPING_REQUEST_NOT_RUNTIME_ADAPTER",
-  "platform_id": "yaskawa/gp8/europe_mock_hardware",
+  "format": "uwvm-sdk-ros2-resource-mapping-request-v1",
+  "status": "REQUEST_ONLY_NO_RUNTIME_AUTHORITY",
+  "platform_id": "yaskawa/gp8/mock_hardware",
   "native_joints": [
     "joint_1",
     "joint_2",
@@ -9,26 +10,19 @@
     "joint_5",
     "joint_6"
   ],
-  "official_source": {
-    "repository": "https://github.com/YaskawaEurope/ros2-starter-for-yaskawa-robots",
-    "commit": "b5a1e15a3a068f46e68d6b5ee90752c778c411b8",
-    "license": "BSD-3-Clause in selected model/config packages",
-    "mode": "mock_components/GenericSystem",
-    "scope": "Official GP8 Humble ideal ros2_control mock; default controller configuration inconsistent and not yet runtime-qualified"
+  "joint_units": "radians",
+  "position_tolerance": 0.00025,
+  "resource_names": "Select explicit deployment namespaces and resource paths in deployment.template.json",
+  "original_hardware": "mock_components/GenericSystem",
+  "native_controller_type": "joint_trajectory_controller/JointTrajectoryController",
+  "records": {
+    "joint_state": "sensor_msgs/msg/JointState",
+    "trajectory": "control_msgs/action/FollowJointTrajectory"
   },
-  "resources": {
-    "joint_state_topic": "/sdk02_yaskawa/joint_states",
-    "position_action": "/sdk02_yaskawa/moto_controller/follow_joint_trajectory",
-    "controller_status_service": "/sdk02_yaskawa/controller_manager/list_controllers"
+  "source_lock": "provider.source.lock.json",
+  "codec_profile": {
+    "scope": "sdk",
+    "path": "tools/shared/ros_joint_fixture/types/catalog.json"
   },
-  "max_step_microrad": 1000,
-  "tolerance_microrad": 250,
-  "runtime_authorized": false,
-  "runtime_binding_required": [
-    "Compatible native ROS/image/provider closure",
-    "Observed actual controller/URDF and review of default configuration issues",
-    "Policy bytes/epoch and exact same canonical Wasm",
-    "Real VM portable host import/grant/native confirmation"
-  ],
-  "native_controller_type": "joint_trajectory_controller/JointTrajectoryController"
+  "physical_robot_authorized": false
 }

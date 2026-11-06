@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-sdk-fanuc-functional-test-v1",
+  "format": "uwvm-sdk-ros2-joint-fixture-v1",
   "physical_robot_authorized": false,
   "engines": [
     "jit",
@@ -1468,5 +1468,6 @@
       }
     }
   },
-  "template_state": "UNBOUND_NO_RUNTIME_AUTHORITY"
+  "template_state": "UNBOUND_NO_RUNTIME_AUTHORITY",
+  "profile": "fanuc-crx10ia-official-mock-jazzy"
 }

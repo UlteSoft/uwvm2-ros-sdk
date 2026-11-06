@@ -21,6 +21,6 @@ def generate_launch_description():
              Node(package="controller_manager", executable="ros2_control_node",
                   namespace=namespace, parameters=[scene["controllers"]], output="screen")]
     nodes.append(Node(package="controller_manager", executable="spawner", namespace=namespace,
-        arguments=["joint_state_broadcaster", "joint_trajectory_controller", "--controller-manager",
+        arguments=["joint_state_broadcaster", scene["controller_name"], "--controller-manager",
                    "/" + namespace.strip("/") + "/controller_manager", "--controller-manager-timeout", "30"], output="screen"))
     return LaunchDescription(nodes)

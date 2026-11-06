@@ -1,5 +1,5 @@
 {
-  "format": "uwvm-sdk-fanuc-functional-profile-v1",
+  "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
   "id": "fanuc-crx10ia-official-mock-jazzy",
   "state": "EXECUTABLE_WASM_FIXTURE_REQUIRES_EXPLICIT_DEPLOYMENT",
   "execution_class": "software_simulation",

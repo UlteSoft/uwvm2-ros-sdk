@@ -20,6 +20,9 @@
     "trajectory": "control_msgs/action/FollowJointTrajectory"
   },
   "source_lock": "provider.source.lock.json",
-  "codec_profile": "types/catalog.json",
+  "codec_profile": {
+    "scope": "sdk",
+    "path": "tools/shared/ros_joint_fixture/types/catalog.json"
+  },
   "physical_robot_authorized": false
 }

@@ -17,11 +17,13 @@ import sys
 import time
 import traceback
 parser = argparse.ArgumentParser()
-for name in ('sdk-root', 'wasm', 'config', 'output'):
+for name in ('sdk-root', 'example', 'wasm', 'config', 'output'):
     parser.add_argument('--' + name, required=True)
 args = parser.parse_args()
 D = Path(args.sdk_root).resolve()
-E = Path(__file__).resolve().parent
+E = Path(args.example).resolve()
+sys.path.insert(0, str(E))
+manifest = json.loads((E / "simulation.example.json").read_text())
 run = Path(args.output).resolve()
 run.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(D / 'tools/shared/python'))
@@ -31,7 +33,8 @@ from wasi_policy import test_arguments as wasi_test_arguments
 from host_interfaces import authorize_test_imports, interface_arguments
 from prepare_scene import prepare as prepare_scene
 cfg = json.loads(Path(args.config).read_text())
-base.need(cfg.get('format') == 'uwvm-sdk-fanuc-functional-test-v1', 'Select the current FANUC test contract')
+base.need(cfg.get('format') == 'uwvm-sdk-ros2-joint-fixture-v1', 'Select the current ROS2 joint fixture contract')
+base.need(cfg.get('profile') == manifest['profile'], 'The deployment and selected original model profile differ')
 base.need(cfg.get('physical_robot_authorized') is False, 'This fixture accepts software simulation only')
 base.need(cfg.get('engines') == ['jit', 'int'], 'Both LLVM JIT and interpreter cases are mandatory')
 base.need(set(cfg.get('cases', {})) == {'positive', 'denied', 'boundaries', 'cancel', 'timeout', 'disconnect', 'owner', 'foreign'}, 'All eight scenarios are mandatory')
@@ -39,7 +42,7 @@ B = Path(cfg['socket_root']).resolve()
 base.need(B.is_dir() and B.stat().st_uid == os.getuid() and (B.stat().st_mode & 63 == 0), 'Select an owned private socket directory')
 actors, logs = ([], [])
 socket_scope = secrets.token_hex(8)
-report = {'format': 'uwvm-sdk-fanuc-functional-result-v1', 'scope': 'Original CRX10iA GenericSystem and scaled controller; local Wasm functional checks', 'production_admission': False, 'physical_robot_authorized': False, 'selected': 16, 'cases': [], 'actors': [], 'config_sha256': base.digest(args.config)}
+report = {'format': 'uwvm-sdk-ros2-joint-fixture-result-v1', 'scope': manifest['scope'], 'profile': manifest['profile'], 'production_admission': False, 'physical_robot_authorized': False, 'selected': 16, 'cases': [], 'actors': [], 'config_sha256': base.digest(args.config)}
 
 def token(value):
     base.need(type(value) is str and value and (not any((c.isspace() or ord(c) < 32 for c in value))), 'Invalid explicit gateway policy token')
@@ -100,7 +103,7 @@ try:
     manager = launch('controller_manager', [cfg['native']['controller_manager'], '--ros-args', '-r', '__ns:=' + namespace, '--params-file', report['scene']['controllers']])
     live(rsp, 1)
     live(manager, 1)
-    spawner = launch('spawner', [cfg['native']['spawner'], 'joint_state_broadcaster', 'joint_trajectory_controller', '--controller-manager', namespace.rstrip('/') + '/controller_manager', '--controller-manager-timeout', '30'])
+    spawner = launch('spawner', [cfg['native']['spawner'], 'joint_state_broadcaster', report['scene']['controller_name'], '--controller-manager', namespace.rstrip('/') + '/controller_manager', '--controller-manager-timeout', '30'])
     base.need(spawner.wait(timeout=60) == 0, 'Original controller activation failed')
     for entry, proc in zip(report['actors'][:2], [rsp, manager]):
         entry['actual'] = live(proc, 0.2)
@@ -109,7 +112,7 @@ try:
         entry['security_status'] = (Path('/proc') / str(proc.pid) / 'status').read_text()
     plugin = Path(cfg['native']['controller_plugin']).resolve()
     base.need(str(plugin) in report['actors'][1]['maps'], 'Original scaled controller is not mapped in the actual controller manager')
-    print('Original FANUC software controller activated', flush=True)
+    print('Original software controller activated: ' + manifest['profile'], flush=True)
     vm_record = cfg['runtime']
     vm = vm_record['executable']
     gateway = cfg['gateway']['executable']
@@ -130,7 +133,7 @@ try:
         stderr = (root / 'vm.stderr').open('wb')
         logs.extend([stdout, stderr])
         arguments, _ = config(name, 1, socket)
-        argv = authorize_test_imports([vm, *arguments, '--run', str(wasm), name, '37', *['J' + str(i) for i in range(1, 7)]])
+        argv = authorize_test_imports([vm, *arguments, '--run', str(wasm), name, '37', *report['scene']['joint_names']])
         # Keep the gateway-admitted process lifetime through actual VM exec.
         worker = PipeLoggedProcess([sys.executable, '-B', str(D / 'tools/shared/python/native_fixture.py'), '--exec-runtime-gate', vm, vm_record['sha256'], *argv[1:]], stdin=subprocess.PIPE, stdout=stdout, stderr=stderr, start_new_session=True, nonblocking_stdin=False)
         owner = base.process(worker.pid)

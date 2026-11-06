@@ -1,6 +1,6 @@
 # FANUC original-controller Wasm example
 
-`main.c` runs the joint client in Wasm through `uwvm2-ros`. The native side uses
+`main.c` compiles the shared joint client in Wasm through `uwvm2-ros`. The native side uses
 the original FANUC CRX10iA model with `mock_components/GenericSystem` and
 `fanuc_controllers/ScaledJointTrajectoryController`. Goal construction, complete
 typed message decoding, result checks and joint-position comparisons execute
@@ -19,7 +19,7 @@ installed runtime/gateway/native executable paths and SHA256 values, choose an
 owned mode-0700 socket directory, and review each case's WASI grants, ROS aliases,
 resource names, complete native type identities, codec identities and QoS.
 The runtime and gateway must be built with the matching bound custom catalog.
-`prepare_bindings.py` only produces guest records from the complete original
+`tools/shared/ros_joint_fixture/prepare_bindings.py` only produces guest records from the complete original
 message/action declarations; it cannot establish a native ABI identity.
 
 Every VM starts with the configured basic WASIp1 authorization. The test helper

@@ -1,565 +1,76 @@
 {
-  "format": "uwvm-sdk-simulation-example-v1",
-  "profile": {
-    "id": "yaskawa-gp8-official-mock-humble",
-    "vendor": "yaskawa",
-    "official_controller_type": "joint_trajectory_controller/JointTrajectoryController",
-    "native_joint_names": [
-      "joint_1",
-      "joint_2",
-      "joint_3",
-      "joint_4",
-      "joint_5",
-      "joint_6"
-    ]
+  "format": "uwvm-sdk-ros2-joint-fixture-example-v1",
+  "profile": "yaskawa-gp8-original-mock-jazzy",
+  "public_build_target": "yaskawa-official-joint-step",
+  "public_test_suite": "yaskawa-official-joint-step/official-scenarios",
+  "source": "main.c",
+  "driver": {
+    "scope": "sdk",
+    "path": "tools/shared/ros_joint_fixture/test_fixture.py"
   },
-  "frozen_wasm": {
-    "sdk_path": "lib/platform/ros/portable/v0.1.0/joint-step.wasm",
-    "sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043"
-  },
-  "python_dependencies": [],
+  "deployment_environment": "UWVM_ROS_YASKAWA_TEST_CONFIG",
+  "engines": [
+    "jit",
+    "int"
+  ],
+  "selected": 16,
   "scenarios": [
     {
-      "id": "unchanged_wasm_joint_step",
-      "kind": "positive",
-      "required": true,
+      "id": "positive",
+      "assertion": "Wasm constructs the goal, decodes feedback/result and checks fresh native joint positions.",
       "expected_vm_exit": 0,
-      "deadline_seconds": 45
+      "required": true
     },
     {
-      "id": "denied_permission_no_native_effect",
-      "kind": "denied",
-      "required": true,
-      "expected_vm_exit": 13,
-      "deadline_seconds": 45
+      "id": "denied",
+      "assertion": "The missing send capability returns DENIED; fresh native positions remain unchanged.",
+      "expected_vm_exit": 0,
+      "required": true
     },
     {
-      "id": "bounds_stale_foreign",
-      "kind": "lifecycle",
-      "required": true,
-      "expected_vm_exit": 1,
-      "deadline_seconds": 45
+      "id": "boundaries",
+      "assertion": "Truncated goals, invalid memory/ranges, stale handles and cancel-any through cancel-own authority are refused with unchanged output canaries.",
+      "expected_vm_exit": 0,
+      "required": true
     },
     {
-      "id": "cancel_timeout_disconnect",
-      "kind": "lifecycle",
-      "required": true,
-      "expected_vm_exit": 1,
-      "deadline_seconds": 45
+      "id": "cancel",
+      "assertion": "Wasm cancels its own active native goal and observes the canceled terminal result and stable stopped positions.",
+      "expected_vm_exit": 0,
+      "required": true
     },
     {
-      "id": "pause_restart_update_rollback",
-      "kind": "lifecycle",
-      "required": true,
-      "expected_vm_exit": 1,
-      "deadline_seconds": 45
+      "id": "timeout",
+      "assertion": "An explicitly authorized absent server times out using the guest monotonic clock without native movement.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "disconnect",
+      "assertion": "An actual gateway exit yields DISCONNECTED; close retires the handle without crashing the VM.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "owner",
+      "assertion": "A real handle remains usable after another VM attempts to use or close its numeric value.",
+      "expected_vm_exit": 0,
+      "required": true
+    },
+    {
+      "id": "foreign",
+      "assertion": "A simultaneously executing VM rejects the other VM handle without altering its output.",
+      "expected_vm_exit": 0,
+      "required": true
     }
   ],
   "required_matrix": "matrix.required.json",
+  "production_admission": false,
   "physical_robot_authorized": false,
-  "public_inputs": [
-    {
-      "scope": "example",
-      "path": "README.md",
-      "sha256": "b183c7b9c8606d6f3b4108e79d49343c64191e54f67d8be3b0da202640b85a6b"
-    },
-    {
-      "scope": "example",
-      "path": "authority.request.json",
-      "sha256": "d1243c96474ae31b2c3006683869cf07147541b2e94b4d25022a29c6702fba76"
-    },
-    {
-      "scope": "example",
-      "path": "deployment.template.json",
-      "sha256": "f8ccd17197859a27988a520df7c40c2d54b21659ce2a91aa86346d8a40597721"
-    },
-    {
-      "scope": "example",
-      "path": "main.c",
-      "sha256": "46f6bac6268cc9a4e338f75c57d7b9df508ec98a4b63d9f95bc427186d6fa616"
-    },
-    {
-      "scope": "example",
-      "path": "mapping.request.json",
-      "sha256": "e6657c9a9feba93fd9b8d38fa453d2c339e2fb8e9c8a01a2ce9d22a987a3acc5"
-    },
-    {
-      "scope": "example",
-      "path": "matrix.required.json",
-      "sha256": "590cbf43f1e3c57f588e5af5eea57aa784167019f111ffd7c04e030292be8651"
-    },
-    {
-      "scope": "example",
-      "path": "model.source.lock.json",
-      "sha256": "cb9ee4de0362360cd011ceba0e9b800ac3fd3d91eac8e7971f7748b582fabdaa"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/CMakeLists.txt",
-      "sha256": "e159c0beab0c3d096a3638c7acde5c934f5e9ea672bd623ed97ebd4c83891d21"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/LICENSE",
-      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/README.md",
-      "sha256": "514d60fd9cf2f42029fd0bc5c26e8ccecc95f94895601e645c72bbd70cefb20e"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/package.xml",
-      "sha256": "8c20fe14461b93c19d452c538f815a6de8b0e9343fd3b494989bc52a8b42077a"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/motoros2_client_interface_dependencies/source_deps.repos",
-      "sha256": "934aac04b0bd664d30f11165384f8b533cfb9e91bb70097db9f8a6f161d4dc8e"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/README.md",
-      "sha256": "6fdff85c525577b4e2c8343c64f903912ae80c57a2316ea85bcf23370017bd3f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/CMakeLists.txt",
-      "sha256": "e4452e1a16baef0d56a3b09b2bfcaa66623363416bff668adeb9811b16fe82d9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/DebugLevel.msg",
-      "sha256": "b578049ef18456b8b5a9474fdd1285ceb5a20667c48cc2f433eb4aaba53a343a"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/DeviceInfo.msg",
-      "sha256": "1d2b39c295e3a3909e74a076823cf935fa3c92c6fa153aefbbcac272b26bbb51"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/RobotMode.msg",
-      "sha256": "3bf60f0bcad9b250fe68c5fbd65f0a9671788c0c9c33f4f5c2e028a3213d0bee"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/RobotStatus.msg",
-      "sha256": "0389afd8460bf5fca47744e1bfc41bf2d62c889870025a257dd46ab76e1b1945"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/ServiceReturnCode.msg",
-      "sha256": "8f6de01d824b4c9c64103680cebf91b134ae4c17f006ba55e547fe68fc9a52a9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/msg/TriState.msg",
-      "sha256": "2f663b2c98d7e01b68d41beed26dd39a1adf8fa71ca9888702cee4e643efeee9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/package.xml",
-      "sha256": "196ce19a5a0920a6c10a9363a049d011dacb34a99d771cf02f9b17d4254b846f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/CmdJointTrajectory.srv",
-      "sha256": "c22ae18b625b680429b05d4f2fe96475f7ba7fc9b97edef68814647ee90e5648"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/GetRobotInfo.srv",
-      "sha256": "f294153cd4b92d8d5540678077257e3aefa61be8cc6bca50fa7517841856b8b9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/SetDrivePower.srv",
-      "sha256": "adc36620c8d85b1bf40b55297742c036707bb41393a2aa6a30f77dd8df8799ca"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/SetRemoteLoggerLevel.srv",
-      "sha256": "316136a5cd5d17a81c4f3c1ddc6a09895cf21e7e85aef1c8f2e5ea3ea151a238"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/StartMotion.srv",
-      "sha256": "06934498171e4d97b6df2dd9d7f0d39e5fbb9cea156573ea98d5acc01b73b1ed"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/ros-industrial/industrial_core_ros2_msgs_only/industrial_msgs/srv/StopMotion.srv",
-      "sha256": "2eed9a17e1d7ed421fd3ecd2583499c14cb295302a459f0b2406fd3f8aa12daf"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.editorconfig",
-      "sha256": "e20d3f5cc95e8af988c4fbd5473d185f4ef2788d6873631c021dae72a29239e8"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.github/workflows/ci_reuse.yaml",
-      "sha256": "0948cb336bd19904e58b81a82626ba893bc930d7772fc7a59e4839b51348be87"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.gitignore",
-      "sha256": "04cfb1485265b54c869191c8084184e8ce65c123925219fc4a8801d4560ecdb2"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/.reuse/dep5",
-      "sha256": "8dfee615a2d66e832e0892b8f73aa04e997f5707b7d676abd6117251a29c71af"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/CMakeLists.txt",
-      "sha256": "2e262327001ff1660fa792c64b1e5344ee9826a41885610c555d0cae856579f3"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/Apache-2.0.txt",
-      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/CC-BY-SA-4.0.txt",
-      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/LICENSES/CC0-1.0.txt",
-      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/README.md",
-      "sha256": "1b0936854cb937a3e61d33021487fe5012e7e25eba34eaeaff63570a18908125"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/IoResultCodes.msg",
-      "sha256": "17c2bd4276006972b4467092477d3cb8a9867c9f17c35ac1ee94df364c4766f9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/MotionReadyEnum.msg",
-      "sha256": "af1998282bd0b85b9a83acc967746c43c2311e931b23040c458c907497411013"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/QueueResultEnum.msg",
-      "sha256": "e239b39512cb3731622ba82103f51a08ad75abe9dacf0f21c84bcd7edac2a06a"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/msg/SelectionResultCodes.msg",
-      "sha256": "7c94b744ec47c89da4f37ddfa2113d816edfc4ad99d359ff30d9cd5e832b4fe4"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/package.xml",
-      "sha256": "6c18ce99fd2ef1971b944e40aa931e9ff6a8d21985b7c808aeef7aa8b372df94"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/QueueTrajPoint.srv",
-      "sha256": "a512280116529112aedfeb35549fdc0c547c34b217aa57eac6254d59513bcf02"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadGroupIO.srv",
-      "sha256": "cdf7cb3980ca2f186963b7251aa707ae69c921d7f7f2a59ca32da4abe1a476d6"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadMRegister.srv",
-      "sha256": "cdff2fbbc252dac1ab90754f9dd4afb5ed852f54a0eef2b8db77a149b397b226"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ReadSingleIO.srv",
-      "sha256": "1aa2349d0a045b6ac941ea25ba1361f432e077f9233cb699d0c0beb2c2a1920f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/ResetError.srv",
-      "sha256": "eb19edd21e082cf866bb4a8b2a07679d0301e3c3fcf116230e77e87acf8df768"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/SelectMotionTool.srv",
-      "sha256": "89b2f66e3dea72582cb03180d0b5a0c6a98f8e1a432928810310215545a396e5"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/StartPointQueueMode.srv",
-      "sha256": "2c29a9cef3ecb09a9e22c72c5c19a912f3be4460fe2f6c49a7a2a0f4d7ed879c"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/StartTrajMode.srv",
-      "sha256": "bc4a560b33854a1927af0df0680a03c476616b1cefa9c7e7277f4ea3ec694c4d"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteGroupIO.srv",
-      "sha256": "fb664112f34580ec57df3892da0089956d7d9d123174dd00ff7c01f480ab0445"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteMRegister.srv",
-      "sha256": "2211208e517e78901dae3bc0ccee62f9528b2be1d2d77e6df3aeff6a3649a1a8"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/gitlinks/src/yaskawa-global/motoros2_interfaces/srv/WriteSingleIO.srv",
-      "sha256": "3e8c1d04236c7e4a8ded058621ab662c9b83f9ca6128469f91de520402205073"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/CHANGELOG.rst",
-      "sha256": "de4865fe57f7d5acd65635aba2e7bd778acec17e436baf915ea76a9bf64a0c8e"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/CMakeLists.txt",
-      "sha256": "8e96b9d0d661bf7dd79a918ddcb3278d810bda5af99a37178da3de93fe6cabb3"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/LICENSE",
-      "sha256": "84fd5e7adf8b18c239ff05bc4ef9c1364392113f38542be79d0798f1ea952cdc"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/README.md",
-      "sha256": "8c0f07a0d503257072a4721e7c549bf9f7e50a62fa2493cd8694a267fc42f27a"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/dim_color_ref_gp8.xacro.urdf",
-      "sha256": "b5ab8e28d785a7c5ab957d940124c5b526c42296f20b86d2ca2511b548cb338f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/package.xml",
-      "sha256": "c9a75ce126b524c8c7a1ea7b66a352130522d39de8c45712d0d012d802d3cd80"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_description/urdf/moto.urdf",
-      "sha256": "aae7d33b2037f183f5656526cd19e73835f10225fc124602a6cedef6e0e42491"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/.setup_assistant",
-      "sha256": "6bd46351c565791e159ec0dd7c5f88023e4f42428cad87b9dbbab0043b1c85d9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/CHANGELOG.rst",
-      "sha256": "668c3d2ce7411ba47ff6420fd5c69fb1db1dbfac5864df814a2b7109c5fd554f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/CMakeLists.txt",
-      "sha256": "7efaeb5837ca1d52f12d3e6a1ae434040a9274c9295edde2783dc6a642b5b32d"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/LICENSE",
-      "sha256": "84fd5e7adf8b18c239ff05bc4ef9c1364392113f38542be79d0798f1ea952cdc"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/README.md",
-      "sha256": "f9af7a7ea7fea427e253850d668a551f7954daf99607c8c2ff2dec2f6ee9ad77"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/chomp_planning.yaml",
-      "sha256": "d99842bf6ad1eb77c28aab1723bda214303878996ce87d6a961889a3bb3ddc41"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/initial_positions.yaml",
-      "sha256": "feb5b84033ed56f0e260d53d5395110c91ac3a624f4e86cc15d0d940fc549e6e"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/joint_limits.yaml",
-      "sha256": "2fc98be4839eb839f92214091686da828fb22bf3686b01e4ca4d2aea26e37e17"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/kinematics.yaml",
-      "sha256": "c4d34dc28d6db32bfaf8fb4f700c8bbb42ac58875ecdc3f181f24293618a043f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.ros2_control.xacro",
-      "sha256": "db3c2a641a3e1303dfe63a37469758307e6b56361d149945ca3c0270034a5943"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.srdf",
-      "sha256": "a7b4c4ad8278c523b3f0162bc11be5d7e138f461361b08ae068306e51deddd6b"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moto.urdf.xacro",
-      "sha256": "c7e54e75f158613add86843864008d69fe17e012f8500da8193b8be579336e8c"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/moveit_controllers.yaml",
-      "sha256": "980653707a04b1e7302c27ff5c98bf983cf1f72968fe6294698890b9c6d64dfd"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/ompl_planning.yaml",
-      "sha256": "1ee794809e60c0c7d2c3866f071123608691aaa85cc738318acf5283d54f9fb9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/pilz_cartesian_limits.yaml",
-      "sha256": "fed80b213b77f13fb7b913d703609a66caa72ccb0617b41e83d3057e31749047"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/ros2_controllers.yaml",
-      "sha256": "5113ac552470571c2a54e85a1a3f5423ab06de611d414b450648728b772fbdc7"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/config/sensors_3d.yaml",
-      "sha256": "1510ccd1381d8b2d2701447e76ff7b03de02ca4c1e39fdfd7c0ffa4d7fafc099"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/demo.launch.py",
-      "sha256": "e5cc137a4ef1b348d8363ea10233e4f0af8a45d2ce637dd20481866642fbb24a"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/move_group.launch.py",
-      "sha256": "d902ed8b6c509ca71a15dd7f316c16174488ab333dc8b2027f7aa00beb623ddf"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/moveit_rviz.launch.py",
-      "sha256": "ac9bd21a75dfe1920f1e61cebcbef8050e75201e927cfb5118f7d193c4f7be38"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/rsp.launch.py",
-      "sha256": "3c79e9210468b4cc83658eb9a2d5d3535d07d3371df3a06c0102580e5a58844d"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/setup_assistant.launch.py",
-      "sha256": "8f6676b19718840655e2c3aec092d826cc78eb637673cbacc8376d24ac6927d6"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/sim_start.launch.py",
-      "sha256": "70f41517129ee845bf96380fdc4dcb1cdcf2b5cd3e5c5b6628d5d841cb72d6be"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/spawn_controllers.launch.py",
-      "sha256": "e2a927c695ec855ce17f5480b7570043b33c3488538e4a29f9c6ac29eb569353"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/start.launch.py",
-      "sha256": "62fd471897afc00907b303b0804747f671b86c1e73e41378dec29c348dcf76d9"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/static_virtual_joint_tfs.launch.py",
-      "sha256": "a82498ed21257b743570e869c74a70c66a2d1a76b8019734acc844cf1f7056f4"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/test.launch.py",
-      "sha256": "5635037fb48917d9470df06b131685caab6d6458713a1cb82ab0fe517f4695cb"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/warehouse_db.launch.py",
-      "sha256": "202416f38d063caf2b0782aba867ab630ae0789a2575474649ff6fad557a7b2b"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/xy_start.launch.py",
-      "sha256": "06d135522a0227310eed8487814b53ecd5c7c9b21693c5cdbf5819c146a3a442"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/launch/yaskawa_hw.launch.py",
-      "sha256": "a8a355fa9061df3ab5fde8cdddc156fea469ec31990d4dd28802cf67c85ab000"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/package.xml",
-      "sha256": "69820e819abbaaefa71cd05fb74f430e99a99e3c4d14a84dcb231a2dae981a4f"
-    },
-    {
-      "scope": "example",
-      "path": "official-reference/starter/src/motoXY/moto_moveit_config/worlds/gp8.world",
-      "sha256": "b2356d910cc0e8da1e6cfd2043c12ed850cd6e80130c4e41c421f2c7102455b7"
-    },
-    {
-      "scope": "example",
-      "path": "provider.dependencies.json",
-      "sha256": "d0147d8f4bf2c62e14bcbc6f1c12168970b5883aadba55fb979d4232e0a1d70a"
-    },
-    {
-      "scope": "example",
-      "path": "provider.source.lock.json",
-      "sha256": "c9173083ff629129176f5b25022bb71c6b2a83f4a3f94513289c623ff1175452"
-    },
-    {
-      "scope": "example",
-      "path": "release.applicability.json",
-      "sha256": "3f6d73505aff07c5bda7ca80b0c0a78d82dd6843c3799e4f67a26bfa9ef95351"
-    },
-    {
-      "scope": "example",
-      "path": "run_scene.py",
-      "sha256": "a6770f27ac5e74458316b08ddf09a5243df18c83e173e8dd1cc281e1377bcf33"
-    },
-    {
-      "scope": "example",
-      "path": "scene.launch.py",
-      "sha256": "db1468a16d9348ce8aeae89062ca64e4fa4cb2b2fe6dc796663b75a321f304cd"
-    },
-    {
-      "scope": "example",
-      "path": "simulation.profile.json",
-      "sha256": "c66f0d046a36bbaf54c9db6e6e6c3e27285127ee12e55e9604be460caa370a10"
-    },
-    {
-      "scope": "example",
-      "path": "xmake.lua",
-      "sha256": "0389dfb4e40d106d442f9fc67747996318ccdfece3eb1ff761cd6d1674ee9af5"
-    }
+  "additional_unqualified_dimensions": [
+    "Other original models and native ABIs/RMW/security profiles",
+    "ROS production update with outstanding native goals",
+    "Debugger-driven pause/restart and complete native performance comparison"
   ],
-  "migration_status": "BLOCKED_REQUIRED_FULL_WASM_ROS_LIBRARY_MIGRATION",
-  "native_witness_implementation_in_public_SDK": false,
-  "required_implementation": {
-    "status": "BLOCKED",
-    "diagnostic": "BLOCKED_REAL_WASM_ROS_MIGRATION_REQUIRED",
-    "requirements": [
-      "Actual guest ROS client libraries, query/callback/state processing and their pinned compiler/message/runtime closure",
-      "Production VM command/result and reverse-feedback audit binding the executing unchanged Wasm, grants and official provider",
-      "Public Linux xmake and xmake test with permission refusal/no unauthorized effect and all mandatory scenarios executed",
-      "Corresponding original official simulation provider and source-compatible ROS release profile; no native SDK client fallback"
-    ]
-  },
-  "native_environment_role": "Original official simulator/controller and supplied ROS plugins only; no SDK host-native business/query/feedback substitute"
+  "scope": "Original GP8 GenericSystem and trajectory controller on installed Jazzy, with recorded composition repairs; local Wasm functional checks"
 }

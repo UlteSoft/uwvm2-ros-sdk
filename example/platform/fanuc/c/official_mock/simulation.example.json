@@ -1,10 +1,13 @@
 {
-  "format": "uwvm-sdk-fanuc-functional-example-v1",
+  "format": "uwvm-sdk-ros2-joint-fixture-example-v1",
   "profile": "fanuc-crx10ia-official-mock-jazzy",
   "public_build_target": "fanuc-official-joint-step",
   "public_test_suite": "fanuc-official-joint-step/official-scenarios",
   "source": "main.c",
-  "driver": "test_simulation.py",
+  "driver": {
+    "scope": "sdk",
+    "path": "tools/shared/ros_joint_fixture/test_fixture.py"
+  },
   "deployment_environment": "UWVM_ROS_FANUC_TEST_CONFIG",
   "engines": [
     "jit",
@@ -68,5 +71,6 @@
     "Other original models and native ABIs/RMW/security profiles",
     "ROS production update with outstanding native goals",
     "Debugger-driven pause/restart and complete native performance comparison"
-  ]
+  ],
+  "scope": "Original CRX10iA GenericSystem and scaled controller; local Wasm functional checks"
 }
