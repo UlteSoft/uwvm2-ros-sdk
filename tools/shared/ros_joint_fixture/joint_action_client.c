@@ -10,6 +10,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <float.h>
+#include <errno.h>
 #if defined(__FAST_MATH__)
 #error "ROS IEEE values require normal floating semantics"
 #endif
@@ -67,11 +68,12 @@ static int sample(roswasmc_capability *cap, JointState *state, double *values) {
     for (unsigned i = 0; i != state->effort.size; ++i) if (state->effort.data[i] != state->effort.data[i]) ++unknown_effort;
     return 1;
 }
+static double position_tolerance;
 static int same(double const *a, double const *b) {
     unsigned i;
     for (i = 0; i != 6; ++i) {
         double d = a[i] - b[i];
-        if (!(d >= -0.0001 && d <= 0.0001)) return 0;
+        if (!(d >= -position_tolerance && d <= position_tolerance)) return 0;
     }
     return 1;
 }
@@ -93,10 +95,19 @@ int main(int argc, char **argv) {
     unsigned i, error;
     char gate = 0;
     scenario = argc > 1 ? argv[1] : "missing";
-    require(argc == 9, 1);
-    for (i = 0; i != 6; ++i) names[i] = argv[i + 3];
-    unsigned challenge = (unsigned)strtoul(argv[2], NULL, 10);
-    require(challenge > 0 && challenge <= 1000, 2);
+    require(argc == 10, 1);
+    for (i = 0; i != 6; ++i) names[i] = argv[i + 4];
+    char *challenge_end = NULL, *tolerance_end = NULL;
+    errno = 0;
+    unsigned long parsed_challenge = strtoul(argv[2], &challenge_end, 10);
+    require(!errno && challenge_end != argv[2] && *challenge_end == 0 &&
+            argv[2][0] >= '0' && argv[2][0] <= '9' &&
+            parsed_challenge > 0 && parsed_challenge <= 1000, 2);
+    unsigned challenge = (unsigned)parsed_challenge;
+    errno = 0;
+    position_tolerance = strtod(argv[3], &tolerance_end);
+    require(!errno && tolerance_end != argv[3] && *tolerance_end == 0 &&
+            position_tolerance > 0 && position_tolerance < (double)challenge / 40000.0, 4);
     printf("{\"format\":\"uwvm-joint-guest-v1\",\"case\":\"%s\",\"status\":\"READY\"}\n", scenario);
     fflush(stdout);
     require(read(0, &gate, 1) == 1 && gate == 'I', 3);
@@ -221,6 +232,7 @@ int main(int argc, char **argv) {
         require(!error, 40 + error);
         require(!roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_Goal_default(&goal), 41);
         goal.trajectory.joint_names.size = 6;
+        goal.goal_tolerance.size = 6;
         goal.trajectory.points.size = 1;
         goal.trajectory.points.data[0].positions.size = 6;
         goal.trajectory.points.data[0].time_from_start.sec = !strcmp(scenario, "cancel") ? 5 : 1;
@@ -229,6 +241,10 @@ int main(int argc, char **argv) {
             require(n <= sizeof goal.trajectory.joint_names.data[i].data, 42);
             goal.trajectory.joint_names.data[i].size = (uint32_t)n;
             memcpy(goal.trajectory.joint_names.data[i].data, names[i], n);
+            require(n <= sizeof goal.goal_tolerance.data[i].name.data, 43);
+            goal.goal_tolerance.data[i].name.size = (uint32_t)n;
+            memcpy(goal.goal_tolerance.data[i].name.data, names[i], n);
+            goal.goal_tolerance.data[i].position = position_tolerance;
             target[i] = initial[i] + (i == 0 ? (double)challenge / 10000.0 : 0);
             goal.trajectory.points.data[0].positions.data[i] = target[i];
         }
@@ -298,6 +314,6 @@ finished:
     for (i = 0; i != 6; ++i) printf("%s%.12g", i ? "," : "", target[i]);
     printf("],\"actual\":[");
     for (i = 0; i != 6; ++i) printf("%s%.12g", i ? "," : "", actual[i]);
-    printf("],\"unknown_effort_samples\":%u,\"terminal_kind\":%u,\"result_error\":%d}\n", unknown_effort, kind, result.error_code);
+    printf("],\"position_tolerance_radians\":%.17g,\"unknown_effort_samples\":%u,\"terminal_kind\":%u,\"result_error\":%d}\n", position_tolerance, unknown_effort, kind, result.error_code);
     return 0;
 }

@@ -48,3 +48,7 @@ guardian admission, ROS production updates or physical robot authority.
 Those dimensions remain separate in the source/model inventories.
 `run_scene.py` uses `UWVM_ROS_YASKAWA_SCENE_OUTPUT` for an explicit writable
 rendered-scene directory and starts the same checked software composition.
+
+The explicit deployment motion contract selects the challenge and position tolerance.
+The same tolerance is encoded in all six native action goal tolerances and checked
+by Wasm; the commanded step must exceed four times that tolerance.

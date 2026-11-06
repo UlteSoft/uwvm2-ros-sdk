@@ -65,3 +65,7 @@ hot update and native performance remain separately unqualified. In particular,
 the current production updater refuses ROS-importing worlds; this suite does not
 claim ROS update support or rollback. Physical robots are outside this fixture.
 The remaining model inventory is recorded in `matrix.required.json`.
+
+The explicit deployment motion contract selects the challenge and position tolerance.
+The same tolerance is encoded in all six native action goal tolerances and checked
+by Wasm; the commanded step must exceed four times that tolerance.

@@ -2302,13 +2302,11 @@
     "exact OS and compiler ABI",
     "RMW and transport",
     "security profile and separately reviewed authority",
-    "positive/boundary/denied/no-effect/stale/foreign/failure/timeout/cancel/disconnect/reconnect/pause/resume/restart/update/rollback",
+    "positive/boundary/denied/no-effect/stale/foreign/failure/timeout/cancel/disconnect/reconnect/pause/resume/restart/forward-only-update/irreversible-commit",
     "debug and audit",
     "native performance; QEMU correctness separately",
     "multi-language module graph and SDK10 final world-model scenario"
   ],
-  "whole_frozen_wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
-  "no_per_vendor_test_recompile": true,
   "formal_Wasm_simulation_PASS": 0,
   "inventory_sources": [
     {
@@ -2350,5 +2348,11 @@
   ],
   "model_source_lock": "model.source.lock.json",
   "source_model_rows_byte_verified": 71,
-  "unacquired_asset_rows_still_required": 10
+  "unacquired_asset_rows_still_required": 10,
+  "application_identity": {
+    "source": "tools/shared/ros_joint_fixture/joint_action_client.c",
+    "whole_wasm_sha256": "Recorded by xmake joint-build.json and verified against actual guest.wasm for each invocation",
+    "same_wasm_for_all_cases_and_engines": true,
+    "test_recompilation_relink_or_import_rewrite": false
+  }
 }

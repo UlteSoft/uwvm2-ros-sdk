@@ -9,6 +9,7 @@ This is local functional evidence, not production guardian admission.
 from pathlib import Path
 import argparse
 import json
+import math
 import os
 import shutil
 import secrets
@@ -31,13 +32,19 @@ import native_fixture as base
 from pipe_capture import PipeLoggedProcess
 from wasi_policy import test_arguments as wasi_test_arguments
 from host_interfaces import authorize_test_imports, interface_arguments
-from prepare_scene import prepare as prepare_scene
+import prepare_scene as provider_scene
 cfg = json.loads(Path(args.config).read_text())
 base.need(cfg.get('format') == 'uwvm-sdk-ros2-joint-fixture-v1', 'Select the current ROS2 joint fixture contract')
 base.need(cfg.get('profile') == manifest['profile'], 'The deployment and selected original model profile differ')
 base.need(cfg.get('physical_robot_authorized') is False, 'This fixture accepts software simulation only')
 base.need(cfg.get('engines') == ['jit', 'int'], 'Both LLVM JIT and interpreter cases are mandatory')
 base.need(set(cfg.get('cases', {})) == {'positive', 'denied', 'boundaries', 'cancel', 'timeout', 'disconnect', 'owner', 'foreign'}, 'All eight scenarios are mandatory')
+motion = cfg.get('motion', {})
+challenge, tolerance = motion.get('challenge'), motion.get('position_tolerance_radians')
+base.need(type(challenge) is int and 0 < challenge <= 1000, 'Select an integer motion challenge in [1, 1000]')
+base.need(type(tolerance) in (int, float) and math.isfinite(tolerance) and 0 < tolerance < challenge / 40000,
+          'Select a finite positive position tolerance smaller than one quarter of the commanded step')
+base.need(manifest.get('native_launch') in ('ros2_control', 'embedded_ros2_control'), 'Select an explicit native controller composition')
 B = Path(cfg['socket_root']).resolve()
 base.need(B.is_dir() and B.stat().st_uid == os.getuid() and (B.stat().st_mode & 63 == 0), 'Select an owned private socket directory')
 actors, logs = ([], [])
@@ -96,22 +103,26 @@ try:
     for entry in [cfg['runtime'], cfg['gateway'], *cfg['native']['files']]:
         path = entry.get('executable', entry.get('path'))
         base.need(Path(path).is_absolute() and base.digest(path) == entry['sha256'], 'Configured native/runtime bytes differ: ' + str(path))
-    report['scene'] = prepare_scene(run)
-    description = Path(report['scene']['description']).read_text()
-    namespace = cfg['ros2']['connection']['namespace']
-    rsp = launch('robot_state_publisher', [cfg['native']['robot_state_publisher'], '--ros-args', '-r', '__ns:=' + namespace, '-p', 'robot_description:=' + description])
-    manager = launch('controller_manager', [cfg['native']['controller_manager'], '--ros-args', '-r', '__ns:=' + namespace, '--params-file', report['scene']['controllers']])
-    live(rsp, 1)
-    live(manager, 1)
-    spawner = launch('spawner', [cfg['native']['spawner'], 'joint_state_broadcaster', report['scene']['controller_name'], '--controller-manager', namespace.rstrip('/') + '/controller_manager', '--controller-manager-timeout', '30'])
-    base.need(spawner.wait(timeout=60) == 0, 'Original controller activation failed')
-    for entry, proc in zip(report['actors'][:2], [rsp, manager]):
-        entry['actual'] = live(proc, 0.2)
-        base.check_resource_boundary(entry['actual'])
-        entry['maps'] = (Path('/proc') / str(proc.pid) / 'maps').read_text()
-        entry['security_status'] = (Path('/proc') / str(proc.pid) / 'status').read_text()
-    plugin = Path(cfg['native']['controller_plugin']).resolve()
-    base.need(str(plugin) in report['actors'][1]['maps'], 'Original scaled controller is not mapped in the actual controller manager')
+    report['motion'] = motion
+    report['scene'] = provider_scene.prepare(run)
+    if manifest['native_launch'] == 'embedded_ros2_control':
+        provider_scene.start_native(run, cfg, report, launch, base)
+    else:
+        description = Path(report['scene']['description']).read_text()
+        namespace = cfg['ros2']['connection']['namespace']
+        rsp = launch('robot_state_publisher', [cfg['native']['robot_state_publisher'], '--ros-args', '-r', '__ns:=' + namespace, '-p', 'robot_description:=' + description])
+        manager = launch('controller_manager', [cfg['native']['controller_manager'], '--ros-args', '-r', '__ns:=' + namespace, '--params-file', report['scene']['controllers']])
+        live(rsp, 1)
+        live(manager, 1)
+        spawner = launch('spawner', [cfg['native']['spawner'], 'joint_state_broadcaster', report['scene']['controller_name'], '--controller-manager', namespace.rstrip('/') + '/controller_manager', '--controller-manager-timeout', '30'])
+        base.need(spawner.wait(timeout=60) == 0, 'Original controller activation failed')
+        for entry, proc in zip(report['actors'][:2], [rsp, manager]):
+            entry['actual'] = live(proc, 0.2)
+            base.check_resource_boundary(entry['actual'])
+            entry['maps'] = (Path('/proc') / str(proc.pid) / 'maps').read_text()
+            entry['security_status'] = (Path('/proc') / str(proc.pid) / 'status').read_text()
+        plugin = Path(cfg['native']['controller_plugin']).resolve()
+        base.need(str(plugin) in report['actors'][1]['maps'], 'Original scaled controller is not mapped in the actual controller manager')
     print('Original software controller activated: ' + manifest['profile'], flush=True)
     vm_record = cfg['runtime']
     vm = vm_record['executable']
@@ -133,7 +144,7 @@ try:
         stderr = (root / 'vm.stderr').open('wb')
         logs.extend([stdout, stderr])
         arguments, _ = config(name, 1, socket)
-        argv = authorize_test_imports([vm, *arguments, '--run', str(wasm), name, '37', *report['scene']['joint_names']])
+        argv = authorize_test_imports([vm, *arguments, '--run', str(wasm), name, str(challenge), format(tolerance, '.17g'), *report['scene']['joint_names']])
         # Keep the gateway-admitted process lifetime through actual VM exec.
         worker = PipeLoggedProcess([sys.executable, '-B', str(D / 'tools/shared/python/native_fixture.py'), '--exec-runtime-gate', vm, vm_record['sha256'], *argv[1:]], stdin=subprocess.PIPE, stdout=stdout, stderr=stderr, start_new_session=True, nonblocking_stdin=False)
         owner = base.process(worker.pid)
@@ -176,6 +187,8 @@ try:
         record.update(exit=code, guest=rows)
         print(subject['name'], code, rows, flush=True)
         base.need(code == 0 and rows[-1]['status'] == 'PASS', 'Wasm guest assertion failed')
+        base.need(rows[-1]['challenge'] == challenge and rows[-1]['position_tolerance_radians'] == tolerance,
+                  'Wasm and native goal tolerance contract differ')
         base.retire_session(gw, {gw.pid: record['actual_gateway']['birth']})
     for engine in cfg['engines']:
         for number, name in enumerate(('positive', 'denied', 'boundaries', 'cancel', 'timeout', 'disconnect')):

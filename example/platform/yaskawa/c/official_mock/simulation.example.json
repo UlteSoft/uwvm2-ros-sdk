@@ -72,5 +72,6 @@
     "ROS production update with outstanding native goals",
     "Debugger-driven pause/restart and complete native performance comparison"
   ],
-  "scope": "Original GP8 GenericSystem and trajectory controller on installed Jazzy, with recorded composition repairs; local Wasm functional checks"
+  "scope": "Original GP8 GenericSystem and trajectory controller on installed Jazzy, with recorded composition repairs; local Wasm functional checks",
+  "native_launch": "ros2_control"
 }

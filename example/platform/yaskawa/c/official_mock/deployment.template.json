@@ -1469,5 +1469,9 @@
     }
   },
   "template_state": "UNBOUND_NO_RUNTIME_AUTHORITY",
-  "profile": "yaskawa-gp8-original-mock-jazzy"
+  "profile": "yaskawa-gp8-original-mock-jazzy",
+  "motion": {
+    "challenge": 37,
+    "position_tolerance_radians": 0.0001
+  }
 }

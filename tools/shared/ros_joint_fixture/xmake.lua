@@ -8,7 +8,7 @@ function uwvm_ros_joint_fixture(options)
         local function pin(filename)
             inputs[path.relative(filename, sdk)] = hash.sha256(filename):lower()
         end
-        for _, pattern in ipairs({"*.c", "*.lua", "*.py", "*.json"}) do
+        for _, pattern in ipairs({"*.c", "*.lua", "*.py", "*.json", "*.urdf", "*.yaml", "*.wbt"}) do
             for _, filename in ipairs(os.files(path.join(target:scriptdir(), pattern))) do pin(filename) end
         end
         for _, pattern in ipairs({"*.c", "*.py", "*.lua", "types/**"}) do

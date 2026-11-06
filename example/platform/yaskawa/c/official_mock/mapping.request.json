@@ -11,7 +11,7 @@
     "joint_6"
   ],
   "joint_units": "radians",
-  "position_tolerance": 0.00025,
+  "position_tolerance": 0.0001,
   "resource_names": "Select explicit deployment namespaces and resource paths in deployment.template.json",
   "original_hardware": "mock_components/GenericSystem",
   "native_controller_type": "joint_trajectory_controller/JointTrajectoryController",
@@ -24,5 +24,6 @@
     "scope": "sdk",
     "path": "tools/shared/ros_joint_fixture/types/catalog.json"
   },
-  "physical_robot_authorized": false
+  "physical_robot_authorized": false,
+  "motion_contract": "deployment.motion selects the step and tolerance; both the native action goal and guest state checks use the same tolerance"
 }

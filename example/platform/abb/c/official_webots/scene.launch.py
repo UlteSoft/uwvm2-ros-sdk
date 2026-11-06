@@ -18,7 +18,7 @@ def main():
     world=os.environ.get('UWVM_ABB_WEBOTS_WORLD',str(here/'abb.wbt'))
     xvfb_log=os.environ['UWVM_ABB_XVFB_ERROR_LOG']
     xvfb_arguments=os.environ.get('UWVM_ABB_XVFB_ARGUMENTS','-screen 0 1280x1024x24 -nolisten tcp')
-    webots=ExecuteProcess(cmd=['xvfb-run','--auto-servernum','--error-file='+xvfb_log,'--server-args='+xvfb_arguments,str(runtime/'webots'),'--batch','--no-rendering','--mode=fast','--stdout','--stderr','--minimize',world],output='screen')
+    webots=ExecuteProcess(cmd=['xvfb-run','--auto-servernum','--error-file='+xvfb_log,'--server-args='+xvfb_arguments,str(runtime/'webots'),'--batch','--no-rendering','--mode=realtime','--stdout','--stderr','--minimize',world],output='screen')
     driver=WebotsController(robot_name='abbirb4600',namespace='abb',parameters=[{'robot_description':description,'use_sim_time':True,'set_robot_state_publisher':True},configuration],output='screen')
     nodes=[webots,driver,Ros2SupervisorLauncher(respawn=False),Node(package='robot_state_publisher',executable='robot_state_publisher',namespace='abb',parameters=[{'robot_description':'<robot name=""><link name=""/></robot>','use_sim_time':True}],output='screen')]
     for name in ['abb_joint_state_broadcaster','abb_joint_trajectory_controller']:

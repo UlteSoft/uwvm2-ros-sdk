@@ -1,0 +1,92 @@
+{
+  "format": "uwvm-sdk-original-webots-assets-v1",
+  "repository": "https://github.com/cyberbotics/webots",
+  "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+  "files": [
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/base.obj",
+      "sha256": "5f125df293e10a4525b3830da5ada5e0512ec2d1e6f3e6200b74ab0343ab8221",
+      "git_blob": "3d21cdd41bdc40169a03c583d4b92a9fcfb5760b",
+      "bytes": 280646
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_1.obj",
+      "sha256": "aeb0733120b899e62bd32f998757c83de8819a4a88dbb0a4ec7e019a88aaf2b3",
+      "git_blob": "5239fc8e0d039ac9ee5844aa6e6328d3fee97447",
+      "bytes": 533672
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_2.obj",
+      "sha256": "aad0beb21dd3c8a1621f160cfdf353a5015cb7c478013c97d4610c2d5bce41c2",
+      "git_blob": "2fac41db420d19d9309ea2f52cadcd3958d5992b",
+      "bytes": 396277
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_3.obj",
+      "sha256": "fb2733db11fd56c75b519ed14e50a6bbaf679b54b100a493da1131865e0f781e",
+      "git_blob": "c4ddd123b6cd34a77aba76c1fcdc83f12d28f98f",
+      "bytes": 618226
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_4.obj",
+      "sha256": "bcf0f7f33ca892a018dbc5c8bfb74d393d523a2a2a8e3502c98527a9c0a16da2",
+      "git_blob": "d7cd3624d29a208ed0d879091f0f276f657a4c1f",
+      "bytes": 318554
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_5.obj",
+      "sha256": "869b9c7417e5806eac3581a2699d85d827ef7edeb23e2ff4f2113d827152a998",
+      "git_blob": "a33ce82efcb713c17a51168c1fa71bd02b8113e1",
+      "bytes": 109632
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40/meshes/link_6.obj",
+      "sha256": "1608d716d6fac57d756b08612aa7b6065cf0686851a59fcd9784233e8e277757",
+      "git_blob": "195212682b67db8bd9816841313af2de4db4329a",
+      "bytes": 105276
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_base_color.jpg",
+      "sha256": "02ac2298bf255e55b66e90f329fa3437b4460982bf14277640cbf17307c478f1",
+      "git_blob": "9c7aabe5e0145342c0bc226cacc688596c99ea3b",
+      "bytes": 70835
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_normal.jpg",
+      "sha256": "e184e5b17cce514c5afa9efacd020d07f69da6caf20670220b2d46747e8c2e6d",
+      "git_blob": "59089111bccb89678cb81dd8a4d37d2db9979d6d",
+      "bytes": 246675
+    },
+    {
+      "path": "projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_roughness.jpg",
+      "sha256": "b5bc119049432c574651c0a90b3431fc7ab9abc5688e34d31a77ae89d53fdb16",
+      "git_blob": "d6d5ba1f84bb6e79d3157269268368651294b915",
+      "bytes": 156559
+    },
+    {
+      "path": "projects/robots/abb/irb/protos/Irb4600-40.proto",
+      "sha256": "6856b6fac14e486e6ad67d1f9029c28f4ff5e196b4741a58b9be6c1e0da5f5c1",
+      "git_blob": "9ee959d5f767b77c09251a5ea727f66d923c6298",
+      "bytes": 12135
+    },
+    {
+      "path": "projects/devices/robotiq/protos/Robotiq3fGripper.proto",
+      "sha256": "e67a603dfd12fd38f879320d6da0a5251b7a3d15a81ce7eaecdc7c00b4e96a6b",
+      "git_blob": "39a7052dd3ffe09cdf60555640101d7745183b03",
+      "bytes": 576386
+    },
+    {
+      "path": "projects/appearances/protos/BrushedAluminium.proto",
+      "sha256": "d2a2cd1c15c69d62ae9add8ff79f413ae5177c12a981dcaeb8002a11cc04d4ad",
+      "git_blob": "96e90942af8f62a00ae3cbb364bcebcf9570d70d",
+      "bytes": 1173
+    },
+    {
+      "path": "projects/default/worlds/sounds/rotational_motor.wav",
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689",
+      "bytes": 13372
+    }
+  ],
+  "scope": "Original arm, Robotiq visual/passive model dependencies and motor sound; the simulator program is pinned separately"
+}
