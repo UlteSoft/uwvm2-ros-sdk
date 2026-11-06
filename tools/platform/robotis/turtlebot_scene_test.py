@@ -33,11 +33,15 @@ budget=cgroup_budget()
 parent=Path(config["aggregate_cgroup"]).resolve(strict=True)
 current=Path("/sys/fs/cgroup"+Path("/proc/self/cgroup").read_text().strip()[3:]).resolve(strict=True)
 native_group=Path(config["native_cgroup"]).resolve(strict=True)
-assert current.is_relative_to(parent) and native_group.parent==parent and native_group!=current
+assert current.is_relative_to(parent) and (native_group==current or native_group.parent==parent), "Native infrastructure must share the actual aggregate resource boundary"
 assert (parent/"memory.max").read_text().strip()=="68719476736" and (parent/"memory.swap.max").read_text().strip()=="0"
-assert 0<int((native_group/"memory.max").read_text())<=4*1024**3 and (native_group/"memory.swap.max").read_text().strip()=="0"
+assert 0<int((native_group/"memory.max").read_text())<=64*1024**3 and (native_group/"memory.swap.max").read_text().strip()=="0"
 quota,period=(native_group/"cpu.max").read_text().split()
-assert quota!="max" and int(quota)<=2*int(period)
+assert int(period)>0 and (quota=="max" or int(quota)>0)
+# The deployment selects the real kernel group, including any tighter limits.
+# Sharing the existing aggregate does not require moving unrelated actors.
+native_budget={key:(native_group/key).read_text().strip() for key in
+ ("memory.max","memory.swap.max","cpu.max","cpuset.cpus.effective")}
 assert {name for _,name in socket.if_nameindex()}=={"lo"}, "Scene requires its own loopback-only network namespace"
 socket_root=Path(config["socket_directory"]).resolve(strict=True)
 assert socket_root.is_dir()
@@ -75,7 +79,9 @@ def waitfor(check,seconds,watched=()):
   if time.monotonic()>=until:raise TimeoutError('scene readiness/operation deadline')
   time.sleep(.01)
 def child_group():
- (native_group/'cgroup.procs').write_text(str(os.getpid())+'\n')
+ actual=Path('/sys/fs/cgroup'+Path('/proc/self/cgroup').read_text().strip()[3:]).resolve(strict=True)
+ if actual!=native_group:(native_group/'cgroup.procs').write_text(str(os.getpid())+'\n')
+ assert Path('/sys/fs/cgroup'+Path('/proc/self/cgroup').read_text().strip()[3:]).resolve(strict=True)==native_group
 def launch_guest(role,binary,rows,wasi):
  sock=socket_dir/('g.sock' if role=='app' else 'c.sock');assert len(os.fsencode(sock))<108
  values={'gateway-socket':str(sock),'gateway-uid':str(os.getuid()),'node-name':'tb3_'+role,'namespace':'/','domain-id':str(domain),'rmw-implementation':'rmw_cyclonedds_cpp','security-mode':'disabled-test','keystore':'not-applicable','enclave':'not-applicable'}
@@ -128,7 +134,15 @@ def launch_guest(role,binary,rows,wasi):
  report['steps'].append(dict(role=role,actual_vm_fd_exec=True,wasm=str(binary),wasm_sha256=sha(binary),argv=cmd,configuration_sha256=sha(gateway_config)));save()
  return guest,gw
 try:
- while int((parent/'memory.current').read_text())>28*1024**3:time.sleep(.5)
+ admission_deadline=time.monotonic()+60
+ while True:
+  stats={key:int(value) for key,value in (line.split() for line in (parent/'memory.stat').read_text().splitlines())}
+  # Clean reclaimable page cache is not an occupied working-set reservation.
+  working=sum(stats.get(key,0) for key in ('anon','kernel','file_dirty','file_writeback','unevictable','shmem'))
+  if working<=28*1024**3:break
+  if time.monotonic()>=admission_deadline:raise TimeoutError('Native scene working-set admission deadline')
+  time.sleep(.1)
+ report['native_resource_budget']=native_budget
  report['pins']={str(p):sha(p) for p in [vm,gateway,wasm,driver,loader,profile,native_script,*native_inputs,args.deployment,Path(__file__),
  s/'tools/platform/robotis/turtlebot_scene_oracle.py',s/'tools/shared/python/owned_processes.py',s/'tools/shared/python/kernel_budget.py',
  s/'example/platform/robotis/py/ros2/humble/upstream_obstacle_detection/deployment.template.json',
@@ -150,7 +164,23 @@ try:
  report['baseline_ready_host_ns']=time.monotonic_ns();save()
  os.kill(bridge.pid,signal.SIGCONT)
  report['application_start_gate']['released_ns']=time.monotonic_ns();save()
- waitfor(lambda:scenario.poll() is not None,60,[('native',native),('app-gateway',bridge),('scenario-gateway',scenario_gateway)])
+ # The application deliberately exits after the Wasm observer sends cancel.
+ # Its gateway then retires normally while the observer still checks two more
+ # seconds of native stationary odometry. Observe that sequence instead of
+ # killing the independent observer as soon as the first gateway closes.
+ terminal={'cancel_seen':False,'observer_completed':False}
+ with (d/'scenario.stdout').open() as trace:
+  def scenario_finished():
+   for line in trace.readlines():
+    if line.startswith('TB3_PHASE_V1 phase=stop event=cancel-request '):terminal['cancel_seen']=True
+    if line.startswith('TB3_DRIVER_RESULT_V1 phase=complete primary=0 '):terminal['observer_completed']=True
+   for role,proc,expected in [('app',app,terminal['cancel_seen']),('app-gateway',bridge,terminal['cancel_seen']),('scenario-gateway',scenario_gateway,terminal['observer_completed'])]:
+    code=proc.poll()
+    if code is not None and (code!=0 or not expected):raise RuntimeError(role+' exited unexpectedly '+str(code))
+   return scenario.poll() is not None
+  waitfor(scenario_finished,60,[('native',native)])
+ assert terminal['cancel_seen'] and terminal['observer_completed'], 'Missing actual Wasm cancellation/completion sequence'
+ report['normal_retirement_sequence']=terminal;save()
  assert scenario.returncode==0,(d/'scenario.stdout').read_text()[-600:]
  waitfor(lambda:app.poll() is not None,15,[('native',native)])
  assert app.returncode==0

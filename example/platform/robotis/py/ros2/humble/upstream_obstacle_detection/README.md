@@ -68,8 +68,9 @@ The deployment JSON format is uwvm-sdk-turtlebot-native-test-v1. It contains:
 - application_wasm_sha256: the exact newly built Python Wasm hash.
 - native_rootfs and native_prefix: the installed Humble runtime and message prefix.
 - aggregate_cgroup: the shared 64 GiB, zero-swap test cgroup.
-- native_cgroup: its separate native infrastructure child, capped at 4 GiB,
-  zero swap, and at most two CPUs.
+- native_cgroup: the current bounded test group or a direct child of the aggregate.
+  Its actual kernel memory limit must be at most 64 GiB with zero swap. The
+  deployment selects CPU limits; the test records them and the effective CPU set.
 - socket_directory: a writable directory for private Unix sockets.
 - domain_id: the isolated ROS domain, an integer from 0 through 232.
 
