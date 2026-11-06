@@ -357,7 +357,7 @@ def _parse_fields(
         float_policy = supplied.get("float_policy", "finite")
         need(
             type(float_policy) is str
-            and float_policy in ("finite", "finite-or-positive-infinity")
+            and float_policy in ("finite", "finite-or-positive-infinity", "finite-or-nan")
             and ("float_policy" not in supplied or typ in ("float32", "float64")),
             "explicit floating policy applies only to an original floating field",
         )

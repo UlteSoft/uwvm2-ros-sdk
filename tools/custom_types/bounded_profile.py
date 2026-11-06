@@ -1895,6 +1895,10 @@ def wire_scalar_kind(parent, member):
         if kind not in ("f32", "f64"):
             raise ValueError("floating wire opt-in requires an original float field")
         kind += "_positive_infinity"
+    elif getattr(member, "float_policy", "finite") == "finite-or-nan":
+        if kind not in ("f32", "f64"):
+            raise ValueError("floating wire opt-in requires an original float field")
+        kind += "_nan"
     return kind
 
 
@@ -1979,11 +1983,30 @@ def emit_control_wire(parent, records, ordered):
 def float_rejection(member, language, value, round_float32=True):
     """Return an exact per-field floating domain check; finite stays the default."""
     policy = getattr(member, "float_policy", "finite")
-    if policy not in ("finite", "finite-or-positive-infinity") or member.type not in (
+    if policy not in ("finite", "finite-or-positive-infinity", "finite-or-nan") or member.type not in (
         "float32",
         "float64",
     ):
         raise ValueError("unsupported explicit floating field policy")
+    if policy == "finite-or-nan":
+        # Preserve the original IEEE NaN sentinels. Infinities still require a
+        # different explicit field domain; this choice participates in codec ID.
+        if language == "c":
+            magnitude = "UINT32_C(0x7fffffff)" if member.type == "float32" else "UINT64_C(0x7fffffffffffffff)"
+            infinity = "UINT32_C(0x7f800000)" if member.type == "float32" else "UINT64_C(0x7ff0000000000000)"
+            return f"(bits&{magnitude})=={infinity}"
+        if language == "rust":
+            return f"{value}.is_infinite()"
+        if language == "go":
+            return f"math.IsInf(float64({value}),0)"
+        if language == "as":
+            return f"(!isFinite({value})&&!isNaN({value}))"
+        if language == "js":
+            check = f"(!Number.isFinite({value})&&!Number.isNaN({value}))"
+            if member.type == "float32" and round_float32:
+                check += f"||(!Number.isFinite(Math.fround({value}))&&!Number.isNaN(Math.fround({value})))"
+            return check
+        raise ValueError("unknown floating policy language")
     extra = policy == "finite-or-positive-infinity"
     if language == "c":
         mask = (
@@ -4215,13 +4238,9 @@ def emit_native(parent, records, ordered, interfaces, version):
                 if member.type == "bool" and version == 1:
                     lines += [f"if({access}!=0&&{access}!=1)return false;"]
                 if member.type.startswith("float"):
-                    mask = (
-                        "UINT32_C(0x7f800000)"
-                        if width == 4
-                        else "UINT64_C(0x7ff0000000000000)"
-                    )
+                    rejection = float_rejection(member, "c", access)
                     lines += [
-                        f"uint{width*8}_t bits=0;uwvm_bounded_copy(&bits,&{access},{width});if((bits&{mask})=={mask})return false;"
+                        f"uint{width*8}_t bits=0;uwvm_bounded_copy(&bits,&{access},{width});if({rejection})return false;"
                     ]
                 lines += [f"n+={width};"]
             if member.array:

@@ -9,6 +9,9 @@ and VM implementation are maintained in the separate **uwvm2-ros** repository.
 The SDK root contains `include`, `src`, `lib`, `share`, `tools`, `example` and
 `document` directly; there is no additional enclosing `sdk` directory.
 
+See [floating ROS fields](document/shared/en_US/custom-floating-fields.md) for
+explicit NaN and infinity policies in generated records.
+
 ## Obtain the complete SDK
 
 Install [Git LFS](https://git-lfs.com/) before cloning, then run:
