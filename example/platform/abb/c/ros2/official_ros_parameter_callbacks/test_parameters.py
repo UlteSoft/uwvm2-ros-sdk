@@ -25,6 +25,9 @@ from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
+exec_runtime_gate = base.exec_runtime_gate
+
+
 def actor(child, expected, known):
     row = base.process(child.pid)
     supervisor = base.process(os.getpid())
@@ -32,7 +35,7 @@ def actor(child, expected, known):
          (supervisor['membership'],supervisor['cgroup_inode'],supervisor['cgroup_namespace']),
          'Actual actor left the admitted fixture supervisor leaf')
     need(row['executable_sha256']==expected and row['memory.max']=='68719476736'
-         and row['memory.swap.max']=='0' and row['cpuset.cpus.effective']=='0,2,4,6,16-31',
+         and row['memory.swap.max']=='0' and row['cpuset.cpus.effective']==supervisor['cpuset.cpus.effective'],
          'Actual actor executable or kernel limits differ')
     need(row['file_limit_soft']==row['file_limit_hard']=='134217728',
          'Actual actor must inherit the128MiB regular-file cap')
@@ -150,40 +153,45 @@ def run_case(config, wasm, root, case):
         handles.extend((out,err))
         if name == "vm": argv = authorize_test_imports(argv)
         launch = PipeLoggedProcess if name == "vm" else subprocess.Popen
-        child = launch(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL,
+        pipe_options = {"nonblocking_stdin": False} if name == "vm" else {}
+        child = launch(argv,stdin=subprocess.PIPE if stdin else subprocess.DEVNULL, **pipe_options,
                  stdout=out,stderr=err,start_new_session=True,
                  env=dict(os.environ,**config['ROS_environment'],PYTHONDONTWRITEBYTECODE='1'))
         children.append(child)
         return child
     try:
-        peer = spawn('official-peer',[config['official_peer'],'--ros-args','-r',
-                      '__node:='+peer_node[1:],'-r','__ns:=/','-p','use_sim_time:=false'])
+        # The original official tf2 node keeps its normal parameter services.
+        # Its fixed transform is fixture setup, never an SDK business request.
+        peer_argv = [config['official_peer'],'--frame-id','sdk02_parent_'+suffix,
+                     '--child-frame-id','sdk02_child_'+suffix,'--ros-args','-r',
+                     '__node:='+peer_node[1:],'-r','__ns:=/','-p','use_sim_time:=false']
+        row['official_peer_argv'] = peer_argv
+        peer = spawn('official-peer',peer_argv)
         row['peer_before'] = actor(peer,config['official_peer_sha256'],known)
         observer_output = root/'observer.json'
         observer = spawn('observer',[sys.executable,'-B',str(Path(__file__).with_name('observe_parameter_events.py')),
                                    '--node',peer_node,'--output',str(observer_output)])
         row['observer_before'] = actor(observer,digest(Path(sys.executable).resolve()),known)
         ready_deadline = time.monotonic()+12
-        while not observer_output.is_file():
+        while not observer_output.is_file() or not json.loads(observer_output.read_text())['ready']:
             need(observer.poll() is None and peer.poll() is None and time.monotonic()<ready_deadline,
                  'Actual official peer/read-only observer startup failed')
             time.sleep(.05)
-        need(json.loads(observer_output.read_text())['ready'], 'Observer did not create its actual subscription')
+        row['official_peer_discovery'] = json.loads(observer_output.read_text())
+        need(row['official_peer_discovery']['ready'], 'Official parameter endpoints were not discovered')
         # This is discovery/quiescence time, never a substitute for a ROS reply.
         time.sleep(.5)
         values = {'@SDK02_GATEWAY_SOCKET@':socket,'@SDK02_PEER_NODE@':peer_node,
                   '@SDK02_ABSENT_NODE@':absent_node,'@SDK02_UID@':os.getuid()}
         arguments = [expand(value,values) for value in selected['runtime_arguments']]
         arguments = wasi_test_arguments(arguments, selected.get('wasi_policy'))
-        runtime = spawn('vm',[config['runtime'],*arguments,'--run',str(wasm),case,str(seed)],stdin=True)
-        start_deadline = time.monotonic()+35
-        while True:
-            events = guest_events(read_log(root/'vm.stdout'),case,seed)
-            if events: break
-            need(runtime.poll() is None and time.monotonic()<start_deadline, 'Actual Wasm start barrier missing')
-            time.sleep(.02)
-        row['guest_started'] = True
-        row['vm_before_credit'] = actor(runtime,config['runtime_sha256'],known)
+        # The VM checks the gateway before it enters Wasm. Hold a supervisor
+        # child at an exec gate so the gateway can first pin the eventual VM's
+        # exact PID and lifetime; exec preserves both PID and process birth.
+        runtime = spawn('vm',[sys.executable,'-B',str(Path(__file__).resolve()),
+            '--exec-runtime-gate',config['runtime'],config['runtime_sha256'],
+            *arguments,'--run',str(wasm),case,str(seed)],stdin=True)
+        row['runtime_launch_gate'] = actor(runtime,digest(Path(sys.executable).resolve()),known)
         values['@SDK02_WORKER_PID@'] = runtime.pid
         template = selected['gateway_configuration']
         need(type(template) is str and len(template.encode())<=1048576 and
@@ -200,6 +208,25 @@ def run_case(config, wasm, root, case):
             need(gateway.poll() is None and time.monotonic()<deadline, 'Actual production gateway startup failed')
             time.sleep(.02)
         row['gateway_before_credit'] = actor(gateway,config['gateway_sha256'],known)
+        # The gateway creates its own DDS participant after the independent
+        # observer. Allow its discovery to settle; guest replies remain the
+        # sole evidence of successful SDK parameter operations.
+        time.sleep(2)
+        need(gateway.poll() is None and peer.poll() is None and observer.poll() is None,
+             'Official deployment exited before runtime execution')
+        row['runtime_exec_credit_ns'] = time.monotonic_ns()
+        runtime.stdin.write(b'E');runtime.stdin.flush()
+        start_deadline = time.monotonic()+35
+        while True:
+            events = guest_events(read_log(root/'vm.stdout'),case,seed)
+            if events: break
+            need(runtime.poll() is None and gateway.poll() is None
+                 and time.monotonic()<start_deadline, 'Actual Wasm start barrier missing')
+            time.sleep(.02)
+        row['guest_started'] = True
+        row['vm_before_credit'] = actor(runtime,config['runtime_sha256'],known)
+        need(row['vm_before_credit']['birth'] == row['runtime_launch_gate']['birth'],
+             'Runtime execution replaced the gateway-bound process lifetime')
         row['startup_credit_ns'] = time.monotonic_ns()
         runtime.stdin.write(b'R');runtime.stdin.flush();runtime.stdin.close()
         deadline = time.monotonic()+25
@@ -295,9 +322,9 @@ def main():
         for name in ('runtime','gateway','official_peer'):
             need(Path(config[name]).is_file() and os.access(config[name],os.X_OK)
                  and digest(config[name])==config[name+'_sha256'], 'Actual executable identity differs: '+name)
-        need(Path(config['official_peer']).name=='component_container'
-             and Path(config['official_peer']).parent.name=='rclcpp_components',
-             'Select the original official ROS rclcpp_components peer')
+        need(Path(config['official_peer']).name=='static_transform_publisher'
+             and Path(config['official_peer']).parent.name=='tf2_ros',
+             'Select the original official ROS tf2_ros parameter-service peer')
         report.update(wasm_sha256=digest(wasm),configuration_sha256=digest(args.config))
         report['fixture_supervisor'] = base.process(os.getpid())
         for case in CASES:
@@ -326,4 +353,7 @@ def main():
 
 
 if __name__=='__main__':
-    raise SystemExit(main())
+    if len(sys.argv) > 1 and sys.argv[1] == '--exec-runtime-gate':
+        exec_runtime_gate(sys.argv[2:])
+    else:
+        raise SystemExit(main())

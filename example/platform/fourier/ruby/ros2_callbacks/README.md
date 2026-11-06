@@ -34,8 +34,9 @@ actual executable paths, the complete relay SHA256, a new32-hex guest challenge,
 the native library prefixes, a writable private cache path, and the explicit
 ROS domain. The example's zero relay digest deliberately fails validation.
 The gateway and worker receive the same exact operation grants. The example
-grants only standard output and the WASI monotonic timer, plus three bounded
-topic capabilities and one bounded ROS steady-clock capability.
+explicitly grants WASI argument and environment access, controlled process exit,
+standard I/O, and the monotonic clock and timer. ROS access is limited to three
+bounded topic capabilities and one bounded steady-clock capability.
 
 ```sh
 export UWVM_ROS_SDK_ROOT=/path/to/installed-sdk

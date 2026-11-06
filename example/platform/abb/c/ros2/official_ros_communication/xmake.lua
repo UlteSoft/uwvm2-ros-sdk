@@ -71,7 +71,13 @@ target("abb-c-official-ros-communication")
         local python = assert(find_program("python3"), "Install Python 3 for bounded process supervision")
         local configuration = os.getenv("UWVM_ROS_RUN_CONFIG")
         assert(configuration and os.isfile(configuration), "Supply explicit UWVM_ROS_RUN_CONFIG for the real official ROS peer and runtime")
-        local output = path.join(target:dependir(), "communication-tests", path.filename(os.tmpfile({ramdisk = false})))
+        local output_root = os.getenv("UWVM_ROS_TEST_OUTPUT_ROOT")
+        if output_root then
+            assert(path.is_absolute(output_root), "UWVM_ROS_TEST_OUTPUT_ROOT must be an absolute path")
+        else
+            output_root = path.join(target:dependir(), "communication-tests")
+        end
+        local output = path.join(output_root, path.filename(os.tmpfile({ramdisk = false})))
         os.mkdir(path.directory(output))
         local stdout, stderr = output .. ".suite.stdout", output .. ".suite.stderr"
         local code = os.execv(python, {path.join(target:scriptdir(), "test_communication.py"),

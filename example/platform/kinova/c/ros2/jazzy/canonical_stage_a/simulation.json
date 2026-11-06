@@ -249,7 +249,7 @@
     {
       "scope": "sdk",
       "path": "tools/shared/xmake/example_matrix.lua",
-      "sha256": "8f98963eb8fb7f8e4ad1f5b4edbbbb3e262161c0493e881649f5a614f85981d9"
+      "sha256": "de2ead0be1c16ac1b782300f5d4b4b2f2b595e7c63c9fef82be929f26cd7ea51"
     },
     {
       "scope": "sdk",

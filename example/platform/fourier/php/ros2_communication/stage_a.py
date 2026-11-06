@@ -77,14 +77,16 @@ def runtime_arguments(values):
         require(key in {'-Rct', '-Rllvm-policy', '-Rllvm-cache-path'} and key not in seen,
                 'Only explicit compile threads, LLVM policy and cache selection are accepted here')
         seen.add(key)
-        size = 2 if key == '-Rllvm-cache-path' else 1
+        size = 2 if key == '-Rllvm-cache-path' and index + 1 < len(values) and values[index + 1] == 'path' else 1
         require(index + size < len(values), 'Incomplete runtime compilation option')
         if key == '-Rct':
             require(values[index + 1].isdigit() and 1 <= int(values[index + 1]) <= 20, 'Compile threads must be1..20')
         elif key == '-Rllvm-policy':
-            require(values[index + 1] == 'fast-compile', 'Select the recorded fast-compile policy explicitly')
+            require(values[index + 1] in {'debug', 'fast-compile'}, 'Explicitly select debug or fast-compile LLVM policy')
         else:
-            require(values[index + 1] == 'path' and Path(values[index + 2]).is_absolute(), 'Select an absolute writable cache path')
+            require(values[index + 1] == 'disable' or
+                    (values[index + 1] == 'path' and Path(values[index + 2]).is_absolute()),
+                    'Explicitly disable the cache or select an absolute writable cache path')
         index += size + 1
     return values
 

@@ -88,7 +88,12 @@
             }
           ],
           "wasi_grants": [
-            "monotonic-clock"
+            "monotonic-clock",
+            "stdout.write",
+            "stderr.write",
+            "stdio.metadata",
+            "proc-exit",
+            "monotonic-timer"
           ],
           "call_boundary": "same-module",
           "wasi_enabled": true,

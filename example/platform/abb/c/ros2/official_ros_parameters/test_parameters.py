@@ -25,17 +25,7 @@ from host_interfaces import authorize_test_imports
 from pipe_capture import PipeLoggedProcess
 
 
-def exec_runtime_gate(arguments):
-    """Keep one PID alive until its gateway has pinned that process lifetime."""
-    need(len(arguments) >= 3, 'Complete runtime executable, identity and arguments required')
-    executable, expected, *tail = arguments
-    need(Path(executable).is_absolute() and len(expected) == 64
-         and all(c in '0123456789abcdef' for c in expected), 'Invalid runtime gate identity')
-    need(os.read(0, 1) == b'E', 'Runtime execution was not released by the supervisor')
-    need(digest(executable) == expected and os.access(executable, os.X_OK),
-         'Runtime executable changed before exec')
-    os.set_blocking(0, False)
-    os.execv(executable, [executable, *tail])
+exec_runtime_gate = base.exec_runtime_gate
 
 
 def actor(child, expected, known):
@@ -45,7 +35,7 @@ def actor(child, expected, known):
          (supervisor['membership'],supervisor['cgroup_inode'],supervisor['cgroup_namespace']),
          'Actual actor left the admitted fixture supervisor leaf')
     need(row['executable_sha256']==expected and row['memory.max']=='68719476736'
-         and row['memory.swap.max']=='0' and row['cpuset.cpus.effective']=='0,2,4,6,16-31',
+         and row['memory.swap.max']=='0' and row['cpuset.cpus.effective']==supervisor['cpuset.cpus.effective'],
          'Actual actor executable or kernel limits differ')
     need(row['file_limit_soft']==row['file_limit_hard']=='134217728',
          'Actual actor must inherit the128MiB regular-file cap')

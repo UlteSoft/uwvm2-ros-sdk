@@ -6,6 +6,11 @@ runs an acknowledgement callback without reporting a remote value. A later
 query must supply that observed value. The positive branch performs five real
 parameter operations and asserts three query callbacks and two acknowledgements.
 
+The native peer is the installed `tf2_ros/static_transform_publisher`, whose
+parameter services and parameter events remain enabled. Readiness requires actual
+GetParameters and SetParameters endpoint discovery before the VM is released.
+The Wasm callbacks still run only after actual validated native replies.
+
 The other three required branches cover an ungranted alias, an owned closed
 write handle, and a bounded query timeout. Callback invocation counts and
 untouched result state are asserted in Wasm. Null callbacks and noncanonical

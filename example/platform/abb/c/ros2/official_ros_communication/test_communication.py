@@ -40,6 +40,18 @@ def digest(path):
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
+def exec_runtime_gate(arguments):
+    """Keep one PID alive until its gateway has pinned that process lifetime."""
+    need(len(arguments) >= 3, 'Complete runtime executable, identity and arguments required')
+    executable, expected, *tail = arguments
+    need(Path(executable).is_absolute() and len(expected) == 64
+         and all(c in '0123456789abcdef' for c in expected), 'Invalid runtime gate identity')
+    need(os.read(0, 1) == b'E', 'Runtime execution was not released by the supervisor')
+    need(digest(executable) == expected and os.access(executable, os.X_OK),
+         'Runtime executable changed before exec')
+    os.execv(executable, [executable, *tail])
+
+
 def read_log(path):
     with Path(path).open("rb") as stream:
         result = stream.read(LOG_LIMIT + 1)
@@ -71,6 +83,16 @@ def process(pid):
             "cgroup_inode": group.stat().st_ino, "cgroup_namespace": str((root / "ns/cgroup").readlink()),
             "executable": str(executable.resolve()), "executable_sha256": sha,
             "file_limit_soft": match[1], "file_limit_hard": match[2], **limits}
+
+
+def check_resource_boundary(row):
+    """Match the actual supervisor leaf, without assuming one host's CPU IDs."""
+    supervisor = process(os.getpid())
+    fields = ("membership", "cgroup_inode", "cgroup_namespace", "cpuset.cpus.effective")
+    need(all(row[field] == supervisor[field] for field in fields),
+         "Actual actor left the admitted fixture supervisor resource boundary")
+    need(row["memory.max"] == "68719476736" and row["memory.swap.max"] == "0",
+         "Actual actor requires the 64 GiB, zero-swap cgroup")
 
 
 def session_members(session):
@@ -161,8 +183,7 @@ def peer_identity(peer):
     own = Path("/proc/self/ns/net").readlink()
     need(Path("/proc", str(peer["pid"]), "ns/net").readlink() == own,
          "Official peer is outside this isolated network namespace")
-    need(row["memory.max"] == "68719476736" and row["memory.swap.max"] == "0"
-         and row["cpuset.cpus.effective"] == "0,2,4,6,16-31", "Official peer actual resource limits differ")
+    check_resource_boundary(row)
     return row
 
 
@@ -205,7 +226,7 @@ def check_audit(rows, name, resource_name):
 def run_case(config, wasm, output, name, seed):
     root = output / name
     root.mkdir(mode=0o700)
-    socket = root / "gateway.sock"
+    socket = root / "g"
     need(len(str(socket).encode()) < 100, "Select a short output path for the bounded Unix socket")
     selected = config["cases"][name]
     template = selected["gateway_configuration"]
@@ -226,19 +247,15 @@ def run_case(config, wasm, output, name, seed):
     initial = read_log(peer_log)
     try:
         with (root / "vm.stdout").open("xb") as out, (root / "vm.stderr").open("xb") as err:
-            vm = PipeLoggedProcess(argv, stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)
+            # Bind the gateway to this PID before the VM performs startup
+            # preflight; exec preserves the pinned PID and process birth.
+            vm = PipeLoggedProcess([sys.executable, "-B", str(Path(__file__).resolve()),
+                "--exec-runtime-gate", config["runtime"], config["runtime_sha256"], *argv[1:]],
+                stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True,
+                nonblocking_stdin=False)
             owner = process(vm.pid)
             owned.append((vm, {vm.pid: owner["birth"]}))
             deadline = time.monotonic() + 60
-            while not events(read_log(root / "vm.stdout"), name, seed):
-                need(vm.poll() is None and time.monotonic() < deadline, "VM did not enter the real guest startup barrier")
-                time.sleep(0.01)
-            actual_vm = process(vm.pid)
-            need(actual_vm["executable_sha256"] == config["runtime_sha256"], "Actual running VM executable differs")
-            need(actual_vm["memory.max"] == "68719476736" and actual_vm["memory.swap.max"] == "0"
-                 and actual_vm["cpuset.cpus.effective"] == "0,2,4,6,16-31", "Actual VM resource limits differ")
-            need(actual_vm["file_limit_soft"] == actual_vm["file_limit_hard"] == "134217728", "Actual VM file ceiling differs")
-            row.update(guest_started=True, actual_VM=actual_vm)
             policy = template.replace("@SDK02_WORKER_PID@", str(vm.pid)).replace("@SDK02_UID@", str(os.getuid()))
             policy = policy.replace("@SDK02_GATEWAY_SOCKET@", str(socket))
             policy_path = root / "gateway.conf"
@@ -256,6 +273,16 @@ def run_case(config, wasm, output, name, seed):
                 actual_gateway = process(gateway.pid)
                 need(actual_gateway["executable_sha256"] == config["gateway_sha256"], "Actual native gateway executable differs")
                 row["actual_gateway"] = actual_gateway
+                vm.stdin.write(b"E")
+                vm.stdin.flush()
+                while not events(read_log(root / "vm.stdout"), name, seed):
+                    need(vm.poll() is None and time.monotonic() < deadline, "VM did not enter the real guest startup barrier")
+                    time.sleep(0.01)
+                actual_vm = process(vm.pid)
+                need(actual_vm["birth"] == owner["birth"] and actual_vm["executable_sha256"] == config["runtime_sha256"], "Actual running VM birth/executable differs")
+                check_resource_boundary(actual_vm)
+                need(actual_vm["file_limit_soft"] == actual_vm["file_limit_hard"] == "134217728", "Actual VM file ceiling differs")
+                row.update(guest_started=True, actual_VM=actual_vm)
                 vm.stdin.write(b"R")
                 vm.stdin.flush()
                 while vm.poll() is None:
@@ -344,6 +371,9 @@ def main():
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    if len(sys.argv) > 1 and sys.argv[1] == "--exec-runtime-gate":
+        exec_runtime_gate(sys.argv[2:])
+    else:
+        raise SystemExit(main())
 
 

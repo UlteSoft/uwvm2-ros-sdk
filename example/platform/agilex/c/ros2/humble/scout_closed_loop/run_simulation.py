@@ -32,10 +32,14 @@ def main():
     out=Path(os.environ['UWVM_SDK_OUTPUT'])
     member=Path('/proc/self/cgroup').read_text().strip()
     group=Path('/sys/fs/cgroup')/next(x.split(':',2)[2].lstrip('/') for x in member.splitlines() if x.startswith('0::'))
-    common=Path('/sys/fs/cgroup/uwvmros.slice')
-    if common not in group.parents or (common/'memory.max').read_text().strip()!='68719476736' or (common/'memory.swap.max').read_text().strip()!='0':
+    ancestry=[group,*group.parents]
+    common=next((leaf for leaf in ancestry
+                 if (leaf/'memory.max').is_file()
+                 and (leaf/'memory.max').read_text().strip()=='68719476736'
+                 and (leaf/'memory.swap.max').read_text().strip()=='0'),None)
+    if common is None:
         raise RuntimeError('actual shared 64 GiB zero-swap birth boundary required')
-    for leaf in [group,*group.parents]:
+    for leaf in ancestry:
         if leaf==common.parent:break
         if not (leaf/'memory.max').exists():continue
         limit=(leaf/'memory.max').read_text().strip()

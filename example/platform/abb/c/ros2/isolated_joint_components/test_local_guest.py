@@ -220,7 +220,10 @@ def main():
         report["argv"] = authorize_test_imports(report["argv"])
         stdout, stderr = args.output / "vm.stdout", args.output / "vm.stderr"
         with stdout.open("xb") as out, stderr.open("xb") as err:
-            child = PipeLoggedProcess(report["argv"], stdin=subprocess.PIPE, stdout=out, stderr=err, start_new_session=True)
+            # The guest waits in fd_read until its actual VM identity is checked.
+            # Preserve blocking pipe semantics during that startup barrier.
+            child = PipeLoggedProcess(report["argv"], stdin=subprocess.PIPE, stdout=out, stderr=err,
+                                      start_new_session=True, nonblocking_stdin=False)
             before = process(child.pid)
             known[child.pid] = before["birth"]
             deadline = time.monotonic() + 150
@@ -230,8 +233,12 @@ def main():
                 time.sleep(0.01)
             actual = process(child.pid)
             need(actual["birth"] == known[child.pid] and actual["executable_sha256"] == report["runtime_sha256"], "Actual VM birth/executable differs")
-            need(actual["memory.max"] == "68719476736" and actual["memory.swap.max"] == "0"
-                 and actual["cpuset.cpus.effective"] == "0,2,4,6,16-31", "Actual manual VM cgroup limits differ")
+            supervisor = process(os.getpid())
+            need(all(actual[field] == supervisor[field] for field in
+                     ("membership", "cgroup_inode", "cgroup_namespace", "cpuset.cpus.effective")),
+                 "Actual VM left the fixture supervisor resource boundary")
+            need(actual["memory.max"] == "68719476736" and actual["memory.swap.max"] == "0",
+                 "Actual manual VM cgroup limits differ")
             need(actual["file_limit_soft"] == actual["file_limit_hard"] == "134217728", "Actual VM regular-file ceiling differs")
             report["actual_VM_at_guest_barrier"] = actual
             child.stdin.write(b"R")
@@ -249,8 +256,15 @@ def main():
         markers = re.findall(r"\[unwind-check\] status=(ok|failed) elapsed_ns=([0-9]+) native_target_ns=10000000 provider=paired-llvm23", diagnostic)
         need(len(markers) == 1 and markers[0][0] == "ok" and int(markers[0][1]) > 0,
              "Actual checked paired-LLVM unwind result is missing or failed")
-        need("body-fallback=no" in diagnostic and "body-fallback=yes" not in diagnostic,
-             "Actual AOT diagnostic must confirm no interpreter body fallback")
+        need("mode=full_compile, compiler=llvm_jit_only, uwvm-int-translation=disabled, llvm-jit-ir-translation=enabled"
+             in diagnostic and "body-fallback=yes" not in diagnostic,
+             "Actual LLVM-only full compilation must exclude interpreter fallback")
+        main_alias = "main"
+        for index, value in enumerate(values):
+            if value in ("--wasm-set-main-module-name", "-Wname"):
+                main_alias = values[index + 1]
+        need('LLVM JIT materialization for module "' + main_alias + '" done.' in diagnostic,
+             "Actual guest module must finish native materialization")
         report["checked_unwind"] = {"status": "ok", "elapsed_ns": int(markers[0][1]),
                                     "native_target_ns": 10000000, "provider": "paired-llvm23"}
         report["body_fallback"] = False

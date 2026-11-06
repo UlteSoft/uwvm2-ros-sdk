@@ -55,11 +55,18 @@ def main():
     try:
         subscription = node.create_subscription(ParameterEvent, '/parameter_events',
                                                 observe, qos_profile_parameter_events)
-        report['ready'] = True
         save()
         deadline = time.monotonic()+320
         while not stop and time.monotonic()<deadline:
             rclpy.spin_once(node, timeout_sec=.1)
+            if not report['ready']:
+                graph = dict(node.get_service_names_and_types())
+                expected = {args.node+'/get_parameters':'rcl_interfaces/srv/GetParameters',
+                            args.node+'/set_parameters':'rcl_interfaces/srv/SetParameters'}
+                if all(kind in graph.get(name, ()) for name,kind in expected.items()):
+                    report.update(ready=True, discovered_parameter_services=expected,
+                                  discovery_monotonic_ns=time.monotonic_ns())
+                    save()
         report.update(finished_ns=time.monotonic_ns(), ready=False)
         save()
         node.destroy_subscription(subscription)

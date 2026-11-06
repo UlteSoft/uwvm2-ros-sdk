@@ -33,7 +33,11 @@
               "stdout.write",
               "stderr.write",
               "stdio.metadata",
-              "stdio.readiness"
+              "stdio.readiness",
+              "args",
+              "environ",
+              "proc-exit",
+              "monotonic-timer"
             ],
             "grants": [
               {
