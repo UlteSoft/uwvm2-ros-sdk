@@ -168,5 +168,6 @@
       "sha256": "f5de52e422c5875ca686f28db2eb8cbb9baaa8e4397c957e2c6fb9b84fb3ec94"
     }
   ],
-  "default_authority": []
+  "default_authority": [],
+  "module_loading": "lazy"
 }

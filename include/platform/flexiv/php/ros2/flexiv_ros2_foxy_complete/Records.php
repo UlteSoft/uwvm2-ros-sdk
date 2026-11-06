@@ -1093,23 +1093,33 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros2Flexiv_msgsMsgJointPosVel' => Ros2Flexiv_msgsMsgJointPosVel::SCHEMA + ['class' =>
-            'Ros2Flexiv_msgsMsgJointPosVel::class],
-            'Ros2Flexiv_msgsMsgMode' => Ros2Flexiv_msgsMsgMode::SCHEMA + ['class' => Ros2Flexiv_msgsMsgMode::class],
-            'Ros2Geometry_msgsMsgPoint' => Ros2Geometry_msgsMsgPoint::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgPoint::class],
-            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgQuaternion::class],
-            'Ros2Geometry_msgsMsgPose' => Ros2Geometry_msgsMsgPose::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgPose::class],
-            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgVector3::class],
-            'Ros2Geometry_msgsMsgAccel' => Ros2Geometry_msgsMsgAccel::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgAccel::class],
-            'Ros2Geometry_msgsMsgWrench' => Ros2Geometry_msgsMsgWrench::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgWrench::class],
-            'Ros2Flexiv_msgsMsgRobotStates' => Ros2Flexiv_msgsMsgRobotStates::SCHEMA + ['class' =>
-            'Ros2Flexiv_msgsMsgRobotStates::class],
+            'Ros2Flexiv_msgsMsgJointPosVel' => Ros2Flexiv_msgsMsgJointPosVel::SCHEMA + [
+                'class' => Ros2Flexiv_msgsMsgJointPosVel::class
+            ],
+            'Ros2Flexiv_msgsMsgMode' => Ros2Flexiv_msgsMsgMode::SCHEMA + [
+                'class' => Ros2Flexiv_msgsMsgMode::class
+            ],
+            'Ros2Geometry_msgsMsgPoint' => Ros2Geometry_msgsMsgPoint::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgPoint::class
+            ],
+            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgQuaternion::class
+            ],
+            'Ros2Geometry_msgsMsgPose' => Ros2Geometry_msgsMsgPose::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgPose::class
+            ],
+            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgVector3::class
+            ],
+            'Ros2Geometry_msgsMsgAccel' => Ros2Geometry_msgsMsgAccel::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgAccel::class
+            ],
+            'Ros2Geometry_msgsMsgWrench' => Ros2Geometry_msgsMsgWrench::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgWrench::class
+            ],
+            'Ros2Flexiv_msgsMsgRobotStates' => Ros2Flexiv_msgsMsgRobotStates::SCHEMA + [
+                'class' => Ros2Flexiv_msgsMsgRobotStates::class
+            ],
         ]);
         return $wire;
     }

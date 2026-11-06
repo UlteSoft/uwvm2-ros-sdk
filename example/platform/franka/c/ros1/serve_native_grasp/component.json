@@ -322,12 +322,12 @@
     {
       "scope": "sdk",
       "path": "share/platform/franka/bindings/ruby/ros1.json",
-      "sha256": "2fbc52d1853e304f39eb298318e61db527698c082df5d26e2a2667e90e4afa9e"
+      "sha256": "777a879f8f12342fb64cfe504ac870d2659f61b7b70af1c61d9772c76659f007"
     },
     {
       "scope": "sdk",
       "path": "share/platform/franka/bindings/ruby/ros2.json",
-      "sha256": "96a4c74451925b2db8412d4f6ae5765f2e5916b0ae2b6cc56e93e651c9135ee0"
+      "sha256": "88759a7aa357188fded4c8cde07e4ef52d91e9658edbc49cebd8ec9c1cba1930"
     },
     {
       "scope": "sdk",
@@ -382,12 +382,12 @@
     {
       "scope": "sdk",
       "path": "share/platform/franka/bundles/py/ros1.json",
-      "sha256": "f46e21c1352d1caa267ee14b7ad3bf0c8ac3d8ef604a2637b42c07ae7acd7a89"
+      "sha256": "5b04396bf28d1d133ccc6a04ad524e7545e831774a2ac7f0758cf898e60ebcba"
     },
     {
       "scope": "sdk",
       "path": "share/platform/franka/bundles/py/ros2.json",
-      "sha256": "8a7f65ab8d2ad4583cb34f596225a72b11fdc89a4dc81c0b370a769408045d34"
+      "sha256": "2f227d65dcf009a2f72762047df6dd35ddb3ba53a9a2d877c58c5c2e26a6eee6"
     },
     {
       "scope": "sdk",

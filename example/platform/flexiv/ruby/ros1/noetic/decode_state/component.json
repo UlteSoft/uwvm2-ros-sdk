@@ -11,7 +11,7 @@
     {
       "scope": "example",
       "path": "main.rb",
-      "sha256": "63b3aebe9b601a4e3055dd799d8d4170d45d76e0b3919afc1cd06b9e6b94a1a0"
+      "sha256": "071b12866582226c92abc95ebca67b4d8fc11d7c437621024b341385b8eacfc4"
     },
     {
       "scope": "sdk",
@@ -52,6 +52,31 @@
       "scope": "sdk",
       "path": "tools/shared/host-interfaces.json",
       "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/ruby/ros1_noetic.json",
+      "sha256": "62c50d474b90f7b0adba21c4fd9ea7bd9a152b8578bf62979bdf6076cdb86657"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb",
+      "sha256": "b4c7a9e661f63b63055df4a8722bbe16b3e6b687f14c109401c2e43b60fdd3fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb",
+      "sha256": "0e8a20b0d17a2cca28dd10ba516288dfa91ea8066ad5499a33a192e0ee52e83f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/ruby/ros1/flexiv_ros1_noetic_complete/records.rb",
+      "sha256": "9861f8c8ad8a269f30f082811169a0708321ecc1d54fc7aeb884b21023197081"
     }
   ],
   "cases": [

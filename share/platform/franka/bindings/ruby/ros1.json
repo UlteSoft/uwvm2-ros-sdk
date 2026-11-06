@@ -10,11 +10,11 @@
   "modules": [
     {
       "path": "include/platform/ros/ruby/roswasm/wire.rb",
-      "name": "ros/ruby/roswasm/wire"
+      "name": "roswasm/wire"
     },
     {
       "path": "include/platform/ros/ruby/roswasm/transport.rb",
-      "name": "ros/ruby/roswasm/transport"
+      "name": "roswasm/transport"
     },
     {
       "path": "include/platform/franka/ruby/ros1/franka_ros1_complete/records.rb",

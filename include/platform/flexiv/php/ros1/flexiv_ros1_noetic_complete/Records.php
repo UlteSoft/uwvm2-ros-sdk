@@ -1089,19 +1089,33 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros1Flexiv_msgsJointPosVel' => Ros1Flexiv_msgsJointPosVel::SCHEMA + ['class' =>
-            'Ros1Flexiv_msgsJointPosVel::class],
-            'Ros1Flexiv_msgsMode' => Ros1Flexiv_msgsMode::SCHEMA + ['class' => Ros1Flexiv_msgsMode::class],
-            'Ros1Geometry_msgsPoint' => Ros1Geometry_msgsPoint::SCHEMA + ['class' => Ros1Geometry_msgsPoint::class],
-            'Ros1Geometry_msgsQuaternion' => Ros1Geometry_msgsQuaternion::SCHEMA + ['class' =>
-            'Ros1Geometry_msgsQuaternion::class],
-            'Ros1Geometry_msgsPose' => Ros1Geometry_msgsPose::SCHEMA + ['class' => Ros1Geometry_msgsPose::class],
-            'Ros1Geometry_msgsVector3' => Ros1Geometry_msgsVector3::SCHEMA + ['class' =>
-            'Ros1Geometry_msgsVector3::class],
-            'Ros1Geometry_msgsAccel' => Ros1Geometry_msgsAccel::SCHEMA + ['class' => Ros1Geometry_msgsAccel::class],
-            'Ros1Geometry_msgsWrench' => Ros1Geometry_msgsWrench::SCHEMA + ['class' => Ros1Geometry_msgsWrench::class],
-            'Ros1Flexiv_msgsRobotStates' => Ros1Flexiv_msgsRobotStates::SCHEMA + ['class' =>
-            'Ros1Flexiv_msgsRobotStates::class],
+            'Ros1Flexiv_msgsJointPosVel' => Ros1Flexiv_msgsJointPosVel::SCHEMA + [
+                'class' => Ros1Flexiv_msgsJointPosVel::class
+            ],
+            'Ros1Flexiv_msgsMode' => Ros1Flexiv_msgsMode::SCHEMA + [
+                'class' => Ros1Flexiv_msgsMode::class
+            ],
+            'Ros1Geometry_msgsPoint' => Ros1Geometry_msgsPoint::SCHEMA + [
+                'class' => Ros1Geometry_msgsPoint::class
+            ],
+            'Ros1Geometry_msgsQuaternion' => Ros1Geometry_msgsQuaternion::SCHEMA + [
+                'class' => Ros1Geometry_msgsQuaternion::class
+            ],
+            'Ros1Geometry_msgsPose' => Ros1Geometry_msgsPose::SCHEMA + [
+                'class' => Ros1Geometry_msgsPose::class
+            ],
+            'Ros1Geometry_msgsVector3' => Ros1Geometry_msgsVector3::SCHEMA + [
+                'class' => Ros1Geometry_msgsVector3::class
+            ],
+            'Ros1Geometry_msgsAccel' => Ros1Geometry_msgsAccel::SCHEMA + [
+                'class' => Ros1Geometry_msgsAccel::class
+            ],
+            'Ros1Geometry_msgsWrench' => Ros1Geometry_msgsWrench::SCHEMA + [
+                'class' => Ros1Geometry_msgsWrench::class
+            ],
+            'Ros1Flexiv_msgsRobotStates' => Ros1Flexiv_msgsRobotStates::SCHEMA + [
+                'class' => Ros1Flexiv_msgsRobotStates::class
+            ],
         ]);
         return $wire;
     }

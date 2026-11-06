@@ -10,11 +10,11 @@
   "modules": [
     {
       "path": "include/platform/ros/ruby/roswasm/wire.rb",
-      "name": "ros/ruby/roswasm/wire"
+      "name": "roswasm/wire"
     },
     {
       "path": "include/platform/ros/ruby/roswasm/transport.rb",
-      "name": "ros/ruby/roswasm/transport"
+      "name": "roswasm/transport"
     },
     {
       "path": "include/platform/flexiv/ruby/ros2/flexiv_ros2_jazzy_v2_2_complete/records.rb",

@@ -4432,76 +4432,111 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros1Franka_example_controllersJointTorqueComparison' =>
-            'Ros1Franka_example_controllersJointTorqueComparison::SCHEMA + ['class' =>
-            'Ros1Franka_example_controllersJointTorqueComparison::class],
-            'Ros1Franka_gripperGraspEpsilon' => Ros1Franka_gripperGraspEpsilon::SCHEMA + ['class' =>
-            'Ros1Franka_gripperGraspEpsilon::class],
-            'Ros1Franka_gripperGraspGoal' => Ros1Franka_gripperGraspGoal::SCHEMA + ['class' =>
-            'Ros1Franka_gripperGraspGoal::class],
-            'Ros1Franka_gripperGraspResult' => Ros1Franka_gripperGraspResult::SCHEMA + ['class' =>
-            'Ros1Franka_gripperGraspResult::class],
-            'Ros1Franka_gripperGraspFeedback' => Ros1Franka_gripperGraspFeedback::SCHEMA + ['class' =>
-            'Ros1Franka_gripperGraspFeedback::class],
-            'Ros1Franka_gripperHomingGoal' => Ros1Franka_gripperHomingGoal::SCHEMA + ['class' =>
-            'Ros1Franka_gripperHomingGoal::class],
-            'Ros1Franka_gripperHomingResult' => Ros1Franka_gripperHomingResult::SCHEMA + ['class' =>
-            'Ros1Franka_gripperHomingResult::class],
-            'Ros1Franka_gripperHomingFeedback' => Ros1Franka_gripperHomingFeedback::SCHEMA + ['class' =>
-            'Ros1Franka_gripperHomingFeedback::class],
-            'Ros1Franka_gripperMoveGoal' => Ros1Franka_gripperMoveGoal::SCHEMA + ['class' =>
-            'Ros1Franka_gripperMoveGoal::class],
-            'Ros1Franka_gripperMoveResult' => Ros1Franka_gripperMoveResult::SCHEMA + ['class' =>
-            'Ros1Franka_gripperMoveResult::class],
-            'Ros1Franka_gripperMoveFeedback' => Ros1Franka_gripperMoveFeedback::SCHEMA + ['class' =>
-            'Ros1Franka_gripperMoveFeedback::class],
-            'Ros1Franka_gripperStopGoal' => Ros1Franka_gripperStopGoal::SCHEMA + ['class' =>
-            'Ros1Franka_gripperStopGoal::class],
-            'Ros1Franka_gripperStopResult' => Ros1Franka_gripperStopResult::SCHEMA + ['class' =>
-            'Ros1Franka_gripperStopResult::class],
-            'Ros1Franka_gripperStopFeedback' => Ros1Franka_gripperStopFeedback::SCHEMA + ['class' =>
-            'Ros1Franka_gripperStopFeedback::class],
-            'Ros1Franka_msgsErrorRecoveryGoal' => Ros1Franka_msgsErrorRecoveryGoal::SCHEMA + ['class' =>
-            'Ros1Franka_msgsErrorRecoveryGoal::class],
-            'Ros1Franka_msgsErrorRecoveryResult' => Ros1Franka_msgsErrorRecoveryResult::SCHEMA + ['class' =>
-            'Ros1Franka_msgsErrorRecoveryResult::class],
-            'Ros1Franka_msgsErrorRecoveryFeedback' => Ros1Franka_msgsErrorRecoveryFeedback::SCHEMA + ['class' =>
-            'Ros1Franka_msgsErrorRecoveryFeedback::class],
-            'Ros1Franka_msgsErrors' => Ros1Franka_msgsErrors::SCHEMA + ['class' => Ros1Franka_msgsErrors::class],
-            'Ros1Time' => Ros1Time::SCHEMA + ['class' => Ros1Time::class],
-            'Ros1Std_msgsHeader' => Ros1Std_msgsHeader::SCHEMA + ['class' => Ros1Std_msgsHeader::class],
-            'Ros1Franka_msgsFrankaState' => Ros1Franka_msgsFrankaState::SCHEMA + ['class' =>
-            'Ros1Franka_msgsFrankaState::class],
-            'Ros1Franka_msgsSetCartesianImpedanceRequest' => Ros1Franka_msgsSetCartesianImpedanceRequest::SCHEMA +
-            '['class' => Ros1Franka_msgsSetCartesianImpedanceRequest::class],
-            'Ros1Franka_msgsSetCartesianImpedanceResponse' => Ros1Franka_msgsSetCartesianImpedanceResponse::SCHEMA +
-            '['class' => Ros1Franka_msgsSetCartesianImpedanceResponse::class],
-            'Ros1Franka_msgsSetEEFrameRequest' => Ros1Franka_msgsSetEEFrameRequest::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetEEFrameRequest::class],
-            'Ros1Franka_msgsSetEEFrameResponse' => Ros1Franka_msgsSetEEFrameResponse::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetEEFrameResponse::class],
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest' =>
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest::class],
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse' =>
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse::class],
-            'Ros1Franka_msgsSetFullCollisionBehaviorRequest' => Ros1Franka_msgsSetFullCollisionBehaviorRequest::SCHEMA +
-            '['class' => Ros1Franka_msgsSetFullCollisionBehaviorRequest::class],
-            'Ros1Franka_msgsSetFullCollisionBehaviorResponse' => Ros1Franka_msgsSetFullCollisionBehaviorResponse::SCHEMA
-            '+ ['class' => Ros1Franka_msgsSetFullCollisionBehaviorResponse::class],
-            'Ros1Franka_msgsSetJointImpedanceRequest' => Ros1Franka_msgsSetJointImpedanceRequest::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetJointImpedanceRequest::class],
-            'Ros1Franka_msgsSetJointImpedanceResponse' => Ros1Franka_msgsSetJointImpedanceResponse::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetJointImpedanceResponse::class],
-            'Ros1Franka_msgsSetKFrameRequest' => Ros1Franka_msgsSetKFrameRequest::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetKFrameRequest::class],
-            'Ros1Franka_msgsSetKFrameResponse' => Ros1Franka_msgsSetKFrameResponse::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetKFrameResponse::class],
-            'Ros1Franka_msgsSetLoadRequest' => Ros1Franka_msgsSetLoadRequest::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetLoadRequest::class],
-            'Ros1Franka_msgsSetLoadResponse' => Ros1Franka_msgsSetLoadResponse::SCHEMA + ['class' =>
-            'Ros1Franka_msgsSetLoadResponse::class],
+            'Ros1Franka_example_controllersJointTorqueComparison' => Ros1Franka_example_controllersJointTorqueComparison::SCHEMA + [
+                'class' => Ros1Franka_example_controllersJointTorqueComparison::class
+            ],
+            'Ros1Franka_gripperGraspEpsilon' => Ros1Franka_gripperGraspEpsilon::SCHEMA + [
+                'class' => Ros1Franka_gripperGraspEpsilon::class
+            ],
+            'Ros1Franka_gripperGraspGoal' => Ros1Franka_gripperGraspGoal::SCHEMA + [
+                'class' => Ros1Franka_gripperGraspGoal::class
+            ],
+            'Ros1Franka_gripperGraspResult' => Ros1Franka_gripperGraspResult::SCHEMA + [
+                'class' => Ros1Franka_gripperGraspResult::class
+            ],
+            'Ros1Franka_gripperGraspFeedback' => Ros1Franka_gripperGraspFeedback::SCHEMA + [
+                'class' => Ros1Franka_gripperGraspFeedback::class
+            ],
+            'Ros1Franka_gripperHomingGoal' => Ros1Franka_gripperHomingGoal::SCHEMA + [
+                'class' => Ros1Franka_gripperHomingGoal::class
+            ],
+            'Ros1Franka_gripperHomingResult' => Ros1Franka_gripperHomingResult::SCHEMA + [
+                'class' => Ros1Franka_gripperHomingResult::class
+            ],
+            'Ros1Franka_gripperHomingFeedback' => Ros1Franka_gripperHomingFeedback::SCHEMA + [
+                'class' => Ros1Franka_gripperHomingFeedback::class
+            ],
+            'Ros1Franka_gripperMoveGoal' => Ros1Franka_gripperMoveGoal::SCHEMA + [
+                'class' => Ros1Franka_gripperMoveGoal::class
+            ],
+            'Ros1Franka_gripperMoveResult' => Ros1Franka_gripperMoveResult::SCHEMA + [
+                'class' => Ros1Franka_gripperMoveResult::class
+            ],
+            'Ros1Franka_gripperMoveFeedback' => Ros1Franka_gripperMoveFeedback::SCHEMA + [
+                'class' => Ros1Franka_gripperMoveFeedback::class
+            ],
+            'Ros1Franka_gripperStopGoal' => Ros1Franka_gripperStopGoal::SCHEMA + [
+                'class' => Ros1Franka_gripperStopGoal::class
+            ],
+            'Ros1Franka_gripperStopResult' => Ros1Franka_gripperStopResult::SCHEMA + [
+                'class' => Ros1Franka_gripperStopResult::class
+            ],
+            'Ros1Franka_gripperStopFeedback' => Ros1Franka_gripperStopFeedback::SCHEMA + [
+                'class' => Ros1Franka_gripperStopFeedback::class
+            ],
+            'Ros1Franka_msgsErrorRecoveryGoal' => Ros1Franka_msgsErrorRecoveryGoal::SCHEMA + [
+                'class' => Ros1Franka_msgsErrorRecoveryGoal::class
+            ],
+            'Ros1Franka_msgsErrorRecoveryResult' => Ros1Franka_msgsErrorRecoveryResult::SCHEMA + [
+                'class' => Ros1Franka_msgsErrorRecoveryResult::class
+            ],
+            'Ros1Franka_msgsErrorRecoveryFeedback' => Ros1Franka_msgsErrorRecoveryFeedback::SCHEMA + [
+                'class' => Ros1Franka_msgsErrorRecoveryFeedback::class
+            ],
+            'Ros1Franka_msgsErrors' => Ros1Franka_msgsErrors::SCHEMA + [
+                'class' => Ros1Franka_msgsErrors::class
+            ],
+            'Ros1Time' => Ros1Time::SCHEMA + [
+                'class' => Ros1Time::class
+            ],
+            'Ros1Std_msgsHeader' => Ros1Std_msgsHeader::SCHEMA + [
+                'class' => Ros1Std_msgsHeader::class
+            ],
+            'Ros1Franka_msgsFrankaState' => Ros1Franka_msgsFrankaState::SCHEMA + [
+                'class' => Ros1Franka_msgsFrankaState::class
+            ],
+            'Ros1Franka_msgsSetCartesianImpedanceRequest' => Ros1Franka_msgsSetCartesianImpedanceRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetCartesianImpedanceRequest::class
+            ],
+            'Ros1Franka_msgsSetCartesianImpedanceResponse' => Ros1Franka_msgsSetCartesianImpedanceResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetCartesianImpedanceResponse::class
+            ],
+            'Ros1Franka_msgsSetEEFrameRequest' => Ros1Franka_msgsSetEEFrameRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetEEFrameRequest::class
+            ],
+            'Ros1Franka_msgsSetEEFrameResponse' => Ros1Franka_msgsSetEEFrameResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetEEFrameResponse::class
+            ],
+            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest' => Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetForceTorqueCollisionBehaviorRequest::class
+            ],
+            'Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse' => Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetForceTorqueCollisionBehaviorResponse::class
+            ],
+            'Ros1Franka_msgsSetFullCollisionBehaviorRequest' => Ros1Franka_msgsSetFullCollisionBehaviorRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetFullCollisionBehaviorRequest::class
+            ],
+            'Ros1Franka_msgsSetFullCollisionBehaviorResponse' => Ros1Franka_msgsSetFullCollisionBehaviorResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetFullCollisionBehaviorResponse::class
+            ],
+            'Ros1Franka_msgsSetJointImpedanceRequest' => Ros1Franka_msgsSetJointImpedanceRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetJointImpedanceRequest::class
+            ],
+            'Ros1Franka_msgsSetJointImpedanceResponse' => Ros1Franka_msgsSetJointImpedanceResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetJointImpedanceResponse::class
+            ],
+            'Ros1Franka_msgsSetKFrameRequest' => Ros1Franka_msgsSetKFrameRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetKFrameRequest::class
+            ],
+            'Ros1Franka_msgsSetKFrameResponse' => Ros1Franka_msgsSetKFrameResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetKFrameResponse::class
+            ],
+            'Ros1Franka_msgsSetLoadRequest' => Ros1Franka_msgsSetLoadRequest::SCHEMA + [
+                'class' => Ros1Franka_msgsSetLoadRequest::class
+            ],
+            'Ros1Franka_msgsSetLoadResponse' => Ros1Franka_msgsSetLoadResponse::SCHEMA + [
+                'class' => Ros1Franka_msgsSetLoadResponse::class
+            ],
         ]);
         return $wire;
     }

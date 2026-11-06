@@ -11,7 +11,7 @@
     {
       "scope": "example",
       "path": "main.rb",
-      "sha256": "084fa0a2bf052b0b661bdd022909f20645a0d7997f7c7f5cbffe1be8c68fcfb6"
+      "sha256": "d92fff65c6ee308ec5e29bb37a4e8e92fd0f4cba34da75772870d9df4468a4ee"
     },
     {
       "scope": "sdk",
@@ -52,6 +52,31 @@
       "scope": "sdk",
       "path": "tools/shared/host-interfaces.json",
       "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/franka/bindings/ruby/ros1.json",
+      "sha256": "777a879f8f12342fb64cfe504ac870d2659f61b7b70af1c61d9772c76659f007"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/wire.rb",
+      "sha256": "b4c7a9e661f63b63055df4a8722bbe16b3e6b687f14c109401c2e43b60fdd3fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/ruby/roswasm/transport.rb",
+      "sha256": "0e8a20b0d17a2cca28dd10ba516288dfa91ea8066ad5499a33a192e0ee52e83f"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/franka/ruby/ros1/franka_ros1_complete/records.rb",
+      "sha256": "a1f77b6adaf95327bd933a98b49700ede0d799800a6b8cfc55cc375e2b7537cd"
     }
   ],
   "cases": [

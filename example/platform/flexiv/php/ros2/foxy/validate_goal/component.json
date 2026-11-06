@@ -52,6 +52,36 @@
       "scope": "sdk",
       "path": "tools/shared/host-interfaces.json",
       "sha256": "ac57574d6b2f0e3354742de5e0c3633e7f1f401e513b59286a9e09442218ff43"
+    },
+    {
+      "scope": "sdk",
+      "path": "share/platform/flexiv/bindings/php/ros2_foxy.json",
+      "sha256": "cbce399c1934da7e35dac376ea7e7442491a1442b1bac2b197981967731a6b4d"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/ruby/provider.lua",
+      "sha256": "b0ce6678e40010080236694b9e96d782fcb2fa9661e20e77b39de37cc382f4a4"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Word.php",
+      "sha256": "4c8a9e723fbc057a8a2da63f3b1c2609608954600af407169dde5f2e0df30bac"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Wire.php",
+      "sha256": "a98012e8de8a46996b45267f41e77043de1ad9d69cfc5d7462875a37580f9b2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/ros/php/RosWasm/Transport.php",
+      "sha256": "09b46a3f454cb73bce620f7a12b87a45c3295986a43baab4299e38f872d2c349"
+    },
+    {
+      "scope": "sdk",
+      "path": "include/platform/flexiv/php/ros2/flexiv_ros2_foxy_complete/Records.php",
+      "sha256": "aa75c58fb6e24df1a4714d9f131fa84fdfd0ff2f2fd3b0f6213266910aa826e3"
     }
   ],
   "cases": [

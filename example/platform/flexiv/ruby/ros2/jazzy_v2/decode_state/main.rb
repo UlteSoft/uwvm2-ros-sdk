@@ -2,4 +2,4 @@
 require "flexiv/ruby/ros2/flexiv_ros2_jazzy_v2_complete/records"
 bytes = STDIN.binmode.read(5161) || "".b
 value = Uwvm::Flexiv::Ros2JazzyV2::Ros2Flexiv_msgsMsgRobotStates.decode(bytes)
-STDOUT.write(value.encode.unpack1("H*"), "\n")
+STDOUT.write(Uwvm::Flexiv::Ros2JazzyV2::Ros2Flexiv_msgsMsgRobotStates.encode(value).unpack1("H*"), "\n")

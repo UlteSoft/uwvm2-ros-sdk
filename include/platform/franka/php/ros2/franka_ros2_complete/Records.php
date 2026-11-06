@@ -7168,156 +7168,225 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + ['class' =>
-            'Ros2Builtin_interfacesMsgTime::class],
-            'Ros2Franka_msgsActionErrorRecovery_Goal' => Ros2Franka_msgsActionErrorRecovery_Goal::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionErrorRecovery_Goal::class],
-            'Ros2Franka_msgsActionErrorRecovery_Result' => Ros2Franka_msgsActionErrorRecovery_Result::SCHEMA + ['class'
-            '=> Ros2Franka_msgsActionErrorRecovery_Result::class],
-            'Ros2Franka_msgsActionErrorRecovery_Feedback' => Ros2Franka_msgsActionErrorRecovery_Feedback::SCHEMA +
-            '['class' => Ros2Franka_msgsActionErrorRecovery_Feedback::class],
-            'Ros2Franka_msgsMsgGraspEpsilon' => Ros2Franka_msgsMsgGraspEpsilon::SCHEMA + ['class' =>
-            'Ros2Franka_msgsMsgGraspEpsilon::class],
-            'Ros2Franka_msgsActionGrasp_Goal' => Ros2Franka_msgsActionGrasp_Goal::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionGrasp_Goal::class],
-            'Ros2Franka_msgsActionGrasp_Result' => Ros2Franka_msgsActionGrasp_Result::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionGrasp_Result::class],
-            'Ros2Franka_msgsActionGrasp_Feedback' => Ros2Franka_msgsActionGrasp_Feedback::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionGrasp_Feedback::class],
-            'Ros2Franka_msgsActionHoming_Goal' => Ros2Franka_msgsActionHoming_Goal::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionHoming_Goal::class],
-            'Ros2Franka_msgsActionHoming_Result' => Ros2Franka_msgsActionHoming_Result::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionHoming_Result::class],
-            'Ros2Franka_msgsActionHoming_Feedback' => Ros2Franka_msgsActionHoming_Feedback::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionHoming_Feedback::class],
-            'Ros2Franka_msgsActionMove_Goal' => Ros2Franka_msgsActionMove_Goal::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionMove_Goal::class],
-            'Ros2Franka_msgsActionMove_Result' => Ros2Franka_msgsActionMove_Result::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionMove_Result::class],
-            'Ros2Franka_msgsActionMove_Feedback' => Ros2Franka_msgsActionMove_Feedback::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionMove_Feedback::class],
-            'Ros2Franka_msgsActionPTPMotion_Goal' => Ros2Franka_msgsActionPTPMotion_Goal::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionPTPMotion_Goal::class],
-            'Ros2Franka_msgsMsgTargetStatus' => Ros2Franka_msgsMsgTargetStatus::SCHEMA + ['class' =>
-            'Ros2Franka_msgsMsgTargetStatus::class],
-            'Ros2Franka_msgsActionPTPMotion_Result' => Ros2Franka_msgsActionPTPMotion_Result::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionPTPMotion_Result::class],
-            'Ros2Franka_msgsActionPTPMotion_Feedback' => Ros2Franka_msgsActionPTPMotion_Feedback::SCHEMA + ['class' =>
-            'Ros2Franka_msgsActionPTPMotion_Feedback::class],
-            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgVector3::class],
-            'Ros2Franka_msgsMsgCollisionIndicators' => Ros2Franka_msgsMsgCollisionIndicators::SCHEMA + ['class' =>
-            'Ros2Franka_msgsMsgCollisionIndicators::class],
-            'Ros2Franka_msgsMsgElbow' => Ros2Franka_msgsMsgElbow::SCHEMA + ['class' => Ros2Franka_msgsMsgElbow::class],
-            'Ros2Franka_msgsMsgErrors' => Ros2Franka_msgsMsgErrors::SCHEMA + ['class' =>
-            'Ros2Franka_msgsMsgErrors::class],
-            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + ['class' => Ros2Std_msgsMsgHeader::class],
-            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + ['class' =>
-            'Ros2Sensor_msgsMsgJointState::class],
-            'Ros2Geometry_msgsMsgWrench' => Ros2Geometry_msgsMsgWrench::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgWrench::class],
-            'Ros2Geometry_msgsMsgWrenchStamped' => Ros2Geometry_msgsMsgWrenchStamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgWrenchStamped::class],
-            'Ros2Geometry_msgsMsgInertia' => Ros2Geometry_msgsMsgInertia::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgInertia::class],
-            'Ros2Geometry_msgsMsgInertiaStamped' => Ros2Geometry_msgsMsgInertiaStamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgInertiaStamped::class],
-            'Ros2Geometry_msgsMsgPoint' => Ros2Geometry_msgsMsgPoint::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgPoint::class],
-            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgQuaternion::class],
-            'Ros2Geometry_msgsMsgPose' => Ros2Geometry_msgsMsgPose::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgPose::class],
-            'Ros2Geometry_msgsMsgPoseStamped' => Ros2Geometry_msgsMsgPoseStamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgPoseStamped::class],
-            'Ros2Geometry_msgsMsgTwist' => Ros2Geometry_msgsMsgTwist::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgTwist::class],
-            'Ros2Geometry_msgsMsgTwistStamped' => Ros2Geometry_msgsMsgTwistStamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgTwistStamped::class],
-            'Ros2Geometry_msgsMsgAccel' => Ros2Geometry_msgsMsgAccel::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgAccel::class],
-            'Ros2Geometry_msgsMsgAccelStamped' => Ros2Geometry_msgsMsgAccelStamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgAccelStamped::class],
-            'Ros2Geometry_msgsMsgVector3Stamped' => Ros2Geometry_msgsMsgVector3Stamped::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgVector3Stamped::class],
-            'Ros2Franka_msgsMsgFrankaRobotState' => Ros2Franka_msgsMsgFrankaRobotState::SCHEMA + ['class' =>
-            'Ros2Franka_msgsMsgFrankaRobotState::class],
-            'Ros2Franka_msgsSrvSetCartesianStiffness_Request' => Ros2Franka_msgsSrvSetCartesianStiffness_Request::SCHEMA
-            '+ ['class' => Ros2Franka_msgsSrvSetCartesianStiffness_Request::class],
-            'Ros2Franka_msgsSrvSetCartesianStiffness_Response' =>
-            'Ros2Franka_msgsSrvSetCartesianStiffness_Response::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetCartesianStiffness_Response::class],
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request' =>
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request::class],
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response' =>
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response::class],
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Request' =>
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Request::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Request::class],
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Response' =>
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Response::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Response::class],
-            'Ros2Franka_msgsSrvSetJointStiffness_Request' => Ros2Franka_msgsSrvSetJointStiffness_Request::SCHEMA +
-            '['class' => Ros2Franka_msgsSrvSetJointStiffness_Request::class],
-            'Ros2Franka_msgsSrvSetJointStiffness_Response' => Ros2Franka_msgsSrvSetJointStiffness_Response::SCHEMA +
-            '['class' => Ros2Franka_msgsSrvSetJointStiffness_Response::class],
-            'Ros2Franka_msgsSrvSetLoad_Request' => Ros2Franka_msgsSrvSetLoad_Request::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetLoad_Request::class],
-            'Ros2Franka_msgsSrvSetLoad_Response' => Ros2Franka_msgsSrvSetLoad_Response::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetLoad_Response::class],
-            'Ros2Franka_msgsSrvSetStiffnessFrame_Request' => Ros2Franka_msgsSrvSetStiffnessFrame_Request::SCHEMA +
-            '['class' => Ros2Franka_msgsSrvSetStiffnessFrame_Request::class],
-            'Ros2Franka_msgsSrvSetStiffnessFrame_Response' => Ros2Franka_msgsSrvSetStiffnessFrame_Response::SCHEMA +
-            '['class' => Ros2Franka_msgsSrvSetStiffnessFrame_Response::class],
-            'Ros2Franka_msgsSrvSetTCPFrame_Request' => Ros2Franka_msgsSrvSetTCPFrame_Request::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetTCPFrame_Request::class],
-            'Ros2Franka_msgsSrvSetTCPFrame_Response' => Ros2Franka_msgsSrvSetTCPFrame_Response::SCHEMA + ['class' =>
-            'Ros2Franka_msgsSrvSetTCPFrame_Response::class],
-            'Ros2Franka_spine_msgsActionMoveAbsolute_Goal' => Ros2Franka_spine_msgsActionMoveAbsolute_Goal::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsActionMoveAbsolute_Goal::class],
-            'Ros2Franka_spine_msgsActionMoveAbsolute_Result' => Ros2Franka_spine_msgsActionMoveAbsolute_Result::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsActionMoveAbsolute_Result::class],
-            'Ros2Franka_spine_msgsActionMoveAbsolute_Feedback' =>
-            'Ros2Franka_spine_msgsActionMoveAbsolute_Feedback::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsActionMoveAbsolute_Feedback::class],
-            'Ros2Franka_spine_msgsMsgUserLimits' => Ros2Franka_spine_msgsMsgUserLimits::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsMsgUserLimits::class],
-            'Ros2Franka_spine_msgsMsgSpineParameters' => Ros2Franka_spine_msgsMsgSpineParameters::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsMsgSpineParameters::class],
-            'Ros2Franka_spine_msgsMsgSpinePosition' => Ros2Franka_spine_msgsMsgSpinePosition::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsMsgSpinePosition::class],
-            'Ros2Franka_spine_msgsMsgSpineState' => Ros2Franka_spine_msgsMsgSpineState::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsMsgSpineState::class],
-            'Ros2Franka_spine_msgsSrvFaultReset_Request' => Ros2Franka_spine_msgsSrvFaultReset_Request::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvFaultReset_Request::class],
-            'Ros2Franka_spine_msgsSrvFaultReset_Response' => Ros2Franka_spine_msgsSrvFaultReset_Response::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvFaultReset_Response::class],
-            'Ros2Franka_spine_msgsSrvGetParameters_Request' => Ros2Franka_spine_msgsSrvGetParameters_Request::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetParameters_Request::class],
-            'Ros2Franka_spine_msgsSrvGetParameters_Response' => Ros2Franka_spine_msgsSrvGetParameters_Response::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetParameters_Response::class],
-            'Ros2Franka_spine_msgsSrvGetPosition_Request' => Ros2Franka_spine_msgsSrvGetPosition_Request::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetPosition_Request::class],
-            'Ros2Franka_spine_msgsSrvGetPosition_Response' => Ros2Franka_spine_msgsSrvGetPosition_Response::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetPosition_Response::class],
-            'Ros2Franka_spine_msgsSrvGetSpineState_Request' => Ros2Franka_spine_msgsSrvGetSpineState_Request::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetSpineState_Request::class],
-            'Ros2Franka_spine_msgsSrvGetSpineState_Response' => Ros2Franka_spine_msgsSrvGetSpineState_Response::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvGetSpineState_Response::class],
-            'Ros2Franka_spine_msgsSrvHalt_Request' => Ros2Franka_spine_msgsSrvHalt_Request::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsSrvHalt_Request::class],
-            'Ros2Franka_spine_msgsSrvHalt_Response' => Ros2Franka_spine_msgsSrvHalt_Response::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsSrvHalt_Response::class],
-            'Ros2Franka_spine_msgsSrvSwitchOff_Request' => Ros2Franka_spine_msgsSrvSwitchOff_Request::SCHEMA + ['class'
-            '=> Ros2Franka_spine_msgsSrvSwitchOff_Request::class],
-            'Ros2Franka_spine_msgsSrvSwitchOff_Response' => Ros2Franka_spine_msgsSrvSwitchOff_Response::SCHEMA +
-            '['class' => Ros2Franka_spine_msgsSrvSwitchOff_Response::class],
-            'Ros2Franka_spine_msgsSrvSwitchOn_Request' => Ros2Franka_spine_msgsSrvSwitchOn_Request::SCHEMA + ['class' =>
-            'Ros2Franka_spine_msgsSrvSwitchOn_Request::class],
-            'Ros2Franka_spine_msgsSrvSwitchOn_Response' => Ros2Franka_spine_msgsSrvSwitchOn_Response::SCHEMA + ['class'
-            '=> Ros2Franka_spine_msgsSrvSwitchOn_Response::class],
+            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + [
+                'class' => Ros2Builtin_interfacesMsgTime::class
+            ],
+            'Ros2Franka_msgsActionErrorRecovery_Goal' => Ros2Franka_msgsActionErrorRecovery_Goal::SCHEMA + [
+                'class' => Ros2Franka_msgsActionErrorRecovery_Goal::class
+            ],
+            'Ros2Franka_msgsActionErrorRecovery_Result' => Ros2Franka_msgsActionErrorRecovery_Result::SCHEMA + [
+                'class' => Ros2Franka_msgsActionErrorRecovery_Result::class
+            ],
+            'Ros2Franka_msgsActionErrorRecovery_Feedback' => Ros2Franka_msgsActionErrorRecovery_Feedback::SCHEMA + [
+                'class' => Ros2Franka_msgsActionErrorRecovery_Feedback::class
+            ],
+            'Ros2Franka_msgsMsgGraspEpsilon' => Ros2Franka_msgsMsgGraspEpsilon::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgGraspEpsilon::class
+            ],
+            'Ros2Franka_msgsActionGrasp_Goal' => Ros2Franka_msgsActionGrasp_Goal::SCHEMA + [
+                'class' => Ros2Franka_msgsActionGrasp_Goal::class
+            ],
+            'Ros2Franka_msgsActionGrasp_Result' => Ros2Franka_msgsActionGrasp_Result::SCHEMA + [
+                'class' => Ros2Franka_msgsActionGrasp_Result::class
+            ],
+            'Ros2Franka_msgsActionGrasp_Feedback' => Ros2Franka_msgsActionGrasp_Feedback::SCHEMA + [
+                'class' => Ros2Franka_msgsActionGrasp_Feedback::class
+            ],
+            'Ros2Franka_msgsActionHoming_Goal' => Ros2Franka_msgsActionHoming_Goal::SCHEMA + [
+                'class' => Ros2Franka_msgsActionHoming_Goal::class
+            ],
+            'Ros2Franka_msgsActionHoming_Result' => Ros2Franka_msgsActionHoming_Result::SCHEMA + [
+                'class' => Ros2Franka_msgsActionHoming_Result::class
+            ],
+            'Ros2Franka_msgsActionHoming_Feedback' => Ros2Franka_msgsActionHoming_Feedback::SCHEMA + [
+                'class' => Ros2Franka_msgsActionHoming_Feedback::class
+            ],
+            'Ros2Franka_msgsActionMove_Goal' => Ros2Franka_msgsActionMove_Goal::SCHEMA + [
+                'class' => Ros2Franka_msgsActionMove_Goal::class
+            ],
+            'Ros2Franka_msgsActionMove_Result' => Ros2Franka_msgsActionMove_Result::SCHEMA + [
+                'class' => Ros2Franka_msgsActionMove_Result::class
+            ],
+            'Ros2Franka_msgsActionMove_Feedback' => Ros2Franka_msgsActionMove_Feedback::SCHEMA + [
+                'class' => Ros2Franka_msgsActionMove_Feedback::class
+            ],
+            'Ros2Franka_msgsActionPTPMotion_Goal' => Ros2Franka_msgsActionPTPMotion_Goal::SCHEMA + [
+                'class' => Ros2Franka_msgsActionPTPMotion_Goal::class
+            ],
+            'Ros2Franka_msgsMsgTargetStatus' => Ros2Franka_msgsMsgTargetStatus::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgTargetStatus::class
+            ],
+            'Ros2Franka_msgsActionPTPMotion_Result' => Ros2Franka_msgsActionPTPMotion_Result::SCHEMA + [
+                'class' => Ros2Franka_msgsActionPTPMotion_Result::class
+            ],
+            'Ros2Franka_msgsActionPTPMotion_Feedback' => Ros2Franka_msgsActionPTPMotion_Feedback::SCHEMA + [
+                'class' => Ros2Franka_msgsActionPTPMotion_Feedback::class
+            ],
+            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgVector3::class
+            ],
+            'Ros2Franka_msgsMsgCollisionIndicators' => Ros2Franka_msgsMsgCollisionIndicators::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgCollisionIndicators::class
+            ],
+            'Ros2Franka_msgsMsgElbow' => Ros2Franka_msgsMsgElbow::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgElbow::class
+            ],
+            'Ros2Franka_msgsMsgErrors' => Ros2Franka_msgsMsgErrors::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgErrors::class
+            ],
+            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + [
+                'class' => Ros2Std_msgsMsgHeader::class
+            ],
+            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + [
+                'class' => Ros2Sensor_msgsMsgJointState::class
+            ],
+            'Ros2Geometry_msgsMsgWrench' => Ros2Geometry_msgsMsgWrench::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgWrench::class
+            ],
+            'Ros2Geometry_msgsMsgWrenchStamped' => Ros2Geometry_msgsMsgWrenchStamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgWrenchStamped::class
+            ],
+            'Ros2Geometry_msgsMsgInertia' => Ros2Geometry_msgsMsgInertia::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgInertia::class
+            ],
+            'Ros2Geometry_msgsMsgInertiaStamped' => Ros2Geometry_msgsMsgInertiaStamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgInertiaStamped::class
+            ],
+            'Ros2Geometry_msgsMsgPoint' => Ros2Geometry_msgsMsgPoint::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgPoint::class
+            ],
+            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgQuaternion::class
+            ],
+            'Ros2Geometry_msgsMsgPose' => Ros2Geometry_msgsMsgPose::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgPose::class
+            ],
+            'Ros2Geometry_msgsMsgPoseStamped' => Ros2Geometry_msgsMsgPoseStamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgPoseStamped::class
+            ],
+            'Ros2Geometry_msgsMsgTwist' => Ros2Geometry_msgsMsgTwist::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgTwist::class
+            ],
+            'Ros2Geometry_msgsMsgTwistStamped' => Ros2Geometry_msgsMsgTwistStamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgTwistStamped::class
+            ],
+            'Ros2Geometry_msgsMsgAccel' => Ros2Geometry_msgsMsgAccel::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgAccel::class
+            ],
+            'Ros2Geometry_msgsMsgAccelStamped' => Ros2Geometry_msgsMsgAccelStamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgAccelStamped::class
+            ],
+            'Ros2Geometry_msgsMsgVector3Stamped' => Ros2Geometry_msgsMsgVector3Stamped::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgVector3Stamped::class
+            ],
+            'Ros2Franka_msgsMsgFrankaRobotState' => Ros2Franka_msgsMsgFrankaRobotState::SCHEMA + [
+                'class' => Ros2Franka_msgsMsgFrankaRobotState::class
+            ],
+            'Ros2Franka_msgsSrvSetCartesianStiffness_Request' => Ros2Franka_msgsSrvSetCartesianStiffness_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetCartesianStiffness_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetCartesianStiffness_Response' => Ros2Franka_msgsSrvSetCartesianStiffness_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetCartesianStiffness_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request' => Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response' => Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetForceTorqueCollisionBehavior_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Request' => Ros2Franka_msgsSrvSetFullCollisionBehavior_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetFullCollisionBehavior_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetFullCollisionBehavior_Response' => Ros2Franka_msgsSrvSetFullCollisionBehavior_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetFullCollisionBehavior_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetJointStiffness_Request' => Ros2Franka_msgsSrvSetJointStiffness_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetJointStiffness_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetJointStiffness_Response' => Ros2Franka_msgsSrvSetJointStiffness_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetJointStiffness_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetLoad_Request' => Ros2Franka_msgsSrvSetLoad_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetLoad_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetLoad_Response' => Ros2Franka_msgsSrvSetLoad_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetLoad_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetStiffnessFrame_Request' => Ros2Franka_msgsSrvSetStiffnessFrame_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetStiffnessFrame_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetStiffnessFrame_Response' => Ros2Franka_msgsSrvSetStiffnessFrame_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetStiffnessFrame_Response::class
+            ],
+            'Ros2Franka_msgsSrvSetTCPFrame_Request' => Ros2Franka_msgsSrvSetTCPFrame_Request::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetTCPFrame_Request::class
+            ],
+            'Ros2Franka_msgsSrvSetTCPFrame_Response' => Ros2Franka_msgsSrvSetTCPFrame_Response::SCHEMA + [
+                'class' => Ros2Franka_msgsSrvSetTCPFrame_Response::class
+            ],
+            'Ros2Franka_spine_msgsActionMoveAbsolute_Goal' => Ros2Franka_spine_msgsActionMoveAbsolute_Goal::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsActionMoveAbsolute_Goal::class
+            ],
+            'Ros2Franka_spine_msgsActionMoveAbsolute_Result' => Ros2Franka_spine_msgsActionMoveAbsolute_Result::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsActionMoveAbsolute_Result::class
+            ],
+            'Ros2Franka_spine_msgsActionMoveAbsolute_Feedback' => Ros2Franka_spine_msgsActionMoveAbsolute_Feedback::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsActionMoveAbsolute_Feedback::class
+            ],
+            'Ros2Franka_spine_msgsMsgUserLimits' => Ros2Franka_spine_msgsMsgUserLimits::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsMsgUserLimits::class
+            ],
+            'Ros2Franka_spine_msgsMsgSpineParameters' => Ros2Franka_spine_msgsMsgSpineParameters::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsMsgSpineParameters::class
+            ],
+            'Ros2Franka_spine_msgsMsgSpinePosition' => Ros2Franka_spine_msgsMsgSpinePosition::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsMsgSpinePosition::class
+            ],
+            'Ros2Franka_spine_msgsMsgSpineState' => Ros2Franka_spine_msgsMsgSpineState::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsMsgSpineState::class
+            ],
+            'Ros2Franka_spine_msgsSrvFaultReset_Request' => Ros2Franka_spine_msgsSrvFaultReset_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvFaultReset_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvFaultReset_Response' => Ros2Franka_spine_msgsSrvFaultReset_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvFaultReset_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetParameters_Request' => Ros2Franka_spine_msgsSrvGetParameters_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetParameters_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetParameters_Response' => Ros2Franka_spine_msgsSrvGetParameters_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetParameters_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetPosition_Request' => Ros2Franka_spine_msgsSrvGetPosition_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetPosition_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetPosition_Response' => Ros2Franka_spine_msgsSrvGetPosition_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetPosition_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetSpineState_Request' => Ros2Franka_spine_msgsSrvGetSpineState_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetSpineState_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvGetSpineState_Response' => Ros2Franka_spine_msgsSrvGetSpineState_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvGetSpineState_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvHalt_Request' => Ros2Franka_spine_msgsSrvHalt_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvHalt_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvHalt_Response' => Ros2Franka_spine_msgsSrvHalt_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvHalt_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvSwitchOff_Request' => Ros2Franka_spine_msgsSrvSwitchOff_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvSwitchOff_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvSwitchOff_Response' => Ros2Franka_spine_msgsSrvSwitchOff_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvSwitchOff_Response::class
+            ],
+            'Ros2Franka_spine_msgsSrvSwitchOn_Request' => Ros2Franka_spine_msgsSrvSwitchOn_Request::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvSwitchOn_Request::class
+            ],
+            'Ros2Franka_spine_msgsSrvSwitchOn_Response' => Ros2Franka_spine_msgsSrvSwitchOn_Response::SCHEMA + [
+                'class' => Ros2Franka_spine_msgsSrvSwitchOn_Response::class
+            ],
         ]);
         return $wire;
     }

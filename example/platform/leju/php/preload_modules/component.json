@@ -6427,7 +6427,7 @@
     {
       "scope": "sdk",
       "path": "src/language/php/command.c",
-      "sha256": "57178a7d8e506baa2857d830fbd9cab8d486848975b67d923c6f5ed10547427a"
+      "sha256": "c017ca384e21787cbbdcf294dbcbda8444ec8a8b2025c92e429214021c5c3d41"
     },
     {
       "scope": "sdk",

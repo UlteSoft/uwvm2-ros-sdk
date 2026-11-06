@@ -178,7 +178,6 @@ static zend_function_entry const functions[] = {
 };
 // clang-format on
 
-#if defined(UWVM_LANGUAGE_PURE_WASI)
 /** Expose the command's existing standard streams as ordinary PHP resources.
  * These guest-side wrappers grant no host permission and open no pathname.
  * SAPI/libc owns the FILE objects through shutdown; resources borrow them.
@@ -206,7 +205,6 @@ static zend_result command_standard_streams(void)
     }
     return SUCCESS;
 }
-#endif
 
 /**
  * @brief Start genuine Zend and execute the packed PHP source.
@@ -231,12 +229,10 @@ static int php_application(int argc, char** argv)
         {
             status = 22;
         }
-#if defined(UWVM_LANGUAGE_PURE_WASI)
         else if (command_standard_streams() != SUCCESS)
         {
             status = 1;
         }
-#endif
         else if (zend_register_functions(NULL, functions, NULL, MODULE_TEMPORARY) == SUCCESS)
         {
             zend_result evaluated = zend_eval_stringl((char const*)application.source, length, NULL, "uwvm-application");

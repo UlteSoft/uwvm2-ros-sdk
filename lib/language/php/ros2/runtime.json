@@ -4,55 +4,21 @@
   "version": "8.4.13",
   "target": "wasm32-wasip1",
   "ros_backend": "ros2",
-  "bytes": 10585250,
-  "sha256": "c2ab349325ce544c931dbc4916534324c77cbc6b15a255014aab33c1ed4894b5",
+  "bytes": 10586213,
+  "sha256": "b2960e3c87a03ce2f71c5c5c5965ddb35b17b828f06aaa622ca7019084ac41ac",
   "maximum_pages": 16384,
   "abi_profile": "complete-ros-v1",
   "ros_import_count": 43,
   "canonical_abi_sha256": "0a13f6c49100173c156eb76acfd35ebe103a40b2a90c752d3d1302c31f875ec0",
-  "construction_receipt_sha256": "2b29bad3814fb49ec7d9191028809a6166144227f2418cb527e45a2277d0d538",
-  "qualification": "Explicit exit and uncaught-exception status cases passed in actual LLVM-only Wasm execution",
-  "qualification_scope": "Engine startup/exit semantics only; individual SDK examples and native ROS integration require their own tests",
+  "construction_receipt_sha256": "0cafecc58c6f004260e215cb0f4e99371fd4068aa955a68d959a11f70fb5ac29",
+  "qualification": "Actual ROS-namespace PHP command reads and writes standard streams inside Wasm with explicit WASIp1 grants",
+  "qualification_scope": "Standard stream startup and original record roundtrip; other examples and native integration have separate qualification",
   "qualification_receipts": [
     {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch45-reports/10001/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_917e029e578411fa1096b32e4fb962dd/suite.json",
-      "sha256": "8f13b94177d437574a485bd8a27a817c860ed3237f12f31a3988e12117a3bb4a",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch45-reports/10004/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_ea9fd27c5211f2579835b4a86a9d73df/suite.json",
-      "sha256": "667ae3fd4d3c9a7d5d17a0a2f621c515fe5c0a7ebfd614b10ce7928f26164a0f",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch45-reports/10002/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_7f906b42782eac46998f9deca38d4e3d/suite.json",
-      "sha256": "d88afc2e6ac1be8cbacf4e0dfcd5dfacbcc98c4b1b7ceb8e57d251ff28904297",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch45-reports/10003/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_cf043217a70b41745420cd343e3d99dc/suite.json",
-      "sha256": "8d81324647c38cbbf12c81e252f6b2dbb39d4276d7717735da4b888cb2a7996a",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch58-reports/10006/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_1a6babd5a0d5e728ee23c7941f54fc43/suite.json",
-      "sha256": "05481e4d5f929cd4aa4b7e41b4434f8a0fbdb66bfd89cd8d23ad7fea6f1e8270",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch58-reports/10009/evidence/guest-tests/646f6f73616e5f726f73315f73746174655f636f646563/_fdef6acf48c11de31b7561fb1aad3d42/suite.json",
-      "sha256": "be5b2aa16271c0cf403eb8ab7cbad401d359b6219a908b8fb13e218033bf7d4d",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch58-reports/10005/evidence/guest-tests/646f6f73616e5f726f73325f73746174655f636f646563/_2f26699996fe8baa7aac2cfd6babd5b0/suite.json",
-      "sha256": "4a9aed8fd50a8399a59749148bff0e25d4009672a695f6f3a8a394b6071651fa",
-      "cases": 1
-    },
-    {
-      "path": "/home/macromodel/Documents/src/uwvm2-ros/.tmp/sdk-repair-20261104/batch58-reports/10008/evidence/guest-tests/646f6f73616e5f726f73315f73746174655f636f646563/_9a38f942d20c2430eb0d6426a5ede9d1/suite.json",
-      "sha256": "d17c3b7c4387d55bf8c58d962b02dc39f7f8cbc1b7b63d4edfebf62dedb8cd58",
-      "cases": 1
+      "sha256": "695569c7bb52564978cec659e9e04ee51ef1adbbc5e08fc4b9910b7509e76725",
+      "cases": 1,
+      "kind": "local-execution-receipt-sha256"
     }
-  ]
+  ],
+  "command_source_sha256": "c017ca384e21787cbbdcf294dbcbda8444ec8a8b2025c92e429214021c5c3d41"
 }

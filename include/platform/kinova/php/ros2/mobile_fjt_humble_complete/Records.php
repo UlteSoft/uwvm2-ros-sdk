@@ -1968,43 +1968,57 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros2Builtin_interfacesMsgDuration' => Ros2Builtin_interfacesMsgDuration::SCHEMA + ['class' =>
-            'Ros2Builtin_interfacesMsgDuration::class],
-            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + ['class' =>
-            'Ros2Builtin_interfacesMsgTime::class],
-            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + ['class' => Ros2Std_msgsMsgHeader::class],
-            'Ros2Trajectory_msgsMsgJointTrajectoryPoint' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::SCHEMA +
-            '['class' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::class],
-            'Ros2Trajectory_msgsMsgJointTrajectory' => Ros2Trajectory_msgsMsgJointTrajectory::SCHEMA + ['class' =>
-            'Ros2Trajectory_msgsMsgJointTrajectory::class],
-            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgVector3::class],
-            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgQuaternion::class],
-            'Ros2Geometry_msgsMsgTransform' => Ros2Geometry_msgsMsgTransform::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgTransform::class],
-            'Ros2Geometry_msgsMsgTwist' => Ros2Geometry_msgsMsgTwist::SCHEMA + ['class' =>
-            'Ros2Geometry_msgsMsgTwist::class],
-            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint' =>
-            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint::SCHEMA + ['class' =>
-            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint::class],
-            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectory' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectory::SCHEMA +
-            '['class' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectory::class],
-            'Ros2Control_msgsMsgJointTolerance' => Ros2Control_msgsMsgJointTolerance::SCHEMA + ['class' =>
-            'Ros2Control_msgsMsgJointTolerance::class],
-            'Ros2Control_msgsMsgJointComponentTolerance' => Ros2Control_msgsMsgJointComponentTolerance::SCHEMA +
-            '['class' => Ros2Control_msgsMsgJointComponentTolerance::class],
-            'Ros2Control_msgsActionFollowJointTrajectory_Goal' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Goal::SCHEMA + ['class' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Goal::class],
-            'Ros2Control_msgsActionFollowJointTrajectory_Result' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Result::SCHEMA + ['class' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Result::class],
-            'Ros2Control_msgsActionFollowJointTrajectory_Feedback' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Feedback::SCHEMA + ['class' =>
-            'Ros2Control_msgsActionFollowJointTrajectory_Feedback::class],
-            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + ['class' =>
-            'Ros2Sensor_msgsMsgJointState::class],
+            'Ros2Builtin_interfacesMsgDuration' => Ros2Builtin_interfacesMsgDuration::SCHEMA + [
+                'class' => Ros2Builtin_interfacesMsgDuration::class
+            ],
+            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + [
+                'class' => Ros2Builtin_interfacesMsgTime::class
+            ],
+            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + [
+                'class' => Ros2Std_msgsMsgHeader::class
+            ],
+            'Ros2Trajectory_msgsMsgJointTrajectoryPoint' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::class
+            ],
+            'Ros2Trajectory_msgsMsgJointTrajectory' => Ros2Trajectory_msgsMsgJointTrajectory::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgJointTrajectory::class
+            ],
+            'Ros2Geometry_msgsMsgVector3' => Ros2Geometry_msgsMsgVector3::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgVector3::class
+            ],
+            'Ros2Geometry_msgsMsgQuaternion' => Ros2Geometry_msgsMsgQuaternion::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgQuaternion::class
+            ],
+            'Ros2Geometry_msgsMsgTransform' => Ros2Geometry_msgsMsgTransform::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgTransform::class
+            ],
+            'Ros2Geometry_msgsMsgTwist' => Ros2Geometry_msgsMsgTwist::SCHEMA + [
+                'class' => Ros2Geometry_msgsMsgTwist::class
+            ],
+            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectoryPoint::class
+            ],
+            'Ros2Trajectory_msgsMsgMultiDOFJointTrajectory' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectory::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgMultiDOFJointTrajectory::class
+            ],
+            'Ros2Control_msgsMsgJointTolerance' => Ros2Control_msgsMsgJointTolerance::SCHEMA + [
+                'class' => Ros2Control_msgsMsgJointTolerance::class
+            ],
+            'Ros2Control_msgsMsgJointComponentTolerance' => Ros2Control_msgsMsgJointComponentTolerance::SCHEMA + [
+                'class' => Ros2Control_msgsMsgJointComponentTolerance::class
+            ],
+            'Ros2Control_msgsActionFollowJointTrajectory_Goal' => Ros2Control_msgsActionFollowJointTrajectory_Goal::SCHEMA + [
+                'class' => Ros2Control_msgsActionFollowJointTrajectory_Goal::class
+            ],
+            'Ros2Control_msgsActionFollowJointTrajectory_Result' => Ros2Control_msgsActionFollowJointTrajectory_Result::SCHEMA + [
+                'class' => Ros2Control_msgsActionFollowJointTrajectory_Result::class
+            ],
+            'Ros2Control_msgsActionFollowJointTrajectory_Feedback' => Ros2Control_msgsActionFollowJointTrajectory_Feedback::SCHEMA + [
+                'class' => Ros2Control_msgsActionFollowJointTrajectory_Feedback::class
+            ],
+            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + [
+                'class' => Ros2Sensor_msgsMsgJointState::class
+            ],
         ]);
         return $wire;
     }

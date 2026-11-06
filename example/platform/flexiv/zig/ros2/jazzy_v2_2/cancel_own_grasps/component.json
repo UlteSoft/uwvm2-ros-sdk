@@ -842,42 +842,42 @@
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/controller_core_foxy.json",
-      "sha256": "d39129b2711e0ee8112ca922fdd6dba49ab95f0b35cd699ebd0e3e799702300c"
+      "sha256": "56e891132cfcbd61d5e3bcfbf3ac0e95032003d3323e9697c21f68c0a60c3af8"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/controller_core_humble.json",
-      "sha256": "396bcecb75b3e1d182c9383d5c487bc0edb4b2d3a24b95e87f0b0bae1bef559c"
+      "sha256": "73352807e528376165f28175b1694943fbf18b18fd45dcad55d083505a6e8195"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros1_noetic.json",
-      "sha256": "f0ae55ba04745ae4d932776c6ade0b4be587d4961c0026ac4e37b30b8a4191e1"
+      "sha256": "62c50d474b90f7b0adba21c4fd9ea7bd9a152b8578bf62979bdf6076cdb86657"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros2_foxy.json",
-      "sha256": "c11786f66d7c67380c791909748a233eefc5336bf0d00351cce0e7f5e6e3fe61"
+      "sha256": "6563c6e008cd35d6799cdf21c109e39a286e28e29830d8f724739dcc803016a2"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros2_humble_v2.json",
-      "sha256": "b71443b0674c6cdd6f528d2abe6d00db7c8db605a8931a26a83a67380fa1be06"
+      "sha256": "5a690abe0c8d08a700b9e8652bbb04aaf063cb3f381aa6931ae67bdc1bc4aaab"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros2_humble_v2_2.json",
-      "sha256": "6a9fed054ad10ccf75f5f9dc22520cfc17cd41e233e02e5c995b8e868e2507d3"
+      "sha256": "74e70bf4fbf235fd49cbaf63b3bfa00a7747ffd4c6ac6a8795e23e9e0294bc4d"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros2_jazzy_v2.json",
-      "sha256": "33ac73a5d89fa6b9e969b3566b61472a4d3c01ecd1d493195ef71b264276ae4a"
+      "sha256": "f7a0eca424951be4eeef7d3ba67e690438b91e44f35822ff52edcfb9474d2e3b"
     },
     {
       "scope": "sdk",
       "path": "share/platform/flexiv/bindings/ruby/ros2_jazzy_v2_2.json",
-      "sha256": "388aeb79733eef74099d56134186fa9663d488d743e4461473259e3de8bd094b"
+      "sha256": "7f19257ca41839fe99438fdf7f9cbca2d1e16096cc532bc54eb592b223b8cbc7"
     },
     {
       "scope": "sdk",

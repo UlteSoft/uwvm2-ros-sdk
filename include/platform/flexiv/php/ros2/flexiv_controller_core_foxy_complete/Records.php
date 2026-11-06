@@ -854,23 +854,33 @@ final class Catalog
     {
         static $wire = null;
         if ($wire === null) $wire = new Wire([
-            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + ['class' =>
-            'Ros2Builtin_interfacesMsgTime::class],
-            'Ros2Builtin_interfacesMsgDuration' => Ros2Builtin_interfacesMsgDuration::SCHEMA + ['class' =>
-            'Ros2Builtin_interfacesMsgDuration::class],
-            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + ['class' => Ros2Std_msgsMsgHeader::class],
-            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + ['class' =>
-            'Ros2Sensor_msgsMsgJointState::class],
-            'Ros2Trajectory_msgsMsgJointTrajectoryPoint' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::SCHEMA +
-            '['class' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::class],
-            'Ros2Trajectory_msgsMsgJointTrajectory' => Ros2Trajectory_msgsMsgJointTrajectory::SCHEMA + ['class' =>
-            'Ros2Trajectory_msgsMsgJointTrajectory::class],
-            'Ros2Std_msgsMsgMultiArrayDimension' => Ros2Std_msgsMsgMultiArrayDimension::SCHEMA + ['class' =>
-            'Ros2Std_msgsMsgMultiArrayDimension::class],
-            'Ros2Std_msgsMsgMultiArrayLayout' => Ros2Std_msgsMsgMultiArrayLayout::SCHEMA + ['class' =>
-            'Ros2Std_msgsMsgMultiArrayLayout::class],
-            'Ros2Std_msgsMsgFloat64MultiArray' => Ros2Std_msgsMsgFloat64MultiArray::SCHEMA + ['class' =>
-            'Ros2Std_msgsMsgFloat64MultiArray::class],
+            'Ros2Builtin_interfacesMsgTime' => Ros2Builtin_interfacesMsgTime::SCHEMA + [
+                'class' => Ros2Builtin_interfacesMsgTime::class
+            ],
+            'Ros2Builtin_interfacesMsgDuration' => Ros2Builtin_interfacesMsgDuration::SCHEMA + [
+                'class' => Ros2Builtin_interfacesMsgDuration::class
+            ],
+            'Ros2Std_msgsMsgHeader' => Ros2Std_msgsMsgHeader::SCHEMA + [
+                'class' => Ros2Std_msgsMsgHeader::class
+            ],
+            'Ros2Sensor_msgsMsgJointState' => Ros2Sensor_msgsMsgJointState::SCHEMA + [
+                'class' => Ros2Sensor_msgsMsgJointState::class
+            ],
+            'Ros2Trajectory_msgsMsgJointTrajectoryPoint' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgJointTrajectoryPoint::class
+            ],
+            'Ros2Trajectory_msgsMsgJointTrajectory' => Ros2Trajectory_msgsMsgJointTrajectory::SCHEMA + [
+                'class' => Ros2Trajectory_msgsMsgJointTrajectory::class
+            ],
+            'Ros2Std_msgsMsgMultiArrayDimension' => Ros2Std_msgsMsgMultiArrayDimension::SCHEMA + [
+                'class' => Ros2Std_msgsMsgMultiArrayDimension::class
+            ],
+            'Ros2Std_msgsMsgMultiArrayLayout' => Ros2Std_msgsMsgMultiArrayLayout::SCHEMA + [
+                'class' => Ros2Std_msgsMsgMultiArrayLayout::class
+            ],
+            'Ros2Std_msgsMsgFloat64MultiArray' => Ros2Std_msgsMsgFloat64MultiArray::SCHEMA + [
+                'class' => Ros2Std_msgsMsgFloat64MultiArray::class
+            ],
         ]);
         return $wire;
     }
