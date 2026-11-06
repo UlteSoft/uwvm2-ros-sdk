@@ -23,11 +23,21 @@ target("rosjava-namespace-contract")
         assert(config.format == "uwvm-java-component-runtime-v1")
         assert(os.isfile(config.runtime) and hash.sha256(config.runtime) == config.sha256,
             "Use the exact frozen Wasm runtime from the qualification inputs")
-        assert(#config.arguments == 1 and config.arguments[1] == "--runtime-aot")
-        local output = path.join(current:scriptdir(), ".uwvm-ros/legacy-tests/rosjava-namespace")
-        assert(not os.exists(output), "Preserve each original compiler test result")
+        local arguments = table.concat(config.arguments, "\0")
+        assert(arguments == "--runtime-aot" or arguments ==
+            table.concat({"-Raot", "--log-verbose", "--runtime-compile-threads", "1", "--runtime-llvm-jit-policy", "debug"}, "\0"),
+            "Select the ordinary or explicitly traced AOT runtime")
+        local artifacts = import("artifact_contract", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true})
+        local evidence = os.getenv("UWVM_ROS_TEST_EVIDENCE_ROOT")
+        assert(not evidence or path.is_absolute(evidence), "Select an absolute test evidence directory")
+        local root = evidence and path.join(evidence, "compiler-tests", artifacts.identity(current))
+            or artifacts.workspace(current, "compiler-tests")
+        local output = path.join(root, path.filename(os.tmpfile({ramdisk = false})))
+        assert(not os.exists(output), "Preserve each compiler test execution")
         os.mkdir(output)
-        local argv = {"--runtime-aot", "--ros2-global-disable", "--wasm-set-main-module-name", "main"}
+        local argv = {}
+        for _, argument in ipairs(config.arguments) do table.insert(argv, argument) end
+        table.join2(argv, {"--ros1-global-disable", "--ros2-global-disable", "--wasm-set-main-module-name", "main"})
         argv = import("wasi_policy", {rootdir = path.join(sdk, "tools/xmake"), anonymous = true}).test_arguments(argv, config.wasi_policy, {main=path.absolute(current:targetfile())})
         table.join2(argv, {"--run", current:targetfile()})
         local stdout, stderr = path.join(output, "VM.stdout"), path.join(output, "VM.stderr")
