@@ -1,85 +1,67 @@
-# FANUC official software simulation
+# FANUC original-controller Wasm example
 
-Profile `fanuc-crx10ia-official-mock-jazzy` is **BLOCKED: real Wasm ROS migration required**.
-The SDK-authored host ROS query implementation was physically removed from the
-public SDK. Its historical role was read-only subscriptions and controller/result
-queries; it did not submit goals. The public test declaration has no executable
-scenario driver while migration is missing. No archived implementation is used.
+`main.c` runs the joint client in Wasm through `uwvm2-ros`. The native side uses
+the original FANUC CRX10iA model with `mock_components/GenericSystem` and
+`fanuc_controllers/ScaledJointTrajectoryController`. Goal construction, complete
+typed message decoding, result checks and joint-position comparisons execute
+inside Wasm. No native application implements this business logic.
 
-The normal build target `fanuc-official-joint-step` compiles the unchanged local `main.c`
-through the shared C/WASI producer. It must match the canonical 4,449-byte
-`lib/platform/ros/portable/v0.1.0/joint-step.wasm`, SHA256
-`c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043`.
-The shared source is `example/platform/ros/portable/v0_1_0/joint_step/main.c`.
-This portable C program does not establish upstream rcl/rclcpp/rclpy/rcljava or
-ROS1 client-library migration. Compatible vendor runs must retain the same whole
-application SHA; platform selection and reviewed grants remain external.
-
-From this directory, the public commands are:
+Build and test from this directory using an existing SDK tool cache:
 
 ```sh
-xmake
-xmake test
+xmake f -P . --ros-tool-cache=/absolute/existing/tool-cache
+xmake -P .
+UWVM_ROS_FANUC_TEST_CONFIG=/absolute/host/deployment.json xmake test -P .
 ```
 
-`xmake test` reuses the built exact artifact and refuses a missing or changed
-output. It does not compile, relink or rewrite the application. The manifest's
-`required_implementation` declares an explicit non-success result for all five
-required scenario groups: unchanged-Wasm joint step, denied permission with no
-native effect, bounds/stale/foreign references, cancel/timeout/disconnect, and
-pause/restart/update/rollback. These remain required CI rows. Missing migration,
-runtime, provider or tests cannot produce a passing or zero-test result. The
-updated declaration is source-only pending fresh Linux public-command evidence.
+`deployment.template.json` is an unbound, explicit host configuration. Fill the
+installed runtime/gateway/native executable paths and SHA256 values, choose an
+owned mode-0700 socket directory, and review each case's WASI grants, ROS aliases,
+resource names, complete native type identities, codec identities and QoS.
+The runtime and gateway must be built with the matching bound custom catalog.
+`prepare_bindings.py` only produces guest records from the complete original
+message/action declarations; it cannot establish a native ABI identity.
 
-The SDK01 `uwvm_simulation_example` declaration and
-`uwvm.simulation-example.v1` rule own shared test registration and accounting.
-The local Xmake file consumes that API read-only. The original SDK root and
-ancestor project must remain in validation; private project-selection shortcuts
-cannot establish the public entry. Prior failed command transcripts retain
-their exact old source identity and scope.
+Every VM starts with the configured basic WASIp1 authorization. The test helper
+exposes only the artifact's imported interfaces; explicit hidden/deny settings
+still take precedence. Interface exposure does not grant resources. WASI
+operations and ROS resource grants remain separate, explicit host settings.
+No frequency quota is added automatically. The timeout scenario explicitly
+selects a 100 ms missing-server deadline. The message profile admits NaN in the
+original JointState float fields: absent mock effort remains NaN, while position
+checks require finite values. Infinity is refused by the codec.
 
-The external environment is the official CRX10iA Xacro with `use_mock:=true`
-and the original controller YAML under ROS 2 Jazzy. `scene.launch.py` verifies
-installed source hashes, renders the original model and composes controller
-manager, robot_state_publisher and original spawners in `fanuc_simulation`.
-Preserve `fanuc_controllers/ScaledJointTrajectoryController`. GenericSystem
-models ideal command/state mirroring; physics, contact and commercial controller
-emulation remain separate required profiles.
+The suite executes all eight scenarios in both the LLVM JIT and interpreter:
+successful joint motion, denied send with unchanged state, bounds/stale/cancel
+scope errors, cancel-own-goal, missing-server timeout, actual gateway disconnect,
+and a simultaneous owner/foreign-VM handle-isolation pair. The same immutable
+Wasm bytes execute in all 16 cases. `xmake test` verifies the build inputs and
+artifact instead of rebuilding. Missing configuration, fewer cases, failed
+assertions or unretired actors cause failure. It writes `suite.json`, raw logs,
+process lifetime/executable identities and the exact guest image under
+`UWVM_ROS_TEST_OUTPUT_ROOT` (or the target's test evidence directory).
 
-Original provider source: [FANUC-CORPORATION/fanuc_driver](https://github.com/FANUC-CORPORATION/fanuc_driver),
-commit `da5db3f611cdc9dffe687e056c4e79bea584bf5c`. The controller type is `fanuc_controllers/ScaledJointTrajectoryController`.
-The declared native joint order is `J1`, `J2`, `J3`, `J4`, `J5`, `J6`.
-`provider.source.lock.json` and `provider.dependencies.json` retain original
-sources, licences and package requirements. `mapping.request.json` is an unbound
-request; its endpoint names, units and source identities grant no authority.
+The host fixture must already provide an isolated software ROS network, an
+unprivileged UID, empty capability sets, no_new_privs, a syscall filter and a
+64 GiB, zero-swap cgroup. An optional trusted host `launcher` object contains
+`executable`, `sha256`, and `arguments`; Xmake appends the Python test script and
+its arguments. The launcher must execute that script in the prepared environment.
+No launcher is installed, privileged policy changed, or dependency downloaded by
+this example. `run_scene.py` accepts an explicit output directory and starts only
+the checked original software scene.
 
-Restoration requires an actual source-compatible guest ROS library/application
-build, a pinned runtime and compatible bounded ROS host, authenticated installed
-official models/plugins, and separately reviewed adapter, grants and native
-provenance. Required public runtime contracts include
-`uwvm-sdk-simulation-admission-v1`, `uwvm-sdk-simulation-deployment-v1` and
-`uwvm-sdk-simulation-command-binding-v1`. `deployment.template.json` is unbound
-and not runnable authority. Separately qualified audit-r1 component events are
-not a substitute for the public command-binding event.
+The original source is FANUC's `fanuc_driver` commit
+`da5db3f611cdc9dffe687e056c4e79bea584bf5c` and `fanuc_description` commit
+`fb40c9803a826ba68c7c8e28ba904a25efa7fcd2`. The native joint order is J1 through J6.
+`provider.source.lock.json` pins the original files, including the actual included
+model macro. Three explicit GPIO initial conditions in
+`software-initial-state.json` make the ideal software controller connected and
+motion-enabled; source files and controller implementation stay unchanged.
+The rendered model and these conditions are recorded separately in each run.
 
-Prove causal operation/goal UUID and terminal result, fresh post-result state,
-and reverse JointState/sensor bytes consumed by the same executing Wasm through
-the permission/audit boundary. The canonical step is 0.001 rad with a stable
-independent initial state and 0.00025 rad post-result tolerance. Denied ROS/file
-operations must have no corresponding unauthorized native effect. Full callbacks,
-concurrency, stale/foreign ownership, lifecycle, rollback and permission
-preservation remain mandatory. Native finite references do not qualify these.
-
-`model.source.lock.json` records exact-byte model-description identities; included
-macros, meshes, textures, assets and actual provider execution require their own
-closure. `matrix.required.json` and `release.applicability.json` retain every
-currently inventoried model, language/form/width and all 26 ROS release
-obligations. This inventory remains non-exhaustive. Source hashes and package
-declarations do not prove installed binary, historical API, full simulation,
-performance or dev single-executable support.
-
-Manual qualification runs only on SSH Linux after complete source transfer,
-fresh lifecycle proofs and current immutable admission. All VM/ROS/simulator
-actors and their ancestor use the shared 64 GiB zero-swap budget, canonical lease
-and independent guardian through retirement. Keep space reserves and actual
-process/executable/library/cgroup identities. No physical robot is authorized.
+This is local software functional evidence. Production guardian admission,
+other models/ABIs/RMW/security profiles, debugger pause/restart, ROS production
+hot update and native performance remain separately unqualified. In particular,
+the current production updater refuses ROS-importing worlds; this suite does not
+claim ROS update support or rollback. Physical robots are outside this fixture.
+The remaining model inventory is recorded in `matrix.required.json`.

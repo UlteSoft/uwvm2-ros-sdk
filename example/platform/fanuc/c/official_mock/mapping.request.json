@@ -1,5 +1,6 @@
 {
-  "status": "UNBOUND_MAPPING_REQUEST_NOT_RUNTIME_ADAPTER",
+  "format": "uwvm-sdk-ros2-resource-mapping-request-v1",
+  "status": "REQUEST_ONLY_NO_RUNTIME_AUTHORITY",
   "platform_id": "fanuc/crx10ia/mock_hardware",
   "native_joints": [
     "J1",
@@ -9,29 +10,16 @@
     "J5",
     "J6"
   ],
-  "official_source": {
-    "repository": "https://github.com/FANUC-CORPORATION/fanuc_driver",
-    "commit": "da5db3f611cdc9dffe687e056c4e79bea584bf5c",
-    "license": "Apache-2.0",
-    "mode": "mock_components/GenericSystem",
-    "scope": "Ideal ros2_control mock joint-state mirroring; no dynamics/contact/firmware emulation"
+  "joint_units": "radians",
+  "position_tolerance": 0.00025,
+  "resource_names": "Select explicit deployment namespaces and resource paths in deployment.template.json",
+  "original_hardware": "mock_components/GenericSystem",
+  "native_controller_type": "fanuc_controllers/ScaledJointTrajectoryController",
+  "records": {
+    "joint_state": "sensor_msgs/msg/JointState",
+    "trajectory": "control_msgs/action/FollowJointTrajectory"
   },
-  "resources": {
-    "joint_state_topic": "/fanuc_simulation/joint_states",
-    "position_action": "/fanuc_simulation/joint_trajectory_controller/follow_joint_trajectory",
-    "controller_status_service": "/fanuc_simulation/controller_manager/list_controllers"
-  },
-  "max_step_microrad": 1000,
-  "tolerance_microrad": 250,
-  "runtime_binding_required": [
-    "actual_rendered_URDF",
-    "actual_active_controller_joint_parameters",
-    "actual_ROS_ABI_RMW_transport_security",
-    "authority_policy_file_and_exact_SHA",
-    "mapping_epoch",
-    "exact_unchanged_canonical_Wasm_and_host_grant_binding"
-  ],
-  "SDK01_schema_version": "0.1.0",
-  "runtime_authorized": false,
-  "native_controller_type": "fanuc_controllers/ScaledJointTrajectoryController"
+  "source_lock": "provider.source.lock.json",
+  "codec_profile": "types/catalog.json",
+  "physical_robot_authorized": false
 }

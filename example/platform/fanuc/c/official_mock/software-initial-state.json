@@ -1,0 +1,9 @@
+{
+  "format": "uwvm-sdk-software-mock-initial-state-v1",
+  "scope": "Explicit healthy software mock state; no physical robot or measured hardware status",
+  "states": [
+    {"gpio": "ConnectionStatus", "interface": "is_connected", "value": 1},
+    {"gpio": "Status", "interface": "motion_possible", "value": 1},
+    {"gpio": "Status", "interface": "collaborative_speed_scaling", "value": 1}
+  ]
+}

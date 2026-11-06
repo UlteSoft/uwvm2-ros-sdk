@@ -156,6 +156,15 @@
       "sha256": "211fd39bc4612631ece92bf30de6408d87b104204d2b63227bb3f0798b42b197",
       "git_blob_sha1": "f8b4bb34f70005cfddcfa2beb99e44c1f8014a9e",
       "matches_original_successful_native_source_file": true
+    },
+    {
+      "path": "official-reference/fanuc_crx_description/urdf/crx10ia_urdf_macro.xacro",
+      "source_path": "fanuc_crx_description/urdf/crx10ia_urdf_macro.xacro",
+      "repository": "https://github.com/FANUC-CORPORATION/fanuc_description",
+      "commit": "fb40c9803a826ba68c7c8e28ba904a25efa7fcd2",
+      "bytes": 12683,
+      "sha256": "d1ae3a9f320f33c40f652f89f44c132a3174fb89bb36a6a7a40e9e3405b0d90f",
+      "git_blob_sha1": "d96aba91c6282cde06fb790e944f5be00b8a15c2"
     }
   ],
   "packages": [

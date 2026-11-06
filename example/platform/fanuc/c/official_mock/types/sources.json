@@ -1,0 +1,115 @@
+{
+  "format": "uwvm-sdk-original-message-source-v1",
+  "scope": "Complete original ROS Jazzy message/action declarations; no native ABI admission is implied",
+  "files": [
+    {
+      "path": "builtin_interfaces/msg/Duration.msg",
+      "sha256": "57da13a4201e7d258a2931323145b953e47e46967494e62ba66c2faca4fbade2"
+    },
+    {
+      "path": "builtin_interfaces/msg/Time.msg",
+      "sha256": "dc5a01ddde3aecffee21eb24974fe77cc969f873218a2b1811aa0ac8a456b8bd"
+    },
+    {
+      "path": "control_msgs/action/FollowJointTrajectory.action",
+      "sha256": "31a124428ee490da22c15cc70a9ac2c89d07bbbba7d3bf370ca7596b229cb9f0"
+    },
+    {
+      "path": "control_msgs/msg/JointComponentTolerance.msg",
+      "sha256": "6b09271d0f74e0a3a701f3ddb997b0ad4a588bdd9ab7d7899ddc70063ba924dd"
+    },
+    {
+      "path": "control_msgs/msg/JointTolerance.msg",
+      "sha256": "8208718f17c1b1feb9418c3ed7ca73d029566cbf298ecda819c9e0b78cb379d3"
+    },
+    {
+      "path": "geometry_msgs/msg/Quaternion.msg",
+      "sha256": "298495eb67a139642ffd37cc9029eae085e6c39a8789828b7517868a487939ed"
+    },
+    {
+      "path": "geometry_msgs/msg/Transform.msg",
+      "sha256": "c8916279f0a429dd9561158bd2133bc4e2d780277c3c594116b240a27e7a2993"
+    },
+    {
+      "path": "geometry_msgs/msg/Twist.msg",
+      "sha256": "ed471ef861f65af991b1f64d66ef941dd41dd4c0702f6222512b1a16c62d58b0"
+    },
+    {
+      "path": "geometry_msgs/msg/Vector3.msg",
+      "sha256": "d8b9ea9aad1f424faf4d2b94dae1e1368af1e5d59de11aeed019399cff7f9e1d"
+    },
+    {
+      "path": "sensor_msgs/msg/JointState.msg",
+      "sha256": "711d1771a002c7190e5bbe746a163a67477c1e2a45482a64f1fe339815ca6f5d"
+    },
+    {
+      "path": "std_msgs/msg/Header.msg",
+      "sha256": "d2cea14630e39ed0fa5b432ba9160a7c38855b9427d3344f99e83e83facb53c2"
+    },
+    {
+      "path": "trajectory_msgs/msg/JointTrajectory.msg",
+      "sha256": "d63cda4a5ec81824ed4acd737e6b5903449fb1a7e2f5cdcdcc4c49285f01117c"
+    },
+    {
+      "path": "trajectory_msgs/msg/JointTrajectoryPoint.msg",
+      "sha256": "2358055d26d27c0c302e921f90d5aa59cb5feb3e22937f8ac98314b0c52ba8f4"
+    },
+    {
+      "path": "trajectory_msgs/msg/MultiDOFJointTrajectory.msg",
+      "sha256": "070af6b4c9f4238d9de36621105d78c999dbad2045d0cb2a633f86a17f73f6b7"
+    },
+    {
+      "path": "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg",
+      "sha256": "7e3a4b150ff7ce8d7d897a480d8d324a244a0afb4a07fdf6241074071170ac7a"
+    }
+  ],
+  "packages": {
+    "builtin_interfaces": {
+      "version": "2.0.4",
+      "license": [
+        "Apache License 2.0"
+      ],
+      "package_xml_sha256": "0f709bdbc4742e9040e788adcc2df710542d9a095080cbcda2dcb4174461de51"
+    },
+    "control_msgs": {
+      "version": "5.10.0",
+      "license": [
+        "BSD-3-Clause"
+      ],
+      "package_xml_sha256": "123c8a4c44086dccfc1b4b965e8ac345c38b4f38f809bb156dbd94dbd4cf6bc5"
+    },
+    "geometry_msgs": {
+      "version": "5.3.8",
+      "license": [
+        "Apache License 2.0"
+      ],
+      "package_xml_sha256": "879da7003d6d2952701aa23146f0d78096143d5107dd6e775a23e591c2c376a0"
+    },
+    "sensor_msgs": {
+      "version": "5.3.8",
+      "license": [
+        "Apache License 2.0"
+      ],
+      "package_xml_sha256": "00cc932b8a1d2a9064c621bfacab56428a5175afe37269da38ba09361e8a4a5a"
+    },
+    "std_msgs": {
+      "version": "5.3.8",
+      "license": [
+        "Apache License 2.0"
+      ],
+      "package_xml_sha256": "a34587c4319cab814f6e092a4f2d30f96e8de0325c81f69c2701a9545383da23"
+    },
+    "trajectory_msgs": {
+      "version": "5.3.8",
+      "license": [
+        "Apache License 2.0"
+      ],
+      "package_xml_sha256": "c0d9fd1b3f17b2d3811086b67414d519850a75e8ce08e609e40d1b9fee821575"
+    }
+  },
+  "license_files": {
+    "control_msgs": "LICENSES/control_msgs-LICENSE.txt",
+    "other_packages": "LICENSES/Apache-2.0.txt"
+  },
+  "control_msgs_license_origin": "https://raw.githubusercontent.com/ros-controls/control_msgs/5.10.0/LICENSE"
+}

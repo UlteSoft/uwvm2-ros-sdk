@@ -1,16 +1,15 @@
 {
-  "format": "sdk02-explicit-authority-request-v1",
+  "format": "uwvm-sdk-fanuc-authority-request-v1",
   "status": "REQUEST_ONLY_NO_RUNTIME_AUTHORITY",
-  "canonical_wasm_sha256": "c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043",
-  "runtime_contract": "share/platform/ros/portable/v0.1.0/contract.json",
+  "interface_contract": "Exact imported WASIp1 and ROS2 interfaces; test-only exposure uses host_interfaces.authorize_test_imports",
+  "resource_contract": "deployment.template.json cases contain separate explicit WASI operation grants and ROS resources/settings",
+  "automatic_resource_grant_generation": false,
+  "physical_robot_authorized": false,
   "requirements": [
-    "Supply separately reviewed actual adapter JSON and exact SHA256",
-    "Supply separate trusted grant file and exact SHA256 outside Wasm",
-    "Bind actual VM/native ELF, live loaded native image provenance and current owner/epochs",
-    "Verify exact live controller type/joint interfaces and actual original provider model",
-    "Use caller-owned private socket directory mode0700",
-    "Maintain checked unwind and all authentication, permissions and source/cache identity checks"
-  ],
-  "automatic_grant_generation": false,
-  "policy_values_or_native_image_hashes_may_be_fabricated": false
+    "Pin the actual runtime, gateway, native executables and original controller plugin",
+    "Use a private 0700 socket directory and a software-only isolated ROS deployment",
+    "Run unprivileged with no capabilities, no_new_privs, a syscall filter and a 64 GiB zero-swap cgroup",
+    "Supply matching complete original native type identities and bounded codec identities",
+    "The fixture never creates production guardian admission"
+  ]
 }
