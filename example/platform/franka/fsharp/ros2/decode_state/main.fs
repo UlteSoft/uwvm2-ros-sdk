@@ -9,7 +9,7 @@ let main _ =
     while used < bytes.Length && not doneReading do
         let count = input.Read(bytes, used, bytes.Length - used)
         if count = 0 then doneReading <- true else used <- used + count
-    let codec = Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsMsgFrankaRobotStateCodec()
+    let codec = Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsMsgFrankaRobotStateCodec.Instance
     let value = codec.Decode(bytes.[0 .. used - 1])
     Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
     0

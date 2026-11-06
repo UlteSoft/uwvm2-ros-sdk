@@ -13,7 +13,7 @@ Module Program
                 used += count
             End While
             Array.Resize(Of Byte)(bytes, used)
-            Dim codec = New Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsMsgFrankaRobotStateCodec()
+            Dim codec = Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsMsgFrankaRobotStateCodec.Instance
             Dim value = codec.Decode(bytes)
             Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
         End Using

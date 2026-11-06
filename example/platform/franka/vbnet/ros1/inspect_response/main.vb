@@ -13,7 +13,7 @@ Module Program
                 used += count
             End While
             Array.Resize(Of Byte)(bytes, used)
-            Dim codec = New Uwvm.Franka.ros1.BoundedRecords.Ros1Franka_msgsSetCartesianImpedanceResponseCodec()
+            Dim codec = Uwvm.Franka.ros1.BoundedRecords.Ros1Franka_msgsSetCartesianImpedanceResponseCodec.Instance
             Dim value = codec.Decode(bytes)
             Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
         End Using

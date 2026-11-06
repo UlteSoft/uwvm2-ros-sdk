@@ -16,7 +16,7 @@ public static class Program
             used += count;
         }
         Array.Resize(ref bytes, used);
-        var codec = new Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsActionGrasp_GoalCodec();
+        var codec = Uwvm.Franka.ros2.BoundedRecords.Ros2Franka_msgsActionGrasp_GoalCodec.Instance;
         var value = codec.Decode(bytes);
         Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant());
     }

@@ -16,7 +16,7 @@ public static class Program
             used += count;
         }
         Array.Resize(ref bytes, used);
-        var codec = new Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_GoalCodec();
+        var codec = Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_GoalCodec.Instance;
         var value = codec.Decode(bytes);
         Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant());
     }

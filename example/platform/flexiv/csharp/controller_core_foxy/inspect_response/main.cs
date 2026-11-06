@@ -16,7 +16,7 @@ public static class Program
             used += count;
         }
         Array.Resize(ref bytes, used);
-        var codec = new Uwvm.Flexiv.controllercorefoxy.BoundedRecords.Ros2Trajectory_msgsMsgJointTrajectoryCodec();
+        var codec = Uwvm.Flexiv.controllercorefoxy.BoundedRecords.Ros2Trajectory_msgsMsgJointTrajectoryCodec.Instance;
         var value = codec.Decode(bytes);
         Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant());
     }

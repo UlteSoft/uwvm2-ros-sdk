@@ -13,7 +13,7 @@ Module Program
                 used += count
             End While
             Array.Resize(Of Byte)(bytes, used)
-            Dim codec = New Uwvm.Flexiv.controllercorehumble.BoundedRecords.Ros2Sensor_msgsMsgJointStateCodec()
+            Dim codec = Uwvm.Flexiv.controllercorehumble.BoundedRecords.Ros2Sensor_msgsMsgJointStateCodec.Instance
             Dim value = codec.Decode(bytes)
             Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
         End Using

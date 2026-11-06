@@ -13,7 +13,7 @@ Module Program
                 used += count
             End While
             Array.Resize(Of Byte)(bytes, used)
-            Dim codec = New Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_GoalCodec()
+            Dim codec = Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Control_msgsActionFollowJointTrajectory_GoalCodec.Instance
             Dim value = codec.Decode(bytes)
             Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
         End Using

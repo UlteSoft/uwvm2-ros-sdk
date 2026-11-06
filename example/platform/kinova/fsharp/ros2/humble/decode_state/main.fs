@@ -9,7 +9,7 @@ let main _ =
     while used < bytes.Length && not doneReading do
         let count = input.Read(bytes, used, bytes.Length - used)
         if count = 0 then doneReading <- true else used <- used + count
-    let codec = Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Sensor_msgsMsgJointStateCodec()
+    let codec = Uwvm.Kinova.ros2humble.BoundedRecords.Ros2Sensor_msgsMsgJointStateCodec.Instance
     let value = codec.Decode(bytes.[0 .. used - 1])
     Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
     0

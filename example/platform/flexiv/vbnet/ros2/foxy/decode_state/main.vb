@@ -13,7 +13,7 @@ Module Program
                 used += count
             End While
             Array.Resize(Of Byte)(bytes, used)
-            Dim codec = New Uwvm.Flexiv.ros2foxy.BoundedRecords.Ros2Flexiv_msgsMsgRobotStatesCodec()
+            Dim codec = Uwvm.Flexiv.ros2foxy.BoundedRecords.Ros2Flexiv_msgsMsgRobotStatesCodec.Instance
             Dim value = codec.Decode(bytes)
             Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant())
         End Using

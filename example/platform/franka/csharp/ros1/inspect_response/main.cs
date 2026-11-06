@@ -16,7 +16,7 @@ public static class Program
             used += count;
         }
         Array.Resize(ref bytes, used);
-        var codec = new Uwvm.Franka.ros1.BoundedRecords.Ros1Franka_msgsSetCartesianImpedanceResponseCodec();
+        var codec = Uwvm.Franka.ros1.BoundedRecords.Ros1Franka_msgsSetCartesianImpedanceResponseCodec.Instance;
         var value = codec.Decode(bytes);
         Console.WriteLine(BitConverter.ToString(codec.Encode(value)).Replace("-", "").ToLowerInvariant());
     }
