@@ -69,12 +69,12 @@
     {
       "scope": "example",
       "path": "README.md",
-      "sha256": "746597468f13c8ae6b5121385f62dbcecc674df2ec4ebc0fcb251f51faeea8ae"
+      "sha256": "0045c1467f45405d2bf6640bfb8a55893b250b84f71077b9ea0fac22a004952e"
     },
     {
       "scope": "example",
       "path": "fixtures/consume_frozen.py",
-      "sha256": "e563d47468fe4b3f66d6bd84483af38fa0f8f783124543480145d4bfb12baf47"
+      "sha256": "246bbdec5943d399b5cce887605f45a7ba9b7c06885aff28dc1a9f3e740ef2f2"
     },
     {
       "scope": "example",

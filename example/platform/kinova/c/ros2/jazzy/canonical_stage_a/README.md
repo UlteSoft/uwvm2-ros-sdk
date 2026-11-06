@@ -2,7 +2,7 @@
 
 This source candidate registers four mandatory cases with the installed SDK simulation API v1. It has not passed public `xmake` or `xmake test`. The separate private R210/R212 observations do not grant public acceptance.
 
-Run from this example directory on the admitted SSH Linux host with `xmake`, then `xmake test`. Use the current VM-owned live producer to supply `UWVM_ROS_SIMULATION_ADMISSION` and `UWVM_ROS_SIMULATION_DEPLOYMENT`; the application does not create either document. The existing shared launcher must qualify the complete folder, actual after-exec actors, canonical lock lifetime, common 64 GiB ancestor and zero swap before a payload run.
+Run `xmake` from this example directory to stage the hash-pinned installed Wasm; this build step does not execute it or require a live deployment. Run `xmake test` on the admitted Linux host. Use the current VM-owned live producer to supply `UWVM_ROS_SIMULATION_ADMISSION` and `UWVM_ROS_SIMULATION_DEPLOYMENT`; the application does not create either document. The existing shared launcher must qualify the complete folder, actual after-exec actors, canonical lock lifetime, common 64 GiB ancestor and zero swap before a payload run.
 
 The real binary target consumes the complete installed 4,449-byte `joint-step.wasm`, SHA-256 `c0d886e864243938999e4adf4c0f4ce6fb3c2c001723b855cd8b203bfafe2043`. It does not rebuild the guest or build a native SDK observer. Input identities are in `profiles/input-identities.json`. This candidate is specific to the R12 runtime and native450 boundary. Replacing either requires a new explicit identity and qualification.
 
