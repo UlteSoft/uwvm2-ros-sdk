@@ -144,7 +144,7 @@
     {
       "path": "tools/xmake/dispatch.lua",
       "scope": "sdk",
-      "sha256": "24219cc623405fca4b0cfd3a71f6252ba723eab12cbd733d213247cdc9b91116"
+      "sha256": "fd292e0e12b28c58734ebe193376b989808078d96d89e204e9664108b97e6db6"
     },
     {
       "path": "share/shared/artifact-layout/v0.2.1/manifest.json",

@@ -35,6 +35,10 @@ function build(target, root, action)
 	local cores = { path.join(standard, "abort/abort.core"), path.join(standard, "core.core") }
 	local names = {}
 	local function invoke(arguments)
+		if core.debug_info(root).enabled() then table.insert(arguments, "-g") end
+		if core.debug_info(root).enabled() and arguments[1] == "link-core" then
+		    table.insert(arguments, "-source-map")
+		end
 		os.vrunv(
 			programs.loader,
 			table.join(
@@ -134,4 +138,5 @@ function build(target, root, action)
 		"-wasi",
 	}))
 	assert(os.isfile(output), "The actual MoonBit linker produced no Wasm command")
+	if core.debug_info(root).enabled() then core.debug_info(root).embed_source_map(root, target) end
 end

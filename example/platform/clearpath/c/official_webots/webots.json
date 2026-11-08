@@ -1,0 +1,17 @@
+{
+  "vendor": "clearpath",
+  "model": "Pr2",
+  "namespace": "/clearpath",
+  "robot_name": "official_clearpath",
+  "joint_names": [
+    "r_shoulder_pan_joint",
+    "r_shoulder_lift_joint",
+    "r_upper_arm_roll_joint",
+    "r_elbow_flex_joint",
+    "r_forearm_roll_joint",
+    "r_wrist_flex_joint",
+    "r_wrist_roll_joint"
+  ],
+  "primary_proto": "projects/robots/clearpath/pr2/protos/Pr2.proto",
+  "scope": "Official Webots R2025a Pr2 physics; seven right-arm joints; other joints and navigation remain outside this example"
+}

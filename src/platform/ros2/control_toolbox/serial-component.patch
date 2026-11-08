@@ -1,0 +1,71 @@
+--- a/control_toolbox/include/control_toolbox/pid.hpp
++++ b/control_toolbox/include/control_toolbox/pid.hpp
+@@ -40,8 +40,12 @@
+ #include <string>
+ 
+ #include "fmt/format.h"
+-#include "rclcpp/duration.hpp"
+-#include "realtime_tools/realtime_thread_safe_box.hpp"
++// The extraction is a serial component: its private Wasm instance owns all PID
++// state. ROS middleware and native priority-inheritance mutexes are not needed.
++// The arithmetic and validation implementation remains upstream code.
++#include <cstdint>
++#include "uwvm_ros/serial_value_box.hpp"
++using rcl_duration_value_t = std::int64_t;
+ 
+ namespace control_toolbox
+ {
+@@ -772,7 +776,8 @@
+    *
+    * \returns PID command
+    */
+-  [[nodiscard]] double compute_command(double error, const rclcpp::Duration & dt);
++  // ROS Duration convenience overload is excluded from this middleware-free
++  // extraction; use upstream double seconds or std::chrono::nanoseconds.
+ 
+   /*!
+    * \brief Set the PID error and compute the PID command with nonuniform time
+@@ -838,7 +843,7 @@
+    *
+    * \returns PID command
+    */
+-  [[nodiscard]] double compute_command(double error, double error_dot, const rclcpp::Duration & dt);
++  // Use the upstream std::chrono::nanoseconds overload in this extraction.
+ 
+   /*!
+    * \brief Set the PID error and compute the PID command with nonuniform
+@@ -927,7 +932,7 @@
+     AntiWindupStrategy()};
+   // Store the PID gains in a realtime box to allow dynamic reconfigure to update it without
+   // blocking the realtime update loop
+-  realtime_tools::RealtimeThreadSafeBox<Gains> gains_box_{gains_};
++  uwvm_ros::serial_value_box<Gains> gains_box_{gains_};
+ 
+   double p_error_last_ = 0; /** Save state for derivative state calculation. */
+   double p_error_ = 0;      /** Error. */
+--- a/control_toolbox/src/pid.cpp
++++ b/control_toolbox/src/pid.cpp
+@@ -299,11 +299,6 @@
+   return compute_command(error, static_cast<double>(dt_ns) / 1.e9);
+ }
+ 
+-double Pid::compute_command(double error, const rclcpp::Duration & dt)
+-{
+-  return compute_command(error, dt.seconds());
+-}
+-
+ double Pid::compute_command(double error, const std::chrono::nanoseconds & dt_ns)
+ {
+   return compute_command(error, static_cast<double>(dt_ns.count()) / 1.e9);
+@@ -312,11 +307,6 @@
+ double Pid::compute_command(double error, double error_dot, const rcl_duration_value_t & dt_ns)
+ {
+   return compute_command(error, error_dot, static_cast<double>(dt_ns) / 1.e9);
+-}
+-
+-double Pid::compute_command(double error, double error_dot, const rclcpp::Duration & dt)
+-{
+-  return compute_command(error, error_dot, dt.seconds());
+ }
+ 
+ double Pid::compute_command(double error, double error_dot, const std::chrono::nanoseconds & dt_ns)

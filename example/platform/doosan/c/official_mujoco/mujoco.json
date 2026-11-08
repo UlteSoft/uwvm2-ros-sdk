@@ -1,0 +1,18 @@
+{
+  "vendor": "doosan",
+  "model": "A0509",
+  "namespace": "/doosan",
+  "robot_name": "official_doosan",
+  "joint_names": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6"
+  ],
+  "scene": "dsr_description2/mujoco_models/a0509/scene.xml",
+  "initial_keyframe": null,
+  "scope": "Original Doosan Robotics MuJoCo A0509 physics; 6 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "official_repository": "https://github.com/DoosanRobotics/doosan-robot2"
+}

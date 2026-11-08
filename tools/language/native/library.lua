@@ -201,21 +201,23 @@ local function rust_object(context, core)
 	)
 	local bundle, programs = core.frontend(context.root, "native-rs")
 	local object = path.join(context.cache, "language.o")
-	os.vrunv(programs.compiler, {
+	local arguments = {
 		"--edition=2021",
 		"--target=" .. context.triple,
 		"--crate-type=lib",
 		"--emit=obj",
 		"--crate-name",
 		"uwvm_native_library",
-		"-Copt-level=2",
+		core.debug_info(context.root).unoptimized() and "-Copt-level=0" or "-Copt-level=2",
 		"-Cpanic=abort",
 		"--sysroot",
 		path.join(bundle, "original/rust"),
 		context.sources[1],
 		"-o",
 		object,
-	})
+	}
+	if core.debug_info(context.root).enabled() then table.join2(arguments, {"-Cdebuginfo=2", "-Cstrip=none"}) end
+	os.vrunv(programs.compiler, arguments)
 	local objects = core.infrastructure(context)
 	table.insert(objects, 1, object)
 	return objects

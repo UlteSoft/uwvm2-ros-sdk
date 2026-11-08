@@ -1,0 +1,105 @@
+{
+  "format": "uwvm-sdk-upstream-portability-v1",
+  "qualification_unit": "source-component",
+  "package_migration_claimed": false,
+  "source_manifest": "source.json",
+  "execution_profile": {
+    "wasm_core": [
+      "exceptions"
+    ],
+    "threads": "one serial executor per private instance; no shared-memory atomics",
+    "host_authority": "No implicit WASI or ROS interfaces or operations; the deployment grants each explicitly."
+  },
+  "memory_models": {
+    "static": {
+      "implemented": true,
+      "ownership": "Consumer memory, stack, allocator, table and exception runtime; pointer ABI remains within that instance."
+    },
+    "dynamic_same_memory_preload": {
+      "implemented": false,
+      "reason": "The C++ shared allocator, stack, table, initialization and cross-module exception ABI is not implemented. Ordinary core-preload with separate memories is not this model."
+    },
+    "independent_multi_memory": {
+      "implemented": false,
+      "reason": "C++ lowering and copy/ownership/exception boundaries for private heap plus communication memory are not implemented. WAT runtime tests do not qualify this C++ port."
+    }
+  },
+  "native_boundary": {
+    "numerical_reference": "Original native library only supplies differential test results; it is never an execution fallback.",
+    "official_model_integration": {
+      "retained_audited_infrastructure": [
+        "native ROS host interface and Gateway",
+        "rclcpp transport node/executor and ROS message type support",
+        "native RMW/DDS transport"
+      ],
+      "system_boundary": [
+        "official simulator physics and intrinsic device actuators",
+        "process supervision and uwvm2-ros"
+      ],
+      "interpretation": "Native ROS/RMW/DDS communication is retained as the trusted authorization and audit boundary. Guest business logic crosses that boundary under its own module authority; it must not bypass it through guest DDS or raw networking.",
+      "not_a_business_fallback": [
+        "PID computation",
+        "trajectory interpolation",
+        "guest cancellation and control decisions"
+      ]
+    }
+  },
+  "qualification_requirements": [
+    "Exact upstream source and complete adaptation patch",
+    "Original-native versus adapted-native versus identical Wasm bytecode comparisons",
+    "Interpreter and LLVM JIT on each target architecture",
+    "Explicit permissions, denial before native effects and private-instance isolation",
+    "Official-model tests with actual native/guest executable identities",
+    "Native x86_64 timing separated into compile/startup and steady computation; QEMU supplies correctness only"
+  ],
+  "counts_as_migrated_package": false,
+  "upstream_package": "joint_trajectory_controller",
+  "component": "joint_trajectory_controller::Trajectory",
+  "patch": "value-component.patch",
+  "source_mapping": [
+    {
+      "original": "upstream/trajectory.cpp",
+      "adapted": "trajectory.cpp",
+      "upstream_path": "joint_trajectory_controller/src/trajectory.cpp"
+    },
+    {
+      "original": "upstream/trajectory.hpp",
+      "adapted": "include/joint_trajectory_controller/trajectory.hpp",
+      "upstream_path": "joint_trajectory_controller/include/joint_trajectory_controller/trajectory.hpp"
+    },
+    {
+      "original": "upstream/interpolation_methods.hpp",
+      "adapted": "include/joint_trajectory_controller/interpolation_methods.hpp",
+      "upstream_path": "joint_trajectory_controller/include/joint_trajectory_controller/interpolation_methods.hpp"
+    }
+  ],
+  "adaptations": [
+    {
+      "surface": "value types",
+      "change": "Use explicit private message/time values instead of rclcpp and ROS-generated message types; retain the upstream trajectory algorithm.",
+      "compatibility": "Source adaptation; not ROS wire layout or complete rclcpp Time/Duration API compatibility. Clock identity and checked integer arithmetic remain explicit."
+    },
+    {
+      "surface": "logging",
+      "change": "Route the interpolation parser diagnostic to WASI stderr.",
+      "compatibility": "Does not provide rclcpp logger configuration or ROS logging metadata."
+    },
+    {
+      "surface": "null handling",
+      "change": "Retain THROW_ON_NULLPTR behavior with a local definition.",
+      "compatibility": "Does not port hardware_interface."
+    },
+    {
+      "surface": "C adapter",
+      "change": "Copy finite dimensioned endpoints into a private segment; validate all computed outputs before any caller-buffer write.",
+      "compatibility": "Narrow segment API. It does not expose a FollowJointTrajectory action server."
+    }
+  ],
+  "not_migrated": [
+    "JointTrajectoryController plugin and controller_manager lifecycle",
+    "FollowJointTrajectory action server, goal ownership, cancellation and ROS feedback lifecycle",
+    "Hardware-interface loaning, lifecycle/parameters and realtime executor",
+    "All other ros2_controllers packages; the repository is not a migration unit"
+  ],
+  "public_example": "example/platform/ros2/cpp/joint_trajectory"
+}

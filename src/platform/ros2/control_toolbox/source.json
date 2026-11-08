@@ -1,0 +1,59 @@
+{
+  "format": "uwvm-ros-upstream-component-v1",
+  "upstream": {
+    "repository": "https://github.com/ros-controls/control_toolbox",
+    "release": "4.11.1",
+    "commit": "161c3c330314f7816e97174aa5acde8f16a53e61",
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      {
+        "path": "LICENSE.BSD-3-clause",
+        "sha256": "1731298f899c65fa14cbdfe340b2c9c5fe17e9e219749e7fe2434e9374f66956",
+        "git_blob": "66e3e5167f84ff53438460714ba9122227947b34"
+      },
+      {
+        "path": "control_toolbox/include/control_toolbox/pid.hpp",
+        "sha256": "eb5d9ec2de41c03e818e08c57d4fdaa6da27e3567ac7176a32dc042ef4599dd6",
+        "git_blob": "e3a89cbdd9904892b3a7269ff557e07535f0ccdd"
+      },
+      {
+        "path": "control_toolbox/src/pid.cpp",
+        "sha256": "8369bcdb6f65f367f5013b6d5ba9afad3b72c73e18fdb38daa003411e28aa9f0",
+        "git_blob": "1a2829c6f855968d8bcdfa569727257fbe62675a"
+      }
+    ]
+  },
+  "adaptations": [
+    "Exclude only the two rclcpp::Duration convenience overloads; retain seconds, int64 nanoseconds and std::chrono overloads.",
+    "Use an explicitly serial per-instance value box instead of a native priority-inheritance mutex. Shared-memory threads are rejected.",
+    "Preserve all upstream arithmetic, gain validation, exceptions and diagnostic formatting."
+  ],
+  "files": {
+    "README.md": "3e2990d49537f03eacf974f0e7ea7b4a6c67fc2d96214aec428028a747a7f0c5",
+    "include/control_toolbox/pid.hpp": "0984e66224c5678e4cae699d9a2013aa2b9b63ce35c9b061a2126ff2f3215ffb",
+    "include/uwvm_ros/pid.h": "74415741cce030437a7fd441c33b9932a7d1083420737dc3c90f0fa3215a64e3",
+    "include/uwvm_ros/serial_value_box.hpp": "cc923b1b7b6cb9094faa3c3d742cd7c663c9dc41b70f26b2c2ccdd4859f4a825",
+    "pid.cpp": "073281860ffd209c915f1d0f053100a7d48944950b90a11b4504cbe7f39354a8",
+    "pid_c.cpp": "493ec009794598f27fc80a4b1da6d9f4c607bbd48ddba074b8d3545c0df09047",
+    "portability.json": "c1ec1778b272cb5d710a027b7bf8d583e4a224db98dc162422eb4e8c9c5a0601",
+    "serial-component.patch": "8bc95dd056ef8106a6775b25ecdbc1984b92ce71b8d1e889229dc6c62c2367c7",
+    "third_party/fmt/COPYRIGHT": "dfaa7ad8c59bedf69b82afb0114431727f211c8438cc3356226dc95d80f9a27a",
+    "third_party/fmt/core.h": "9499dc187c78f4f88c55f878afd375662912439b0cff69c8299a6054350432f7",
+    "third_party/fmt/format-inl.h": "ba707e9533a864c47261edaac1d32ede71dee91eb793fc05ab0eab0f4210dfc4",
+    "third_party/fmt/format.h": "bf68a9fb87c98e49258cccf6ca3d6e7c9cc1ee358e642cc535ee80579623b724",
+    "upstream/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "upstream/LICENSE.BSD-3-clause": "1731298f899c65fa14cbdfe340b2c9c5fe17e9e219749e7fe2434e9374f66956",
+    "upstream/pid.cpp": "8369bcdb6f65f367f5013b6d5ba9afad3b72c73e18fdb38daa003411e28aa9f0",
+    "upstream/pid.hpp": "eb5d9ec2de41c03e818e08c57d4fdaa6da27e3567ac7176a32dc042ef4599dd6",
+    "upstream/source.json": "b09dba59a26f5b02e0d7d17b728806ccbfc26edca84fb1de3302df255a803828"
+  },
+  "fmt": {
+    "repository": "https://github.com/fmtlib/fmt",
+    "version": "9.1.0",
+    "source": "Existing Ubuntu Jazzy rootfs libfmt-dev headers; no installation"
+  }
+}

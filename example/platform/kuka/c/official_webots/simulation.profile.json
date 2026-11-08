@@ -6,7 +6,6 @@
   "ros_release": "jazzy",
   "source": "main.c",
   "test": "xmake test -P .",
-  "original_controller_type": "joint_trajectory_controller/JointTrajectoryController",
   "same_wasm_for_both_engines": true,
   "source_lock": "model-assets.json",
   "official_source": {
@@ -15,5 +14,10 @@
     "path": "projects/robots/kuka/youbot/protos/Youbot.proto"
   },
   "production_admission": false,
-  "physical_robot_authorized": false
+  "physical_robot_authorized": false,
+  "migrated_components": [
+    "ros-controls/control_toolbox@4.11.1 PID",
+    "ros-controls/ros2_controllers@4.42.1 Trajectory"
+  ],
+  "native_role": "original simulator physics, intrinsic actuators and device transport"
 }

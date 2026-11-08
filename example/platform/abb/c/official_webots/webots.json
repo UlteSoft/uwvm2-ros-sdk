@@ -1,0 +1,16 @@
+{
+  "vendor": "abb",
+  "model": "IRB4600-40",
+  "namespace": "/abb",
+  "robot_name": "abbirb4600",
+  "joint_names": [
+    "A motor",
+    "B motor",
+    "C motor",
+    "D motor",
+    "E motor",
+    "F motor"
+  ],
+  "primary_proto": "projects/robots/abb/irb/protos/Irb4600-40.proto",
+  "scope": "Original Webots R2025a ABB IRB4600-40 physics and passive Robotiq model; six arm joints; original ROS PID and trajectory execute in Wasm"
+}

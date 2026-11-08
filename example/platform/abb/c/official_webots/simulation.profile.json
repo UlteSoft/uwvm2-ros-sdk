@@ -1,36 +1,23 @@
 {
   "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
   "id": "abb-irb4600-40-robotiq3f-webots-r2025a-jazzy",
-  "state": "EXECUTABLE_WASM_FIXTURE_REQUIRES_EXPLICIT_DEPLOYMENT",
   "execution_class": "software_simulation",
-  "scope": "Original Webots R2025a IRB4600-40 physics and webots_ros2_control on Jazzy; six arm joints, passive gripper; local Wasm functional checks",
+  "scope": "Official Webots R2025a IRB4600-40 physics; five arm joints; base and gripper remain passive",
   "ros_release": "jazzy",
-  "original_controller_type": "joint_trajectory_controller/JointTrajectoryController",
-  "application": {
-    "source": "main.c",
-    "target": "abb-official-joint-step",
-    "build": "xmake -P .",
-    "test": "xmake test -P .",
-    "same_wasm_for_both_engines": true,
-    "test_recompilation_relink_or_import_rewrite": false
+  "source": "main.c",
+  "test": "xmake test -P .",
+  "same_wasm_for_both_engines": true,
+  "source_lock": "model-assets.json",
+  "official_source": {
+    "repository": "https://github.com/cyberbotics/webots",
+    "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+    "path": "projects/robots/abb/irb/protos/Irb4600-40.proto"
   },
-  "scenario_manifest": "simulation.example.json",
-  "deployment_template": "deployment.template.json",
-  "source_lock": "provider.source.lock.json",
-  "proof": "Each invocation writes actual suite.json, immutable guest.wasm, raw VM/gateway/native logs and loaded-image/process identities.",
-  "remaining_required_dimensions": [
-    "Other original models and native ABIs/RMW/security profiles",
-    "ROS production update with outstanding native goals",
-    "Debugger-driven pause/restart and complete native performance comparison",
-    "Robotiq gripper control and sensor/perception beyond arm JointState",
-    "Simulator pause/resume and restart with native lifecycle correlation"
-  ],
   "production_admission": false,
   "physical_robot_authorized": false,
-  "composition_repairs": "prepare_scene.py selects six original arm joints and records derived ros2_control/YAML files; original model and world are unchanged",
-  "motion_contract": "deployment.motion explicitly binds native action tolerance and Wasm oracle",
-  "official_source": {
-    "repository": "https://github.com/cyberbotics/webots_ros2",
-    "commit": "5f1a18219a6b877c25440a12bdf9056cae299e1d"
-  }
+  "migrated_components": [
+    "ros-controls/control_toolbox@4.11.1 PID",
+    "ros-controls/ros2_controllers@4.42.1 Trajectory"
+  ],
+  "native_role": "original simulator physics, intrinsic actuators and device transport"
 }

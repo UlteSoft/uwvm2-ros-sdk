@@ -1,0 +1,309 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "angles-original-cpp-tests",
+  "scope": "Unchanged angles 1.16.1 cpp implementation and original tests; no native application fallback; ament install behavior is outside this runtime test.",
+  "cases": [
+    {
+      "id": "all-original-tests",
+      "arguments": [
+        "--gtest_color=no",
+        "--gtest_print_time=0",
+        "--gtest_brief=1"
+      ],
+      "expected_exit": 0,
+      "expected_stdout": "[==========] 9 tests from 1 test suite ran.\n[  PASSED  ] 9 tests.\n"
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/python-tests.bundle.json",
+      "sha256": "04793f8dbb33857acc935e4ee48b05c3dbc1c18fbe04147d332e1983715a8493"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/source.json",
+      "sha256": "02bf2221770ab708d2bba1f9646dd9e6f1c647294aa0516a13799c305c97abd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/CHANGELOG.rst",
+      "sha256": "cb9dbd88e801bbf663f88822b88f5de7de80955b56b407685b6d014ec6faab2e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/CMakeLists.txt",
+      "sha256": "182561f50051dec1d091eab2ec237bfd1ebf4ea9e7d7033d460e3d8aca8134b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/angles/__init__.py",
+      "sha256": "67cfe4bef41185c93046d3796c70e6e432b879c05e208756ca1a8aebcc0e6bab"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/doc.dox",
+      "sha256": "9b7544651dc0da059e5ff05544d49faf14cf65fe8aa1339aef0023167241bd42"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/include/angles/angles.h",
+      "sha256": "6972d2fd0fda27ca42ab9271859004256f55dd58521711138b30df581ab9c5cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/package.xml",
+      "sha256": "83196d85c1254b1f923476d0530bdf422fc2866feaa2b8f4b15cefe927b63744"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/setup.py",
+      "sha256": "993ec1cb1010e0adf9c6af0ca631e94a1d58a7db64a22736efcc6ecc6c1bb7bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/test/utest.cpp",
+      "sha256": "aa233d92878690f875606226afe7e9cde2390ccc4cd745d2347499c4f29f1b18"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/test/utest.py",
+      "sha256": "fe9dc6d3eb9c1524c2e17f7fafa1086a2e7cc6b1aaf582704a32bee2cecc3a2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/LICENSE.TXT",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/README.LLVM",
+      "sha256": "8065abf9d1696593d26c357a97c798d0aebfc8345e69f8552c3cbc21b0cfadb6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-assertion-result.h",
+      "sha256": "d6562e22c316e831bfbc2cde3b158f06380a22e7e1c6c1e180689abee5c5b972"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-death-test.h",
+      "sha256": "8decbb86ebbfa142fd78a83cfbeb4c5e73e98179058ce70fcc279935c497429a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-matchers.h",
+      "sha256": "d637dd188944433c62d96a062f9b1adab851574c537d7021270c7a52a2759a90"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-message.h",
+      "sha256": "d12a1a922139441f32e53942937d0fc22c525915af7ac4a3349d392ea8204286"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-param-test.h",
+      "sha256": "1adb46e17e47fc2f40dc5b8e9acec4f01efa389a19bbea25d32aea28b94e32e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-printers.h",
+      "sha256": "7b91ae56828c5c25d4283f5c02dbdcf6facd957d300c7a5ce25993b5feccadaa"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-spi.h",
+      "sha256": "fc0bbebaeb211b81a2ec3df388e5e5f25a7c22e90186839854d2e5b26ce226e6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-test-part.h",
+      "sha256": "2279b9bfd08aff7c0f764a2716bde0d3a61dc12573687a2cff91256b17681bf0"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest-typed-test.h",
+      "sha256": "d56313830bf30d6271d7c1f8ca57dc52d95a10b97e4ace6efa0f085ae519303a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest.h",
+      "sha256": "93da03ddf6d5b9bdf40ae4ded9939067c9ed0b6de93f787f7e8d187609b6b02d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest_pred_impl.h",
+      "sha256": "85e850e735a42ebb5f9a01a018708c1c0b9b7d83c94b14b7d5d29512c00b6ffd"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/gtest_prod.h",
+      "sha256": "3c6301ef533db8686e474dd5a0de4d98a31cbb630e2273f712472d1be25aa261"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/custom/README.md",
+      "sha256": "608ec5ac574a6e64e4fc2f4bce2cfc7ff753a04d6822d6ff96e43fff51c6ccc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/custom/gtest-port.h",
+      "sha256": "dec8c8019c2b2b6700d5e38d7f5d37d3c97155024591639956dadfe28d7198f9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/custom/gtest-printers.h",
+      "sha256": "42ae9b182cc984109061c95eadce63ab1083b7adaf06e1999a8192d9dd096172"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/custom/gtest.h",
+      "sha256": "21d20a1c64ea38c20c4b12337c261a1a18989d2a30710a83dfb5cd9a3bb3c55e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/custom/raw-ostream.h",
+      "sha256": "fbff62f26bd8542a026dc232efc77a46fa0092e55e7badde66487132ab38938e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-death-test-internal.h",
+      "sha256": "a70d1174ef668639c7af21764442f8e487b0fc70c237a70f90e3161a8e8262d6"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-filepath.h",
+      "sha256": "544ce95d2e1e4b7ae17ee170f482aaa09e17d0056999c4ce7e7a6097c3a755cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-internal.h",
+      "sha256": "a33806c8e6ca5eb6f839b8e015bdf8eae848641035f9499834f9d402b823d5fe"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-param-util.h",
+      "sha256": "effa1b3e6a3554aae8fc82fbe88c1c3215f723bb3e2e444bf424f688c476a030"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-port-arch.h",
+      "sha256": "37f6d5c70322ee5f4f84fafcb4e8e2f4bbf08a5afc64a6636cf6a9f45d442198"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-port.h",
+      "sha256": "dddcf918272855bb0a263434aca2ed5455f5c172fea67c54359c524179cdf90d"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-string.h",
+      "sha256": "0cc08c746bceb2b101c61ffbc905c598eb62fee3c262c4585c21b10d8a3e6508"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/include/gtest/internal/gtest-type-util.h",
+      "sha256": "c1cf53463579025a7b25466e9680a778d74beff52d8a64b6e83fcb6dd99e4bb7"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/source.json",
+      "sha256": "4c091a253e13e113cd4aeda989f24de9fe250d8c70517920c1802a1ef4483093"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-all.cc",
+      "sha256": "972d3016860f9aa6452e078cf77406290fb7003b66fd6c0744a030bd1c323606"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-assertion-result.cc",
+      "sha256": "dbd2235676dcc0ef6409108a4041e05442fc6895735a5561d71151e6a14296bb"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-death-test.cc",
+      "sha256": "4a0a2dad0efbb61c4f7686ccd326e19d6e5633c98202f6878fa2d18c52f3329a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-filepath.cc",
+      "sha256": "8eec3fa2a0e6617106a8d9bfedf3209b0a8cad02e2a17e76196807290e940f8c"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-internal-inl.h",
+      "sha256": "fce60f191b52108b5851f6aec51a6f14001e1a79fd302d48c8fdbb842f8fef1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-matchers.cc",
+      "sha256": "e4ce9edf33493625353cc147a14caac14fdba7390d76166d101fa2fe9d16bbda"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-port.cc",
+      "sha256": "9a4a09c58b20f83cd6f24c152762bd4ee4d37a3719ca7b2ecdcd1948c10c2544"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-printers.cc",
+      "sha256": "bd14e45b5cb8df8be5944a0aaeb3739c533737a183ae4ed6627f5613eea1f6c9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-test-part.cc",
+      "sha256": "b268314cbc718b485ff3e45fdeb5a1496bb8d87dadd5e824c558bf3b03e2dbf9"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest-typed-test.cc",
+      "sha256": "b92e70b2d7ee3b86328162cbda269a28de4ce67f0e8d9beec5ec2c73a93ba006"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest.cc",
+      "sha256": "eea522a7e153fe8b078bb20f4f8fc03220c23fbf54a53e7b6e3b431fe564212a"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/testing/googletest/src/gtest_main.cc",
+      "sha256": "3836c1ce7c4829c44a30f368d888ae3bed218437d61d102c50c0db4afca33b3f"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/library.lua",
+      "sha256": "78c4aeb09cff978a2306d00e8bf9fef20a58aec2e46b640d850f9294a392c81b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/pack.lua",
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "7effe5e91de9d1fa914f7cfe3789d24483e44890d19c7f47b5405d573fa30fb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/dispatch.lua",
+      "sha256": "fd292e0e12b28c58734ebe193376b989808078d96d89e204e9664108b97e6db6"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "528a0844baf25112b60c272538cbc5e58fcffec852f9e632b6a4d4999fd5bcc7"
+    }
+  ]
+}

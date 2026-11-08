@@ -1,0 +1,49 @@
+{
+  "go_version": "go1.24.2",
+  "files": {
+    "cmd/internal/goobj/objfile.go": {
+      "before": "be18accc389ba750c05207ef81912c9a8ec0798368de54be5cc52a89c869be62",
+      "after": "22a2d21697d1a199b590e3a08eb57a444ec71b9fab6fbdc8fe5e6792978ff569"
+    },
+    "cmd/internal/obj/link.go": {
+      "before": "1434bf358963f110f2e030c81719e649fc50bb8713bdc92add793edf36e0ddfd",
+      "after": "4a5d87c56704f2405a8daabd8d17dedec97ce75f11c5bbb28e81a49f269cf50c"
+    },
+    "cmd/compile/internal/base/flag.go": {
+      "before": "d4eb56d9904dd5d0349df7619ad6ff38549c3cd19c7bc4649745e48ce73b3aca",
+      "after": "cf4261ecdfbe01f89e8f9581dd48a7add279f9a6eaf57b690d86f9b5404c3eaa"
+    },
+    "cmd/internal/obj/objfile.go": {
+      "before": "da0c1f3a3e778c5a8d048e4fa11ee334cca8b82a98194c68f377a0c25af3600d",
+      "after": "683cb8e0c1d6074fbcb6e52f6d6badf6d10f5219e67778b35da735577f638cad"
+    },
+    "cmd/internal/obj/sym.go": {
+      "before": "f4135c48be55998252b23c077835754855998f2b25e30a60e2077f47fe6609f5",
+      "after": "c857171b0e7c7bf0c22e37d49ba67e309aaa3242febd60ac58e6371dca62d3d4"
+    },
+    "cmd/link/internal/loader/loader.go": {
+      "before": "1c4c0febad8773b68ba37b42dae682b4607c1b996367e56b73415df02af096b1",
+      "after": "37f59a183b1684fda37fac8f7318d0fc78df6cad5fd551a73bfb972cf4aa3bf1"
+    },
+    "cmd/internal/obj/wasm/wasmobj.go": {
+      "before": "62d73b1ae6c7e95f10365956086306b998d3ceea9f912dec5a60ed89249bba10",
+      "after": "5a17a24590e09737f61e7efb3207841571ed0128a44908d9cdedc845435ddc90"
+    },
+    "cmd/link/internal/wasm/asm.go": {
+      "before": "a6637342ffe91260057c6d9981d5c15b30c8f4b30c624301c147e1e15c3fc901",
+      "after": "9997c1d9537975bee04bdd4494a792accac503e4d69d3e11caeaf63598f91cc6"
+    },
+    "cmd/internal/obj/wasm_source_map.go": {
+      "before": null,
+      "after": "7999c52a9ce098d181a5f4f83b5bb6c0bf48e9fac855ae298faebece69a26b1d"
+    },
+    "cmd/link/internal/wasm/source_map.go": {
+      "before": null,
+      "after": "1d50e4f1a5a865f8944567c7778e412f32ceb9d4189233b8b737d812e83a766b"
+    },
+    "cmd/link/internal/wasm/source_map_test.go": {
+      "before": null,
+      "after": "06b91ed86f2849aaee9d964825637723991d9268f574a9a3bffe8b891ab207bf"
+    }
+  }
+}

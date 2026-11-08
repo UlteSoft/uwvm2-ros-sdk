@@ -88,5 +88,6 @@
       "bytes": 13372
     }
   ],
-  "scope": "Original arm, Robotiq visual/passive model dependencies and motor sound; the simulator program is pinned separately"
+  "scope": "Original arm, Robotiq visual/passive model dependencies and motor sound; the simulator program is pinned separately",
+  "release": "R2025a"
 }

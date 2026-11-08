@@ -27,11 +27,22 @@ static char const *scenario;
 enum { JOINT_CAPACITY = sizeof(((Goal *)0)->trajectory.joint_names.data) / sizeof(((Goal *)0)->trajectory.joint_names.data[0]) };
 static char const *names[JOINT_CAPACITY];
 static unsigned joint_count;
+static Feedback feedback;
+static char const *phase = "initialization";
 static void require(int ok, unsigned code) {
     ++assertions;
     if (!ok) {
         printf("{\"format\":\"uwvm-joint-guest-v1\",\"case\":\"%s\",\"status\":\"FAIL\",\"assertions\":%u,\"code\":%u}\n",
                scenario, assertions, code);
+        fprintf(stderr, "Joint fixture failed: phase=%s code=%u feedback_positions=", phase, code);
+        for (unsigned i = 0; i < feedback.actual.positions.size &&
+             i < sizeof feedback.actual.positions.data / sizeof feedback.actual.positions.data[0]; ++i)
+            fprintf(stderr, "%s%.17g", i ? "," : "", feedback.actual.positions.data[i]);
+        fprintf(stderr, " desired_positions=");
+        for (unsigned i = 0; i < feedback.desired.positions.size &&
+             i < sizeof feedback.desired.positions.data / sizeof feedback.desired.positions.data[0]; ++i)
+            fprintf(stderr, "%s%.17g", i ? "," : "", feedback.desired.positions.data[i]);
+        fprintf(stderr, "\n"); fflush(stderr);
         fflush(stdout); uwvm_ros_command_exit(1);
     }
 }
@@ -92,7 +103,6 @@ int main(int argc, char **argv) {
     JointState state = {0};
     Goal goal = {0};
     Result result = {0};
-    Feedback feedback = {0};
     double initial[JOINT_CAPACITY] = {0}, target[JOINT_CAPACITY] = {0}, actual[JOINT_CAPACITY] = {0};
     uint8_t kind = 0;
     unsigned i, error;
@@ -121,6 +131,7 @@ int main(int argc, char **argv) {
     roswasmc_capability_init(&state_cap, &context);
     require(!roswasmc_open(&state_cap, "joint_state", 11), 30);
     require(!roswasmc_subscribe(&state_cap), 31);
+    phase = "initial state";
     while (!sample(&state_cap, &state, initial)) pause_once(deadline);
     uint64_t first_stamp = (uint64_t)state.header.stamp.sec * 1000000000ULL + state.header.stamp.nanosec;
     if (!strcmp(scenario, "owner") || !strcmp(scenario, "foreign")) {
@@ -240,6 +251,7 @@ int main(int argc, char **argv) {
         goal.trajectory.joint_names.size = joint_count;
         goal.goal_tolerance.size = joint_count;
         goal.trajectory.points.size = 1;
+        goal.goal_time_tolerance.sec = 5;
         goal.trajectory.points.data[0].positions.size = joint_count;
         goal.trajectory.points.data[0].time_from_start.sec = !strcmp(scenario, "cancel") ? 5 : 1;
         for (i = 0; i != joint_count; ++i) {
@@ -254,6 +266,7 @@ int main(int argc, char **argv) {
             target[i] = initial[i] + (i == 0 ? (double)challenge / 10000.0 : 0);
             goal.trajectory.points.data[0].positions.data[i] = target[i];
         }
+        phase = "send goal";
         uint64_t before_send = monotonic();
         roswasmc_result r = roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_send(&bundle, &goal, &id);
         if (!strcmp(scenario, "timeout")) {
@@ -281,6 +294,7 @@ int main(int argc, char **argv) {
             r = roswasmc_action_bundle_cancel_own(&bundle, id, &accepted);
             require(!r.error && accepted == 1, 2100 + r.error);
         }
+        phase = "native terminal result";
         while (!kind) {
             r = roswasmc_bounded_2_control_msgs_action_FollowJointTrajectory_feedback(&bundle, id, &feedback);
             if (!r.error) ++feedbacks;
@@ -291,6 +305,7 @@ int main(int argc, char **argv) {
         }
         require(kind == (!strcmp(scenario, "cancel") ? 4 : 2) && result.error_code == 0, 4000 + kind);
         require(feedbacks > 0, 4005);
+        phase = "fresh joint state";
         int matched = 0;
         while (!matched) {
             if (sample(&state_cap, &state, actual)) {

@@ -16,8 +16,9 @@ The deployment must contain:
 - native_rootfs: the installed Humble root filesystem.
 - unitree_prefix: the installed original Unitree message prefix.
 - aggregate_cgroup: the common 64 GiB, zero-swap cgroup.
-- native_cgroup: its dedicated child limited to at most 2 GiB, zero swap and
-  two CPU cores. The test process must already belong to another bounded child.
+- native_cgroup: the current bounded test group or a direct child of the aggregate.
+  Its actual kernel memory limit must be at most 64 GiB with zero swap. The
+  deployment selects CPU limits; the test records them and the effective CPU set.
 - socket_directory: a writable directory with enough pathname space for a
   short Unix-domain socket name.
 - domain_id: the explicit ROS domain selected for this isolated test.

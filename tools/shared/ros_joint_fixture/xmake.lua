@@ -11,17 +11,18 @@ function uwvm_ros_joint_fixture(options)
         for _, pattern in ipairs({"*.c", "*.lua", "*.py", "*.json", "*.urdf", "*.yaml", "*.wbt"}) do
             for _, filename in ipairs(os.files(path.join(target:scriptdir(), pattern))) do pin(filename) end
         end
-        for _, pattern in ipairs({"*.c", "*.py", "*.lua", "types/**"}) do
+        for _, pattern in ipairs({"*.c", "*.h", "*.cpp", "*.py", "*.lua", "*.patch", "types/**", "native/**"}) do
             for _, filename in ipairs(os.files(path.join(shared, pattern))) do pin(filename) end
         end
         for _, pattern in ipairs({"tools/xmake/**.lua", "tools/custom_types/**", "include/platform/ros/c/**.h",
-                "include/platform/ros2/c/**.h"}) do
+                "include/platform/ros2/c/**.h", "src/platform/ros2/control_toolbox/**", "src/platform/ros2/joint_trajectory/**"}) do
             for _, filename in ipairs(os.files(path.join(sdk, pattern))) do pin(filename) end
         end
         for _, relative in ipairs({"tools/custom_types.py", "tools/industrial/vendor_profile.py",
                 "tools/platform/abb/bindings.py", "tools/platform/unitree/native/metadata_reader.cc.in",
                 "tools/shared/python/native_fixture.py", "tools/shared/python/wasi_policy.py",
-                "tools/shared/python/host_interfaces.py", "tools/shared/host-interfaces.json", "tools/shared/python/pipe_capture.py"}) do pin(path.join(sdk, relative)) end
+                "tools/shared/python/host_interfaces.py", "tools/shared/host-interfaces.json", "tools/shared/python/pipe_capture.py",
+                "tools/shared/python/portability_contract.py", "tools/shared/xmake/upstream_component.lua"}) do pin(path.join(sdk, relative)) end
         return inputs
     end
     
@@ -90,7 +91,7 @@ function uwvm_ros_joint_fixture(options)
                 table.insert(arguments, argument)
             end
         end
-        table.join2(arguments, {path.join(shared, "test_fixture.py"), "--sdk-root", sdk, "--example", target:scriptdir(),
+        table.join2(arguments, {path.join(shared, options.driver or "test_fixture.py"), "--sdk-root", sdk, "--example", target:scriptdir(),
             "--wasm", path.absolute(target:targetfile()), "--config", path.absolute(config),
             "--output", path.absolute(output)})
         local code = os.execv(executable, arguments, {try = true, timeout = 480000,

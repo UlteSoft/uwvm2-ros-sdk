@@ -1,0 +1,110 @@
+{
+  "format": "uwvm-sdk-wasi-component-v1",
+  "id": "angles-original-py-tests",
+  "scope": "Unchanged angles 1.16.1 py implementation and original tests; no native application fallback; ament install behavior is outside this runtime test.",
+  "cases": [
+    {
+      "id": "all-original-tests",
+      "arguments": [],
+      "expected_exit": 0,
+      "expected_stdout": "angles Python: 7 upstream tests passed; 4 original source warnings checked\n"
+    }
+  ],
+  "public_inputs": [
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/python-tests.bundle.json",
+      "sha256": "04793f8dbb33857acc935e4ee48b05c3dbc1c18fbe04147d332e1983715a8493"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/source.json",
+      "sha256": "02bf2221770ab708d2bba1f9646dd9e6f1c647294aa0516a13799c305c97abd1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/CHANGELOG.rst",
+      "sha256": "cb9dbd88e801bbf663f88822b88f5de7de80955b56b407685b6d014ec6faab2e"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/CMakeLists.txt",
+      "sha256": "182561f50051dec1d091eab2ec237bfd1ebf4ea9e7d7033d460e3d8aca8134b1"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/angles/__init__.py",
+      "sha256": "67cfe4bef41185c93046d3796c70e6e432b879c05e208756ca1a8aebcc0e6bab"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/doc.dox",
+      "sha256": "9b7544651dc0da059e5ff05544d49faf14cf65fe8aa1339aef0023167241bd42"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/include/angles/angles.h",
+      "sha256": "6972d2fd0fda27ca42ab9271859004256f55dd58521711138b30df581ab9c5cf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/package.xml",
+      "sha256": "83196d85c1254b1f923476d0530bdf422fc2866feaa2b8f4b15cefe927b63744"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/setup.py",
+      "sha256": "993ec1cb1010e0adf9c6af0ca631e94a1d58a7db64a22736efcc6ecc6c1bb7bf"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/test/utest.cpp",
+      "sha256": "aa233d92878690f875606226afe7e9cde2390ccc4cd745d2347499c4f29f1b18"
+    },
+    {
+      "scope": "sdk",
+      "path": "src/platform/ros2/angles/upstream/test/utest.py",
+      "sha256": "fe9dc6d3eb9c1524c2e17f7fafa1086a2e7cc6b1aaf582704a32bee2cecc3a2c"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/library.lua",
+      "sha256": "78c4aeb09cff978a2306d00e8bf9fef20a58aec2e46b640d850f9294a392c81b"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/language/js/pack.lua",
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/local_wasi_test.py",
+      "sha256": "b5d1151793dfa376b5ec8c22ca865e02b2163d1e426b225b62dc36d8f3124e1a"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/shared/python/wasi_component.py",
+      "sha256": "42fba6e57bd2d84d3e5438900c2e5ba9210eb6afbeb0c3e9954756895a01dbc1"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/cfamily.lua",
+      "sha256": "7effe5e91de9d1fa914f7cfe3789d24483e44890d19c7f47b5405d573fa30fb8"
+    },
+    {
+      "scope": "sdk",
+      "path": "tools/xmake/dispatch.lua",
+      "sha256": "fd292e0e12b28c58734ebe193376b989808078d96d89e204e9664108b97e6db6"
+    },
+    {
+      "scope": "example",
+      "path": "main.py",
+      "sha256": "f37071e32c3e14c98afcf5b21bb5cdfa4f3995e72eafcfb3defcf16e49d22802"
+    },
+    {
+      "scope": "example",
+      "path": "xmake.lua",
+      "sha256": "e243fa406fb18bf198440eaffa24ca0b56f056efcb51205ad3276f090bad6532"
+    }
+  ]
+}

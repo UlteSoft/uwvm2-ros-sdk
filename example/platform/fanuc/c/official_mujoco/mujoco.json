@@ -1,0 +1,18 @@
+{
+  "vendor": "fanuc",
+  "model": "CRX-5iA",
+  "namespace": "/fanuc",
+  "robot_name": "official_fanuc",
+  "joint_names": [
+    "J1",
+    "J2",
+    "J3",
+    "J4",
+    "J5",
+    "J6"
+  ],
+  "scene": "fanuc_crx5ia/scene.xml",
+  "initial_keyframe": "home",
+  "scope": "Original MuJoCo Menagerie CRX-5iA physics; 6 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "official_repository": "https://github.com/google-deepmind/mujoco_menagerie"
+}

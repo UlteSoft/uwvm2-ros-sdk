@@ -113,7 +113,7 @@
     {
       "scope": "sdk",
       "path": "tools/shared/python/native_ros_std_test.py",
-      "sha256": "5a0eb7afbadf10185b522cc47b1466181eb63dfc5521c6a7655332bc97f89c67"
+      "sha256": "195257eea19480393f8927f304a9aa7773adc6ba421990c4a1227a201e250105"
     },
     {
       "scope": "sdk",

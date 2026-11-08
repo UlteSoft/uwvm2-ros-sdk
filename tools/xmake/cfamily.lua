@@ -140,7 +140,6 @@ function _command(target, root, triple, extra)
         "-fintegrated-cc1",
         "-fuse-ld=" .. programs.ld,
         "-std=" .. standard,
-        "-O2",
         "-Wall",
         "-Wextra",
         "-Werror",
@@ -152,6 +151,7 @@ function _command(target, root, triple, extra)
         "-Wl,--max-memory=67108864",
         "-Wl,--threads=1",
     }
+    table.join2(arguments, import("debug_info", {rootdir=path.join(root,"tools/xmake"), anonymous=true}).cflags())
     if cpp then table.insert(arguments, "-I" .. path.join(root, "include/language/c++/include")) end
     local feature_flags = {
         ["simd128"] = "-msimd128", ["relaxed-simd"] = "-mrelaxed-simd",
@@ -233,8 +233,9 @@ function _linked(target, root, triple, extra)
     local kind = target:kind()
     local profile = target:values("ros.sdk.exception_profile") or config.get("ros-exceptions") or "noeh"
     local selected = selection(root, triple, profile)
-    assert(profile == "noeh" and not target:values("ros.sdk.threads") and target:values("ros.sdk.wasi_preview") == 1,
-           "The implemented library graph uses Preview 1, noeh, single-thread ABI")
+    assert(not target:values("ros.sdk.threads") and target:values("ros.sdk.wasi_preview") == 1,
+           "The implemented library graph uses Preview 1, single-thread ABI")
+    assert(kind ~= "shared" or profile == "noeh", "Core preload libraries require the noeh profile")
     local programs = tools(root)
     local version = os.iorunv(programs.cc, {"--version"})
     assert(version:find("clang version 23.", 1, true), "Real LLVM 23 is required for every object")
@@ -250,12 +251,13 @@ function _linked(target, root, triple, extra)
     local common = {"--target=" .. triple, "--sysroot=" .. _installed(root, selected.sysroot),
                     "-resource-dir=" .. _installed(root, selected.resource_dir),
                     "-no-canonical-prefixes", "-fintegrated-cc1"}
-    local flags = {"-O2", "-Wall", "-Wextra", "-Werror", "-I" .. path.join(root, "include"),
+    local flags = {"-Wall", "-Wextra", "-Werror", "-I" .. path.join(root, "include"),
                    "-I" .. path.join(root, "include/platform"),
                    "-I" .. path.join(root, "include/platform/ros/c"),
                    "-ffile-prefix-map=" .. root .. "=/sdk", "-fmacro-prefix-map=" .. root .. "=/sdk",
                    "-ffile-prefix-map=" .. path.absolute(target:scriptdir()) .. "=/application",
                    "-fmacro-prefix-map=" .. path.absolute(target:scriptdir()) .. "=/application"}
+    table.join2(flags, import("debug_info", {rootdir=path.join(root,"tools/xmake"), anonymous=true}).cflags())
     table.insert(flags, "-I" .. path.join(root, "include/language/c++/include"))
     local feature_flags = {simd128 = "-msimd128", ["relaxed-simd"] = "-mrelaxed-simd",
         ["bulk-memory"] = "-mbulk-memory", ["reference-types"] = "-mreference-types",
@@ -265,6 +267,8 @@ function _linked(target, root, triple, extra)
     for _, feature in ipairs(target:get("values.ros.sdk.features") or {}) do
         if feature == "memory64" or feature == "table64" then
             assert(selected[feature] == true, "Selected library closure lacks " .. feature)
+        elseif feature == "exceptions" then
+            assert(profile == "eh", "exceptions requires the actual eh target-library profile")
         else
             table.insert(flags, assert(feature_flags[feature], "Unsupported library Core feature: " .. feature))
         end
@@ -334,10 +338,28 @@ function _linked(target, root, triple, extra)
             table.join2(arguments, {"-Wl,--no-entry", "-Wl,--export=__wasm_call_ctors"})
         end
     else
-        table.insert(arguments, "-rtlib=compiler-rt")
-        if cpp_used then table.insert(arguments, "-stdlib=libc++") end
+        if cpp_used then
+            -- Keep the C++ driver ABI selection at link time. Backend-only
+            -- options already applied to each object do not belong to the
+            -- source-free driver invocation; the linker EH option is below.
+            local backend_argument = false
+            for _, flag in ipairs(selected.cxxflags) do
+                if backend_argument then
+                    backend_argument = false
+                elseif flag == "-mllvm" then
+                    backend_argument = true
+                else
+                    table.insert(arguments, flag)
+                end
+            end
+            assert(not backend_argument, "Incomplete target-library backend option")
+            table.join2(arguments, selected.ldflags)
+        else
+            table.insert(arguments, "-rtlib=compiler-rt")
+        end
         if kind == "shared" then table.insert(arguments, "-mexec-model=reactor") end
     end
+    if profile == "eh" then table.insert(arguments, "-Wl,-mllvm,-wasm-use-legacy-eh=false") end
     if kind == "shared" then table.insert(arguments, "-Wl,--export-dynamic") end
     local linkdirs = table.join(table.wrap(target:get("linkdirs")), contract.inherited(target, "linkdirs"))
     local links = table.join(table.wrap(target:get("links")), contract.inherited(target, "links"))
@@ -362,8 +384,93 @@ function build_mixed(target, root, triple, extra)
     return _linked(target, root, triple, extra)
 end
 
+-- @brief Validate the narrow Guest-owned stack entry ABI without probing tools.
+-- @details No threaded libc, pthread or std::thread closure is substituted.
+function configure_threaded(target, root, context)
+    assert(context.platform == "wasi" and context.triple == "wasm32-wasip1-threads"
+        and (context.language == "c" or context.language == "cpp")
+        and context.kind == "binary" and context.artifact_model == "binary",
+        "SDK C/C++ threads implement only complete wasm32 WASI freestanding binaries")
+    assert(context.entry == "freestanding" and context.exception_profile == "noeh",
+        "Threaded libc/pthread/std::thread closures are not installed; select freestanding/noeh with the Guest stack bootstrap")
+    assert(context.memory_import and context.memory_import.module == "env" and context.memory_import.name == "memory",
+        "The freestanding thread ABI requires the explicit env.memory WAT owner binding")
+    for _, feature in ipairs(context.features) do
+        assert(feature == "threads" or feature == "bulk-memory",
+            "The freestanding C/C++ thread route implements threads and bulk-memory only")
+    end
+    local initial, maximum
+    for _, argument in ipairs(table.wrap(target:get("ldflags"))) do
+        initial = tonumber(argument:match("^%-Wl,%-%-initial%-memory=(%d+)$")) or initial
+        maximum = tonumber(argument:match("^%-Wl,%-%-max%-memory=(%d+)$")) or maximum
+    end
+    assert(initial and maximum and initial % 65536 == 0 and maximum % 65536 == 0
+        and initial >= 2097152 and initial <= maximum and maximum <= 2147483648,
+        "Freestanding threads require explicit page-aligned -Wl,--initial-memory= and --max-memory= bounds (initial >= 2 MiB)")
+    return {initial = initial, maximum = maximum}
+end
+
+-- @brief Link genuine C/C++ and the SDK's Wasm-only stack bootstrap.
+-- @details Ordinary target-library selection remains single-threaded. Only its
+-- compiler resource is reused here; -nostdlib omits that libc/libc++ entirely.
+function _threaded_freestanding(target, root, triple, extra)
+    local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+    local language = target:values("ros.sdk.language")
+    local context = {platform = target:values("ros.sdk.platform"), triple = triple, language = language,
+        kind = target:kind(), artifact_model = artifacts.model(target), memory_import = artifacts.memory_import(target),
+        entry = target:values("ros.sdk.entry") or "command", exception_profile = target:values("ros.sdk.exception_profile") or "noeh",
+        features = target:get("values.ros.sdk.features") or {}}
+    configure_threaded(target, root, context)
+    assert(not artifacts.uses_libraries(target) and #(extra or {}) == 0,
+        "Threaded C/C++ linking has no libc/library graph; declare the WAT owner as a build-only dependency")
+    local selected = selection(root, "wasm32-wasip1", "noeh")
+    local programs = tools(root)
+    local compiler = programs[language == "cpp" and "cxx" or "cc"]
+    local version = os.iorunv(compiler, {"--version"})
+    assert(version:find("clang version 23.", 1, true), "The freestanding thread compiler must be the existing LLVM23")
+    target:data_set("ros.sdk.compiler_version", version:trim())
+    local temporary = artifacts.workspace(target, "thread-bootstrap")
+    os.mkdir(temporary)
+    local object = path.join(temporary, "wasip1_thread_entry.o")
+    local assembly = path.join(root, "tools/shared/wasm/wasip1_thread_entry.s")
+    local compile = {"--target=" .. triple, "-resource-dir=" .. _installed(root, selected.resource_dir),
+        "-fintegrated-cc1", "-matomics", "-mbulk-memory", "-c", assembly, "-o", object}
+    os.vrunv(programs.cc, compile, {envs = {TMPDIR = temporary}})
+    local arguments = {"--target=" .. triple, "--sysroot=" .. _installed(root, selected.sysroot),
+        "-resource-dir=" .. _installed(root, selected.resource_dir), "-fintegrated-cc1",
+        "-ffreestanding", "-fno-builtin", "-matomics", "-mbulk-memory", "-Wall", "-Wextra", "-Werror",
+        language == "cpp" and "-std=c++20" or "-std=c11", "-I" .. path.join(root, "include")}
+    if language == "cpp" then table.join2(arguments, {"-fno-exceptions", "-fno-rtti", "-nostdinc++"}) end
+    for _, directory in ipairs(table.wrap(target:get("includedirs"))) do table.insert(arguments, "-I" .. path.absolute(directory)) end
+    for _, definition in ipairs(table.wrap(target:get("defines"))) do table.insert(arguments, "-D" .. definition) end
+    table.join2(arguments, table.wrap(target:get("cxflags")))
+    table.join2(arguments, table.wrap(target:get(language == "cpp" and "cxxflags" or "cflags")))
+    local objects, source_commands = {object}, {}
+    for index, source in ipairs(target:sourcefiles()) do
+        local compiled = path.join(temporary, string.format("source-%04d.o", index))
+        local command = table.join(arguments, {"-c", path.absolute(source), "-o", compiled})
+        os.vrunv(compiler, command, {envs = {TMPDIR = temporary}})
+        table.insert(source_commands, {program = compiler, arguments = command})
+        table.insert(objects, compiled)
+    end
+    local output = path.absolute(target:targetfile())
+    os.mkdir(path.directory(output))
+    local link = {"--target=" .. triple, "--sysroot=" .. _installed(root, selected.sysroot),
+        "-fuse-ld=" .. programs.ld, "-nostdlib", "-Wl,--stack-first", "-Wl,-z,stack-size=1048576",
+        "-Wl,--shared-memory", "-Wl,--import-memory", "-Wl,--no-entry", "-Wl,--export=_start",
+        "-Wl,--export=wasi_thread_start", "-Wl,--export=__stack_pointer", "-Wl,--export=__tls_base",
+        "-Wl,--export=__tls_size", "-Wl,--export=__tls_align"}
+    table.join2(link, table.wrap(target:get("ldflags")))
+    table.join2(link, objects)
+    table.join2(link, {"-o", output})
+    os.vrunv(compiler, link, {envs = {TMPDIR = temporary}})
+    target:data_set("ros.sdk.build_command", {program = compiler, arguments = link, sources = source_commands,
+        bootstrap = {program = programs.cc, arguments = compile, source = assembly, sha256 = hash.sha256(assembly):lower()}})
+end
+
 -- @brief Build the selected native Xmake kind with the one pinned real toolchain.
 function build(target, root, triple, extra)
+    if target:values("ros.sdk.threads") then return _threaded_freestanding(target, root, triple, extra) end
     local artifacts = import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
     if target:kind() ~= "binary" or artifacts.uses_libraries(target) then
         return _linked(target, root, triple, extra)

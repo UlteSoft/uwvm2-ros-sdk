@@ -1,48 +1,37 @@
-# ABB Webots arm fixture
+# IRB4600-40 official simulation with migrated ROS control
 
-This example compiles the joint algorithm and complete typed ROS message handling
-into one Wasm command. Both uwvm2-ros engines execute the same artifact against
-the original Webots R2025a IRB4600-40 physics, original webots_ros2_control driver
-and native JointTrajectoryController on ROS 2 Jazzy.
+The unchanged official webots robot model receives raw device frames from
+Wasm running in uwvm2-ros. The original ROS Controls control_toolbox 4.11.1 PID
+source is compiled into a real C++ Wasm static archive. The original ROS Controls 4.42.1 Trajectory interpolation source is a second
+C++ Wasm static archive. The C guest owns both components, cancellation, message
+encoding and business assertions.
+The native adapter only advances official physics, reads devices and transfers
+ROS2 device frames. It loads no native trajectory controller, controller manager,
+robot_state_publisher or control_toolbox library.
 
-Run `xmake -P .` to build, then `xmake test -P .`. Set
-`UWVM_ROS_ABB_WEBOTS_TEST_CONFIG` to an explicit deployment based on
-`deployment.template.json`. The template contains placeholders and grants no
-authority. The test checks current source, generated records and the complete
-Wasm hash; it refuses missing deployment and changed artifacts.
+Use xmake f -P ., xmake build -P ., then xmake test -P ..
+Set UWVM_ROS_ABB_WEBOTS_TEST_CONFIG to an explicit deployment based on
+deployment.template.json. All imported WASI/ROS interfaces and capabilities must
+be enabled explicitly. An EH-capable VM is required by the unchanged upstream
+exception behavior. The test never installs dependencies. Reuse the installed
+official simulator and ROS2 device transport, and build the adapter in
+tools/shared/ros_joint_fixture/native against those existing headers/libraries.
 
-The deployment pins the VM, bounded-type gateway, native files, ROS namespace,
-each capability and WASIp1 grant. Run inside an unprivileged isolated software
-environment with the 64 GiB zero-swap cgroup, no capabilities, no_new_privs and
-a syscall filter. Set WEBOTS_HOME to the pinned installation and provide the
-original webots_ros2 packages, Xvfb and all assets in `model-assets.json`.
-Reuse existing installations. The model assets retain upstream licences and
-must only be used within their permitted Webots context.
+model-assets.json pins the original model bytes. Set
+UWVM_OFFICIAL_WEBOTS_ASSETS to that exact source tree. Model masses,
+gravity, limits and intrinsic actuator behavior are preserved. The source and
+dependency adaptation are documented in src/platform/ros2/control_toolbox.
+The PID profile has one serial executor per private Wasm instance; it rejects
+shared-memory Wasm threads.
 
-The owned composition selects exactly A through F motor joints from the original
-ros2_control description. The gripper remains passive; no partial nine-joint
-trajectory or implicit gripper authority is used. The world and model bytes are
-unchanged. The scene uses realtime simulation so feedback and cancellation are
-observable. The deployment selects a 0.0037 rad step and 0.0005 rad tolerance:
-the tolerance is both a real six-joint ROS action goal constraint and the Wasm
-position oracle. The step must exceed four times the tolerance.
+The same artifact runs eight cases under both interpreter and LLVM JIT:
+real motion/fresh feedback, absent command authority, malformed payload and memory
+ranges, Wasm-owned trajectory cancellation, monotonic timeout, real gateway
+disconnection, and simultaneous owner/foreign VM handle isolation. Tests record
+actual executable identities, mappings, original assets, guest logs, the 64 GiB
+zero-swap kernel boundary and owned-process retirement.
 
-Eight cases run through both JIT and interpreter: fresh feedback/result and
-joint positions, denied action without movement, malformed/boundary/stale
-references with unchanged output canaries, owned cancellation, monotonic timeout,
-real gateway disconnect, and two simultaneous VMs testing foreign handles.
-Python starts and observes native processes; it does not execute the joint
-algorithm or manufacture feedback. Each run saves raw VM/gateway/native logs,
-actual process and loaded-plugin identities, motion contract and retirement.
-
-This fixture establishes local functional evidence for this arm composition.
-It does not establish production guardian admission, physical robot authority,
-all 37 inventoried models, historical ROS releases, other native ABIs, gripper
-or additional sensors. Debugger-driven pause/restart, simulator restart, native
-performance and ROS production update with outstanding native goals remain
-unqualified dimensions in the manifest. Production updates must be forward-only;
-the former rollback scenario is not a supported update contract.
-
-`provider.source.lock.json`, `model.source.lock.json`, `matrix.required.json`
-and `release.applicability.json` retain the source identities and wider unresolved
-qualification obligations. A successful local run does not mark those rows passed.
+This migrates the original PID and trajectory interpolation components. It does
+not yet port the complete JointTrajectoryController or its action-server lifecycle. Dynamic same-memory and independent multi-memory
+C++ forms still require separate qualification. These finite model tests are
+not manufacturer certification, production admission or physical-robot testing.

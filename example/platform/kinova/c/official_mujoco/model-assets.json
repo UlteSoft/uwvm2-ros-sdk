@@ -1,0 +1,96 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+  "files": [
+    {
+      "path": "kinova_gen3/CHANGELOG.md",
+      "bytes": 265,
+      "sha256": "746d61716116c13eea9c375452d727ef1e39cecb26842028707a88b6781d7aec",
+      "git_blob": "0c3920f1e0f8b97ecd123c68db06624727a5abae"
+    },
+    {
+      "path": "kinova_gen3/LICENSE",
+      "bytes": 1465,
+      "sha256": "50ee431dbfbfcc53d976d3a5a2918e2fff4236f7f3c492d405e98a3f72106736",
+      "git_blob": "a7f21fa6af888a9d1ba675a94eb4fbc7c98388b2"
+    },
+    {
+      "path": "kinova_gen3/README.md",
+      "bytes": 2862,
+      "sha256": "74ae79d0852be720af732284d8316b883258913623c4126524ea015c287d5c29",
+      "git_blob": "5a9d634dc1a3df14b5dbc6fc5eceab356aaf16d9"
+    },
+    {
+      "path": "kinova_gen3/assets/base_link.stl",
+      "bytes": 183884,
+      "sha256": "3e38517e653d58f4160cfdcee34c9dea983d8b3ecb8f2c147444f58235335260",
+      "git_blob": "0a35a8ae68fa0b8d24507f2cd2a142a59b8fc91e"
+    },
+    {
+      "path": "kinova_gen3/assets/bracelet_no_vision_link.stl",
+      "bytes": 1334384,
+      "sha256": "5b2ec7dafbf6a3c9a2cac717d18132a8a1efd9fcb8f2c40d9c12c8ece7323ec8",
+      "git_blob": "326b1d797fe0725450391d05fbd46f1cdcd8a8ca"
+    },
+    {
+      "path": "kinova_gen3/assets/bracelet_with_vision_link.stl",
+      "bytes": 1164084,
+      "sha256": "8bb05e420a88532b4eee3948a0047fb8e7f341c3e5cc971d54e97e2aaffcf878",
+      "git_blob": "146b69b50b2fd61546c3dc7a4860a037874f084e"
+    },
+    {
+      "path": "kinova_gen3/assets/forearm_link.stl",
+      "bytes": 456284,
+      "sha256": "a00d96d2c7ec37e9fe4c5fb6d3fa2b4386dfd48fea5ac25632f4cb83b3505105",
+      "git_blob": "ac791a3548a21d8ae1650b4b14d173605e6f85bb"
+    },
+    {
+      "path": "kinova_gen3/assets/half_arm_1_link.stl",
+      "bytes": 514184,
+      "sha256": "8df461a71780d8e2d09104a507584424279d85173adf14867e359f7e58b3bba7",
+      "git_blob": "1df304c0eb9e8630f3be09b39154c1955ad0771b"
+    },
+    {
+      "path": "kinova_gen3/assets/half_arm_2_link.stl",
+      "bytes": 489184,
+      "sha256": "8a9f38de21648804b3ab7076ec73726031f2ade7c95eb2541d070553e025407b",
+      "git_blob": "78bc722ab2d8ac217b57dc2b85860a9597c771ee"
+    },
+    {
+      "path": "kinova_gen3/assets/shoulder_link.stl",
+      "bytes": 476984,
+      "sha256": "a98e232e5197f09e9cd520e7a450c21bcec74bc49e2a19ce7cf86c5dc25f2e18",
+      "git_blob": "69ecb7695c73980fa9e76563d5a66fca373db44a"
+    },
+    {
+      "path": "kinova_gen3/assets/spherical_wrist_1_link.stl",
+      "bytes": 546484,
+      "sha256": "0b97a5e3b2de535344f8e8d4176d77f0cdb3455b235f35430fa0413208856e66",
+      "git_blob": "3bbf04a6de017405f402d8b95c3b22d441389a57"
+    },
+    {
+      "path": "kinova_gen3/assets/spherical_wrist_2_link.stl",
+      "bytes": 516984,
+      "sha256": "12271fb7d0ee78fb5642424cf5078be20f0476061e74203db964b674031ce879",
+      "git_blob": "14bbff58f2f200dd1e1b97ba5226da3f768b69e4"
+    },
+    {
+      "path": "kinova_gen3/gen3.png",
+      "bytes": 1706618,
+      "sha256": "d8a159fb3714699ca7b7e359f0895a82a3032105d435a9fb091008e65c2e62a1",
+      "git_blob": "34859550bb2e0ad045770d6f37036cc3c74df1ab"
+    },
+    {
+      "path": "kinova_gen3/gen3.xml",
+      "bytes": 6021,
+      "sha256": "7eb65b8238a649ee3d39d5826f27a091d2e6a6cbb53e179a006b2201dae64438",
+      "git_blob": "c421dd4e8d3af04449deaffdf2ca7906c0d8190a"
+    },
+    {
+      "path": "kinova_gen3/scene.xml",
+      "bytes": 836,
+      "sha256": "04c1c30b0568bdba56f49f5f382d4d9cd8522026cdbce660196753919265db4a",
+      "git_blob": "1a024882854fb7cb2fface4d60ff7f630f6453eb"
+    }
+  ]
+}

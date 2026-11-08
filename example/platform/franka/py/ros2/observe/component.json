@@ -97,7 +97,7 @@
     {
       "scope": "sdk",
       "path": "tools/xmake/cfamily.lua",
-      "sha256": "1ec662f0a85f5dde777a10ce29a857a232cba3cfe86d9a5279a1987ba15d811f"
+      "sha256": "7effe5e91de9d1fa914f7cfe3789d24483e44890d19c7f47b5405d573fa30fb8"
     },
     {
       "scope": "example",

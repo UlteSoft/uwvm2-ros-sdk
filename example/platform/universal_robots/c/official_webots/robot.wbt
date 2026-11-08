@@ -5,4 +5,3 @@ WorldInfo { basicTimeStep 16 randomSeed 0 }
 Viewpoint { orientation 0.12 0.48 0.87 2.6 position 4 4 3 }
 Solid { translation 0 0 -0.05 children [ Shape { geometry Box { size 10 10 0.1 } } ] boundingObject Box { size 10 10 0.1 } }
 UR5e { name "official_universal_robots" controller "<extern>"  }
-Robot { name "Ros2Supervisor" controller "<extern>" supervisor TRUE }

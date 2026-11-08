@@ -17,7 +17,8 @@
     "gc",
     "exceptions",
     "memory64",
-    "table64"
+    "table64",
+    "threads"
   ],
   "format": "uwvm-ros-provider-v1",
   "id": "wasi",
@@ -56,6 +57,7 @@
   "options": {},
   "targets": [
     "wasm32-wasip1",
-    "wasm64-wasip1"
+    "wasm64-wasip1",
+    "wasm32-wasip1-threads"
   ]
 }

@@ -1,0 +1,186 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+  "files": [
+    {
+      "path": "fanuc_crx5ia/CHANGELOG.md",
+      "bytes": 209,
+      "sha256": "af606267ffd0c93aad855a408ada239608a3cb25a50e59c3aa8e5f23da8b058e",
+      "git_blob": "4279626ba30187a24e2f9672eac5da501ea349e1"
+    },
+    {
+      "path": "fanuc_crx5ia/LICENSE",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "git_blob": "137069b823873b8bcf42979bcf8e9371052d26a2"
+    },
+    {
+      "path": "fanuc_crx5ia/README.md",
+      "bytes": 2518,
+      "sha256": "5063f91fbeb6dc4fb9c2f152bbe6109e80a5169757d43c266e67a7d7aeb87b8c",
+      "git_blob": "f1a9cac371cd3f2b1cd28f0e7989045f4a676209"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_0.obj",
+      "bytes": 472123,
+      "sha256": "013595e9b47f42dad9d610ef7b59705253b55ebf7587cfdbb20c77f4ec35fa07",
+      "git_blob": "edf1c76c1f8fbce598bec5d24a928e768b20adee"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_1.obj",
+      "bytes": 405647,
+      "sha256": "1a23744490ac6ff25ef76ea510d8979337f6823eaa736aa7b130332308967363",
+      "git_blob": "d08183df070928ec7a85461ebdf8ec2b92e549fc"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_2.obj",
+      "bytes": 62039,
+      "sha256": "afc40b7537574c878e2aa469c09e3b55c4b05b20574998d54f1af04ddce24f9a",
+      "git_blob": "c96ad864ada4c03f7663a34ed514b2097c36d030"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_3.obj",
+      "bytes": 20714,
+      "sha256": "53963dacd9d7bf9a9328eaa2e260e6e59f6e919b1c3e75001db2ce65cda77624",
+      "git_blob": "4268c73f606824833a372f719c983380385de607"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_4.obj",
+      "bytes": 19224,
+      "sha256": "9ba1b19392b06b3a7a9be5d420bbf6d2a6550de95396f7d410eab6b167c02fbd",
+      "git_blob": "18c1597354056fe8dd08ae17052965ddf176da4d"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/base_collision.stl",
+      "bytes": 17384,
+      "sha256": "28f866c8953490d7030acf65c564a6b27b7249491b0f496b761b7695bf0f529a",
+      "git_blob": "7fb6bc2dfb0689c86911a59a6bc13f3000720db4"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j1_0.obj",
+      "bytes": 407737,
+      "sha256": "ea26f8bc7c4e39ece72988a098c56978dc83658b3da985a5d47a3e391ce0071d",
+      "git_blob": "eccb7fc22b230361ca49a5579da085332eb95a0f"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j1_1.obj",
+      "bytes": 135406,
+      "sha256": "2c94f5fcaeba9587b8bade221974944e390994c613888563a5292fd23081888f",
+      "git_blob": "4106348c42ac6f3b9d7c1476aa28d1118f8d2919"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j1_collision.stl",
+      "bytes": 42784,
+      "sha256": "c92f932c0de2fe0af4fa47c08b03181c2d70050a813577f81b5534929b4e9ff4",
+      "git_blob": "8a63a2a450efbf079ea4204c800688c6ba16c9f2"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j2.obj",
+      "bytes": 1744341,
+      "sha256": "b20e8d7420b65178f0cea9e3baff5ebfa2e7f07921bf56b4cad8b93be1f0a03f",
+      "git_blob": "a04e3c55623bf2a090f77d40f048de8f8ffe4988"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j2_collision.stl",
+      "bytes": 38484,
+      "sha256": "cfb8c21642fbc8535ab35ec4e29f90784fab198895f8f992275adaa15852b595",
+      "git_blob": "1959d89e9d56d61d9bd95363fad4c4452db75d1e"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j3_0.obj",
+      "bytes": 473752,
+      "sha256": "9536e0136e6024be4b27bd0a319b42b4a720fa77c0a5eac4a8075fdc9b3901e1",
+      "git_blob": "c8d039647b25b7a6fd27f62a30e7692797a40343"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j3_1.obj",
+      "bytes": 76939,
+      "sha256": "472b28d1889adc9bff2113347dda21ad2639a7e6b2906f4458c26c71bec653e4",
+      "git_blob": "398b8b3571cde1b59eca239a61a5fee0dfed2a25"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j3_collision.stl",
+      "bytes": 45784,
+      "sha256": "5befe26c622b7e18bfe06c9e2a8f3bb23c05c09992b5b25c234117066af856cc",
+      "git_blob": "2266de94be8340c054dea4edcc91c8a32c5e7dd8"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j4_0.obj",
+      "bytes": 1310100,
+      "sha256": "b6080e540ca9bba20fb6ed7c0819cf48647dc731989f056bd479a064e2efc184",
+      "git_blob": "29873071fac269ff9b9f7f18d955af2e9fda9f74"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j4_1.obj",
+      "bytes": 252309,
+      "sha256": "a927d125bcff6a554fa5d64ae4e918f469d7404509a28ee8b93e297c20686d11",
+      "git_blob": "f8f72e83714420e39f516484ebb461eb0ecacdd8"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j4_2.obj",
+      "bytes": 62859,
+      "sha256": "ebbdd69474279dcd17c3a3a679f41a8f22afd7378d5f6bc006fa0b5424683aa2",
+      "git_blob": "50606700b97f95fbc6ec76e7968c69695f358f09"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j4_collision.stl",
+      "bytes": 20084,
+      "sha256": "948f18b82c3959135b60f8c3107c0270d3422df79679e63cc5fd6607556ab3a1",
+      "git_blob": "c36999b588eaabe6dae95161138a5ffb69bdbbbd"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j5_0.obj",
+      "bytes": 627679,
+      "sha256": "9cdeb0852eda69b59e44837dd52bbc2d638283a0d1325c2ffbe4b2192ad20444",
+      "git_blob": "a3fb4c066b90da32cc6f3e841f90e0f1ca7c9948"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j5_1.obj",
+      "bytes": 9603,
+      "sha256": "7eb979a47b3d7af16b674f9ba919565ea0240f73a2c00fab854388d93d0f8a67",
+      "git_blob": "53eac901dadf4780fc445e2f542184c7a2a0ab38"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j5_collision.stl",
+      "bytes": 20684,
+      "sha256": "8ac2ab2b5eaab0582d206a8c6d18d63424e735a515a9c8c3b7b1d7536dc1ef25",
+      "git_blob": "b097c4a2809e11b30dca6a1f52990085dee5c7a6"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j6_0.obj",
+      "bytes": 123650,
+      "sha256": "c46ad81334cd4124241414b1184cbc0c82451390a077cbd16d083b61d964137b",
+      "git_blob": "73cf230205491abb42221e2c3e54c180847a7ae9"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j6_1.obj",
+      "bytes": 100081,
+      "sha256": "d96de9097d294391817f1fbf1b76a5b56e7c1ecbdd6a88e321af97b9b584229d",
+      "git_blob": "078e2c11e217204ba507baf88b6f8b41388e136c"
+    },
+    {
+      "path": "fanuc_crx5ia/assets/j6_collision.stl",
+      "bytes": 8084,
+      "sha256": "1cf64807c9018e548cd365d86d63842a3b20335213c8b69a89f9a82924c17ad8",
+      "git_blob": "1c70c2c5c9d7c84bc83c35cf81967372e7439572"
+    },
+    {
+      "path": "fanuc_crx5ia/crx5ia.png",
+      "bytes": 1045057,
+      "sha256": "c6f70b5c6de0bd736bea95dd45209a40b39c588bb82c17ed696eba6639c7d1b5",
+      "git_blob": "c32e09f55c53caaf4e84a45e9e7b3f10ddfd2b15"
+    },
+    {
+      "path": "fanuc_crx5ia/crx5ia.xml",
+      "bytes": 7221,
+      "sha256": "5f5de365e521606e496f0edb27d73e6639a8c1192ad6448db025a61996d52f67",
+      "git_blob": "b2e91867afb41d61c89681e21b79fe786a64b0d9"
+    },
+    {
+      "path": "fanuc_crx5ia/scene.xml",
+      "bytes": 907,
+      "sha256": "4a9a355d97dd9d429a9012ab1c28b55825dc47b65431ebc61bfc57b7a783b4ef",
+      "git_blob": "1649af1e286231128a1c9e9cfc00aac5cc3b2f50"
+    }
+  ]
+}

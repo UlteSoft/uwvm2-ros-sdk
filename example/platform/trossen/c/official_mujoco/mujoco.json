@@ -1,0 +1,18 @@
+{
+  "vendor": "trossen",
+  "model": "VX300s",
+  "namespace": "/trossen",
+  "robot_name": "official_trossen",
+  "joint_names": [
+    "waist",
+    "shoulder",
+    "elbow",
+    "forearm_roll",
+    "wrist_angle",
+    "wrist_rotate"
+  ],
+  "scene": "trossen_vx300s/scene.xml",
+  "initial_keyframe": null,
+  "scope": "Original MuJoCo Menagerie VX300s physics; 6 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "official_repository": "https://github.com/google-deepmind/mujoco_menagerie"
+}

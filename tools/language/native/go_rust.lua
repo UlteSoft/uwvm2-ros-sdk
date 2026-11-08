@@ -16,12 +16,13 @@ local function rust(context, core, bundle, compiler)
 	local common = {
 		"--edition=2021",
 		"--target=" .. context.triple,
-		"-Copt-level=2",
+		core.debug_info(context.root).unoptimized() and "-Copt-level=0" or "-Copt-level=2",
 		"-Cpanic=abort",
 		"--sysroot",
 		path.join(bundle, "original/rust"),
 		"-Ldependency=" .. context.cache,
 	}
+	if core.debug_info(context.root).enabled() then table.join2(common, {"-Cdebuginfo=2", "-Cstrip=none"}) end
 	for _, cfg in ipairs(options.cfg or {}) do
 		assert(type(cfg) == "string" and not cfg:find("[\r\n]"), "Invalid Rust cfg operand")
 		table.join2(common, { "--cfg", cfg })
@@ -168,7 +169,36 @@ local function golang(context, core, bundle, compiler)
 	}
 	local tags = table.concat(options.tags or {}, ",")
 	if context.language == "go" then
-		local arguments = { "build", "-p", "2", "-tags=" .. tags, "-trimpath" }
+		local arguments = { "build", "-p", "2", "-tags=" .. tags }
+		if core.debug_info(context.root).enabled() then
+			import("core.base.json")
+			local prepared = json.decode(os.iorunv("/usr/bin/python3", {
+				path.join(context.root, "tools/language/native/go-source-map/prepare.py"),
+				"--goroot", environment.GOROOT,
+				"--cache", path.join(context.cache, "go-source-tools"),
+			}))
+			assert(type(prepared.toolExec) == "string" and #prepared.toolExec > 0,
+				"Missing genuine Go source-map compiler overlay")
+			table.insert(arguments, "-toolexec=" .. prepared.toolExec)
+			table.insert(arguments, "-gcflags=all=-wasmsourcemap")
+			if core.debug_info(context.root).unoptimized() then
+				-- Keep the standard runtime optimized, as with other prebuilt
+				-- language runtimes. Every package still has genuine line metadata.
+				-- Disable optimization only for the actual non-standard dependency
+				-- graph, including the application and its declared SDK libraries.
+				local packages = os.iorunv(compiler, {
+					"list", "-deps", "-tags=" .. tags, "-f",
+					"{{if not .Standard}}{{.ImportPath}}{{end}}", ".",
+				}, {curdir = context.directory, envs = environment})
+				for importpath in packages:gmatch("[^\r\n]+") do
+					assert(not importpath:find("[%s=]") and not importpath:find("...", 1, true),
+						"Invalid exact Go debug package path")
+					table.insert(arguments, "-gcflags=" .. importpath .. "=-N -l -wasmsourcemap")
+				end
+			end
+		else
+			table.insert(arguments, "-trimpath")
+		end
 		if context.kind == "shared" then
 			table.insert(arguments, "-buildmode=c-shared")
 		end
@@ -194,7 +224,7 @@ local function golang(context, core, bundle, compiler)
 		"-target=" .. descriptor,
 		"-tags=" .. tags,
 		"-panic=trap",
-		"-opt=2",
+		core.debug_info(context.root).unoptimized() and "-opt=0" or "-opt=2",
 		"-p",
 		"2",
 	}

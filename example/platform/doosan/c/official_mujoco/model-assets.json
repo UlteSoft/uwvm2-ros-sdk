@@ -1,0 +1,115 @@
+{
+  "repository": "https://github.com/DoosanRobotics/doosan-robot2",
+  "branch": "humble",
+  "commit": "d276f9f9712118a18bad1d9ee1d7d4eab10a4ea8",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1507,
+      "sha256": "f86b47192565a2d4f32c71a303d2116f309edd58f00f7b6261dbe577ccb4a33c",
+      "git_blob": "9b73b2a533c7359fca2a74d4dc12a56c849f7cf9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5540,
+      "sha256": "6a2030748cab781ab96c3d381d218144774006e5b3df701aeb65f2029e26623c",
+      "git_blob": "5f365b120cc4d99a344f45ec3da1cc272731b225"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/a0509.xml",
+      "bytes": 5740,
+      "sha256": "7585a4c62ae715c90fab2d38140b45ce7c6d7d9f15838fd51d12c99f50187046",
+      "git_blob": "f5f1bedf68f7d9251e520cb4b18f6deb61b1f262"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_0_0.stl",
+      "bytes": 387684,
+      "sha256": "1eb0e17b7b92d15c662ca9294440fda3198db24649272dc624ba62f2add29182",
+      "git_blob": "e5a793911d0ca9829023599c40efe445dd2d8faa"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_1_0.stl",
+      "bytes": 59684,
+      "sha256": "abb8ef82093b78e6f5ec49222e03942e8458c98a128e2b1e487df644adb4a858",
+      "git_blob": "e6580361251373b70826a2619cb32eaaca9411d5"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_1_1.stl",
+      "bytes": 450634,
+      "sha256": "a855c77b7c37a370da94d34f099733782405898be5c383477b3ab6b4dd747862",
+      "git_blob": "ef8bd353702812c4a09f9822a1afbbe2f0025f19"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_1_2.stl",
+      "bytes": 134384,
+      "sha256": "f08d8312deb2d6ceb72f74f58caddb567c0236b229bc7de68f7f279649b75c25",
+      "git_blob": "ccdf5a89c8c0ab907f80e3c4451485755f6ce960"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_2_0.stl",
+      "bytes": 418634,
+      "sha256": "8631a504bdadc25cda7330412778d0c75fdbcf75d386778ab463d4193d9c5f07",
+      "git_blob": "d4dc0010c70e678ba49fa1723d466116e2c1bd0b"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_2_1.stl",
+      "bytes": 892384,
+      "sha256": "53d803fa4480568e9c3302e4aec2fb0de28276075d2c773275884ad41cc900ea",
+      "git_blob": "1265b225df28e0236081a9bd1d01aa59cf3e6fa2"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_2_2.stl",
+      "bytes": 387384,
+      "sha256": "d21f463674bcfba1777bb08ee8eff3b7be93b4f311a9f028cf29c403840770bf",
+      "git_blob": "f254668cd38fd60e09edfec51e65d27834346d5a"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_3_0.stl",
+      "bytes": 47284,
+      "sha256": "eaa1fceac51d4c6a7d69dbc02015cf56aeea485a30979929924ecf01e04e274a",
+      "git_blob": "780ea778c32b9d313aa7c30c3e72a06f6ef0e4b7"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_3_1.stl",
+      "bytes": 334384,
+      "sha256": "77aaa58d7ce7bc6d59044feab0f6f568121f3302c9ee2ba4045f88f57a748630",
+      "git_blob": "bbaa72dff36ca2ebabdb6638813fdd0555f24fa3"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_4_0.stl",
+      "bytes": 292184,
+      "sha256": "6fe5fc405fb6a15fa547f292b213d2819b75db6a42afee909d11b4ecc2738800",
+      "git_blob": "7212653b98b027b5fb67bd3e16e44fbd3b5fd1f3"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_4_1.stl",
+      "bytes": 317084,
+      "sha256": "101c2c8a251e035ad370f95063ec4b692d4b0201c34f4d8bba2ff3af65494bc7",
+      "git_blob": "571c4ee5d1ec55ec74cb549135053d9527ac0599"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_5_0.stl",
+      "bytes": 61684,
+      "sha256": "636cf3c208720d96fa828c51ecf144953fbfe5ae2ec5dcfdc819e6577bc8b786",
+      "git_blob": "86476063af9e8579a6e7893ce8d08ba62d850ae8"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_5_1.stl",
+      "bytes": 453184,
+      "sha256": "d484155f233de971fca2a4891a18e88aa5ae31f83c286656cebd39b514ddecb2",
+      "git_blob": "ce3310120c5673b64e0307148029edf6193027e2"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/assets/A0509_6_0.stl",
+      "bytes": 262684,
+      "sha256": "957fbce9dedc4c726ca4d77c5e8061cdcd8b6ebbc1e20e48f26ea0bb74999d79",
+      "git_blob": "ab314cc1246d027c1c2360c7922e0c1434fec874"
+    },
+    {
+      "path": "dsr_description2/mujoco_models/a0509/scene.xml",
+      "bytes": 953,
+      "sha256": "37915eb195272e1728a83dd051fa20a9df3c68c1c080239b1ef4b395d6a03ab3",
+      "git_blob": "76b9b622f48097bc68df458ea484afa8d9d57eac"
+    }
+  ]
+}

@@ -15,7 +15,8 @@ PERMISSIONS = frozenset({
 
 
 BUDGETS = frozenset({"random", "stdin", "stdout", "stderr", "realtime", "monotonic",
-                     "process", "thread", "poll", "signal", "yield", "filesystem"})
+                     "process", "thread", "poll", "signal", "yield", "filesystem",
+                     "socket-read", "socket-write", "socket-accept", "socket-shutdown"})
 LIMIT_FIELDS = frozenset({"request-bytes", "window-bytes", "window-calls", "total-bytes", "total-calls", "concurrent"})
 WAIT_FIELDS = frozenset({"window-bytes", "window-calls", "concurrent"})
 UINT64_MAX_TEXT = "18446744073709551615"
@@ -123,6 +124,60 @@ def filesystem_arguments(module, preopens, rights):
     return argv
 
 
+SOCKET_RIGHTS = frozenset({"read", "write", "accept", "shutdown", "readiness", "flags", "metadata"})
+
+
+def socket_arguments(module, preopens, stdio):
+    """Serialize host-selected socket resources; never inspect their protocol.
+
+    Declaring a preopen authorizes its exact connect/bind/listen. Missing base or
+    accepted-child rights are empty. Imports still need explicit exposure and
+    call permission. An inherited stdio socket also needs its stdio grant.
+    """
+    limit_arguments(module, {})
+    if not isinstance(preopens, list) or not isinstance(stdio, list):
+        raise ValueError("socket_preopens and socket_stdio must be explicit arrays")
+    argv, seen = [], set()
+    def rights(entry, fd, listener):
+        masks = []
+        for field in ("base", "inheriting"):
+            values = entry.get(field, [])
+            if (not isinstance(values, list) or any(not isinstance(x, str) for x in values)
+                    or len(values) != len(set(values)) or not set(values).issubset(SOCKET_RIGHTS)):
+                raise ValueError("Use distinct explicit socket rights")
+            if field == "inheriting" and ("accept" in values or (values and not listener)):
+                raise ValueError("Only listeners can grant accepted-child rights; accept cannot be inherited")
+            masks.append(",".join(values) if values else "none")
+        argv.extend(["--wasip1-single-socket-rights", module, str(fd), *masks])
+    for entry in preopens:
+        if (not isinstance(entry, dict) or not {"fd", "kind", "endpoint"}.issubset(entry)
+                or set(entry) - {"fd", "kind", "endpoint", "base", "inheriting"}):
+            raise ValueError("Socket preopens require fd, kind, endpoint and optional base/inheriting rights")
+        fd, kind, endpoint = entry["fd"], entry["kind"], entry["endpoint"]
+        if type(fd) is not int or not 3 <= fd <= 2147483647 or fd in seen:
+            raise ValueError("Use distinct socket preopen fds >= 3")
+        seen.add(fd)
+        if kind not in {"tcp-connect", "tcp-listen", "udp-connect", "udp-bind"}:
+            raise ValueError("Unknown socket preopen kind")
+        if (not isinstance(endpoint, dict) or len(endpoint) != 1
+                or not set(endpoint).issubset({"address", "unix"})):
+            raise ValueError("Select exactly one explicit IP/DNS address:port or Unix path")
+        key, value = next(iter(endpoint.items()))
+        if not isinstance(value, str) or not value or "\0" in value:
+            raise ValueError("Socket endpoints must be nonempty NUL-free strings")
+        argv.extend(["--wasip1-single-socket-" + kind, module, str(fd), *(["unix", value] if key == "unix" else [value])])
+        rights(entry, fd, kind == "tcp-listen")
+    for entry in stdio:
+        if not isinstance(entry, dict) or "fd" not in entry or set(entry) - {"fd", "base"}:
+            raise ValueError("Inherited stdio socket rights require fd and optional base rights")
+        fd = entry["fd"]
+        if type(fd) is not int or not 0 <= fd <= 2 or fd in seen:
+            raise ValueError("Use distinct inherited socket stdio fds 0, 1 or 2")
+        seen.add(fd)
+        rights(entry, fd, False)
+    return argv
+
+
 def environment_arguments(module, environment):
     """Expose only explicit named strings; host environment inheritance stays off."""
     limit_arguments(module, {})
@@ -139,7 +194,7 @@ def environment_arguments(module, environment):
 
 def module_policy(value):
     """Validate a concrete policy, including an explicitly empty policy."""
-    if not isinstance(value, dict) or not {"enabled", "grants", "interfaces"}.issubset(value) or set(value) - {"enabled", "grants", "interfaces", "limits", "wait_exit_actions", "preopens", "filesystem_rights", "environment"}:
+    if not isinstance(value, dict) or not {"enabled", "grants", "interfaces"}.issubset(value) or set(value) - {"enabled", "grants", "interfaces", "limits", "wait_exit_actions", "preopens", "filesystem_rights", "environment", "socket_preopens", "socket_stdio"}:
         raise ValueError("WASIp1 v3 requires enabled, exact interfaces, and operation grants")
     from host_interfaces import interface_arguments
     interface_arguments("wasip1", "single", "main", value["interfaces"])
@@ -153,12 +208,13 @@ def module_policy(value):
             raise ValueError("Duplicate WASIp1 " + field)
     if not set(value["grants"]).issubset(PERMISSIONS):
         raise ValueError("Unknown or broad WASIp1 grant; list individual operations")
-    if not value["enabled"] and any(value.get(k) for k in ("grants", "preopens", "filesystem_rights", "environment")):
+    if not value["enabled"] and any(value.get(k) for k in ("grants", "preopens", "filesystem_rights", "environment", "socket_preopens", "socket_stdio")):
         raise ValueError("Disabled WASIp1 cannot grant operations or host objects")
     limit_arguments("main", value.get("limits", {}))
     wait_exit_arguments("main", value.get("wait_exit_actions", {}))
     filesystem_arguments("main", value.get("preopens", []), value.get("filesystem_rights", {}))
     environment_arguments("main", value.get("environment", {}))
+    socket_arguments("main", value.get("socket_preopens", []), value.get("socket_stdio", []))
     return value
 
 
@@ -171,12 +227,14 @@ def arguments(policy):
     """
     if policy is None:
         return []
-    if not isinstance(policy, dict) or set(policy) != {"format", "modules"} or policy["format"] != "uwvm-sdk-wasip1-policy-v3":
+    if not isinstance(policy, dict) or not {"format", "modules"}.issubset(policy) or set(policy) - {"format", "modules", "socket_abi"} or policy["format"] != "uwvm-sdk-wasip1-policy-v3":
         raise ValueError("Expected uwvm-sdk-wasip1-policy-v3")
+    if "socket_abi" in policy and policy["socket_abi"] not in {"standard", "wasix"}:
+        raise ValueError("socket_abi must be exactly standard or wasix")
     modules = policy["modules"]
     if not isinstance(modules, dict) or len(modules) > 256:
         raise ValueError("WASIp1 modules must be a bounded map")
-    argv = []
+    argv = ["--wasip1-socket-abi", policy["socket_abi"]] if "socket_abi" in policy else []
     if any(not isinstance(name, str) for name in modules):
         raise ValueError("Use the host's exact stable module binding name")
     for name in sorted(modules):
@@ -194,6 +252,7 @@ def arguments(policy):
         argv += wait_exit_arguments(name, value.get("wait_exit_actions", {}))
         argv += filesystem_arguments(name, value.get("preopens", []), value.get("filesystem_rights", {}))
         argv += environment_arguments(name, value.get("environment", {}))
+        argv += socket_arguments(name, value.get("socket_preopens", []), value.get("socket_stdio", []))
     return argv
 
 
@@ -245,4 +304,7 @@ def test_arguments(values, policy=None):
         if not value["enabled"]:
             raise ValueError("Every SDK guest test module requires enabled WASIp1; deny operations through grants")
         modules[name] = value
-    return result + arguments({"format": "uwvm-sdk-wasip1-policy-v3", "modules": modules})
+    effective = {"format": "uwvm-sdk-wasip1-policy-v3", "modules": modules}
+    if policy is not None and "socket_abi" in policy:
+        effective["socket_abi"] = policy["socket_abi"]
+    return result + arguments(effective)

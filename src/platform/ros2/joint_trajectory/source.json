@@ -1,0 +1,56 @@
+{
+  "upstream": {
+    "repository": "https://github.com/ros-controls/ros2_controllers",
+    "version": "4.42.1",
+    "commit": "aacd842600a09d556b983ac3d53a0983e9ebcbb1",
+    "files": [
+      {
+        "path": "joint_trajectory_controller/src/trajectory.cpp",
+        "bytes": 16693,
+        "sha256": "a979c1bca2527a912571f5e1ed29e5887d7bf92aa226f6918a125a462821537d"
+      },
+      {
+        "path": "joint_trajectory_controller/include/joint_trajectory_controller/trajectory.hpp",
+        "bytes": 9003,
+        "sha256": "dea80245b8c831d47932e2b4e78be938f23d0c54bab1c8fc86f39859d8defe50"
+      },
+      {
+        "path": "joint_trajectory_controller/include/joint_trajectory_controller/interpolation_methods.hpp",
+        "bytes": 2148,
+        "sha256": "d2447bbf4c2fa1ca2c9d15b5e11ebd3ce48e567a9d34788ec1eb7884d816f964"
+      },
+      {
+        "path": "joint_trajectory_controller/test/test_trajectory.cpp",
+        "bytes": 45829,
+        "sha256": "28cec7f586d9fae9c0b8b3c7b2a3e4bbd97f731e76745538d6100c17346485ce"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ]
+  },
+  "adaptation": "Original trajectory algorithm with explicit private value types; no native ROS execution.",
+  "angles": {
+    "source": "installed ROS Jazzy angles header, BSD license retained in file",
+    "package_version": "1.16.1"
+  },
+  "files": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "README.md": "aeaa4a58bc5998fc65ed559cc805fa0a340c4c7b3728d12e6cdabcbb0d2fec7f",
+    "include/joint_trajectory_controller/interpolation_methods.hpp": "5ebb17fdd81df5a67fb283f93d7978438b4844631796aca8cd9729ea1d23a36a",
+    "include/joint_trajectory_controller/trajectory.hpp": "6c255294f41ef68a37ffe1a6b6589fbb998b0f9f3c0245c509f728c8eb026d2c",
+    "include/uwvm_ros/trajectory.h": "17a0a81d5c7166622b2d8d639577e9c8768303d48c04f48180dd17fc04da4665",
+    "include/uwvm_ros/trajectory_types.hpp": "3bd144862c8874f4f17ba8e049111cb44c6bb434bdf0c029fcb5d30cc2fa2091",
+    "portability.json": "b7978e02f003de2f28855a5b76ade4ee34692286dcaf4a9985ea3b7612b9c7e1",
+    "third_party/angles/angles.h": "6972d2fd0fda27ca42ab9271859004256f55dd58521711138b30df581ab9c5cf",
+    "trajectory.cpp": "5dc72fb2427905e73d36d98da9d998671d6ee84cd3566a2588b80d2768cf1d55",
+    "trajectory_c.cpp": "4cdcca34812cc78fbd0466aa820e5d4da8932a8cc791f9759d00cd5495e53721",
+    "upstream/interpolation_methods.hpp": "d2447bbf4c2fa1ca2c9d15b5e11ebd3ce48e567a9d34788ec1eb7884d816f964",
+    "upstream/test_trajectory.cpp": "28cec7f586d9fae9c0b8b3c7b2a3e4bbd97f731e76745538d6100c17346485ce",
+    "upstream/trajectory.cpp": "a979c1bca2527a912571f5e1ed29e5887d7bf92aa226f6918a125a462821537d",
+    "upstream/trajectory.hpp": "dea80245b8c831d47932e2b4e78be938f23d0c54bab1c8fc86f39859d8defe50",
+    "value-component.patch": "bfa06b17b36a9cd349e0c4f66c804722eae56b61d79f1fb7b9ad43ca7b00e67c"
+  }
+}

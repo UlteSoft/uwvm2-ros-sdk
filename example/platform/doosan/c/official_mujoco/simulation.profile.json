@@ -1,0 +1,24 @@
+{
+  "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
+  "id": "doosan-a0509-official-mujoco-jazzy",
+  "execution_class": "software_simulation",
+  "scope": "Original Doosan Robotics MuJoCo A0509 physics; 6 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "ros_release": "jazzy",
+  "source": "main.c",
+  "test": "xmake test -P .",
+  "same_wasm_for_both_engines": true,
+  "source_lock": "model-assets.json",
+  "official_source": {
+    "repository": "https://github.com/DoosanRobotics/doosan-robot2",
+    "commit": "d276f9f9712118a18bad1d9ee1d7d4eab10a4ea8",
+    "path": "dsr_description2/mujoco_models/a0509"
+  },
+  "original_simulator": "MuJoCo",
+  "production_admission": false,
+  "physical_robot_authorized": false,
+  "migrated_components": [
+    "ros-controls/control_toolbox@4.11.1 PID",
+    "ros-controls/ros2_controllers@4.42.1 Trajectory"
+  ],
+  "native_role": "original simulator physics, intrinsic actuators and device transport"
+}

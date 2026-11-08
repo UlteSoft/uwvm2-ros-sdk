@@ -9,18 +9,18 @@ function limit_arguments(module, limits)
         and module:match("^[A-Za-z0-9_][A-Za-z0-9_.%-]*$"), "Use an exact host module binding")
     assert(type(limits) == "table" and not json.is_marked_as_array(limits), "WASIp1 limits must be an explicit map")
     local budgets, fields, waits = {}, {}, {['window-bytes'] = true, ['window-calls'] = true, concurrent = true}
-    for _, value in ipairs({"random", "stdin", "stdout", "stderr", "realtime", "monotonic", "process", "thread", "poll", "signal", "yield", "filesystem"}) do budgets[value] = true end
+    for _, value in ipairs({"random", "stdin", "stdout", "stderr", "realtime", "monotonic", "process", "thread", "poll", "signal", "yield", "filesystem", "socket-read", "socket-write", "socket-accept", "socket-shutdown"}) do budgets[value] = true end
     for _, value in ipairs({"request-bytes", "window-bytes", "window-calls", "total-bytes", "total-calls", "concurrent"}) do fields[value] = true end
     local keys, count, argv = {}, 0, {}
     for key in pairs(limits) do
         assert(type(key) == "string", "Use an exact WASIp1 budget.field limit")
         count = count + 1
-        assert(count <= 72, "Too many WASIp1 limit fields")
+        assert(count <= 96, "Too many WASIp1 limit fields")
         table.insert(keys, key)
     end
     table.sort(keys)
     for _, key in ipairs(keys) do
-        local budget, field = key:match("^([a-z]+)%.([a-z%-]+)$")
+        local budget, field = key:match("^([a-z%-]+)%.([a-z%-]+)$")
         assert(budgets[budget] and fields[field], "Unknown WASIp1 budget or limit field")
         local entry = limits[key]
         assert(type(entry) == "table" and not json.is_marked_as_array(entry), "Each WASIp1 limit requires value and on_exhausted")
@@ -47,15 +47,15 @@ function wait_exit_arguments(module, actions)
     limit_arguments(module, {})
     assert(type(actions) == "table" and not json.is_marked_as_array(actions), "WASIp1 wait_exit_actions must be an explicit native-wait map")
     local budgets, keys, argv = {}, {}, {}
-    for _, value in ipairs({"random", "stdin", "stdout", "stderr", "realtime", "monotonic", "process", "thread", "poll", "signal", "yield", "filesystem"}) do budgets[value] = true end
+    for _, value in ipairs({"random", "stdin", "stdout", "stderr", "realtime", "monotonic", "process", "thread", "poll", "signal", "yield", "filesystem", "socket-read", "socket-write", "socket-accept", "socket-shutdown"}) do budgets[value] = true end
     for key in pairs(actions) do
         assert(type(key) == "string", "Use an exact WASIp1 budget.native-wait key")
         table.insert(keys, key)
-        assert(#keys <= 12, "Too many native-wait exit actions")
+        assert(#keys <= 16, "Too many native-wait exit actions")
     end
     table.sort(keys)
     for _, key in ipairs(keys) do
-        local budget = key:match("^([a-z]+)%.native%-wait$")
+        local budget = key:match("^([a-z%-]+)%.native%-wait$")
         assert(budgets[budget], "Use an exact WASIp1 budget.native-wait key")
         local action = actions[key]
         assert(action == "cancel" or action == "wait", "Native-wait proc_exit action must be cancel or wait")
@@ -115,6 +115,58 @@ function filesystem_arguments(module, preopens, rights)
     return argv
 end
 
+
+function socket_arguments(module, preopens, stdio)
+    limit_arguments(module, {})
+    local argv, seen = {}, {}
+    local allowed = {read=true,write=true,accept=true,shutdown=true,readiness=true,flags=true,metadata=true}
+    local function dense(values)
+        assert(type(values) == "table", "Socket resource lists must be arrays")
+        for key in pairs(values) do assert(type(key) == "number" and key >= 1 and key <= #values and key % 1 == 0, "Use dense socket arrays") end
+    end
+    local function masks(entry, fd, listener)
+        local result = {}
+        for _, field in ipairs({"base", "inheriting"}) do
+            local values, used = entry[field] == nil and {} or entry[field], {}
+            dense(values)
+            for _, name in ipairs(values) do
+                assert(type(name) == "string" and allowed[name] and not used[name], "Use distinct explicit socket rights")
+                assert(field ~= "inheriting" or (listener and name ~= "accept"), "Only listeners can grant child rights; accept cannot be inherited")
+                used[name] = true
+            end
+            table.insert(result, #values == 0 and "none" or table.concat(values, ","))
+        end
+        table.join2(argv, {"--wasip1-single-socket-rights", module, string.format("%.0f", fd), result[1], result[2]})
+    end
+    dense(preopens)
+    for _, entry in ipairs(preopens) do
+        assert(type(entry) == "table", "Socket preopen must be an object")
+        for key in pairs(entry) do assert(key == "fd" or key == "kind" or key == "endpoint" or key == "base" or key == "inheriting", "Unknown socket preopen field") end
+        local fd, kind = entry.fd, entry.kind
+        assert(type(fd) == "number" and fd >= 3 and fd <= 2147483647 and fd % 1 == 0 and not seen[fd], "Use distinct socket fds >= 3")
+        seen[fd] = true
+        assert(kind == "tcp-connect" or kind == "tcp-listen" or kind == "udp-connect" or kind == "udp-bind", "Unknown socket preopen kind")
+        assert(type(entry.endpoint) == "table" and not json.is_marked_as_array(entry.endpoint), "Select one socket endpoint")
+        local count, key, value = 0, nil, nil
+        for k, v in pairs(entry.endpoint) do count=count+1;key=k;value=v end
+        assert(count == 1 and (key == "address" or key == "unix") and type(value) == "string" and #value > 0 and not value:find("%z"), "Use one NUL-free address:port or Unix path")
+        table.join2(argv, {"--wasip1-single-socket-" .. kind, module, string.format("%.0f", fd)})
+        if key == "unix" then table.insert(argv, "unix") end
+        table.insert(argv, value)
+        masks(entry, fd, kind == "tcp-listen")
+    end
+    dense(stdio)
+    for _, entry in ipairs(stdio) do
+        assert(type(entry) == "table", "Inherited socket stdio must be an object")
+        for key in pairs(entry) do assert(key == "fd" or key == "base", "Unknown socket stdio field") end
+        local fd = entry.fd
+        assert(type(fd) == "number" and fd >= 0 and fd <= 2 and fd % 1 == 0 and not seen[fd], "Use distinct socket stdio fds 0, 1 or 2")
+        seen[fd] = true
+        masks(entry, fd, false)
+    end
+    return argv
+end
+
 function environment_arguments(module, environment)
     limit_arguments(module, {})
     assert(type(environment) == "table" and not json.is_marked_as_array(environment),
@@ -136,7 +188,7 @@ function arguments(policy)
     if policy == nil or policy == json.null or policy == json.purenull then return {} end
     assert(type(policy) == "table" and not json.is_marked_as_array(policy) and policy.format == "uwvm-sdk-wasip1-policy-v3"
         and type(policy.modules) == "table" and not json.is_marked_as_array(policy.modules), "Expected uwvm-sdk-wasip1-policy-v3")
-    for key in pairs(policy) do assert(key == "format" or key == "modules", "Unknown WASIp1 policy field") end
+    for key in pairs(policy) do assert(key == "format" or key == "modules" or key == "socket_abi", "Unknown WASIp1 policy field") end
     local rights = {}
     for _, right in ipairs({"stdin.read", "stdout.write", "stderr.write", "stdio.metadata", "stdio.readiness",
         "args", "environ", "proc-exit", "realtime-clock", "monotonic-clock", "process-clock", "thread-clock",
@@ -144,6 +196,10 @@ function arguments(policy)
         "realtime-resolution", "monotonic-resolution", "process-resolution", "thread-resolution",
         "realtime-timer", "monotonic-timer", "process-timer", "thread-timer"}) do rights[right] = true end
     local argv = {}
+    if policy.socket_abi ~= nil then
+        assert(policy.socket_abi == "standard" or policy.socket_abi == "wasix", "socket_abi must be exactly standard or wasix")
+        table.join2(argv, {"--wasip1-socket-abi", policy.socket_abi})
+    end
     local count, names = 0, {}
     for name in pairs(policy.modules) do
         assert(type(name) == "string", "Use an exact host module binding")
@@ -158,9 +214,9 @@ function arguments(policy)
         assert(type(module) == "table" and not json.is_marked_as_array(module) and type(module.enabled) == "boolean"
             and type(module.grants) == "table" and type(module.interfaces) == "table",
             "WASIp1 v3 requires enabled, exact interfaces, and operation grants")
-        for key in pairs(module) do assert(key == "enabled" or key == "grants" or key == "interfaces" or key == "limits" or key == "wait_exit_actions" or key == "preopens" or key == "filesystem_rights" or key == "environment", "Unknown WASIp1 module field") end
+        for key in pairs(module) do assert(key == "enabled" or key == "grants" or key == "interfaces" or key == "limits" or key == "wait_exit_actions" or key == "preopens" or key == "filesystem_rights" or key == "environment" or key == "socket_preopens" or key == "socket_stdio", "Unknown WASIp1 module field") end
         assert(module.enabled or #module.grants == 0, "Disabled WASIp1 has no grants")
-        for _, field in ipairs({"preopens", "filesystem_rights", "environment"}) do
+        for _, field in ipairs({"preopens", "filesystem_rights", "environment", "socket_preopens", "socket_stdio"}) do
             assert(module.enabled or module[field] == nil or (type(module[field]) == "table" and next(module[field]) == nil),
                 "Disabled WASIp1 has no host objects")
         end
@@ -188,6 +244,8 @@ function arguments(policy)
         table.join2(argv, filesystem_arguments(name, module.preopens == nil and {} or module.preopens,
             module.filesystem_rights == nil and {} or module.filesystem_rights))
         table.join2(argv, environment_arguments(name, module.environment == nil and {} or module.environment))
+        table.join2(argv, socket_arguments(name, module.socket_preopens == nil and {} or module.socket_preopens,
+            module.socket_stdio == nil and {} or module.socket_stdio))
     end
     return argv
 end
@@ -248,7 +306,9 @@ function test_arguments(values, policy, artifacts)
     for _, name in ipairs(names) do
         assert(artifacts[name] and os.isfile(artifacts[name]), "Missing built artifact for test module " .. name)
     end
-    table.join2(result, arguments({format = "uwvm-sdk-wasip1-policy-v3", modules = modules}))
+    local effective = {format = "uwvm-sdk-wasip1-policy-v3", modules = modules}
+    if policy and policy.socket_abi ~= nil then effective.socket_abi = policy.socket_abi end
+    table.join2(result, arguments(effective))
     -- Share the strict import-only reader and scope resolver with Python tests.
     -- Full Wasm validation remains the VM's responsibility, including GC types.
     local helper = path.join(os.scriptdir(), "../shared/python/host_interfaces.py")

@@ -1,0 +1,228 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+  "files": [
+    {
+      "path": "flexiv_rizon4/CHANGELOG.md",
+      "bytes": 308,
+      "sha256": "1b476611520428840bdb32089019138445873065f375ca430ba26c90ac38c32c",
+      "git_blob": "6e39cdc5961605623f9e7131c4d193a015d9ff46"
+    },
+    {
+      "path": "flexiv_rizon4/LICENSE",
+      "bytes": 12927,
+      "sha256": "5e15554a918bf661583d7df7a1014177be4fed561532aaaee852dca06c71821a",
+      "git_blob": "2b315a13af124c66d94f0fc2f47344d5d551979e"
+    },
+    {
+      "path": "flexiv_rizon4/README.md",
+      "bytes": 1678,
+      "sha256": "06f368eb3df4272766398dfbde98e30d3069fa1ec3c0e40e4f215d5a37b02c84",
+      "git_blob": "f2117c3472e766a2f441c3adb753d219dd06a048"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link0/link0.obj",
+      "bytes": 557022,
+      "sha256": "cb7968064f5477ce25401f5dd6d69e2ec70c1ecf54e88dfc21f0397f42f38fd5",
+      "git_blob": "b34159cf7b0736256d8d92f55f21dcefc20cc183"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link0/link0.xml",
+      "bytes": 584,
+      "sha256": "5318b1028872d354c391f68f398fe55e3683c1417c5e2d84a720d0298cc87ab1",
+      "git_blob": "aeaa8ffa6a6f38adf7cf7aeab23db19d72f25072"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link0/material.mtl",
+      "bytes": 141,
+      "sha256": "96748df40262a3d5b48632091db1e7de46c1e547e14b987da70c66051c044156",
+      "git_blob": "b8313478196042d396047b4b20927d4ac5000e93"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link1/link1.xml",
+      "bytes": 845,
+      "sha256": "693699a3f8ed560cc8a5e3372075a0bb22201af38a123ea188970233767de290",
+      "git_blob": "b56ef676651688913cb9aa1d3504c3e3323af500"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link1/link1_0.obj",
+      "bytes": 332921,
+      "sha256": "6161eacd9d517b6d54aed979de6cc104c0751d43e4ffa81278b032f62186f66a",
+      "git_blob": "2b39bbc27c1c6165e809c5b8af086da602140552"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link1/link1_1.obj",
+      "bytes": 156211,
+      "sha256": "575c5cb39c8c8fa5263c61f16f2343ad014296095280e31475ed473cc512df02",
+      "git_blob": "a0260ad4e409e72cd9275071af96da357b06e5b5"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link1/material.mtl",
+      "bytes": 141,
+      "sha256": "96748df40262a3d5b48632091db1e7de46c1e547e14b987da70c66051c044156",
+      "git_blob": "b8313478196042d396047b4b20927d4ac5000e93"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link2/link2.xml",
+      "bytes": 845,
+      "sha256": "a1b2bc3a5c066ce82786f9da1ee6a0a9e41a859e651cb3be3c5ab08f207049e3",
+      "git_blob": "a596554a04a60fb2c6b73e25bdec39a061684aff"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link2/link2_0.obj",
+      "bytes": 136323,
+      "sha256": "289c9764904962e43a194553c8219c8271224d8203baa8940aadf25a041465f9",
+      "git_blob": "9e1c5a15bb2c4e18a638ceda4d6d9b5c7487f155"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link2/link2_1.obj",
+      "bytes": 328079,
+      "sha256": "eea00b040b02ec014761c288403380d8a3ec43dd0054f7adaef6e0c8e6e1eaf8",
+      "git_blob": "81429d226a2649a742850c2c03140c2c478b8e4e"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link2/material.mtl",
+      "bytes": 141,
+      "sha256": "1b40969e5e6db84a0ee31d99e79653cad1fc0c069878a2a1bec9e940e852cd16",
+      "git_blob": "5bf03d67e61228f3a811cccf9b01a6edb79a6c31"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link3/link3.xml",
+      "bytes": 845,
+      "sha256": "13aa1d6fab0788529033d30aa9765efa57cb820036dbbb2cc35bb1ce15549468",
+      "git_blob": "6bdec63f8766f57d1d8a2cf3b79d55f58d85bd55"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link3/link3_0.obj",
+      "bytes": 145742,
+      "sha256": "1f4f9b6b752aa1968608bf39a0487cbb4abefdc443fae3b03ffd0673a59e1cc3",
+      "git_blob": "a86762a7231f9818382557d8b8624c46ad7ce032"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link3/link3_1.obj",
+      "bytes": 337126,
+      "sha256": "b7e68e21687db1c4e97f156da19e30984ed7ddae2bfacd0dc5339f66cd0627a3",
+      "git_blob": "9a8d368920f2dcdf8550ce88a1ee138fef41506a"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link3/material.mtl",
+      "bytes": 141,
+      "sha256": "1b40969e5e6db84a0ee31d99e79653cad1fc0c069878a2a1bec9e940e852cd16",
+      "git_blob": "5bf03d67e61228f3a811cccf9b01a6edb79a6c31"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link4/link4.xml",
+      "bytes": 845,
+      "sha256": "24c32c6cad9442044501e7c0bb5885771920f7eeeccf33a191bff61f925ebc86",
+      "git_blob": "97bd4c68932fd2e5137caab1a053028616cd5cc6"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link4/link4_0.obj",
+      "bytes": 165719,
+      "sha256": "8dca849d28a663ab5264d56cb6c43d0ca8b914861ff23be8b7a799e6d31b6c26",
+      "git_blob": "0fde0564bdd63550e80a138f84573f7b6acfc89f"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link4/link4_1.obj",
+      "bytes": 145757,
+      "sha256": "74a065eb55caa9afa87d3c6768d9ac845a0ce60c707a97d6aaf44987780c9f40",
+      "git_blob": "31f84939af6d8e9bc88d454630609b6d69ddc438"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link4/material.mtl",
+      "bytes": 141,
+      "sha256": "96748df40262a3d5b48632091db1e7de46c1e547e14b987da70c66051c044156",
+      "git_blob": "b8313478196042d396047b4b20927d4ac5000e93"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link5/link5.xml",
+      "bytes": 845,
+      "sha256": "f6b756528e433b16df76de66f8de3dbb5947d33be306c3a157eeef3f63332ef8",
+      "git_blob": "5dc0e16c574814ed306e5f911618249436615b4b"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link5/link5_0.obj",
+      "bytes": 139125,
+      "sha256": "8beadd0185a3f96f744043b94ef18007aa4d5a1e673f1201dabe409c28386f3c",
+      "git_blob": "ab592b0e955e3e9c9c5a9baaa3493a7e7b1bcc96"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link5/link5_1.obj",
+      "bytes": 330818,
+      "sha256": "c6275b0615a348ef1a2e8d6114f1010d4529ddf2da9bfab4d6747ab2b5cd6eda",
+      "git_blob": "a59b52cc5d5830a9c56114b583cdf63487942247"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link5/material.mtl",
+      "bytes": 141,
+      "sha256": "1b40969e5e6db84a0ee31d99e79653cad1fc0c069878a2a1bec9e940e852cd16",
+      "git_blob": "5bf03d67e61228f3a811cccf9b01a6edb79a6c31"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link6/link6.xml",
+      "bytes": 845,
+      "sha256": "d3e6a2b0c03b532c368175a6f18386917a4e440708a1dd7e3ed57838e21b0ead",
+      "git_blob": "344754efe562ed412108e033c9393d53d753a705"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link6/link6_0.obj",
+      "bytes": 235744,
+      "sha256": "e253d08ce01ce4a850a215d24ae1777c5cd340a61f1193afe747307ae3dc9d43",
+      "git_blob": "57a7b82697eab640402378de8cc0a21a7626b626"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link6/link6_1.obj",
+      "bytes": 467422,
+      "sha256": "665d54f75bd42206c421640d3ac2c6ecd5e4943bd9b215355fd74e1ab0a6e93f",
+      "git_blob": "f98d0f05dde704b1267ba50195c8d42bc105eb4b"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link6/material.mtl",
+      "bytes": 141,
+      "sha256": "1b40969e5e6db84a0ee31d99e79653cad1fc0c069878a2a1bec9e940e852cd16",
+      "git_blob": "5bf03d67e61228f3a811cccf9b01a6edb79a6c31"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link7/link7.obj",
+      "bytes": 532849,
+      "sha256": "36662d7e88efdd315e3fe75444b5eb962b12eb43c097efaf7b73986ed7cdccc5",
+      "git_blob": "1af95a5a0642cad4617163f15962b829a63fe9c3"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link7/link7.xml",
+      "bytes": 584,
+      "sha256": "ec077fa0568c43d5c27a124bf1c3134a28ea84a4ae1871a10a1e9431def71f1e",
+      "git_blob": "689092f9b5be11bc2c943abce062d55d62341c15"
+    },
+    {
+      "path": "flexiv_rizon4/assets/link7/material.mtl",
+      "bytes": 141,
+      "sha256": "96748df40262a3d5b48632091db1e7de46c1e547e14b987da70c66051c044156",
+      "git_blob": "b8313478196042d396047b4b20927d4ac5000e93"
+    },
+    {
+      "path": "flexiv_rizon4/compute_gains.py",
+      "bytes": 2852,
+      "sha256": "a6682462798c9c3dcd3a9240144056923c8c5ae8095fd41c78370dd064581c0b",
+      "git_blob": "dffbfcb11582a4da23c9895e51dc1d658a6a491b"
+    },
+    {
+      "path": "flexiv_rizon4/flexiv_rizon4.png",
+      "bytes": 1731547,
+      "sha256": "c0e53fab13a20c344015d1aa67a69ee0d0e969ee9717f20dbf081fb3624889f5",
+      "git_blob": "ecccbc45be4c06bb7abdb65ca1b975f4382df070"
+    },
+    {
+      "path": "flexiv_rizon4/flexiv_rizon4.xml",
+      "bytes": 5068,
+      "sha256": "5f04148a798ce823155fbf005cc633e95b5e5f9bdc91f5c2ca1cad56ffe6d13e",
+      "git_blob": "daa7b2d326fd092d7626ee8808938f4d4d2e6197"
+    },
+    {
+      "path": "flexiv_rizon4/scene.xml",
+      "bytes": 853,
+      "sha256": "a720cee8929b95122a3d4ff203f310d0873724f59ec652fa43925f5679820652",
+      "git_blob": "0eb3d6578c37c1d77988cbe5e65e940321baa59c"
+    }
+  ]
+}

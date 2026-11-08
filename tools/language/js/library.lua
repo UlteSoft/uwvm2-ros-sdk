@@ -277,12 +277,22 @@ function build(target, root, request)
 	if language == "py" then
 		-- Each real subinterpreter receives the same source-backed lazy standard
 		-- library loader. Importing it creates no host path or ROS permission.
-		source, source_inputs = import("pack", {
-			rootdir = path.join(root, "tools/language/js"), anonymous = true
-		}).bundle(root, "py", entry, {
+		local bundle = {
 			format = "uwvm-language-bundle-v1", language = "py",
 			module_loading = "lazy", modules = {}
-		})
+		}
+		local bundle_member = target:values("ros.sdk.bundle_manifest")
+		if bundle_member then
+			bundle = json.loadfile(inside(root, bundle_member))
+			assert(bundle.backend == request.backend and bundle.module_loading == "lazy",
+				"Python source packages require the selected backend and the genuine lazy standard library")
+		end
+		source, source_inputs = import("pack", {
+			rootdir = path.join(root, "tools/language/js"), anonymous = true
+		}).bundle(root, "py", entry, bundle)
+		if bundle_member then
+			table.insert(source_inputs, {path = bundle_member, sha256 = hash.sha256(inside(root, bundle_member)):lower()})
+		end
 	end
 	io.writefile(path.join(work, "module_source.h"), source_header(source))
 	local dependency = foreign(target, root)

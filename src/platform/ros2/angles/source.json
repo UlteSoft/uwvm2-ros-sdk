@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-sdk-original-ros-package-source-v1",
+  "repository": "https://github.com/ros/angles",
+  "package": "angles",
+  "version": "1.16.1",
+  "commit": "a96224f9ab3ac51fe8fd981c1e1554528dc4345a",
+  "library_source_changes": [],
+  "scope": "Original C++ header and Python package plus all original C++/Python unit tests. ROS ament build/install metadata is retained for provenance; Xmake adaptation is separate.",
+  "files": {
+    "upstream/CHANGELOG.rst": "cb9dbd88e801bbf663f88822b88f5de7de80955b56b407685b6d014ec6faab2e",
+    "upstream/CMakeLists.txt": "182561f50051dec1d091eab2ec237bfd1ebf4ea9e7d7033d460e3d8aca8134b1",
+    "upstream/angles/__init__.py": "67cfe4bef41185c93046d3796c70e6e432b879c05e208756ca1a8aebcc0e6bab",
+    "upstream/doc.dox": "9b7544651dc0da059e5ff05544d49faf14cf65fe8aa1339aef0023167241bd42",
+    "upstream/include/angles/angles.h": "6972d2fd0fda27ca42ab9271859004256f55dd58521711138b30df581ab9c5cf",
+    "upstream/package.xml": "83196d85c1254b1f923476d0530bdf422fc2866feaa2b8f4b15cefe927b63744",
+    "upstream/setup.py": "993ec1cb1010e0adf9c6af0ca631e94a1d58a7db64a22736efcc6ecc6c1bb7bf",
+    "upstream/test/utest.cpp": "aa233d92878690f875606226afe7e9cde2390ccc4cd745d2347499c4f29f1b18",
+    "upstream/test/utest.py": "fe9dc6d3eb9c1524c2e17f7fafa1086a2e7cc6b1aaf582704a32bee2cecc3a2c"
+  }
+}

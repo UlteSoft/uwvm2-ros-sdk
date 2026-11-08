@@ -1,0 +1,22 @@
+{
+  "vendor": "boston_dynamics",
+  "model": "Spot",
+  "namespace": "/boston_dynamics",
+  "robot_name": "official_boston_dynamics",
+  "joint_names": [
+    "front left shoulder abduction motor",
+    "front left shoulder rotation motor",
+    "front left elbow motor",
+    "front right shoulder abduction motor",
+    "front right shoulder rotation motor",
+    "front right elbow motor",
+    "rear left shoulder abduction motor",
+    "rear left shoulder rotation motor",
+    "rear left elbow motor",
+    "rear right shoulder abduction motor",
+    "rear right shoulder rotation motor",
+    "rear right elbow motor"
+  ],
+  "primary_proto": "projects/robots/boston_dynamics/spot/protos/Spot.proto",
+  "scope": "Official Webots R2025a Spot physics; twelve leg joints in a stationary joint-control test; locomotion and perception are outside this example"
+}

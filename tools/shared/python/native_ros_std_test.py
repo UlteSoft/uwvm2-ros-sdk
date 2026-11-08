@@ -15,6 +15,26 @@ from owned_processes import OwnedProcesses,process
 from wasi_policy import test_arguments
 def digest(p):
  with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def check_publisher(item):
+ work=Path(item['directory'])
+ audit=[dict(re.findall(r'([a-z_]+)=([^ ]+)',line))
+        for line in (work/'gateway.stderr').read_text().splitlines()
+        if line.startswith('ros_audit ')]
+ vm_pid=next(actor['pid'] for actor in item['actors'] if actor['role']=='vm')
+ assert audit and all(record.get('worker_pid')==str(vm_pid) and record.get('error')=='0' for record in audit),audit
+ sample=[record['operation'] for record in audit if record.get('alias')=='sample']
+ assert sample==['topic.publish','topic.publish','capability.close'],audit
+ assert all(record.get('alias')=='sample' or record.get('operation')=='session.bind' for record in audit),audit
+ lines=(work/'peer.stdout').read_text().splitlines()
+ # Reliable + volatile does not persist samples for a subscription which has
+ # not matched yet. Both publishes must be admitted; one or two actual native
+ # callbacks must carry the exact payload. Zero deliveries still fail.
+ assert len(lines) in (2,3) and lines[0]=='READY',lines
+ assert all(line=='RECEIVED '+str(i)+' '+item['published_body_hex'] for i,line in enumerate(lines[1:],1)),lines
+ item['peer_output']='\n'.join(lines)+'\n'
+ item['gateway_audit']=audit
+ item['publication_observation']={'durability':'volatile','reliability':'reliable',
+                                  'admitted':2,'received':len(lines)-1}
 config=json.loads(Path(args.deployment).read_text())
 if config.get('format')!='uwvm-sdk-local-native-ros2-test-v1':
  raise ValueError('Select an explicit native ROS 2 functional test deployment')
@@ -172,12 +192,12 @@ try:
    if mode=='boundary-denied':
     assert item['peer_output']=='READY\n',item
    elif publishing:
-    # A successful publish acknowledges transport admission; the independent
-    # subscriber callback/output pump may finish after the guest exits.
-    wanted='READY\nRECEIVED 1 '+body.hex()+'\nRECEIVED 2 '+body.hex()+'\n'
-    waitfor(lambda:(work/'peer.stdout').read_text()==wanted or native.poll() is not None,60)
-    item['peer_output']=(work/'peer.stdout').read_text()
-    assert item['peer_output']=='READY\nRECEIVED 1 '+body.hex()+'\nRECEIVED 2 '+body.hex()+'\n',item
+    # Wait for actual native delivery separately from transport admission.
+    # The first sample can precede DDS matching under volatile durability.
+    item['published_body_hex']=body.hex()
+    waitfor(lambda:len((work/'peer.stdout').read_text().splitlines())>1 or native.poll() is not None,60)
+    waitfor(lambda:'operation=capability.close alias=sample error=0' in (work/'gateway.stderr').read_text() or bridge.poll() is not None,10)
+    check_publisher(item)
    elif name=='call_trigger':
     assert item['peer_output']=='READY\nRESPONDED 1 '+str(int(mode=='trigger-true'))+' '+body.hex()+'\n',item
    else:
@@ -188,7 +208,7 @@ try:
     if digest(source['path'])!=source['sha256']:raise RuntimeError('Preload input changed during execution')
    item['wasm_sha256_after']=digest(wasm)
    assert item['wasm_sha256_after']==item['wasm_sha256']
-   item['status']='PASS';print(json.dumps({'operation':name,'mode':mode,'status':'PASS'}),flush=True)
+   item['status']='PASS'
   finally:
    if gatew is not None:os.close(gatew)
    for fd in descriptors:os.close(fd)
@@ -204,6 +224,13 @@ finally:
   work=Path(item['directory'])
   item['streams']=[{'path':str(f),'sha256':digest(f)} for f in work.glob('*.stdout')]+[{'path':str(f),'sha256':digest(f)} for f in work.glob('*.stderr')]
   if (work/'peer.stdout').exists():item['peer_output']=(work/'peer.stdout').read_text()
+  if item['status']=='PASS':
+   try:
+    if item['mode']=='boundary-denied':assert item['peer_output']=='READY\n',item['peer_output']
+    elif item['name'] in ('publish_string','preload_modules'):check_publisher(item)
+   except (AssertionError,KeyError,ValueError,OSError) as error:
+    item['status']='FAIL';item['final_observation_error']=str(error)
+  print(json.dumps({'operation':item['name'],'mode':item['mode'],'status':item['status']}),flush=True)
  row['passed']=len(row['cases'])==(2 if args.operation in ('call_trigger','preload_modules') else 1) and all(x['status']=='PASS' for x in row['cases']) and row['retirement']['status']=='RETIRED'
  (out/'native-suite.json').write_text(json.dumps(row,indent=2,ensure_ascii=False)+'\n')
 

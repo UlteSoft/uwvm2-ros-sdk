@@ -226,9 +226,33 @@ function validate_memory(filename, address_bits, owned_only, policy)
     for _, entry in ipairs(metadata.imports) do
         if entry.memory then table.insert(memories, entry.memory) end
     end
+    if policy and policy.threads then
+        assert(address_bits == 32 and #memories == 1,
+               "The threaded WAT profile requires exactly one wasm32 shared memory")
+        assert((semantic == "binary" and binding and metadata.imported_memories == 1) or
+               (semantic == "core-preload" and not binding and metadata.imported_memories == 0),
+               "Threaded commands explicitly import the shared owner; Core preload owners define it")
+        if semantic == "core-preload" then
+            assert(not metadata.dynamic_linking,
+                   "Threaded shared-memory owners do not implement PIC/dylink")
+            assert(#metadata.exports > 0,
+                   "A threaded shared-memory owner must export its actual memory")
+            for _, section in ipairs(metadata.sections) do
+                assert(section.id == 0 or section.id == 5 or section.id == 7,
+                       "A threaded shared-memory owner contains only memory, memory exports and custom sections")
+            end
+            for _, entry in ipairs(metadata.exports) do
+                assert(entry.kind == 2 and entry.index == 0,
+                       "A threaded shared-memory owner exports only its actual memory zero")
+            end
+        end
+    end
     for _, memory in ipairs(memories) do
         assert(memory.address_bits == address_bits, "Actual Wasm memory width conflicts with the selected target")
-        assert(not memory.shared, "This adapter implements unshared linear memory")
+        assert(not memory.shared or (policy and policy.threads),
+               "Shared memory requires the explicitly selected threaded target")
+        assert(not (policy and policy.threads) or memory.shared,
+               "The threaded WAT profile requires its actual shared memory declaration")
         if binding then
             assert(memory.maximum and memory.minimum <= memory.maximum,
                    "Explicit communication/private memories require finite declared bounds")
@@ -293,4 +317,57 @@ function initialize(filename, initializer)
     local checked = inspect(output)
     assert(checked.start_index == selected.index, "Initializer start section was not preserved")
     return checked
+end
+
+-- @brief Reject compiler TLS data until an actual TLS runtime is implemented.
+-- @details Inspect, never rewrite, the compiler's real numeric globals/start.
+function validate_empty_thread_tls(filename)
+    local facts = inspect(assert(io.readfile(filename, {encoding = "binary"})))
+    local size_index, base_index
+    for _, item in ipairs(facts.imports) do
+        assert(item.kind ~= 3, "Freestanding threaded compiler globals must be defined by the linked module")
+        if item.kind == 0 then
+            assert((item.module == "wasi" and item.name == "thread-spawn") or item.module == "wasi_snapshot_preview1",
+                "Freestanding SDK threads supply no imported libc/pthread/std::thread runtime; only explicit WASI calls are supported")
+        end
+    end
+    for _, item in ipairs(facts.exports) do
+        if item.name == "__tls_size" and item.kind == 3 then size_index = item.index end
+        if item.name == "__tls_base" and item.kind == 3 then base_index = item.index end
+    end
+    assert(size_index ~= nil and base_index ~= nil, "The linked thread module must retain its real __tls_size and __tls_base globals")
+    local function signed_i32(reader)
+        local value, scale = 0, 1
+        for index = 1, 5 do
+            local byte = reader:byte()
+            value = value + (byte % 128) * scale
+            if byte < 128 then
+                if byte % 128 >= 64 then value = value - scale * 128 end
+                assert(value >= -2147483648 and value <= 2147483647, "Compiler i32 global exceeds its signed width")
+                return value
+            end
+            scale = scale * 128
+        end
+        raise("Invalid compiler i32 global initializer")
+    end
+    local globals = {}
+    for _, section in ipairs(facts.sections) do
+        if section.id == 6 then
+            local reader = _reader(section.data)
+            for index = 1, reader:uleb() do
+                local kind, mutable = reader:byte(), reader:byte()
+                assert(kind == 0x7f and (mutable == 0 or mutable == 1) and reader:byte() == 0x41,
+                    "Unsupported compiler global initializer in freestanding thread ABI")
+                local value = signed_i32(reader)
+                assert(reader:byte() == 0x0b, "Unsupported compiler global expression in freestanding thread ABI")
+                globals[index] = {value = value, mutable = mutable}
+            end
+        end
+    end
+    assert(globals[size_index + 1] and globals[size_index + 1].value == 0,
+        "Freestanding SDK threads do not implement compiler TLS data; pthread/std::thread runtimes are not supplied")
+    assert(globals[base_index + 1], "Missing retained compiler __tls_base global")
+    return {format = "uwvm-freestanding-thread-stack-v1", compiler_tls_size = 0,
+        tls_base_global_index = base_index, stack_context_bytes = 12, libc_runtime = false,
+        start_section_preserved = facts.start_index ~= nil}
 end

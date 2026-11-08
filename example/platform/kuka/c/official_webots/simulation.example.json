@@ -6,7 +6,7 @@
   "source": "main.c",
   "driver": {
     "scope": "sdk",
-    "path": "tools/shared/ros_joint_fixture/test_fixture.py"
+    "path": "tools/shared/ros_joint_fixture/control_fixture.py"
   },
   "deployment_environment": "UWVM_ROS_KUKA_WEBOTS_TEST_CONFIG",
   "engines": [
@@ -17,49 +17,49 @@
   "scenarios": [
     {
       "id": "positive",
-      "assertion": "Wasm constructs the goal, decodes feedback/result and checks fresh native joint positions.",
+      "assertion": "Original ROS Controls PID and JointTrajectory interpolation run in Wasm; the guest verifies fresh real physics positions.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "denied",
-      "assertion": "The missing send capability returns DENIED; fresh native positions remain unchanged.",
+      "assertion": "Missing joint_command capability returns DENIED with a warning; fresh physical positions remain unchanged.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "boundaries",
-      "assertion": "Truncated goals, invalid memory/ranges, stale handles and cancel-any through cancel-own authority are refused with unchanged output canaries.",
+      "assertion": "Truncated device frames, invalid memory indices/ranges and stale handles are rejected without physical movement.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "cancel",
-      "assertion": "Wasm cancels its own active native goal and observes the canceled terminal result and stable stopped positions.",
+      "assertion": "Wasm cancels its local trajectory, holds the observed stop pose and verifies a stable position away from the original target.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "timeout",
-      "assertion": "An explicitly authorized absent server times out using the guest monotonic clock without native movement.",
+      "assertion": "An authorized absent state topic produces no data; the Wasm monotonic deadline expires without a command.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "disconnect",
-      "assertion": "An actual gateway exit yields DISCONNECTED; close retires the handle without crashing the VM.",
+      "assertion": "An actual gateway exit yields DISCONNECTED; close retires the handle without corrupting the guest buffer.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "owner",
-      "assertion": "A real handle remains usable after another VM attempts to use or close its numeric value.",
+      "assertion": "The owner can still use its handle after another simultaneously running VM attempts to close or poll it.",
       "expected_vm_exit": 0,
       "required": true
     },
     {
       "id": "foreign",
-      "assertion": "A simultaneously executing VM rejects the other VM handle without altering its output.",
+      "assertion": "A different live VM rejects the foreign handle and preserves output canaries.",
       "expected_vm_exit": 0,
       "required": true
     }
@@ -67,9 +67,11 @@
   "production_admission": false,
   "physical_robot_authorized": false,
   "additional_unqualified_dimensions": [
-    "Other models and robot joints outside the explicitly listed scope",
-    "Physical hardware and production admission"
+    "Complete native JointTrajectoryController source port and action-server lifecycle",
+    "Dynamic same-memory and independent multi-memory C++ component ABI",
+    "Other robot models, joint sets, grasping/navigation, physical hardware and production admission"
   ],
-  "scope": "Official Webots R2025a Youbot physics; five arm joints; base and gripper remain passive",
-  "native_launch": "embedded_ros2_control"
+  "scope": "Original Webots kuka robot model; original ROS Controls PID and trajectory interpolation and cancellation inside Wasm; native physics/device I/O only.",
+  "native_launch": "physics_io",
+  "control_location": "wasm"
 }

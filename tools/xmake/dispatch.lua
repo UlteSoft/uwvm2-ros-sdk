@@ -85,8 +85,13 @@ function configure(target)
     import("artifact_contract", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).configure(target)
     local selected, root, context = provider(target)
     if context.language == "c" or context.language == "cpp" or context.language == "c_ffi_bridge" then
-        assert(not context.memory_import and context.artifact_model ~= "dynamic" and context.artifact_model ~= "independent",
-               "BLOCKED: C-family explicit shared-memory stack/allocator ABI and independent multi-memory lowering are not implemented")
+        if context.threads then
+            import("cfamily", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
+                .configure_threaded(target, root, context)
+        else
+            assert(not context.memory_import and context.artifact_model ~= "dynamic" and context.artifact_model ~= "independent",
+                   "BLOCKED: C-family explicit shared-memory stack/allocator ABI and independent multi-memory lowering are not implemented")
+        end
     elseif context.memory_import or context.artifact_model == "dynamic" or context.artifact_model == "independent" then
         -- A binary with an imported communication memory may have no Xmake
         -- dependencies. Its explicit memory ABI still requires an adapter
@@ -105,8 +110,13 @@ function dependencies(target)
     local language = target:values("ros.sdk.language")
     if target:kind() ~= "binary" or artifacts.uses_libraries(target) then
         if language == "c" or language == "cpp" or language == "c_ffi_bridge" then
-            assert(context and context.wasi_preview == 1 and not context.threads and context.exception_profile == "noeh",
-                   "C-family library kinds currently require the explicit Preview 1, noeh, single-thread closure")
+            assert(context and context.wasi_preview == 1 and not context.threads,
+                   "C-family library kinds require the explicit Preview 1, single-thread closure")
+            -- A static archive shares the consumer's real libc++ / unwind
+            -- closure. Core preload exception propagation needs a separate ABI.
+            if target:kind() == "shared" then
+                assert(context.exception_profile == "noeh", "Core preload libraries require the noeh profile")
+            end
         else
             context.dependency_targets = target:data("ros.sdk.dependency_targets") or {}
             import("language_adapter", {rootdir = path.join(root, "tools/xmake"), anonymous = true}).load(root, context)
@@ -129,7 +139,13 @@ function build(target)
            "Expected a genuine Wasm module or real indexed static archive")
     if target:kind() ~= "static" and (context.language == "c" or context.language == "cpp" or context.language == "c_ffi_bridge") then
         local metadata = import("wasm_module", {rootdir = path.join(root, "tools/xmake"), anonymous = true})
-        target:data_set("ros.sdk.module_metadata", metadata.describe(metadata.inspect(bytes)))
+        local facts = metadata.inspect(bytes)
+        local description = metadata.describe(facts)
+        if context.threads then
+            metadata.validate_memory(target:targetfile(), 32, true, context)
+            description.freestanding_thread_abi = metadata.validate_empty_thread_tls(target:targetfile())
+        end
+        target:data_set("ros.sdk.module_metadata", description)
     end
     local declared = {}
     for _, candidate in pairs(project.targets()) do

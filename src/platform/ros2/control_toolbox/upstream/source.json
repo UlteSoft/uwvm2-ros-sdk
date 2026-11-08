@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/ros-controls/control_toolbox",
+  "release": "4.11.1",
+  "commit": "161c3c330314f7816e97174aa5acde8f16a53e61",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    {
+      "path": "LICENSE.BSD-3-clause",
+      "sha256": "1731298f899c65fa14cbdfe340b2c9c5fe17e9e219749e7fe2434e9374f66956",
+      "git_blob": "66e3e5167f84ff53438460714ba9122227947b34"
+    },
+    {
+      "path": "control_toolbox/include/control_toolbox/pid.hpp",
+      "sha256": "eb5d9ec2de41c03e818e08c57d4fdaa6da27e3567ac7176a32dc042ef4599dd6",
+      "git_blob": "e3a89cbdd9904892b3a7269ff557e07535f0ccdd"
+    },
+    {
+      "path": "control_toolbox/src/pid.cpp",
+      "sha256": "8369bcdb6f65f367f5013b6d5ba9afad3b72c73e18fdb38daa003411e28aa9f0",
+      "git_blob": "1a2829c6f855968d8bcdfa569727257fbe62675a"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+diff --git a/compiler/GHC/CmmToAsm/Wasm/Asm.hs b/compiler/GHC/CmmToAsm/Wasm/Asm.hs
+index 392ab34..3a2a333 100644
+--- a/compiler/GHC/CmmToAsm/Wasm/Asm.hs
++++ b/compiler/GHC/CmmToAsm/Wasm/Asm.hs
+@@ -27,6 +27,7 @@ import GHC.Float
+ import GHC.Prelude
+ import GHC.Settings.Config (cProjectVersion)
+ import GHC.Types.Basic
++import GHC.Types.SrcLoc (srcSpanStartLine, srcSpanStartCol)
+ import GHC.Types.Unique
+ import GHC.Types.Unique.Map
+ import GHC.Types.Unique.Set
+@@ -239,6 +240,10 @@ asmFromAlignmentSpec Unaligned = ":p2align=0"
+ asmTellWasmInstr :: WasmTypeTag w -> WasmInstr w pre post -> WasmAsmM ()
+ asmTellWasmInstr ty_word instr = case instr of
+   WasmComment c -> asmTellLine $ stringUtf8 $ "# " <> c
++  WasmSourceLocation fileId span ->
++    asmTellLine $ ".loc " <> intDec fileId <> " "
++      <> intDec (srcSpanStartLine span) <> " "
++      <> intDec (srcSpanStartCol span) <> " is_stmt 1"
+   WasmNop -> mempty
+   WasmDrop -> asmTellLine "drop"
+   WasmUnreachable -> asmTellLine "unreachable"
+@@ -448,6 +453,9 @@ asmTellFunc ty_word def_syms sym (func_ty, FuncBody {..}) = do
+   asmTellLine $ asm_sym <> ":"
+   asmTellFuncType sym func_ty
+   asmTellLocals funcLocals
++  cfg <- getConf
++  -- The previous function's last location must not label this prologue.
++  unless (null (debugFiles cfg)) $ asmTellTabLine ".loc 1 0 0 is_stmt 0"
+   asmWithTab $ asmTellWasmControl ty_word funcBody
+   asmTellTabLine "end_function"
+   asmTellLF
+@@ -540,6 +548,10 @@ asmTellTargetFeatures = do
+ 
+ asmTellEverything :: WasmTypeTag w -> WasmCodeGenState w -> WasmAsmM ()
+ asmTellEverything ty_word WasmCodeGenState {..} = do
++  for_ sourceFiles $ \(file, identifier) ->
++    asmTellTabLine $ ".file " <> intDec identifier <> " \""
++      <> string7 (showSDocOneLine defaultSDocContext $ pprASCII $ bytesFS file)
++      <> "\""
+   asmTellGlobals ty_word
+   asm_functypes
+   asm_funcs
+diff --git a/compiler/GHC/CmmToAsm/Wasm/FromCmm.hs b/compiler/GHC/CmmToAsm/Wasm/FromCmm.hs
+index 7b8724d..e45b7b0 100644
+--- a/compiler/GHC/CmmToAsm/Wasm/FromCmm.hs
++++ b/compiler/GHC/CmmToAsm/Wasm/FromCmm.hs
+@@ -43,6 +43,8 @@ import GHC.Platform
+ import GHC.Prelude
+ import GHC.StgToCmm.CgUtils
+ import GHC.Types.Basic
++import GHC.Types.SrcLoc (srcSpanFile)
++import GHC.Types.Tickish (GenTickish(..))
+ import GHC.Types.ForeignCall
+ import GHC.Types.Unique
+ import GHC.Types.Unique.FM
+@@ -1527,6 +1529,15 @@ lower_CmmAction lbl act = do
+   platform <- wasmPlatformM
+   case act of
+     CmmComment {} -> pure $ WasmStatements WasmNop
++    CmmTick (SourceNote span _) -> do
++      fileId <- wasmStateM $ \s ->
++        let file = srcSpanFile span in
++        case lookup file (sourceFiles s) of
++          Just identifier -> (# identifier, s #)
++          Nothing ->
++            let identifier = length (sourceFiles s) + 1
++             in (# identifier, s {sourceFiles = sourceFiles s <> [(file, identifier)]} #)
++      pure $ WasmStatements $ WasmSourceLocation fileId span
+     CmmTick {} -> pure $ WasmStatements WasmNop
+     CmmUnwind {} -> pure $ WasmStatements WasmNop
+     CmmAssign (CmmLocal reg) e -> do
+diff --git a/compiler/GHC/CmmToAsm/Wasm/Types.hs b/compiler/GHC/CmmToAsm/Wasm/Types.hs
+index 1b85f03..2f3f8c7 100644
+--- a/compiler/GHC/CmmToAsm/Wasm/Types.hs
++++ b/compiler/GHC/CmmToAsm/Wasm/Types.hs
+@@ -65,6 +65,7 @@ import GHC.Float
+ import GHC.Platform
+ import GHC.Prelude
+ import GHC.Types.Basic
++import GHC.Types.SrcLoc (RealSrcSpan)
+ import GHC.Types.Unique
+ import GHC.Types.Unique.FM
+ import GHC.Types.Unique.Map
+@@ -223,6 +224,8 @@ data Signage = Signed | Unsigned
+ -- type-safe manner.
+ data WasmInstr :: WasmType -> [WasmType] -> [WasmType] -> Type where
+   WasmComment :: String -> WasmInstr w pre pre
++  -- A compiler source annotation only: it never emits a Wasm instruction.
++  WasmSourceLocation :: Int -> RealSrcSpan -> WasmInstr w pre pre
+   WasmNop :: WasmInstr w pre pre
+   WasmDrop :: WasmInstr w (t : pre) pre
+   WasmUnreachable :: WasmInstr w pre post
+@@ -427,6 +430,7 @@ data WasmCodeGenState w = WasmCodeGenState
+       UniqFM LocalReg LocalInfo,
+     localRegsCount ::
+       Int,
++    sourceFiles :: [(FastString, Int)],
+     wasmDUniqSupply :: DUniqSupply
+   }
+ 
+@@ -444,6 +448,7 @@ initialWasmCodeGenState platform us =
+         [],
+       localRegs = emptyUFM,
+       localRegsCount = 0,
++      sourceFiles = [],
+       wasmDUniqSupply = us
+     }
+ 
+@@ -492,6 +497,7 @@ instance MonadGetUnique (WasmCodeGenM w) where
+ data WasmAsmConfig = WasmAsmConfig
+   {
+     pic, tailcall :: Bool,
++    debugFiles :: [(FastString, Int)],
+     -- | Data/function symbols with 'SymStatic' visibility (defined
+     -- but not visible to other compilation units). When doing PIC
+     -- codegen, private symbols must be emitted as @MBREL@/@TBREL@
+@@ -507,6 +513,7 @@ defaultWasmAsmConfig WasmCodeGenState {..} =
+   WasmAsmConfig
+     { pic = False,
+       tailcall = False,
++      debugFiles = sourceFiles,
+       mbrelSyms = mk_rel_syms dataSections,
+       tbrelSyms = mk_rel_syms funcBodies
+     }

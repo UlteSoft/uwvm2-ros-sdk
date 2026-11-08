@@ -7,6 +7,7 @@ function build(target, root, action)
     local cache=path.join(path.absolute(target:scriptdir()),".uwvm-ros/native",target:name(),"moonbit-c")
     os.mkdir(cache)
     local function invoke(arguments)
+        if core.debug_info(root).enabled() then table.insert(arguments, "-g") end
         os.vrunv(programs.loader,table.join({"--library-path",path.join(closure,"runtime"),programs.moonc},arguments),{envs={MOON_HOME=closure}})
     end
     local standard=json.loadfile(path.join(root,"tools/language/native/moonbit_c_core.json"))

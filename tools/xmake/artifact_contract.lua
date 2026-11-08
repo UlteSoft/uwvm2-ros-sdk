@@ -280,6 +280,7 @@ function record(target, root)
                             sha256 = hash.sha256(target:targetfile()):lower(),
                             build_command = target:data("ros.sdk.build_command"),
                             compiler_version = target:data("ros.sdk.compiler_version"),
+                            debug_metadata = target:data("ros.sdk.debug_metadata"),
                             compile_commands = target:data("ros.sdk.compile_commands"), static_link_inputs = linked,
                             preload = artifacts, permissions = "explicit manual runtime configuration only"})
 end

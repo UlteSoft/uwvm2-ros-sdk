@@ -45,7 +45,7 @@ local function zig(context, core, compiler, object)
 	local options = context.action.zig or {}
 	local system = options.wasi and "-wasi" or "-freestanding"
 	local target = (context.triple:startswith("wasm64-") and "wasm64" or "wasm32") .. system
-	local arguments = { "build-obj", "-O", "ReleaseSafe", "-target", target, "-fno-stack-check" }
+	local arguments = { "build-obj", "-O", core.debug_info(context.root).unoptimized() and "Debug" or "ReleaseSafe", "-target", target, "-fno-stack-check" }
 	for _, dependency in ipairs(options.imports or {}) do
 		table.join2(arguments, { "--dep", identifier(dependency) })
 	end
@@ -98,12 +98,13 @@ local function dlang(context, core, compiler, bundle, object)
 				or "wasm32-unknown-wasi"
 			),
 		"-betterC",
-		"-O2",
-		"-release",
+		core.debug_info(context.root).unoptimized() and "-O0" or "-O2",
 		"-boundscheck=on",
 		"-checkaction=halt",
 		"-I=" .. path.join(context.root, "include/platform"),
 	}
+	if core.debug_info(context.root).enabled() then table.insert(arguments, "-g") end
+	if not core.debug_info(context.root).unoptimized() then table.insert(arguments, "-release") end
 	local options = context.action.d or {}
 	local roots = { path.join(context.root, "include/platform") }
 	if options.source_modules then
@@ -178,7 +179,6 @@ local function nim(context, core, compiler, bundle, objects)
 		"--stackTrace:off",
 		"--lineTrace:off",
 		"--panics:on",
-		"-d:release",
 		"-d:useMalloc",
 		"-d:noSignalHandler",
 		"--warning:GcMem:off",
@@ -190,6 +190,10 @@ local function nim(context, core, compiler, bundle, objects)
 		"--nimcache:" .. generated,
 		"--path:" .. path.join(context.root, "include/platform"),
 	}
+	if core.debug_info(context.root).enabled() then
+		table.join2(arguments, {"--debugger:native", "--debuginfo:on", "--lineDir:on"})
+	end
+	if not core.debug_info(context.root).unoptimized() then table.insert(arguments, "-d:release") end
 	for _, relative in ipairs((context.action.nim or {}).import_dirs or {}) do
 		table.insert(arguments, "--path:" .. core.installed(context.root, relative))
 	end
@@ -232,9 +236,10 @@ local function odin(context, core, compiler, object)
 		"-build-mode:obj",
 		"-no-entry-point",
 		"-out:" .. object,
-		"-o:speed",
+		core.debug_info(context.root).unoptimized() and "-o:none" or "-o:speed",
 		"-thread-count:2",
 	}
+	if core.debug_info(context.root).enabled() then table.insert(arguments, "-debug") end
 	table.insert(arguments, "-collection:support=" .. context.cache)
 	local names = { support = true }
     -- Stage explicitly selected source files into complete Odin packages. The
@@ -296,7 +301,7 @@ local function swift(context, core, compiler, bundle, object)
 		"-enable-experimental-feature",
 		"Embedded",
 		"-wmo",
-		"-O",
+		core.debug_info(context.root).unoptimized() and "-Onone" or "-O",
 		"-parse-as-library",
 		"-module-name",
 		identifier(options.module_name or "WasmCommand"),
@@ -306,6 +311,10 @@ local function swift(context, core, compiler, bundle, object)
 		"-Xcc",
 		"-resource-dir=" .. path.join(bundle, "original/lib/clang/21"),
 	}
+	if core.debug_info(context.root).enabled() then
+        -- Embedded Wasm debug metadata must not depend on a host PCM cache.
+        table.join2(arguments, {"-g", "-gdwarf-types", "-no-clang-module-breadcrumbs", "-Xcc", "-gno-modules"})
+    end
 	for _, relative in ipairs(options.import_dirs or {}) do
         table.join2(arguments, { "-I", core.installed(context.root, relative) })
     end
@@ -333,7 +342,7 @@ local function haskell(context, core, compiler, bundle, objects)
 	assert(os.isfile(path.join(ffi, "lib/libffi.a")), "Missing matching pinned libffi-wasm")
 	local arguments = {
 		"--make",
-		"-O1",
+		core.debug_info(context.root).unoptimized() and "-O0" or "-O1",
 		"-odir",
 		context.cache,
 		"-hidir",
@@ -368,6 +377,7 @@ local function haskell(context, core, compiler, bundle, objects)
 		"-opta-resource-dir=" .. core.installed(context.root, context.selected.resource_dir),
 		"-j2",
 	}
+	if core.debug_info(context.root).enabled() then table.join2(arguments, {"-g", "-opta-g"}) end
 	local options = context.action.haskell or {}
 	if options.source_modules then
 		table.insert(arguments, "-i" .. module_tree(context, core, options.source_modules, "hs"))

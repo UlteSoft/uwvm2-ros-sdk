@@ -1,0 +1,20 @@
+{
+  "format": "uwvm-language-bundle-v1",
+  "language": "py",
+  "backend": "wasi",
+  "module_loading": "lazy",
+  "modules": [
+    {
+      "name": "angles",
+      "file": "src/platform/ros2/angles/upstream/angles/__init__.py",
+      "package": true,
+      "sha256": "67cfe4bef41185c93046d3796c70e6e432b879c05e208756ca1a8aebcc0e6bab"
+    },
+    {
+      "name": "_angles_upstream_tests",
+      "file": "src/platform/ros2/angles/upstream/test/utest.py",
+      "package": false,
+      "sha256": "fe9dc6d3eb9c1524c2e17f7fafa1086a2e7cc6b1aaf582704a32bee2cecc3a2c"
+    }
+  ]
+}

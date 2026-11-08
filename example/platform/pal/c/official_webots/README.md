@@ -1,26 +1,37 @@
-# Tiago official Webots simulation
+# Tiago official simulation with migrated ROS control
 
-The C application executes as Wasm in uwvm2-ros, using the unchanged official
-[Webots R2025a Tiago model](https://github.com/cyberbotics/webots/blob/R2025a/projects/robots/pal_robotics/tiago/protos/Tiago.proto)
-and the original Webots ROS2 driver and ROS2 trajectory controller.
-The tested scope is seven arm joints; base, head, torso and gripper remain passive. The SDK supplies the scene composition and test;
-it does not claim manufacturer certification or physical-robot admission.
+The unchanged official webots robot model receives raw device frames from
+Wasm running in uwvm2-ros. The original ROS Controls control_toolbox 4.11.1 PID
+source is compiled into a real C++ Wasm static archive. The original ROS Controls 4.42.1 Trajectory interpolation source is a second
+C++ Wasm static archive. The C guest owns both components, cancellation, message
+encoding and business assertions.
+The native adapter only advances official physics, reads devices and transfers
+ROS2 device frames. It loads no native trajectory controller, controller manager,
+robot_state_publisher or control_toolbox library.
 
-Build with xmake -P ., then run xmake test -P . Set UWVM_ROS_PAL_WEBOTS_TEST_CONFIG
-to an explicit deployment JSON based on deployment.template.json. Reuse an installed
-Webots R2025a and ROS2 Jazzy environment; the test never installs dependencies.
-Set UWVM_OFFICIAL_WEBOTS_ASSETS to the verified official source asset tree.
-model-assets.json pins each original dependency by SHA-256 and Git blob identity.
-The host launcher, VM, gateway and native programs also require exact byte identities.
+Use xmake f -P ., xmake build -P ., then xmake test -P ..
+Set UWVM_ROS_PAL_WEBOTS_TEST_CONFIG to an explicit deployment based on
+deployment.template.json. All imported WASI/ROS interfaces and capabilities must
+be enabled explicitly. An EH-capable VM is required by the unchanged upstream
+exception behavior. The test never installs dependencies. Reuse the installed
+official simulator and ROS2 device transport, and build the adapter in
+tools/shared/ros_joint_fixture/native against those existing headers/libraries.
 
-Both the interpreter and JIT run the same Wasm image. Its eight scenarios check
-motion with fresh joint feedback, denied motion with unchanged state, invalid
-memory and payload boundaries, owned-goal cancellation, monotonic timeout,
-gateway disconnection and isolation between two simultaneous Wasm processes.
-All WASI and ROS interfaces are exposed and authorized explicitly by the test
-contract; the default runtime has no such authority.
+model-assets.json pins the original model bytes. Set
+UWVM_OFFICIAL_WEBOTS_ASSETS to that exact source tree. Model masses,
+gravity, limits and intrinsic actuator behavior are preserved. The source and
+dependency adaptation are documented in src/platform/ros2/control_toolbox.
+The PID profile has one serial executor per private Wasm instance; it rejects
+shared-memory Wasm threads.
 
-Actual xmake test evidence contains the model identity, unchanged Wasm hash,
-native loaded images, controller activation, raw logs and process retirement.
-Missing assets, permissions, controllers or feedback fail the test. Passing this
-example applies only to the listed model, joints and software configuration.
+The same artifact runs eight cases under both interpreter and LLVM JIT:
+real motion/fresh feedback, absent command authority, malformed payload and memory
+ranges, Wasm-owned trajectory cancellation, monotonic timeout, real gateway
+disconnection, and simultaneous owner/foreign VM handle isolation. Tests record
+actual executable identities, mappings, original assets, guest logs, the 64 GiB
+zero-swap kernel boundary and owned-process retirement.
+
+This migrates the original PID and trajectory interpolation components. It does
+not yet port the complete JointTrajectoryController or its action-server lifecycle. Dynamic same-memory and independent multi-memory
+C++ forms still require separate qualification. These finite model tests are
+not manufacturer certification, production admission or physical-robot testing.

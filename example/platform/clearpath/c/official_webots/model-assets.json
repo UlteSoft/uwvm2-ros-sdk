@@ -1,0 +1,385 @@
+{
+  "repository": "https://github.com/cyberbotics/webots",
+  "release": "R2025a",
+  "commit": "c6793d8f7230a311c4bc2a3101d9f1a8bc0aa01b",
+  "files": [
+    {
+      "path": "projects/default/worlds/sounds/bump.wav",
+      "bytes": 2060,
+      "sha256": "f119e721b86c7df23afb89bf06223290916476d71fda494c63a9a984013d0997",
+      "git_blob": "fa0443df4a344335f45f820111eb5119a7289615"
+    },
+    {
+      "path": "projects/default/worlds/sounds/linear_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/roll.wav",
+      "bytes": 114750,
+      "sha256": "f93028df78e0fe372c5ddae35faf9917a24841625080d7cc7211a65d54713def",
+      "git_blob": "b3ca03782192f84e31707d4dbd0cd5d93fde8e63"
+    },
+    {
+      "path": "projects/default/worlds/sounds/rotational_motor.wav",
+      "bytes": 13372,
+      "sha256": "771fca2d2abc1f0f91eb9bb169a44492d1fcc6e007d5186ec3115b26c5de71c8",
+      "git_blob": "cb130f5c7ec2e559e3a5e7bb011fdba415124689"
+    },
+    {
+      "path": "projects/default/worlds/sounds/slide.wav",
+      "bytes": 216700,
+      "sha256": "ec0e7f6fe3a466aadf2c53e1c872cb83eb0248d35fdd31fb7ff469f9f7e46b3e",
+      "git_blob": "f5f61383d6401c9b29c75309e6fe2d4634126174"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/Pr2.proto",
+      "bytes": 192434,
+      "sha256": "8d6c58e01084a5f1fdcd4995773aa67fcd412571bff97025bedbe6c6a9788352",
+      "git_blob": "8c9ae4226d5248ebda4832c6aaff22e8333ce585"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh0.obj",
+      "bytes": 122237,
+      "sha256": "74aa4d7929423c7733f5cdd82e2bd4b62ff8ba0ac6f602b225e2713dd5c4b313",
+      "git_blob": "ce44760a09125b2fe6c177a1db8e2d7030924674"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh1.obj",
+      "bytes": 99043,
+      "sha256": "6ac86afacb200a238ed0296e3384424049e0e0cdd7aae8bdb6fadd81cbabc69a",
+      "git_blob": "3cd45870162efd9845fe453f2f8fa6b5edb88d52"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh10.obj",
+      "bytes": 89321,
+      "sha256": "6c4984f7d22b1740bd04d218b3bebda46b231886565b2963e7d58f66a164775a",
+      "git_blob": "8d20c5a30e781b1bfc6bc6460073da3ad668957e"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh11.obj",
+      "bytes": 18727,
+      "sha256": "690b73767aeec06227fa5f9f92794f7aada3dd32b34d597598847950e3a06717",
+      "git_blob": "a62236eedcd144f296e65ce3c973d62f7795eaf6"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh12.obj",
+      "bytes": 18727,
+      "sha256": "01a9b438dc067dcfbc8496a805b7c85670da698a10aabdee70185a2aa2e06c4e",
+      "git_blob": "3b0a816b8345e4b4629ada5bca7b9e5010adf731"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh13.obj",
+      "bytes": 184772,
+      "sha256": "60d547501f4beece135140d75e082f169452cc544cec9568a751a47610f798ac",
+      "git_blob": "074208aba825071940ce7df91590dea9574f3838"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh14.obj",
+      "bytes": 93605,
+      "sha256": "12fed7974d2a0503e7183d9f92c7cb6fe409c787c31bd9eac55a7f841c8a1a90",
+      "git_blob": "6c6f5b7d1d6edffb25d1544ce2db1d6cfce05f3e"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh2.obj",
+      "bytes": 167484,
+      "sha256": "35c474b439ef5cf29d74264ecec879d0f77b89d638b2ca3f8aba1389f6bea033",
+      "git_blob": "400d40a3fa213919baea558d298d06b441f02bd6"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh3.obj",
+      "bytes": 95441,
+      "sha256": "4839027c8bd7c818e3035cc66844c2ddeb896489ce84cc2d428c7ac4f67fc967",
+      "git_blob": "6eed6462095d594ebd07ef41ac043467396b3be7"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh4.obj",
+      "bytes": 95786,
+      "sha256": "e068468b8b9056f2079fa71873ed4d3e90b039586f05769cd51e76e8539ef5af",
+      "git_blob": "a5ba6d12adfafcce063971447acbfbb0533bdd51"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh5.obj",
+      "bytes": 5934,
+      "sha256": "b31b60c0e2f09ed00cf05cbf3527d1ff12c2f0c67ec6e9bd456d3bc53adcd50d",
+      "git_blob": "d0d1aaa62645d1b42179eee46483c3cdb793303b"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh6.obj",
+      "bytes": 73039,
+      "sha256": "13e6ed63496c1f462ac6291c90453665eec3912ca0e39521fd4e66397744fa08",
+      "git_blob": "f09bc5323b6ca09669db6d1a5a23ee0e404c7b86"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh7.obj",
+      "bytes": 167484,
+      "sha256": "956f725ebf7175d2ba4fd254d19be8b4f65839f649a34ec65707b2bcc055fad5",
+      "git_blob": "6357b8be7415f492efdc9253873b53438cfc646c"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh8.obj",
+      "bytes": 95441,
+      "sha256": "391a67f902a942535f0c0d9f698be27d3e3ec8e09f65aa2453b29a75d68be14f",
+      "git_blob": "57e1b871787830e23dea367b6456e38398732fe3"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/Mesh9.obj",
+      "bytes": 70293,
+      "sha256": "14ac987b7d48068e04e175955a5f8c78d45e628496ff0866a5e3d8147b91eb97",
+      "git_blob": "c3a49b3abe474f4091400e9a9051048e5392e65f"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/bl_caster_r_wheel_link_0.obj",
+      "bytes": 98005,
+      "sha256": "74fe0c0cb4f8df0e31cd4189e741562847baeb698d06937612fd7b1d6a8e6d46",
+      "git_blob": "0bbcfd46286cefb37660a4fb37402c36fd2ce850"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/bl_caster_rotation_joint_0.obj",
+      "bytes": 98007,
+      "sha256": "134c5d9db84f54999f9d2fb1bcdc84fe02083ec2c313af4dfbc51883dba9de66",
+      "git_blob": "98e070757c94fd4a8144ac242032fe2e59c6ce3b"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/bl_caster_rotation_link_0.obj",
+      "bytes": 65775,
+      "sha256": "b214152b69c89e7a4da9a82d897fa62f2f125027909c4802f11fc6ab48cf41ec",
+      "git_blob": "49c2852855363aa21e35efbc5dc3f01b9210a0f2"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/br_caster_r_wheel_link_0.obj",
+      "bytes": 98005,
+      "sha256": "4a58828b3ec425bca22320aba95f218e23789963d8f7a5ccf0ca7ec562f2bee0",
+      "git_blob": "5d46b307f393c37901a4546676c9e1fa24a1e1ec"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/br_caster_rotation_joint_0.obj",
+      "bytes": 98007,
+      "sha256": "b10904e028b19513e3df8ee55900ac301b39e91a224e68f4d5aca996a43c6da1",
+      "git_blob": "ce5822e4083eab41f547c67cc9403b39ac304235"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/br_caster_rotation_link_0.obj",
+      "bytes": 65775,
+      "sha256": "24768aaf6a65287b8dff6e2274d146468819db8bb7f6ab1c8e136272d52db632",
+      "git_blob": "cee4fd686987b00fcbc5e16762b0a50f00d5efe0"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/fl_caster_r_wheel_0.obj",
+      "bytes": 98000,
+      "sha256": "00704fcc757bd35b47e160a0a716cd6c418caa2ed4a58fe8041547a6699c2e14",
+      "git_blob": "dee077aa73c0d0ea2e5db1f3426fc7573afa5796"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/fr_caster_r_wheel_link_0.obj",
+      "bytes": 98005,
+      "sha256": "41e38d9fc0c9e15a35ad251cc01a8298abbbaeff614e9a7c77cf586a0235fadb",
+      "git_blob": "a0631a39cbad3a9a57412e74cb1e21b97f16f28a"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/fr_caster_rotation_joint_0.obj",
+      "bytes": 98007,
+      "sha256": "043e93dea0bc4fef78e153a3dd6981e03f2dc975c31d86d59a4674b427ae569b",
+      "git_blob": "d76900d061773a409e563a353eec132ddb0751eb"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/fr_caster_rotation_link_0.obj",
+      "bytes": 65775,
+      "sha256": "8d772f35c9d3f57991246f911770cf07001553fa2fc6b5619df5a1bca4b88ca7",
+      "git_blob": "795c9c536e5a7375a9b98ae18fd23075f8c0dcb8"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_elbow_flex_joint_0.obj",
+      "bytes": 70308,
+      "sha256": "97cd1e2e96de4d12c81e8be7727ee12bc093acc52dbc7870b39addbed4d6b273",
+      "git_blob": "d9afefc502780ac071c8e8b226fb2f88f49af6b3"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_forearm_cam_frame_0.obj",
+      "bytes": 174392,
+      "sha256": "b9d0c02390e2278efffb351120b8670ff323cce270d069631587e4e2951d06c1",
+      "git_blob": "0becc6586074cf8206ab8e4fa17233d9ba5dcd83"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_forearm_cam_sensor_0.obj",
+      "bytes": 95968,
+      "sha256": "73a684d0fda7fa3145205124aa601972a826c5da392c26f3365eda1521990280",
+      "git_blob": "7578b3ab6dd490886b71318c0ea462ac14c0994f"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_forearm_cam_sensor_1.obj",
+      "bytes": 65773,
+      "sha256": "fa5d28c2d93fbbad9141fbbc3f006124c2e4760fa5eddcbb0bf930d8c1f2b9ca",
+      "git_blob": "c3f524838ce36f419827100abb0a3de11eaaab1c"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_forearm_cam_sensor_2.obj",
+      "bytes": 95968,
+      "sha256": "868068aa131ee9e57a0acd8b14a4838aa0a47e1e88aa36b05ac552da615938d6",
+      "git_blob": "e00f013d7e91f1b6d5ca2fb49e84f1c5e465f156"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_gripper_l_finger_tip_contact_sensor_0.obj",
+      "bytes": 93638,
+      "sha256": "fe91af7bfcc5f73405c9518d9970f0e0b2ff42ae3a13fc5779c285e705703051",
+      "git_blob": "a68ce9a33eb5e2219323bf1ef237a4763487a6db"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_gripper_motor_slider_joint_0.obj",
+      "bytes": 18751,
+      "sha256": "aa0202c9a2338b7650712a69809ed2d260048ee37da1b17cf46c9a796cc74724",
+      "git_blob": "020ae69ea380cae0f23145415abc2b4f4000c58d"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_gripper_motor_slider_joint_1.obj",
+      "bytes": 184796,
+      "sha256": "6488d5e38cca30adedcb3ca9a75f7a95cf3232fbd78e3ded235448c6d01f586a",
+      "git_blob": "53e15160c3e30eb0f3bf8772a3ac7f4d7b77e45e"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_gripper_r_finger_joint_0.obj",
+      "bytes": 93625,
+      "sha256": "c076eac2d11e45f7933ffa24a4391e8b7b628b3674ee531511f3e88c6a833fd8",
+      "git_blob": "58bcc561664d0f8f9754b7955870b529e6459350"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_gripper_r_finger_link_0.obj",
+      "bytes": 184791,
+      "sha256": "d18405ce67262b8640c88cb3bf772a95905ea0034d54a82256af4a669b8f5d5d",
+      "git_blob": "ffe84e810cbacb7c9b904fb3f390a575734bec12"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_shoulder_lift_joint_0.obj",
+      "bytes": 5952,
+      "sha256": "775916e281c56adaeb685bd5ea45bdb6c0077c249314bd4ca68d84d6783f146b",
+      "git_blob": "a0de4cb483469f7e9d7000bcbb808a816d8b43a5"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_shoulder_lift_joint_1.obj",
+      "bytes": 73057,
+      "sha256": "674f7bfe51d5e488d82b885529218941a60485a899251b698c071a1a402420c3",
+      "git_blob": "cad13ee7c8f559bfead55063590331c06d28fe62"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_shoulder_pan_joint_0.obj",
+      "bytes": 95803,
+      "sha256": "c0761a29fe116eb038b32ef164e275c317fd0ec3451f9c7e00d1baaa10ec8f7f",
+      "git_blob": "4a2328a5c179541cc54bdf763387b045a26c99ce"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_shoulder_pan_link_0.obj",
+      "bytes": 90829,
+      "sha256": "f07cb1e5967e241020206c056b31e62e9a9d4307746bcabe012472e7f5fed82a",
+      "git_blob": "31d8f671fe4e4b1947e99ef367190efbf1cc9a48"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_wrist_flex_link_0.obj",
+      "bytes": 89334,
+      "sha256": "c4d51fd4a065454342de42af23ef882c58ea30308cbacd8d95089c1839f9d9a7",
+      "git_blob": "b94ecc7a5d316d194f7f2d8bdab8de3924347c3b"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/l_wrist_roll_joint_0.obj",
+      "bytes": 18741,
+      "sha256": "0da5f39a56d9ca167925ac5d2e1e0848a0bb595724cfc7c146add0c96261c9b5",
+      "git_blob": "ab529275bc652adc16ac6022fb82ea335157f1dd"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/laser_tilt_mount_joint_0.obj",
+      "bytes": 100589,
+      "sha256": "181f34bc00798a70454fead364db6118f5f70e845bf48b001da35196d6c2d23c",
+      "git_blob": "07e54502abd1b3f707e9a81519dd341478143886"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_forearm_cam_frame_0.obj",
+      "bytes": 174392,
+      "sha256": "a1edb7b91bf9554ef15150d65b9fd70e97ea1aea227db82231af69309aa88763",
+      "git_blob": "3bb0a9d4fa0a8a118a8411265ba37371cc78ab08"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_forearm_cam_sensor_0.obj",
+      "bytes": 65773,
+      "sha256": "5defcd89afe5cf6319bb203af60321e317672f096511d650780c398c670aebd2",
+      "git_blob": "f72376dbc4297e367b335e4bfc4a44c2689f7917"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_gripper_r_finger_joint_0.obj",
+      "bytes": 93625,
+      "sha256": "c87bafc3f3e0cc2a550c3e20e66459e6763aa9e71c1bace38d011eafc19d723d",
+      "git_blob": "c2a488b37fe196525acc89833a475adb1d11e5c7"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_gripper_r_finger_link_0.obj",
+      "bytes": 184791,
+      "sha256": "e7b8089da1d2068bb4862fcfbddfa3c5bb9bdeade658451c04b86802c74ca783",
+      "git_blob": "219ac561e25313fde55034a7a793d3036be1b1de"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_shoulder_pan_link_0.obj",
+      "bytes": 100427,
+      "sha256": "69c307030b4931c2bffe9171716159a23ea1564e60a1b6442c30e39272a340ae",
+      "git_blob": "5f33f08041e6efd8c98de8832007919de87c1894"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/r_shoulder_pan_link_1.obj",
+      "bytes": 90757,
+      "sha256": "84a8d98f2c46d0c19c76b66eb5c77340690a530816c970eb3c593ca926b8204e",
+      "git_blob": "ea29679863452671b6b41d3b9593860669bb350f"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/torso_lift_joint_0.obj",
+      "bytes": 97999,
+      "sha256": "ffc3df1d7f01e2a812b52f817d8413e8d58fcda817d8ba9de2c3b31d37dbee98",
+      "git_blob": "194522bcfba2a928640160f1906b6896dca70d97"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/torso_lift_link_0.obj",
+      "bytes": 65767,
+      "sha256": "c5aa3ab542c9636a5f3ac6b84e855904a44cd8cecdfaef79f697a860a61d8f59",
+      "git_blob": "c31f7e8c34264fedb63b926ac29601a40624c936"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/meshes/torso_lift_motor_screw_joint_0.obj",
+      "bytes": 90838,
+      "sha256": "03fbdd57ac223d2a22a8518594266f97e2489754d542b6ebe721118afe599e72",
+      "git_blob": "760b1a87daa04da90dba4b0dd04bc719e796c4db"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/base_color.jpg",
+      "bytes": 83524,
+      "sha256": "b4862614b632b297f0e623b5b758023925b0d065520202d29fb0b7c85bb3f973",
+      "git_blob": "9629dde26677672e62f02e3e903173a644209f1f"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/forearm_color.jpg",
+      "bytes": 86027,
+      "sha256": "f73dacecb5273dd5546a5db7f34fecdd0a3c820ee9dae98c4f0a2b42f68709ae",
+      "git_blob": "119e5fac025da4cf5c285ec297418744039de693"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/head_tilt_color.jpg",
+      "bytes": 96427,
+      "sha256": "b374535e509cfbd4a581b684dcade51f16cc36e22ad7ee7821fe12ca8ba9868c",
+      "git_blob": "77fa1cdce18d8c690219afd8364fb2dbae21f0c8"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/shoulder_pan_color.jpg",
+      "bytes": 66854,
+      "sha256": "1c22cce935ae7e108ffeb48c7288ed284a09f0659493d7d7b33338c7b94f42db",
+      "git_blob": "08d6ddce1de5b2c9dabc3d75acc867ebba19a0d3"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/tilting_hokuyo_color.jpg",
+      "bytes": 50839,
+      "sha256": "58bb8cce12e1d1c2a2c42b5884dbaedb971121308ea3b09edddaf3ca2be03ad8",
+      "git_blob": "174b7e3687848cd372a8495a106cac445877f2c2"
+    },
+    {
+      "path": "projects/robots/clearpath/pr2/protos/textures/torso_lift_color.jpg",
+      "bytes": 84331,
+      "sha256": "548912c38555d6cfe157c76d5400e66b76a5a574cbf2a9e1417ad940790207bd",
+      "git_blob": "c6ad09608db007f20bf4bbbc12298f313c8f45d7"
+    }
+  ]
+}

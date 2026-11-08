@@ -1,0 +1,108 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+  "files": [
+    {
+      "path": "trossen_vx300s/CHANGELOG.md",
+      "bytes": 210,
+      "sha256": "f29e67505e86ea829c3605aeddfe153dd5f4baecf36959f40270d76b9845e9d9",
+      "git_blob": "f809d777443fb595e9afc93ee561f2f6a405f7c5"
+    },
+    {
+      "path": "trossen_vx300s/LICENSE",
+      "bytes": 1502,
+      "sha256": "21868447315ac2b10e592d08958c1035b19a32cf39e9165b23033f68390098cb",
+      "git_blob": "8df4a42c6d010cb2e25b9c68bbef8c0c26980df6"
+    },
+    {
+      "path": "trossen_vx300s/README.md",
+      "bytes": 1826,
+      "sha256": "cf713f827af60578a2e0be5f57c64d639cb5cfba4236f4229c5443f7a1fd1913",
+      "git_blob": "39bc519c3787a6268e513a0395ec6647757ac050"
+    },
+    {
+      "path": "trossen_vx300s/assets/interbotix_black.png",
+      "bytes": 1994,
+      "sha256": "4cd224156bbaab1ddf1b92b90d46c54835a8b41f61bc258b2f216c2618e062cf",
+      "git_blob": "e7443eb557636b895a5399b0659681f0c1063e49"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_10_gripper_finger.stl",
+      "bytes": 42884,
+      "sha256": "a4baacd9a64df1be60ea5e98f50f3c660e1b7a1fe9684aace6004c5058c09483",
+      "git_blob": "d6df86bef815342723e35f4aac53a0f276877bfb"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_1_base.stl",
+      "bytes": 99984,
+      "sha256": "d100cafe656671ca8fde98fb6a4cf2d1b746995c51c61c25ad9ea2715635d146",
+      "git_blob": "5a7efda2fe330aeadad63ee4ce29e996ebdf2195"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_2_shoulder.stl",
+      "bytes": 63884,
+      "sha256": "139745a74055cb0b23430bb5bc032bf68cf7bea5e4975c8f4c04107ae005f7f0",
+      "git_blob": "dc22aa7e51355a0a8d0439f85be356c6aa9e1c3c"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_3_upper_arm.stl",
+      "bytes": 102984,
+      "sha256": "900f236320dd3d500870c5fde763b2d47502d51e043a5c377875e70237108729",
+      "git_blob": "111c586e18fb0f44cee7e4593d24c71382a6e9b4"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_4_upper_forearm.stl",
+      "bytes": 49584,
+      "sha256": "4104fc54bbfb8a9b533029f1e7e3ade3d54d638372b3195daa0c98f57e0295b5",
+      "git_blob": "8170d21ce81cb22b5ecca8fdf974e860ae61302f"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_5_lower_forearm.stl",
+      "bytes": 99884,
+      "sha256": "66814e27fa728056416e25e02e89eb7d34c51d51c51e7c3df873829037ddc6b8",
+      "git_blob": "39581f83a627bee69717fc8d969f1b6bc20196e2"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_6_wrist.stl",
+      "bytes": 70784,
+      "sha256": "90eb145c85627968c3776ae6de23ccff7e112c9dd713c46bc9acdfdaa859a048",
+      "git_blob": "ab8423e99da86cb9e13c197f8137b670f789ea2a"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_7_gripper.stl",
+      "bytes": 450084,
+      "sha256": "786c1077bfd226f14219581b11d5f19464ca95b17132e0bb7532503568f5af90",
+      "git_blob": "043db9caeaa59dcb0a6bf570956b0904eb60ba63"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_8_gripper_prop.stl",
+      "bytes": 31684,
+      "sha256": "d1275a93fe2157c83dbc095617fb7e672888bdd48ec070a35ef4ab9ebd9755b0",
+      "git_blob": "36099b4221155b491a2ad61fb799c7fd7d443b77"
+    },
+    {
+      "path": "trossen_vx300s/assets/vx300s_9_gripper_bar.stl",
+      "bytes": 379484,
+      "sha256": "a4de62c9a2ed2c78433010e4c05530a1254b1774a7651967f406120c9bf8973e",
+      "git_blob": "eba3caa21990c28559553fe0003ae379514e7215"
+    },
+    {
+      "path": "trossen_vx300s/scene.xml",
+      "bytes": 860,
+      "sha256": "1a3cd410e1623d8c8663f98be7931b3ef8245fbdb7a22a592e38f0f1656290f7",
+      "git_blob": "3d0fbe79cd0a6a60ea9b2a1eacfd0e69c595b494"
+    },
+    {
+      "path": "trossen_vx300s/vx300s.png",
+      "bytes": 1346444,
+      "sha256": "ca4633e91f70257b3f5926edbb6fc2304b5e051d2d50872b8d430dcdcd949b70",
+      "git_blob": "54cba99693e8dd8aeb4ce3c1d36c510e07eec1c1"
+    },
+    {
+      "path": "trossen_vx300s/vx300s.xml",
+      "bytes": 12091,
+      "sha256": "675a04490b6d540ec8335aacf245edaecdba9ae793e9a734f1c96461d5bb770e",
+      "git_blob": "851c25f24863492681f83ccee90d106c7dcdd5c5"
+    }
+  ]
+}

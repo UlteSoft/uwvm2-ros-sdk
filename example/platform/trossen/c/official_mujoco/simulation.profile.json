@@ -1,0 +1,24 @@
+{
+  "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
+  "id": "trossen-trossen_vx300s-menagerie-mujoco-jazzy",
+  "execution_class": "software_simulation",
+  "scope": "Original MuJoCo Menagerie VX300s physics; 6 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "ros_release": "jazzy",
+  "source": "main.c",
+  "test": "xmake test -P .",
+  "same_wasm_for_both_engines": true,
+  "source_lock": "model-assets.json",
+  "official_source": {
+    "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+    "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+    "path": "trossen_vx300s"
+  },
+  "original_simulator": "MuJoCo",
+  "production_admission": false,
+  "physical_robot_authorized": false,
+  "migrated_components": [
+    "ros-controls/control_toolbox@4.11.1 PID",
+    "ros-controls/ros2_controllers@4.42.1 Trajectory"
+  ],
+  "native_role": "original simulator physics, intrinsic actuators and device transport"
+}

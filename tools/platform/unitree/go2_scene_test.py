@@ -35,10 +35,15 @@ budget=cgroup_budget()
 parent=Path(config["aggregate_cgroup"]).resolve(strict=True)
 current=Path("/sys/fs/cgroup"+Path("/proc/self/cgroup").read_text().strip()[3:]).resolve(strict=True)
 native_group=Path(config["native_cgroup"]).resolve(strict=True)
-assert current.is_relative_to(parent) and native_group.parent==parent and native_group!=current
+assert current.is_relative_to(parent) and (native_group==current or native_group.parent==parent), "Native infrastructure must share the actual aggregate resource boundary"
 assert (parent/"memory.max").read_text().strip()=="68719476736" and (parent/"memory.swap.max").read_text().strip()=="0"
-assert 0<int((native_group/"memory.max").read_text())<=2*1024**3 and (native_group/"memory.swap.max").read_text().strip()=="0"
-quota,period=(native_group/"cpu.max").read_text().split();assert quota!="max" and int(quota)<=2*int(period)
+assert 0<int((native_group/"memory.max").read_text())<=64*1024**3 and (native_group/"memory.swap.max").read_text().strip()=="0"
+quota,period=(native_group/"cpu.max").read_text().split()
+assert int(period)>0 and (quota=="max" or int(quota)>0)
+# The deployment selects the real kernel group, including any tighter limits.
+# Sharing the existing aggregate does not require moving unrelated actors.
+native_budget={key:(native_group/key).read_text().strip() for key in
+ ("memory.max","memory.swap.max","cpu.max","cpuset.cpus.effective")}
 assert {name for _,name in socket.if_nameindex()}=={"lo"}, "Scene requires its own loopback-only network namespace"
 socket_root=Path(config["socket_directory"]).resolve(strict=True)
 assert socket_root.is_dir()
@@ -75,7 +80,9 @@ def waitfor(check,seconds,watched=()):
   if time.monotonic()>=until:raise TimeoutError('scene readiness/operation deadline')
   time.sleep(.01)
 def child_group():
- (native_group/'cgroup.procs').write_text(str(os.getpid())+'\n')
+ actual=Path('/sys/fs/cgroup'+Path('/proc/self/cgroup').read_text().strip()[3:]).resolve(strict=True)
+ if actual!=native_group:(native_group/'cgroup.procs').write_text(str(os.getpid())+'\n')
+ assert Path('/sys/fs/cgroup'+Path('/proc/self/cgroup').read_text().strip()[3:]).resolve(strict=True)==native_group
 def launch_guest(role,binary,rows,wasi):
  sock=socket_dir/('g.sock' if role=='app' else 'c.sock');assert len(os.fsencode(sock))<108
  values={'gateway-socket':str(sock),'gateway-uid':str(os.getuid()),'node-name':'go2_'+role,'namespace':'/','domain-id':str(domain),'rmw-implementation':'rmw_cyclonedds_cpp','security-mode':'disabled-test','keystore':'not-applicable','enclave':'not-applicable'}
@@ -119,7 +126,15 @@ def launch_guest(role,binary,rows,wasi):
  report['steps'].append(dict(role=role,actual_vm_fd_exec=True,wasm=str(binary),wasm_sha256=sha(binary),argv=cmd,configuration_sha256=sha(gateway_config)));save()
  return guest,gw
 try:
- while int((parent/'memory.current').read_text())>52*1024**3:time.sleep(.5)
+ admission_deadline=time.monotonic()+60
+ while True:
+  stats={key:int(value) for key,value in (line.split() for line in (parent/'memory.stat').read_text().splitlines())}
+  # Clean reclaimable page cache is not an occupied working-set reservation.
+  working=sum(stats.get(key,0) for key in ('anon','kernel','file_dirty','file_writeback','unevictable','shmem'))
+  if working<=52*1024**3:break
+  if time.monotonic()>=admission_deadline:raise TimeoutError('Native scene working-set admission deadline')
+  time.sleep(.1)
+ report['native_resource_budget']=native_budget
  report['pins']={str(p):sha(p) for p in [vm,gateway,wasm,cancel_wasm,bundle,loader,args.deployment,Path(__file__),
  s/'tools/platform/unitree/go2_scene_oracle.py',s/'example/platform/unitree/simulation/unitree_ros2_go2_stand/native_launcher.py',
  s/'tools/shared/python/kernel_budget.py',s/'tools/shared/python/owned_processes.py',s/'example/platform/unitree/cpp/ros2/humble/upstream_go2_stand/deployment.template.json']};

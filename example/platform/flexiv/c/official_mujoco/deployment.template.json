@@ -1,0 +1,486 @@
+{
+  "format": "uwvm-sdk-wasm-control-fixture-v1",
+  "physical_robot_authorized": false,
+  "engines": [
+    "jit",
+    "int"
+  ],
+  "socket_root": "/absolute/private/socket-directory",
+  "runtime": {
+    "executable": "/absolute/installed/uwvm2-ros",
+    "sha256": "<actual complete executable SHA256>",
+    "arguments": [
+      "--runtime-compile-threads",
+      "1",
+      "--runtime-llvm-jit-cache-path",
+      "disable",
+      "--runtime-llvm-jit-policy",
+      "debug",
+      "--log-verbose",
+      "--wasm-feature-enable-exceptions"
+    ]
+  },
+  "gateway": {
+    "executable": "/absolute/installed/uwvm-ros2-gateway",
+    "sha256": "<actual complete executable SHA256>"
+  },
+  "native": {
+    "physics_io": "/absolute/installed/uwvm-mujoco-io",
+    "mujoco": "/absolute/installed/libmujoco.so.3.3.6",
+    "files": [
+      {
+        "path": "/absolute/installed/uwvm-mujoco-io",
+        "sha256": "REPLACE_WITH_SHA256"
+      },
+      {
+        "path": "/absolute/installed/libmujoco.so.3.3.6",
+        "sha256": "REPLACE_WITH_SHA256"
+      }
+    ]
+  },
+  "ros2": {
+    "enabled": true,
+    "connect_timeout_ms": 5000,
+    "connection": {
+      "node-name": "joint_gateway",
+      "namespace": "/flexiv",
+      "domain-id": "89",
+      "rmw-implementation": "rmw_cyclonedds_cpp",
+      "security-mode": "disabled-test",
+      "keystore": "not-applicable",
+      "enclave": "not-applicable"
+    },
+    "interfaces": {}
+  },
+  "cases": {
+    "positive": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        },
+        {
+          "alias": "joint_command",
+          "operation": "topic.publish",
+          "resource": "/flexiv/joint_commands",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "reliable",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "1",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "denied": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "boundaries": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        },
+        {
+          "alias": "joint_command",
+          "operation": "topic.publish",
+          "resource": "/flexiv/joint_commands",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "reliable",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "1",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "cancel": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        },
+        {
+          "alias": "joint_command",
+          "operation": "topic.publish",
+          "resource": "/flexiv/joint_commands",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "reliable",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "1",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "timeout": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/absent_joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "disconnect": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "owner": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    },
+    "foreign": {
+      "grants": [
+        {
+          "alias": "joint_state",
+          "operation": "topic.subscribe",
+          "resource": "/flexiv/joint_states",
+          "type": "sensor_msgs/msg/JointState",
+          "native_identity": "RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e",
+          "settings": {
+            "audit": "allow-and-deny",
+            "validator": "none",
+            "overflow-policy": "reject",
+            "adapter-codec-identity": "UWVMROS1_68d65577c24d5b974c092680dcc7dd6d371ef9f9f990ba2a88c2d465a4db6b27",
+            "qos.reliability": "best-effort",
+            "qos.durability": "volatile",
+            "qos.history": "keep-last",
+            "qos.depth": "10",
+            "qos.deadline": "infinite",
+            "qos.lifespan": "infinite",
+            "qos.liveliness": "automatic",
+            "qos.liveliness-lease-duration": "infinite"
+          }
+        }
+      ],
+      "wasi_policy": {
+        "format": "uwvm-sdk-wasip1-policy-v3",
+        "modules": {
+          "main": {
+            "enabled": true,
+            "interfaces": {},
+            "grants": [
+              "args",
+              "environ",
+              "proc-exit",
+              "stdin.read",
+              "stdout.write",
+              "stderr.write",
+              "stdio.metadata",
+              "monotonic-clock",
+              "monotonic-timer"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "template_state": "UNBOUND_NO_RUNTIME_AUTHORITY",
+  "profile": "flexiv-flexiv_rizon4-menagerie-mujoco-jazzy",
+  "motion": {
+    "challenge": 1000,
+    "position_tolerance_radians": 0.01
+  }
+}

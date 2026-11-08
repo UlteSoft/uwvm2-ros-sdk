@@ -1,0 +1,234 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "98a70c569c4c1b6da467a20012f766ee1f8dc521",
+  "files": [
+    {
+      "path": "ufactory_lite6/CHANGELOG.md",
+      "bytes": 139,
+      "sha256": "4c34ce53605cef5efc80d3d9672e49cb7544bc3b1e3bf32ce991406e0688e109",
+      "git_blob": "9fd4f896c57d37729cb7e084137b01853afa16e8"
+    },
+    {
+      "path": "ufactory_lite6/LICENSE",
+      "bytes": 1522,
+      "sha256": "4fe659325706d0fc41592c8743d085a0bdf778056249f2a108943d22be916fb2",
+      "git_blob": "2ac522888a6639e7de4666d8c8e2c25e8eaf21a4"
+    },
+    {
+      "path": "ufactory_lite6/README.md",
+      "bytes": 3058,
+      "sha256": "bd3265373ec4c8a23a2ace74049d30eb22e643ba26954268b0eb2fa502e755e6",
+      "git_blob": "02e2e321690710c06f25c8b2e8e4087ee679a173"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/gripper_lite_body.stl",
+      "bytes": 74484,
+      "sha256": "7bf001d6ec55a653bd1b91fa5cb7b37fcb908176cb8719f3ff1104472072a183",
+      "git_blob": "3100bc2a8c75aaaaa9f52ffc3c0916472cc636bc"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/gripper_lite_left_finger_wide_base.stl",
+      "bytes": 21784,
+      "sha256": "dfffdc4a46103b0b9310e157b2655d724992e198782faef0dea0ddb9c181a21e",
+      "git_blob": "52dde230b125dc84f5240ea60f0668c1b5bc9742"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/gripper_lite_left_finger_wide_tip.stl",
+      "bytes": 10284,
+      "sha256": "638e3aff8a261caf4cbd0e0d2f7738afe127cbfbabb188549476e45a82c8b7f2",
+      "git_blob": "6c9502db6e88c6fd90d780956e9a8a7cd154b810"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/gripper_lite_right_finger_wide_base.stl",
+      "bytes": 21484,
+      "sha256": "1b65c6b0f47efb84e10bd7247ce5ab98e3f4c26985f7213565e0f8f0a99cd75b",
+      "git_blob": "b65bf27e16a122a7ed7f0192a094638c41e94f4a"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/gripper_lite_right_finger_wide_tip.stl",
+      "bytes": 11084,
+      "sha256": "41860d2714b6f7fca22eee478d5370f5f8bf09bc9413627f711a75688be45973",
+      "git_blob": "1724c1d03934f0a939b78d4db051d903e19fcf07"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link1.stl",
+      "bytes": 42384,
+      "sha256": "ac91231b9338ecc99dc4f318854f3288d427dbf7d36d5f1a916b7cdb00e0ee8b",
+      "git_blob": "7f1a1b4b57f4c4daade07ea34856041ab117348e"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link2.stl",
+      "bytes": 61484,
+      "sha256": "2945b39ecc4154da30d1ebe5a9b380e742a379fb0902148f2e286672f46ee1db",
+      "git_blob": "d3451b7560980968611675538f2e32eec5768f13"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link3.stl",
+      "bytes": 36184,
+      "sha256": "9af8b412d1f9bc5714be78f4473f28f4ffa91caa0455f215e24e132c8ef433cd",
+      "git_blob": "2d9bf5a48676bd3aba5829081ace783b695a8178"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link4.stl",
+      "bytes": 379184,
+      "sha256": "17ff580ba7a4477c120374b2e6396940bab2cdc8fad07a34af9ae44b08ee1515",
+      "git_blob": "9a93c31810d3c89a2eb7766fc0f56bf2cedd3091"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link5.stl",
+      "bytes": 352884,
+      "sha256": "f69ec2478819438078db12412597d51bb815acb66d0e1aaa57d4d0f93630fc9c",
+      "git_blob": "ef7c2dba3153967b6f6301c113b1609d24e1167d"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link6.stl",
+      "bytes": 17984,
+      "sha256": "6c2492bd20f3b7216626f00f7e8b63cda12e3faec9b64c6216d1d53022f2ee18",
+      "git_blob": "d2edc78fd5f90f0bb15267ce12c67b02aa9b8ee6"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/link_base.stl",
+      "bytes": 69884,
+      "sha256": "728a2e960227fe8b781e7220e0c9a171e2f746524c5db7875bb15b3a2ce2ff92",
+      "git_blob": "57802b3dba8dc3a443fcdfce9dfcdb50ac8ca76b"
+    },
+    {
+      "path": "ufactory_lite6/assets/collision/vacuum_gripper_lite.stl",
+      "bytes": 22484,
+      "sha256": "7cbf96105836c7d17200cee4f9fd9b1a0a14fa7622932f5d2a9145677c891a31",
+      "git_blob": "5b39f5827e6462301305570f0bf5156142ab6d28"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/gripper_lite_body.stl",
+      "bytes": 254284,
+      "sha256": "8784a266e60f8c995990643d8f742be62925a01ad6b27c26a6691376f2b2dfb5",
+      "git_blob": "605d18167b1d367ae532fec441d5e213fc07e512"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/gripper_lite_left_finger_narrow.stl",
+      "bytes": 41484,
+      "sha256": "4c064e68c7a23865495ec5b3d7b4813759afb20f8f63d20c9ddd60bebe1cc799",
+      "git_blob": "8cfa8aee9342a4520e65a0019146e54d89721a89"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/gripper_lite_left_finger_wide.stl",
+      "bytes": 40584,
+      "sha256": "ec6b308915e25beb11e38e45f68c16d3386a318b629406b32dec0f16697edc95",
+      "git_blob": "e7cb19ec37f4b700db7143978abec1bec1f0adab"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/gripper_lite_right_finger_narrow.stl",
+      "bytes": 40584,
+      "sha256": "a2d69e2903802dd65dcea5a995262f8d5de5011b65040a12d772c88115614588",
+      "git_blob": "d13e0d1bc226cdc64265782b81383654c80cfc2a"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/gripper_lite_right_finger_wide.stl",
+      "bytes": 41484,
+      "sha256": "31814642efc7cea974d4106088c29483d9ce50f49eed92507aea37b59b469302",
+      "git_blob": "57db23a2c56d8d9f7e465410d1237c27d286a726"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link1.stl",
+      "bytes": 172584,
+      "sha256": "41d28af66c2fbd6a93b9fb5f9cfceb3c1de1f021928006871ae4e9d813f8459a",
+      "git_blob": "c846dbb08d0996823522313a62e8a4b113df388d"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link2.stl",
+      "bytes": 207084,
+      "sha256": "d082d23629f1fe619bfc664208039e177cf774a6f953c2c1722aec20edd73ca4",
+      "git_blob": "d1b1f83135d99cc6612a27b2c0b19833f1dcacfb"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link3.stl",
+      "bytes": 621084,
+      "sha256": "ff11c8164bb932cfdfedf27f875e5d5bd3ae13df128c44809da1bf15b712d759",
+      "git_blob": "e2833e791ef10beaa533b34c0f6266600a8cf79e"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link4.stl",
+      "bytes": 752384,
+      "sha256": "902ef2e6c6f66f0fa72b8b7e242ea75ea85af7dfd35581997ceaf475e25a4954",
+      "git_blob": "8eec2c438dfe9a9b3476cdcf1e9b447b8b9da3c2"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link5.stl",
+      "bytes": 541084,
+      "sha256": "3e0c201146a4444a08493d83a273f81b0298a723186a2bb27ede21c574237a41",
+      "git_blob": "2c465633381d683f7e31852b4f8ee5fcbfc7ae02"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link6.stl",
+      "bytes": 247884,
+      "sha256": "36a7bad22997a0938884485997f026b602bd952674a22d3a8e47cc160cde70d8",
+      "git_blob": "60a915e2f4f35c15480a898c64f70dfc3056d059"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/link_base.stl",
+      "bytes": 231884,
+      "sha256": "84f69488a1de60c76c23f83b1759ed76e9235bd56b4b98b4c997c24c18ba7b42",
+      "git_blob": "56cf92dbee47b65c03e767cad4043b5f18593c9e"
+    },
+    {
+      "path": "ufactory_lite6/assets/visual/vacuum_gripper_lite.stl",
+      "bytes": 283184,
+      "sha256": "59304e495ac9cd02a569dc3bebef7c3043f29932a1223545063a31bc17e0da20",
+      "git_blob": "6b55e2c54622c78d56c1f1247cca80bd8949f6c9"
+    },
+    {
+      "path": "ufactory_lite6/lite6.png",
+      "bytes": 1431785,
+      "sha256": "afa0f4d50ac77207b0e25028654de01ea1a5c1c6f4e5fed1037a1e4ffe40c993",
+      "git_blob": "89071c5c2f2c148a7a0ca6d3cc21aca73ddbf0c3"
+    },
+    {
+      "path": "ufactory_lite6/lite6.xml",
+      "bytes": 5173,
+      "sha256": "89672be1b10bef6ab49850c105f6faf1945bf13d238f8a79df0f200cfe6d7796",
+      "git_blob": "f1a4adc0df3ea1860e8d00a6245c9f6e7a5ce0bc"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_narrow.xml",
+      "bytes": 7605,
+      "sha256": "f2ecb61b8c2bf87bbad2e53a8f6e4d45b6b6aae5ae70de47ef34503a7f7e2dd4",
+      "git_blob": "b415084ae6c74cf6cd6a792dbc98420b6486e901"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_narrow_closed.png",
+      "bytes": 192800,
+      "sha256": "a10c81bc38ec04cfd97be89e564300b3e00a6f98d972c4e1e878ba07fee7f93c",
+      "git_blob": "b345ab56d9e8069b2abbf8c746c188bb7ea91c2a"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_narrow_open.png",
+      "bytes": 214502,
+      "sha256": "e800381bce14e9af533942fd971bcedd012d9cc4a0fb27202b0db4bb7b3c44e7",
+      "git_blob": "0299f0857aefc179ef4fbcd70f17a6b11bffafdb"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_wide.xml",
+      "bytes": 8658,
+      "sha256": "3ef9fb392e504949797b6d77557148b32623098ee7206e05273fdd4b2199f2ff",
+      "git_blob": "8538f429c1c0efc53add6972be3f2708d69e24ac"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_wide_closed.png",
+      "bytes": 245979,
+      "sha256": "9fe7bc40026fd6179e1c253baf421ce4eac603a159fd0ebd71759b55682e2cfc",
+      "git_blob": "666352cc766228d5f6a8f696f338b08a4239b5c2"
+    },
+    {
+      "path": "ufactory_lite6/lite6_gripper_wide_open.png",
+      "bytes": 227735,
+      "sha256": "3faaccca5546addc6d714094bc007bd5672ca861562931e0c23456c90e23cee3",
+      "git_blob": "2f9ed640972f062222413c2d95c0055f5278e438"
+    },
+    {
+      "path": "ufactory_lite6/scene.xml",
+      "bytes": 819,
+      "sha256": "3e009a1b8105cc1f2c7a5e15352e31827f353b64b1f17e3b696d47818b01c7bf",
+      "git_blob": "f2667912f7942ae682287b16df61c18f62522e57"
+    }
+  ]
+}

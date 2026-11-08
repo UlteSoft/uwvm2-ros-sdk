@@ -13,10 +13,13 @@ function describe()
         kinds[kind] = {languages = {"wat"}, targets = {"wasm32-wasip1", "wasm64-wasip1"},
             exception_profiles = {"noeh"}, dependencies = {static = {"wat", "c"}, shared = {"wat", "c", "cpp"}}}
     end
-    return {api_version = 1, languages = {"wat"}, targets = {"wasm32-wasip1", "wasm64-wasip1"},
+    for _, kind in ipairs({"binary", "shared"}) do
+        table.insert(kinds[kind].targets, "wasm32-wasip1-threads")
+    end
+    return {api_version = 1, languages = {"wat"}, targets = {"wasm32-wasip1", "wasm64-wasip1", "wasm32-wasip1-threads"},
         exception_profiles = {"noeh"}, entry_profiles = {"command", "freestanding"},
         features = {"memory64", "table64", "simd128", "relaxed-simd", "bulk-memory", "reference-types",
-                    "multi-value", "sign-extension", "nontrapping-fptoint", "tail-call", "extended-const", "multi-memory"},
+                    "multi-value", "sign-extension", "nontrapping-fptoint", "tail-call", "extended-const", "multi-memory", "threads"},
         memory_artifact_models = {"binary", "dynamic", "independent"},
         artifact_kinds = kinds}
 end
@@ -26,9 +29,20 @@ end
 -- @param root Installed SDK using the one common language registry.
 -- @param request Version-one platform request with exact ABI and source paths.
 function configure(target, root, request)
-    assert(request.language == "wat" and request.wasi_preview == 1 and not request.threads
-           and request.exception_profile == "noeh", "WAT currently implements Preview1/noeh/single-thread")
-    assert(request.triple == "wasm" .. request.address_bits .. "-wasip1", "Conflicting WAT target width")
+    assert(request.language == "wat" and request.wasi_preview == 1
+           and request.exception_profile == "noeh", "WAT requires the implemented Preview1/noeh profile")
+    local triple = "wasm" .. request.address_bits .. "-wasip1" .. (request.threads and "-threads" or "")
+    assert(request.triple == triple, "Conflicting WAT target width or thread profile")
+    if request.threads then
+        assert(request.address_bits == 32 and
+               (request.artifact_model == "binary" or request.artifact_model == "core-preload"),
+               "The threaded WAT route implements wasm32 commands and their explicit Core memory owners")
+        assert(request.artifact_model ~= "core-preload" or request.entry == "freestanding",
+               "Threaded shared-memory owners explicitly select freestanding startup without a synthesized initializer")
+    end
+    for _, feature in ipairs(request.features) do
+        assert(feature ~= "threads" or request.threads, "Select wasm-wasip1-threads for shared memory and atomics")
+    end
     assert(request.kind == "binary" or request.kind == "static" or request.kind == "shared", "Select an ordinary artifact kind")
     assert(#request.sources > 0, "Declare complete real WAT source modules")
     for _, source in ipairs(request.sources) do
@@ -81,6 +95,8 @@ function build(target, root, request)
         or #artifacts.static_closure(target) > 0 or #request.links > 0
     assert(not request.memory_import or not relocatable,
            "BLOCKED: this explicit multi-memory ABI requires one complete WAT module; relocatable multi-memory linking is not implemented")
+    assert(not request.threads or not relocatable,
+           "Threaded WAT currently requires complete modules; shared-memory relocatable linking needs a separate ABI")
     local intermediate = artifacts.workspace(target, "wat-objects")
     os.mkdir(intermediate)
     local objects, exports, imports, import_modules = {}, {}, {}, {}
@@ -89,6 +105,7 @@ function build(target, root, request)
     for index, source in ipairs(request.sources) do
         local filename = relocatable and path.join(intermediate, string.format("%04d_%s.o", index, path.filename(source))) or output
         local arguments = table.join(prefix, {programs.wat2wasm, "--disable-exceptions"})
+        if request.threads then table.insert(arguments, "--enable-threads") end
         local multi_memory = false
         for _, feature in ipairs(request.features) do multi_memory = multi_memory or feature == "multi-memory" end
         if not multi_memory then table.insert(arguments, "--disable-multi-memory") end
@@ -132,8 +149,13 @@ function build(target, root, request)
     if target:kind() ~= "static" then
         local facts = metadata.validate_memory(output, request.address_bits, true, request)
         if request.artifact_model == "core-preload" then
-            metadata.initialize(output, "_initialize")
-            facts = metadata.inspect(assert(io.readfile(output, {encoding = "binary"})))
+            if request.threads then
+                assert(facts.start_index == nil,
+                       "The threaded shared-memory owner cannot run a start function")
+            else
+                metadata.initialize(output, "_initialize")
+                facts = metadata.inspect(assert(io.readfile(output, {encoding = "binary"})))
+            end
         elseif target:kind() == "binary" then
             local start
             for _, entry in ipairs(facts.exports) do

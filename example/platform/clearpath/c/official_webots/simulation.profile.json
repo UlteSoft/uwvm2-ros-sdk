@@ -1,0 +1,23 @@
+{
+  "format": "uwvm-sdk-ros2-joint-fixture-profile-v1",
+  "id": "clearpath-pr2-webots-r2025a-jazzy",
+  "execution_class": "software_simulation",
+  "scope": "Official Webots R2025a Pr2 physics; seven right-arm joints; other joints and navigation remain outside this example",
+  "ros_release": "jazzy",
+  "source": "main.c",
+  "test": "xmake test -P .",
+  "same_wasm_for_both_engines": true,
+  "source_lock": "model-assets.json",
+  "official_source": {
+    "repository": "https://github.com/cyberbotics/webots",
+    "release": "R2025a",
+    "path": "projects/robots/clearpath/pr2/protos/Pr2.proto"
+  },
+  "production_admission": false,
+  "physical_robot_authorized": false,
+  "migrated_components": [
+    "ros-controls/control_toolbox@4.11.1 PID",
+    "ros-controls/ros2_controllers@4.42.1 Trajectory"
+  ],
+  "native_role": "original simulator physics, intrinsic actuators and device transport"
+}

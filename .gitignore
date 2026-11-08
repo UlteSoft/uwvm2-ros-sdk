@@ -85,6 +85,15 @@ playwright-report/
 !include/platform/ros/transplate/dependencies/rcutils/**/upstream/rcutils/testing/
 !include/platform/ros/transplate/dependencies/rcutils/**/upstream/rcutils/testing/*.h
 
+# Retained GoogleTest sources are inputs for unmodified upstream ROS tests.
+# core.ignorecase also makes Testing/ match src/testing.
+!/src/testing/
+!/src/testing/googletest/
+!/src/testing/googletest/**/*.h
+!/src/testing/googletest/**/*.cc
+!/src/testing/googletest/LICENSE.txt
+!/src/testing/googletest/source.json
+
 # Date-stamped paths stay local, including versioned inputs (repository policy).
 # Match YYYYMMDD, YYYY-MM-DD, YYYY_MM_DD and YYYY.MM.DD anywhere in a name.
 # Kept last so the upstream/source-input exceptions above do not override it.

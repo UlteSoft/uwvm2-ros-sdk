@@ -1,0 +1,19 @@
+{
+  "vendor": "kinova",
+  "model": "Gen3",
+  "namespace": "/kinova",
+  "robot_name": "official_kinova",
+  "joint_names": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6",
+    "joint_7"
+  ],
+  "scene": "kinova_gen3/scene.xml",
+  "initial_keyframe": "home",
+  "scope": "Original MuJoCo Menagerie Gen3 physics; 7 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "official_repository": "https://github.com/google-deepmind/mujoco_menagerie"
+}

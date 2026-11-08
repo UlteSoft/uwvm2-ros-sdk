@@ -1,0 +1,100 @@
+{
+  "format": "uwvm-sdk-upstream-portability-v1",
+  "qualification_unit": "source-component",
+  "package_migration_claimed": false,
+  "source_manifest": "source.json",
+  "execution_profile": {
+    "wasm_core": [
+      "exceptions"
+    ],
+    "threads": "one serial executor per private instance; no shared-memory atomics",
+    "host_authority": "No implicit WASI or ROS interfaces or operations; the deployment grants each explicitly."
+  },
+  "memory_models": {
+    "static": {
+      "implemented": true,
+      "ownership": "Consumer memory, stack, allocator, table and exception runtime; pointer ABI remains within that instance."
+    },
+    "dynamic_same_memory_preload": {
+      "implemented": false,
+      "reason": "The C++ shared allocator, stack, table, initialization and cross-module exception ABI is not implemented. Ordinary core-preload with separate memories is not this model."
+    },
+    "independent_multi_memory": {
+      "implemented": false,
+      "reason": "C++ lowering and copy/ownership/exception boundaries for private heap plus communication memory are not implemented. WAT runtime tests do not qualify this C++ port."
+    }
+  },
+  "native_boundary": {
+    "numerical_reference": "Original native library only supplies differential test results; it is never an execution fallback.",
+    "official_model_integration": {
+      "retained_audited_infrastructure": [
+        "native ROS host interface and Gateway",
+        "rclcpp transport node/executor and ROS message type support",
+        "native RMW/DDS transport"
+      ],
+      "system_boundary": [
+        "official simulator physics and intrinsic device actuators",
+        "process supervision and uwvm2-ros"
+      ],
+      "interpretation": "Native ROS/RMW/DDS communication is retained as the trusted authorization and audit boundary. Guest business logic crosses that boundary under its own module authority; it must not bypass it through guest DDS or raw networking.",
+      "not_a_business_fallback": [
+        "PID computation",
+        "trajectory interpolation",
+        "guest cancellation and control decisions"
+      ]
+    }
+  },
+  "qualification_requirements": [
+    "Exact upstream source and complete adaptation patch",
+    "Original-native versus adapted-native versus identical Wasm bytecode comparisons",
+    "Interpreter and LLVM JIT on each target architecture",
+    "Explicit permissions, denial before native effects and private-instance isolation",
+    "Official-model tests with actual native/guest executable identities",
+    "Native x86_64 timing separated into compile/startup and steady computation; QEMU supplies correctness only"
+  ],
+  "counts_as_migrated_package": false,
+  "upstream_package": "control_toolbox",
+  "component": "control_toolbox::Pid",
+  "patch": "serial-component.patch",
+  "source_mapping": [
+    {
+      "original": "upstream/pid.hpp",
+      "adapted": "include/control_toolbox/pid.hpp",
+      "upstream_path": "control_toolbox/include/control_toolbox/pid.hpp"
+    },
+    {
+      "original": "upstream/pid.cpp",
+      "adapted": "pid.cpp",
+      "upstream_path": "control_toolbox/src/pid.cpp"
+    }
+  ],
+  "adaptations": [
+    {
+      "surface": "public API",
+      "change": "Remove only two rclcpp::Duration convenience overloads. Keep seconds, int64 nanoseconds and std::chrono overloads.",
+      "compatibility": "API subset; not drop-in source compatibility for callers of the removed overloads."
+    },
+    {
+      "surface": "concurrency",
+      "change": "Replace RealtimeThreadSafeBox with an explicitly serial value box.",
+      "compatibility": "Equivalent only in the declared serial profile. Does not preserve concurrent dynamic-gain-update or priority-inheritance behavior."
+    },
+    {
+      "surface": "algorithm and errors",
+      "change": "Retain original computation, gain checks, anti-windup, C++ exceptions and formatted diagnostics.",
+      "compatibility": "Checked by differential tests; finite tests do not establish every possible input."
+    },
+    {
+      "surface": "C adapter",
+      "change": "Own the actual C++ object and translate exceptions into status codes at the same-instance C boundary.",
+      "compatibility": "Raw pointers cannot cross independent module memories."
+    }
+  ],
+  "not_migrated": [
+    "PidROS node wrapper, ROS parameter handling and subscriptions",
+    "Other control_toolbox filters/controllers",
+    "Concurrent realtime gain updates and native priority-inheritance scheduling",
+    "Complete package/plugin lifecycle and ROS API compatibility"
+  ],
+  "public_example": "example/platform/ros2/cpp/control_toolbox_pid"
+}

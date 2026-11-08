@@ -15,13 +15,17 @@ function compile(context, core, compiler, bundle, object)
     os.tryrm(directory)
     os.mkdir(directory)
     local base = {"-target", "wasm32-unknown-none-wasm",
-        "-enable-experimental-feature", "Embedded", "-wmo", "-O",
+        "-enable-experimental-feature", "Embedded", "-wmo", core.debug_info(context.root).unoptimized() and "-Onone" or "-O",
         "-resource-dir", path.join(bundle, "original/lib/swift"),
         "-Xcc", "-resource-dir=" .. path.join(bundle, "original/lib/clang/21"),
         "-Xcc", "-fdeclspec", "-I", directory,
         "-Xcc", "-isystem", "-Xcc", core.installed(context.root,
             path.join(context.selected.include_dir, context.triple)),
         "-Xcc", "-I" .. path.join(context.root, "include/platform")}
+    if core.debug_info(context.root).enabled() then
+        -- Keep Clang-imported type metadata in the final Wasm image.
+        table.join2(base, {"-g", "-gdwarf-types", "-no-clang-module-breadcrumbs", "-Xcc", "-gno-modules"})
+    end
     for _, relative in ipairs(options.import_dirs or {}) do
         table.join2(base, {"-I", core.installed(context.root, relative)})
     end

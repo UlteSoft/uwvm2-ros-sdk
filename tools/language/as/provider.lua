@@ -118,7 +118,6 @@ function build(target, root, triple, action)
 		path.join(root, "include/platform"),
 		"--runtime",
 		"incremental",
-		"--optimize",
 		"--initialMemory",
 		"32",
 		"--maximumMemory",
@@ -126,6 +125,9 @@ function build(target, root, triple, action)
 		"--use",
 		"abort=" .. (action.abort or "~lib/ros/as/api/abortGuest"),
 	})
+	local debug = import("debug_info", {rootdir=path.join(root,"tools/xmake"),anonymous=true})
+	if debug.enabled() then table.join2(arguments, {"--debug", "--sourceMap"}) end
+	if not debug.unoptimized() then table.insert(arguments, "--optimize") end
 	os.vrunv(programs.loader, arguments, {
 		curdir = root,
 		envs = {
@@ -135,4 +137,5 @@ function build(target, root, triple, action)
 		},
 	})
 	assert(os.isfile(output), "The actual AssemblyScript compiler produced no Wasm command")
+	if debug.enabled() then debug.embed_source_map(root, target) end
 end

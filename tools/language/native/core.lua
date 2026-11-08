@@ -95,13 +95,13 @@ function cflags(root, selected, action)
 		c_header_dir,
 		"-isystem",
 		installed(root, selected.include_dir),
-		"-O2",
 		"-Wall",
 		"-Wextra",
 		"-Werror",
 		"-I" .. path.join(root, "include"),
 		"-I" .. path.join(root, "include/platform"),
 	}
+	table.join2(flags, debug_info(root).cflags())
 	for _, relative in ipairs(action.include_dirs or {}) do
 		table.insert(flags, "-I" .. installed(root, relative))
 	end
@@ -161,4 +161,9 @@ function link(context, objects)
 	end
 	table.join2(arguments, { "-o", context.output })
 	os.vrunv(context.programs.cc, arguments)
+end
+
+-- Shared explicit source-information build policy for genuine frontends.
+function debug_info(root)
+    return import("debug_info", {rootdir=path.join(root,"tools/xmake"),anonymous=true})
 end

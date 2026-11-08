@@ -1,0 +1,295 @@
+--- a/joint_trajectory_controller/src/trajectory.cpp
++++ b/joint_trajectory_controller/src/trajectory.cpp
+@@ -22,34 +22,35 @@
+ #include <memory>
+ 
+ #include "angles/angles.h"
+-#include "hardware_interface/macros.hpp"
+-#include "rclcpp/duration.hpp"
+-#include "rclcpp/time.hpp"
++#include <stdexcept>
++#include <string>
++#define THROW_ON_NULLPTR(pointer) if (!(pointer)) { throw std::runtime_error(std::string(__PRETTY_FUNCTION__) + " failed. " #pointer " is null."); }
++#include "uwvm_ros/trajectory_types.hpp"
+ 
+ namespace joint_trajectory_controller
+ {
+ Trajectory::Trajectory() : trajectory_start_time_(0), time_before_traj_msg_(0) {}
+ 
+-Trajectory::Trajectory(std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory)
++Trajectory::Trajectory(std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory)
+ : trajectory_msg_(joint_trajectory),
+-  trajectory_start_time_(static_cast<rclcpp::Time>(joint_trajectory->header.stamp))
++  trajectory_start_time_(static_cast<uwvm_ros::trajectory_types::Time>(joint_trajectory->header.stamp))
+ {
+ }
+ 
+ Trajectory::Trajectory(
+-  const rclcpp::Time & current_time,
+-  const trajectory_msgs::msg::JointTrajectoryPoint & current_point,
+-  std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory)
++  const uwvm_ros::trajectory_types::Time & current_time,
++  const uwvm_ros::trajectory_types::JointTrajectoryPoint & current_point,
++  std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory)
+ : trajectory_msg_(joint_trajectory),
+-  trajectory_start_time_(static_cast<rclcpp::Time>(joint_trajectory->header.stamp))
++  trajectory_start_time_(static_cast<uwvm_ros::trajectory_types::Time>(joint_trajectory->header.stamp))
+ {
+   set_point_before_trajectory_msg(current_time, current_point);
+   update(joint_trajectory);
+ }
+ 
+ void Trajectory::set_point_before_trajectory_msg(
+-  const rclcpp::Time & current_time,
+-  const trajectory_msgs::msg::JointTrajectoryPoint & current_point,
++  const uwvm_ros::trajectory_types::Time & current_time,
++  const uwvm_ros::trajectory_types::JointTrajectoryPoint & current_point,
+   const std::vector<bool> & joints_angle_wraparound)
+ {
+   time_before_traj_msg_ = current_time;
+@@ -98,18 +99,18 @@
+   }
+ }
+ 
+-void Trajectory::update(std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory)
++void Trajectory::update(std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory)
+ {
+   trajectory_msg_ = joint_trajectory;
+-  trajectory_start_time_ = static_cast<rclcpp::Time>(joint_trajectory->header.stamp);
++  trajectory_start_time_ = static_cast<uwvm_ros::trajectory_types::Time>(joint_trajectory->header.stamp);
+   sampled_already_ = false;
+   last_sample_idx_ = 0;
+ }
+ 
+ bool Trajectory::sample(
+-  const rclcpp::Time & sample_time,
++  const uwvm_ros::trajectory_types::Time & sample_time,
+   const interpolation_methods::InterpolationMethod interpolation_method,
+-  trajectory_msgs::msg::JointTrajectoryPoint & output_state,
++  uwvm_ros::trajectory_types::JointTrajectoryPoint & output_state,
+   TrajectoryPointConstIter & start_segment_itr, TrajectoryPointConstIter & end_segment_itr,
+   const bool search_monotonically_increasing)
+ {
+@@ -139,9 +140,9 @@
+     return false;
+   }
+ 
+-  output_state = trajectory_msgs::msg::JointTrajectoryPoint();
++  output_state = uwvm_ros::trajectory_types::JointTrajectoryPoint();
+   auto & first_point_in_msg = trajectory_msg_->points[0];
+-  const rclcpp::Time first_point_timestamp =
++  const uwvm_ros::trajectory_types::Time first_point_timestamp =
+     trajectory_start_time_ + first_point_in_msg.time_from_start;
+ 
+   // current time hasn't reached traj time of the first point in the msg yet
+@@ -175,8 +176,8 @@
+     auto & point = trajectory_msg_->points[i];
+     auto & next_point = trajectory_msg_->points[i + 1];
+ 
+-    const rclcpp::Time t0 = trajectory_start_time_ + point.time_from_start;
+-    const rclcpp::Time t1 = trajectory_start_time_ + next_point.time_from_start;
++    const uwvm_ros::trajectory_types::Time t0 = trajectory_start_time_ + point.time_from_start;
++    const uwvm_ros::trajectory_types::Time t1 = trajectory_start_time_ + next_point.time_from_start;
+ 
+     if (sample_time >= t0 && sample_time < t1)
+     {
+@@ -222,8 +223,8 @@
+     auto & last_point = trajectory_msg_->points[last_idx];
+     if (!prev_point.positions.empty())
+     {
+-      const rclcpp::Time t_prev = trajectory_start_time_ + prev_point.time_from_start;
+-      const rclcpp::Time t_last = trajectory_start_time_ + last_point.time_from_start;
++      const uwvm_ros::trajectory_types::Time t_prev = trajectory_start_time_ + prev_point.time_from_start;
++      const uwvm_ros::trajectory_types::Time t_last = trajectory_start_time_ + last_point.time_from_start;
+       deduce_from_derivatives(
+         prev_point, last_point, state_before_traj_msg_.positions.size(),
+         (t_last - t_prev).seconds());
+@@ -254,12 +255,12 @@
+ }
+ 
+ void Trajectory::interpolate_between_points(
+-  const rclcpp::Time & time_a, const trajectory_msgs::msg::JointTrajectoryPoint & state_a,
+-  const rclcpp::Time & time_b, const trajectory_msgs::msg::JointTrajectoryPoint & state_b,
+-  const rclcpp::Time & sample_time, trajectory_msgs::msg::JointTrajectoryPoint & output)
+-{
+-  rclcpp::Duration duration_so_far = sample_time - time_a;
+-  rclcpp::Duration duration_btwn_points = time_b - time_a;
++  const uwvm_ros::trajectory_types::Time & time_a, const uwvm_ros::trajectory_types::JointTrajectoryPoint & state_a,
++  const uwvm_ros::trajectory_types::Time & time_b, const uwvm_ros::trajectory_types::JointTrajectoryPoint & state_b,
++  const uwvm_ros::trajectory_types::Time & sample_time, uwvm_ros::trajectory_types::JointTrajectoryPoint & output)
++{
++  uwvm_ros::trajectory_types::Duration duration_so_far = sample_time - time_a;
++  uwvm_ros::trajectory_types::Duration duration_btwn_points = time_b - time_a;
+ 
+   const size_t dim = state_a.positions.size();
+   output.positions.resize(dim, 0.0);
+@@ -281,7 +282,7 @@
+   bool has_effort = !state_a.effort.empty() && !state_b.effort.empty();
+   if (duration_so_far.seconds() < 0.0)
+   {
+-    duration_so_far = rclcpp::Duration::from_seconds(0.0);
++    duration_so_far = uwvm_ros::trajectory_types::Duration::from_seconds(0.0);
+     has_velocity = has_accel = false;
+   }
+   if (duration_so_far.seconds() > duration_btwn_points.seconds())
+@@ -407,8 +408,8 @@
+ }
+ 
+ void Trajectory::deduce_from_derivatives(
+-  trajectory_msgs::msg::JointTrajectoryPoint & first_state,
+-  trajectory_msgs::msg::JointTrajectoryPoint & second_state, const size_t dim, const double delta_t)
++  uwvm_ros::trajectory_types::JointTrajectoryPoint & first_state,
++  uwvm_ros::trajectory_types::JointTrajectoryPoint & second_state, const size_t dim, const double delta_t)
+ {
+   if (first_state.effort.empty())
+   {
+@@ -463,7 +464,7 @@
+   return trajectory_msg_->points.end();
+ }
+ 
+-rclcpp::Time Trajectory::time_from_start() const { return trajectory_start_time_; }
++uwvm_ros::trajectory_types::Time Trajectory::time_from_start() const { return trajectory_start_time_; }
+ 
+ bool Trajectory::has_trajectory_msg() const { return trajectory_msg_.get() != nullptr; }
+ 
+--- a/joint_trajectory_controller/include/joint_trajectory_controller/trajectory.hpp
++++ b/joint_trajectory_controller/include/joint_trajectory_controller/trajectory.hpp
+@@ -19,26 +19,24 @@
+ #include <vector>
+ 
+ #include "joint_trajectory_controller/interpolation_methods.hpp"
+-#include "rclcpp/time.hpp"
+-#include "trajectory_msgs/msg/joint_trajectory.hpp"
+-#include "trajectory_msgs/msg/joint_trajectory_point.hpp"
++#include "uwvm_ros/trajectory_types.hpp"
+ namespace joint_trajectory_controller
+ {
+-using TrajectoryPointIter = std::vector<trajectory_msgs::msg::JointTrajectoryPoint>::iterator;
++using TrajectoryPointIter = std::vector<uwvm_ros::trajectory_types::JointTrajectoryPoint>::iterator;
+ using TrajectoryPointConstIter =
+-  std::vector<trajectory_msgs::msg::JointTrajectoryPoint>::const_iterator;
++  std::vector<uwvm_ros::trajectory_types::JointTrajectoryPoint>::const_iterator;
+ 
+ class Trajectory
+ {
+ public:
+   Trajectory();
+ 
+-  explicit Trajectory(std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory);
++  explicit Trajectory(std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory);
+ 
+   explicit Trajectory(
+-    const rclcpp::Time & current_time,
+-    const trajectory_msgs::msg::JointTrajectoryPoint & current_point,
+-    std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory);
++    const uwvm_ros::trajectory_types::Time & current_time,
++    const uwvm_ros::trajectory_types::JointTrajectoryPoint & current_point,
++    std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory);
+ 
+   /**
+    *  Set the point before the trajectory message is replaced/appended
+@@ -49,11 +47,11 @@
+    * wrap around (ie. is continuous).
+    */
+   void set_point_before_trajectory_msg(
+-    const rclcpp::Time & current_time,
+-    const trajectory_msgs::msg::JointTrajectoryPoint & current_point,
++    const uwvm_ros::trajectory_types::Time & current_time,
++    const uwvm_ros::trajectory_types::JointTrajectoryPoint & current_point,
+     const std::vector<bool> & joints_angle_wraparound = std::vector<bool>());
+ 
+-  void update(std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory);
++  void update(std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> joint_trajectory);
+ 
+   /// Find the segment (made up of 2 points) and its expected state from the
+   /// containing trajectory.
+@@ -94,9 +92,9 @@
+    *      searching in the trajectory at the index of this call's result.
+    */
+   bool sample(
+-    const rclcpp::Time & sample_time,
++    const uwvm_ros::trajectory_types::Time & sample_time,
+     const interpolation_methods::InterpolationMethod interpolation_method,
+-    trajectory_msgs::msg::JointTrajectoryPoint & output_state,
++    uwvm_ros::trajectory_types::JointTrajectoryPoint & output_state,
+     TrajectoryPointConstIter & start_segment_itr, TrajectoryPointConstIter & end_segment_itr,
+     const bool search_monotonically_increasing = true);
+ 
+@@ -122,21 +120,21 @@
+    * \param[out] output The state at \p sample_time.
+    */
+   void interpolate_between_points(
+-    const rclcpp::Time & time_a, const trajectory_msgs::msg::JointTrajectoryPoint & state_a,
+-    const rclcpp::Time & time_b, const trajectory_msgs::msg::JointTrajectoryPoint & state_b,
+-    const rclcpp::Time & sample_time, trajectory_msgs::msg::JointTrajectoryPoint & output);
++    const uwvm_ros::trajectory_types::Time & time_a, const uwvm_ros::trajectory_types::JointTrajectoryPoint & state_a,
++    const uwvm_ros::trajectory_types::Time & time_b, const uwvm_ros::trajectory_types::JointTrajectoryPoint & state_b,
++    const uwvm_ros::trajectory_types::Time & sample_time, uwvm_ros::trajectory_types::JointTrajectoryPoint & output);
+ 
+   TrajectoryPointConstIter begin() const;
+ 
+   TrajectoryPointConstIter end() const;
+ 
+-  rclcpp::Time time_from_start() const;
++  uwvm_ros::trajectory_types::Time time_from_start() const;
+ 
+   bool has_trajectory_msg() const;
+ 
+   bool has_nontrivial_msg() const;
+ 
+-  std::shared_ptr<trajectory_msgs::msg::JointTrajectory> get_trajectory_msg() const
++  std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> get_trajectory_msg() const
+   {
+     return trajectory_msg_;
+   }
+@@ -152,15 +150,15 @@
+ 
+ private:
+   void deduce_from_derivatives(
+-    trajectory_msgs::msg::JointTrajectoryPoint & first_state,
+-    trajectory_msgs::msg::JointTrajectoryPoint & second_state, const size_t dim,
++    uwvm_ros::trajectory_types::JointTrajectoryPoint & first_state,
++    uwvm_ros::trajectory_types::JointTrajectoryPoint & second_state, const size_t dim,
+     const double delta_t);
+ 
+-  std::shared_ptr<trajectory_msgs::msg::JointTrajectory> trajectory_msg_;
+-  rclcpp::Time trajectory_start_time_;
+-
+-  rclcpp::Time time_before_traj_msg_;
+-  trajectory_msgs::msg::JointTrajectoryPoint state_before_traj_msg_;
++  std::shared_ptr<uwvm_ros::trajectory_types::JointTrajectory> trajectory_msg_;
++  uwvm_ros::trajectory_types::Time trajectory_start_time_;
++
++  uwvm_ros::trajectory_types::Time time_before_traj_msg_;
++  uwvm_ros::trajectory_types::JointTrajectoryPoint state_before_traj_msg_;
+ 
+   bool sampled_already_ = false;
+   size_t last_sample_idx_ = 0;
+--- a/joint_trajectory_controller/include/joint_trajectory_controller/interpolation_methods.hpp
++++ b/joint_trajectory_controller/include/joint_trajectory_controller/interpolation_methods.hpp
+@@ -18,12 +18,10 @@
+ #include <string>
+ #include <unordered_map>
+ 
+-#include "rclcpp/rclcpp.hpp"
++#include <cstdio>
+ 
+ namespace joint_trajectory_controller
+ {
+-static const rclcpp::Logger LOGGER =
+-  rclcpp::get_logger("joint_trajectory_controller.interpolation_methods");
+ 
+ namespace interpolation_methods
+ {
+@@ -53,9 +51,8 @@
+   // Default
+   else
+   {
+-    RCLCPP_INFO(
+-      LOGGER,
+-      "No interpolation method parameter was given. Using the default, VARIABLE_DEGREE_SPLINE.");
++    std::fputs(
++      "No interpolation method parameter was given. Using the default, VARIABLE_DEGREE_SPLINE.\n", stderr);
+     return InterpolationMethod::VARIABLE_DEGREE_SPLINE;
+   }
+ }

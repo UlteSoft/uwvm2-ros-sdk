@@ -1,0 +1,499 @@
+--- a/cmd/internal/goobj/objfile.go
++++ b/cmd/internal/goobj/objfile.go
+@@ -452,6 +452,7 @@
+ 	AuxWasmImport
+ 	AuxWasmType
+ 	AuxSehUnwindInfo
++	AuxWasmSourceMap
+ )
+ 
+ func (a *Aux) Type() uint8 { return a[0] }
+--- a/cmd/internal/obj/link.go
++++ b/cmd/internal/obj/link.go
+@@ -501,8 +501,9 @@
+ 
+ 	FuncInfoSym *LSym
+ 
+-	WasmImport *WasmImport
+-	WasmExport *WasmExport
++	WasmSourceMap *LSym
++	WasmImport    *WasmImport
++	WasmExport    *WasmExport
+ 
+ 	sehUnwindInfoSym *LSym
+ }
+@@ -1121,6 +1122,7 @@
+ 	Headtype           objabi.HeadType
+ 	Arch               *LinkArch
+ 	Debugasm           int
++	WasmSourceMap      bool
+ 	Debugvlog          bool
+ 	Debugpcln          string
+ 	Flag_shared        bool
+--- a/cmd/compile/internal/base/flag.go
++++ b/cmd/compile/internal/base/flag.go
+@@ -94,6 +94,7 @@
+ 	Complete           bool         "help:\"compiling complete package (no C or assembly)\""
+ 	ClobberDead        bool         "help:\"clobber dead stack slots (for debugging)\""
+ 	ClobberDeadReg     bool         "help:\"clobber dead registers (for debugging)\""
++	WasmSourceMap      *bool        "help:\"emit exact WebAssembly source byte positions\""
+ 	Dwarf              bool         "help:\"generate DWARF symbols\""
+ 	DwarfBASEntries    *bool        "help:\"use base address selection entries in DWARF\""                        // &Ctxt.UseBASEntries, set below
+ 	DwarfLocationLists *bool        "help:\"add location lists to DWARF in optimized mode\""                      // &Ctxt.Flag_locationlists, set below
+@@ -162,6 +163,7 @@
+ 	Flag.LowerP = &Ctxt.Pkgpath
+ 	Flag.LowerV = &Ctxt.Debugvlog
+ 
++	Flag.WasmSourceMap = &Ctxt.WasmSourceMap
+ 	Flag.Dwarf = buildcfg.GOARCH != "wasm"
+ 	Flag.DwarfBASEntries = &Ctxt.UseBASEntries
+ 	Flag.DwarfLocationLists = &Ctxt.Flag_locationlists
+--- a/cmd/internal/obj/objfile.go
++++ b/cmd/internal/obj/objfile.go
+@@ -635,6 +635,9 @@
+ 		if fn.WasmExport != nil {
+ 			w.aux1(goobj.AuxWasmType, fn.WasmExport.AuxSym)
+ 		}
++		if fn.WasmSourceMap != nil {
++			w.aux1(goobj.AuxWasmSourceMap, fn.WasmSourceMap)
++		}
+ 	} else if v := s.VarInfo(); v != nil {
+ 		if v.dwarfInfoSym != nil && v.dwarfInfoSym.Size != 0 {
+ 			w.aux1(goobj.AuxDwarfInfo, v.dwarfInfoSym)
+@@ -748,6 +751,9 @@
+ 		if fn.WasmExport != nil {
+ 			n++
+ 		}
++		if fn.WasmSourceMap != nil {
++			n++
++		}
+ 	} else if v := s.VarInfo(); v != nil {
+ 		if v.dwarfInfoSym != nil && v.dwarfInfoSym.Size != 0 {
+ 			n++
+@@ -808,7 +814,7 @@
+ 		fn.FuncInfoSym = isym
+ 		b.Reset()
+ 
+-		auxsyms := []*LSym{fn.dwarfRangesSym, fn.dwarfLocSym, fn.dwarfDebugLinesSym, fn.dwarfInfoSym}
++		auxsyms := []*LSym{fn.dwarfRangesSym, fn.dwarfLocSym, fn.dwarfDebugLinesSym, fn.dwarfInfoSym, fn.WasmSourceMap}
+ 		if wi := fn.WasmImport; wi != nil {
+ 			auxsyms = append(auxsyms, wi.AuxSym)
+ 		}
+--- a/cmd/internal/obj/sym.go
++++ b/cmd/internal/obj/sym.go
+@@ -467,7 +467,7 @@
+ 		}
+ 	}
+ 
+-	auxsyms := []*LSym{fninfo.dwarfRangesSym, fninfo.dwarfLocSym, fninfo.dwarfDebugLinesSym, fninfo.dwarfInfoSym, fninfo.sehUnwindInfoSym}
++	auxsyms := []*LSym{fninfo.dwarfRangesSym, fninfo.dwarfLocSym, fninfo.dwarfDebugLinesSym, fninfo.dwarfInfoSym, fninfo.sehUnwindInfoSym, fninfo.WasmSourceMap}
+ 	if wi := fninfo.WasmImport; wi != nil {
+ 		auxsyms = append(auxsyms, wi.AuxSym)
+ 	}
+--- a/cmd/link/internal/loader/loader.go
++++ b/cmd/link/internal/loader/loader.go
+@@ -1627,6 +1627,10 @@
+ 		log.Fatalf("error: non-function sym %d/%s t=%s passed to WasmImportSym", fnSymIdx, l.SymName(fnSymIdx), l.SymType(fnSymIdx).String())
+ 	}
+ 	return l.aux1(fnSymIdx, goobj.AuxWasmImport)
++}
++
++func (l *Loader) WasmSourceMapSym(s Sym) Sym {
++	return l.aux1(s, goobj.AuxWasmSourceMap)
+ }
+ 
+ func (l *Loader) WasmTypeSym(s Sym) Sym {
+--- a/cmd/internal/obj/wasm/wasmobj.go
++++ b/cmd/internal/obj/wasm/wasmobj.go
+@@ -1203,7 +1203,31 @@
+ 		updateLocalSP(w)
+ 	}
+ 
++	var sourceLines []obj.WasmSourceLine
++	var pending *obj.Prog
++	pendingOffset := 0
++	flushSource := func() {
++		if !ctxt.WasmSourceMap || pending == nil || w.Len() == pendingOffset {
++			return
++		}
++		row := obj.WasmSourceLine{Offset: uint64(pendingOffset)}
++		pos := ctxt.PosTable.Pos(pending.Pos)
++		if pos.Base() != nil && pos.RelLine() != 0 {
++			row.File = pos.AbsFilename()
++			row.Line = uint32(pos.RelLine())
++			row.Column = uint32(pos.RelCol())
++		}
++		if len(sourceLines) != 0 {
++			last := sourceLines[len(sourceLines)-1]
++			if last.File == row.File && last.Line == row.Line && last.Column == row.Column {
++				return
++			}
++		}
++		sourceLines = append(sourceLines, row)
++	}
+ 	for p := s.Func().Text; p != nil; p = p.Link {
++		flushSource()
++		pending, pendingOffset = p, w.Len()
+ 		switch p.As {
+ 		case AGet:
+ 			if p.From.Type != obj.TYPE_REG {
+@@ -1396,6 +1420,11 @@
+ 		}
+ 	}
+ 
++	flushSource()
++	if ctxt.WasmSourceMap && len(sourceLines) != 0 {
++		sourceLines = append(sourceLines, obj.WasmSourceLine{Offset: uint64(w.Len())})
++		s.Func().WasmSourceMap = obj.NewWasmSourceMap(sourceLines)
++	}
+ 	w.WriteByte(0x0b) // end
+ 
+ 	s.P = w.Bytes()
+--- a/cmd/link/internal/wasm/asm.go
++++ b/cmd/link/internal/wasm/asm.go
+@@ -48,10 +48,12 @@
+ }
+ 
+ type wasmFunc struct {
+-	Module string
+-	Name   string
+-	Type   uint32
+-	Code   []byte
++	Module      string
++	Name        string
++	Type        uint32
++	Code        []byte
++	SourceLines []obj.WasmSourceLine
++	CodeOffset  uint64
+ }
+ 
+ type wasmFuncType struct {
+@@ -185,6 +187,7 @@
+ 	fns := make([]*wasmFunc, len(ctxt.Textp))
+ 	for i, fn := range ctxt.Textp {
+ 		wfn := new(bytes.Buffer)
++		var insertions []wasmInsertion
+ 		if ldr.SymName(fn) == "go:buildid" {
+ 			writeUleb128(wfn, 0) // number of sets of locals
+ 			writeI32Const(wfn, 0)
+@@ -203,6 +206,7 @@
+ 				wfn.Write(P[off:r.Off()])
+ 				off = r.Off()
+ 				rs := r.Sym()
++				before := wfn.Len()
+ 				switch r.Type() {
+ 				case objabi.R_ADDR:
+ 					writeSleb128(wfn, ldr.SymValue(rs)+r.Add())
+@@ -214,6 +218,7 @@
+ 					ldr.Errorf(fn, "bad reloc type %d (%s)", r.Type(), sym.RelocName(ctxt.Arch, r.Type()))
+ 					continue
+ 				}
++				insertions = append(insertions, wasmInsertion{uint64(r.Off()), uint64(wfn.Len() - before)})
+ 			}
+ 			wfn.Write(P[off:])
+ 		}
+@@ -233,7 +238,8 @@
+ 		}
+ 
+ 		name := nameRegexp.ReplaceAllString(ldr.SymName(fn), "_")
+-		fns[i] = &wasmFunc{Name: name, Type: typ, Code: wfn.Bytes()}
++		rows := readWasmSourceLines(ctxt, ldr, fn, insertions, len(wfn.Bytes()))
++		fns[i] = &wasmFunc{Name: name, Type: typ, Code: wfn.Bytes(), SourceLines: rows}
+ 	}
+ 
+ 	ctxt.Out.Write([]byte{0x00, 0x61, 0x73, 0x6d}) // magic
+@@ -257,6 +263,7 @@
+ 	writeProducerSec(ctxt)
+ 	if !*ld.FlagS {
+ 		writeNameSec(ctxt, len(hostImports), fns)
++		writeWasmSourceMap(ctxt, fns)
+ 	}
+ }
+ 
+@@ -501,6 +508,7 @@
+ 	writeUleb128(ctxt.Out, uint64(len(fns))) // number of code entries
+ 	for _, fn := range fns {
+ 		writeUleb128(ctxt.Out, uint64(len(fn.Code)))
++		fn.CodeOffset = uint64(ctxt.Out.Offset())
+ 		ctxt.Out.Write(fn.Code)
+ 	}
+ 
+--- /dev/null
++++ b/cmd/internal/obj/wasm_source_map.go
+@@ -0,0 +1,23 @@
++package obj
++
++import (
++	"cmd/internal/objabi"
++	"encoding/json"
++)
++
++// WasmSourceLine records a real encoded instruction offset, never a Go virtual PC.
++// An empty File marks an unmapped instruction range.
++type WasmSourceLine struct {
++	Offset uint64
++	File   string
++	Line   uint32
++	Column uint32
++}
++
++func NewWasmSourceMap(lines []WasmSourceLine) *LSym {
++	data, err := json.Marshal(lines)
++	if err != nil {
++		panic(err)
++	}
++	return &LSym{Type: objabi.SDATA, P: data, Size: int64(len(data))}
++}
+--- /dev/null
++++ b/cmd/link/internal/wasm/source_map.go
+@@ -0,0 +1,144 @@
++package wasm
++
++import (
++	"cmd/internal/obj"
++	"cmd/link/internal/ld"
++	"cmd/link/internal/loader"
++	"encoding/json"
++	"strings"
++)
++
++type wasmInsertion struct{ offset, size uint64 }
++
++// Relocations insert bytes into the assembler stream; no virtual PC arithmetic
++// participates in this translation. Multiple insertions at an offset all apply.
++func relocateSourceLines(rows []obj.WasmSourceLine, inserted []wasmInsertion, size uint64) bool {
++	for i, item := range inserted {
++		if item.offset > size || (i != 0 && item.offset < inserted[i-1].offset) {
++			return false
++		}
++	}
++	var delta, previous uint64
++	at := 0
++	for i := range rows {
++		raw := rows[i].Offset
++		if i != 0 && raw < previous {
++			return false
++		}
++		previous = raw
++		for at < len(inserted) && inserted[at].offset <= raw {
++			if ^uint64(0)-delta < inserted[at].size {
++				return false
++			}
++			delta += inserted[at].size
++			at++
++		}
++		if raw > size || delta > size-raw {
++			return false
++		}
++		rows[i].Offset = raw + delta
++	}
++	return true
++}
++
++func readWasmSourceLines(ctxt *ld.Link, ldr *loader.Loader, fn loader.Sym, inserted []wasmInsertion, size int) []obj.WasmSourceLine {
++	s := ldr.WasmSourceMapSym(fn)
++	if s == 0 {
++		return nil
++	}
++	var rows []obj.WasmSourceLine
++	if err := json.Unmarshal(ldr.Data(s), &rows); err != nil || !relocateSourceLines(rows, inserted, uint64(size)) {
++		ldr.Errorf(fn, "invalid WebAssembly source byte positions")
++		return nil
++	}
++	return rows
++}
++
++func sourceVLQ(b *strings.Builder, value int64) {
++	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
++	n := uint64(value) << 1
++	if value < 0 {
++		n = uint64(-value)<<1 | 1
++	}
++	for {
++		digit := n & 31
++		n >>= 5
++		if n != 0 {
++			digit |= 32
++		}
++		b.WriteByte(alphabet[digit])
++		if n == 0 {
++			return
++		}
++	}
++}
++
++func sourceMapJSON(fns []*wasmFunc) []byte {
++	sources := []string{}
++	ids := make(map[string]int64)
++	var mapping strings.Builder
++	var generated, source, line, column int64
++	emit := func(offset uint64, row *obj.WasmSourceLine) {
++		if mapping.Len() != 0 {
++			mapping.WriteByte(',')
++		}
++		sourceVLQ(&mapping, int64(offset)-generated)
++		generated = int64(offset)
++		if row == nil || row.File == "" || row.Line == 0 {
++			return
++		}
++		id, exists := ids[row.File]
++		if !exists {
++			id = int64(len(sources))
++			ids[row.File] = id
++			sources = append(sources, row.File)
++		}
++		sourceVLQ(&mapping, id-source)
++		source = id
++		nextLine := int64(row.Line) - 1
++		sourceVLQ(&mapping, nextLine-line)
++		line = nextLine
++		nextColumn := int64(row.Column)
++		if nextColumn != 0 {
++			nextColumn--
++		}
++		sourceVLQ(&mapping, nextColumn-column)
++		column = nextColumn
++	}
++	for _, fn := range fns {
++		if len(fn.SourceLines) == 0 {
++			continue
++		}
++		for i := range fn.SourceLines {
++			row := &fn.SourceLines[i]
++			emit(fn.CodeOffset+row.Offset, row)
++		}
++		// End each mapped function explicitly, so metadata never bleeds into the
++		// following body, local declarations or module data.
++		emit(fn.CodeOffset+uint64(len(fn.Code)), nil)
++	}
++	if len(sources) == 0 {
++		return nil
++	}
++	data, err := json.Marshal(struct {
++		Version  int      `json:"version"`
++		Sources  []string `json:"sources"`
++		Names    []string `json:"names"`
++		Mappings string   `json:"mappings"`
++	}{3, sources, []string{}, mapping.String()})
++	if err != nil {
++		panic(err)
++	}
++	return data
++}
++
++func writeWasmSourceMap(ctxt *ld.Link, fns []*wasmFunc) {
++	data := sourceMapJSON(fns)
++	if data == nil {
++		return
++	}
++	offset := writeSecHeader(ctxt, sectionCustom)
++	writeName(ctxt.Out, ".debug_source_map")
++	ctxt.Out.Write(data)
++	writeSecSize(ctxt, offset)
++}
+--- /dev/null
++++ b/cmd/link/internal/wasm/source_map_test.go
+@@ -0,0 +1,103 @@
++package wasm
++
++import (
++	"cmd/internal/obj"
++	"encoding/json"
++	"testing"
++)
++
++func TestSourceRelocationByteOffsets(t *testing.T) {
++	rows := []obj.WasmSourceLine{{Offset: 2}, {Offset: 4}, {Offset: 9}}
++	if !relocateSourceLines(rows, []wasmInsertion{{3, 2}, {4, 3}, {4, 1}}, 15) {
++		t.Fatal("valid relocation rejected")
++	}
++	for i, want := range []uint64{2, 10, 15} {
++		if rows[i].Offset != want {
++			t.Fatalf("row%d got%d want%d", i, rows[i].Offset, want)
++		}
++	}
++	if relocateSourceLines([]obj.WasmSourceLine{{Offset: 5}}, []wasmInsertion{{4, 9}}, 6) {
++		t.Fatal("out-of-body mapping accepted")
++	}
++	if relocateSourceLines([]obj.WasmSourceLine{{Offset: 2}, {Offset: 1}}, nil, 3) {
++		t.Fatal("decreasing offsets accepted")
++	}
++	if relocateSourceLines([]obj.WasmSourceLine{{Offset: 1}}, []wasmInsertion{{0, ^uint64(0)}, {0, 1}}, 3) {
++		t.Fatal("overflow accepted")
++	}
++}
++
++func TestSourceMapExactCoordinatesAndBoundaries(t *testing.T) {
++	data := sourceMapJSON([]*wasmFunc{
++		{CodeOffset: 20, Code: make([]byte, 10), SourceLines: []obj.WasmSourceLine{
++			{Offset: 2, File: "/app/main.go", Line: 8, Column: 5},
++			{Offset: 5, File: "/app/main.go", Line: 9, Column: 2},
++			{Offset: 8},
++		}},
++		{CodeOffset: 40, Code: make([]byte, 3)},
++	})
++	var got struct {
++		Version  int
++		Sources  []string
++		Mappings string
++	}
++	if err := json.Unmarshal(data, &got); err != nil {
++		t.Fatal(err)
++	}
++	// 22 -> line7 column4; 25 -> line8 column1; 28 unmapped; 30 unmapped.
++	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
++	var values [][]int64
++	var row []int64
++	var number uint64
++	var shift uint
++	for _, c := range got.Mappings {
++		if c == ',' {
++			values = append(values, row)
++			row = nil
++			continue
++		}
++		digit := -1
++		for i, r := range alphabet {
++			if r == c {
++				digit = i
++				break
++			}
++		}
++		if digit < 0 {
++			t.Fatal("bad digit")
++		}
++		number |= uint64(digit&31) << shift
++		if digit&32 != 0 {
++			shift += 5
++			continue
++		}
++		v := int64(number >> 1)
++		if number&1 != 0 {
++			v = -v
++		}
++		row = append(row, v)
++		number = 0
++		shift = 0
++	}
++	values = append(values, row)
++	want := [][]int64{{22, 0, 7, 4}, {3, 0, 1, -3}, {3}, {2}}
++	if len(values) != len(want) {
++		t.Fatalf("%v", values)
++	}
++	for i := range want {
++		if len(values[i]) != len(want[i]) {
++			t.Fatalf("%v", values)
++		}
++		for j := range want[i] {
++			if values[i][j] != want[i][j] {
++				t.Fatalf("%v", values)
++			}
++		}
++	}
++	if got.Version != 3 || len(got.Sources) != 1 || got.Sources[0] != "/app/main.go" {
++		t.Fatalf("%s", data)
++	}
++	if sourceMapJSON([]*wasmFunc{{CodeOffset: 1, Code: make([]byte, 2)}}) != nil {
++		t.Fatal("empty metadata emitted")
++	}
++}

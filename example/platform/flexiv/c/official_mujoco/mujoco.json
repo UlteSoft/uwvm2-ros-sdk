@@ -1,0 +1,19 @@
+{
+  "vendor": "flexiv",
+  "model": "Rizon 4",
+  "namespace": "/flexiv",
+  "robot_name": "official_flexiv",
+  "joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7"
+  ],
+  "scene": "flexiv_rizon4/scene.xml",
+  "initial_keyframe": "home",
+  "scope": "Original MuJoCo Menagerie Rizon 4 physics; 7 arm joints; control/feedback isolation; no TF, grasp or navigation qualification",
+  "official_repository": "https://github.com/google-deepmind/mujoco_menagerie"
+}

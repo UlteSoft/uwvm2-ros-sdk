@@ -1722,9 +1722,10 @@
   "source_model_rows_byte_verified": 37,
   "unacquired_asset_rows_still_required": 0,
   "application_identity": {
-    "source": "tools/shared/ros_joint_fixture/joint_action_client.c",
+    "source": "tools/shared/ros_joint_fixture/wasm_control_client.c",
     "whole_wasm_sha256": "Recorded by xmake joint-build.json and verified against actual guest.wasm for each invocation",
     "same_wasm_for_all_cases_and_engines": true,
     "test_recompilation_relink_or_import_rewrite": false
-  }
+  },
+  "scope_of_inventory": "Historical official-model/source inventory; not a runnable native controller route or qualification for all listed axes."
 }
