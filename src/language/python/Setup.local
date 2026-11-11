@@ -1,7 +1,3 @@
-# @file Setup.local
-# @brief Admit only interpreter modules compatible with this zero-socket ROS command.
-# @details CPython remains the genuine interpreter. The optional native socket
-# extension would import sock_accept, which this uwvm2 WASI host does not export.
-# ROS transport uses only the separately controlled original ROS ABI builtin.
-*disabled*
-_socket
+# CPython probes the selected stable WASI sysroot for optional modules.
+# Socket entry points remain available when the toolchain implements them.
+# Exposure and permission belong to uwvm2-ros runtime policy, not this build.

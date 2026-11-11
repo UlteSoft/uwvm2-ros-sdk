@@ -12,7 +12,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "js"))
-from maintenance import Build, checked, digest, flags, read, source_files, toolchain
+from maintenance import Build, checked, digest, flags, read, source_files, toolchain, profile_arguments, profile_request
 from layout import restore
 
 
@@ -26,14 +26,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("sdk", "llvm-root", "target-sdk", "cache", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
-    parser.add_argument("--target", choices=("wasm32-wasip1", "wasm64-wasip1"), default="wasm32-wasip1")
+    profile_arguments(parser)
+    parser.set_defaults(exceptions="eh")
     args = parser.parse_args()
+    request = profile_request(args)
+    if request.exceptions != "eh":
+        parser.error("Lua requires the modern exception profile for its C++ error path")
     sdk, llvm, target = [p.resolve(strict=True) for p in (args.sdk, args.llvm_root, args.target_sdk)]
     cache, output = args.cache.resolve(), args.output.resolve()
     job = Build(output, cache, (sdk, llvm, target), "lua")
     try:
         sources = source_files(sdk, "lua")
-        profile, closure = toolchain(sdk, llvm, target, args.target, "eh")
+        profile, closure = toolchain(sdk, llvm, target, request)
         job.report.update(source_files=sources, toolchain=closure, target=profile["triple"])
         source = cache / "source"
         share = sdk / "share/language/lua"
@@ -57,7 +61,7 @@ def main():
             (sdk / "src/language/lua", "/__uwvm_sdk__/src/language/lua"),
         ]) + profile["cxxflags"]
         version = job.run("compiler-version", [llvm / "bin/clang++", "--version"])
-        if b"clang version 23.1.4" not in version:
+        if b"clang version 23.1.5" not in version:
             raise ValueError("The actual C++ compiler differs from the shared LLVM lock")
         lock = digest(share / "source-lock.json")
         artifacts = []

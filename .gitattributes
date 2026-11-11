@@ -13,3 +13,4 @@ lib/**/*.rlib filter=lfs diff=lfs merge=lfs -text
 lib/**/*.so filter=lfs diff=lfs merge=lfs -text
 lib/**/*.dylib filter=lfs diff=lfs merge=lfs -text
 lib/**/*.dll filter=lfs diff=lfs merge=lfs -text
+/share/toolchains/source/*.tar.xz filter=lfs diff=lfs merge=lfs -text

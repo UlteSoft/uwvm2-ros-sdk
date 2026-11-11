@@ -4,7 +4,7 @@
   "version": "3.14.8",
   "upstream_url": "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tar.xz",
   "upstream_archive_sha256": "c2215904f02b175596dc49351585104f4bc20341e1c47378b26a2c274360ce73",
-  "llvm_version": "23.1.4",
+  "llvm_version": "23.1.5",
   "source_date_epoch": 1792635234,
   "logical_sdk_prefix": "/__uwvm_sdk__",
   "logical_build_prefix": "/__uwvm_build__/python",
@@ -23,6 +23,16 @@
       "path": "include/platform/ros2/c/roswasm/detail/ros2/abi.h",
       "bytes": 95726,
       "sha256": "ccc978219bd47893b6ce4efae4fcb1ebdb7a75c0aadded0001b7dde97310289b"
+    },
+    {
+      "path": "install/compiler.py",
+      "bytes": 7530,
+      "sha256": "d37e8af4ad28152b3970bf93be6d4f35d09357034cd97cc1912c5e210d622270"
+    },
+    {
+      "path": "install/guest_profile.py",
+      "bytes": 4629,
+      "sha256": "c664607b359c34839ea75ec897ea76fbe5fc5017c319f6cfb2030f766a6272b2"
     },
     {
       "path": "share/language/python/stdlib.json",
@@ -46,8 +56,8 @@
     },
     {
       "path": "src/language/python/Setup.local",
-      "bytes": 364,
-      "sha256": "cfbbfd691862b152172dc2cb09bc8f3bc3a165ca1e3180689b774a50695153ad"
+      "bytes": 225,
+      "sha256": "eb177bee5575bafc995ccfd80afa17a81474be608949bb53b76ceaca8257fa99"
     },
     {
       "path": "src/language/python/command.c",
@@ -25681,18 +25691,18 @@
     },
     {
       "path": "tools/language/js/maintenance.py",
-      "bytes": 14971,
-      "sha256": "c312ed49e0cdcf228ed0c73c34826c91faf723ed7aa7f0720a48039832771e89"
+      "bytes": 16124,
+      "sha256": "ede5ee20ffda2494934d0b4b20a70a9f01121d899269c80fc6efd6e5536f3be1"
     },
     {
       "path": "tools/language/js/pack.lua",
-      "bytes": 17494,
-      "sha256": "4c929e48355e8ec21f29b008348fbeac0a2e6eb3e3caf1c2f0eb461fec75c04b"
+      "bytes": 17857,
+      "sha256": "00089a66c687860015044da53c4153c41ae7d0f84eb64f9d5f42b97531a70fdd"
     },
     {
       "path": "tools/language/js/wasm.py",
-      "bytes": 11035,
-      "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
+      "bytes": 12902,
+      "sha256": "878e21e1659b24661d02642107b85b09c24c651eaaac63d7ef57883b73a8a445"
     },
     {
       "path": "tools/language/python/bridge.py",
@@ -25701,8 +25711,8 @@
     },
     {
       "path": "tools/language/python/build.py",
-      "bytes": 10619,
-      "sha256": "5d3fff60b953363c5413d1951a8fbff8d1a9344f7f4132a5208b1d40545c1539"
+      "bytes": 11396,
+      "sha256": "42f4105f4f197d0bef3c3bef1b0f6f9a3589af47420c8ebfdf8bf9ac233aceb4"
     },
     {
       "path": "tools/language/python/build_clock.c",
@@ -25730,11 +25740,6 @@
       "sha256": "6d395bcf9fd8270b7bd87c6e74189ff896372af45dc5c2a310eb53aa8409f781"
     },
     {
-      "path": "tools/language/python/relink_stdlib.py",
-      "bytes": 8313,
-      "sha256": "adb2964a90850891a809947b2a0559f006b16096083680693aa9db435fd02e9c"
-    },
-    {
       "path": "tools/language/python/runtime_paths.mk",
       "bytes": 705,
       "sha256": "3709ad9df68d5838b1bb10ab2a1a6dc0b6d0221fd261c258fb856243e598e79b"
@@ -25743,6 +25748,11 @@
       "path": "tools/language/python/transplate.lua",
       "bytes": 9186,
       "sha256": "7749fa42894242e5d232f7c164eecb705b655fecd62bbea350cec33a3c1d6e15"
+    },
+    {
+      "path": "tools/language/python/profile.py",
+      "bytes": 2039,
+      "sha256": "879b28683dd3229ca70b77569bf41007923e219bc082e38ca46274f3363d5db5"
     }
   ],
   "external_inputs": [

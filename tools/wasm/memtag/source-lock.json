@@ -1,0 +1,79 @@
+{
+  "schema": "uwvm-stable-memtag-sources-v1",
+  "producer": {
+    "default_target": "wasm32-wasip1-threads",
+    "llvm_targets": [
+      "WebAssembly"
+    ],
+    "wire": "packed-v1",
+    "optimizations": [
+      "stack-safety-bounds-lifetime-and-escape-proof",
+      "adjacent-complete-zero-initialization"
+    ]
+  },
+  "sources": {
+    "llvm-23.1.5": {
+      "repository": "https://github.com/llvm/llvm-project.git",
+      "revision": "392dfff97d29b59d77e5cac6d4b6ef2585fe7117",
+      "release_tag": "llvmorg-23.1.5",
+      "release_repository": "https://github.com/llvm/llvm-project.git",
+      "release_revision": "392dfff97d29b59d77e5cac6d4b6ef2585fe7117",
+      "release_prerelease": false,
+      "archive": "share/toolchains/source/llvm-23.1.5.tar.xz",
+      "archive_sha256": "78661f16b2c412b6d05579d25ef1ab5fe5691208bcb1f4f5ab816fc1f7cdc661",
+      "root": "llvm-23.1.5",
+      "patches": [
+        {
+          "path": "tools/wasm/memtag/patches/llvm-23.1.5-memtag.patch",
+          "sha256": "542df0cc6fea73152c9dda2ad9b720496d17681e468ac2927d6c518be36f2d21"
+        }
+      ],
+      "status": "awaiting-stable-build-qualification",
+      "archive_bytes": 179215428
+    },
+    "wasi-libc-sdk34": {
+      "repository": "https://github.com/WebAssembly/wasi-libc.git",
+      "revision": "2e6fb9d8ee0cdf9e431fbcabe8af3115de000a13",
+      "release_tag": "wasi-sdk-34",
+      "release_repository": "https://github.com/WebAssembly/wasi-sdk.git",
+      "release_revision": "5a0bf653a1a06e1c18867567c5937006d3394a69",
+      "release_prerelease": false,
+      "archive": "share/toolchains/source/wasi-libc-sdk34.tar.xz",
+      "archive_sha256": "73bce1b215282a82557421b80733d69b858a163a6334ecf42bab9664f2a508f8",
+      "root": "wasi-libc-sdk34",
+      "patches": [
+        {
+          "path": "tools/wasm/memtag/patches/wasi-libc-sdk34-memtag.patch",
+          "sha256": "e05b3405fa9f068a579fa41e53274d8beb7667e8d274dac1d9034e06c375fc6a"
+        }
+      ],
+      "status": "awaiting-stable-build-qualification",
+      "archive_bytes": 1529152
+    },
+    "wasi-libc-sdk34-memory64": {
+      "repository": "https://github.com/WebAssembly/wasi-libc.git",
+      "revision": "2e6fb9d8ee0cdf9e431fbcabe8af3115de000a13",
+      "release_tag": "wasi-sdk-34",
+      "release_repository": "https://github.com/WebAssembly/wasi-sdk.git",
+      "release_revision": "5a0bf653a1a06e1c18867567c5937006d3394a69",
+      "release_prerelease": false,
+      "archive": "share/toolchains/source/wasi-libc-sdk34.tar.xz",
+      "archive_sha256": "73bce1b215282a82557421b80733d69b858a163a6334ecf42bab9664f2a508f8",
+      "root": "wasi-libc-sdk34",
+      "patches": [
+        {
+          "path": "tools/wasm/memtag/patches/wasi-libc-sdk34-memtag.patch",
+          "sha256": "e05b3405fa9f068a579fa41e53274d8beb7667e8d274dac1d9034e06c375fc6a"
+        },
+        {
+          "path": "tools/wasm/memtag/patches/wasi-libc-sdk34-memory64.patch",
+          "sha256": "c440d4f750d532fd2999e7305de3072be397d40c205bc194a62c430f03cdce3e"
+        }
+      ],
+      "status": "awaiting-stable-build-qualification",
+      "archive_bytes": 1529152,
+      "abi": "uwvm-preview1-memory64-extension",
+      "threads": false
+    }
+  }
+}

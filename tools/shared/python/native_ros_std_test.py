@@ -104,7 +104,7 @@ try:
   options=[]
   for module in (['main','io','algorithm','ros_comm'] if preloading else ['main']):
    options+=['--ros2-single-create',module,'--ros2-single-enable',module]
-  if preloading and mode!='boundary-denied':options+=['--ros2-single-call-boundary','ros_comm','module-exports']
+  if preloading:options+=['--ros2-single-call-boundary','ros_comm','same-module' if mode=='boundary-denied' else 'module-exports']
   for k,v in values.items():options+=['--ros2-single-'+k,authority_module,v]
   options+=['--ros2-single-grant',authority_module,'sample',operation,topic,typ,identity]
   for k,v in limits.items():options+=['--ros2-single-set',authority_module,'sample',k,v]

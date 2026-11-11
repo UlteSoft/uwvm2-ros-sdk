@@ -156,6 +156,42 @@ namespace uwvm2::ros_gateway
         auto requested{timeout?start+std::chrono::milliseconds(timeout):std::chrono::steady_clock::time_point::max()};
         return std::min(requested,quota_deadline(cap,start));
     }
+    // Exact ceil(value * numerator / denominator), with a representable-result
+    // check. The usual Linux nanosecond clock takes the single-division path.
+    // The uncommon ratio path uses bounded quotient/remainder arithmetic so
+    // 32-bit hosts do not need a compiler-specific 128-bit integer type.
+    inline std::optional<std::uint64_t> duration_ticks(std::uint64_t value,std::uint64_t numerator,
+        std::uint64_t denominator,std::uint64_t maximum) noexcept
+    {
+        if(!denominator)return std::nullopt;
+        if(numerator==1)
+        {
+            auto quotient=value/denominator;bool const remainder=value%denominator!=0;
+            if(quotient>maximum||(quotient==maximum&&remainder))return std::nullopt;
+            return quotient+remainder;
+        }
+        std::uint64_t quotient{},remainder{};
+        auto const whole=numerator/denominator,part=numerator%denominator;
+        for(unsigned bit=64;bit!=0;)
+        {
+            --bit;
+            if(quotient>maximum/2)return std::nullopt;
+            quotient*=2;
+            if(remainder>=denominator-remainder)
+            {remainder-=denominator-remainder;if(quotient==maximum)return std::nullopt;++quotient;}
+            else remainder+=remainder;
+            if((value>>bit)&1u)
+            {
+                if(whole>maximum-quotient)return std::nullopt;
+                quotient+=whole;
+                if(remainder>=denominator-part)
+                {remainder-=denominator-part;if(quotient==maximum)return std::nullopt;++quotient;}
+                else remainder+=part;
+            }
+        }
+        if(remainder){if(quotient==maximum)return std::nullopt;++quotient;}
+        return quotient;
+    }
     inline std::optional<ipc::deadline> logical_deadline(ipc::deadline start,std::uint64_t nanoseconds)
     {
         using duration=ipc::deadline::duration;
@@ -164,9 +200,9 @@ namespace uwvm2::ros_gateway
         // Round up to a clock tick, without truncating u64 nanoseconds or
         // overflowing a signed duration. An unreachable absolute deadline
         // saturates; the caller separately enforces explicit max-wait-ns.
-        auto ticks=(static_cast<__uint128_t>(nanoseconds)*ratio::num+ratio::den-1)/ratio::den;
-        if(ticks>static_cast<__uint128_t>(std::numeric_limits<rep>::max()))return ipc::deadline::max();
-        duration delta{static_cast<rep>(ticks)};
+        auto ticks=duration_ticks(nanoseconds,ratio::num,ratio::den,static_cast<std::uint64_t>(std::numeric_limits<rep>::max()));
+        if(!ticks)return ipc::deadline::max();
+        duration delta{static_cast<rep>(*ticks)};
         if(start>ipc::deadline::max()-delta)return ipc::deadline::max();
         return start+delta;
     }

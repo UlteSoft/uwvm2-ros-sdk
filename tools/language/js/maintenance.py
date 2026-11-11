@@ -15,7 +15,11 @@ import sys
 import time
 
 
-LLVM_ARCHIVE_SHA256 = "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522"
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "install"))
+import guest_profile
+import compiler as sdk_compiler
+profile_arguments = guest_profile.add_arguments
+profile_request = guest_profile.from_arguments
 VERSIONS = {"js": "2026-06-04", "python": "3.14.8", "lua": "5.4.8"}
 
 
@@ -119,50 +123,40 @@ def snapshot(root, relative):
              "sha256": digest(path)} for path in files if path.is_file()]
 
 
-def toolchain(sdk, llvm, target_sdk, triple, profile):
-    """@brief Verify one shared LLVM 23.1.4 extraction and actual target profile.
-
-    @param sdk SDK containing the common pinned host LLVM manifest.
-    @param llvm Read-only extracted Linux x86_64 LLVM host closure.
-    @param target_sdk Read-only SDK containing target libraries and headers.
-    @param triple Explicit wasm32-wasip1 or wasm64-wasip1 target.
-    @param profile Explicit noeh or modern eh profile.
-    @return Selected profile and complete host/target input identities.
-    """
-    host_path = sdk / "share/toolchains/host/linux-x86_64/llvm23.json"
-    host = read(host_path)
-    if host["version"] != "23.1.4" or host["sha256"] != LLVM_ARCHIVE_SHA256:
-        raise ValueError("Use the shared locked LLVM 23.1.4 bundle")
-    for row in host["files"]:
-        path = child(llvm, row["path"])
-        checked(path, row)
-        if row.get("executable") and not os.access(path, os.X_OK):
-            raise ValueError("A locked native tool is not executable")
-    for row in host["aliases"]:
-        alias = llvm / row["path"]
-        if not alias.is_symlink() or alias.resolve(strict=True) != child(llvm, row["target"]):
-            raise ValueError("A native tool alias differs from the shared lock")
-    target_path = target_sdk / "share/wasm/toolchains.json"
-    target = read(target_path)
-    selected = [item for item in target["targets"]
-                if item["triple"] == triple and item["profile"] == profile]
-    if len(selected) != 1 or selected[0]["llvm_major"] != 23:
-        raise ValueError("One exact LLVM 23 target profile is required")
-    selected = selected[0]
-    if bool(selected["memory64"]) != triple.startswith("wasm64-"):
-        raise ValueError("The selected target width differs from the requested triple")
-    for name, row in selected["artifacts"].items():
-        checked(child(target_sdk, name), row)
-    files = {}
-    for name in ("sysroot", "include_dir", "resource_dir"):
-        for row in snapshot(target_sdk, selected[name]):
-            files[row["path"]] = row
-    return selected, {
-        "host_manifest_sha256": digest(host_path),
-        "target_manifest_sha256": digest(target_path),
-        "host_files": host["files"],
-        "target_files": [files[name] for name in sorted(files)],
-    }
+def toolchain(sdk, llvm, target_sdk, request):
+    """Verify the exact stable producer, profile and complete source-built sysroot."""
+    manifest = target_sdk / "sysroots.json"
+    if not manifest.is_file():
+        raise ValueError("Use a completed stable MTE sysroot build; legacy SDK libraries cannot be mixed into this closure")
+    compiler = llvm / "bin/clang"
+    version = subprocess.check_output([str(compiler), "--version"], text=True)
+    targets = subprocess.check_output([str(compiler), "--print-targets"], text=True)
+    registered = {line.split(" - ", 1)[0].strip() for line in targets.splitlines() if " - " in line}
+    if "clang version 23.1.5" not in version or registered != {"wasm32", "wasm64"}:
+        raise ValueError("Use the stable WebAssembly-only LLVM 23.1.5 MTE producer")
+    filename, value, selected, root, resource = sdk_compiler.select_closure(
+        [manifest], request, digest(compiler))
+    for relative, expected in selected["files"].items():
+        if digest(sdk_compiler.confined(filename.parent, relative)) != expected:
+            raise ValueError("A source-built sysroot input changed: " + relative)
+    builtin = Path(subprocess.check_output([str(compiler), "--target=" + request.triple,
+        "-resource-dir=" + str(resource), "--print-libgcc-file-name"], text=True).strip())
+    if not builtin.resolve().is_relative_to(resource) or digest(builtin) != selected["builtins_sha256"]:
+        raise ValueError("Compiler runtime does not match the selected sysroot")
+    def relative(path): return path.relative_to(target_sdk).as_posix()
+    profile = dict(triple=request.triple, memory64=request.address_bits == 64,
+        sysroot=relative(root), include_dir=relative(root / "include" / request.triple),
+        resource_dir=relative(resource), lib_dir=relative(root / "lib" / request.triple),
+        compileflags=request.llvm_feature_flags() +
+            (["-fsanitize=memtag"] if request.mte else ["-fno-sanitize=memtag"]),
+        cxxflags=(["-fwasm-exceptions", "-mllvm", "-wasm-use-legacy-eh=false"]
+                  if request.exceptions == "eh" else ["-fno-exceptions"]),
+        ldflags=["-lunwind"] if request.exceptions == "eh" else [],
+        guest_profile=request.to_dict())
+    return profile, dict(compiler_version=version, compiler_sha256=value["compiler_sha256"],
+        linker_sha256=digest(llvm / "bin/wasm-ld"), sysroot_receipt_sha256=digest(manifest),
+        guest_profile=request.to_dict(), target_files=selected["files"],
+        source_lock=value["sources"], qualified=False)
 
 
 def flags(llvm, target_sdk, profile, mappings):
@@ -180,7 +174,7 @@ def flags(llvm, target_sdk, profile, mappings):
               "-resource-dir=" + str(target_sdk / profile["resource_dir"]),
               "-B" + str(target_sdk / profile["lib_dir"]),
               "-L" + str(target_sdk / profile["lib_dir"]),
-              "-fuse-ld=" + str(llvm / "bin/wasm-ld"), "-O2", "-g0"]
+              "-fuse-ld=" + str(llvm / "bin/wasm-ld"), "-O2", "-g0", *profile["compileflags"]]
     # Put general roots first: Clang applies the final matching prefix map.
     for physical, logical in mappings:
         for kind in ("file", "macro", "debug"):
@@ -203,8 +197,11 @@ class Build:
         for destination in (output, cache):
             if destination.exists() or destination.is_symlink():
                 raise ValueError("Use a new private path and retain previous attempts: " + str(destination))
-            if any(destination.is_relative_to(root) for root in inputs):
-                raise ValueError("Outputs must be outside all read-only source/tool roots")
+            for index, root in enumerate(inputs):
+                # SDK-local scratch is explicitly outside the admitted source
+                # manifest. Never place outputs inside a compiler or sysroot.
+                if destination.is_relative_to(root) and not (index == 0 and destination.is_relative_to(root / ".tmp")):
+                    raise ValueError("Outputs must use SDK .tmp or a separate private directory")
         output.mkdir(parents=True)
         cache.mkdir(parents=True)
         self.output, self.cache = output, cache
@@ -270,6 +267,8 @@ class Build:
         raw = path.read_bytes()
         from wasm import memory_profile
         memory = memory_profile(raw)
+        if memory["shared"] != self.report["toolchain"]["guest_profile"]["threads"]:
+            raise ValueError("The engine memory sharing differs from the selected thread profile")
         if memory["address_bits"] != (64 if target.startswith("wasm64-") else 32):
             raise ValueError("The actual engine memory width differs from the compiler target")
         # Stable paths are introduced by compilation, never by binary replacement.
@@ -289,13 +288,17 @@ class Build:
                  "ros_backend": backend, "filename": path.name, "bytes": len(raw),
                  "sha256": digest(path), "source_lock_sha256": source_lock,
                  "application_capacity": capacity, "application_marker": marker.decode(),
-                 "compiler": "LLVM 23.1.4", "threads": False, "memory": memory,
+                 "compiler": "LLVM 23.1.5", "threads": self.report["toolchain"]["guest_profile"]["threads"],
+                 "mte": self.report["toolchain"]["guest_profile"]["mte"],
+                 "guest_profile": self.report["toolchain"]["guest_profile"],
+                 "qualified": False, "memory": memory,
                  "raw_abi_functions": 38 if backend == "ros1" else 43,
                  "raw_abi_descriptor_sha256": self.report["abi_descriptor_sha256"],
                  "exceptions": "modern" if language == "lua" else "none",
                  "wasm_features": (["memory64"] if memory["address_bits"] == 64 else [])
                     + (["table64"] if any(t["address_bits"] == 64 for t in memory["tables"]) else [])
-                    + (["exceptions"] if language == "lua" else []),
+                    + (["exceptions"] if language == "lua" else [])
+                    + self.report["toolchain"]["guest_profile"]["extensions"],
                  "native_ros_qualification": "separate platform acceptance required"}
         save(path.parent / "runtime.json", value)
         return value

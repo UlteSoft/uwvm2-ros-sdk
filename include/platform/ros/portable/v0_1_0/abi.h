@@ -6,7 +6,9 @@
 /* Source-preview ABI. The matching VM host implementation is required.
  * This header registers no import, adapter, resource or permission by itself.
  * All offsets/lengths are ABI i64 at either guest memory width. Handles are
- * instance-local opaque generations, never native addresses. */
+ * opaque policy-environment handles, never native addresses. A Single owns its
+ * handles; members of one Group or Global share that environment. Host interface
+ * and deployment checks still apply separately to every actual caller. */
 #if defined(__wasm__)
 #define UPR_IMPORT(name) __attribute__((__import_module__("uwvm_portable_robot_v1"), __import_name__(name)))
 #else

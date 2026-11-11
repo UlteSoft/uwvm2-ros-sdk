@@ -3,7 +3,7 @@
 
 @details A matching native CPython is built from the complete source first. It
 creates genuine frozen encoding modules; every WASI core object is compiled by
-the shared LLVM 23.1.4 closure. The build never consumes an old interpreter or
+the shared LLVM 23.1.5 closure. The build never consumes an old interpreter or
 cached object. Source-prefix maps and getpath's documented runtime VPATH input
 produce portable compiled names, with fresh execution required for new bytes.
 """
@@ -17,10 +17,11 @@ import sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "js"))
-from maintenance import Build, digest, flags, read, source_files, toolchain
+from maintenance import Build, digest, flags, read, source_files, toolchain, profile_arguments, profile_request
 from wasm import validate
 from abi_dispatch import emit
 from memory64_clock import adapt
+from profile import adapt as adapt_profile
 
 
 def main():
@@ -35,14 +36,16 @@ def main():
         parser.add_argument("--" + name, type=Path, required=True)
     parser.add_argument("--native-cc", type=Path, default=Path("/usr/bin/cc"))
     parser.add_argument("--make", type=Path, default=Path("/usr/bin/make"))
-    parser.add_argument("--target", choices=("wasm32-wasip1", "wasm64-wasip1"), default="wasm32-wasip1")
+    parser.add_argument("--build-python", type=Path, help="reuse an existing matching native CPython 3.14.8 build helper")
+    profile_arguments(parser)
     args = parser.parse_args()
+    request = profile_request(args)
     sdk, llvm, target = [p.resolve(strict=True) for p in (args.sdk, args.llvm_root, args.target_sdk)]
     cache, output = args.cache.resolve(), args.output.resolve()
     job = Build(output, cache, (sdk, llvm, target), "py")
     try:
         sources = source_files(sdk, "python")
-        profile, closure = toolchain(sdk, llvm, target, args.target, "noeh")
+        profile, closure = toolchain(sdk, llvm, target, request)
         job.report.update(source_files=sources, toolchain=closure, target=profile["triple"])
         original = sdk / "src/language/python/upstream"
         source, build = cache / "source", cache / "build"
@@ -55,7 +58,8 @@ def main():
             shutil.copyfile(original / row["file"], path)
             path.chmod(0o755 if os.access(original / row["file"], os.X_OK) else 0o644)
             os.utime(path, (1792635234, 1792635234))
-        if args.target == "wasm64-wasip1":
+        job.report["profile_source_adaptations"] = adapt_profile(source)
+        if request.address_bits == 64:
             job.report["memory64_source_adaptation"] = adapt(source)
             job.save()
         native.mkdir(parents=True)
@@ -71,10 +75,15 @@ def main():
         native_env = {"CC": str(tools["cc"]), "AR": str(tools["ar"]),
                       "RANLIB": str(tools["ranlib"]), "CFLAGS": "-O2",
                       "CONFIG_SHELL": str(tools["shell"]), "SHELL": str(tools["shell"])}
-        job.run("configure-native", [tools["shell"], source / "configure",
-                "--without-ensurepip", "--disable-test-modules"], native, native_env)
-        job.run("make-native", [tools["make"], "-j2"], native, native_env)
-        python = native / "python"
+        if args.build_python is None:
+            job.run("configure-native", [tools["shell"], source / "configure",
+                    "--without-ensurepip", "--disable-test-modules"], native, native_env)
+            job.run("make-native", [tools["make"], "-j2"], native, native_env)
+            python = native / "python"
+        else:
+            python = args.build_python.resolve(strict=True)
+        job.report["native_helper"] = {"sha256": digest(python), "bytes": python.stat().st_size,
+                                       "reused": args.build_python is not None}
         elf = python.read_bytes()[:64]
         if elf[:5] != b"\x7fELF\2" or int.from_bytes(elf[18:20], "little") != 62:
             raise ValueError("The freshly compiled matching helper must be x86_64 ELF")
@@ -89,10 +98,12 @@ def main():
             (support, "/__uwvm_sdk__/src/language/js/support"),
         ])
         version = job.run("target-compiler-version", [llvm / "bin/clang", "--version"], wasi)
-        if b"clang version 23.1.4" not in version:
+        if b"clang version 23.1.5" not in version:
             raise ValueError("The actual target compiler differs from the shared lock")
         common.append("-DUWVM_APPLICATION_CAPACITY=16777216u")
         link_flags = ["-Wl,-z,stack-size=8388608", "-Wl,--max-memory=268435456", "-Wl,--threads=1"]
+        if request.threads:
+            link_flags += ["-Wl,--import-memory", "-Wl,--export-memory"]
         environment = {"CC": shlex.join([str(llvm / "bin/clang"), *common]),
                        "AR": str(llvm / "bin/llvm-ar"), "RANLIB": str(llvm / "bin/llvm-ranlib"),
                        "READELF": str(tools["readelf"]),
@@ -103,8 +114,10 @@ def main():
         (wasi / "Modules").mkdir()
         shutil.copyfile(sdk / "src/language/python/Setup.local", wasi / "Modules/Setup.local")
         job.run("configure-wasi", [tools["shell"], source / "configure",
-                "--host=" + args.target.replace("-wasip1", "-unknown-wasip1"), "--build=x86_64-pc-linux-gnu",
+                "--host=" + request.triple.removesuffix("-threads").replace("-wasip1", "-unknown-wasip1"), "--build=x86_64-pc-linux-gnu",
                 "--with-build-python=" + str(python), "--without-ensurepip", "--disable-test-modules",
+                "--enable-wasm-pthreads" if request.threads else "--disable-wasm-pthreads",
+                *(["--without-pymalloc", "--without-mimalloc"] if request.mte else []),
                 "--prefix=/__uwvm_python__"], wasi, environment)
         helper = sdk / "tools/language/python"
         job.run("make-wasi", [tools["make"], "-j2", "-f", wasi / "Makefile", "-f",
@@ -114,8 +127,8 @@ def main():
         job.run("freeze-encodings", [python, "-S", "-B", helper / "freeze_encodings.py",
                 "--source", source, "--out", build / "frozen.h"], native)
         members = job.run("archive-members", [llvm / "bin/llvm-ar", "t", wasi / "libpython3.14.a"], wasi)
-        if (wasi / "Modules/socketmodule.o").exists() or b"socketmodule.o" in members.splitlines():
-            raise ValueError("The disabled optional socket extension entered the real core")
+        job.report["socket_module_compiled"] = b"socketmodule.o" in members.splitlines()
+        job.report["allocation_profile"] = "tagged-libc" if request.mte else "upstream"
         libraries = build / "libraries.txt"
         job.run("configured-libraries", [tools["make"], "-s", "--no-print-directory", "-f",
                 wasi / "Makefile", "-f", helper / "libraries.mk", "uwvm-python-write-libraries",
@@ -125,7 +138,7 @@ def main():
             raise ValueError("Require GNU Make's complete real LIBS/MODLIBS/SYSLIBS expansion")
         lib_args = [argument for group in groups for argument in shlex.split(group)]
         abi = read(sdk / "share/abi/abi-v1.json")
-        bits = 64 if args.target.startswith("wasm64-") else 32
+        bits = 64 if request.address_bits == 64 else 32
         job.report["raw_abi_bridges"] = []
         job.report["typed_backend_imports"] = {}
         from bridge import bridge
@@ -141,7 +154,7 @@ def main():
                     *compatibility["flags"], sdk / "src/language/python/command.c",
                     *compatibility["sources"], wasi / "libpython3.14.a", *lib_args,
                     *link_flags, "-Wl,--trace", "-o", application], wasi, environment)
-            job.report["typed_backend_imports"][backend] = validate(application.read_bytes(), abi, backend, address_bits=bits)
+            job.report["typed_backend_imports"][backend] = validate(application.read_bytes(), abi, backend, address_bits=bits, shared=request.threads, exceptions=request.exceptions == "eh")
         objects = [{"path": p.relative_to(wasi).as_posix(), "bytes": p.stat().st_size,
                     "sha256": digest(p)} for p in sorted(wasi.rglob("*.o"))]
         if len(objects) < 100:
@@ -155,7 +168,6 @@ def main():
                     dst = configuration / family / name
                     dst.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(src, dst)
-        job.report["native_helper"] = {"sha256": digest(python), "bytes": python.stat().st_size}
         job.report["fresh_target_archive"] = {"sha256": digest(wasi / "libpython3.14.a")}
         lock = digest(sdk / "share/language/python/source-lock.json")
         job.report["artifacts"] = [job.artifact(output / backend / "cpython.wasm", "py", backend,

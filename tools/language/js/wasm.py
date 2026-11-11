@@ -2,7 +2,8 @@
 
 @details The helper parses complete Wasm section extents, function types and
 function imports. Each backend's complete bridge is compiled from source.
-Imported tables, memories, globals and tags are refused by this engine profile.
+Imported tables, globals and tags are refused. A threaded engine may import
+its one shared env.memory; all declarations must match its requested profile.
 """
 
 VALUE_TYPES = {0x7F: "i32", 0x7E: "i64", 0x7D: "f32", 0x7C: "f64", 0x7B: "v128", 0x70: "funcref", 0x6F: "externref"}
@@ -56,6 +57,18 @@ class Reader:
                 return value
         raise ValueError("Unterminated Wasm integer")
 
+    def u64(self):
+        """Decode the full memory64/table64 unsigned LEB range, including padding."""
+        value = 0
+        for index in range(10):
+            byte = self.byte()
+            if index == 9 and byte & 0xfe:
+                raise ValueError("An unsigned Wasm field exceeds 64 bits")
+            value |= (byte & 127) << (7 * index)
+            if not byte & 128:
+                return value
+        raise ValueError("Unterminated Wasm integer")
+
     def name(self):
         """@brief Read a complete UTF-8 name and its exact original byte span.
 
@@ -79,67 +92,81 @@ class Reader:
             raise ValueError("This interpreter profile requires plain function value types") from error
 
 
-def memory_profile(data):
-    """@brief Read the actual defined memory width without guessing from a filename.
+def memory_type(reader):
+    """Read the explicitly bounded memory used by these interpreter builds."""
+    flags = reader.u32()
+    if flags not in (1, 3, 5, 7):
+        raise ValueError("The engine requires an explicit memory maximum and known flags")
+    pages = reader.u64 if flags & 4 else reader.u32
+    minimum, maximum = pages(), pages()
+    if minimum > maximum or maximum > (1 << (48 if flags & 4 else 16)):
+        raise ValueError("Invalid linear-memory page limits")
+    return dict(address_bits=64 if flags & 4 else 32, shared=bool(flags & 2),
+                minimum_pages=minimum, maximum_pages=maximum)
 
-    @param data Complete standalone core Wasm module.
-    @return Exact address bits, sharing and page limits from section five.
-    @details SDK engine maxima are bounded below 2^32 pages, so both memory32
-    and memory64 page counts use the same admitted finite LEB representation.
-    """
+
+def memory_profile(data):
+    """Inspect one defined or explicitly imported engine memory and its tables."""
     if data[:8] != b"\0asm\1\0\0\0":
         raise ValueError("A complete core Wasm command is required")
-    reader = Reader(data, 8)
-    found = None
-    tables = []
+    reader, memories, tables, seen = Reader(data, 8), [], [], set()
     while reader.position < reader.end:
         kind, size = reader.byte(), reader.u32()
         start = reader.position
         reader.take(size)
-        if kind == 4:
-            table = Reader(data, start, start + size)
-            for _ in range(table.u32()):
-                if table.byte() != 0x70:
+        if kind and kind in seen:
+            raise ValueError("A standard Wasm section is repeated")
+        seen.add(kind)
+        section = Reader(data, start, start + size)
+        if kind == 2:
+            for _ in range(section.u32()):
+                module, _, _ = section.name()
+                name, _, _ = section.name()
+                imported_kind = section.byte()
+                if imported_kind == 0:
+                    section.u32()
+                elif imported_kind == 2 and (module, name) == ("env", "memory"):
+                    entry = memory_type(section)
+                    if not entry["shared"]:
+                        raise ValueError("Only the threaded engine may import env.memory")
+                    memories.append(dict(entry, imported=True))
+                else:
+                    raise ValueError("Unexpected imported engine state")
+        elif kind == 4:
+            for _ in range(section.u32()):
+                if section.byte() != 0x70:
                     raise ValueError("Engine tables must use ordinary function references")
-                table_flags = table.u32()
-                if table_flags not in (0, 1, 4, 5):
-                    raise ValueError("Shared tables are outside the single-threaded profile")
-                minimum = table.u32()
-                maximum = table.u32() if table_flags & 1 else None
-                tables.append({"address_bits": 64 if table_flags & 4 else 32,
-                               "minimum": minimum, "maximum": maximum})
-            if table.position != table.end:
-                raise ValueError("The complete engine table section is malformed")
-        if kind != 5:
+                flags = section.u32()
+                if flags not in (0, 1, 4, 5):
+                    raise ValueError("Shared engine tables are not supported")
+                count = section.u64 if flags & 4 else section.u32
+                minimum = count()
+                maximum = count() if flags & 1 else None
+                if maximum is not None and minimum > maximum:
+                    raise ValueError("Invalid table limits")
+                tables.append(dict(address_bits=64 if flags & 4 else 32,
+                                   minimum=minimum, maximum=maximum))
+        elif kind == 5:
+            for _ in range(section.u32()):
+                memories.append(dict(memory_type(section), imported=False))
+        else:
             continue
-        if found is not None:
-            raise ValueError("The memory section must not be repeated")
-        memory = Reader(data, start, start + size)
-        if memory.u32() != 1:
-            raise ValueError("Exactly one engine linear memory is required")
-        flags = memory.u32()
-        if flags not in (1, 5):
-            raise ValueError("An explicit maximum and an unshared memory are required")
-        minimum, maximum = memory.u32(), memory.u32()
-        if memory.position != memory.end or minimum > maximum:
-            raise ValueError("The complete finite memory section is malformed")
-        found = {"address_bits": 64 if flags & 4 else 32, "shared": False,
-                 "minimum_pages": minimum, "maximum_pages": maximum}
-    if found is None:
-        raise ValueError("A standalone interpreter must define its linear memory")
-    found["tables"] = tables
-    return found
+        if section.position != section.end:
+            raise ValueError("Unexpected trailing engine declaration bytes")
+    if len(memories) != 1:
+        raise ValueError("Exactly one engine linear memory is required")
+    return dict(memories[0], tables=tables)
 
 
-def parse(data, *, expected_maximum_pages=4096, address_bits=32):
+def parse(data, *, expected_maximum_pages=4096, address_bits=32, shared=False, exceptions=False):
     """@brief Parse complete original section extents and every typed function import.
 
     @param data Complete original version-one Wasm bytes.
-    @param expected_maximum_pages Explicit qualified memory32 limit, either 4096 or 16384 pages.
+    @param expected_maximum_pages Explicit maximum page count of the selected engine profile.
     @return Original import records and complete section extents.
     """
-    if type(expected_maximum_pages) is not int or expected_maximum_pages not in (4096, 16384):
-        raise ValueError("The engine requires an explicit qualified 4096-page or 16384-page memory32 profile")
+    if type(expected_maximum_pages) is not int or expected_maximum_pages <= 0:
+        raise ValueError("The engine requires an explicit positive memory maximum")
     if data[:8] != b"\x00asm\x01\x00\x00\x00":
         raise ValueError("A complete version-one Wasm module is required")
     reader = Reader(data, 8)
@@ -158,9 +185,11 @@ def parse(data, *, expected_maximum_pages=4096, address_bits=32):
             payloads[kind] = (start, reader.position)
     if 1 not in payloads or 2 not in payloads:
         raise ValueError("The interpreter requires explicit type and import sections")
-    if 13 in payloads or 5 not in payloads:
-        raise ValueError("This no-EH standalone profile requires its own wasm32 memory")
+    if 13 in payloads and not exceptions:
+        raise ValueError("A no-EH engine cannot declare exception tags")
     memory = memory_profile(data)
+    if type(shared) is not bool or memory["shared"] != shared:
+        raise ValueError("The actual memory sharing differs from the requested thread profile")
     if address_bits not in (32, 64) or memory["address_bits"] != address_bits:
         raise ValueError("The actual module memory width differs from the requested target")
     if memory["maximum_pages"] != expected_maximum_pages:
@@ -173,9 +202,10 @@ def parse(data, *, expected_maximum_pages=4096, address_bits=32):
             flags = table.u32()
             if flags not in ((0, 1, 4, 5) if address_bits == 64 else (0, 1)):
                 raise ValueError("Shared storage or a table width inconsistent with the target is outside this profile")
-            table.u32()
+            count = table.u64 if flags & 4 else table.u32
+            count()
             if flags & 1:
-                table.u32()
+                count()
         if table.position != table.end:
             raise ValueError("Unexpected trailing table-section bytes")
     types = []
@@ -191,8 +221,12 @@ def parse(data, *, expected_maximum_pages=4096, address_bits=32):
     for _ in range(reader.u32()):
         module, start, end = reader.name()
         name, _, _ = reader.name()
-        if reader.byte() != 0:
-            raise ValueError("Imported state or tags are outside this standalone engine profile")
+        kind = reader.byte()
+        if kind == 2 and shared and (module, name) == ("env", "memory"):
+            memory_type(reader)
+            continue
+        if kind != 0:
+            raise ValueError("Imported state or tags are outside this engine profile")
         index = reader.u32()
         if index >= len(types):
             raise ValueError("An imported function references a missing type")
@@ -202,13 +236,13 @@ def parse(data, *, expected_maximum_pages=4096, address_bits=32):
     return imports, sections
 
 
-def validate(data, descriptor, backend, *, expected_maximum_pages=4096, address_bits=32):
+def validate(data, descriptor, backend, *, expected_maximum_pages=4096, address_bits=32, shared=False, exceptions=False):
     """@brief Match all38 ROS1 or43 ROS2 imports to the exact original ABI descriptor.
 
     @param data Complete candidate standalone engine bytes.
     @param descriptor Exact retained descriptor containing 38 ROS1 and 43 ROS2 functions.
     @param backend Explicit requested ros1 or ros2 namespace.
-    @param expected_maximum_pages Explicit qualified memory32 limit, either 4096 or 16384 pages.
+    @param expected_maximum_pages Explicit maximum page count of the selected engine profile.
     @return Complete typed original imports and section extents.
     """
     module = "uwvm_" + backend + "_v1"
@@ -217,10 +251,14 @@ def validate(data, descriptor, backend, *, expected_maximum_pages=4096, address_
         if catalog["function_count"] != expected or len(catalog["functions"]) != expected:
             raise ValueError("The exact full ROS ABI descriptor count changed")
     authority = {entry["name"]: entry for entry in descriptor["modules"][module]["functions"]}
-    imports, sections = parse(data, expected_maximum_pages=expected_maximum_pages, address_bits=address_bits)
+    imports, sections = parse(data, expected_maximum_pages=expected_maximum_pages, address_bits=address_bits, shared=shared, exceptions=exceptions)
     observed = []
     for entry in imports:
         if entry["module"] == "wasi_snapshot_preview1":
+            continue
+        if shared and entry["module"] == "wasi" and entry["name"] == "thread-spawn":
+            if entry["params"] != ["i32"] or entry["results"] != ["i32"]:
+                raise ValueError("The WASIp1 thread-spawn signature differs from its ABI")
             continue
         if entry["module"] != module or entry["name"] not in authority:
             raise ValueError("An unexpected interpreter import is present: " + entry["module"] + "/" + entry["name"])

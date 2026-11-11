@@ -349,7 +349,7 @@ namespace uwvm2::ros_gateway
         ros::capability_spec const* configured_grant{};
         std::uint64_t audit_record_limit{},audit_byte_limit{};
     };
-    inline void audit(std::uint64_t session,ipc::request const& r,ros::capability_spec const* c,std::uint32_t error,audit_limiter& global,audit_limiter& grant,configuration const& cfg)
+    inline void audit([[maybe_unused]] std::uint64_t session,ipc::request const& r,ros::capability_spec const* c,std::uint32_t error,audit_limiter& global,audit_limiter& grant,configuration const& cfg)
     {
         native_exit_restore restore;
         if(!error&&c&&field(*c,"audit")!="allow-and-deny") { return; }
@@ -438,8 +438,12 @@ namespace uwvm2::ros_gateway
         std::uint32_t uid{},pid{};
         pollfd worker_lifetime{worker_pidfd,POLLIN,0};
         if(::poll(&worker_lifetime,1,0)!=0||!ipc::peer_credentials(fd,uid,pid)||uid!=cfg.worker_uid||pid!=cfg.worker_pid) { return; }
+        // Keep surplus stream bytes with this authenticated connection only.
+        // Header validation, cancellation and absolute deadlines remain in the
+        // shared reader; small requests no longer require a second recv().
+        ipc::buffered_frame_reader incoming;
         ipc::frame f;
-        if(!ipc::read_frame(fd,f,configured_deadline(),worker_pidfd)||f.type!=ipc::kind::hello||f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.request_id!=1||f.response_id||f.session_id||f.error||!f.payload.empty()) { return; }
+        if(!incoming.read(fd,f,configured_deadline(),worker_pidfd)||f.type!=ipc::kind::hello||f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.request_id!=1||f.response_id||f.session_id||f.error||!f.payload.empty()) { return; }
         auto session{ipc::random_session()}; if(!session) { return; }
         ipc::frame answer; answer.type=ipc::kind::response; answer.backend=f.backend; answer.response_id=f.request_id; answer.session_id=session; answer.timeout_ms=cfg.timeout_ms;
         if(!ipc::write_frame(fd,answer,configured_deadline(),worker_pidfd)) { return; }
@@ -513,7 +517,7 @@ namespace uwvm2::ros_gateway
         std::map<std::string,audit_limiter,std::less<>> grant_logs;
         while(!stopping.load(std::memory_order_relaxed))
         {
-            if(!ipc::read_frame(fd,f,configured_deadline(),worker_pidfd)) { break; }
+            if(!incoming.read(fd,f,configured_deadline(),worker_pidfd)) { break; }
             if(f.backend!=static_cast<std::uint8_t>(cfg.policy.ros_version)||f.session_id!=session||f.request_id<=last||f.response_id||f.error) { break; }
             last=f.request_id;
             if(f.type==ipc::kind::close||f.type==ipc::kind::cancel) { break; }
@@ -529,7 +533,7 @@ namespace uwvm2::ros_gateway
                 return ipc::min_timeout(maximum,*remaining);
             };
             ipc::call_result result;bool native_invoked{};
-            native_observation::call native_request{cfg.native_observer,native_session,f.request_id};
+            native_observation::call native_request{cfg.native_observer,native_session,f.request_id,{},false,false,false};
             native_observation::call_scope native_scope{native_request};
             std::shared_ptr<native_observation::capture_ref> native_delivery;
             owned_subscription_delivery subscription_delivery{backend};

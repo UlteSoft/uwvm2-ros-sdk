@@ -95,13 +95,19 @@ namespace uwvm2::ros_gateway
             else token_fraction=0;
             if(!unlimited_bytes&&bytes<bandwidth)
             {
-                // Credit and debit stay integer even beyond 2^53; the wide
-                // product holds every uint64 byte rate times elapsed nanoseconds.
-                auto credit=static_cast<unsigned __int128>(bandwidth)*static_cast<std::uint64_t>(elapsed)+byte_fraction;
-                auto whole=credit/1000000000u;
-                auto room=bandwidth-bytes;
-                if(whole>=room) {bytes=bandwidth;byte_fraction=0;}
-                else {bytes+=static_cast<std::uint64_t>(whole);byte_fraction=static_cast<std::uint64_t>(credit%1000000000u);}
+                // One second fills this one-second byte bucket. Below that,
+                // split the rate before multiplying: both products and their
+                // exact sum fit u64, including rates above 2^53 on 32-bit hosts.
+                if(elapsed>=1000000000) {bytes=bandwidth;byte_fraction=0;}
+                else
+                {
+                    auto const nanos=static_cast<std::uint64_t>(elapsed);
+                    auto const partial=(bandwidth%1000000000)*nanos+byte_fraction;
+                    auto const whole=(bandwidth/1000000000)*nanos+partial/1000000000;
+                    auto const room=bandwidth-bytes;
+                    if(whole>=room) {bytes=bandwidth;byte_fraction=0;}
+                    else {bytes+=whole;byte_fraction=partial%1000000000;}
+                }
             }
             else byte_fraction=0;
         }

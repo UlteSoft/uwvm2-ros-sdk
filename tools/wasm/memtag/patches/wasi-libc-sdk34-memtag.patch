@@ -1,0 +1,824 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e3dcfd9..3cb91ad 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,10 +60,12 @@ option(CHECK_SYMBOLS "Whether or not to check the exported symbols of libc.a" OF
+ set(WASI_SDK_VERSION "" CACHE STRING "Version information for wasi-sdk to embed in headers")
+ option(ENABLE_WERROR "Whether to compile with `-Werror`" OFF)
+ option(ENABLE_COOP_THREADS "Whether to compile with cooperative threads support" OFF)
++option(ENABLE_MEMTAG "Enable memory tagging in dlmalloc for heap instrumentation" OFF)
++option(MEMTAG_NOVERBOSE "Disable verbose memory tagging output" OFF)
+ 
+ if(TARGET_TRIPLE MATCHES "-threads$")
+   set(WASI p1)
+-  # TODO: As of this writing, wasi_thread_start.s uses non-position-independent
++  # TODO: As of this writing, wasi_thread_start.S uses non-position-independent
+   # code, and I'm not sure how to make it position-independent.  Once we've
+   # done that, we can enable libc.so for the wasi-threads build.
+   set(SHARED OFF)
+diff --git a/dlmalloc/CMakeLists.txt b/dlmalloc/CMakeLists.txt
+index b7c1806..b7e315d 100644
+--- a/dlmalloc/CMakeLists.txt
++++ b/dlmalloc/CMakeLists.txt
+@@ -1,7 +1,18 @@
+ # Disable some warnings in this third-party code.
+ add_compile_options(-Wno-null-pointer-arithmetic -Wno-unused-but-set-variable)
+ 
+-add_object_library(dlmalloc src/dlmalloc.c)
++add_object_library(dlmalloc src/dlmalloc.c src/memtag-verbose.c)
+ foreach(obj dlmalloc-shared dlmalloc-static)
+   target_include_directories(${obj} PRIVATE include)
+ endforeach()
++
++# Apply memory tagging flags only to dlmalloc (not other wasi-libc code)
++# This matches the old Makefile behavior where $(DLMALLOC_OBJS) only got $(MEMTAGCFLAGS)
++if(ENABLE_MEMTAG)
++  target_compile_definitions(dlmalloc-shared PRIVATE __wasilibc_dlmalloc_enable_memtag)
++  target_compile_definitions(dlmalloc-static PRIVATE __wasilibc_dlmalloc_enable_memtag)
++  if(MEMTAG_NOVERBOSE)
++    target_compile_definitions(dlmalloc-shared PRIVATE __wasilibc_dlmalloc_memtag_noverbose)
++    target_compile_definitions(dlmalloc-static PRIVATE __wasilibc_dlmalloc_memtag_noverbose)
++  endif()
++endif()
+diff --git a/dlmalloc/src/dlmalloc.c b/dlmalloc/src/dlmalloc.c
+index 331536b..2af51fb 100644
+--- a/dlmalloc/src/dlmalloc.c
++++ b/dlmalloc/src/dlmalloc.c
+@@ -12,8 +12,9 @@
+ // WebAssembly doesn't support shrinking linear memory.
+ #define MORECORE_CANNOT_TRIM 1
+ 
+-// Disable sanity checks to reduce code size.
+-#define ABORT __builtin_unreachable()
++// Preserve allocator corruption checks as observable Wasm traps. Declaring
++// this path unreachable lets optimization erase the checks protecting metadata.
++#define ABORT __builtin_trap()
+ 
+ // If threads are enabled, enable support for threads.
+ #ifdef _REENTRANT
+diff --git a/dlmalloc/src/malloc.c b/dlmalloc/src/malloc.c
+index cce5cf1..7d451cb 100644
+--- a/dlmalloc/src/malloc.c
++++ b/dlmalloc/src/malloc.c
+@@ -577,6 +577,13 @@ MAX_RELEASE_CHECK_RATE   default: 4095 unless not HAVE_MMAP
+ #endif  /* HAVE_MORECORE */
+ #endif  /* DARWIN */
+ 
++#ifdef __wasilibc_dlmalloc_enable_memtag
++#if !defined(MALLOC_ALIGNMENT) && defined(__wasm32__)
++#define MALLOC_ALIGNMENT ((size_t)16U)
++#endif
++[[noreturn]] extern void __dlmalloc_memtag_verbose_abort(unsigned whichfunc, void* actual, void* expected);
++#endif
++
+ #ifndef LACKS_SYS_TYPES_H
+ #include <sys/types.h>  /* For size_t */
+ #endif  /* LACKS_SYS_TYPES_H */
+@@ -2205,9 +2212,15 @@ typedef unsigned int flag_t;           /* The type of various bit flag sets */
+ 
+ /* ------------------- Chunks sizes and alignments ----------------------- */
+ 
++#if defined(__wasilibc_dlmalloc_enable_memtag) && defined(__wasm32__)
++#define MCHUNK_SIZE         (sizeof(mchunk)*2)
++#else
+ #define MCHUNK_SIZE         (sizeof(mchunk))
++#endif
+ 
+-#if FOOTERS
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++#define CHUNK_OVERHEAD      (MALLOC_ALIGNMENT)
++#elif FOOTERS
+ #define CHUNK_OVERHEAD      (TWO_SIZE_T_SIZES)
+ #else /* FOOTERS */
+ #define CHUNK_OVERHEAD      (SIZE_T_SIZE)
+@@ -4565,7 +4578,26 @@ static void* tmalloc_small(mstate m, size_t nb) {
+ static void try_init_allocator(void);
+ #endif
+ 
+-void* dlmalloc(size_t bytes) {
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++/* Zero is reserved for allocator metadata and retired allocations. A fresh
++   active allocation must therefore use a nonzero tag. The execution-disabled
++   case must not loop on memtag.extract (which correctly returns zero then).
++   Retagging after reuse is still probabilistic; this is not a generation ID. */
++static void* memtag_new_allocation(void* mem, size_t bytes, int zero) {
++  if (__builtin_wasm_memtag_status(0) != 0) {
++    do {
++      mem = __builtin_wasm_memtag_random(0, mem);
++    } while (__builtin_wasm_memtag_extract(0, mem) == 0);
++  }
++  if (zero)
++    __builtin_wasm_memtag_storez(0, mem, bytes);
++  else
++    __builtin_wasm_memtag_store(0, mem, bytes);
++  return mem;
++}
++#endif
++
++static void* dlmalloc_common_internal(size_t bytes, int flag) {
+   /*
+      Basic algorithm:
+      If a small request (< 256 bytes minus per-chunk overhead):
+@@ -4592,7 +4624,6 @@ void* dlmalloc(size_t bytes) {
+ #if USE_LOCKS
+   ensure_initialization(); /* initialize in sys_alloc if not using locks */
+ #endif
+-
+   if (!PREACTION(gm)) {
+ #if __wasilibc_unmodified_upstream // Try to initialize the allocator.
+ #else
+@@ -4701,6 +4732,23 @@ void* dlmalloc(size_t bytes) {
+     mem = sys_alloc(gm, nb);
+ 
+   postaction:
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    if (mem != 0 && flag != 2){
++      mchunkptr p  = mem2chunk(mem);
++      size_t usablesize = chunksize(p)-CHUNK_OVERHEAD;
++      if (flag == 1) {
++        mem = memtag_new_allocation(mem, usablesize, 1);
++      }
++      else {
++        mem = memtag_new_allocation(mem, usablesize, 0);
++      }
++    }
++#else
++    if (mem != 0 && flag == 1) {
++      mchunkptr p  = mem2chunk(mem);
++      memset(mem, 0, chunksize(p)-CHUNK_OVERHEAD);
++    }
++#endif
+     POSTACTION(gm);
+     return mem;
+   }
+@@ -4708,6 +4756,10 @@ void* dlmalloc(size_t bytes) {
+   return 0;
+ }
+ 
++void* dlmalloc(size_t bytes) {
++  return dlmalloc_common_internal(bytes, 0);
++}
++
+ /* ---------------------------- free --------------------------- */
+ 
+ void dlfree(void* mem) {
+@@ -4718,7 +4770,18 @@ void dlfree(void* mem) {
+   */
+ 
+   if (mem != 0) {
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    void* taginmem = __builtin_wasm_memtag_load(0, mem);
++    if (taginmem != mem) {
++      __dlmalloc_memtag_verbose_abort(0, mem, taginmem);
++    }
++#endif
+     mchunkptr p  = mem2chunk(mem);
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    /* Validate the guest pointer above, then address metadata with its own zero
++       tag before FOOTERS, DEBUG, and ok_inuse read the chunk header. */
++    p = __builtin_wasm_memtag_untag(0, p);
++#endif
+ #if FOOTERS
+     mstate fm = get_mstate_for(p);
+     if (!ok_magic(fm)) {
+@@ -4732,6 +4795,9 @@ void dlfree(void* mem) {
+       check_inuse_chunk(fm, p);
+       if (RTCHECK(ok_address(fm, p) && ok_inuse(p))) {
+         size_t psize = chunksize(p);
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++        mem = __builtin_wasm_memtag_untagstore(0, mem, psize - CHUNK_OVERHEAD);
++#endif
+         mchunkptr next = chunk_plus_offset(p, psize);
+         if (!pinuse(p)) {
+           size_t prevsize = p->prev_foot;
+@@ -4822,6 +4888,14 @@ void dlfree(void* mem) {
+ void* dlcalloc(size_t n_elements, size_t elem_size) {
+   void* mem;
+   size_t req = 0;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++  if(__builtin_mul_overflow(n_elements, elem_size, &req))
++  {
++    MALLOC_FAILURE_ACTION;
++    return 0;
++  }
++  mem = dlmalloc_common_internal(req, 1);
++#else
+   if (n_elements != 0) {
+     req = n_elements * elem_size;
+     if (((n_elements | elem_size) & ~(size_t)0xffff) &&
+@@ -4831,6 +4905,7 @@ void* dlcalloc(size_t n_elements, size_t elem_size) {
+   mem = dlmalloc(req);
+   if (mem != 0 && calloc_must_clear(mem2chunk(mem)))
+     memset(mem, 0, req);
++#endif
+   return mem;
+ }
+ 
+@@ -4838,21 +4913,21 @@ void* dlcalloc(size_t n_elements, size_t elem_size) {
+ 
+ /* ------------ Internal support for realloc, memalign, etc -------------- */
+ 
+-/* Try to realloc; only in-place unless can_move true */
+-static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb,
+-                                   int can_move) {
++/* Try to realloc; always in-place */
++static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb, [[maybe_unused]] void* oldmemptr)
++{
+   mchunkptr newp = 0;
+   size_t oldsize = chunksize(p);
+   mchunkptr next = chunk_plus_offset(p, oldsize);
+   if (RTCHECK(ok_address(m, p) && ok_inuse(p) &&
+               ok_next(p, next) && ok_pinuse(next))) {
+-    if (is_mmapped(p)) {
+-      newp = mmap_resize(m, p, nb, can_move);
+-    }
+-    else if (oldsize >= nb) {             /* already big enough */
++    if (oldsize >= nb) {             /* already big enough */
+       size_t rsize = oldsize - nb;
+       if (rsize >= MIN_CHUNK_SIZE) {      /* split off remainder */
+         mchunkptr r = chunk_plus_offset(p, nb);
++#ifdef __wasilibc_dlmalloc_enable_memtag
++        __builtin_wasm_memtag_store(0, r, rsize);
++#endif
+         set_inuse(m, p, nb);
+         set_inuse(m, r, rsize);
+         dispose_chunk(m, r, rsize);
+@@ -4863,7 +4938,12 @@ static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb,
+       if (oldsize + m->topsize > nb) {
+         size_t newsize = oldsize + m->topsize;
+         size_t newtopsize = newsize - nb;
++
+         mchunkptr newtop = chunk_plus_offset(p, nb);
++#ifdef __wasilibc_dlmalloc_enable_memtag
++        void* oldtop = chunk_plus_offset(oldmemptr, oldsize-CHUNK_OVERHEAD);
++        __builtin_wasm_memtag_store(0, oldtop, nb-oldsize);
++#endif
+         set_inuse(m, p, nb);
+         newtop->head = newtopsize |PINUSE_BIT;
+         m->top = newtop;
+@@ -4876,6 +4956,10 @@ static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb,
+       if (oldsize + dvs >= nb) {
+         size_t dsize = oldsize + dvs - nb;
+         if (dsize >= MIN_CHUNK_SIZE) {
++#ifdef __wasilibc_dlmalloc_enable_memtag
++          void* oldtop = chunk_plus_offset(oldmemptr, oldsize-CHUNK_OVERHEAD);
++          __builtin_wasm_memtag_store(0, oldtop, nb-oldsize);
++#endif
+           mchunkptr r = chunk_plus_offset(p, nb);
+           mchunkptr n = chunk_plus_offset(r, dsize);
+           set_inuse(m, p, nb);
+@@ -4886,6 +4970,10 @@ static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb,
+         }
+         else { /* exhaust dv */
+           size_t newsize = oldsize + dvs;
++#ifdef __wasilibc_dlmalloc_enable_memtag
++          void* oldtop = chunk_plus_offset(oldmemptr, oldsize-CHUNK_OVERHEAD);
++          __builtin_wasm_memtag_store(0, oldtop, dvs);
++#endif
+           set_inuse(m, p, newsize);
+           m->dvsize = 0;
+           m->dv = 0;
+@@ -4899,10 +4987,18 @@ static mchunkptr try_realloc_chunk(mstate m, mchunkptr p, size_t nb,
+         size_t rsize = oldsize + nextsize - nb;
+         unlink_chunk(m, next, nextsize);
+         if (rsize < MIN_CHUNK_SIZE) {
++#ifdef __wasilibc_dlmalloc_enable_memtag
++          void* oldtop = chunk_plus_offset(oldmemptr, oldsize-CHUNK_OVERHEAD);
++          __builtin_wasm_memtag_store(0, oldtop, nextsize);
++#endif
+           size_t newsize = oldsize + nextsize;
+           set_inuse(m, p, newsize);
+         }
+         else {
++#ifdef __wasilibc_dlmalloc_enable_memtag
++          void* oldtop = chunk_plus_offset(oldmemptr, oldsize-CHUNK_OVERHEAD);
++          __builtin_wasm_memtag_store(0, oldtop, nb-oldsize);
++#endif
+           mchunkptr r = chunk_plus_offset(p, nb);
+           set_inuse(m, p, nb);
+           set_inuse(m, r, rsize);
+@@ -4935,7 +5031,11 @@ static void* internal_memalign(mstate m, size_t alignment, size_t bytes) {
+   else {
+     size_t nb = request2size(bytes);
+     size_t req = nb + alignment + MIN_CHUNK_SIZE - CHUNK_OVERHEAD;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    mem = dlmalloc_common_internal(req, 2);
++#else
+     mem = internal_malloc(m, req);
++#endif
+     if (mem != 0) {
+       mchunkptr p = mem2chunk(mem);
+       if (PREACTION(m))
+@@ -4981,11 +5081,13 @@ static void* internal_memalign(mstate m, size_t alignment, size_t bytes) {
+           dispose_chunk(m, remainder, remainder_size);
+         }
+       }
+-
+       mem = chunk2mem(p);
+       assert (chunksize(p) >= nb);
+       assert(((size_t)mem & (alignment - 1)) == 0);
+       check_inuse_chunk(m, p);
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++      mem = memtag_new_allocation(mem, chunksize(p)-CHUNK_OVERHEAD, 0);
++#endif
+       POSTACTION(m);
+     }
+   }
+@@ -5277,6 +5379,14 @@ void* dlrealloc(void* oldmem, size_t bytes) {
+   }
+ #endif /* REALLOC_ZERO_BYTES_FREES */
+   else {
++    void* oldmemtemp = oldmem;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    void* oldmemtag = __builtin_wasm_memtag_load(0, oldmem);
++    if (oldmemtag != oldmem) {
++      __dlmalloc_memtag_verbose_abort(1, oldmem, oldmemtag);
++    }
++    oldmem = __builtin_wasm_memtag_untag(0, oldmem);
++#endif
+     size_t nb = request2size(bytes);
+     mchunkptr oldp = mem2chunk(oldmem);
+ #if ! FOOTERS
+@@ -5289,18 +5399,19 @@ void* dlrealloc(void* oldmem, size_t bytes) {
+     }
+ #endif /* FOOTERS */
+     if (!PREACTION(m)) {
+-      mchunkptr newp = try_realloc_chunk(m, oldp, nb, 1);
++      mchunkptr newp = try_realloc_chunk(m, oldp, nb, oldmemtemp);
+       POSTACTION(m);
+       if (newp != 0) {
+         check_inuse_chunk(m, newp);
+-        mem = chunk2mem(newp);
++        mem = oldmemtemp;
+       }
+-      else {
++      else
++      {
+         mem = internal_malloc(m, bytes);
+         if (mem != 0) {
+           size_t oc = chunksize(oldp) - overhead_for(oldp);
+-          memcpy(mem, oldmem, (oc < bytes)? oc : bytes);
+-          internal_free(m, oldmem);
++          memcpy(mem, oldmemtemp, (oc < bytes)? oc : bytes);
++          internal_free(m, oldmemtemp);
+         }
+       }
+     }
+@@ -5315,6 +5426,14 @@ void* dlrealloc_in_place(void* oldmem, size_t bytes) {
+       MALLOC_FAILURE_ACTION;
+     }
+     else {
++    void* oldmemtemp = oldmem;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++      void* oldmemtag = __builtin_wasm_memtag_load(0, oldmem);
++      if (oldmemtag != oldmem) {
++        __dlmalloc_memtag_verbose_abort(2, oldmem, oldmemtag);
++      }
++      oldmem = __builtin_wasm_memtag_untag(0, oldmem);
++#endif
+       size_t nb = request2size(bytes);
+       mchunkptr oldp = mem2chunk(oldmem);
+ #if ! FOOTERS
+@@ -5327,11 +5446,11 @@ void* dlrealloc_in_place(void* oldmem, size_t bytes) {
+       }
+ #endif /* FOOTERS */
+       if (!PREACTION(m)) {
+-        mchunkptr newp = try_realloc_chunk(m, oldp, nb, 0);
++        mchunkptr newp = try_realloc_chunk(m, oldp, nb, oldmemtemp);
+         POSTACTION(m);
+         if (newp == oldp) {
+           check_inuse_chunk(m, newp);
+-          mem = oldmem;
++          mem = oldmemtemp;
+         }
+       }
+     }
+@@ -5340,6 +5459,12 @@ void* dlrealloc_in_place(void* oldmem, size_t bytes) {
+ }
+ 
+ void* dlmemalign(size_t alignment, size_t bytes) {
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++  if (!(alignment && !(alignment & (alignment - 1))))
++  {
++        __dlmalloc_memtag_verbose_abort(3, (void*)alignment, (void*)bytes);
++  }
++#endif
+   if (alignment <= MALLOC_ALIGNMENT) {
+     return dlmalloc(bytes);
+   }
+@@ -5464,6 +5589,13 @@ int dlmallopt(int param_number, int value) {
+ 
+ size_t dlmalloc_usable_size(void* mem) {
+   if (mem != 0) {
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    void *taginmem = __builtin_wasm_memtag_load(0, mem);
++    if (mem != taginmem) {
++      __dlmalloc_memtag_verbose_abort(4, mem, taginmem);
++    }
++    mem = __builtin_wasm_memtag_untag(0, mem);
++#endif
+     mchunkptr p = mem2chunk(mem);
+     if (is_inuse(p))
+       return chunksize(p) - overhead_for(p);
+@@ -5827,6 +5959,14 @@ void* mspace_realloc(mspace msp, void* oldmem, size_t bytes) {
+   }
+ #endif /* REALLOC_ZERO_BYTES_FREES */
+   else {
++    void* oldmemtemp = oldmem;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++    void* oldmemtag = __builtin_wasm_memtag_load(0, oldmem);
++    if (oldmemtag != oldmem) {
++      __dlmalloc_memtag_verbose_abort(5, oldmem, oldmemtag);
++    }
++    oldmem = __builtin_wasm_memtag_untag(0, oldmem);
++#endif
+     size_t nb = request2size(bytes);
+     mchunkptr oldp = mem2chunk(oldmem);
+ #if ! FOOTERS
+@@ -5839,18 +5979,18 @@ void* mspace_realloc(mspace msp, void* oldmem, size_t bytes) {
+     }
+ #endif /* FOOTERS */
+     if (!PREACTION(m)) {
+-      mchunkptr newp = try_realloc_chunk(m, oldp, nb, 1);
++      mchunkptr newp = try_realloc_chunk(m, oldp, nb, oldmemtemp);
+       POSTACTION(m);
+       if (newp != 0) {
+         check_inuse_chunk(m, newp);
+-        mem = chunk2mem(newp);
++        mem = oldmemtemp;
+       }
+       else {
+         mem = mspace_malloc(m, bytes);
+         if (mem != 0) {
+           size_t oc = chunksize(oldp) - overhead_for(oldp);
+-          memcpy(mem, oldmem, (oc < bytes)? oc : bytes);
+-          mspace_free(m, oldmem);
++          memcpy(mem, oldmemtemp, (oc < bytes)? oc : bytes);
++          mspace_free(m, oldmemtemp);
+         }
+       }
+     }
+@@ -5865,6 +6005,14 @@ void* mspace_realloc_in_place(mspace msp, void* oldmem, size_t bytes) {
+       MALLOC_FAILURE_ACTION;
+     }
+     else {
++      void* oldmemtemp = oldmem;
++#if defined(__wasilibc_dlmalloc_enable_memtag)
++      void* oldmemtag = __builtin_wasm_memtag_load(0, oldmem);
++      if (oldmemtag != oldmem) {
++        __dlmalloc_memtag_verbose_abort(6, oldmem, oldmemtag);
++      }
++      oldmem = __builtin_wasm_memtag_untag(0, oldmem);
++#endif
+       size_t nb = request2size(bytes);
+       mchunkptr oldp = mem2chunk(oldmem);
+ #if ! FOOTERS
+@@ -5878,11 +6026,11 @@ void* mspace_realloc_in_place(mspace msp, void* oldmem, size_t bytes) {
+       }
+ #endif /* FOOTERS */
+       if (!PREACTION(m)) {
+-        mchunkptr newp = try_realloc_chunk(m, oldp, nb, 0);
++        mchunkptr newp = try_realloc_chunk(m, oldp, nb, oldmemtemp);
+         POSTACTION(m);
+         if (newp == oldp) {
+           check_inuse_chunk(m, newp);
+-          mem = oldmem;
++          mem = oldmemtemp;
+         }
+       }
+     }
+diff --git a/dlmalloc/src/memtag-verbose.c b/dlmalloc/src/memtag-verbose.c
+new file mode 100644
+index 0000000..a40b685
+--- /dev/null
++++ b/dlmalloc/src/memtag-verbose.c
+@@ -0,0 +1,128 @@
++// Verbose diagnostics for dlmalloc's WebAssembly memory-tagging checks.
++//
++// fprintf can allocate memory, which is unsafe while the allocator is
++// already handling an error, so this file implements an allocation-free
++// replacement: fixed message pieces and formatted addresses are emitted
++// directly with writev(2) to file descriptor 2, with no large buffer.
++//
++// __dlmalloc_memtag_verbose_abort is weak so embedders can override
++// it by defining a strong symbol with the same name and signature.
++//
++// whichfunc identifies which diagnostic to report:
++//   0 - dlfree:                  color mismatch on release
++//   1 - dlrealloc:               color mismatch on reallocate
++//   2 - dlrealloc_in_place:      color mismatch on reallocate
++//   3 - dlmemalign:              alignment is not a power of 2
++//   4 - dlmalloc_usable_size:    color mismatch on size query
++//   5 - mspace_realloc:          color mismatch on reallocate
++//   6 - mspace_realloc_in_place: color mismatch on reallocate
++
++typedef __SIZE_TYPE__ size_t;
++typedef __UINTPTR_TYPE__ uintptr_t;
++typedef __PTRDIFF_TYPE__ ssize_t;
++
++#ifndef __wasilibc_dlmalloc_memtag_noverbose
++
++struct memtag_iovec {
++    void *iov_base;
++    size_t iov_len;
++};
++
++extern ssize_t pesudo_writev(int fd, struct memtag_iovec const *iov,
++                             int iovcnt) __asm__("writev");
++
++// Pair a string literal with its compile-time length.
++#define MEMTAG_LIT(s) s, sizeof(s) - 1
++
++// Writes the address as 0xFFFFFFFF on wasm32, 0xFFFFFFFFFFFFFFFF on wasm64.
++// Returns the number of bytes written.
++static size_t memtag_ptr(char *dst, void const *ptr) {
++    uintptr_t v = (uintptr_t)ptr;
++    size_t digits = sizeof(void *) * 2;
++    __builtin_memcpy(dst, "0x", 2);
++    for (size_t i = digits; i--;) {
++        dst[2 + i] = "0123456789abcdef"[v & 0xf];
++        v >>= 4;
++    }
++    return 2 + digits;
++}
++
++// Emits: head actual mid expected tail
++static void memtag_emit(void *actual, void *expected,
++                        char const *head, size_t head_len,
++                        char const *mid, size_t mid_len,
++                        char const *tail, size_t tail_len) {
++    char abuf[2 + sizeof(void *) * 2];
++    char ebuf[2 + sizeof(void *) * 2];
++    struct memtag_iovec iov[] = {
++        { (void *)head, head_len },
++        { abuf, memtag_ptr(abuf, actual) },
++        { (void *)mid, mid_len },
++        { ebuf, memtag_ptr(ebuf, expected) },
++        { (void *)tail, tail_len },
++    };
++    pesudo_writev(2, iov, (int)(sizeof(iov) / sizeof(iov[0])));
++}
++
++#endif /* !__wasilibc_dlmalloc_memtag_noverbose */
++
++// When built with __wasilibc_dlmalloc_memtag_noverbose this is just a trap;
++// since it is weak, embedders can still link in a diagnostic implementation
++// to override it.
++[[noreturn]] __attribute__((weak))
++void __dlmalloc_memtag_verbose_abort(unsigned whichfunc, void *actual,
++                                           void *expected) {
++#ifndef __wasilibc_dlmalloc_memtag_noverbose
++    switch (whichfunc) {
++    case 0:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("dlfree detects a color mismatch in WebAssembly memory tagging: you attempt to release "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\nThis is an incorrect deallocation, such as a double-free.\n"));
++        break;
++    case 1:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("dlrealloc detects a color mismatch in WebAssembly memory tagging: you attempt to reallocate at "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\nThis is an incorrect reallocation.\n"));
++        break;
++    case 2:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("dlrealloc_in_place detects a color mismatch in WebAssembly memory tagging: you attempt to reallocate at "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\nThis is an incorrect reallocation.\n"));
++        break;
++    case 3:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("dlmemalign detects an incorrect alignment in WebAssembly memory tagging. alignment must be power of 2. dlmemalign("),
++            MEMTAG_LIT(", "),
++            MEMTAG_LIT(")\n"));
++        break;
++    case 4:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("void dlmalloc_usable_size(void* mem) detects a color mismatch in WebAssembly memory tagging: you attempt to know the size of "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\n"));
++        break;
++    case 5:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("mspace_realloc detects a color mismatch in WebAssembly memory tagging: you attempt to reallocate at "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\nThis is an incorrect reallocation.\n"));
++        break;
++    case 6:
++        memtag_emit(actual, expected,
++            MEMTAG_LIT("mspace_realloc_in_place detects a color mismatch in WebAssembly memory tagging: you attempt to reallocate at "),
++            MEMTAG_LIT(", expected: "),
++            MEMTAG_LIT(".\nThis is an incorrect reallocation.\n"));
++        break;
++    default:
++        break;
++    }
++#else
++    (void)whichfunc;
++    (void)actual;
++    (void)expected;
++#endif
++    __builtin_trap();
++}
+diff --git a/libc-top-half/CMakeLists.txt b/libc-top-half/CMakeLists.txt
+index 39c175b..ea9275b 100644
+--- a/libc-top-half/CMakeLists.txt
++++ b/libc-top-half/CMakeLists.txt
+@@ -20,6 +20,10 @@ add_compile_options(
+ # Dummy interface library which helps configure headers/options for internal
+ # libraries below.
+ add_library(musl-top-half-interface INTERFACE)
++if(ENABLE_MEMTAG)
++  # Hand-written thread entry assembly must materialize tagged global addresses.
++  target_compile_definitions(musl-top-half-interface INTERFACE __WASM_MEMTAG__=1)
++endif()
+ target_include_directories(musl-top-half-interface INTERFACE
+   musl/src/include
+   musl/src/internal
+@@ -193,6 +197,7 @@ set(top_half_sources
+   musl/src/exit/assert.c
+   musl/src/exit/at_quick_exit.c
+   musl/src/exit/atexit.c
++  musl/src/exit/cxa_thread_atexit.c
+   musl/src/exit/exit.c
+   musl/src/exit/quick_exit.c
+   musl/src/fcntl/creat.c
+@@ -455,7 +460,7 @@ if (TARGET_TRIPLE MATCHES "wasip1-threads")
+     musl/src/thread/wasi-threads/pthread_create.c
+     musl/src/thread/wasi-threads/pthread_detach.c
+     musl/src/thread/wasi-threads/pthread_join.c
+-    musl/src/thread/wasi-threads/wasi_thread_start.s
++    musl/src/thread/wasi-threads/wasi_thread_start.S
+     musl/src/thread/wasi-threads/__wasilibc_busywait.c
+   )
+ elseif(ENABLE_COOP_THREADS)
+diff --git a/libc-top-half/musl/src/exit/cxa_thread_atexit.c b/libc-top-half/musl/src/exit/cxa_thread_atexit.c
+new file mode 100644
+index 0000000..0e1c28d
+--- /dev/null
++++ b/libc-top-half/musl/src/exit/cxa_thread_atexit.c
+@@ -0,0 +1,42 @@
++/* C++ thread-local destruction for statically linked WASI programs.
++ * The module remains loaded until its participating threads have stopped;
++ * WASI libc does not provide dlclose or unloadable C++ DSOs. */
++#include <stdlib.h>
++
++struct tls_dtor {
++    void (*destroy)(void *);
++    void *object;
++    struct tls_dtor *next;
++};
++
++#ifdef __wasm_atomics__
++static _Thread_local struct tls_dtor *dtors;
++#else
++static struct tls_dtor *dtors;
++#endif
++
++int __cxa_thread_atexit_impl(void (*destroy)(void *), void *object, void *dso)
++{
++    (void)dso;
++    struct tls_dtor *entry = malloc(sizeof *entry);
++    if (!entry) return -1;
++    entry->destroy = destroy;
++    entry->object = object;
++    entry->next = dtors;
++    dtors = entry;
++    return 0;
++}
++
++void __wasilibc_run_tls_dtors(void)
++{
++    while (dtors) {
++        struct tls_dtor *entry = dtors;
++        void (*destroy)(void *) = entry->destroy;
++        void *object = entry->object;
++        dtors = entry->next;
++        free(entry);
++        /* A destructor may register another TLS destructor. Keep the original
++         * object pointer, including its memory tag, and drain the new head. */
++        destroy(object);
++    }
++}
+diff --git a/libc-top-half/musl/src/exit/exit.c b/libc-top-half/musl/src/exit/exit.c
+index dec473f..47b1479 100644
+--- a/libc-top-half/musl/src/exit/exit.c
++++ b/libc-top-half/musl/src/exit/exit.c
+@@ -13,6 +13,9 @@ static void dummy()
+  * as a consequence of linking either __toread.c or __towrite.c. */
+ weak_alias(dummy, __funcs_on_exit);
+ weak_alias(dummy, __stdio_exit);
++#ifndef __wasilibc_unmodified_upstream
++weak_alias(dummy, __wasilibc_run_tls_dtors);
++#endif
+ #ifdef __wasilibc_unmodified_upstream // fini
+ weak_alias(dummy, _fini);
+ 
+@@ -54,6 +57,8 @@ _Noreturn void exit(int code)
+ // returns 0.
+ void __wasm_call_dtors(void)
+ {
++	/* C++ TLS objects precede objects with static storage duration. */
++	__wasilibc_run_tls_dtors();
+ 	__funcs_on_exit();
+ 	__stdio_exit();
+ }
+diff --git a/libc-top-half/musl/src/thread/wasi-threads/pthread_create.c b/libc-top-half/musl/src/thread/wasi-threads/pthread_create.c
+index f6ff846..0060e7c 100644
+--- a/libc-top-half/musl/src/thread/wasi-threads/pthread_create.c
++++ b/libc-top-half/musl/src/thread/wasi-threads/pthread_create.c
+@@ -22,6 +22,7 @@ static void dummy_0()
+ weak_alias(dummy_0, __acquire_ptc);
+ weak_alias(dummy_0, __release_ptc);
+ weak_alias(dummy_0, __pthread_tsd_run_dtors);
++weak_alias(dummy_0, __wasilibc_run_tls_dtors);
+ weak_alias(dummy_0, __do_orphaned_stdio_locks);
+ #ifdef __wasilibc_unmodified_upstream
+ weak_alias(dummy_0, __dl_thread_cleanup);
+@@ -93,6 +94,8 @@ static void __pthread_exit(void *result)
+ 		f(x);
+ 	}
+ 
++	/* TLS destructors precede pthread key destructors and TLS deallocation. */
++	__wasilibc_run_tls_dtors();
+ 	__pthread_tsd_run_dtors();
+ 
+ #ifdef __wasilibc_unmodified_upstream
+@@ -480,8 +483,17 @@ int __pthread_create(pthread_t *restrict res, const pthread_attr_t *restrict att
+ 	new = __copy_tls(tsd - libc.tls_size);
+ #else
+ 	new_tls_base = __copy_tls(tsd - tls_size);
++#ifdef __WASM_MEMTAG__
++	/* TLS objects have tags distinct from the containing allocator block.
++	 * Translate the linear offset first, then load this new thread's object
++	 * tag. Adding two coloured pointer representations would corrupt it. */
++	tls_offset = __builtin_wasm_memtag_sub(0, new_tls_base, tls_base);
++	new = __builtin_wasm_memtag_load(0,
++		(void*)((uintptr_t)__builtin_wasm_memtag_untag(0, self) + tls_offset));
++#else
+ 	tls_offset = new_tls_base - tls_base;
+ 	new = (void*)((uintptr_t)self + tls_offset);
++#endif
+ #endif
+ 	new->map_base = map;
+ 	new->map_size = size;
+diff --git a/libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.s b/libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.S
+similarity index 50%
+rename from libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.s
+rename to libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.S
+index 7a480b8..24abc14 100644
+--- a/libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.s
++++ b/libc-top-half/musl/src/thread/wasi-threads/wasi_thread_start.S
+@@ -13,8 +13,8 @@
+ wasi_thread_start:
+ 	.functype	wasi_thread_start (i32, i32) -> ()
+ 
+-	# Set up the minimum C environment.
+-	# Note: offsetof(start_arg, stack) == 0
++	// Set up the minimum C environment.
++	// Note: offsetof(start_arg, stack) == 0
+ 	local.get   1  # start_arg
+ 	i32.load    0  # stack
+ 	global.set  __stack_pointer
+@@ -23,24 +23,30 @@ wasi_thread_start:
+ 	i32.load    4  # tls_base
+ 	global.set  __tls_base
+ 
+-	# Make the C function do the rest of work.
++	// Make the C function do the rest of work.
+ 	local.get   0  # tid
+ 	local.get   1  # start_arg
+ 	call __wasi_thread_start_C
+ 
+-	# Unlock thread list. (as CLONE_CHILD_CLEARTID would do for Linux)
+-	#
+-	# Note: once we unlock the thread list, our "map_base" can be freed
+-	# by a joining thread. It's safe as we are in ASM and no longer use
+-	# our C stack or pthread_t. It's impossible to do this safely in C
+-	# because there is no way to tell the C compiler not to use C stack.
++	// Unlock thread list. (as CLONE_CHILD_CLEARTID would do for Linux)
++	//
++	// Note: once we unlock the thread list, our "map_base" can be freed
++	// by a joining thread. It's safe as we are in ASM and no longer use
++	// our C stack or pthread_t. It's impossible to do this safely in C
++	// because there is no way to tell the C compiler not to use C stack.
+ 	i32.const   __thread_list_lock
++#ifdef __WASM_MEMTAG__
++	memtag.load 0
++#endif
+ 	i32.const   0
+ 	i32.atomic.store 0
+-	# As an optimization, we can check tl_lock_waiters here.
+-	# But for now, simply wake up unconditionally as
+-	# CLONE_CHILD_CLEARTID does.
++	// As an optimization, we can check tl_lock_waiters here.
++	// But for now, simply wake up unconditionally as
++	// CLONE_CHILD_CLEARTID does.
+ 	i32.const   __thread_list_lock
++#ifdef __WASM_MEMTAG__
++	memtag.load 0
++#endif
+ 	i32.const   1
+ 	memory.atomic.notify 0
+ 	drop

@@ -4,11 +4,21 @@
   "version": "2026-06-04",
   "upstream_url": "https://bellard.org/quickjs/quickjs-2026-06-04.tar.xz",
   "upstream_archive_sha256": "b376e839b322978313d929fd20663b11ba58b75df5a46c126dd19ea2fa70ad2a",
-  "llvm_version": "23.1.4",
+  "llvm_version": "23.1.5",
   "source_date_epoch": 1792635234,
   "logical_sdk_prefix": "/__uwvm_sdk__",
   "logical_build_prefix": "/__uwvm_build__/js",
   "files": [
+    {
+      "path": "install/compiler.py",
+      "bytes": 7530,
+      "sha256": "d37e8af4ad28152b3970bf93be6d4f35d09357034cd97cc1912c5e210d622270"
+    },
+    {
+      "path": "install/guest_profile.py",
+      "bytes": 4629,
+      "sha256": "c664607b359c34839ea75ec897ea76fbe5fc5017c319f6cfb2030f766a6272b2"
+    },
     {
       "path": "share/language/js/upstream.json",
       "bytes": 4784,
@@ -23,6 +33,11 @@
       "path": "src/language/js/modules/observation.mjs",
       "bytes": 3944,
       "sha256": "1422e852ffa05c7716502c90bf3bf5cd4be9c5fdbb1bbcd9a6ab4102a24adea0"
+    },
+    {
+      "path": "src/language/js/modules/stdio.mjs",
+      "bytes": 611,
+      "sha256": "eb32c30a9baa4489fcf6e65edad746abab32a9a1b2a613f6bd0a7a6a42ab5c1d"
     },
     {
       "path": "src/language/js/support/abi.h",
@@ -126,13 +141,13 @@
     },
     {
       "path": "tools/language/js/build.py",
-      "bytes": 4722,
-      "sha256": "325bb8d430cf0757d87dc49848bc0991500da5252becbc90112a93e6e580ecba"
+      "bytes": 4763,
+      "sha256": "aafb3c90a2b027321ffdacea50fc480c4f8d514097cacf9a7d4fd3cd8c7c592b"
     },
     {
       "path": "tools/language/js/maintenance.py",
-      "bytes": 14971,
-      "sha256": "c312ed49e0cdcf228ed0c73c34826c91faf723ed7aa7f0720a48039832771e89"
+      "bytes": 16124,
+      "sha256": "ede5ee20ffda2494934d0b4b20a70a9f01121d899269c80fc6efd6e5536f3be1"
     },
     {
       "path": "tools/language/js/pack.lua",
@@ -146,13 +161,8 @@
     },
     {
       "path": "tools/language/js/wasm.py",
-      "bytes": 11035,
-      "sha256": "353f7a98053513d6de0f70c1c975c8b04ddb9220484d507c425cfea567df965b"
-    },
-    {
-      "path": "src/language/js/modules/stdio.mjs",
-      "bytes": 611,
-      "sha256": "eb32c30a9baa4489fcf6e65edad746abab32a9a1b2a613f6bd0a7a6a42ab5c1d"
+      "bytes": 12902,
+      "sha256": "878e21e1659b24661d02642107b85b09c24c651eaaac63d7ef57883b73a8a445"
     }
   ],
   "external_inputs": [

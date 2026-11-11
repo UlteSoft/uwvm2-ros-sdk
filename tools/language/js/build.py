@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """@brief Cold-build the shared genuine QuickJS 2026-06-04 Wasm engines.
 
-@details Rebuilds the complete ECMAScript core from source with LLVM 23.1.4.
+@details Rebuilds the complete ECMAScript core from source with LLVM 23.1.5.
 Stable source names enter through compiler prefix maps. No old VM or object is
 used and no compiled byte is changed to hide a build path. Both complete backend
 import bridges are compiled independently against the one shared genuine core.
@@ -10,7 +10,7 @@ import bridges are compiled independently against the one shared genuine core.
 import argparse
 from pathlib import Path
 
-from maintenance import Build, digest, flags, read, source_files, toolchain
+from maintenance import Build, digest, flags, read, source_files, toolchain, profile_arguments, profile_request
 from wasm import validate
 from abi_dispatch import emit
 
@@ -23,15 +23,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("sdk", "llvm-root", "target-sdk", "cache", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
-    parser.add_argument("--target", choices=("wasm32-wasip1", "wasm64-wasip1"), default="wasm32-wasip1")
+    profile_arguments(parser)
     args = parser.parse_args()
+    request = profile_request(args)
     sdk, llvm, target = [path.resolve(strict=True)
                          for path in (args.sdk, args.llvm_root, args.target_sdk)]
     cache, output = args.cache.resolve(), args.output.resolve()
     job = Build(output, cache, (sdk, llvm, target), "js")
     try:
         sources = source_files(sdk, "js")
-        profile, closure = toolchain(sdk, llvm, target, args.target, "noeh")
+        profile, closure = toolchain(sdk, llvm, target, request)
         job.report.update(source_files=sources, toolchain=closure, target=profile["triple"])
         source = sdk / "src/language/js/upstream"
         support = sdk / "src/language/js/support"
@@ -40,7 +41,7 @@ def main():
             (cache, "/__uwvm_build__/quickjs"), (source, "/__uwvm_sdk__/src/language/js/upstream"),
         ])
         version = job.run("compiler-version", [llvm / "bin/clang", "--version"])
-        if b"clang version 23.1.4" not in version:
+        if b"clang version 23.1.5" not in version:
             raise ValueError("The actual compiler does not match the shared lock")
         objects = []
         for name in ("quickjs.c", "dtoa.c", "libregexp.c", "libunicode.c", "cutils.c"):
@@ -51,7 +52,7 @@ def main():
                     "-c", source / name, "-o", obj])
             objects.append(obj)
         abi = read(sdk / "share/abi/abi-v1.json")
-        bits = 64 if args.target.startswith("wasm64-") else 32
+        bits = 64 if request.address_bits == 64 else 32
         job.report["raw_abi_bridges"] = []
         job.report["typed_backend_imports"] = {}
         adapters = []
@@ -67,7 +68,7 @@ def main():
             job.run("link-" + backend, [llvm / "bin/clang", *common, adapter, *objects, "-lm",
                     "-Wl,-z,stack-size=8388608", "-Wl,--max-memory=268435456", "-Wl,--threads=1",
                     "-Wl,--trace", "-o", application])
-            job.report["typed_backend_imports"][backend] = validate(application.read_bytes(), abi, backend, address_bits=bits)
+            job.report["typed_backend_imports"][backend] = validate(application.read_bytes(), abi, backend, address_bits=bits, shared=request.threads, exceptions=request.exceptions == "eh")
             adapters.append(adapter)
         job.report["objects"] = [{"name": p.name, "bytes": p.stat().st_size, "sha256": digest(p)}
                                   for p in [*objects, *adapters]]

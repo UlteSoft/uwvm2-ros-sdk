@@ -1,0 +1,1487 @@
+{
+  "schema": "uwvm-sdk-install-v1",
+  "hosts": [
+    "linux-x86_64"
+  ],
+  "platforms": {
+    "abb": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/abb/provider.json",
+      "descriptor_sha256": "e14419121bb78ccccd874acbdf82ab94419ca0ac2db97b02f42381438dc0f102"
+    },
+    "agibot": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/agibot/provider.json",
+      "descriptor_sha256": "c42e2f8f25cc45823af00cf44685f337d4723fff5c5273207649128cf42d8ade"
+    },
+    "agilex": {
+      "languages": [
+        "as",
+        "c",
+        "cpp",
+        "d",
+        "go",
+        "haskell",
+        "moonbit",
+        "nim",
+        "odin",
+        "rs",
+        "swift",
+        "tinygo",
+        "zig"
+      ],
+      "descriptor": "share/platform/agilex/provider.json",
+      "descriptor_sha256": "e6abcd6a94d1ed8ef59826b2a950a8c178fff54696821299bdfa10c018bb48ee"
+    },
+    "booster": {
+      "languages": [
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "js",
+        "lua",
+        "objectc",
+        "py"
+      ],
+      "descriptor": "share/platform/booster/provider.json",
+      "descriptor_sha256": "3b4a6177626f7966a7327c6a08bb6b27fd0679df1f15bce044fcc01c3ed15ed0"
+    },
+    "boston_dynamics": {
+      "languages": [
+        "as",
+        "c",
+        "cpp",
+        "d",
+        "go",
+        "haskell",
+        "moonbit",
+        "nim",
+        "odin",
+        "rs",
+        "swift",
+        "tinygo",
+        "zig"
+      ],
+      "descriptor": "share/platform/boston_dynamics/provider.json",
+      "descriptor_sha256": "2d1c421ef756a48d65237fdd602c888473ffa3b4c9c46c03786f5dd45a46e179"
+    },
+    "clearpath": {
+      "languages": [
+        "as",
+        "c",
+        "cpp",
+        "d",
+        "go",
+        "haskell",
+        "moonbit",
+        "nim",
+        "odin",
+        "rs",
+        "swift",
+        "tinygo",
+        "zig"
+      ],
+      "descriptor": "share/platform/clearpath/provider.json",
+      "descriptor_sha256": "95485b51a612381c00c65eb4075896217e86650a3b0898b5061082d9f44a462b"
+    },
+    "deep_robotics": {
+      "languages": [
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "js",
+        "lua",
+        "objectc",
+        "py"
+      ],
+      "descriptor": "share/platform/deep_robotics/provider.json",
+      "descriptor_sha256": "5abf366977b042dea751a83da083a703e03bcbc26ab6cc92718a71d81bcc55a2"
+    },
+    "dobot": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "objectc",
+        "php",
+        "py",
+        "rs",
+        "ruby",
+        "tinygo"
+      ],
+      "descriptor": "share/platform/dobot/provider.json",
+      "descriptor_sha256": "8cb22b68eedb0495806d51c2cccdac5862a751a76b378dbe65b87c6fec6579fa"
+    },
+    "doosan": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/doosan/provider.json",
+      "descriptor_sha256": "f52d26321a8b33051666e0c536299654a46d3fdb4e6a98b219f8f9d10624be02"
+    },
+    "elephant": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "objectc",
+        "php",
+        "py",
+        "rs",
+        "ruby",
+        "tinygo"
+      ],
+      "descriptor": "share/platform/elephant/provider.json",
+      "descriptor_sha256": "94fff4561170ba5e81286ebb3c4a43acba9ea0055483b6c6e72a6225eeb2ca7b"
+    },
+    "fanuc": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/fanuc/provider.json",
+      "descriptor_sha256": "748410a087886dc94abebd5b6105501fa620ed1bd61e1de514e461981bc1422b"
+    },
+    "flexiv": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/flexiv/provider.json",
+      "descriptor_sha256": "e165e58232ea1c4e1369556bfbcb6938535f012aed3e4b1e7e9d35b615935cf6"
+    },
+    "fourier": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/fourier/provider.json",
+      "descriptor_sha256": "fcc4ffe044b577dfc5a9a908aca7afb867bab2b586e66ff1d248af16e69f9aa3"
+    },
+    "franka": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/franka/provider.json",
+      "descriptor_sha256": "824b28692b6cd188bdb011af40e40bd24f423064a5cc6c03e34791121be18d6f"
+    },
+    "hello_robot": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/hello_robot/provider.json",
+      "descriptor_sha256": "d1752c9c77f1b34ce400241701fa82caf0a4ac22e22aacac126b75ded256feb9"
+    },
+    "kinova": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/kinova/provider.json",
+      "descriptor_sha256": "fb92fba6d9937cc601b2cea6d35291d161b7c78c7e36e8bb31f2dc7ef5397e01"
+    },
+    "kuka": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "typescript",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/kuka/provider.json",
+      "descriptor_sha256": "a77bd19fb97e7a3de2465efaa65deac646a01f893f62c2f6b384d362f13385bc"
+    },
+    "leju": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/leju/provider.json",
+      "descriptor_sha256": "221deaed8aeda29e55303ce78a877882e01c9ed7d03158082752243a1c0bb154"
+    },
+    "limx": {
+      "languages": [
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "js",
+        "lua",
+        "objectc",
+        "py"
+      ],
+      "descriptor": "share/platform/limx/provider.json",
+      "descriptor_sha256": "97ff2da1b18b3728ccfd009dc9bd270c92b867f0963eed0a438ed1c06cae6d21"
+    },
+    "nvidia": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "js",
+        "rs",
+        "tinygo",
+        "typescript"
+      ],
+      "descriptor": "share/platform/nvidia/provider.json",
+      "descriptor_sha256": "e75969d595ac25cbd0fb211feead6c7c690b656cb5b4dd289472a21e19c5f223"
+    },
+    "nvidia-groot": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "js",
+        "rs",
+        "tinygo",
+        "typescript"
+      ],
+      "descriptor": "share/platform/nvidia-groot/provider.json",
+      "descriptor_sha256": "4fc6ad6acf37e56156e7f6f04334fea36317424ce735323b211e5ef9953f4f79"
+    },
+    "nvidia-isaac-ros": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "js",
+        "rs",
+        "tinygo",
+        "typescript"
+      ],
+      "descriptor": "share/platform/nvidia-isaac-ros/provider.json",
+      "descriptor_sha256": "3a641ac8b29ab29ed9d644084e3a47628fa20726dcffd5f952c98f3f35efe890"
+    },
+    "nvidia-isaac-sim": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "js",
+        "rs",
+        "tinygo",
+        "typescript"
+      ],
+      "descriptor": "share/platform/nvidia-isaac-sim/provider.json",
+      "descriptor_sha256": "d1939baef5c35d9423ccf091fab1190db545f6b76da0c8d38efa326ce77fc549"
+    },
+    "pal": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/pal/provider.json",
+      "descriptor_sha256": "03f07f7cb66852bd32dbb4677f39ff8a9349653d440df1107e6f801cd540f4e9"
+    },
+    "realman": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "objectc",
+        "php",
+        "py",
+        "rs",
+        "ruby",
+        "tinygo"
+      ],
+      "descriptor": "share/platform/realman/provider.json",
+      "descriptor_sha256": "ec768246935d34690f1bab9574df4ead1c1b47a7499a0a4d5b67581a36d25d59"
+    },
+    "robotis": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/robotis/provider.json",
+      "descriptor_sha256": "a1c73f8ee8f76fecaa3db966e001f079ec6e25d76f180e33195550f0ec459560"
+    },
+    "ros": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fortran",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "wat",
+        "zig"
+      ],
+      "descriptor": "share/platform/ros/provider.json",
+      "descriptor_sha256": "54d268575584fea1de70197b263c9d0f81c63ecac4e2eb1cd6543d54069666e5"
+    },
+    "ros1": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fortran",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "wat",
+        "zig"
+      ],
+      "descriptor": "share/platform/ros1/provider.json",
+      "descriptor_sha256": "c0c4893c765c1777b349f750b814fe2661400c55ed4f639a52d11d933fc1090a"
+    },
+    "ros2": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fortran",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "wat",
+        "zig"
+      ],
+      "descriptor": "share/platform/ros2/provider.json",
+      "descriptor_sha256": "7a48721ab60855dafc1dc16851e1caaee800f19acb8fc366389dfdf15c0ba7ce"
+    },
+    "trossen": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/trossen/provider.json",
+      "descriptor_sha256": "106ca2fc847b356e4deac2249babfc2a631517aedee233cad765bcd0b1d45fb3"
+    },
+    "ubtech": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/ubtech/provider.json",
+      "descriptor_sha256": "8525bae052f68678bbd91d9e4ad29d98ad256e6d486dfe5445a8f2941dcace72"
+    },
+    "ufactory": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "go",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "objectc",
+        "php",
+        "py",
+        "rs",
+        "ruby",
+        "tinygo"
+      ],
+      "descriptor": "share/platform/ufactory/provider.json",
+      "descriptor_sha256": "b5f6d060cdb30bb95c4029f2726fcb75bedf7f5ff03acb807e48611f52fdf609"
+    },
+    "unitree": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "d",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "typescript",
+        "zig"
+      ],
+      "descriptor": "share/platform/unitree/provider.json",
+      "descriptor_sha256": "8318af866f65811fd7d824b4f8c2b3daefd30a25695fc7587829b800a04e1b8c"
+    },
+    "universal_robots": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/universal_robots/provider.json",
+      "descriptor_sha256": "74167e9a4786569fcb17d86bef8590c019dc46a0d2771b09f7066f4d2368b5ba"
+    },
+    "wasi": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fortran",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "typescript",
+        "vbnet",
+        "wat",
+        "zig"
+      ],
+      "descriptor": "share/platform/wasi/provider.json",
+      "descriptor_sha256": "ca3aafac2fa8bfe08fd834d74a8ac035c8edcc244f92ea29ce2700127bc50869"
+    },
+    "yaskawa": {
+      "languages": [
+        "as",
+        "c",
+        "c_ffi_bridge",
+        "cpp",
+        "csharp",
+        "d",
+        "fsharp",
+        "go",
+        "haskell",
+        "java",
+        "js",
+        "kotlin",
+        "lua",
+        "moonbit",
+        "nim",
+        "objectc",
+        "odin",
+        "php",
+        "py",
+        "r",
+        "rs",
+        "ruby",
+        "swift",
+        "tinygo",
+        "vbnet",
+        "zig"
+      ],
+      "descriptor": "share/platform/yaskawa/provider.json",
+      "descriptor_sha256": "e389dde0de1a66eb48704c8c604106c208a8c9654f4e5c7e9560ee1fff5c04eb"
+    }
+  },
+  "languages": {
+    "as": {
+      "packages": [
+        "assemblyscript",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "as",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "c": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "cfamily",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "c_ffi_bridge": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "cfamily",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "cpp": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "cfamily",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "csharp": {
+      "packages": [
+        "dotnet-library-pack",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "dotnet",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "d": {
+      "packages": [
+        "llvm23",
+        "native-d",
+        "python-supervisor"
+      ],
+      "source_directory": "d",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "fortran": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "fortran",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "fsharp": {
+      "packages": [
+        "dotnet-library-pack",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "dotnet",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "go": {
+      "packages": [
+        "llvm23",
+        "native-go",
+        "python-supervisor"
+      ],
+      "source_directory": "go",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "haskell": {
+      "packages": [
+        "llvm23",
+        "native-haskell",
+        "python-supervisor"
+      ],
+      "source_directory": "haskell",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "java": {
+      "packages": [
+        "jvm-aot",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "jvm",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "js": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "js",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "kotlin": {
+      "packages": [
+        "jvm-aot",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "jvm",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "lua": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "lua",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "moonbit": {
+      "packages": [
+        "llvm23",
+        "moonbit",
+        "python-supervisor"
+      ],
+      "source_directory": "moonbit",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "nim": {
+      "packages": [
+        "llvm23",
+        "native-nim",
+        "python-supervisor"
+      ],
+      "source_directory": "nim",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "objectc": {
+      "packages": [
+        "llvm23",
+        "native-objectc",
+        "python-supervisor"
+      ],
+      "source_directory": "objectc",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "odin": {
+      "packages": [
+        "llvm23",
+        "native-odin",
+        "python-supervisor"
+      ],
+      "source_directory": "odin",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "php": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "php",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "py": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "python",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "r": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "r",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "rs": {
+      "packages": [
+        "llvm23",
+        "native-rs",
+        "python-supervisor"
+      ],
+      "source_directory": "rs",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "ruby": {
+      "packages": [
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "ruby",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "swift": {
+      "packages": [
+        "llvm23",
+        "native-swift",
+        "python-supervisor"
+      ],
+      "source_directory": "swift",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "tinygo": {
+      "packages": [
+        "llvm23",
+        "native-tinygo",
+        "python-supervisor"
+      ],
+      "source_directory": "tinygo",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "typescript": {
+      "packages": [
+        "llvm23",
+        "python-supervisor",
+        "typescript"
+      ],
+      "source_directory": "typescript",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "vbnet": {
+      "packages": [
+        "dotnet-library-pack",
+        "llvm23",
+        "python-supervisor"
+      ],
+      "source_directory": "dotnet",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "wat": {
+      "packages": [
+        "llvm23",
+        "python-supervisor",
+        "wabt"
+      ],
+      "source_directory": "wat",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    },
+    "zig": {
+      "packages": [
+        "llvm23",
+        "native-zig",
+        "python-supervisor"
+      ],
+      "source_directory": "zig",
+      "qualified_profiles": [],
+      "pending": [
+        "compiler instrumentation and source closure",
+        "matching standard libraries/runtime and allocator",
+        "threaded runtime qualification"
+      ]
+    }
+  },
+  "packages": {
+    "linux-x86_64": {
+      "assemblyscript": {
+        "manifest": "share/toolchains/host/linux-x86_64/assemblyscript.json",
+        "manifest_sha256": "8d0243d8adf06cd6962d24d85a735066305c6400ccbafb1bd205c1d495c311b9",
+        "archive": "share/toolchains/host/linux-x86_64/assemblyscript-0.28.20.xmz",
+        "sha256": "7ab966b69ec1020b69df3b3930bc8ddf25626a01aa9a1ea361296898d89ec2b0",
+        "version": "0.28.20"
+      },
+      "dotnet-library-pack": {
+        "manifest": "share/toolchains/host/linux-x86_64/dotnet-library-pack.json",
+        "manifest_sha256": "8c8faf217a357c1b21a15ea422682d4caecd25700d0e2006e03caf61a5e84678",
+        "archive": "share/toolchains/host/linux-x86_64/dotnet-library-pack.xmz",
+        "sha256": "e5bcd3453166c92a6144dfdc94c3822ae7bdfec23b6bcede5f79bd8f6530f2b1",
+        "version": "original-WebAssembly.Pack-9.0.0-preview.6.24327.7"
+      },
+      "jvm-aot": {
+        "manifest": "share/toolchains/host/linux-x86_64/jvm-aot.json",
+        "manifest_sha256": "03e8c4c8cac4a26fe92b379fdcea11c68babf59c84136366e2021baa6200c76a",
+        "archive": "share/toolchains/host/linux-x86_64/jvm-aot-linux-x86_64.xmz",
+        "sha256": "71719ce3462b89957f3297e9d8db97004a058ced15f16858293b514c92e7a5aa",
+        "version": "pinned"
+      },
+      "llvm23": {
+        "manifest": "share/toolchains/host/linux-x86_64/llvm23.json",
+        "manifest_sha256": "9dcca4deb56c2bfbbef0f4e8a0fb76529f0bd9525bcce951fc417f2bfca12fea",
+        "archive": "share/toolchains/host/linux-x86_64/llvm23-23.1.4.xmz",
+        "sha256": "8e97c5e26755459965d86361f970c9b7d6d2e7c44e953fc0faeb82621b157522",
+        "version": "23.1.4"
+      },
+      "moonbit": {
+        "manifest": "share/toolchains/host/linux-x86_64/moonbit.json",
+        "manifest_sha256": "f25f1f69da0ad8f0b7324b062d8cd4ef40591a6e373031c1fbe0bbcd5d24d75d",
+        "archive": "share/toolchains/host/linux-x86_64/moonbit-0.10.16+b1a0e846e.xmz",
+        "sha256": "0d0526887d025366e402ad298a585bc8db40b9bc74f6df5451b8d6a594f047f3",
+        "version": "0.10.16+b1a0e846e"
+      },
+      "native-d": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-d.json",
+        "manifest_sha256": "9335a7ee10bcb076305c8e79e1098ca8f175e015aa0739f71ca248ff474e2628",
+        "archive": "share/toolchains/host/linux-x86_64/native-d-1.41.0.xmz",
+        "sha256": "3bc9ee00f6d1e2d47cb8017176ee874272f88f7cd9356c73dd8ce8290215eb59",
+        "version": "1.41.0"
+      },
+      "native-go": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-go.json",
+        "manifest_sha256": "21c6f54ca65464be01617ac69350e3ed2ce199c521613e95ca014666dc64f919",
+        "archive": "share/toolchains/host/linux-x86_64/native-go-1.24.2.xmz",
+        "sha256": "f50631b4a724c708786fb67512615632946c080eb83c9b435f2f835ff92888ff",
+        "version": "1.24.2"
+      },
+      "native-haskell": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-haskell.json",
+        "manifest_sha256": "7928556b1fab515b36963506d627cc2b8b88b7fea4223f8aa3f017b4a9feddca",
+        "archive": "share/toolchains/host/linux-x86_64/native-haskell-9.14.1.20260731.xmz",
+        "sha256": "312c550d322336ff00b6155318e1753fec5241eb4eb291abc8e167e327b659c7",
+        "version": "9.14.1.20260731"
+      },
+      "native-nim": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-nim.json",
+        "manifest_sha256": "6d75b6c953578d1e0d650530261556512a411d32382ba4150e0c1f5ab14cd809",
+        "archive": "share/toolchains/host/linux-x86_64/native-nim-2.2.4.xmz",
+        "sha256": "074b2842a9d7deb8bfff64c1afe4063b84bd15a28e0171e90a7c154083b0bc48",
+        "version": "2.2.4"
+      },
+      "native-objectc": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-objectc.json",
+        "manifest_sha256": "d93961ab93edcc02e223133902b987512002af5956524d09571a0a33bac777a1",
+        "archive": "share/toolchains/host/linux-x86_64/native-objectc-23.1.4-wasi2.xmz",
+        "sha256": "5028e1031702da776b5945e542e401d37b73746caea322c87f339da264ab1a2b",
+        "version": "23.1.4-wasi2"
+      },
+      "native-odin": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-odin.json",
+        "manifest_sha256": "d9cf18883e395b110f46ce016cc7efbb078959965ec8f6efdeab19bfcac8e3e0",
+        "archive": "share/toolchains/host/linux-x86_64/native-odin-dev-2025-10-05.xmz",
+        "sha256": "fd3cbc2f9059606687bded10ea71b7be0b13c8130612f7f95f890ec4dc28d0fd",
+        "version": "dev-2025-10-05"
+      },
+      "native-rs": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-rs.json",
+        "manifest_sha256": "399a188bee4e559bd7ee6c8ae8b5f1c89318c4a4e6d8a649f596a69584a906ae",
+        "archive": "share/toolchains/host/linux-x86_64/native-rs-1.87.0.xmz",
+        "sha256": "010f2c8c9e610a73c1fd39f896b626b9e0676716c44aa81b7d31842ca6cada88",
+        "version": "1.87.0"
+      },
+      "native-swift": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-swift.json",
+        "manifest_sha256": "5d8041b6d207d62c987f38af6e5993ccb7c29056263252f8f24f99cdec994162",
+        "archive": "share/toolchains/host/linux-x86_64/native-swift-6.4.1.xmz",
+        "sha256": "a4f52bee938d716a7ba2a821832799247fe392ef4fc4ddb3f9864e24497a9cc2",
+        "version": "6.4.1"
+      },
+      "native-tinygo": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-tinygo.json",
+        "manifest_sha256": "a28ac94fd623040c87e61de735fb0cdb7aed529aa902a2cfa1eaa905168084da",
+        "archive": "share/toolchains/host/linux-x86_64/native-tinygo-0.38.0.xmz",
+        "sha256": "ac92387dfdea347c4fdeccd47f660cb9e86af53a3e89f9064e8416982fc69934",
+        "version": "0.38.0"
+      },
+      "native-zig": {
+        "manifest": "share/toolchains/host/linux-x86_64/native-zig.json",
+        "manifest_sha256": "424dfb2f773c237e9a0e2d78df058482e8d06a8e2e47052aa3c6e2ab60d227c4",
+        "archive": "share/toolchains/host/linux-x86_64/native-zig-0.14.1.xmz",
+        "sha256": "6da1af6d532951cbe8ce335e09d54257086260637cc0eb385a61d3b819dac134",
+        "version": "0.14.1"
+      },
+      "python-supervisor": {
+        "manifest": "share/toolchains/host/linux-x86_64/python-supervisor.json",
+        "manifest_sha256": "1956187137ebc667ffde39a564c46a0e932ef29bc414ac32e3c8c0878264025e",
+        "archive": "share/toolchains/host/linux-x86_64/python-supervisor-3.12.13-20260728.xmz",
+        "sha256": "a4890f57b0a81625ede1d26fa67d43a8834e2a6f493f03690c9709b71f58e13b",
+        "version": "3.12.13-20260728"
+      },
+      "typescript": {
+        "manifest": "share/toolchains/host/linux-x86_64/typescript.json",
+        "manifest_sha256": "80d998cf60c26f10afff31dabe01709d08415275b4dd13142f2ba3978367c9a5",
+        "archive": "share/toolchains/host/linux-x86_64/typescript-5.9.3.xmz",
+        "sha256": "c635504904d37f5febea4ccce169ab429f6d1ae91965029eef048408b29c46bb",
+        "version": "5.9.3"
+      },
+      "wabt": {
+        "manifest": "share/toolchains/host/linux-x86_64/wabt.json",
+        "manifest_sha256": "e29eafe143886fd2b682dd77c4d5e6f8fa80eaf79150e94a4efb73d67d432d4a",
+        "archive": "share/toolchains/host/linux-x86_64/wabt-1.0.42.xmz",
+        "sha256": "22c9e8c919b43c61b9acb665a8d84d22ef4be68e4db9acc4e2ef62e765e3a921",
+        "version": "1.0.42"
+      }
+    }
+  }
+}

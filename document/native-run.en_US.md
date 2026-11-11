@@ -91,19 +91,18 @@ and function signatures; a JSON file cannot turn a command into a library.
 | `algorithm` | None; basic default WASI streams remain | Disabled. |
 | `ros_comm` | None | Only the manually listed ROS operations; explicit export delegation. |
 
-ROS imports normally reject cross-module ancestry. A reviewed ROS library can
-explicitly select `call_boundary: "module-exports"`, which emits
-`--ros2-single-call-boundary ros_comm module-exports` (or the ROS1 spelling).
-The default is `same-module`; omitting the field preserves the rejection.
-This choice is available only for an explicitly named Single module, and does
-not grant ROS authority to its callers. A direct ROS import in `algorithm`
-still fails. Handles remain bound to their owning module and generation;
-revocation and permanent retirement checks still apply.
+ROS imports use the actual executing module's policy. Defined Wasm library
+exports use their own policy; raw host-function re-exports convey no authority.
+`call_boundary` defaults to `"module-exports"` for an enabled ROS Single target.
+An operator can select `"same-module"` to reject cross-module ancestry. The SDK
+emits either selection explicitly, so the restrictive choice is never lost.
 
-Export delegation deliberately lets callers invoke the reviewed module's public
-operations. The library must validate arguments and expose only intended
-operations. It is not a caller allowlist. A module that should never act on
-another module's behalf should retain `same-module`.
+Single targets retain private handles. Modules assigned to one Group or an
+explicit Global target share that target's ROS session, handles, event/RMW
+state and quota accounts. Other policy groups cannot use those handles. Member
+replacement preserves peer resources and consumed credits; whole-environment
+retirement closes the shared resources. No Wasm argument selects native caller
+identity, session credentials, or another process.
 
 `runtime_features` selects registered Core feature names. Features are emitted
 before preload loading. `wasm64-wasip1` enables memory64 and table64, matching

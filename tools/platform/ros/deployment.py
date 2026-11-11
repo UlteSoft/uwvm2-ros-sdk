@@ -310,7 +310,7 @@ def prepare(config, scenario, wasm, base, target, backend, distribution):
                 "Gateway startup arguments require an explicit native operation grant"
             )
         checked[label]["gateway_arguments"] = gateway_arguments
-        boundary = module.get("call_boundary", "same-module")
+        boundary = module.get("call_boundary", "module-exports" if module["ros_enabled"] else "same-module")
         if not isinstance(boundary, str) or boundary not in {
             "same-module",
             "module-exports",
@@ -411,8 +411,7 @@ def command(plan, runtime_prefix, sockets, uid, *, test=False):
         argv += wasi_wait_exit_arguments(label, module.get("wasi_wait_exit_actions", {}))
         if not module["ros_enabled"]:
             continue
-        if module["call_boundary"] == "module-exports":
-            argv += ["--" + backend + "-single-call-boundary", label, "module-exports"]
+        argv += ["--" + backend + "-single-call-boundary", label, module["call_boundary"]]
         if not module["grants"]:
             continue
         connection = {

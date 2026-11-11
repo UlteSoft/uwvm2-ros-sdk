@@ -82,16 +82,16 @@ native identity。完整消息、服务和动作 adapter 必须进入运行时�
 | `algorithm` | 仅基础 WASI 接口；无标准流操作授权 | 禁用。 |
 | `ros_comm` | 无 | 仅手工列出的 ROS 操作，并显式允许导出委托。 |
 
-ROS 默认拒绝具有跨模块调用祖先的导入。经过审查的通信库可以显式设置
-`call_boundary: "module-exports"`，对应
-`--ros2-single-call-boundary ros_comm module-exports`，ROS1 使用相应前缀。
-省略该字段时仍为 `same-module`。此设置只允许绑定明确名称的 Single 模块，
-不会把 ROS 权限转移给调用者。`algorithm` 中直接调用 ROS 导入仍应被拒绝；
-句柄仍属于原模块及其运行代际，撤销和永久退休检查继续生效。
+ROS 根据实际执行模块的策略授权，与 WASIp1 一致。已定义的 Wasm 库函数使用
+库自身的权限；直接重新导出的宿主函数不会携带导出者权限。启用 ROS 的 Single
+目标默认采用 `call_boundary: "module-exports"`。需要拒绝跨模块祖先的目标可以
+显式设置 `"same-module"`；SDK 会把两种选择都明确写入命令行。
 
-导出委托允许其他模块调用这个通信库公开的操作。因此通信库必须验证参数，只
-公开预期操作。它不是调用者白名单。如果某模块不应代表其他模块执行 ROS 操作，
-应保留 `same-module`。
+Single 的句柄与环境相互独立。同一个 Group 或显式绑定的 Global 中，模块共享
+ROS 会话、句柄、事件与 RMW 状态，以及调用和审计额度；不同组不能互用句柄。
+替换单个成员只退休该成员的调用身份，不关闭其他组员的资源，也不重置已消耗
+额度。关闭句柄会使该组所有成员看到它失效。Wasm 不能自行指定宿主身份、
+会话凭据或其他进程。
 
 `runtime_features` 使用运行时注册的 Core 功能名称，在加载 Preload 前启用。
 `wasm64-wasip1` 启用 memory64 和 table64，与 LLVM 23 目标依赖一致。这是 Uwvm 的

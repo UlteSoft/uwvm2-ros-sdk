@@ -34,7 +34,10 @@ def imports(path):
     data = memoryview(Path(path).read_bytes())
     if bytes(data[:8]) != b"\0asm\1\0\0\0":
         raise ValueError("SDK test requires a compiled core Wasm artifact")
-    def number(data, pos, maximum=10):
+    def number(data, pos, maximum=10, *, signed=False):
+        # Five/ten bytes alone do not constrain u32/u64: the final payload
+        # must fit too. Heap types use s33, including legal padded negatives.
+        bits = 33 if signed else (64 if maximum == 10 else 32)
         value = 0
         for shift in range(maximum):
             if pos >= len(data):
@@ -42,6 +45,11 @@ def imports(path):
             b = data[pos]; pos += 1
             value |= (b & 127) << (shift * 7)
             if b < 128:
+                if signed and b & 64:
+                    value -= 1 << ((shift + 1) * 7)
+                low, high = (-(1 << (bits - 1)), 1 << (bits - 1)) if signed else (0, 1 << bits)
+                if not low <= value < high:
+                    raise ValueError("Wasm integer exceeds its declared bit width")
                 return value, pos
         raise ValueError("Malformed Wasm integer")
     def name(data, pos):
@@ -54,13 +62,14 @@ def imports(path):
             raise ValueError("Truncated Wasm value type")
         code = data[pos]; pos += 1
         if code in (0x63, 0x64):
-            _, pos = number(data, pos, 5)
+            _, pos = number(data, pos, 5, signed=True)
         return pos
     def limits(data, pos):
         flags, pos = number(data, pos, 5)
-        _, pos = number(data, pos)
+        width = 10 if flags & 4 else 5
+        _, pos = number(data, pos, width)
         if flags & 1:
-            _, pos = number(data, pos)
+            _, pos = number(data, pos, width)
         if flags & 8:
             _, pos = number(data, pos, 5)
         return pos

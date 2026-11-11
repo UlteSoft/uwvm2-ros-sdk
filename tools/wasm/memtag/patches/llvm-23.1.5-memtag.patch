@@ -1,0 +1,3783 @@
+diff --git a/clang/include/clang/Basic/BuiltinsWebAssembly.def b/clang/include/clang/Basic/BuiltinsWebAssembly.def
+index 6de620cb22..7adcd43b90 100644
+--- a/clang/include/clang/Basic/BuiltinsWebAssembly.def
++++ b/clang/include/clang/Basic/BuiltinsWebAssembly.def
+@@ -25,6 +25,29 @@
+ BUILTIN(__builtin_wasm_memory_size, "zIi", "n")
+ BUILTIN(__builtin_wasm_memory_grow, "zIiz", "n")
+ 
++// Memory Tagging
++BUILTIN(__builtin_wasm_memtag_status, "zIi", "n")
++BUILTIN(__builtin_wasm_memtag_tagbits, "zIi", "n")
++BUILTIN(__builtin_wasm_memtag_startbit, "zIi", "n")
++BUILTIN(__builtin_wasm_memtag_extract, "zIiv*", "n")
++BUILTIN(__builtin_wasm_memtag_insert, "v*Iiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_copy, "v*Iiv*v*", "n")
++BUILTIN(__builtin_wasm_memtag_sub, "YIiv*v*", "n")
++BUILTIN(__builtin_wasm_memtag_load, "v*Iiv*", "n")
++BUILTIN(__builtin_wasm_memtag_store, "vIiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_storez, "vIiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_untag, "v*Iiv*", "n")
++BUILTIN(__builtin_wasm_memtag_untagstore, "v*Iiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_untagstorez, "v*Iiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_random, "v*Iiv*", "n")
++BUILTIN(__builtin_wasm_memtag_randomstore, "v*Iiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_randomstorez, "v*Iiv*z", "n")
++BUILTIN(__builtin_wasm_memtag_add, "v*Iiv*zz", "n")
++BUILTIN(__builtin_wasm_memtag_hint, "v*Iiv*v*z", "n")
++BUILTIN(__builtin_wasm_memtag_hintstore, "v*Iiv*zv*z", "n")
++BUILTIN(__builtin_wasm_memtag_hintstorez, "v*Iiv*zv*z", "n")
++
++
+ // Thread-local storage
+ TARGET_BUILTIN(__builtin_wasm_tls_size, "z", "nc", "bulk-memory")
+ TARGET_BUILTIN(__builtin_wasm_tls_align, "z", "nc", "bulk-memory")
+diff --git a/clang/lib/CodeGen/TargetBuiltins/WebAssembly.cpp b/clang/lib/CodeGen/TargetBuiltins/WebAssembly.cpp
+index e7bdb91d49..7f59be21e3 100644
+--- a/clang/lib/CodeGen/TargetBuiltins/WebAssembly.cpp
++++ b/clang/lib/CodeGen/TargetBuiltins/WebAssembly.cpp
+@@ -670,6 +670,159 @@ Value *CodeGenFunction::EmitWebAssemblyBuiltinExpr(unsigned BuiltinID,
+ 
+     return Builder.CreateCall(Callee, {TableX, TableY, SrcIdx, DstIdx, NElems});
+   }
++  case WebAssembly::BI__builtin_wasm_memtag_status: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_status,
++                                        {ConvertType(E->getType())});
++    return Builder.CreateCall(Callee, {Index});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_tagbits: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_tagbits,
++                                        {ConvertType(E->getType())});
++    return Builder.CreateCall(Callee, {Index});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_startbit: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_startbit,
++                                        {ConvertType(E->getType())});
++    return Builder.CreateCall(Callee, {Index});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_extract: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_extract,
++                                        {ConvertType(E->getType())});
++    return Builder.CreateCall(Callee, {Index, Ptr});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_insert: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *Newtag = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_insert, {Newtag->getType()});
++    return Builder.CreateCall(Callee, {Index, Ptr, Newtag});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_copy: {
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_copy);
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr0 = EmitScalarExpr(E->getArg(1));
++    Value *Ptr1 = EmitScalarExpr(E->getArg(2));
++    return Builder.CreateCall(Callee, {Index, Ptr0, Ptr1});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_sub: {
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_sub, ConvertType(E->getType()));
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr0 = EmitScalarExpr(E->getArg(1));
++    Value *Ptr1 = EmitScalarExpr(E->getArg(2));
++    return Builder.CreateCall(Callee, {Index, Ptr0, Ptr1});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_load: {
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_load);
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    return Builder.CreateCall(Callee, {Index, Ptr});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_store: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_store, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_storez: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_storez, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_untag: {
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_untag);
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    return Builder.CreateCall(Callee, {Index, Ptr});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_untagstore: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_untagstore, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_untagstorez: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_untagstorez, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_random: {
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_random);
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    return Builder.CreateCall(Callee, {Index, Ptr});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_randomstore: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_randomstore, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_randomstorez: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_randomstorez, B16->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, B16});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_add: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *PtrOffset = EmitScalarExpr(E->getArg(2));
++    Value *TagOffset = EmitScalarExpr(E->getArg(3));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_add,
++                         {PtrOffset->getType(), TagOffset->getType()});
++    return Builder.CreateCall(Callee, {Index, Ptr, PtrOffset, TagOffset});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_hint: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *HintPtr = EmitScalarExpr(E->getArg(2));
++    Value *HintIdx = EmitScalarExpr(E->getArg(3));
++    Function *Callee =
++        CGM.getIntrinsic(Intrinsic::wasm_memtag_hint, HintIdx->getType());
++    return Builder.CreateCall(Callee, {Index, Ptr, HintPtr, HintIdx});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_hintstore: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Value *HintPtr = EmitScalarExpr(E->getArg(3));
++    Value *HintIdx = EmitScalarExpr(E->getArg(4));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_hintstore,
++                                        {B16->getType(), HintIdx->getType()});
++    return Builder.CreateCall(Callee, {Index, Ptr, B16, HintPtr, HintIdx});
++  }
++  case WebAssembly::BI__builtin_wasm_memtag_hintstorez: {
++    Value *Index = EmitScalarExpr(E->getArg(0));
++    Value *Ptr = EmitScalarExpr(E->getArg(1));
++    Value *B16 = EmitScalarExpr(E->getArg(2));
++    Value *HintPtr = EmitScalarExpr(E->getArg(3));
++    Value *HintIdx = EmitScalarExpr(E->getArg(4));
++    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_memtag_hintstorez,
++                                        {B16->getType(), HintIdx->getType()});
++    return Builder.CreateCall(Callee, {Index, Ptr, B16, HintPtr, HintIdx});
++  }
+   default:
+     return nullptr;
+   }
+diff --git a/clang/lib/Driver/SanitizerArgs.cpp b/clang/lib/Driver/SanitizerArgs.cpp
+index 47844fc9f8..e6e20ada44 100644
+--- a/clang/lib/Driver/SanitizerArgs.cpp
++++ b/clang/lib/Driver/SanitizerArgs.cpp
+@@ -1748,7 +1748,7 @@ void SanitizerArgs::addArgs(const ToolChain &TC, const llvm::opt::ArgList &Args,
+         << "-fvisibility=";
+   }
+ 
+-  if (Sanitizers.has(SanitizerKind::MemtagStack) &&
++  if (Sanitizers.has(SanitizerKind::MemtagStack) && !TC.getTriple().isWasm() &&
+       !hasTargetFeatureMTE(CmdArgs))
+     TC.getDriver().Diag(diag::err_stack_tagging_requires_hardware_feature);
+ }
+diff --git a/clang/lib/Driver/ToolChain.cpp b/clang/lib/Driver/ToolChain.cpp
+index f894a0635d..499e4897ed 100644
+--- a/clang/lib/Driver/ToolChain.cpp
++++ b/clang/lib/Driver/ToolChain.cpp
+@@ -1878,7 +1878,7 @@ ToolChain::getSupportedSanitizers(BoundArch BA,
+   if (getTriple().getArch() == llvm::Triple::x86_64 ||
+       getTriple().isAArch64(64) || getTriple().isRISCV())
+     Res |= SanitizerKind::ShadowCallStack;
+-  if (getTriple().isAArch64(64))
++  if (getTriple().isAArch64(64) || getTriple().isWasm())
+     Res |= SanitizerKind::MemTag;
+   if (getTriple().isBPF())
+     Res |= SanitizerKind::KernelAddress;
+diff --git a/clang/lib/Driver/ToolChains/CommonArgs.cpp b/clang/lib/Driver/ToolChains/CommonArgs.cpp
+index 08c06951cf..2f7280ec65 100644
+--- a/clang/lib/Driver/ToolChains/CommonArgs.cpp
++++ b/clang/lib/Driver/ToolChains/CommonArgs.cpp
+@@ -1830,22 +1830,24 @@ bool tools::addSanitizerRuntimes(const ToolChain &TC, const ArgList &Args,
+     CmdArgs.push_back("--export-dynamic-symbol=__cfi_check");
+ 
+   if (SanArgs.hasMemTag()) {
+-    CmdArgs.push_back("-z");
+-    CmdArgs.push_back(
+-        Args.MakeArgString("memtag-mode=" + SanArgs.getMemtagMode()));
+-
+-    if (SanArgs.hasMemtagHeap()) {
++    if (!TC.getTriple().isWasm()) {
+       CmdArgs.push_back("-z");
+-      CmdArgs.push_back("memtag-heap");
+-    }
++      CmdArgs.push_back(
++          Args.MakeArgString("memtag-mode=" + SanArgs.getMemtagMode()));
+ 
+-    if (SanArgs.hasMemtagStack()) {
+-      CmdArgs.push_back("-z");
+-      CmdArgs.push_back("memtag-stack");
+-    }
++      if (SanArgs.hasMemtagHeap()) {
++        CmdArgs.push_back("-z");
++        CmdArgs.push_back("memtag-heap");
++      }
+ 
+-    if (TC.getTriple().isAndroid())
+-      CmdArgs.push_back("--android-memtag-note");
++      if (SanArgs.hasMemtagStack()) {
++        CmdArgs.push_back("-z");
++        CmdArgs.push_back("memtag-stack");
++      }
++
++      if (TC.getTriple().isAndroid())
++        CmdArgs.push_back("--android-memtag-note");
++    }
+   }
+ 
+   return !StaticRuntimes.empty() || !NonWholeStaticRuntimes.empty() ||
+diff --git a/clang/test/CodeGen/WebAssembly/builtins-memtag.c b/clang/test/CodeGen/WebAssembly/builtins-memtag.c
+new file mode 100644
+index 0000000000..80193d02c0
+--- /dev/null
++++ b/clang/test/CodeGen/WebAssembly/builtins-memtag.c
+@@ -0,0 +1,160 @@
++// RUN: %clang_cc1 -triple wasm32-unknown-unknown -emit-llvm %s -o - | FileCheck %s --check-prefixes=CHECK,W32
++// RUN: %clang_cc1 -triple wasm64-unknown-unknown -emit-llvm %s -o - | FileCheck %s --check-prefixes=CHECK,W64
++
++typedef __SIZE_TYPE__ size_t;
++
++// --- 0xfc20: memtag.status ---
++// CHECK-LABEL: define {{.*}} @test_status()
++// W32: call i32 @llvm.wasm.memtag.status.i32(i32 0)
++// W64: call i64 @llvm.wasm.memtag.status.i64(i32 0)
++size_t test_status() {
++  return __builtin_wasm_memtag_status(0);
++}
++
++// --- 0xfc21: memtag.extract ---
++// CHECK-LABEL: define {{.*}} @test_extract(ptr {{.*}})
++// W32: call i32 @llvm.wasm.memtag.extract.i32(i32 0, ptr {{.*}})
++// W64: call i64 @llvm.wasm.memtag.extract.i64(i32 0, ptr {{.*}})
++size_t test_extract(void *p) {
++  return __builtin_wasm_memtag_extract(0, p);
++}
++
++// --- 0xfc22: memtag.insert ---
++// CHECK-LABEL: define {{.*}} @test_insert(ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.insert.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.insert.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void *test_insert(void *p, size_t v) {
++  return __builtin_wasm_memtag_insert(0, p, v);
++}
++
++// --- 0xfc23: memtag.tagbits ---
++// CHECK-LABEL: define {{.*}} @memtag_tagbits()
++// W32: call i32 @llvm.wasm.memtag.tagbits.i32(i32 0)
++// W64: call i64 @llvm.wasm.memtag.tagbits.i64(i32 0)
++size_t memtag_tagbits() {
++  return __builtin_wasm_memtag_tagbits(0);
++}
++
++// --- 0xfc24: memtag.startbit ---
++// CHECK-LABEL: define {{.*}} @memtag_startbit()
++// W32: call i32 @llvm.wasm.memtag.startbit.i32(i32 0)
++// W64: call i64 @llvm.wasm.memtag.startbit.i64(i32 0)
++size_t memtag_startbit() {
++  return __builtin_wasm_memtag_startbit(0);
++}
++
++// --- 0xfc25: memtag.copy ---
++// CHECK-LABEL: define {{.*}} @memtag_copy(ptr {{.*}}, ptr {{.*}})
++// CHECK: call ptr @llvm.wasm.memtag.copy(i32 0, ptr {{.*}}, ptr {{.*}})
++void *memtag_copy(void *d, void *s) {
++  return __builtin_wasm_memtag_copy(0, d, s);
++}
++
++// --- 0xfc26: memtag.sub ---
++// CHECK-LABEL: define {{.*}} @memtag_sub(ptr {{.*}}, ptr {{.*}})
++// W32: call i32 @llvm.wasm.memtag.sub.i32(i32 0, ptr {{.*}}, ptr {{.*}})
++// W64: call i64 @llvm.wasm.memtag.sub.i64(i32 0, ptr {{.*}}, ptr {{.*}})
++size_t memtag_sub(void *a, void *b) {
++  return __builtin_wasm_memtag_sub(0, a, b);
++}
++
++// --- 0xfc27: memtag.load ---
++// CHECK-LABEL: define {{.*}} @memtag_load(ptr {{.*}})
++// CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr {{.*}})
++void *memtag_load(void *p) {
++  return __builtin_wasm_memtag_load(0, p);
++}
++
++// --- 0xfc28: memtag.untag ---
++// CHECK-LABEL: define {{.*}} @memtag_untag(ptr {{.*}})
++// CHECK: call ptr @llvm.wasm.memtag.untag(i32 0, ptr {{.*}})
++void *memtag_untag(void *p) {
++  return __builtin_wasm_memtag_untag(0, p);
++}
++
++// --- 0xfc29: memtag.untagstore ---
++// CHECK-LABEL: define {{.*}} @memtag_untagstore(ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.untagstore.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.untagstore.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void *memtag_untagstore(void *p, size_t v) {
++  return __builtin_wasm_memtag_untagstore(0, p, v);
++}
++
++// --- 0xfc2a: memtag.untagstorez ---
++// CHECK-LABEL: define {{.*}} @memtag_untagstorez(ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.untagstorez.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.untagstorez.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void *memtag_untagstorez(void *p, size_t v) {
++  return __builtin_wasm_memtag_untagstorez(0, p, v);
++}
++
++// --- 0xfc2b: memtag.store ---
++// CHECK-LABEL: define {{.*}} @memtag_store(ptr {{.*}}, {{.*}})
++// W32: call void @llvm.wasm.memtag.store.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call void @llvm.wasm.memtag.store.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void memtag_store(void *p, size_t v) {
++  __builtin_wasm_memtag_store(0, p, v);
++}
++
++// --- 0xfc2c: memtag.storez ---
++// CHECK-LABEL: define {{.*}} @memtag_storez(ptr {{.*}}, {{.*}})
++// W32: call void @llvm.wasm.memtag.storez.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call void @llvm.wasm.memtag.storez.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void memtag_storez(void *p, size_t v) {
++  __builtin_wasm_memtag_storez(0, p, v);
++}
++
++// --- 0xfc2d: memtag.random ---
++// CHECK-LABEL: define {{.*}} @memtag_random(ptr {{.*}})
++// CHECK: call ptr @llvm.wasm.memtag.random(i32 0, ptr {{.*}})
++void *memtag_random(void *p) {
++  return __builtin_wasm_memtag_random(0, p);
++}
++
++// --- 0xfc2e: memtag.randomstore ---
++// CHECK-LABEL: define {{.*}} @memtag_randomstore(ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.randomstore.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.randomstore.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void *memtag_randomstore(void *p, size_t v) {
++  return __builtin_wasm_memtag_randomstore(0, p, v);
++}
++
++// --- 0xfc2f: memtag.randomstorez ---
++// CHECK-LABEL: define {{.*}} @memtag_randomstorez(ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.randomstorez.i32(i32 0, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.randomstorez.i64(i32 0, ptr {{.*}}, i64 {{.*}})
++void *memtag_randomstorez(void *p, size_t v) {
++  return __builtin_wasm_memtag_randomstorez(0, p, v);
++}
++
++// --- 0xfc33: memtag.add ---
++// CHECK-LABEL: define {{.*}} @memtag_add(ptr {{.*}}, {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.add.i32.i32(i32 0, ptr {{.*}}, i32 {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.add.i64.i64(i32 0, ptr {{.*}}, i64 {{.*}}, i64 {{.*}})
++void *memtag_add(void *p, size_t o, size_t t) {
++  return __builtin_wasm_memtag_add(0, p, o, t);
++}
++
++// --- 0xfc36: memtag.hint ---
++// CHECK-LABEL: define {{.*}} @memtag_hint(ptr {{.*}}, ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.hint.i32(i32 0, ptr {{.*}}, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.hint.i64(i32 0, ptr {{.*}}, ptr {{.*}}, i64 {{.*}})
++void *memtag_hint(void *p, void *h, size_t i) {
++  return __builtin_wasm_memtag_hint(0, p, h, i);
++}
++
++// --- 0xfc37: memtag.hintstore ---
++// CHECK-LABEL: define {{.*}} @memtag_hintstore(ptr {{.*}}, {{.*}}, ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.hintstore.i32.i32(i32 0, ptr {{.*}}, i32 {{.*}}, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.hintstore.i64.i64(i32 0, ptr {{.*}}, i64 {{.*}}, ptr {{.*}}, i64 {{.*}})
++void *memtag_hintstore(void *p, size_t v, void *h, size_t i) {
++  return __builtin_wasm_memtag_hintstore(0, p, v, h, i);
++}
++
++// --- 0xfc38: memtag.hintstorez ---
++// CHECK-LABEL: define {{.*}} @memtag_hintstorez(ptr {{.*}}, {{.*}}, ptr {{.*}}, {{.*}})
++// W32: call ptr @llvm.wasm.memtag.hintstorez.i32.i32(i32 0, ptr {{.*}}, i32 {{.*}}, ptr {{.*}}, i32 {{.*}})
++// W64: call ptr @llvm.wasm.memtag.hintstorez.i64.i64(i32 0, ptr {{.*}}, i64 {{.*}}, ptr {{.*}}, i64 {{.*}})
++void *memtag_hintstorez(void *p, size_t v, void *h, size_t i) {
++  return __builtin_wasm_memtag_hintstorez(0, p, v, h, i);
++}
+diff --git a/compiler-rt/lib/builtins/fp_compare_impl.inc b/compiler-rt/lib/builtins/fp_compare_impl.inc
+index 129d0136a0..a8cdbc6694 100644
+--- a/compiler-rt/lib/builtins/fp_compare_impl.inc
++++ b/compiler-rt/lib/builtins/fp_compare_impl.inc
+@@ -12,7 +12,7 @@
+ // functions. We need to ensure that the return value is sign-extended in the
+ // same way as GCC expects (since otherwise GCC-generated __builtin_isinf
+ // returns true for finite 128-bit floating-point numbers).
+-#if defined(__aarch64__) || defined(__arm64ec__)
++#if defined(__aarch64__) || defined(__arm64ec__) || defined(__wasm__)
+ // AArch64 GCC overrides libgcc_cmp_return to use int instead of long.
+ typedef int CMP_RESULT;
+ #elif defined(__wasm__)
+diff --git a/libcxx/include/CMakeLists.txt b/libcxx/include/CMakeLists.txt
+index b40f586161..712ddcfea3 100644
+--- a/libcxx/include/CMakeLists.txt
++++ b/libcxx/include/CMakeLists.txt
+@@ -1731,7 +1731,11 @@ target_include_directories(cxx-headers INTERFACE ${LIBCXX_GENERATED_INCLUDE_TARG
+ # Make sure to map the generated include directory back to libc++'s actual source directory when generating
+ # debug information. Otherwise, the debug information will refer to generated headers which are created during
+ # the build and generally not persistent.
+-target_add_compile_flags_if_supported(cxx-headers INTERFACE "-fdebug-prefix-map=${LIBCXX_GENERATED_INCLUDE_DIR}=${LIBCXX_SOURCE_DIR}/include")
++# Generated headers may be installed from a reproducible source tree. Keep the
++# debug destination explicit: prefix maps are not recursively reapplied.
++set(LIBCXX_DEBUG_SOURCE_DIR "${LIBCXX_SOURCE_DIR}" CACHE STRING
++    "Logical libc++ source root used in generated-header debug locations")
++target_add_compile_flags_if_supported(cxx-headers INTERFACE "-fdebug-prefix-map=${LIBCXX_GENERATED_INCLUDE_DIR}=${LIBCXX_DEBUG_SOURCE_DIR}/include")
+ 
+ if (LIBCXX_INSTALL_HEADERS)
+   foreach(file ${files})
+diff --git a/libcxx/include/__locale_dir/locale_base_api.h b/libcxx/include/__locale_dir/locale_base_api.h
+index f973d95ef2..664d9d3265 100644
+--- a/libcxx/include/__locale_dir/locale_base_api.h
++++ b/libcxx/include/__locale_dir/locale_base_api.h
+@@ -122,7 +122,9 @@
+ #    include <__locale_dir/support/fuchsia.h>
+ #  elif _LIBCPP_LIBC_LLVM_LIBC
+ #    include <__locale_dir/support/llvm_libc.h>
+-#  elif defined(__linux__)
++// wasi-libc provides the same POSIX locale API used by the musl path.
++// Do not select the legacy IBM fallback, which redeclares libc functions.
++#  elif defined(__linux__) || defined(__wasi__)
+ #    include <__locale_dir/support/linux.h>
+ #  elif _LIBCPP_LIBC_NEWLIB
+ #    include <__locale_dir/support/newlib.h>
+diff --git a/libcxxabi/src/cxa_thread_atexit.cpp b/libcxxabi/src/cxa_thread_atexit.cpp
+index 402a52c741..ea89488d16 100644
+--- a/libcxxabi/src/cxa_thread_atexit.cpp
++++ b/libcxxabi/src/cxa_thread_atexit.cpp
+@@ -106,7 +106,7 @@ namespace {
+ 
+ #endif // HAVE___CXA_THREAD_ATEXIT_IMPL
+ 
+-#if defined(__linux__) || defined(__Fuchsia__)
++#if defined(__linux__) || defined(__Fuchsia__) || defined(__wasi__)
+ extern "C" {
+ 
+   _LIBCXXABI_FUNC_VIS int __cxa_thread_atexit(Dtor dtor, void* obj, void* dso_symbol) throw() {
+@@ -142,5 +142,5 @@ extern "C" {
+ #endif // HAVE___CXA_THREAD_ATEXIT_IMPL
+   }
+ } // extern "C"
+-#endif // defined(__linux__) || defined(__Fuchsia__)
++#endif // defined(__linux__) || defined(__Fuchsia__) || defined(__wasi__)
+ } // namespace __cxxabiv1
+diff --git a/lld/test/wasm/memtag-globals.s b/lld/test/wasm/memtag-globals.s
+new file mode 100644
+index 0000000000..177c4c450a
+--- /dev/null
++++ b/lld/test/wasm/memtag-globals.s
+@@ -0,0 +1,60 @@
++# RUN: llvm-mc -filetype=obj -triple=wasm32-unknown-unknown %s -o %t.o
++# RUN: wasm-ld --no-entry --no-gc-sections -o %t.wasm %t.o
++# RUN: llvm-objdump -s %t.wasm | FileCheck %s
++# RUN: wasm-ld --no-entry --no-gc-sections --relocatable -o %t.rel.o %t.o
++# RUN: llvm-objdump -s %t.rel.o | FileCheck %s --check-prefix=RELOC
++# RUN: llvm-mc -filetype=obj -triple=wasm64-unknown-unknown %s -o %t64.o
++# RUN: wasm-ld -mwasm64 --no-entry --no-gc-sections -o %t64.wasm %t64.o
++# RUN: llvm-objdump -s %t64.wasm | FileCheck %s
++# RUN: wasm-ld -mwasm64 --no-entry --no-gc-sections --relocatable -o %t64.rel.o %t64.o
++# RUN: llvm-objdump -s %t64.rel.o | FileCheck %s --check-prefix=RELOC
++
++# The linker synthesizes a "uwvm.memtag.linear.globals" custom section describing the
++# address and size of every live data symbol carrying the memtag flag.
++# The payload is: ULEB version (2), ULEB count, then (ULEB memory index,
++# ULEB address, ULEB size) triples sorted by address. The memory index is zero. Untagged symbols are not listed.
++# The encoding is identical for wasm64 since addresses are ULEB-encoded.
++
++        .memtag tagged16b
++        .globl  tagged16b
++        .section .data.tagged16b,"",@
++        .p2align 4
++tagged16b:
++        .int32  42
++        .size tagged16b, 16
++
++        .memtag local16b
++        .section .data.local16b,"",@
++        .p2align 4
++local16b:
++        .int32  1
++        .int32  2
++        .int32  3
++        .int32  4
++        .size local16b, 16
++
++        .memtag tagged32b
++        .globl  tagged32b
++        .section .data.tagged32b,"",@
++        .p2align 4
++tagged32b:
++        .int64  1
++        .int64  2
++        .int64  3
++        .int64  4
++        .size tagged32b, 32
++
++        .globl  plain
++        .section .data.plain,"",@
++        .p2align 2
++plain:
++        .int32  7
++        .size plain, 4
++
++# CHECK:      Contents of section uwvm.memtag.linear.globals:
++# CHECK-NEXT: {{^ [0-9a-f]+ }}02030080 80041000 90800410 00a08004
++# CHECK-NEXT: {{^ [0-9a-f]+ }}20
++
++# Relocatable output has no final addresses, and PIC output has none either,
++# so the descriptor section is omitted.
++# RELOC-NOT: Contents of section uwvm.memtag.linear.globals:
+diff --git a/lld/test/wasm/memtag-tls.s b/lld/test/wasm/memtag-tls.s
+new file mode 100644
+index 0000000000..8c2f57ae18
+--- /dev/null
++++ b/lld/test/wasm/memtag-tls.s
+@@ -0,0 +1,49 @@
++# RUN: llvm-mc -filetype=obj -triple=wasm32-unknown-unknown %s -o %t.o
++# RUN: wasm-ld --shared-memory --max-memory=131072 --no-entry --no-gc-sections %t.o -o %t.wasm
++# RUN: llvm-objdump -d --no-show-raw-insn --no-leading-addr %t.wasm | FileCheck %s
++
++# Per-thread initialization must tag the resolved TLS base plus each symbol's
++# offset. randomstore (not randomstorez) preserves copied initializer bytes.
++.globaltype __tls_base, i32
++.memtag first
++.section .tdata.first,"T",@
++.globl first
++.p2align 4
++first:
++.int32 37
++.skip 12
++.size first, 16
++
++.memtag second
++.section .tbss.second,"T",@
++.globl second
++.p2align 4
++second:
++.skip 32
++.size second, 32
++
++.section .custom_section.target_features,"",@
++.int8 2
++.int8 43
++.int8 7
++.ascii "atomics"
++.int8 43
++.int8 11
++.ascii "bulk-memory"
++
++# CHECK-LABEL: <__wasm_init_tls>:
++# CHECK: memory.init
++# CHECK: local.get 0
++# CHECK-NEXT: i32.const 0
++# CHECK-NEXT: i32.add
++# CHECK-NEXT: i32.const 16
++# CHECK-NEXT: memtag.randomstore 0
++# CHECK-NEXT: drop
++# CHECK-NEXT: local.get 0
++# CHECK-NEXT: i32.const 16
++# CHECK-NEXT: i32.add
++# CHECK-NEXT: i32.const 32
++# CHECK-NEXT: memtag.randomstore 0
++# CHECK-NEXT: drop
++# CHECK-NOT: memtag.randomstorez
++# CHECK: end
+diff --git a/lld/wasm/OutputSections.cpp b/lld/wasm/OutputSections.cpp
+index d9017fefff..ce1bbc32d9 100644
+--- a/lld/wasm/OutputSections.cpp
++++ b/lld/wasm/OutputSections.cpp
+@@ -11,9 +11,13 @@
+ #include "InputElement.h"
+ #include "InputFiles.h"
+ #include "OutputSegment.h"
++#include "SymbolTable.h"
++#include "Symbols.h"
+ #include "WriterUtils.h"
+ #include "lld/Common/ErrorHandler.h"
+ #include "lld/Common/Memory.h"
++#include "llvm/ADT/STLExtras.h"
++#include "llvm/ADT/SmallVector.h"
+ #include "llvm/ADT/Twine.h"
+ #include "llvm/Support/LEB128.h"
+ 
+@@ -293,5 +297,71 @@ void CustomSection::writeRelocations(raw_ostream &os) const {
+     s->writeRelocations(os);
+ }
+ 
++std::vector<std::pair<uint64_t, uint64_t>> collectMemtagGlobals() {
++  // A relocatable or PIC output does not have final addresses for the
++  // descriptors; a later link (or the dynamic loader) has to assign them.
++  if (ctx.arg.relocatable || ctx.isPic)
++    return {};
++
++  std::vector<std::pair<uint64_t, uint64_t>> globals;
++  // Local (static) tagged globals never make it into the symbol table, so
++  // walk each input file's symbol list as well.
++  for (InputFile *file : ctx.objectFiles) {
++    for (Symbol *sym : file->getSymbols()) {
++      if (!sym->isMemtag() || !isa<DefinedData>(sym) || sym->isDiscarded() ||
++          !sym->isLive())
++        continue;
++      auto *data = cast<DefinedData>(sym);
++      if (!data->segment)
++        continue;
++      // TLS offsets are relative in symbol relocations, but this descriptor
++      // belongs to the initial absolute TLS template in linear memory.
++      globals.push_back({data->getVA(/*absolute=*/true), data->getSize()});
++    }
++  }
++  llvm::sort(globals);
++  globals.erase(llvm::unique(globals), globals.end());
++  return globals;
++}
++
++MemtagGlobalsSection::MemtagGlobalsSection()
++    : OutputSection(llvm::wasm::WASM_SEC_CUSTOM,
++                    "uwvm.memtag.linear.globals") {
++  auto globals = collectMemtagGlobals();
++  if (globals.empty())
++    return;
++  raw_string_ostream os(payload);
++  encodeULEB128(2, os); // version: explicit linear-memory index
++  encodeULEB128(globals.size(), os);
++  for (auto [addr, size] : globals) {
++    // This pinned linker places its data symbols in memory zero. Keep the
++    // index explicit; a future multi-memory producer must select each owner.
++    encodeULEB128(0, os);
++    encodeULEB128(addr, os);
++    encodeULEB128(size, os);
++  }
++
++  raw_string_ostream nameOs(nameData);
++  encodeULEB128(name.size(), nameOs);
++  nameOs << name;
++
++  if (payload.size() + nameData.size() > UINT32_MAX)
++    error("section '" + name + "' too large to encode");
++}
++
++void MemtagGlobalsSection::finalizeContents() {
++  if (payload.empty())
++    return;
++  createHeader(payload.size() + nameData.size());
++}
++
++void MemtagGlobalsSection::writeTo(uint8_t *buf) {
++  buf += offset;
++  memcpy(buf, header.data(), header.size());
++  buf += header.size();
++  memcpy(buf, nameData.data(), nameData.size());
++  buf += nameData.size();
++  memcpy(buf, payload.data(), payload.size());
++}
+ } // namespace wasm
+ } // namespace lld
+diff --git a/lld/wasm/OutputSections.h b/lld/wasm/OutputSections.h
+index 4b0329dd16..7b2c41587b 100644
+--- a/lld/wasm/OutputSections.h
++++ b/lld/wasm/OutputSections.h
+@@ -132,6 +132,27 @@ protected:
+   std::string nameData;
+ };
+ 
++// A linker-synthesized custom section that describes the final address and size
++// of every memory-tagged global. Runtimes use it to assign tags to globals at
++// instantiation time, mirroring the descriptors that AArch64 ELF linkers emit
++// in DT_AARCH64_MEMTAG_GLOBALS.
++std::vector<std::pair<uint64_t, uint64_t>> collectMemtagGlobals();
++
++class MemtagGlobalsSection : public OutputSection {
++public:
++  MemtagGlobalsSection();
++
++  size_t getSize() const override {
++    return header.size() + nameData.size() + payload.size();
++  }
++  bool isNeeded() const override { return !payload.empty(); }
++  void writeTo(uint8_t *buf) override;
++  void finalizeContents() override;
++
++private:
++  std::string nameData;
++  std::string payload;
++};
+ } // namespace wasm
+ } // namespace lld
+ 
+diff --git a/lld/wasm/Symbols.cpp b/lld/wasm/Symbols.cpp
+index 9ce2a9f9f5..beaf3a7f58 100644
+--- a/lld/wasm/Symbols.cpp
++++ b/lld/wasm/Symbols.cpp
+@@ -191,6 +191,8 @@ bool Symbol::isHidden() const {
+ 
+ bool Symbol::isTLS() const { return flags & WASM_SYMBOL_TLS; }
+ 
++bool Symbol::isMemtag() const { return flags & WASM_SYMBOL_MEMTAG; }
++
+ void Symbol::setHidden(bool isHidden) {
+   LLVM_DEBUG(dbgs() << "setHidden: " << name << " -> " << isHidden << "\n");
+   flags &= ~WASM_SYMBOL_VISIBILITY_MASK;
+diff --git a/lld/wasm/Symbols.h b/lld/wasm/Symbols.h
+index 47f1b3ad54..f40ee22488 100644
+--- a/lld/wasm/Symbols.h
++++ b/lld/wasm/Symbols.h
+@@ -86,6 +86,7 @@ public:
+   bool isWeak() const;
+   bool isHidden() const;
+   bool isTLS() const;
++  bool isMemtag() const;
+ 
+   // Returns true if this symbol exists in a discarded (due to COMDAT) section
+   bool isDiscarded() const;
+diff --git a/lld/wasm/Writer.cpp b/lld/wasm/Writer.cpp
+index 1651134cbb..781f13c2db 100644
+--- a/lld/wasm/Writer.cpp
++++ b/lld/wasm/Writer.cpp
+@@ -60,6 +60,8 @@ private:
+ 
+   void createSyntheticInitFunctions();
+   void createInitMemoryFunction();
++  void createMemtagRelocationsFunction();
++  bool writeMemtagRelocations(raw_ostream &os, bool currentTLS);
+   void createStartFunction();
+   void createApplyDataRelocationsFunction();
+   void createApplyGlobalRelocationsFunction();
+@@ -119,6 +121,7 @@ private:
+ 
+   std::unique_ptr<FileOutputBuffer> buffer;
+ 
++  DefinedFunction *memtagRelocs = nullptr;
+   std::vector<OutputSegment *> segments;
+   llvm::SmallDenseMap<StringRef, OutputSegment *> segmentMap;
+ };
+@@ -571,6 +574,7 @@ void Writer::addSections() {
+   addSection(make<DataSection>(segments));
+ 
+   createCustomSections();
++  addSection(make<MemtagGlobalsSection>());
+ 
+   addSection(out.linkingSec);
+   if (ctx.arg.emitRelocs || ctx.arg.relocatable) {
+@@ -1191,6 +1195,98 @@ bool Writer::hasPassiveInitializedSegments() {
+   });
+ }
+ 
++// Pointer constants in data relocations are raw link-time addresses. Materialize
++// their allocation tags after data initialization, including pointers defined in
++// another translation unit. Use the symbol's tag before adding the addend so a
++// one-past pointer retains the originating allocation's identity.
++bool Writer::writeMemtagRelocations(raw_ostream &os, bool currentTLS) {
++  const auto globals = collectMemtagGlobals();
++  if (globals.empty())
++    return false;
++  const bool memory64 = ctx.arg.is64.value_or(false);
++  auto writeTag = [&] {
++    writeU8(os, 0xff, "WasmMTE prefix");
++    writeUleb128(os, 0x01010027, "memtag.load packed opcode");
++    writeUleb128(os, 0, "linear memory index");
++  };
++  bool generated = false;
++  for (const OutputSegment *seg : segments) {
++    if (currentTLS && !seg->isTLS())
++      continue;
++    for (const InputChunk *chunk : seg->inputSegments) {
++      for (const WasmRelocation &rel : chunk->getRelocations()) {
++        if (rel.Type != R_WASM_MEMORY_ADDR_I32 &&
++            rel.Type != R_WASM_MEMORY_ADDR_I64)
++          continue;
++        auto *target = dyn_cast<DefinedData>(chunk->file->getSymbol(rel));
++        if (!target || target->isDiscarded() || !target->isLive() ||
++            !target->segment || target->isTLS())
++          continue;
++        const uint64_t base = target->getVA();
++        const bool tagged = llvm::any_of(globals, [base](auto allocation) {
++          return base >= allocation.first &&
++                 base - allocation.first < allocation.second;
++        });
++        if (!tagged)
++          continue;
++
++        uint64_t destination =
++            chunk->getVA(rel.Offset) - chunk->getInputSectionOffset();
++        if (currentTLS) {
++          destination -= seg->startVA;
++          if (ctx.arg.libcallThreadContext) {
++            writeU8(os, WASM_OPCODE_CALL, "call");
++            writeUleb128(os, ctx.sym.getTLSBase->getFunctionIndex(),
++                         "__wasm_get_tls_base");
++          } else {
++            writeU8(os, WASM_OPCODE_GLOBAL_GET, "global.get");
++            writeUleb128(os, ctx.sym.tlsBase->getGlobalIndex(), "__tls_base");
++          }
++          writePtrConst(os, destination, memory64, "TLS pointer slot offset");
++          writeU8(os, memory64 ? WASM_OPCODE_I64_ADD : WASM_OPCODE_I32_ADD,
++                  "add");
++        } else {
++          writePtrConst(os, destination, memory64, "pointer slot address");
++        }
++        writeTag();
++        writePtrConst(os, base, memory64, "pointer allocation base");
++        writeTag();
++        const bool reloc64 = rel.Type == R_WASM_MEMORY_ADDR_I64;
++        if (reloc64 != memory64)
++          writeU8(os, reloc64 ? 0xad /* i64.extend_i32_u */
++                             : 0xa7 /* i32.wrap_i64 */,
++                  "relocation width conversion");
++        if (rel.Addend) {
++          writePtrConst(os, rel.Addend, reloc64, "pointer addend");
++          writeU8(os, reloc64 ? WASM_OPCODE_I64_ADD : WASM_OPCODE_I32_ADD,
++                  "add");
++        }
++        writeU8(os, reloc64 ? WASM_OPCODE_I64_STORE : WASM_OPCODE_I32_STORE,
++                "store tagged pointer");
++        // Data relocations may be in packed aggregates. Do not claim alignment.
++        writeMemArg(os, 0, 0);
++        generated = true;
++      }
++    }
++  }
++  return generated;
++}
++
++void Writer::createMemtagRelocationsFunction() {
++  std::string body;
++  raw_string_ostream os(body);
++  writeUleb128(os, 0, "num locals");
++  if (!writeMemtagRelocations(os, false))
++    return;
++  writeU8(os, WASM_OPCODE_END, "end");
++  static WasmSignature signature = {{}, {}};
++  memtagRelocs = symtab->addSyntheticFunction(
++      "__wasm_memtag_init_globals", WASM_SYMBOL_VISIBILITY_HIDDEN,
++      make<SyntheticFunction>(signature, "__wasm_memtag_init_globals"));
++  memtagRelocs->markLive();
++  createFunction(memtagRelocs, body);
++}
++
+ void Writer::createSyntheticInitFunctions() {
+   if (ctx.arg.relocatable)
+     return;
+@@ -1198,6 +1294,9 @@ void Writer::createSyntheticInitFunctions() {
+   static WasmSignature nullSignature = {{}, {}};
+ 
+   createApplyDataRelocationsFunction();
++  createMemtagRelocationsFunction();
++  if (memtagRelocs && ctx.arg.libcallThreadContext && ctx.sym.getTLSBase)
++    ctx.sym.getTLSBase->markLive();
+ 
+   // Passive segments are used to avoid memory being reinitialized on each
+   // thread's instantiation. These passive segments are initialized and
+@@ -1255,7 +1354,7 @@ void Writer::createSyntheticInitFunctions() {
+   // If there is only one start function we can just use that function
+   // itself as the Wasm start function, otherwise we need to synthesize
+   // a new function to call them in sequence.
+-  if (ctx.sym.applyGlobalRelocs && ctx.sym.initMemory) {
++  if (ctx.sym.applyGlobalRelocs && (ctx.sym.initMemory || memtagRelocs)) {
+     ctx.sym.startFunction = symtab->addSyntheticFunction(
+         "__wasm_start", WASM_SYMBOL_VISIBILITY_HIDDEN,
+         make<SyntheticFunction>(nullSignature, "__wasm_start"));
+@@ -1398,8 +1497,32 @@ void Writer::createInitMemoryFunction() {
+       writeU8(os, WASM_OPCODE_END, "end $init");
+     }
+ 
++    const auto taggedGlobals = collectMemtagGlobals();
+     for (const OutputSegment *s : segments) {
+       if (needsPassiveInitialization(s)) {
++        // The VM tags globals before the start function. Split bulk writes at
++        // allocation-tag boundaries and obtain the matching pointer tag for
++        // each range. Never disable checking, retag a live global, or assume all
++        // globals in an output segment have the same tag. Untagged programs
++        // retain the original single bulk operation and emit no MTE opcode.
++        SmallVector<uint64_t, 16> boundaries{0, s->size};
++        bool tagged = false;
++        const uint64_t endVA = s->startVA + s->size;
++        for (auto [addr, size] : taggedGlobals) {
++          if (size == 0)
++            continue;
++          const uint64_t tagStart = alignDown(addr, uint64_t(16));
++          const uint64_t tagEnd = alignTo(addr + size, uint64_t(16));
++          if (tagStart >= endVA || tagEnd <= s->startVA)
++            continue;
++          tagged = true;
++          boundaries.push_back(std::max(tagStart, s->startVA) - s->startVA);
++          boundaries.push_back(std::min(tagEnd, endVA) - s->startVA);
++        }
++        if (tagged) {
++          llvm::sort(boundaries);
++          boundaries.erase(llvm::unique(boundaries), boundaries.end());
++        }
+         // For passive BSS segments we can simple issue a memory.fill(0).
+         // For non-BSS segments we do a memory.init.  Both these
+         // instructions take as their first argument the destination
+@@ -1447,23 +1570,49 @@ void Writer::createInitMemoryFunction() {
+           }
+         }
+ 
+-        if (s->isBss) {
+-          writeI32Const(os, 0, "fill value");
+-          writePtrConst(os, s->size, is64, "memory region size");
+-          writeU8(os, WASM_OPCODE_MISC_PREFIX, "bulk-memory prefix");
+-          writeUleb128(os, WASM_OPCODE_MEMORY_FILL, "memory.fill");
+-          writeU8(os, 0, "memory index immediate");
+-        } else {
+-          writeI32Const(os, 0, "source segment offset");
+-          writeI32Const(os, s->size, "memory region size");
+-          writeU8(os, WASM_OPCODE_MISC_PREFIX, "bulk-memory prefix");
+-          writeUleb128(os, WASM_OPCODE_MEMORY_INIT, "memory.init");
+-          writeUleb128(os, s->index, "segment index immediate");
+-          writeU8(os, 0, "memory index immediate");
++        for (size_t i = 1; i < boundaries.size(); ++i) {
++          const uint64_t begin = boundaries[i - 1];
++          const uint64_t size = boundaries[i] - begin;
++          if (i != 1) {
++            writePtrConst(os, s->startVA + begin, is64, "destination address");
++            if (ctx.isPic) {
++              writeU8(os, WASM_OPCODE_GLOBAL_GET, "global.get");
++              writeUleb128(os, ctx.sym.memoryBase->getGlobalIndex(), "__memory_base");
++              writeU8(os, is64 ? WASM_OPCODE_I64_ADD : WASM_OPCODE_I32_ADD, "add");
++            }
++          }
++          if (tagged) {
++            // Packed WasmMTE v1, linear-memory domain 1, memtag.load (0x27).
++            // Its disabled-runtime semantics are the identity operation.
++            writeU8(os, 0xff, "WasmMTE prefix");
++            writeUleb128(os, 0x01010027, "memtag.load packed opcode");
++            writeUleb128(os, 0, "linear memory index");
++          }
++          if (s->isBss) {
++            writeI32Const(os, 0, "fill value");
++            writePtrConst(os, size, is64, "memory region size");
++            writeU8(os, WASM_OPCODE_MISC_PREFIX, "bulk-memory prefix");
++            writeUleb128(os, WASM_OPCODE_MEMORY_FILL, "memory.fill");
++            writeU8(os, 0, "memory index immediate");
++          } else {
++            writeI32Const(os, begin, "source segment offset");
++            writeI32Const(os, size, "memory region size");
++            writeU8(os, WASM_OPCODE_MISC_PREFIX, "bulk-memory prefix");
++            writeUleb128(os, WASM_OPCODE_MEMORY_INIT, "memory.init");
++            writeUleb128(os, s->index, "segment index immediate");
++            writeU8(os, 0, "memory index immediate");
++          }
+         }
+       }
+     }
+ 
++    // Only the initializing thread updates pointer slots, before publishing the
++    // completed memory image. Child instantiations must not overwrite live data.
++    if (memtagRelocs) {
++      writeU8(os, WASM_OPCODE_CALL, "call");
++      writeUleb128(os, memtagRelocs->getFunctionIndex(), "memtag relocations");
++    }
++
+     if (ctx.arg.sharedMemory) {
+       // Set flag to 2 to mark end of initialization
+       writeGetFlagAddress();
+@@ -1520,24 +1669,20 @@ void Writer::createInitMemoryFunction() {
+ }
+ 
+ void Writer::createStartFunction() {
+-  // If the start function exists when we have more than one function to call.
+-  if (ctx.sym.initMemory && ctx.sym.applyGlobalRelocs) {
++  DefinedFunction *init = ctx.sym.initMemory ? ctx.sym.initMemory : memtagRelocs;
++  if (init && ctx.sym.applyGlobalRelocs) {
+     assert(ctx.sym.startFunction);
+     std::string bodyContent;
+-    {
+-      raw_string_ostream os(bodyContent);
+-      writeUleb128(os, 0, "num locals");
+-      writeU8(os, WASM_OPCODE_CALL, "CALL");
+-      writeUleb128(os, ctx.sym.applyGlobalRelocs->getFunctionIndex(),
+-                   "function index");
+-      writeU8(os, WASM_OPCODE_CALL, "CALL");
+-      writeUleb128(os, ctx.sym.initMemory->getFunctionIndex(),
+-                   "function index");
+-      writeU8(os, WASM_OPCODE_END, "END");
+-    }
++    raw_string_ostream os(bodyContent);
++    writeUleb128(os, 0, "num locals");
++    writeU8(os, WASM_OPCODE_CALL, "call");
++    writeUleb128(os, ctx.sym.applyGlobalRelocs->getFunctionIndex(), "global relocations");
++    writeU8(os, WASM_OPCODE_CALL, "call");
++    writeUleb128(os, init->getFunctionIndex(), "memory initialization");
++    writeU8(os, WASM_OPCODE_END, "end");
+     createFunction(ctx.sym.startFunction, bodyContent);
+-  } else if (ctx.sym.initMemory) {
+-    ctx.sym.startFunction = ctx.sym.initMemory;
++  } else if (init) {
++    ctx.sym.startFunction = init;
+   } else if (ctx.sym.applyGlobalRelocs) {
+     ctx.sym.startFunction = ctx.sym.applyGlobalRelocs;
+   }
+@@ -1740,6 +1885,47 @@ void Writer::createInitTLSFunction() {
+       writeUleb128(os, ctx.sym.applyGlobalTLSRelocs->getFunctionIndex(),
+                    "function index");
+     }
++    if (tlsSeg && !ctx.isPic) {
++      // The allocator tags the containing TLS block. Each instrumented TLS
++      // object needs its own granule-aligned allocation tag after copying the
++      // template, and before constructors or user code can observe it. Keep
++      // padding and allocator metadata outside these symbol ranges untouched.
++      std::vector<std::pair<uint64_t, uint64_t>> taggedTLS;
++      for (InputFile *file : ctx.objectFiles) {
++        for (Symbol *sym : file->getSymbols()) {
++          auto *data = dyn_cast<DefinedData>(sym);
++          if (!data || !data->isMemtag() || !data->isTLS() ||
++              data->isDiscarded() || !data->isLive() || !data->segment)
++            continue;
++          taggedTLS.push_back({data->getOutputSegmentOffset(), data->getSize()});
++        }
++      }
++      llvm::sort(taggedTLS);
++      taggedTLS.erase(llvm::unique(taggedTLS), taggedTLS.end());
++      for (auto [offset, size] : taggedTLS) {
++        if (!size)
++          continue;
++        if ((offset | size) & 15 || offset > tlsSeg->size ||
++            size > tlsSeg->size - offset) {
++          error("invalid granule-aligned MTE TLS symbol range");
++          continue;
++        }
++        writeU8(os, WASM_OPCODE_LOCAL_GET, "local.get");
++        writeUleb128(os, 0, "TLS base argument");
++        writePtrConst(os, offset, ctx.arg.is64.value_or(false), "TLS object offset");
++        writeU8(os, ctx.arg.is64.value_or(false) ? WASM_OPCODE_I64_ADD
++                                               : WASM_OPCODE_I32_ADD, "add");
++        writePtrConst(os, size, ctx.arg.is64.value_or(false), "TLS object size");
++        writeU8(os, 0xff, "WasmMTE prefix");
++        writeUleb128(os, 0x0101002e, "memtag.randomstore packed opcode");
++        writeUleb128(os, 0, "linear memory index");
++        writeU8(os, WASM_OPCODE_DROP, "drop tagged address");
++      }
++    }
++    // Passive TLS data contains raw pointer constants for every new thread.
++    // Retag these private slots after copying the template and applying relocs.
++    if (tlsSeg)
++      writeMemtagRelocations(os, true);
+     writeU8(os, WASM_OPCODE_END, "end function");
+   }
+ 
+diff --git a/llvm/include/llvm/BinaryFormat/Wasm.h b/llvm/include/llvm/BinaryFormat/Wasm.h
+index 5c7571b233..c1fcf0234b 100644
+--- a/llvm/include/llvm/BinaryFormat/Wasm.h
++++ b/llvm/include/llvm/BinaryFormat/Wasm.h
+@@ -259,6 +259,10 @@ const unsigned WASM_SYMBOL_EXPLICIT_NAME = 0x40;
+ const unsigned WASM_SYMBOL_NO_STRIP = 0x80;
+ const unsigned WASM_SYMBOL_TLS = 0x100;
+ const unsigned WASM_SYMBOL_ABSOLUTE = 0x200;
++// LLVM extension: the symbol's address is tagged at instantiation time. The
++// linker collects these symbols and emits memory tag descriptors for the
++// runtime. Not yet part of the wasm tool-conventions linking format.
++const unsigned WASM_SYMBOL_MEMTAG = 0x400;
+ 
+ #define WASM_RELOC(name, value) name = value,
+ 
+diff --git a/llvm/include/llvm/IR/IntrinsicsWebAssembly.td b/llvm/include/llvm/IR/IntrinsicsWebAssembly.td
+index a0e83cee9f..20656f0534 100644
+--- a/llvm/include/llvm/IR/IntrinsicsWebAssembly.td
++++ b/llvm/include/llvm/IR/IntrinsicsWebAssembly.td
+@@ -395,4 +395,68 @@ def int_wasm_tls_base :
+                         [],
+                         [IntrReadMem]>;
+ 
++//===----------------------------------------------------------------------===//
++// Memory Tagging intrinsics
++//===----------------------------------------------------------------------===//
++
++def int_wasm_memtag_status :
++  DefaultAttrsIntrinsic<[llvm_anyint_ty], [llvm_i32_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_tagbits :
++  DefaultAttrsIntrinsic<[llvm_anyint_ty], [llvm_i32_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_startbit :
++  DefaultAttrsIntrinsic<[llvm_anyint_ty], [llvm_i32_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_extract :
++  DefaultAttrsIntrinsic<[llvm_anyint_ty], [llvm_i32_ty, llvm_ptr_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_insert :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_copy :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_ptr_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_sub :
++  DefaultAttrsIntrinsic<[llvm_anyint_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_ptr_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_load :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty], [IntrReadMem]>;
++
++def int_wasm_memtag_untag :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_untagstore :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
++def int_wasm_memtag_untagstorez :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
++def int_wasm_memtag_store :
++  DefaultAttrsIntrinsic<[], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
++def int_wasm_memtag_storez :
++  DefaultAttrsIntrinsic<[], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
++def int_wasm_memtag_random :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty], [IntrNoMem, IntrHasSideEffects]>;
++
++def int_wasm_memtag_randomstore :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrHasSideEffects, IntrWriteMem]>;
++
++def int_wasm_memtag_randomstorez :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrHasSideEffects, IntrWriteMem]>;
++
++def int_wasm_memtag_add :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty, llvm_anyint_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_hint :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrNoMem]>;
++
++def int_wasm_memtag_hintstore :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
++def int_wasm_memtag_hintstorez :
++  DefaultAttrsIntrinsic<[llvm_ptr_ty], [llvm_i32_ty, llvm_ptr_ty, llvm_anyint_ty, llvm_ptr_ty, llvm_anyint_ty], [IntrWriteMem]>;
++
+ } // TargetPrefix = "wasm"
+diff --git a/llvm/include/llvm/MC/MCSymbolWasm.h b/llvm/include/llvm/MC/MCSymbolWasm.h
+index 5c9f14e5e6..52671ab283 100644
+--- a/llvm/include/llvm/MC/MCSymbolWasm.h
++++ b/llvm/include/llvm/MC/MCSymbolWasm.h
+@@ -19,6 +19,7 @@ class MCSymbolWasm : public MCSymbol {
+   bool IsWeak = false;
+   bool IsHidden = false;
+   bool IsComdat = false;
++  bool IsMemtag = false;
+   bool OmitFromLinkingSection = false;
+   mutable bool IsUsedInInitArray = false;
+   mutable bool IsUsedInGOT = false;
+@@ -73,6 +74,9 @@ public:
+     modifyFlags(wasm::WASM_SYMBOL_TLS, wasm::WASM_SYMBOL_TLS);
+   }
+ 
++  bool isMemtag() const { return IsMemtag; }
++  void setMemtag(bool Value) { IsMemtag = Value; }
++
+   bool isWeak() const { return IsWeak; }
+   void setWeak(bool isWeak) { IsWeak = isWeak; }
+ 
+diff --git a/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp b/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
+index f3ac25f25f..a0de3faeb2 100644
+--- a/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
++++ b/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
+@@ -827,10 +827,10 @@ void AsmPrinter::emitGlobalVariable(const GlobalVariable *GV) {
+   if (GV->isTagged()) {
+     Triple T = TM.getTargetTriple();
+ 
+-    if (T.getArch() != Triple::aarch64)
++    if (T.getArch() != Triple::aarch64 && !T.isWasm())
+       OutContext.reportError(SMLoc(),
+                              "tagged symbols (-fsanitize=memtag-globals) are "
+-                             "only supported on AArch64");
++                             "only supported on AArch64 or WebAssembly");
+     OutStreamer->emitSymbolAttribute(EmittedSym, MCSA_Memtag);
+   }
+ 
+@@ -2817,7 +2817,11 @@ static bool shouldTagGlobal(const llvm::GlobalVariable &G) {
+   // For now, don't instrument constant data, as it'll be in .rodata anyway. It
+   // may be worth instrumenting these in future to stop them from being used as
+   // gadgets.
+-  if (G.getName().starts_with("llvm.") || G.isThreadLocal() || G.isConstant())
++  // Wasm's linker initializes a fresh tagged TLS object set for each thread.
++  // Keep native targets' existing TLS policy unchanged.
++  if (G.getName().starts_with("llvm.") ||
++      (G.isThreadLocal() && !G.getParent()->getTargetTriple().isWasm()) ||
++      G.isConstant())
+     return false;
+ 
+   // Globals can be placed implicitly or explicitly in sections. There's two
+diff --git a/llvm/lib/MC/MCWasmStreamer.cpp b/llvm/lib/MC/MCWasmStreamer.cpp
+index 8b4ae4cee3..3f288750f6 100644
+--- a/llvm/lib/MC/MCWasmStreamer.cpp
++++ b/llvm/lib/MC/MCWasmStreamer.cpp
+@@ -119,6 +119,10 @@ bool MCWasmStreamer::emitSymbolAttribute(MCSymbol *S, MCSymbolAttr Attribute) {
+     Symbol->setNoStrip();
+     break;
+ 
++  case MCSA_Memtag:
++    Symbol->setMemtag(true);
++    break;
++
+   default:
+     // unrecognized directive
+     llvm_unreachable("unexpected MCSymbolAttr");
+diff --git a/llvm/lib/MC/WasmObjectWriter.cpp b/llvm/lib/MC/WasmObjectWriter.cpp
+index 640b263fd7..bdee106351 100644
+--- a/llvm/lib/MC/WasmObjectWriter.cpp
++++ b/llvm/lib/MC/WasmObjectWriter.cpp
+@@ -1807,6 +1807,8 @@ uint64_t WasmObjectWriter::writeOneObject(MCAssembler &Asm,
+       Flags |= wasm::WASM_SYMBOL_EXPORTED;
+     if (WS.isTLS())
+       Flags |= wasm::WASM_SYMBOL_TLS;
++    if (WS.isMemtag())
++      Flags |= wasm::WASM_SYMBOL_MEMTAG;
+ 
+     wasm::WasmSymbolInfo Info;
+     Info.Name = WS.getName();
+diff --git a/llvm/lib/Target/WebAssembly/AsmParser/WebAssemblyAsmParser.cpp b/llvm/lib/Target/WebAssembly/AsmParser/WebAssemblyAsmParser.cpp
+index 475c73c6f8..953dd52da7 100644
+--- a/llvm/lib/Target/WebAssembly/AsmParser/WebAssemblyAsmParser.cpp
++++ b/llvm/lib/Target/WebAssembly/AsmParser/WebAssemblyAsmParser.cpp
+@@ -529,9 +529,12 @@ public:
+ 
+   bool checkForP2AlignIfLoadStore(OperandVector &Operands, StringRef InstName) {
+     // FIXME: there is probably a cleaner way to do this.
+-    auto IsLoadStore = InstName.contains(".load") ||
+-                       InstName.contains(".store") ||
+-                       InstName.contains("prefetch");
++    // Tag loads/stores have one u32 memory index, not a linear-memory
++    // offset/alignment memarg. Do not synthesize a p2align operand for them.
++    auto IsLoadStore = !InstName.starts_with("memtag.") &&
++                       (InstName.contains(".load") ||
++                        InstName.contains(".store") ||
++                        InstName.contains("prefetch"));
+     auto IsAtomic = InstName.contains("atomic.");
+     if (IsLoadStore || IsAtomic) {
+       // Parse load/store operands of the form: offset:p2align=align
+diff --git a/llvm/lib/Target/WebAssembly/CMakeLists.txt b/llvm/lib/Target/WebAssembly/CMakeLists.txt
+index a024a35489..a6280948d6 100644
+--- a/llvm/lib/Target/WebAssembly/CMakeLists.txt
++++ b/llvm/lib/Target/WebAssembly/CMakeLists.txt
+@@ -57,6 +57,7 @@ add_llvm_target(WebAssemblyCodeGen
+   WebAssemblyNullifyDebugValueLists.cpp
+   WebAssemblyOptimizeLiveIntervals.cpp
+   WebAssemblyOptimizeReturned.cpp
++  WebAssemblyStackTagging.cpp
+   WebAssemblyPeephole.cpp
+   WebAssemblyReduceToAnyAllTrue.cpp
+   WebAssemblyRefTypeMem2Local.cpp
+@@ -75,6 +76,7 @@ add_llvm_target(WebAssemblyCodeGen
+   WebAssemblyTargetObjectFile.cpp
+   WebAssemblyTargetTransformInfo.cpp
+   WebAssemblyUtilities.cpp
++  WebAssemblyGlobalsTagging.cpp
+ 
+   DEPENDS
+   intrinsics_gen
+diff --git a/llvm/lib/Target/WebAssembly/Disassembler/WebAssemblyDisassembler.cpp b/llvm/lib/Target/WebAssembly/Disassembler/WebAssemblyDisassembler.cpp
+index 315747f086..a155bb2b49 100644
+--- a/llvm/lib/Target/WebAssembly/Disassembler/WebAssemblyDisassembler.cpp
++++ b/llvm/lib/Target/WebAssembly/Disassembler/WebAssemblyDisassembler.cpp
+@@ -181,8 +181,20 @@ MCDisassembler::DecodeStatus WebAssemblyDisassembler::getInstruction(
+     if (!WasmInst)
+       return MCDisassembler::Fail;
+     int64_t PrefixedOpc;
++    uint64_t WordStart = Size;
+     if (!nextLEB(PrefixedOpc, Bytes, Size, false))
+       return MCDisassembler::Fail;
++    if (Opc == 0xff) {
++      // A single bounded u32 LEB carries version/domain/operation. In
++      // particular, old FF/vendor headers and the reserved GC domain fail.
++      if (Size - WordStart > 5 || PrefixedOpc < 0 ||
++          uint64_t(PrefixedOpc) > UINT32_MAX ||
++          (uint32_t(PrefixedOpc) >> 16) != 0x0101)
++        return MCDisassembler::Fail;
++      PrefixedOpc &= 0xffff;
++      if (PrefixedOpc == 0x33)
++        return MCDisassembler::Fail;
++    }
+     if (PrefixedOpc < 0 || PrefixedOpc >= WebAssemblyInstructionTableSize)
+       return MCDisassembler::Fail;
+     WasmInst += PrefixedOpc;
+@@ -195,6 +207,17 @@ MCDisassembler::DecodeStatus WebAssemblyDisassembler::getInstruction(
+   // Parse any operands.
+   for (uint8_t OPI = 0; OPI < WasmInst->NumOperands; OPI++) {
+     auto OT = OperandTable[WasmInst->OperandStart + OPI];
++    // The table may classify a stack-form index as a generic immediate.
++    // Enforce the wire type before dispatching on that generated descriptor.
++    if (Opc == 0xff) {
++      int64_t Index;
++      uint64_t IndexStart = Size;
++      if (!nextLEB(Index, Bytes, Size, false) || Size - IndexStart > 5 ||
++          Index < 0 || uint64_t(Index) > UINT32_MAX)
++        return MCDisassembler::Fail;
++      MI.addOperand(MCOperand::createImm(Index));
++      continue;
++    }
+     switch (OT) {
+     // ULEB operands:
+     case WebAssembly::OPERAND_BASIC_BLOCK:
+@@ -242,6 +265,7 @@ MCDisassembler::DecodeStatus WebAssemblyDisassembler::getInstruction(
+     }
+     // SLEB operands:
+     case WebAssembly::OPERAND_I32IMM:
++      [[fallthrough]];
+     case WebAssembly::OPERAND_I64IMM: {
+       if (!parseLEBImmediate(MI, Size, Bytes, true))
+         return MCDisassembler::Fail;
+diff --git a/llvm/lib/Target/WebAssembly/MCTargetDesc/WebAssemblyMCCodeEmitter.cpp b/llvm/lib/Target/WebAssembly/MCTargetDesc/WebAssemblyMCCodeEmitter.cpp
+index a0280907ae..59759ed641 100644
+--- a/llvm/lib/Target/WebAssembly/MCTargetDesc/WebAssemblyMCCodeEmitter.cpp
++++ b/llvm/lib/Target/WebAssembly/MCTargetDesc/WebAssemblyMCCodeEmitter.cpp
+@@ -114,7 +114,17 @@ void WebAssemblyMCCodeEmitter::encodeInstruction(
+   uint64_t Start = OS.tell();
+ 
+   uint64_t Binary = getBinaryCodeForInstr(MI, Fixups, STI);
+-  if (Binary < (1 << 8)) {
++  // TableGen keeps compact prefix/operation selectors. Only this private
++  // prefix expands to a versioned domain word; no standard FC opcode changes.
++  bool IsMemtag = (Binary >> 8) == 0xff;
++  if (IsMemtag) {
++    if (uint8_t(Binary) == 0x33) {
++      Ctx.reportError(SMLoc(), "memtag.add is reserved; no executable semantics");
++      return;
++    }
++    OS << uint8_t(0xff);
++    encodeULEB128(0x01010000u | uint8_t(Binary), OS);
++  } else if (Binary < (1 << 8)) {
+     OS << uint8_t(Binary);
+   } else if (Binary < (1 << 16)) {
+     OS << uint8_t(Binary >> 8);
+@@ -144,6 +154,16 @@ void WebAssemblyMCCodeEmitter::encodeInstruction(
+       /* nothing to encode */
+ 
+     } else if (MO.isImm()) {
++      // Every memtag immediate is a u32 memory index, even when the
++      // assembler selected a memory64 operand descriptor.
++      if (IsMemtag) {
++        if (MO.getImm() < 0 || uint64_t(MO.getImm()) > UINT32_MAX) {
++          Ctx.reportError(SMLoc(), "memtag memory index must fit u32");
++          return;
++        }
++        encodeULEB128(uint32_t(MO.getImm()), OS);
++        continue;
++      }
+       if (I < Desc.getNumOperands()) {
+         const MCOperandInfo &Info = Desc.operands()[I];
+         LLVM_DEBUG(dbgs() << "Encoding immediate: type="
+@@ -235,6 +255,10 @@ void WebAssemblyMCCodeEmitter::encodeInstruction(
+       uint64_t D = MO.getDFPImm();
+       support::endian::write<uint64_t>(OS, D, llvm::endianness::little);
+     } else if (MO.isExpr()) {
++      if (IsMemtag) {
++        Ctx.reportError(SMLoc(), "memtag memory index must be an integer");
++        return;
++      }
+       llvm::MCFixupKind FixupKind;
+       size_t PaddedSize = 5;
+       if (I < Desc.getNumOperands()) {
+diff --git a/llvm/lib/Target/WebAssembly/WebAssembly.h b/llvm/lib/Target/WebAssembly/WebAssembly.h
+index 9b54f49a2d..17a76eca30 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssembly.h
++++ b/llvm/lib/Target/WebAssembly/WebAssembly.h
+@@ -81,6 +81,11 @@ FunctionPass *createWebAssemblyDebugFixup();
+ FunctionPass *createWebAssemblyPeephole();
+ ModulePass *createWebAssemblyMCLowerPrePass();
+ 
++FunctionPass *createWebAssemblyStackTaggingPass();
++ModulePass *createWebAssemblyGlobalsTaggingPass();
++void initializeWebAssemblyStackTaggingPass(PassRegistry &);
++void initializeWebAssemblyGlobalsTaggingPass(PassRegistry &);
++
+ // PassRegistry initialization declarations.
+ void initializeFixFunctionBitcastsPass(PassRegistry &);
+ void initializeOptimizeReturnedPass(PassRegistry &);
+diff --git a/llvm/lib/Target/WebAssembly/WebAssembly.td b/llvm/lib/Target/WebAssembly/WebAssembly.td
+index 979c3dd716..3cc56d4cb9 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssembly.td
++++ b/llvm/lib/Target/WebAssembly/WebAssembly.td
+@@ -96,6 +96,10 @@ def FeatureTailCall :
+       SubtargetFeature<"tail-call", "HasTailCall", "true",
+                        "Enable tail call instructions">;
+ 
++def FeatureMemtag :
++      SubtargetFeature<"memtag", "HasMemtag", "true",
++                       "Enable memory tagging">;
++
+ def FeatureWideArithmetic :
+       SubtargetFeature<"wide-arithmetic", "HasWideArithmetic", "true",
+                        "Enable wide-arithmetic instructions">;
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyGlobalsTagging.cpp b/llvm/lib/Target/WebAssembly/WebAssemblyGlobalsTagging.cpp
+new file mode 100644
+index 0000000000..550d78ead8
+--- /dev/null
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyGlobalsTagging.cpp
+@@ -0,0 +1,377 @@
++//===- WebAssemblyGlobalsTagging.cpp - Global tagging in IR ---------------===//
++//
++//                     The LLVM Compiler Infrastructure
++//
++// This file is distributed under the University of Illinois Open Source
++// License. See LICENSE.TXT for details.
++//
++//===----------------------------------------------------------------------===//
++//===----------------------------------------------------------------------===//
++
++#include "WebAssembly.h"
++#include "llvm/ADT/DenseMap.h"
++#include "llvm/ADT/DenseSet.h"
++#include "llvm/IR/Attributes.h"
++#include "llvm/IR/Constants.h"
++#include "llvm/IR/Function.h"
++#include "llvm/IR/GlobalAlias.h"
++#include "llvm/IR/GlobalValue.h"
++#include "llvm/IR/GlobalVariable.h"
++#include "llvm/IR/IRBuilder.h"
++#include "llvm/IR/Instructions.h"
++#include "llvm/IR/IntrinsicsWebAssembly.h"
++#include "llvm/IR/Module.h"
++#include "llvm/Pass.h"
++#include "llvm/Support/raw_ostream.h"
++
++#include <algorithm>
++#include <utility>
++#include <vector>
++
++using namespace llvm;
++
++static const Align kTagGranuleSize = Align(16);
++
++static bool shouldTagGlobal(GlobalVariable &G) {
++  if (!G.isTagged())
++    return false;
++
++  assert(G.hasSanitizerMetadata() &&
++         "Missing sanitizer metadata, but symbol is apparently tagged.");
++  GlobalValue::SanitizerMetadata Meta = G.getSanitizerMetadata();
++
++  // For now, don't instrument constant data, as it'll be in .rodata anyway. It
++  // may be worth instrumenting these in future to stop them from being used as
++  // gadgets.
++  if (G.getName().starts_with("llvm.") || G.isConstant()) {
++    Meta.Memtag = false;
++    G.setSanitizerMetadata(Meta);
++    return false;
++  }
++
++  return true;
++}
++
++// Technically, due to ELF symbol interposition semantics, we can't change the
++// alignment or size of symbols. If we increase the alignment or size of a
++// symbol, the compiler may make optimisations based on this new alignment or
++// size. If the symbol is interposed, this optimisation could lead to
++// alignment-related or OOB read/write crashes.
++//
++// This is handled in the linker. When the linker sees multiple declarations of
++// a global variable, and some are tagged, and some are untagged, it resolves it
++// to be an untagged definition - but preserves the tag-granule-rounded size and
++// tag-granule-alignment. This should prevent these kind of crashes intra-DSO.
++// For cross-DSO, it's been a reasonable contract that if you're interposing a
++// sanitizer-instrumented global, then the interposer also needs to be
++// sanitizer-instrumented.
++//
++// FIXME: In theory, this can be fixed by splitting the size/alignment of
++// globals into two uses: an "output alignment" that's emitted to the ELF file,
++// and an "optimisation alignment" that's used for optimisation. Thus, we could
++// adjust the output alignment only, and still optimise based on the pessimistic
++// pre-tagging size/alignment.
++static GlobalVariable *tagGlobalDefinition(Module &M, GlobalVariable *G) {
++  Constant *Initializer = G->getInitializer();
++  uint64_t SizeInBytes =
++      M.getDataLayout().getTypeAllocSize(Initializer->getType());
++
++  uint64_t NewSize = alignTo(SizeInBytes, kTagGranuleSize);
++  if (SizeInBytes != NewSize) {
++    // Pad the initializer out to the next multiple of 16 bytes.
++    llvm::SmallVector<uint8_t> Init(NewSize - SizeInBytes, 0);
++    Constant *Padding = ConstantDataArray::get(M.getContext(), Init);
++    Initializer = ConstantStruct::getAnon({Initializer, Padding});
++    auto *NewGV = new GlobalVariable(
++        M, Initializer->getType(), G->isConstant(), G->getLinkage(),
++        Initializer, "", G, G->getThreadLocalMode(), G->getAddressSpace());
++    NewGV->copyAttributesFrom(G);
++    NewGV->setComdat(G->getComdat());
++    NewGV->copyMetadata(G, 0);
++
++    NewGV->takeName(G);
++    G->replaceAllUsesWith(NewGV);
++    G->eraseFromParent();
++    G = NewGV;
++  }
++
++  G->setAlignment(std::max(G->getAlign().valueOrOne(), kTagGranuleSize));
++
++  // Ensure that tagged globals don't get merged by ICF - as they should have
++  // different tags at runtime.
++  G->setUnnamedAddr(GlobalValue::UnnamedAddr::None);
++
++  return G;
++}
++
++static bool
++containsTaggedGlobal(const Constant *C,
++                     const DenseSet<const GlobalValue *> &TaggedGlobals) {
++  if (const auto *G = dyn_cast<GlobalValue>(C))
++    return TaggedGlobals.contains(G);
++  for (const Value *Op : C->operands())
++    if (const auto *OpC = dyn_cast<Constant>(Op))
++      if (containsTaggedGlobal(OpC, TaggedGlobals))
++        return true;
++  return false;
++}
++
++namespace {
++
++/// Replaces every use of a tagged global inside a function with a pointer
++/// whose tag was materialized by the runtime. This is the wasm equivalent of
++/// AArch64 forcing tagged globals through the GOT: the tag is only known once
++/// the module has been instantiated (see the "memtag.globals" descriptor
++/// section emitted by the linker), so it cannot be folded into the address.
++class TaggedGlobalUseMaterializer {
++public:
++  TaggedGlobalUseMaterializer(
++      Function &F, const DenseSet<const GlobalValue *> &TaggedGlobals,
++      Function *MemtagLoad)
++      : F(F), TaggedGlobals(TaggedGlobals), MemtagLoad(MemtagLoad) {}
++
++  void run() {
++    // Materialization can split the entry block and create PHIs. Visit only
++    // original instructions: rewriting a generated fallback pointer would
++    // otherwise turn the new PHI into its own incoming value.
++    SmallVector<Instruction *> Worklist;
++    for (BasicBlock &BB : F)
++      for (Instruction &I : BB)
++        Worklist.push_back(&I);
++    for (Instruction *I : Worklist)
++      rewriteOperands(*I);
++  }
++
++private:
++  Value *getTaggedPtr(GlobalValue *G) {
++    auto It = TaggedPtrs.find(G);
++    if (It != TaggedPtrs.end())
++      return It->second;
++
++    BasicBlock &Entry = F.getEntryBlock();
++    if (auto *Variable = dyn_cast<GlobalVariable>(G);
++        Variable && !Variable->isDeclaration()) {
++      IRBuilder<> Builder(&*Entry.getFirstInsertionPt());
++      CallInst *TaggedPtr =
++          Builder.CreateCall(MemtagLoad, {Builder.getInt32(0), G});
++      TaggedPtrs.insert({G, TaggedPtr});
++      return TaggedPtr;
++    }
++
++    // External data declarations also describe linker address constants such
++    // as __heap_end. An address exactly at/past memory end is valid for address
++    // arithmetic, but there is no allocation tag to read there. Preserve that
++    // raw address; a later actual dereference still performs ordinary bounds
++    // and tag checks. Do not weaken memtag.load or maintain a symbol blacklist.
++    auto *IntPtrTy = F.getParent()->getDataLayout().getIntPtrType(F.getContext());
++    // Preserve static entry allocas when adding the external-address guard.
++    // Moving them into Continue makes isStaticAlloca() false, which would
++    // silently remove their stack MTE instrumentation in the next pass.
++    SmallVector<AllocaInst *, 8> EntryAllocas;
++    for (Instruction &I : Entry)
++      if (auto *AI = dyn_cast<AllocaInst>(&I); AI && AI->isStaticAlloca())
++        EntryAllocas.push_back(AI);
++    auto *Continue = Entry.splitBasicBlock(Entry.getFirstInsertionPt(),
++                                          "memtag.global.cont");
++    for (AllocaInst *AI : EntryAllocas)
++      AI->moveBefore(Entry.getTerminator()->getIterator());
++    Entry.getTerminator()->eraseFromParent();
++    auto *Check = BasicBlock::Create(F.getContext(), "memtag.global.check", &F,
++                                    Continue);
++    auto *Load = BasicBlock::Create(F.getContext(), "memtag.global.load", &F,
++                                   Continue);
++    IRBuilder<> Builder(&Entry);
++    // memory.size on a shared memory is an observable atomic load. Keeping it
++    // outside this guard prevents a runtime that erases MTE from eliminating
++    // the unused query. status folds to zero when instrumentation is disabled;
++    // an enabled runtime still performs the complete bounds/null guard.
++    Function *Status = Intrinsic::getOrInsertDeclaration(
++        F.getParent(), Intrinsic::wasm_memtag_status, {IntPtrTy});
++    Value *Enabled = Builder.CreateICmpNE(
++        Builder.CreateCall(Status, {Builder.getInt32(0)}),
++        ConstantInt::get(IntPtrTy, 0));
++    Builder.CreateCondBr(Enabled, Check, Continue);
++    Builder.SetInsertPoint(Check);
++    Value *Address = Builder.CreatePtrToInt(G, IntPtrTy);
++    Function *MemorySize = Intrinsic::getOrInsertDeclaration(
++        F.getParent(), Intrinsic::wasm_memory_size, {IntPtrTy});
++    Value *Pages = Builder.CreateCall(MemorySize, {Builder.getInt32(0)});
++    // Compare page numbers instead of multiplying page count by 65536, which
++    // would overflow at the full memory32/memory64 address-space boundary.
++    Value *Inside = Builder.CreateICmpULT(
++        Builder.CreateLShr(Address, 16), Pages);
++    // An unresolved extern_weak data symbol has the null address. Loading
++    // granule zero's allocation tag would turn it into a nonnull pointer if
++    // that granule was retagged. Keep weak null tests independent of shadow
++    // contents; a real null dereference still goes through runtime checking.
++    if (G->hasExternalWeakLinkage())
++      Inside = Builder.CreateAnd(
++          Inside, Builder.CreateICmpNE(
++                      G, ConstantPointerNull::get(cast<PointerType>(G->getType()))));
++    Builder.CreateCondBr(Inside, Load, Continue);
++    Builder.SetInsertPoint(Load);
++    Value *TaggedPtr =
++        Builder.CreateCall(MemtagLoad, {Builder.getInt32(0), G});
++    Builder.CreateBr(Continue);
++    auto *Result = PHINode::Create(G->getType(), 3, "memtag.global.pointer",
++                                  Continue->begin());
++    Result->addIncoming(G, &Entry);
++    Result->addIncoming(G, Check);
++    Result->addIncoming(TaggedPtr, Load);
++    TaggedPtrs.insert({G, Result});
++    return Result;
++  }
++
++  Value *materializeConstantExpr(ConstantExpr *CE, Instruction *InsertBefore) {
++    Instruction *NewI = CE->getAsInstruction();
++    NewI->insertBefore(InsertBefore->getIterator());
++    for (Use &U : NewI->operands()) {
++      Value *Op = U.get();
++      if (auto *G = dyn_cast<GlobalValue>(Op);
++          G && TaggedGlobals.contains(G)) {
++        U.set(getTaggedPtr(G));
++      } else if (auto *Nested = dyn_cast<ConstantExpr>(Op);
++                 Nested && containsTaggedGlobal(Nested, TaggedGlobals)) {
++        // A nested expression must dominate the newly materialized user,
++        // not merely the original instruction using the outer expression.
++        U.set(materializeConstantExpr(Nested, NewI));
++      }
++    }
++    return NewI;
++  }
++
++  void rewriteOperands(Instruction &I) {
++    // EH pad clauses and typeid selectors encode constant type identities for
++    // the backend/LSDA, not executed linear-memory accesses. Turning them into
++    // tagged SSA pointers violates the LLVM IR contract. Loads through an RTTI
++    // pointer in ordinary code are still materialized and checked normally.
++    if (isa<CatchPadInst, CleanupPadInst, LandingPadInst>(I))
++      return;
++    if (auto *Intrinsic = dyn_cast<IntrinsicInst>(&I);
++        Intrinsic && Intrinsic->getIntrinsicID() == Intrinsic::eh_typeid_for)
++      return;
++    if (auto *CB = dyn_cast<CallBase>(&I);
++        CB && CB->getCalledFunction() == MemtagLoad)
++      return;
++    if (auto *Intrinsic = dyn_cast<IntrinsicInst>(&I);
++        Intrinsic && Intrinsic->getIntrinsicID() == Intrinsic::threadlocal_address) {
++      // The intrinsic must retain its constant TLS symbol operand. Materialize
++      // the allocation tag on the resolved per-thread address, not on the
++      // link-time TLS offset or on a different thread's template address.
++      auto *Global = dyn_cast<GlobalValue>(Intrinsic->getArgOperand(0));
++      if (Global && TaggedGlobals.contains(Global)) {
++        IRBuilder<> Builder(Intrinsic->getNextNode());
++        auto *Tagged = Builder.CreateCall(
++            MemtagLoad, {Builder.getInt32(0), Intrinsic});
++        Intrinsic->replaceUsesWithIf(Tagged, [Tagged](Use &U) {
++          return U.getUser() != Tagged;
++        });
++      }
++      return;
++    }
++
++    for (Use &U : I.operands()) {
++      Value *Op = U.get();
++      if (auto *G = dyn_cast<GlobalValue>(Op);
++          G && TaggedGlobals.contains(G)) {
++        U.set(getTaggedPtr(G));
++      } else if (auto *CE = dyn_cast<ConstantExpr>(Op);
++                 CE && containsTaggedGlobal(CE, TaggedGlobals)) {
++        // A PHI operand is evaluated on its incoming edge. Inserting before
++        // the PHI would both split the PHI group and fail to dominate that
++        // edge. These pure constant expressions may safely be evaluated
++        // before the predecessor terminator, including on a critical edge.
++        Instruction *InsertBefore = &I;
++        if (auto *Phi = dyn_cast<PHINode>(&I))
++          InsertBefore =
++              Phi->getIncomingBlock(U.getOperandNo())->getTerminator();
++        U.set(materializeConstantExpr(CE, InsertBefore));
++      }
++    }
++  }
++
++  Function &F;
++  const DenseSet<const GlobalValue *> &TaggedGlobals;
++  Function *MemtagLoad;
++  DenseMap<GlobalValue *, Value *> TaggedPtrs;
++};
++
++} // anonymous namespace
++
++namespace {
++class WebAssemblyGlobalsTagging : public ModulePass {
++public:
++  static char ID;
++
++  explicit WebAssemblyGlobalsTagging() : ModulePass(ID) {
++    initializeWebAssemblyGlobalsTaggingPass(*PassRegistry::getPassRegistry());
++  }
++
++  bool runOnModule(Module &M) override;
++
++  StringRef getPassName() const override {
++    return "WebAssembly Globals Tagging";
++  }
++};
++} // anonymous namespace
++
++char WebAssemblyGlobalsTagging::ID = 0;
++
++bool WebAssemblyGlobalsTagging::runOnModule(Module &M) {
++  // No mutating the globals in-place, or iterator invalidation occurs.
++  std::vector<GlobalVariable *> GlobalsToTag;
++  for (GlobalVariable &G : M.globals()) {
++    if (G.isDeclaration() || !shouldTagGlobal(G))
++      continue;
++
++    // LLD materializes tags in data pointer relocations before user code, so
++    // static pointer initializers no longer exclude their targets from MTE.
++    GlobalsToTag.push_back(&G);
++  }
++
++  DenseSet<const GlobalValue *> TaggedGlobals;
++  for (GlobalVariable *G : GlobalsToTag)
++    TaggedGlobals.insert(tagGlobalDefinition(M, G));
++
++  // An instrumented function can refer to a tagged definition in another
++  // translation unit. Weak data aliases may also resolve to such a definition
++  // at link time (musl __stdio_exit is one example). Materialize the resolved
++  // symbol's tag rather than assuming that an external/aliased address is tag 0.
++  // Untagged definitions naturally load tag 0. Function/table identities are
++  // not linear-memory pointers and must never enter this path.
++  DenseSet<const GlobalValue *> InstrumentedGlobals(TaggedGlobals);
++  for (GlobalVariable &G : M.globals())
++    if (G.isDeclaration() &&
++        !G.getName().starts_with("llvm."))
++      InstrumentedGlobals.insert(&G);
++  for (GlobalAlias &A : M.aliases())
++    if (!A.getValueType()->isFunctionTy())
++      InstrumentedGlobals.insert(&A);
++
++  bool Changed = !TaggedGlobals.empty();
++  Function *MemtagLoad = nullptr;
++  for (Function &F : M) {
++    if (F.isDeclaration())
++      continue;
++    const auto &Candidates = F.hasFnAttribute(Attribute::SanitizeMemTag)
++                                 ? InstrumentedGlobals
++                                 : TaggedGlobals;
++    if (Candidates.empty())
++      continue;
++    if (!MemtagLoad)
++      MemtagLoad =
++          Intrinsic::getOrInsertDeclaration(&M, Intrinsic::wasm_memtag_load);
++    TaggedGlobalUseMaterializer(F, Candidates, MemtagLoad).run();
++    Changed = true;
++  }
++  return Changed;
++}
++
++INITIALIZE_PASS_BEGIN(WebAssemblyGlobalsTagging, "WebAssembly-globals-tagging",
++                      "WebAssembly Globals Tagging Pass", false, false)
++INITIALIZE_PASS_END(WebAssemblyGlobalsTagging, "WebAssembly-globals-tagging",
++                    "WebAssembly Globals Tagging Pass", false, false)
++
++ModulePass *llvm::createWebAssemblyGlobalsTaggingPass() {
++  return new WebAssemblyGlobalsTagging();
++}
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyInstrInfo.td b/llvm/lib/Target/WebAssembly/WebAssemblyInstrInfo.td
+index 7669f301b2..c7d557f375 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssemblyInstrInfo.td
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyInstrInfo.td
+@@ -57,6 +57,9 @@ def HasMultiMemory :
+     Predicate<"Subtarget->hasMultiMemory()">,
+     AssemblerPredicate<(all_of FeatureMultiMemory), "multimemory">;
+ 
++def HasMemtag :
++    Predicate<"Subtarget->hasMemtag()">,
++    AssemblerPredicate<(all_of FeatureMemtag), "memtag">;
+ def HasMultivalue :
+     Predicate<"Subtarget->hasMultivalue()">,
+     AssemblerPredicate<(all_of FeatureMultivalue), "multivalue">;
+@@ -483,3 +486,4 @@ include "WebAssemblyInstrSIMD.td"
+ include "WebAssemblyInstrRef.td"
+ include "WebAssemblyInstrBulkMemory.td"
+ include "WebAssemblyInstrTable.td"
++include "WebAssemblyInstrMemtag.td"
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyInstrMemtag.td b/llvm/lib/Target/WebAssembly/WebAssemblyInstrMemtag.td
+new file mode 100644
+index 0000000000..a3ad88572d
+--- /dev/null
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyInstrMemtag.td
+@@ -0,0 +1,191 @@
++// WebAssemblyInstrMemtag.td - WebAssembly Memtag codegen support -*- memtaggen -*-
++//
++// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++// See https://llvm.org/LICENSE.txt for license information.
++// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++//
++//===----------------------------------------------------------------------===//
++///
++/// \file
++/// WebAssembly Mem Table operand code-gen constructs.
++/// Instructions that handle memtags
++//===----------------------------------------------------------------------===//
++
++// Compact TableGen selectors only. MC encoding expands 0xffXX to:
++//   0xff ULEB32(0x01010000 | XX) ULEB32(memoryidx).
++// The packed word is version 1 / linear-memory domain 1 / 16-bit operation.
++// Standard 0xfc instructions keep their existing binary encodings.
++multiclass MemoryTaggingOps<WebAssemblyRegClass rc, string B> {
++
++defm MEMTAG_STATUS_A#B: I<(outs rc:$statuscode), (ins i32imm:$tableidx),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$statuscode,
++                        (int_wasm_memtag_status (i32 imm:$tableidx)))],
++                    "memtag.status\t$statuscode, $tableidx",
++                    "memtag.status\t$tableidx",
++                    0xff20>;
++
++defm MEMTAG_EXTRACT_A#B: I<(outs rc:$taggedval), (ins i32imm:$tableidx, rc:$ptr),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$taggedval,
++                        (int_wasm_memtag_extract (i32 imm:$tableidx), rc:$ptr))],
++                    "memtag.extract\t$taggedval, $tableidx, $ptr",
++                    "memtag.extract\t$tableidx",
++                    0xff21>;
++
++defm MEMTAG_INSERT_A#B: I<(outs rc:$taggedptr), (ins i32imm:$tableidx, rc:$ptr, rc:$insertval),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$taggedptr,
++                        (int_wasm_memtag_insert (i32 imm:$tableidx), rc:$ptr, rc:$insertval))],
++                    "memtag.insert\t$taggedptr, $tableidx, $ptr, $insertval",
++                    "memtag.insert\t$tableidx",
++                    0xff22>;
++
++defm MEMTAG_TAGBITS_A#B: I<(outs rc:$taggedbits), (ins i32imm:$tableidx),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$taggedbits,
++                        (int_wasm_memtag_tagbits (i32 imm:$tableidx)))],
++                    "memtag.tagbits\t$taggedbits, $tableidx",
++                    "memtag.tagbits\t$tableidx",
++                    0xff23>;
++
++defm MEMTAG_STARTBIT_A#B: I<(outs rc:$startbit), (ins i32imm:$tableidx),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$startbit,
++                        (int_wasm_memtag_startbit (i32 imm:$tableidx)))],
++                    "memtag.startbit\t$startbit, $tableidx",
++                    "memtag.startbit\t$tableidx",
++                    0xff24>;
++
++defm MEMTAG_COPY_A#B: I<(outs rc:$dstwsrctag), (ins i32imm:$tableidx, rc:$dst, rc:$src),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dstwsrctag,
++                        (int_wasm_memtag_copy (i32 imm:$tableidx), rc:$dst, rc:$src))],
++                    "memtag.copy\t$dstwsrctag, $tableidx, $dst, $src",
++                    "memtag.copy\t$tableidx",
++                    0xff25>;
++
++defm MEMTAG_SUB_A#B: I<(outs rc:$diff), (ins i32imm:$tableidx, rc:$minuendptr, rc:$subtrahendptr),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$diff,
++                        (int_wasm_memtag_sub (i32 imm:$tableidx), rc:$minuendptr, rc:$subtrahendptr))],
++                    "memtag.sub\t$diff, $tableidx, $minuendptr, $subtrahendptr",
++                    "memtag.sub\t$tableidx",
++                    0xff26>;
++
++let mayLoad = 1 in
++defm MEMTAG_LOAD_A#B: I<(outs rc:$taggedptr), (ins i32imm:$tableidx, rc:$src),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$taggedptr,
++                        (int_wasm_memtag_load (i32 imm:$tableidx), rc:$src))],
++                    "memtag.load\t$taggedptr, $tableidx, $src",
++                    "memtag.load\t$tableidx",
++                    0xff27>;
++
++defm MEMTAG_UNTAG_A#B: I<(outs rc:$untaggedptr), (ins i32imm:$tableidx, rc:$ptr),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$untaggedptr,
++                        (int_wasm_memtag_untag (i32 imm:$tableidx), rc:$ptr))],
++                    "memtag.untag\t$untaggedptr, $tableidx, $ptr",
++                    "memtag.untag\t$tableidx",
++                    0xff28>;
++
++let mayStore = 1 in
++defm MEMTAG_UNTAGSTORE_A#B: I<(outs rc:$untaggedptr), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$untaggedptr,
++                        (int_wasm_memtag_untagstore (i32 imm:$tableidx), rc:$src, rc:$b16))],
++                    "memtag.untagstore\t$tableidx, $src, $b16",
++                    "memtag.untagstore\t$tableidx",
++                    0xff29>;
++
++let mayStore = 1 in
++defm MEMTAG_UNTAGSTOREZ_A#B: I<(outs rc:$untaggedptr), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$untaggedptr,
++                        (int_wasm_memtag_untagstorez (i32 imm:$tableidx), rc:$src, rc:$b16))],
++                    "memtag.untagstorez\t$tableidx, $src, $b16",
++                    "memtag.untagstorez\t$tableidx",
++                    0xff2a>;
++
++let mayStore = 1 in
++defm MEMTAG_STORE_A#B: I<(outs), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(int_wasm_memtag_store (i32 imm:$tableidx), rc:$src, rc:$b16)],
++                    "memtag.store\t$tableidx, $src, $b16",
++                    "memtag.store\t$tableidx",
++                    0xff2b>;
++
++let mayStore = 1 in
++defm MEMTAG_STOREZ_A#B: I<(outs), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(int_wasm_memtag_storez (i32 imm:$tableidx), rc:$src, rc:$b16)],
++                    "memtag.storez\t$tableidx, $src, $b16",
++                    "memtag.storez\t$tableidx",
++                    0xff2c>;
++
++let hasSideEffects = 1 in
++defm MEMTAG_RANDOM_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_random (i32 imm:$tableidx), rc:$src))],
++                    "memtag.random\t$dst, $tableidx, $src",
++                    "memtag.random\t$tableidx",
++                    0xff2d>;
++
++let hasSideEffects = 1, mayStore = 1 in
++defm MEMTAG_RANDOMSTORE_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_randomstore (i32 imm:$tableidx), rc:$src, rc:$b16))],
++                    "memtag.randomstore\t$dst, $tableidx, $src, $b16",
++                    "memtag.randomstore\t$tableidx",
++                    0xff2e>;
++
++let hasSideEffects = 1, mayStore = 1 in
++defm MEMTAG_RANDOMSTOREZ_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$b16),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_randomstorez (i32 imm:$tableidx), rc:$src, rc:$b16))],
++                    "memtag.randomstorez\t$dst, $src, $tableidx, $b16",
++                    "memtag.randomstorez\t$tableidx",
++                    0xff2f>;
++
++defm MEMTAG_ADD_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$addroffset, rc:$tagoffset),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_add (i32 imm:$tableidx), rc:$src, rc:$addroffset, rc:$tagoffset))],
++                    "memtag.add\t$dst, $tableidx, $src, $addroffset, $tagoffset",
++                    "memtag.add\t$tableidx",
++                    0xff33>;
++
++defm MEMTAG_HINT_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$hintaddr, rc:$index),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_hint (i32 imm:$tableidx), rc:$src, rc:$hintaddr, rc:$index))],
++                    "memtag.hint\t$dst, $tableidx, $src, $hintaddr, $index",
++                    "memtag.hint\t$tableidx",
++                    0xff36>;
++
++let mayStore = 1 in
++defm MEMTAG_HINTSTORE_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$b16, rc:$hintaddr, rc:$index),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_hintstore (i32 imm:$tableidx), rc:$src, rc:$b16, rc:$hintaddr, rc:$index))],
++                    "memtag.hintstore\t$dst, $tableidx, $src, $b16, $hintaddr, $index",
++                    "memtag.hintstore\t$tableidx",
++                    0xff37>;
++
++let mayStore = 1 in
++defm MEMTAG_HINTSTOREZ_A#B: I<(outs rc:$dst), (ins i32imm:$tableidx, rc:$src, rc:$b16, rc:$hintaddr, rc:$index),
++                    (outs), (ins i32imm:$tableidx),
++                    [(set rc:$dst,
++                        (int_wasm_memtag_hintstorez (i32 imm:$tableidx), rc:$src, rc:$b16, rc:$hintaddr, rc:$index))],
++                    "memtag.hintstorez\t$dst, $tableidx, $src, $b16, $hintaddr, $index",
++                    "memtag.hintstorez\t$tableidx",
++                    0xff38>;
++
++}
++
++defm "" : MemoryTaggingOps<I32, "32">;
++defm "" : MemoryTaggingOps<I64, "64">;
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyLateEHPrepare.cpp b/llvm/lib/Target/WebAssembly/WebAssemblyLateEHPrepare.cpp
+index 56f74dce63..ba52a711b0 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssemblyLateEHPrepare.cpp
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyLateEHPrepare.cpp
+@@ -407,6 +407,40 @@ bool WebAssemblyLateEHPrepare::restoreStackPointer(MachineFunction &MF) {
+            WebAssembly::isCatch(InsertPos->getOpcode()) &&
+            "catch/catch_all should be present in every EH pad at this point");
+     ++InsertPos; // Skip the catch instruction
++    if (MF.getFunction().hasFnAttribute(Attribute::SanitizeMemTag)) {
++      // Unwinding bypasses lifetime.end/return in abandoned callees. Retire
++      // their linear-stack tags before the personality routine or any other
++      // callee reuses that storage. The current frame remains live: clear only
++      // [innermost SP, this frame's saved SP), never its own allocations.
++      // Stack pointers are untagged and the ABI stack grows downwards.
++      auto &ST = MF.getSubtarget<WebAssemblySubtarget>();
++      const auto *TII = ST.getInstrInfo();
++      auto &MRI = MF.getRegInfo();
++      const TargetRegisterClass *PtrRC =
++          MRI.getTargetRegisterInfo()->getPointerRegClass();
++      Register OldSP = MRI.createVirtualRegister(PtrRC);
++      Register AbandonedSize = MRI.createVirtualRegister(PtrRC);
++      const DebugLoc &DL = MBB.begin()->getDebugLoc();
++      if (ST.hasLibcallThreadContext()) {
++        BuildMI(MBB, InsertPos, DL, TII->get(WebAssembly::CALL), OldSP)
++            .addExternalSymbol(
++                MF.createExternalSymbolName("__wasm_get_stack_pointer"));
++      } else {
++        BuildMI(MBB, InsertPos, DL,
++                TII->get(FrameLowering->getOpcGlobGet(MF)), OldSP)
++            .addExternalSymbol(MF.createExternalSymbolName("__stack_pointer"));
++      }
++      BuildMI(MBB, InsertPos, DL, TII->get(FrameLowering->getOpcSub(MF)),
++              AbandonedSize)
++          .addReg(FrameLowering->getSPReg(MF))
++          .addReg(OldSP);
++      BuildMI(MBB, InsertPos, DL,
++              TII->get(ST.hasAddr64() ? WebAssembly::MEMTAG_STORE_A64
++                                     : WebAssembly::MEMTAG_STORE_A32))
++          .addImm(0)
++          .addReg(OldSP)
++          .addReg(AbandonedSize);
++    }
+     FrameLowering->writeBackSP(FrameLowering->getSPReg(MF), MF, MBB, InsertPos,
+                                MBB.begin()->getDebugLoc());
+   }
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyStackTagging.cpp b/llvm/lib/Target/WebAssembly/WebAssemblyStackTagging.cpp
+new file mode 100644
+index 0000000000..f8ae9a36bd
+--- /dev/null
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyStackTagging.cpp
+@@ -0,0 +1,476 @@
++//===- WebAssemblyTargetMachine.cpp - Define TargetMachine for WebAssembly -==//
++//
++// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++// See https://llvm.org/LICENSE.txt for license information.
++// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++//
++//===----------------------------------------------------------------------===//
++#include "WebAssembly.h"
++#include "llvm/Analysis/AliasAnalysis.h"
++#include "llvm/Analysis/OptimizationRemarkEmitter.h"
++#include "llvm/Analysis/PostDominators.h"
++#include "llvm/Analysis/StackSafetyAnalysis.h"
++#include "llvm/IR/Constants.h"
++#include "llvm/IR/Function.h"
++#include "llvm/IR/IRBuilder.h"
++#include "llvm/IR/InstIterator.h"
++#include "llvm/IR/IntrinsicInst.h"
++#include "llvm/IR/IntrinsicsWebAssembly.h"
++#include "llvm/IR/PassManager.h"
++#include "llvm/IR/ValueHandle.h"
++#include "llvm/InitializePasses.h"
++#include "llvm/Pass.h"
++#include "llvm/Support/raw_ostream.h"
++#include "llvm/Support/CommandLine.h"
++#include "llvm/Target/TargetMachine.h"
++#include "llvm/Transforms/Utils/Local.h"
++#include "llvm/Transforms/Utils/BasicBlockUtils.h"
++#include "llvm/Transforms/Utils/MemoryTaggingSupport.h"
++
++using namespace llvm;
++
++#define DEBUG_TYPE "wasm-stack-tagging"
++
++namespace {
++
++static cl::opt<bool> FuseZeroInitialization(
++    "wasm-memtag-fuse-zero-init", cl::Hidden, cl::init(true),
++    cl::desc("Combine complete adjacent zero initialization with stack tagging"));
++
++struct WebAssemblyStackTagging : public FunctionPass {
++  static char ID;
++  StackSafetyGlobalInfo const *SSI = nullptr;
++  DataLayout const *DL = nullptr;
++  AAResults *AA = nullptr;
++  WebAssemblyStackTagging() : FunctionPass(ID) {}
++
++  void restoreAllocaTag(AllocaInst *AI, Instruction *InsertBefore, uint64_t Size,
++                   Function *StoreTagDecl, Type *ArgOp0Type);
++
++  Instruction *insertBaseTaggedPointer(
++      const MapVector<AllocaInst *, memtag::AllocaInfo> &Allocas,
++      const DominatorTree *DT);
++
++  bool runOnFunction(Function &) override;
++
++private:
++  Function *F = nullptr;
++#if 1
++  void getAnalysisUsage(AnalysisUsage &AU) const override {
++    AU.addRequired<StackSafetyGlobalInfoWrapperPass>();
++#if 0
++    if (MergeInit)
++      AU.addRequired<AAResultsWrapperPass>();
++#endif
++    AU.addRequired<OptimizationRemarkEmitterWrapperPass>();
++  }
++#endif
++};
++
++inline bool canCombineStore(const memtag::AllocaInfo &Info, AllocaInst *AI,
++                            DominatorTree *DT) {
++  // Must have exactly one lifetime interval.
++  if (Info.LifetimeStart.size() != 1 || Info.LifetimeEnd.size() != 1)
++    return false;
++
++  IntrinsicInst *Start = Info.LifetimeStart.front();
++
++  // Check dominance and instruction order for every use.
++  for (User *U : AI->users()) {
++    auto *I = dyn_cast<Instruction>(U);
++    if (!I)
++      continue;
++
++    // Lifetime intrinsics are not rewritten and do not matter.
++    if (isa<LifetimeIntrinsic>(I))
++      continue;
++
++    // If Start does not dominate the use, combined tagging is unsafe.
++    if (!DT->dominates(Start, I))
++      return false;
++
++    // If in the same block, Start must come before the use.
++    if (Start->getParent() == I->getParent() && !Start->comesBefore(I))
++      return false;
++  }
++
++  return true;
++}
++
++static const inline Align kTagGranuleSize = Align(16);
++
++} // namespace
++
++void WebAssemblyStackTagging::restoreAllocaTag(AllocaInst *AI,
++                                          Instruction *InsertBefore,
++                                          uint64_t Size, Function *StoreTagDecl,
++                                          Type *ArgOp0Type) {
++
++  IRBuilder<> IRB(InsertBefore);
++  IRB.CreateCall(StoreTagDecl,
++                 {IRB.getInt32(0), AI, ConstantInt::get(ArgOp0Type, Size)});
++}
++
++Instruction *WebAssemblyStackTagging::insertBaseTaggedPointer(
++    const MapVector<AllocaInst *, memtag::AllocaInfo> &AllocasToInstrument,
++    const DominatorTree *DT) {
++  BasicBlock *PrologueBB = nullptr;
++  // Try sinking IRG as deep as possible to avoid hurting shrink wrap.
++  for (auto &I : AllocasToInstrument) {
++    const memtag::AllocaInfo &Info = I.second;
++    AllocaInst *AI = Info.AI;
++    if (!PrologueBB) {
++      PrologueBB = AI->getParent();
++      continue;
++    }
++    PrologueBB = DT->findNearestCommonDominator(PrologueBB, AI->getParent());
++  }
++  assert(PrologueBB);
++
++  IRBuilder<> IRB(&PrologueBB->front());
++  Function *RdTag = Intrinsic::getOrInsertDeclaration(
++      F->getParent(), Intrinsic::wasm_memtag_random);
++  Instruction *Base =
++      IRB.CreateCall(RdTag, {IRB.getInt32(0),
++                             ::llvm::ConstantPointerNull::get(IRB.getPtrTy())});
++  Base->setName("basetag");
++  return Base;
++}
++
++// Dynamic allocations are not described by StackInfoBuilder's static object
++// map. Tag each aligned allocation as it executes and retire exactly the stack
++// interval discarded by stackrestore or a function exit. No per-allocation
++// linked list or bounded side table is needed for loops and variable counts.
++static void instrumentDynamicAllocas(Function &F, const DataLayout &DL) {
++  SmallVector<AllocaInst *, 8> Allocas;
++  SmallVector<IntrinsicInst *, 8> Restores;
++  SmallVector<Instruction *, 8> Exits;
++  for (Instruction &I : instructions(F)) {
++    if (auto *AI = dyn_cast<AllocaInst>(&I);
++        AI && !AI->isStaticAlloca() && !AI->isSwiftError() &&
++        !AI->isUsedWithInAlloca())
++      Allocas.push_back(AI);
++    if (auto *II = dyn_cast<IntrinsicInst>(&I);
++        II && II->getIntrinsicID() == Intrinsic::stackrestore)
++      Restores.push_back(II);
++    if (auto *Exit = memtag::getUntagLocationIfFunctionExit(I)) {
++      auto *Cleanup = dyn_cast<CleanupReturnInst>(&I);
++      if (!Cleanup || Cleanup->unwindsToCaller())
++        Exits.push_back(Exit);
++    }
++  }
++  if (Allocas.empty())
++    return;
++
++  LLVMContext &Ctx = F.getContext();
++  Module *M = F.getParent();
++  auto *IntPtrTy = DL.getIntPtrType(Ctx);
++  auto *PtrTy = PointerType::getUnqual(Ctx);
++  Function *Save = Intrinsic::getOrInsertDeclaration(
++      M, Intrinsic::stacksave, {PtrTy});
++  Function *Store = Intrinsic::getOrInsertDeclaration(
++      M, Intrinsic::wasm_memtag_store, {IntPtrTy});
++  Function *RandomStore = Intrinsic::getOrInsertDeclaration(
++      M, Intrinsic::wasm_memtag_randomstore, {IntPtrTy});
++  IRBuilder<> Entry(&*F.getEntryBlock().getFirstInsertionPt());
++  Value *FrameBottom = Entry.CreateCall(Save, {}, "memtag.dynamic.base");
++
++  for (AllocaInst *AI : Allocas) {
++    IRBuilder<> B(AI);
++    B.SetCurrentDebugLocation(AI->getDebugLoc());
++    Value *Count = AI->getArraySize();
++    Value *Overflow = B.getFalse();
++    unsigned CountBits = Count->getType()->getIntegerBitWidth();
++    unsigned PointerBits = IntPtrTy->getIntegerBitWidth();
++    uint64_t ElementSize = DL.getTypeAllocSize(AI->getAllocatedType());
++    if (ElementSize != 0 && CountBits > PointerBits)
++      Overflow = B.CreateICmpUGT(
++          Count, ConstantInt::get(Count->getType(),
++                                  APInt::getLowBitsSet(CountBits, PointerBits)));
++    Count = B.CreateZExtOrTrunc(Count, IntPtrTy);
++    if (PointerBits < 64 && ElementSize >= (uint64_t{1} << PointerBits))
++      Overflow = B.CreateOr(
++          Overflow, B.CreateICmpNE(Count, ConstantInt::get(IntPtrTy, 0)));
++    Value *Product = B.CreateIntrinsic(
++        Intrinsic::umul_with_overflow, {IntPtrTy},
++        {Count, ConstantInt::get(IntPtrTy, ElementSize)});
++    Overflow = B.CreateOr(Overflow, B.CreateExtractValue(Product, 1));
++    Value *Rounded = B.CreateIntrinsic(
++        Intrinsic::uadd_with_overflow, {IntPtrTy},
++        {B.CreateExtractValue(Product, 0), ConstantInt::get(IntPtrTy, 15)});
++    Overflow = B.CreateOr(Overflow, B.CreateExtractValue(Rounded, 1));
++    Value *Size = B.CreateAnd(
++        B.CreateExtractValue(Rounded, 0), ConstantInt::getSigned(IntPtrTy, -16),
++        "memtag.dynamic.size");
++    // Truncation/wrap must not produce a small tagged allocation for a large
++    // language-level request. This is a synchronous Wasm trap on every runtime.
++    Instruction *TrapEnd = SplitBlockAndInsertIfThen(Overflow, AI, true);
++    IRBuilder<> Trap(TrapEnd);
++    Trap.CreateCall(Intrinsic::getOrInsertDeclaration(M, Intrinsic::trap));
++    B.SetInsertPoint(AI);
++    AllocaInst *Raw = B.CreateAlloca(B.getInt8Ty(), AI->getAddressSpace(), Size,
++                                    AI->getName() + ".raw");
++    Raw->setAlignment(std::max(AI->getAlign(), kTagGranuleSize));
++    Raw->copyMetadata(*AI);
++    Value *Tagged = B.CreateCall(RandomStore, {B.getInt32(0), Raw, Size},
++                                 AI->getName() + ".tag");
++    AI->replaceAllUsesWith(Tagged);
++    AI->eraseFromParent();
++  }
++
++  auto Retire = [&](Instruction *Before, Value *Saved) {
++    IRBuilder<> B(Before);
++    Value *Current = B.CreateCall(Save, {}, "memtag.dynamic.current");
++    Value *Size = B.CreateSub(B.CreatePtrToInt(Saved, IntPtrTy),
++                              B.CreatePtrToInt(Current, IntPtrTy));
++    B.CreateCall(Store, {B.getInt32(0), Current, Size});
++  };
++  for (IntrinsicInst *Restore : Restores)
++    Retire(Restore, Restore->getArgOperand(0));
++  for (Instruction *Exit : Exits)
++    Retire(Exit, FrameBottom);
++}
++
++bool WebAssemblyStackTagging::runOnFunction(Function &Fn) {
++  if (!Fn.hasFnAttribute(Attribute::SanitizeMemTag))
++    return false;
++
++  Triple triplet(Fn.getParent()->getTargetTriple());
++  bool iswasm32 = triplet.getArch() == ::llvm::Triple::wasm32;
++
++  F = &Fn;
++  DL = &Fn.getParent()->getDataLayout();
++  instrumentDynamicAllocas(Fn, *DL);
++
++  OptimizationRemarkEmitter &ORE =
++      getAnalysis<OptimizationRemarkEmitterWrapperPass>().getORE();
++
++  SSI = &getAnalysis<StackSafetyGlobalInfoWrapperPass>().getResult();
++  memtag::StackInfoBuilder SIB(SSI, "webassembly-stack-tagging");
++  for (Instruction &I : instructions(F))
++    SIB.visit(ORE, I);
++  memtag::StackInfo &SInfo = SIB.get();
++  // A cleanupret can transfer to another cleanup/catch in this same function.
++  // Its frame and surviving objects are still live on that edge. Only a return
++  // to the caller retires the entire frame; ordinary lifetime ends remain
++  // responsible for individual objects during an internal cleanup.
++  llvm::erase_if(SInfo.RetVec, [](Instruction *I) {
++    const auto *Return = dyn_cast<CleanupReturnInst>(I);
++    return Return && !Return->unwindsToCaller();
++  });
++
++  std::unique_ptr<DominatorTree> DeleteDT;
++  DominatorTree *DT = nullptr;
++  if (DT == nullptr) {
++    DeleteDT = std::make_unique<DominatorTree>(*F);
++    DT = DeleteDT.get();
++  }
++
++  std::unique_ptr<PostDominatorTree> DeletePDT;
++  PostDominatorTree *PDT = nullptr;
++  if (PDT == nullptr) {
++    DeletePDT = std::make_unique<PostDominatorTree>(*F);
++    PDT = DeletePDT.get();
++  }
++
++  std::unique_ptr<LoopInfo> DeleteLI;
++  LoopInfo *LI = nullptr;
++  DeleteLI = std::make_unique<LoopInfo>(*DT);
++  LI = DeleteLI.get();
++  auto &AllocasToInstrument = SInfo.AllocasToInstrument;
++  if (AllocasToInstrument.empty()) {
++    return true;
++  }
++  Instruction *Base = nullptr;
++  bool usehint = false;
++  if (1 < AllocasToInstrument.size()) {
++    Base = insertBaseTaggedPointer(AllocasToInstrument, DT);
++    usehint = true;
++  }
++  uint64_t NextTag = 0;
++  LLVMContext &Ctx = Fn.getContext();
++  Type *Int32Type = llvm::Type::getInt32Ty(Ctx);
++  Type *Int64Type = llvm::Type::getInt64Ty(Ctx);
++  Type *IntPtrType = iswasm32 ? Int32Type : Int64Type;
++
++  // Lifetime end restores the original alloca pointer's stack allocation tag.
++  // Emit this explicitly: a VM must not infer stack-vs-heap semantics from
++  // whether an untagstore length happens to be constant after optimization.
++  // All cleanup calls are created after RAUW and use the original padded AI.
++  Function *RestoreStackTagDecl = Intrinsic::getOrInsertDeclaration(
++      F->getParent(), Intrinsic::wasm_memtag_store, {IntPtrType});
++
++  for (auto &I : AllocasToInstrument) {
++    memtag::AllocaInfo &Info = I.second;
++    memtag::alignAndPadAlloca(Info, kTagGranuleSize);
++    uint64_t Tag = NextTag;
++    if (iswasm32) {
++      Tag = static_cast<uint32_t>(Tag);
++    }
++    ++NextTag;
++    AllocaInst *AI = Info.AI;
++    IRBuilder<> IRB(Info.AI->getNextNode());
++
++    // Calls to functions that may return twice (e.g. setjmp) confuse the
++    // postdominator analysis, and will leave us to keep memory tagged after
++    // function return. Work around this by always untagging at every return
++    // statement if return_twice functions are called.
++    bool SupportedLifetime =
++        memtag::isSupportedLifetime(Info, DT, LI) && !SInfo.CallsReturnTwice;
++    if (SupportedLifetime) {
++      bool combineStore{canCombineStore(Info, AI, DT)};
++      Function *StoreTagDecl = nullptr;
++      Intrinsic::ID SelectedIntrinsicID;
++      // Fuse only an immediately adjacent, complete non-volatile initialization.
++      // No load, call, partial clear or lifetime transition may move across it.
++      // The *storez operation retains the clear even when runtime MTE is off.
++      MemSetInst *ZeroInit = nullptr;
++      if (combineStore) {
++        auto *Next = Info.LifetimeStart.front()->getNextNode();
++        auto *MS = FuseZeroInitialization ? dyn_cast_or_null<MemSetInst>(Next)
++                                         : nullptr;
++        auto *Length = MS ? dyn_cast<ConstantInt>(MS->getLength()) : nullptr;
++        auto *Value = MS ? dyn_cast<ConstantInt>(MS->getValue()) : nullptr;
++        if (MS && !MS->isVolatile() && Length && Value && Value->isZero() &&
++            MS->getDest()->stripPointerCasts() == AI &&
++            Length->getZExtValue() == *AI->getAllocationSize(*DL))
++          ZeroInit = MS;
++        SelectedIntrinsicID = usehint
++            ? (ZeroInit ? Intrinsic::wasm_memtag_hintstorez
++                        : Intrinsic::wasm_memtag_hintstore)
++            : (ZeroInit ? Intrinsic::wasm_memtag_randomstorez
++                        : Intrinsic::wasm_memtag_randomstore);
++      } else {
++        SelectedIntrinsicID = usehint ? Intrinsic::wasm_memtag_hint
++                                      : Intrinsic::wasm_memtag_random;
++        StoreTagDecl = Intrinsic::getOrInsertDeclaration(
++            F->getParent(), Intrinsic::wasm_memtag_store, {IntPtrType});
++      }
++
++      SmallVector<Type *, 2> SelectedStoreSignatureTypes;
++      if (combineStore) {
++        SelectedStoreSignatureTypes.push_back(IntPtrType);
++      }
++      if (usehint) {
++        SelectedStoreSignatureTypes.push_back(IntPtrType);
++      }
++      uint64_t Size = *Info.AI->getAllocationSize(*DL);
++      Size = alignTo(Size, kTagGranuleSize);
++
++      auto *RandomOrHintMayStoreTagDecl = Intrinsic::getOrInsertDeclaration(
++          F->getParent(), SelectedIntrinsicID, SelectedStoreSignatureTypes);
++
++      SmallVector<Value *, 5> TagCallArguments{ConstantInt::get(Int32Type, 0),
++                                               Info.AI};
++      if (combineStore) {
++        TagCallArguments.push_back(ConstantInt::get(IntPtrType, Size));
++      }
++      if (usehint) {
++        TagCallArguments.push_back(Base);
++        TagCallArguments.push_back(ConstantInt::get(IntPtrType, Tag));
++      }
++      if (combineStore) {
++        IntrinsicInst *Start = Info.LifetimeStart.front();
++        IRBuilder<> IRBStart(Start->getNextNode());
++        CallInst *TagPCall =
++            IRBStart.CreateCall(RandomOrHintMayStoreTagDecl, TagCallArguments);
++        if (Info.AI->hasName())
++          TagPCall->setName(Info.AI->getName() + ".tag");
++
++        Info.AI->replaceUsesWithIf(TagPCall, [&](const Use &U) {
++          return U.getUser() != TagPCall &&
++                 !isa<LifetimeIntrinsic>(U.getUser());
++        });
++        TagPCall->setOperand(1, Info.AI);
++        IntrinsicInst *End = Info.LifetimeEnd.front();
++        auto TagEnd = [&](Instruction *Node) {
++          restoreAllocaTag(AI, Node, Size, RestoreStackTagDecl, IntPtrType);
++        };
++        memtag::forAllReachableExits(*DT, *PDT, *LI, Info, SInfo.RetVec, TagEnd);
++        if (ZeroInit)
++          ZeroInit->eraseFromParent();
++        Start->eraseFromParent();
++        End->eraseFromParent();
++      } else {
++        auto *TagPCall =
++            IRB.CreateCall(RandomOrHintMayStoreTagDecl, TagCallArguments);
++
++        if (Info.AI->hasName())
++          TagPCall->setName(Info.AI->getName() + ".tag");
++
++        Info.AI->replaceUsesWithIf(TagPCall, [&](const Use &U) {
++          return !isa<LifetimeIntrinsic>(U.getUser());
++        });
++
++        TagPCall->setOperand(1, Info.AI);
++
++        for (IntrinsicInst *Start : Info.LifetimeStart) {
++          IRBuilder<> IRB2(Start->getNextNode());
++          IRB2.CreateCall(StoreTagDecl,
++                          {ConstantInt::get(Int32Type, 0), TagPCall,
++                           ConstantInt::get(IntPtrType, Size)});
++        }
++        auto TagEnd = [&](Instruction *Node) {
++          restoreAllocaTag(AI, Node, Size, RestoreStackTagDecl, IntPtrType);
++        };
++        memtag::forAllReachableExits(*DT, *PDT, *LI, Info, SInfo.RetVec,
++                                     TagEnd);
++      }
++    } else {
++      uint64_t Size = *Info.AI->getAllocationSize(*DL);
++      Intrinsic::ID SelectedStoreIntrinsicID =
++          usehint ? Intrinsic::wasm_memtag_hintstore
++                  : Intrinsic::wasm_memtag_randomstore;
++      SmallVector<Type *, 2> SelectedStoreSignatureTypes{IntPtrType};
++      if (usehint) {
++        SelectedStoreSignatureTypes.push_back(IntPtrType);
++      }
++      auto *RandomOrHintStoreTagDecl = Intrinsic::getOrInsertDeclaration(
++          F->getParent(), SelectedStoreIntrinsicID,
++          SelectedStoreSignatureTypes);
++
++      SmallVector<Value *, 5> StoreTagCallArguments{
++          ConstantInt::get(Int32Type, 0), Info.AI,
++          ConstantInt::get(IntPtrType, Size)};
++      if (usehint) {
++        StoreTagCallArguments.push_back(Base);
++        StoreTagCallArguments.push_back(ConstantInt::get(IntPtrType, Tag));
++      }
++
++      auto *TagPCall =
++          IRB.CreateCall(RandomOrHintStoreTagDecl, StoreTagCallArguments);
++      if (Info.AI->hasName())
++        TagPCall->setName(Info.AI->getName() + ".tag");
++      Info.AI->replaceAllUsesWith(TagPCall);
++      TagPCall->setOperand(1, Info.AI);
++      for (auto *RI : SInfo.RetVec) {
++        restoreAllocaTag(AI, RI, Size, RestoreStackTagDecl, IntPtrType);
++      }
++      // We may have inserted tag/untag outside of any lifetime interval.
++      // Remove all lifetime intrinsics for this alloca.
++      for (auto *II : Info.LifetimeStart)
++        II->eraseFromParent();
++      for (auto *II : Info.LifetimeEnd)
++        II->eraseFromParent();
++    }
++
++    memtag::annotateDebugRecords(Info, static_cast<unsigned long>(Tag));
++  }
++
++  return true;
++}
++
++char WebAssemblyStackTagging::ID = 0;
++INITIALIZE_PASS_BEGIN(WebAssemblyStackTagging, DEBUG_TYPE,
++                      "WebAssembly Stack Tagging", false, false)
++#if 0
++INITIALIZE_PASS_DEPENDENCY(AAResultsWrapperPass)
++#endif
++INITIALIZE_PASS_DEPENDENCY(StackSafetyGlobalInfoWrapperPass)
++INITIALIZE_PASS_DEPENDENCY(OptimizationRemarkEmitterWrapperPass)
++INITIALIZE_PASS_END(WebAssemblyStackTagging, DEBUG_TYPE,
++                    "WebAssembly Stack Tagging", false, false)
++
++FunctionPass *llvm::createWebAssemblyStackTaggingPass() {
++  return new WebAssemblyStackTagging();
++}
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblySubtarget.h b/llvm/lib/Target/WebAssembly/WebAssemblySubtarget.h
+index fffe4d3a78..f7e00e5c54 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssemblySubtarget.h
++++ b/llvm/lib/Target/WebAssembly/WebAssemblySubtarget.h
+@@ -50,6 +50,7 @@ class WebAssemblySubtarget final : public WebAssemblyGenSubtargetInfo {
+   bool HasGC = false;
+   bool HasCooperativeMultithreading = false;
+   bool HasLibcallThreadContext = false;
++  bool HasMemtag = false;
+   bool HasMultiMemory = false;
+   bool HasMultivalue = false;
+   bool HasMutableGlobals = false;
+@@ -118,6 +119,7 @@ public:
+     return HasCooperativeMultithreading;
+   }
+   bool hasLibcallThreadContext() const { return HasLibcallThreadContext; }
++  bool hasMemtag() const { return HasMemtag; }
+   bool hasMultiMemory() const { return HasMultiMemory; }
+   bool hasMultivalue() const { return HasMultivalue; }
+   bool hasMutableGlobals() const { return HasMutableGlobals; }
+diff --git a/llvm/lib/Target/WebAssembly/WebAssemblyTargetMachine.cpp b/llvm/lib/Target/WebAssembly/WebAssemblyTargetMachine.cpp
+index 4ce04458fb..13c2f5f97c 100644
+--- a/llvm/lib/Target/WebAssembly/WebAssemblyTargetMachine.cpp
++++ b/llvm/lib/Target/WebAssembly/WebAssemblyTargetMachine.cpp
+@@ -121,6 +121,8 @@ LLVMInitializeWebAssemblyTarget() {
+   initializeWebAssemblyMCLowerPrePassPass(PR);
+   initializeWebAssemblyFixBrTableDefaultsPass(PR);
+   initializeWebAssemblyDAGToDAGISelLegacyPass(PR);
++  initializeWebAssemblyStackTaggingPass(PR);
++  initializeWebAssemblyGlobalsTaggingPass(PR);
+ }
+ 
+ //===----------------------------------------------------------------------===//
+@@ -499,6 +501,9 @@ void WebAssemblyPassConfig::addIRPasses() {
+   if (getOptLevel() != CodeGenOptLevel::None)
+     addPass(createWebAssemblyOptimizeReturned());
+ 
++  addPass(createWebAssemblyGlobalsTaggingPass());
++  addPass(createWebAssemblyStackTaggingPass());
++
+   // If exception handling is not enabled and setjmp/longjmp handling is
+   // enabled, we lower invokes into calls and delete unreachable landingpad
+   // blocks. Lowering invokes when there is no EH support is done in
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-addr32.ll b/llvm/test/CodeGen/WebAssembly/memtag-addr32.ll
+new file mode 100644
+index 0000000000..efe64f2a46
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-addr32.ll
+@@ -0,0 +1,221 @@
++; RUN: llc < %s -asm-verbose=false | FileCheck %s
++
++target triple = "wasm32-unknown-unknown"
++
++; --- FF / packed 0x01010020: memtag.status ---
++; CHECK-LABEL: test_status:
++; CHECK: memtag.status 0
++define i32 @test_status() {
++  %1 = call i32 @llvm.wasm.memtag.status.i32(i32 0)
++  ret i32 %1
++}
++
++; --- FF / packed 0x01010021: memtag.extract ---
++; CHECK-LABEL: test_extract:
++; CHECK: local.get 0
++; CHECK: memtag.extract 0
++define i32 @test_extract(ptr %p) {
++  %1 = call i32 @llvm.wasm.memtag.extract.i32(i32 0, ptr %p)
++  ret i32 %1
++}
++
++; --- FF / packed 0x01010022: memtag.insert ---
++; CHECK-LABEL: test_insert:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.insert 0
++define ptr @test_insert(ptr %p, i32 %v) {
++  %1 = call ptr @llvm.wasm.memtag.insert.i32(i32 0, ptr %p, i32 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010023: memtag.tagbits ---
++; CHECK-LABEL: test_tagbits:
++; CHECK: memtag.tagbits 0
++define i32 @test_tagbits() {
++  %1 = call i32 @llvm.wasm.memtag.tagbits.i32(i32 0)
++  ret i32 %1
++}
++
++; --- FF / packed 0x01010024: memtag.startbit ---
++; CHECK-LABEL: test_startbit:
++; CHECK: memtag.startbit 0
++define i32 @test_startbit() {
++  %1 = call i32 @llvm.wasm.memtag.startbit.i32(i32 0)
++  ret i32 %1
++}
++
++; --- FF / packed 0x01010025: memtag.copy ---
++; CHECK-LABEL: test_copy:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.copy 0
++define ptr @test_copy(ptr %d, ptr %s) {
++  %1 = call ptr @llvm.wasm.memtag.copy(i32 0, ptr %d, ptr %s)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010026: memtag.sub ---
++; CHECK-LABEL: test_sub:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.sub 0
++define i32 @test_sub(ptr %a, ptr %b) {
++  %1 = call i32 @llvm.wasm.memtag.sub.i32(i32 0, ptr %a, ptr %b)
++  ret i32 %1
++}
++
++; --- FF / packed 0x01010027: memtag.load ---
++; CHECK-LABEL: test_load:
++; CHECK: local.get 0
++; CHECK: memtag.load 0
++define ptr @test_load(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.load(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010028: memtag.untag ---
++; CHECK-LABEL: test_untag:
++; CHECK: local.get 0
++; CHECK: memtag.untag 0
++define ptr @test_untag(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.untag(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010029: memtag.untagstore ---
++; CHECK-LABEL: test_untagstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.untagstore 0
++define ptr @test_untagstore(ptr %p, i32 %v) {
++  %1 = call ptr @llvm.wasm.memtag.untagstore.i32(i32 0, ptr %p, i32 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002a: memtag.untagstorez ---
++; CHECK-LABEL: test_untagstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.untagstorez 0
++define ptr @test_untagstorez(ptr %p, i32 %v) {
++  %1 = call ptr @llvm.wasm.memtag.untagstorez.i32(i32 0, ptr %p, i32 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002b: memtag.store ---
++; CHECK-LABEL: test_store:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.store 0
++define void @test_store(ptr %p, i32 %v) {
++  call void @llvm.wasm.memtag.store.i32(i32 0, ptr %p, i32 %v)
++  ret void
++}
++
++; --- FF / packed 0x0101002c: memtag.storez ---
++; CHECK-LABEL: test_storez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.storez 0
++define void @test_storez(ptr %p, i32 %v) {
++  call void @llvm.wasm.memtag.storez.i32(i32 0, ptr %p, i32 %v)
++  ret void
++}
++
++; --- FF / packed 0x0101002d: memtag.random ---
++; CHECK-LABEL: test_random:
++; CHECK: local.get 0
++; CHECK: memtag.random 0
++define ptr @test_random(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.random(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002e: memtag.randomstore ---
++; CHECK-LABEL: test_randomstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.randomstore 0
++define ptr @test_randomstore(ptr %p, i32 %v) {
++  %1 = call ptr @llvm.wasm.memtag.randomstore.i32(i32 0, ptr %p, i32 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002f: memtag.randomstorez ---
++; CHECK-LABEL: test_randomstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.randomstorez 0
++define ptr @test_randomstorez(ptr %p, i32 %v) {
++  %1 = call ptr @llvm.wasm.memtag.randomstorez.i32(i32 0, ptr %p, i32 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010033: memtag.add ---
++; CHECK-LABEL: test_add:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: memtag.add 0
++define ptr @test_add(ptr %p, i32 %o, i32 %t) {
++  %1 = call ptr @llvm.wasm.memtag.add.i32(i32 0, ptr %p, i32 %o, i32 %t)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010036: memtag.hint ---
++; CHECK-LABEL: test_hint:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: memtag.hint 0
++define ptr @test_hint(ptr %p, ptr %h, i32 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hint.i32(i32 0, ptr %p, ptr %h, i32 %i)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010037: memtag.hintstore ---
++; CHECK-LABEL: test_hintstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: local.get 3
++; CHECK: memtag.hintstore 0
++define ptr @test_hintstore(ptr %p, i32 %v, ptr %h, i32 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hintstore.i32(i32 0, ptr %p, i32 %v, ptr %h, i32 %i)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010038: memtag.hintstorez ---
++; CHECK-LABEL: test_hintstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: local.get 3
++; CHECK: memtag.hintstorez 0
++define ptr @test_hintstorez(ptr %p, i32 %v, ptr %h, i32 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hintstorez.i32(i32 0, ptr %p, i32 %v, ptr %h, i32 %i)
++  ret ptr %1
++}
++
++; --- Intrinsic Declarations ---
++declare i32 @llvm.wasm.memtag.status.i32(i32)
++declare i32 @llvm.wasm.memtag.extract.i32(i32, ptr)
++declare ptr @llvm.wasm.memtag.insert.i32(i32, ptr, i32)
++declare i32 @llvm.wasm.memtag.tagbits.i32(i32)
++declare i32 @llvm.wasm.memtag.startbit.i32(i32)
++declare ptr @llvm.wasm.memtag.copy(i32, ptr, ptr)
++declare i32 @llvm.wasm.memtag.sub.i32(i32, ptr, ptr)
++declare ptr @llvm.wasm.memtag.load(i32, ptr)
++declare ptr @llvm.wasm.memtag.untag(i32, ptr)
++declare ptr @llvm.wasm.memtag.untagstore.i32(i32, ptr, i32)
++declare ptr @llvm.wasm.memtag.untagstorez.i32(i32, ptr, i32)
++declare void @llvm.wasm.memtag.store.i32(i32, ptr, i32)
++declare void @llvm.wasm.memtag.storez.i32(i32, ptr, i32)
++declare ptr @llvm.wasm.memtag.random(i32, ptr)
++declare ptr @llvm.wasm.memtag.randomstore.i32(i32, ptr, i32)
++declare ptr @llvm.wasm.memtag.randomstorez.i32(i32, ptr, i32)
++declare ptr @llvm.wasm.memtag.add.i32(i32, ptr, i32, i32)
++declare ptr @llvm.wasm.memtag.hint.i32(i32, ptr, ptr, i32)
++declare ptr @llvm.wasm.memtag.hintstore.i32(i32, ptr, i32, ptr, i32)
++declare ptr @llvm.wasm.memtag.hintstorez.i32(i32, ptr, i32, ptr, i32)
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-addr64.ll b/llvm/test/CodeGen/WebAssembly/memtag-addr64.ll
+new file mode 100644
+index 0000000000..cf6cad7563
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-addr64.ll
+@@ -0,0 +1,221 @@
++; RUN: llc < %s -asm-verbose=false | FileCheck %s
++
++target triple = "wasm64-unknown-unknown"
++
++; --- FF / packed 0x01010020: memtag.status ---
++; CHECK-LABEL: test_status:
++; CHECK: memtag.status 0
++define i64 @test_status() {
++  %1 = call i64 @llvm.wasm.memtag.status.i64(i32 0)
++  ret i64 %1
++}
++
++; --- FF / packed 0x01010021: memtag.extract ---
++; CHECK-LABEL: test_extract:
++; CHECK: local.get 0
++; CHECK: memtag.extract 0
++define i64 @test_extract(ptr %p) {
++  %1 = call i64 @llvm.wasm.memtag.extract.i64(i32 0, ptr %p)
++  ret i64 %1
++}
++
++; --- FF / packed 0x01010022: memtag.insert ---
++; CHECK-LABEL: test_insert:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.insert 0
++define ptr @test_insert(ptr %p, i64 %v) {
++  %1 = call ptr @llvm.wasm.memtag.insert.i64(i32 0, ptr %p, i64 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010023: memtag.tagbits ---
++; CHECK-LABEL: test_tagbits:
++; CHECK: memtag.tagbits 0
++define i64 @test_tagbits() {
++  %1 = call i64 @llvm.wasm.memtag.tagbits.i64(i32 0)
++  ret i64 %1
++}
++
++; --- FF / packed 0x01010024: memtag.startbit ---
++; CHECK-LABEL: test_startbit:
++; CHECK: memtag.startbit 0
++define i64 @test_startbit() {
++  %1 = call i64 @llvm.wasm.memtag.startbit.i64(i32 0)
++  ret i64 %1
++}
++
++; --- FF / packed 0x01010025: memtag.copy ---
++; CHECK-LABEL: test_copy:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.copy 0
++define ptr @test_copy(ptr %d, ptr %s) {
++  %1 = call ptr @llvm.wasm.memtag.copy(i32 0, ptr %d, ptr %s)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010026: memtag.sub ---
++; CHECK-LABEL: test_sub:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.sub 0
++define i64 @test_sub(ptr %a, ptr %b) {
++  %1 = call i64 @llvm.wasm.memtag.sub.i64(i32 0, ptr %a, ptr %b)
++  ret i64 %1
++}
++
++; --- FF / packed 0x01010027: memtag.load ---
++; CHECK-LABEL: test_load:
++; CHECK: local.get 0
++; CHECK: memtag.load 0
++define ptr @test_load(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.load(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010028: memtag.untag ---
++; CHECK-LABEL: test_untag:
++; CHECK: local.get 0
++; CHECK: memtag.untag 0
++define ptr @test_untag(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.untag(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010029: memtag.untagstore ---
++; CHECK-LABEL: test_untagstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.untagstore 0
++define ptr @test_untagstore(ptr %p, i64 %v) {
++  %1 = call ptr @llvm.wasm.memtag.untagstore.i64(i32 0, ptr %p, i64 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002a: memtag.untagstorez ---
++; CHECK-LABEL: test_untagstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.untagstorez 0
++define ptr @test_untagstorez(ptr %p, i64 %v) {
++  %1 = call ptr @llvm.wasm.memtag.untagstorez.i64(i32 0, ptr %p, i64 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002b: memtag.store ---
++; CHECK-LABEL: test_store:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.store 0
++define void @test_store(ptr %p, i64 %v) {
++  call void @llvm.wasm.memtag.store.i64(i32 0, ptr %p, i64 %v)
++  ret void
++}
++
++; --- FF / packed 0x0101002c: memtag.storez ---
++; CHECK-LABEL: test_storez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.storez 0
++define void @test_storez(ptr %p, i64 %v) {
++  call void @llvm.wasm.memtag.storez.i64(i32 0, ptr %p, i64 %v)
++  ret void
++}
++
++; --- FF / packed 0x0101002d: memtag.random ---
++; CHECK-LABEL: test_random:
++; CHECK: local.get 0
++; CHECK: memtag.random 0
++define ptr @test_random(ptr %p) {
++  %1 = call ptr @llvm.wasm.memtag.random(i32 0, ptr %p)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002e: memtag.randomstore ---
++; CHECK-LABEL: test_randomstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.randomstore 0
++define ptr @test_randomstore(ptr %p, i64 %v) {
++  %1 = call ptr @llvm.wasm.memtag.randomstore.i64(i32 0, ptr %p, i64 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x0101002f: memtag.randomstorez ---
++; CHECK-LABEL: test_randomstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: memtag.randomstorez 0
++define ptr @test_randomstorez(ptr %p, i64 %v) {
++  %1 = call ptr @llvm.wasm.memtag.randomstorez.i64(i32 0, ptr %p, i64 %v)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010033: memtag.add ---
++; CHECK-LABEL: test_add:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: memtag.add 0
++define ptr @test_add(ptr %p, i64 %o, i64 %t) {
++  %1 = call ptr @llvm.wasm.memtag.add.i64(i32 0, ptr %p, i64 %o, i64 %t)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010036: memtag.hint ---
++; CHECK-LABEL: test_hint:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: memtag.hint 0
++define ptr @test_hint(ptr %p, ptr %h, i64 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hint.i64(i32 0, ptr %p, ptr %h, i64 %i)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010037: memtag.hintstore ---
++; CHECK-LABEL: test_hintstore:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: local.get 3
++; CHECK: memtag.hintstore 0
++define ptr @test_hintstore(ptr %p, i64 %v, ptr %h, i64 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hintstore.i64(i32 0, ptr %p, i64 %v, ptr %h, i64 %i)
++  ret ptr %1
++}
++
++; --- FF / packed 0x01010038: memtag.hintstorez ---
++; CHECK-LABEL: test_hintstorez:
++; CHECK: local.get 0
++; CHECK: local.get 1
++; CHECK: local.get 2
++; CHECK: local.get 3
++; CHECK: memtag.hintstorez 0
++define ptr @test_hintstorez(ptr %p, i64 %v, ptr %h, i64 %i) {
++  %1 = call ptr @llvm.wasm.memtag.hintstorez.i64(i32 0, ptr %p, i64 %v, ptr %h, i64 %i)
++  ret ptr %1
++}
++
++; --- Intrinsic Declarations ---
++declare i64 @llvm.wasm.memtag.status.i64(i32)
++declare i64 @llvm.wasm.memtag.extract.i64(i32, ptr)
++declare ptr @llvm.wasm.memtag.insert.i64(i32, ptr, i64)
++declare i64 @llvm.wasm.memtag.tagbits.i64(i32)
++declare i64 @llvm.wasm.memtag.startbit.i64(i32)
++declare ptr @llvm.wasm.memtag.copy(i32, ptr, ptr)
++declare i64 @llvm.wasm.memtag.sub.i64(i32, ptr, ptr)
++declare ptr @llvm.wasm.memtag.load(i32, ptr)
++declare ptr @llvm.wasm.memtag.untag(i32, ptr)
++declare ptr @llvm.wasm.memtag.untagstore.i64(i32, ptr, i64)
++declare ptr @llvm.wasm.memtag.untagstorez.i64(i32, ptr, i64)
++declare void @llvm.wasm.memtag.store.i64(i32, ptr, i64)
++declare void @llvm.wasm.memtag.storez.i64(i32, ptr, i64)
++declare ptr @llvm.wasm.memtag.random(i32, ptr)
++declare ptr @llvm.wasm.memtag.randomstore.i64(i32, ptr, i64)
++declare ptr @llvm.wasm.memtag.randomstorez.i64(i32, ptr, i64)
++declare ptr @llvm.wasm.memtag.add.i64(i32, ptr, i64, i64)
++declare ptr @llvm.wasm.memtag.hint.i64(i32, ptr, ptr, i64)
++declare ptr @llvm.wasm.memtag.hintstore.i64(i32, ptr, i64, ptr, i64)
++declare ptr @llvm.wasm.memtag.hintstorez.i64(i32, ptr, i64, ptr, i64)
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-dynamic-alloca.ll b/llvm/test/CodeGen/WebAssembly/memtag-dynamic-alloca.ll
+new file mode 100644
+index 0000000000..2180835a91
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-dynamic-alloca.ll
+@@ -0,0 +1,43 @@
++; RUN: llc < %s -verify-each -stop-after=wasm-stack-tagging | FileCheck %s
++; RUN: llc < %s -mtriple=wasm64-unknown-unknown -verify-each -stop-after=wasm-stack-tagging | FileCheck %s
++; RUN: llc < %s -verify-each -filetype=obj -o /dev/null
++; RUN: llc < %s -mtriple=wasm64-unknown-unknown -verify-each -filetype=obj -o /dev/null
++target triple = "wasm32-unknown-unknown"
++
++declare void @use(ptr)
++declare ptr @llvm.stacksave.p0()
++declare void @llvm.stackrestore.p0(ptr)
++
++; Each dynamic object is padded and tagged after checked size arithmetic. Both
++; block stackrestore and function return retire discarded ranges, so loops do
++; not require a bounded allocation list. Saved stack positions are raw pointers.
++; CHECK-LABEL: define void @dynamic(
++; CHECK: %memtag.dynamic.base = call ptr @llvm.stacksave.p0()
++; CHECK: call { i{{32|64}}, i1 } @llvm.umul.with.overflow
++; CHECK: call { i{{32|64}}, i1 } @llvm.uadd.with.overflow
++; CHECK: call void @llvm.trap()
++; CHECK: %object.raw = alloca i8, i{{32|64}} %memtag.dynamic.size, align 16
++; CHECK: %object.tag = call ptr @llvm.wasm.memtag.randomstore
++; CHECK: call void @use(ptr %object.tag)
++; CHECK: %memtag.dynamic.current = call ptr @llvm.stacksave.p0()
++; CHECK: call void @llvm.wasm.memtag.store
++; CHECK: call void @llvm.stackrestore.p0(ptr %saved)
++; CHECK: call void @llvm.wasm.memtag.store
++; CHECK: ret void
++define void @dynamic(i64 %count) sanitize_memtag {
++entry:
++  %saved = call ptr @llvm.stacksave.p0()
++  %object = alloca i64, i64 %count, align 8
++  call void @use(ptr %object)
++  call void @llvm.stackrestore.p0(ptr %saved)
++  ret void
++}
++
++; CHECK-LABEL: define void @plain(
++; CHECK-NOT: @llvm.wasm.memtag
++; CHECK: ret void
++define void @plain(i64 %count) {
++  %object = alloca i64, i64 %count, align 8
++  call void @use(ptr %object)
++  ret void
++}
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-global-external.ll b/llvm/test/CodeGen/WebAssembly/memtag-global-external.ll
+new file mode 100644
+index 0000000000..120bde1a5d
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-global-external.ll
+@@ -0,0 +1,74 @@
++; RUN: llc < %s -verify-each -stop-after=WebAssembly-globals-tagging | FileCheck %s
++; RUN: llc < %s -verify-each -filetype=obj -o /dev/null
++target triple = "wasm32-unknown-unknown"
++@external_data = external global i32
++@external_tls = external thread_local global i32
++@__heap_end = external global i8
++@dummy = internal global ptr null, sanitize_memtag
++@weak_data = weak alias ptr, ptr @dummy
++@function_alias = weak alias void (), ptr @plain_function
++
++; Even a TU with no locally taggable definitions must repair external and weak
++; data references in instrumented functions after final symbol resolution.
++; CHECK-LABEL: define i32 @external_use(
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @external_data)
++; CHECK: load volatile i32
++define i32 @external_use() sanitize_memtag {
++  %x = load volatile i32, ptr @external_data
++  ret i32 %x
++}
++; CHECK-LABEL: define ptr @alias_use(
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @weak_data)
++; CHECK: load volatile ptr
++define ptr @alias_use() sanitize_memtag {
++  %x = load volatile ptr, ptr @weak_data
++  ret ptr %x
++}
++; Do not introduce an extension into an uninstrumented external reference.
++; CHECK-LABEL: define i32 @uninstrumented(
++; CHECK-NOT: call ptr @llvm.wasm.memtag.load
++; CHECK: load volatile i32, ptr @external_data
++define i32 @uninstrumented() {
++  %x = load volatile i32, ptr @external_data
++  ret i32 %x
++}
++; Do not treat a function/table alias as a linear-memory pointer.
++; CHECK-LABEL: define ptr @function_pointer(
++; CHECK-NOT: call ptr @llvm.wasm.memtag.load
++; CHECK: ret ptr @function_alias
++define ptr @function_pointer() sanitize_memtag {
++  ret ptr @function_alias
++}
++define void @plain_function() { ret void }
++
++; Linker addresses and external data use a runtime in-range guard, avoiding an
++; invalid tag load when a symbol denotes one-past-the-end instead of an object.
++; CHECK-LABEL: define i32 @linker_address(
++; CHECK: [[STATUS:%.*]] = call i32 @llvm.wasm.memtag.status.i32(i32 0)
++; CHECK: [[ENABLED:%.*]] = icmp ne i32 [[STATUS]], 0
++; CHECK: br i1 [[ENABLED]], label %memtag.global.check, label %memtag.global.cont
++; CHECK: memtag.global.check:
++; CHECK: call i32 @llvm.wasm.memory.size.i32(i32 0)
++; CHECK: icmp ult
++; CHECK: br i1
++; CHECK: memtag.global.load:
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @__heap_end)
++; CHECK: memtag.global.cont:
++; CHECK: phi ptr [ @__heap_end, %0 ],
++define i32 @linker_address() sanitize_memtag {
++  ret i32 ptrtoint (ptr @__heap_end to i32)
++}
++
++@optional_data = extern_weak global i32
++; Do not let a nonzero tag on address zero turn an absent weak symbol nonnull.
++; CHECK-LABEL: define i1 @weak_null(
++; CHECK: icmp ult
++; CHECK: [[NONNULL:%.*]] = icmp ne ptr @optional_data, null
++; CHECK: and i1 {{.*}}, [[NONNULL]]
++; CHECK: br i1
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @optional_data)
++; CHECK: phi ptr [ @optional_data,
++define i1 @weak_null() sanitize_memtag {
++  %present = icmp ne ptr @optional_data, null
++  ret i1 %present
++}
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-global-phi.ll b/llvm/test/CodeGen/WebAssembly/memtag-global-phi.ll
+new file mode 100644
+index 0000000000..0a5375f758
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-global-phi.ll
+@@ -0,0 +1,57 @@
++; RUN: llc < %s -verify-each -stop-after=WebAssembly-globals-tagging | FileCheck %s
++; RUN: llc < %s -verify-each -filetype=obj -o /dev/null
++
++target triple = "wasm32-unknown-unknown"
++@arr = global [16 x i8] zeroinitializer, sanitize_memtag, align 16
++
++; Rewritten expressions belong to their incoming blocks, not the PHI block.
++; CHECK-LABEL: define ptr @phi_edges(
++; CHECK: entry:
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @arr)
++; CHECK: left:
++; CHECK: getelementptr
++; CHECK: br label %join
++; CHECK: right:
++; CHECK: getelementptr
++; CHECK: br label %join
++; CHECK: join:
++; CHECK-NEXT: %a = phi ptr
++; CHECK-NEXT: %b = phi i32
++define ptr @phi_edges(i1 %cond) {
++entry:
++  br i1 %cond, label %left, label %right
++left:
++  br label %join
++right:
++  br label %join
++join:
++  %a = phi ptr [ getelementptr ([16 x i8], ptr @arr, i32 0, i32 1), %left ],
++               [ getelementptr ([16 x i8], ptr @arr, i32 0, i32 2), %right ]
++  %b = phi i32 [ 1, %left ], [ 2, %right ]
++  %result = getelementptr i8, ptr %a, i32 %b
++  ret ptr %result
++}
++
++; A loop backedge/critical edge must retain PHI grouping and dominance.
++; CHECK-LABEL: define ptr @loop(
++; CHECK: loop:
++; CHECK-NEXT: %p = phi ptr
++define ptr @loop(i1 %again) {
++entry:
++  br label %loop
++loop:
++  %p = phi ptr [ getelementptr ([16 x i8], ptr @arr, i32 0, i32 3), %entry ],
++               [ getelementptr ([16 x i8], ptr @arr, i32 0, i32 4), %loop ]
++  br i1 %again, label %loop, label %exit
++exit:
++  ret ptr %p
++}
++
++; Recursively expanded operands must precede their users.
++; CHECK-LABEL: define i32 @nested(
++; CHECK: call ptr @llvm.wasm.memtag.load(i32 0, ptr @arr)
++; CHECK: getelementptr
++; CHECK: ptrtoint
++define i32 @nested() {
++  ret i32 ptrtoint (ptr getelementptr ([16 x i8], ptr @arr, i32 0, i32 5) to i32)
++}
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-globals.ll b/llvm/test/CodeGen/WebAssembly/memtag-globals.ll
+new file mode 100644
+index 0000000000..d02a6eac01
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-globals.ll
+@@ -0,0 +1,76 @@
++; RUN: llc < %s -stop-after=WebAssembly-globals-tagging | FileCheck %s --check-prefix=IR
++; RUN: llc < %s -asm-verbose=false | FileCheck %s --check-prefix=ASM
++
++target triple = "wasm32-unknown-unknown"
++
++; Globals smaller than a tag granule are padded to 16 bytes and 16-byte aligned.
++; IR: @tagged = {{.*}}global { i32, [12 x i8] } { i32 42, [12 x i8] zeroinitializer }, sanitize_memtag, align 16
++@tagged = global i32 42, sanitize_memtag, align 4
++
++; Untagged globals are left alone.
++; IR: @plain = {{.*}}global i32 7
++@plain = global i32 7, align 4
++
++; Globals that are already granule-sized only get their alignment bumped.
++; IR: @arr = {{.*}}global [4 x i32] zeroinitializer, sanitize_memtag, align 16
++@arr = global [4 x i32] zeroinitializer, sanitize_memtag, align 4
++
++; Constant globals are not tagged; their metadata is dropped.
++; IR: @rodata = constant i32 5, align 4
++@rodata = constant i32 5, sanitize_memtag, align 4
++
++; TLS globals retain object-level tagging and granule alignment. LLD applies
++; a fresh allocation tag to each thread instance after copying its template.
++; IR: @tls = thread_local global { i32, [12 x i8] } { i32 9, [12 x i8] zeroinitializer }, sanitize_memtag, align 16
++@tls = thread_local global i32 9, sanitize_memtag, align 4
++
++; LLD materializes pointer tags in data relocations, including across TUs.
++; A global initializer no longer exempts its referenced allocation from MTE.
++; IR: @pointed_to = global { i32, [12 x i8] } { i32 11, [12 x i8] zeroinitializer }, sanitize_memtag, align 16
++@pointed_to = global i32 11, sanitize_memtag, align 4
++
++; @holder is not referenced by any initializer or alias, so it is tagged.
++; IR: @holder = {{.*}}global { ptr, [12 x i8] } { ptr @pointed_to, [12 x i8] zeroinitializer }, sanitize_memtag, align 16
++@holder = global ptr @pointed_to, sanitize_memtag, align 8
++
++; A single memtag.load is hoisted to the function entry for each tagged global,
++; and every use of the global goes through it.
++; IR-LABEL: define i32 @use(
++; IR:         %[[P:.*]] = call ptr @llvm.wasm.memtag.load(i32 0, ptr @tagged)
++; IR-NEXT:    %[[A:.*]] = load volatile i32, ptr %[[P]], align 4
++; IR-NEXT:    store volatile i32 %x, ptr %[[P]], align 4
++define i32 @use(i32 %x) {
++  %a = load volatile i32, ptr @tagged, align 4
++  store volatile i32 %x, ptr @tagged, align 4
++  ret i32 %a
++}
++
++; Constant expressions containing a tagged global are materialized as
++; instructions over the tagged pointer.
++; IR-LABEL: define ptr @gep(
++; IR:         %[[P:.*]] = call ptr @llvm.wasm.memtag.load(i32 0, ptr @arr)
++; IR-NEXT:    %[[G:.*]] = getelementptr inbounds [4 x i32], ptr %[[P]], i64 0, i64 2
++; IR-NEXT:    ret ptr %[[G]]
++define ptr @gep() {
++  ret ptr getelementptr inbounds ([4 x i32], ptr @arr, i64 0, i64 2)
++}
++
++; Untagged globals keep using their raw address.
++; IR-LABEL: define i32 @use_untagged(
++; IR-NOT:     memtag.load
++; IR:         %[[A:.*]] = load i32, ptr @plain
++; IR-NEXT:    ret i32 %[[A]]
++define i32 @use_untagged() {
++  %a = load i32, ptr @plain, align 4
++  ret i32 %a
++}
++
++; The data symbol carries the memtag symbol attribute and the padded size.
++; ASM:      memtag.load 0
++; ASM:      .memtag tagged
++; ASM:      .size tagged, 16
++; ASM:      .memtag arr
++; ASM:      .size arr, 16
++; ASM-NOT:  .memtag plain
++; ASM-NOT:  .memtag rodata
++; ASM:      .memtag pointed_to
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-lifetime-edges.ll b/llvm/test/CodeGen/WebAssembly/memtag-lifetime-edges.ll
+new file mode 100644
+index 0000000000..9d6792766b
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-lifetime-edges.ll
+@@ -0,0 +1,80 @@
++; RUN: llc < %s -stop-after=wasm-stack-tagging | FileCheck %s --check-prefix=IR
++; RUN: llc < %s -mtriple=wasm64-unknown-unknown -stop-after=wasm-stack-tagging | FileCheck %s --check-prefix=IR
++; RUN: llc < %s -mattr=+exception-handling -wasm-use-legacy-eh=false -asm-verbose=false | FileCheck %s --check-prefix=ASM
++
++target triple = "wasm32-unknown-unknown"
++@external = external global i32
++@weak = extern_weak global i8
++declare void @escape(ptr)
++declare i32 @__gxx_wasm_personality_v0(...)
++declare void @llvm.lifetime.start.p0(ptr)
++declare void @llvm.lifetime.end.p0(ptr)
++
++; External-global guards must keep static allocas in entry so the next pass
++; instruments them. More than one guard used to silently drop this coverage.
++; IR-LABEL: define i32 @external_stack(
++; IR: %a = alloca [32 x i8], align 16
++; IR: call ptr @llvm.wasm.memtag.randomstore
++; IR: call void @escape(ptr %a.tag)
++define i32 @external_stack() sanitize_memtag {
++entry:
++  %a = alloca [32 x i8], align 1
++  call void @escape(ptr %a)
++  %x = load volatile i32, ptr @external
++  %y = icmp eq ptr @weak, null
++  %z = zext i1 %y to i32
++  %r = add i32 %x, %z
++  ret i32 %r
++}
++
++; Even a combined tag/store needs retirement on the path that bypasses the
++; single explicit lifetime.end.
++; IR-LABEL: define void @early_exit(
++; IR: early:
++; IR-NEXT: call void @llvm.wasm.memtag.store
++; IR-NEXT: ret void
++; IR: normal:
++; IR-NEXT: call void @llvm.wasm.memtag.store
++; IR: ret void
++define void @early_exit(i1 %exit_early) sanitize_memtag {
++entry:
++  %a = alloca [32 x i8], align 16
++  call void @llvm.lifetime.start.p0(ptr %a)
++  call void @escape(ptr %a)
++  br i1 %exit_early, label %early, label %normal
++early:
++  ret void
++normal:
++  call void @llvm.lifetime.end.p0(ptr %a)
++  ret void
++}
++
++; A cleanup within the same function must not retire live stack storage.
++; IR-LABEL: define void @internal_cleanup(
++; IR: inner:
++; IR: call void @escape(ptr %a.tag)
++; IR-NOT: llvm.wasm.memtag.store
++; IR: cleanupret from %inner.pad unwind label %outer
++; IR: outer:
++; IR: call void @escape(ptr %a.tag)
++; IR-NEXT: call void @llvm.wasm.memtag.store
++; IR-NEXT: cleanupret from %outer.pad unwind to caller
++; ASM-LABEL: internal_cleanup:
++; ASM: global.get __stack_pointer
++; ASM: memtag.store 0
++; ASM: global.set __stack_pointer
++define void @internal_cleanup() sanitize_memtag personality ptr @__gxx_wasm_personality_v0 {
++entry:
++  %a = alloca [32 x i8], align 16
++  invoke void @escape(ptr %a) to label %done unwind label %inner
++done:
++  ret void
++inner:
++  %inner.pad = cleanuppad within none []
++  call void @escape(ptr %a) [ "funclet"(token %inner.pad) ]
++  cleanupret from %inner.pad unwind label %outer
++outer:
++  %outer.pad = cleanuppad within none []
++  call void @escape(ptr %a) [ "funclet"(token %outer.pad) ]
++  cleanupret from %outer.pad unwind to caller
++}
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-proven-safe.ll b/llvm/test/CodeGen/WebAssembly/memtag-proven-safe.ll
+new file mode 100644
+index 0000000000..bf0e520f8d
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-proven-safe.ll
+@@ -0,0 +1,170 @@
++; RUN: llc < %s -mattr=+memtag,+atomics -stop-after=wasm-stack-tagging | FileCheck %s
++; RUN: llc < %s -mtriple=wasm64-unknown-unknown -mattr=+memtag,+atomics -stop-after=wasm-stack-tagging | FileCheck %s
++
++; A proof must include bounds, lifetime and every reachable use. Safe stack
++; objects retain ordinary Wasm memory access semantics without tag maintenance.
++; Unknown callees, escaping pointers and incomplete range proofs stay tagged.
++
++; CHECK-LABEL: define {{.*}}@safe_constant(
++; CHECK-NOT: llvm.wasm.memtag.
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@safe_masked(
++; CHECK-NOT: llvm.wasm.memtag.
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@safe_atomic(
++; CHECK-NOT: llvm.wasm.memtag.
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@bounded_callee(
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@safe_known_call(
++; CHECK-NOT: llvm.wasm.memtag.
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@safe_bulk(
++; CHECK-NOT: llvm.wasm.memtag.
++; CHECK: ret i32
++
++; CHECK-LABEL: define {{.*}}@unsafe_index(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_oob(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_after_lifetime(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_before_lifetime(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_unknown_call(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_indirect_call(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_escape(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++
++; CHECK-LABEL: define {{.*}}@unsafe_return(
++; CHECK: %buf.tag = call ptr @llvm.wasm.memtag.random
++; CHECK: call void @llvm.wasm.memtag.store
++target triple = "wasm32-unknown-unknown"
++@escaped = external global ptr
++declare void @unknown(ptr)
++declare void @llvm.lifetime.start.p0(ptr)
++declare void @llvm.lifetime.end.p0(ptr)
++declare void @llvm.memset.p0.i32(ptr, i8, i32, i1)
++
++define i32 @safe_constant() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %p = getelementptr i8, ptr %buf, i32 28
++  store volatile i32 42, ptr %p, align 4
++  %r = load volatile i32, ptr %p, align 4
++  ret i32 %r
++}
++define i32 @safe_masked(i32 %x) sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %i = and i32 %x, 7
++  %p = getelementptr i32, ptr %buf, i32 %i
++  store volatile i32 42, ptr %p, align 4
++  %r = load volatile i32, ptr %p, align 4
++  ret i32 %r
++}
++define i32 @safe_atomic() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %p = getelementptr i8, ptr %buf, i32 28
++  store atomic i32 42, ptr %p seq_cst, align 4
++  %r = load atomic i32, ptr %p seq_cst, align 4
++  ret i32 %r
++}
++define internal i32 @bounded_callee(ptr %p) noinline {
++entry:
++  store volatile i32 42, ptr %p, align 4
++  %r = load volatile i32, ptr %p, align 4
++  ret i32 %r
++}
++define i32 @safe_known_call() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %p = getelementptr i8, ptr %buf, i32 28
++  %r = call i32 @bounded_callee(ptr %p)
++  ret i32 %r
++}
++define i32 @safe_bulk() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  call void @llvm.memset.p0.i32(ptr %buf, i8 42, i32 32, i1 true)
++  %p = getelementptr i8, ptr %buf, i32 31
++  %r = load volatile i8, ptr %p
++  %z = zext i8 %r to i32
++  ret i32 %z
++}
++define i32 @unsafe_index(i32 %i) sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %p = getelementptr i8, ptr %buf, i32 %i
++  %r = load volatile i32, ptr %p, align 1
++  ret i32 %r
++}
++define i32 @unsafe_oob() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %p = getelementptr i8, ptr %buf, i32 32
++  %r = load volatile i32, ptr %p, align 1
++  ret i32 %r
++}
++define i32 @unsafe_after_lifetime() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  call void @llvm.lifetime.start.p0(ptr %buf)
++  store volatile i32 42, ptr %buf
++  call void @llvm.lifetime.end.p0(ptr %buf)
++  %r = load volatile i32, ptr %buf
++  ret i32 %r
++}
++define i32 @unsafe_before_lifetime() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  %r = load volatile i32, ptr %buf
++  call void @llvm.lifetime.start.p0(ptr %buf)
++  store volatile i32 42, ptr %buf
++  call void @llvm.lifetime.end.p0(ptr %buf)
++  ret i32 %r
++}
++define void @unsafe_unknown_call() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  call void @unknown(ptr %buf)
++  ret void
++}
++define void @unsafe_indirect_call(ptr %fn) sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  call void %fn(ptr %buf)
++  ret void
++}
++define void @unsafe_escape() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  store ptr %buf, ptr @escaped
++  ret void
++}
++define ptr @unsafe_return() sanitize_memtag {
++entry:
++  %buf = alloca [32 x i8], align 16
++  ret ptr %buf
++}
+diff --git a/llvm/test/CodeGen/WebAssembly/memtag-tls.ll b/llvm/test/CodeGen/WebAssembly/memtag-tls.ll
+new file mode 100644
+index 0000000000..87fc689be0
+--- /dev/null
++++ b/llvm/test/CodeGen/WebAssembly/memtag-tls.ll
+@@ -0,0 +1,36 @@
++; RUN: llc < %s -mattr=+atomics,+bulk-memory -verify-each -stop-after=WebAssembly-globals-tagging | FileCheck %s --check-prefix=IR
++; RUN: llc < %s -mattr=+atomics,+bulk-memory -verify-each | FileCheck %s --check-prefix=ASM
++; RUN: llc < %s -mattr=+atomics,+bulk-memory -verify-each -filetype=obj -o /dev/null
++
++target triple = "wasm32-unknown-wasip1-threads"
++@initialized = thread_local global i32 17, sanitize_memtag
++@zeroed = thread_local global [8 x i8] zeroinitializer, sanitize_memtag
++@foreign = external thread_local global i32
++
++declare ptr @llvm.threadlocal.address.p0(ptr)
++
++; Padding must preserve TLS storage and the resolved address must be retagged.
++; The symbol operand of llvm.threadlocal.address must remain a constant.
++; IR: @initialized = thread_local global { i32, [12 x i8] }
++; IR: @zeroed = thread_local global { [8 x i8], [8 x i8] }
++; IR-LABEL: define ptr @get_initialized(
++; IR: [[P:%.*]] = call ptr @llvm.threadlocal.address.p0(ptr @initialized)
++; IR-NEXT: [[T:%.*]] = call ptr @llvm.wasm.memtag.load(i32 0, ptr [[P]])
++; IR: ret ptr [[T]]
++define ptr @get_initialized() sanitize_memtag {
++  %p = call ptr @llvm.threadlocal.address.p0(ptr @initialized)
++  ret ptr %p
++}
++; IR-LABEL: define i32 @get_foreign(
++; IR: [[P:%.*]] = call ptr @llvm.threadlocal.address.p0(ptr @foreign)
++; IR-NEXT: [[T:%.*]] = call ptr @llvm.wasm.memtag.load(i32 0, ptr [[P]])
++; IR: load volatile i32, ptr [[T]]
++define i32 @get_foreign() sanitize_memtag {
++  %p = call ptr @llvm.threadlocal.address.p0(ptr @foreign)
++  %v = load volatile i32, ptr %p
++  ret i32 %v
++}
++; ASM-DAG: .memtag initialized
++; ASM-DAG: .memtag zeroed
++; ASM-DAG: .section .tdata.initialized
++; ASM-DAG: .section .tbss.zeroed
+diff --git a/llvm/test/MC/WebAssembly/memtag-packed-invalid.s b/llvm/test/MC/WebAssembly/memtag-packed-invalid.s
+new file mode 100644
+index 0000000000..0dd44fb8a6
+--- /dev/null
++++ b/llvm/test/MC/WebAssembly/memtag-packed-invalid.s
+@@ -0,0 +1,41 @@
++# RUN: split-file %s %t
++# RUN: not llvm-mc -triple=wasm32-unknown-unknown -show-encoding %t/add.s 2>&1 | FileCheck %s --check-prefix=ADD
++# RUN: not llvm-mc -triple=wasm64-unknown-unknown -show-encoding %t/negative.s 2>&1 | FileCheck %s --check-prefix=INDEX
++# RUN: not llvm-mc -triple=wasm32-unknown-unknown -show-encoding %t/symbol.s 2>&1 | FileCheck %s --check-prefix=SYMBOL
++# RUN: llvm-mc -triple=wasm32-unknown-unknown -disassemble %t/wide-index.txt 2>&1 | FileCheck %s --check-prefix=DECODE
++# RUN: llvm-mc -triple=wasm32-unknown-unknown -disassemble %t/overlong-index.txt 2>&1 | FileCheck %s --check-prefix=DECODE
++# RUN: llvm-mc -triple=wasm64-unknown-unknown -disassemble %t/wide-index.txt 2>&1 | FileCheck %s --check-prefix=DECODE
++# RUN: llvm-mc -triple=wasm64-unknown-unknown -disassemble %t/overlong-index.txt 2>&1 | FileCheck %s --check-prefix=DECODE
++# llvm-mc diagnoses failed disassembly with a warning and a successful CLI exit.
++# Require rejection, not a fabricated status instruction, on both targets.
++# DECODE-NOT: memtag.status
++# DECODE: warning: invalid instruction encoding
++# DECODE-NOT: memtag.status
++# ADD: memtag.add is reserved; no executable semantics
++# INDEX: memtag memory index must fit u32
++# SYMBOL: memtag memory index must be an integer
++#--- add.s
++test:
++  .functype test () -> ()
++  unreachable
++  memtag.add 0
++  drop
++  end_function
++#--- negative.s
++test:
++  .functype test () -> ()
++  unreachable
++  memtag.status -1
++  drop
++  end_function
++#--- symbol.s
++test:
++  .functype test () -> ()
++  unreachable
++  memtag.status unresolved_memory
++  drop
++  end_function
++#--- wide-index.txt
++0xff 0xa0 0x80 0x84 0x08 0x80 0x80 0x80 0x80 0x10
++#--- overlong-index.txt
++0xff 0xa0 0x80 0x84 0x08 0x80 0x80 0x80 0x80 0x80 0x00
+diff --git a/llvm/test/MC/WebAssembly/memtag-packed-v1.s b/llvm/test/MC/WebAssembly/memtag-packed-v1.s
+new file mode 100644
+index 0000000000..eb9208a756
+--- /dev/null
++++ b/llvm/test/MC/WebAssembly/memtag-packed-v1.s
+@@ -0,0 +1,96 @@
++# RUN: llvm-mc -triple=wasm32-unknown-unknown -show-encoding %s | FileCheck %s
++# RUN: llvm-mc -triple=wasm64-unknown-unknown -show-encoding %s | FileCheck %s
++# RUN: llvm-mc -triple=wasm32-unknown-unknown -filetype=obj %s -o %t.o
++# RUN: llvm-objdump -d %t.o | FileCheck %s --check-prefix=DIS
++# RUN: llvm-mc -triple=wasm64-unknown-unknown -filetype=obj %s -o %t64.o
++# RUN: llvm-objdump -d %t64.o | FileCheck %s --check-prefix=DIS
++
++# This is a wire-format fixture, not an executable program. Unreachable makes
++# the stack polymorphic, so every operation's own bytes can be inspected.
++# Canonical word 0x010100XX is XX|0x80, 0x80, 0x84, 0x08; memidx remains u32.
++test:
++  .functype test () -> ()
++  unreachable
++  memtag.status 0
++# CHECK: memtag.status 0{{.*}}encoding: [0xff,0xa0,0x80,0x84,0x08,0x00]
++# DIS: memtag.status 0
++  drop
++  memtag.extract 0
++# CHECK: memtag.extract 0{{.*}}encoding: [0xff,0xa1,0x80,0x84,0x08,0x00]
++# DIS: memtag.extract 0
++  drop
++  memtag.insert 0
++# CHECK: memtag.insert 0{{.*}}encoding: [0xff,0xa2,0x80,0x84,0x08,0x00]
++# DIS: memtag.insert 0
++  drop
++  memtag.tagbits 0
++# CHECK: memtag.tagbits 0{{.*}}encoding: [0xff,0xa3,0x80,0x84,0x08,0x00]
++# DIS: memtag.tagbits 0
++  drop
++  memtag.startbit 0
++# CHECK: memtag.startbit 0{{.*}}encoding: [0xff,0xa4,0x80,0x84,0x08,0x00]
++# DIS: memtag.startbit 0
++  drop
++  memtag.copy 0
++# CHECK: memtag.copy 0{{.*}}encoding: [0xff,0xa5,0x80,0x84,0x08,0x00]
++# DIS: memtag.copy 0
++  drop
++  memtag.sub 0
++# CHECK: memtag.sub 0{{.*}}encoding: [0xff,0xa6,0x80,0x84,0x08,0x00]
++# DIS: memtag.sub 0
++  drop
++  memtag.load 0
++# CHECK: memtag.load 0{{.*}}encoding: [0xff,0xa7,0x80,0x84,0x08,0x00]
++# DIS: memtag.load 0
++  drop
++  memtag.untag 0
++# CHECK: memtag.untag 0{{.*}}encoding: [0xff,0xa8,0x80,0x84,0x08,0x00]
++# DIS: memtag.untag 0
++  drop
++  memtag.untagstore 0
++# CHECK: memtag.untagstore 0{{.*}}encoding: [0xff,0xa9,0x80,0x84,0x08,0x00]
++# DIS: memtag.untagstore 0
++  drop
++  memtag.untagstorez 0
++# CHECK: memtag.untagstorez 0{{.*}}encoding: [0xff,0xaa,0x80,0x84,0x08,0x00]
++# DIS: memtag.untagstorez 0
++  drop
++  memtag.store 0
++# CHECK: memtag.store 0{{.*}}encoding: [0xff,0xab,0x80,0x84,0x08,0x00]
++# DIS: memtag.store 0
++  memtag.storez 0
++# CHECK: memtag.storez 0{{.*}}encoding: [0xff,0xac,0x80,0x84,0x08,0x00]
++# DIS: memtag.storez 0
++  memtag.random 0
++# CHECK: memtag.random 0{{.*}}encoding: [0xff,0xad,0x80,0x84,0x08,0x00]
++# DIS: memtag.random 0
++  drop
++  memtag.randomstore 0
++# CHECK: memtag.randomstore 0{{.*}}encoding: [0xff,0xae,0x80,0x84,0x08,0x00]
++# DIS: memtag.randomstore 0
++  drop
++  memtag.randomstorez 0
++# CHECK: memtag.randomstorez 0{{.*}}encoding: [0xff,0xaf,0x80,0x84,0x08,0x00]
++# DIS: memtag.randomstorez 0
++  drop
++  memtag.hint 0
++# CHECK: memtag.hint 0{{.*}}encoding: [0xff,0xb6,0x80,0x84,0x08,0x00]
++# DIS: memtag.hint 0
++  drop
++  memtag.hintstore 0
++# CHECK: memtag.hintstore 0{{.*}}encoding: [0xff,0xb7,0x80,0x84,0x08,0x00]
++# DIS: memtag.hintstore 0
++  drop
++  memtag.hintstorez 0
++# CHECK: memtag.hintstorez 0{{.*}}encoding: [0xff,0xb8,0x80,0x84,0x08,0x00]
++# DIS: memtag.hintstorez 0
++  drop
++  memtag.status 300
++# CHECK: memtag.status 300{{.*}}encoding: [0xff,0xa0,0x80,0x84,0x08,0xac,0x02]
++# DIS: memtag.status 300
++  drop
++  memtag.status 4294967295
++# CHECK: memtag.status 4294967295{{.*}}encoding: [0xff,0xa0,0x80,0x84,0x08,0xff,0xff,0xff,0xff,0x0f]
++# DIS: memtag.status 4294967295
++  drop
++  end_function

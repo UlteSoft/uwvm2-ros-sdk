@@ -14,25 +14,30 @@ the complete maintained source/recipe closure. Third-party legal notices and
 algorithmic sources remain separate from the SDK-authored adapter review.
 
 `tools/language/python/build.py` takes explicit `--sdk`, `--llvm-root`,
-`--target-sdk`, `--cache`, `--output` and `--target`. Supported construction
-selectors are `wasm32-wasip1` and `wasm64-wasip1`; the selected **actual module
-memory width** must match. A construction selector alone is no execution claim.
-The target uses shared LLVM 23.1.4 and the `noeh` target profile.
-Every build starts with new private object/output directories and verifies
-actual 64 GiB memory / zero-swap cgroup files. Run only on SSH Linux under the
-global test lease. It builds real sources, records each command and keeps every
-failed attempt. No personal path is removed by editing compiled Wasm bytes.
-New bytes require new language, codec, native ROS and architecture acceptance.
+`--target-sdk`, `--cache` and `--output` paths. `--target-sdk` identifies a
+completed stable `sysroots.json` build, not the legacy installed libraries.
+The independent selectors are `--address-bits 32|64`, `--wasm-version
+1.0|2.0|3.0`, `--threads|--no-threads`, `--mte|--no-mte` and
+`--exceptions noeh|eh`. Defaults are wasm32, Core 3.0, threads and MTE.
+Unsupported or unbuilt combinations are rejected without a fallback. The
+selected compiler and every sysroot input must match their recorded hashes.
+The producer is the WebAssembly-only stable LLVM 23.1.5 source build.
 
-CPython additionally builds its matching native helper from source, freezes
-real startup encodings and disables the unavailable optional socket extension
-before configure. Its getpath VPATH and compiler source names use public
-logical prefixes. This profile does not bundle a complete Python stdlib, pip
-or dynamic extensions. Lua uses genuine upstream C++ throw/catch and modern
-Wasm EH, with deterministic noncryptographic hash/sort/random initialization
-and ordinary failure for unavailable host shell/temporary-file operations.
-QuickJS retains the full ECMAScript implementation with WASI allocator and
-non-threaded adaptations. These details describe the relevant family only.
+Builds use fresh private output and object directories, including SDK `.tmp`,
+and verify the actual 64 GiB/zero-swap test cgroup. Each compiler invocation
+and failed attempt is retained. Debug and source paths are mapped during
+compilation; compiled Wasm bytes are never edited to conceal build paths.
+
+CPython builds its matching native helper from source, or reuses an explicitly
+selected `--build-python` CPython 3.14.8 helper after checking its version and
+recording its hash. That native helper generates frozen modules; applications
+always execute in the Wasm interpreter. MTE builds disable pymalloc and
+mimalloc so object allocations use the instrumented libc allocator. This is a
+memory-safety choice whose performance must be measured separately.
+`profile.py` records the reviewed stable-source changes for the explicit WASI
+thread target and vector I/O probes. Socket modules are selected by actual
+sysroot availability; their exposure and permissions remain VM launch policy.
+The build grants no network access. Dynamic native extensions are not loaded.
 
 ## Platform-neutral Xmake adapter
 
@@ -84,34 +89,33 @@ graph rooted at collections, collections.abc, dataclasses, pathlib, typing, json
 and array; genuine collections itself installs its original collections.abc alias.
 Every source member is hashed against the retained CPython source inventory.
 Duplicate platform declarations must have the identical original stdlib bytes.
-All four existing ROS1/ROS2 memory32/memory64 command engines are genuinely
-relinked from the same unchanged core archives with16MiB source slots; JavaScript
-keeps its original4MiB default. `relink_stdlib.py` records the real compiler, target
-libraries, original core hashes, complete ABI imports and new artifact hashes.
-The original core construction lock remains historical; current source and the
-new command relink provenance have separate locks.
+The former `relink_stdlib.py` entry was removed. Relinking an old interpreter
+archive cannot instrument its core, allocator, libc or TLS. Rebuild the complete
+closure through `build.py`; never combine a new MTE command wrapper with an old
+non-MTE core archive. Historical construction and relink locks describe the
+old bytes only and are not qualification records for new artifacts.
 
-The native extensions remain the genuine statically compiled WASI core modules.
-There is no native Python application fallback or invented standard module. This
-is not a claim that every optional desktop/network/platform extension is usable.
-Missing socket, TLS, dynamic loader or host-specific extensions keep their actual
-import/runtime errors. The complete robot ROS/driver/simulator integration still
-requires separate genuine VM and official-environment acceptance.
+For example, inside the required test resource group:
 
-The public relink maintenance entry requires explicit paths, for example:
-`python3.12 -B tools/language/python/relink_stdlib.py --sdk /absolute/sdk
---llvm /absolute/verified/llvm23 --output /absolute/fresh-output` (one command).
-Run it through the admitted CPU scheduler. It independently checks the actual
-64GiB/zero-swap ancestor before compiler execution, validates both existing
-genuine core/toolchain closures, and reports their reuse explicitly. It needs
-no UWVM_SDK_OUTPUT variable. Core cold construction remains build.py's separate
-operation. memory64/table64 metadata is derived from the emitted artifact's
-actual memory and table widths; no64-bit guest execution is implied.
+```sh
+python3 -B tools/language/python/build.py \
+  --sdk /absolute/sdk \
+  --llvm-root /absolute/stable-wasm-llvm \
+  --target-sdk /absolute/completed-sysroot-build \
+  --cache /absolute/sdk/.tmp/python-objects \
+  --output /absolute/sdk/.tmp/python-engine
+```
 
-The same common cold-build and explicit-output relink entries compile the actual
-`src/platform/ros/py/_native.c` bridge for each selected backend. CPython registers
-its real `_roswasm_native` module alongside the separate `_uwvm_ros` module; no
-name alias or native application fallback is used. The shared bridge.py owns
-the compiler flags and exact source/header inventory. Both source locks and
-runtime metadata record those real bridge inputs. Original core archives remain
-unchanged; capability grants and official scenario execution stay separate.
+A threaded engine imports `env.memory`. The launcher must provide a matching
+shared-memory owner, explicitly enable WASI Threads and provision enough
+storage for the interpreter's code, source segments, stacks and workers.
+Exact WASIp1 and ROS interfaces and resource grants are separate from that
+storage configuration. An import-visible socket has no socket rights until
+those rights are explicitly granted to a supplied descriptor.
+
+The cold build compiles `src/platform/ros/py/_native.c` for each backend.
+CPython registers `_roswasm_native` alongside `_uwvm_ros`; `bridge.py` records
+the exact adapter inputs. A successful construction receipt remains
+`BUILT_PENDING_EXECUTION`. Language execution, tagged-memory violations,
+thread safety, native ROS integration and all five VM architectures require
+independent acceptance of the exact new bytes.
